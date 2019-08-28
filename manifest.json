@@ -349,15 +349,48 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
-      "source_relative_path": "Documentation.ja/GettingStartedWithTheMRTK.md",
+      "source_relative_path": "Documentation.ja/Architecture/ConfigurationAndProfiles.md",
       "output": {
         ".html": {
-          "relative_path": "Documentation.ja/GettingStartedWithTheMRTK.html",
-          "hash": "KbIazb6hq9c9qXyGCXqJwg=="
+          "relative_path": "Documentation.ja/Architecture/ConfigurationAndProfiles.html",
+          "hash": "0vBjdraI42bVLovpInsNWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/FrameworkAndRuntime.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/FrameworkAndRuntime.html",
+          "hash": "JoDjUrEBpJ6ajEzOAWA+4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/InputSystem/ControllersPointersAndFocus.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/InputSystem/ControllersPointersAndFocus.html",
+          "hash": "w+02XySg5kejALElN5MV3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/InputSystem/CoreSystem.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/InputSystem/CoreSystem.html",
+          "hash": "Pb6g15Ixs9pp3L0sNAShQg=="
         }
       },
       "is_incremental": false,
@@ -367,12 +400,1137 @@
       "log_codes": [
         "InvalidFileLink"
       ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/InputSystem/Terminology.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/InputSystem/Terminology.html",
+          "hash": "ufrbRMFWXNvBeEWGtXKUHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/Overview.html",
+          "hash": "Eb5tuhL79wL4yF+aLNXhIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Architecture/SpatialAwareness.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Architecture/SpatialAwareness.html",
+          "hash": "VOuDGAk/WVuwN+icMRv8VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Authors.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Authors.html",
+          "hash": "VqJGO15lT/uIX8mpSnxrVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Boundary/BoundarySystemGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Boundary/BoundarySystemGettingStarted.html",
+          "hash": "+G21kkecMVWCG0PNwJrnfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Boundary/ConfiguringBoundaryVisualization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Boundary/ConfiguringBoundaryVisualization.html",
+          "hash": "NQFNJSeIfIcrMxP8K7c0Gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/BuildAndDeploy.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/BuildAndDeploy.html",
+          "hash": "sE89/M3Flxq8DkmIeEKPQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/BreakingChanges.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/BreakingChanges.html",
+          "hash": "Tm3nqFzptRUot9Xb1GinlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/CONTRIBUTING.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/CONTRIBUTING.html",
+          "hash": "czeu2Fnut60s6yKVeqhypg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/CodingGuidelines.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/CodingGuidelines.html",
+          "hash": "hzKgYWAOrLp9l0oIkU4Xug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/DevDocGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/DevDocGuide.html",
+          "hash": "bLRiwMsYN74inMwZhijnnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/DocumentationGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/DocumentationGuide.html",
+          "hash": "7IbTwW0osjAEVPmJ+Qt/9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/Feature_Contribution_Process.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/Feature_Contribution_Process.html",
+          "hash": "JTqFRq3U5qq1mSMFYhk2zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/Roadmap.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/Roadmap.html",
+          "hash": "dgqbwjrdo4/JdqJcV3me/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Contributing/UnitTests.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Contributing/UnitTests.html",
+          "hash": "yFME+jUHcujq6SRw76k1Ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/DetectingPlatformCapabilities.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/DetectingPlatformCapabilities.html",
+          "hash": "EFcm88OiJPp+DjvA8cp2FQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Diagnostics/ConfiguringDiagnostics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Diagnostics/ConfiguringDiagnostics.html",
+          "hash": "Gu9qhuLOIlesF1HJ2EocsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Diagnostics/DiagnosticsSystemGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Diagnostics/DiagnosticsSystemGettingStarted.html",
+          "hash": "SE8ZAVpYoQ52mDoeG0dbNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Diagnostics/UsingVisualProfiler.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Diagnostics/UsingVisualProfiler.html",
+          "hash": "7DG5nl/srmtTJUBSs3goVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/DownloadingTheMRTK.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/DownloadingTheMRTK.html",
+          "hash": "Asq4IdJWK0Gzp2rcttV6tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/ExperimentalFeatures.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/ExperimentalFeatures.html",
+          "hash": "xP+E9pqGvDDCeHOrnYN8eQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Extensions/SceneTransitionService/SceneTransitionServiceOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html",
+          "hash": "JgPmZIgvylqcXO9ALhMoiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_BasicSetup.html",
+          "hash": "4m6elljKubwQ1FcJO6CCtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_ExamplesOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_ExamplesOverview.html",
+          "hash": "A4VVaaM3IHGSCgBppI0KJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyeGazeProvider.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyeGazeProvider.html",
+          "hash": "opQz+/QJe/YoEFIkgIdFSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyesAndHands.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyesAndHands.html",
+          "hash": "TNCOwo1yJCJHF++7FXmwsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_IsUserCalibrated.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_IsUserCalibrated.html",
+          "hash": "mmb51+Pj60R6TV7y3lEj3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_Main.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_Main.html",
+          "hash": "VtG+RBVj3P8Qs0rFerU4sA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_Navigation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_Navigation.html",
+          "hash": "opaqrjaCDnwnK+UcGFYxUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_Positioning.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_Positioning.html",
+          "hash": "vZfTP0FIGIV9oofQ1i0+5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_TargetSelection.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/EyeTracking/EyeTracking_TargetSelection.html",
+          "hash": "B4dct6sgKLLlyhcM99W4Bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/GettingStartedWithTheMRTK.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/GettingStartedWithTheMRTK.html",
+          "hash": "fa1H5VdsJBgqLYn2iN0NnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/HTKToMRTKPortingGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/HTKToMRTKPortingGuide.html",
+          "hash": "TMSPk4LGEvnW8d9BNNMpqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Controllers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Controllers.html",
+          "hash": "q966C0Ccz8h0SzLIPH2Ujg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Dictation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Dictation.html",
+          "hash": "z/NcJbDLKJPPoDtBngB8xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Gaze.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Gaze.html",
+          "hash": "J18iBeN56SbXXTJeqVsGTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Gestures.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Gestures.html",
+          "hash": "pbY+WZU38865Myq1lbqOOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/InputActions.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/InputActions.html",
+          "hash": "kBaz5jfEUFXGcRvFBRcrbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/InputEvents.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/InputEvents.html",
+          "hash": "3awGfLlsqBhyWYQ0PxmEuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/InputProviders.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/InputProviders.html",
+          "hash": "YLWZEd7mUyHTa5zLO1s2Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Overview.html",
+          "hash": "glduE2kvqKk7xYhOpzU5CA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Pointers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Pointers.html",
+          "hash": "JLqLWm19gTdXfWNbeRptLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Input/Speech.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Input/Speech.html",
+          "hash": "5FkBxPIrt3u+qHPzrInxPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/InputSimulation/InputAnimationFileFormat.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/InputSimulation/InputAnimationFileFormat.html",
+          "hash": "BInTxb4KqNF6jTSRMNl56w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/InputSimulation/InputAnimationRecording.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/InputSimulation/InputAnimationRecording.html",
+          "hash": "Nk3Xh8elFfJdgCZ5y6ikrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/InputSimulation/InputSimulationService.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/InputSimulation/InputSimulationService.html",
+          "hash": "JbESD9U2UyBQqYJWPK+grQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/InputSystem/HandTracking.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/InputSystem/HandTracking.html",
+          "hash": "XZ0rdutZ/e8/G8TcWPnwNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Legal/NOTICE.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Legal/NOTICE.html",
+          "hash": "HvM4stJUciGL/3MkhTV/ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/MixedRealityConfigurationGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/MixedRealityConfigurationGuide.html",
+          "hash": "nrulRAtJttHGY6tjsWhbIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/MixedRealityServices.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/MixedRealityServices.html",
+          "hash": "jjtWsBgolU9NxNx6BIZhjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Packaging/MRTK_Modularization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Packaging/MRTK_Modularization.html",
+          "hash": "uc2dxwFXIM7gWWX2j2mp8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Packaging/MRTK_Packages.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Packaging/MRTK_Packages.html",
+          "hash": "SPIg/u6CJfJCckMIBNKAGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Performance/PerfGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Performance/PerfGettingStarted.html",
+          "hash": "9uG/Y0FUxfOmpEFMn/Ef6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Profiles/Profiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Profiles/Profiles.html",
+          "hash": "lyvu3mV4VmuStG8Z8VsuNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_AppBar.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_AppBar.html",
+          "hash": "wRe/rttuxaqZ4jsOpxGNGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_BoundingBox.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_BoundingBox.html",
+          "hash": "VuJrB5YZSaq5Pe6BO2950g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Button.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Button.html",
+          "hash": "qfS4LgDRwIWIJ2Gd+WVvcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_FingertipVisualization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_FingertipVisualization.html",
+          "hash": "2jnxC8bOPynvkC24BclEfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_HandInteractionExamples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_HandInteractionExamples.html",
+          "hash": "2Ieek9W0Cm1ejSxp6/fr0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_HandJointChaser.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_HandJointChaser.html",
+          "hash": "bcP8VbXIqe/2m958QVRcTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Interactable.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Interactable.html",
+          "hash": "kPnb/dCvIi5m4RMMbFSSgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_MRTKStandardShader.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_MRTKStandardShader.html",
+          "hash": "tKURdRTHNTRBhZRZrNxvNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_ManipulationHandler.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_ManipulationHandler.html",
+          "hash": "MTmo1lbGKzOsO+yOOMGGbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_ObjectCollection.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_ObjectCollection.html",
+          "hash": "xKo+/2wfMXYn8g/N6K9bzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Pointers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Pointers.html",
+          "hash": "6bljb7ywA5Vw09PGSVof7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Slate.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Slate.html",
+          "hash": "OUDw+BDTVEnD31+6Z96Ppw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Sliders.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Sliders.html",
+          "hash": "r6TC3TuKmFKbSS5C5af7RA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Solver.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Solver.html",
+          "hash": "D3cIFQgSKU6nSJ8GnbmfMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_SystemKeyboard.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_SystemKeyboard.html",
+          "hash": "uJpjaaB1nNtw/zRN6ltNJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_TextPrefab.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_TextPrefab.html",
+          "hash": "6T0eqh/nYELnJlff7uAEOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/README_Tooltip.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/README_Tooltip.html",
+          "hash": "jG11Xa0IOzAEpGh53DAosw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/ReleaseNotes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/ReleaseNotes.html",
+          "hash": "QQcG/mSvZNd1/TEQhD4G7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemContentLoading.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SceneSystem/SceneSystemContentLoading.html",
+          "hash": "lAg8gQnHqi3PF1j/LIK7Sw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SceneSystem/SceneSystemGettingStarted.html",
+          "hash": "2HLFwAbduIAL+p9yX5/P6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemLightingScenes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SceneSystem/SceneSystemLightingScenes.html",
+          "hash": "nDgkrV2wlPqJUHKt4ddUeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemLoadProgress.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SceneSystem/SceneSystemLoadProgress.html",
+          "hash": "tqUfHdXkkGYAZP15T0Uz4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemSceneTypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SceneSystem/SceneSystemSceneTypes.html",
+          "hash": "xafWBYR5nJEQvPT2wV6Zrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/ServiceUtilities/MixedRealityServiceRegistryAndIMixedRealityServiceRegistrar.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/ServiceUtilities/MixedRealityServiceRegistryAndIMixedRealityServiceRegistrar.html",
+          "hash": "6TOO/eE+kDojM/ibftUN5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SpatialAwareness/ConfiguringSpatialAwarenessMeshObserver.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SpatialAwareness/ConfiguringSpatialAwarenessMeshObserver.html",
+          "hash": "ZfoVVANfCBJGOLN2TPzltQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.html",
+          "hash": "iagibfXshN9KKUinM8CfAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SpatialAwareness/SpatialObjectMeshObserver.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SpatialAwareness/SpatialObjectMeshObserver.html",
+          "hash": "VtHltRm29UpaLuTQblAcpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/SpatialAwareness/UsageGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/SpatialAwareness/UsageGuide.html",
+          "hash": "5qhB7Z5hYTE2FDSrrQrC1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/TeleportSystem/Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/TeleportSystem/Overview.html",
+          "hash": "Dr/8FczR1xAl4EWJgBlB4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Tools/DependencyWindow.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Tools/DependencyWindow.html",
+          "hash": "Rkypg3rhga/hkTIwNl8VTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Tools/ExtensionServiceCreationWizard.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Tools/ExtensionServiceCreationWizard.html",
+          "hash": "DsOLNxvrYm7lNpTT+tmmjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Tools/OptimizeWindow.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Tools/OptimizeWindow.html",
+          "hash": "uK7VfgVjWR0oofQXsvDgAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Tools/ScreenshotUtility.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Tools/ScreenshotUtility.html",
+          "hash": "oChrKNTFJf/An1b51LZGtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/Updating.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/Updating.html",
+          "hash": "0uRkANPFGRf66zg5zobTVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "Documentation.ja/hologram-stabilization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Documentation.ja/hologram-stabilization.html",
+          "hash": "q6UEy+LrH8HrElBlC1Umog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "Documentation.ja/toc.yml",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/toc.html",
-          "hash": "2pTwcTOrjt5GmsA9/OxJUA=="
+          "hash": "CtyhGg7Q6FdZBvKEUxX1JQ=="
         }
       },
       "is_incremental": false,
@@ -18810,7 +19968,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 120,
+          "total_file_count": 212,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
