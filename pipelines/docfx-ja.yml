@@ -5,7 +5,7 @@
 
 trigger:
 - feature/mrtk_documentation_ja
-- feature/mrtk_documentation_ja_docfx
+# - feature/mrtk_documentation_ja_docfx
 
 pool:
   vmImage: 'windows-latest'
@@ -26,7 +26,7 @@ steps:
     
     # Invoke docfx.exe to build the docs, and output both to console and to a variable $output
     $output = ""
-    Invoke-Expression "$($DocFxDir.FullName)\tools\docfx.exe Documentation.ja\docfx.json -o docs -f" | Tee-Object -Variable output | Write-Host
+    Invoke-Expression "$($DocFxDir.FullName)\tools\docfx.exe docfx.json" | Tee-Object -Variable output | Write-Host
 
     # # Check the console output stored in $output for any error or warning message,
     # # and force the task to fail if there is any.
@@ -40,3 +40,28 @@ steps:
     # }
   displayName: 'Generate docs'
 
+- powershell: |
+    $env:GIT_REDIRECT_STDERR = '2>&1'
+    Remove-Item -Recurse -Force docfx.console.2.45.0
+    git checkout gh-pages
+    Write-Host "remove old files"
+    Remove-Item -Recurse -Force api
+    Remove-Item -Recurse -Force Assets
+    Remove-Item -Recurse -Force Documentation
+    Remove-Item -Recurse -Force Documentation.ja
+    Remove-Item -Recurse -Force fonts
+    Remove-Item -Recurse -Force styles
+    Remove-Item -Recurse -Force web
+    Move-Item doc\* -Force
+    Remove-Item -Recurse -Force obj
+    
+    git add .
+    Write-Host "setup author info"
+    git config user.email github_admin@hololab.co.jp
+    git config user.name "hololab-inc"
+    Write-Host "git commit with message"
+    git commit -a -m "Update documents"
+    Write-Host "git push"
+    git push https://$(access-token)@github.com/HoloLabInc/MixedRealityToolkit-Unity.git gh-pages
+    
+  displayName: 'Commit to gh-pages'
