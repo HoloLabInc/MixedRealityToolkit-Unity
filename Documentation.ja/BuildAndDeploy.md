@@ -9,7 +9,7 @@ Hololens 1 や Hololens 2 (UWP) へビルドとデプロイする方法の説明
 
 ![](../Documentation/Images/getting_started/BuildWindow.png)
 
-他の設定は違っていることもあります。（例えば、Build Configuration, Architecture, Build Type やその他いくつかの設定は、
+その他の設定は違っていることもあります。（例えば、Build Configuration, Architecture, Build Type やその他いくつかの設定は、
 Visual Studio のソリューションでいつでも変更可能です。）
 
 「Target SDK Version」 のドロップダウンに 「10.0.18362.0」 が含まれていることを確認してください。もし存在しない場合は、
