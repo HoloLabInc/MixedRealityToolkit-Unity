@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Porting Guide | Mixed Reality Toolkit Documentation </title>
+    <title>HTK2017 &#12363;&#12425; MRTK v2 &#12408;&#12398;&#31227;&#26893;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Porting Guide | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="HTK2017 &#12363;&#12425; MRTK v2 &#12408;&#12398;&#31227;&#26893;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.45.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
@@ -80,10 +80,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="porting-guide">Porting Guide</h1>
+<h1 id="htk2017-から-mrtk-v2-への移植ガイド">HTK2017 から MRTK v2 への移植ガイド</h1>
 
-<h2 id="controller-and-hand-input">Controller and hand input</h2>
-<h3 id="setup-and-configuration">Setup and configuration</h3>
+<h2 id="コントローラー入力およびハンド入力">コントローラー入力およびハンド入力</h2>
+<h3 id="セットアップと設定">セットアップと設定</h3>
 <table>
 <thead>
 <tr>
@@ -94,23 +94,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Type</td>
-<td>Specific events for buttons, with input type info when relevant.</td>
-<td>Action / Gesture based input, passed along via events.</td>
+<td>型</td>
+<td>関連する入力タイプの情報を含む、ボタンに対する特定のイベント</td>
+<td>イベントを介して渡される、動作 / ジェスチャ ベースの入力</td>
 </tr>
 <tr>
-<td>Setup</td>
-<td>Place the InputManager in the scene.</td>
-<td>Enable the input system in the <a href="MixedRealityConfigurationGuide.html">Configuration Profile</a> and specify a concrete input system type.</td>
+<td>セットアップ</td>
+<td>シーン内に InputManager を配置します。</td>
+<td><a href="MixedRealityConfigurationGuide.html">Configuration Profile</a> 内の input system を有効にし、 input system type の詳細を設定します。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Configured in the Inspector, on each individual script in the scene.</td>
-<td>Configured via the Mixed Reality Input System Profile and its related profile, listed below.</td>
+<td>設定</td>
+<td>シーン内の個々のスクリプトのインスペクタで設定されます。</td>
+<td>以下に示す Mixed Reality Input System プロファイルおよび関連するプロファイルによって設定されます。</td>
 </tr>
 </tbody>
 </table>
-<p>Related profiles:</p>
+<p>関連するプロファイル:</p>
 <ul>
 <li>Mixed Reality Controller Mapping Profile</li>
 <li>Mixed Reality Controller Visualization Profile</li>
@@ -119,11 +119,12 @@
 <li>Mixed Reality Input Action Rules Profile</li>
 <li>Mixed Reality Pointer Profile</li>
 </ul>
-<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html">Gaze Provider</a> settings are modified on the Main Camera object in the scene.</p>
-<p>Platform support components (e.g., Windows Mixed Reality Device Manager) must be added to their corresponding service's data providers.</p>
-<h3 id="interface-and-event-mappings">Interface and event mappings</h3>
-<p>Some events no longer have unique events and now contain a <a href="Input/InputActions.html">MixedRealityInputAction</a>. These actions are specified in the Input Actions profile and mapped to specific controllers and platforms in the Controller Mapping profile. Events like <code>OnInputDown</code> should now check the MixedRealityInputAction type.</p>
-<p>Related input systems:</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html">Gaze Provider</a> の設定はシーン内の Main Camera オブジェクト上で変更されています。</p>
+<p>Windows Mixed Reality Device Manager などのプラットフォームサポートコンポーネントは、対応するサービスのデータプロバイダに追加する必要があります。</p>
+<h3 id="インターフェースおよびイベントの対応付け">インターフェースおよびイベントの対応付け</h3>
+<p>一部のイベントに関しては固有のイベントがなくなり、MRTK v2 では<a href="Input/InputActions.html">MixedRealityInputAction</a> に含まれます。
+これらの動作は Input Actions プロファイルで指定され、Controller Mapping profile 内で特定のコントローラーやプラットフォームに対応付けされます。<code>OnInputDown</code> のようなイベントは MixedRealityInputAction タイプをチェックする必要があります。</p>
+<p>関連する input systems:</p>
 <ul>
 <li><a href="/Input/Overview.md">Input Overview</a></li>
 <li><a href="/Input/InputEvents.md">Input Events</a></li>
@@ -134,19 +135,19 @@
 <tr>
 <th>HTK 2017</th>
 <th>MRTK v2</th>
-<th>Action Mapping</th>
+<th>Action への対応付け</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>IControllerInputHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Vector2&gt;</code></a></td>
-<td>Mapped to the touchpad or thumbstick</td>
+<td>タッチパッドあるいはジョイスティックに対応付けされる</td>
 </tr>
 <tr>
 <td><code>IControllerTouchpadHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html"><code>IMixedRealityInputHandler</code></a></td>
-<td>Mapped to the touchpad</td>
+<td>タッチパッドに対応付けされる</td>
 </tr>
 <tr>
 <td><code>IFocusable</code></td>
@@ -161,7 +162,7 @@
 <tr>
 <td><code>IHoldHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler.html"><code>IMixedRealityGestureHandler</code></a></td>
-<td>Mapped to hold in the Gestures Profile</td>
+<td>Gestures Profile 内で hold に対して対応付けされる</td>
 </tr>
 <tr>
 <td><code>IInputClickHandler</code></td>
@@ -171,17 +172,17 @@
 <tr>
 <td><code>IInputHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html"><code>IMixedRealityInputHandler</code></a></td>
-<td>Mapped to the controller’s buttons or hand tap</td>
+<td>コントローラーのボタンやハンドでのタップ入力に対応付けされる</td>
 </tr>
 <tr>
 <td><code>IManipulationHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler-1.html"><code>IMixedRealityGestureHandler&lt;Vector3&gt;</code></a></td>
-<td>Mapped to manipulation in the Gestures Profile</td>
+<td>Gestures Profile 内の manipulation に対応付けされる</td>
 </tr>
 <tr>
 <td><code>INavigationHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler-1.html"><code>IMixedRealityGestureHandler&lt;Vector3&gt;</code></a></td>
-<td>Mapped to navigation in the Gestures Profile</td>
+<td>Gestures Profile 内の navigation に対応付けされる</td>
 </tr>
 <tr>
 <td><code>IPointerSpecificFocusable</code></td>
@@ -191,17 +192,17 @@
 <tr>
 <td><code>ISelectHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;float&gt;</code></a></td>
-<td>Mapped to trigger position</td>
+<td>trigger position に対応付けされる</td>
 </tr>
 <tr>
 <td><code>ISourcePositionHandler</code></td>
-<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Vector3&gt;</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
-<td>Mapped to pointer position or grip position</td>
+<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Vector3&gt;</code></a> あるいは <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
+<td>pointer position あるいは grip position 対応付けされる</td>
 </tr>
 <tr>
 <td><code>ISourceRotationHandler</code></td>
-<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Quaternion&gt;</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
-<td>Mapped to pointer position or grip position</td>
+<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Quaternion&gt;</code></a> あるいは <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
+<td>pointer position あるいは grip position に対応付けされる</td>
 </tr>
 <tr>
 <td><code>ISourceStateHandler</code></td>
@@ -210,12 +211,12 @@
 </tr>
 <tr>
 <td><code>IXboxControllerHandler</code></td>
-<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html"><code>IMixedRealityInputHandler</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Vector2&gt;</code></a></td>
-<td>Mapped to the various controller buttons and thumbsticks</td>
+<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html"><code>IMixedRealityInputHandler</code></a> と <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html"><code>IMixedRealityInputHandler&lt;Vector2&gt;</code></a></td>
+<td>多くのコントローラーのボタンやジョイスティックに対応付けされる</td>
 </tr>
 </tbody>
 </table>
-<h2 id="camera">Camera</h2>
+<h2 id="カメラ">カメラ</h2>
 <table>
 <thead>
 <tr>
@@ -226,19 +227,19 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Delete MainCamera, add MixedRealityCameraParent / MixedRealityCamera / HoloLensCamera prefab to scene <strong>or</strong> use Mixed Reality Toolkit &gt; Configure &gt; Apply Mixed Reality Scene Settings menu item.</td>
-<td>MainCamera parented under MixedRealityPlayspace via Mixed Reality Toolkit &gt; Add to Scene and Configure...</td>
+<td>セットアップ</td>
+<td>Main Camera を削除し、MixedRealityCameraParent / MixedRealityCamera / HoloLensCamera プレハブをシーンに追加します。 <strong>あるいは</strong>  Mixed Reality Toolkit &gt; Configure &gt; Apply Mixed Reality Scene Settings というメニューを使用します。</td>
+<td>Main camera オブジェクトの親オブジェクトが MixedRealityPlayspace となるように、 Mixed Reality Toolkit &gt; Add to Scene and Configure... を使用します。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Camera settings configuration performed on prefab instance.</td>
-<td>Camera settings configured in the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCameraProfile.html">Mixed Reality Camera Profile</a>.</td>
+<td>設定</td>
+<td>Camera の設定は、プレハブインスタンスにて行います。</td>
+<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCameraProfile.html">Mixed Reality Camera Profile</a> にて Camera の設定を行います。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="speech">Speech</h2>
-<h3 id="keyword-recognition">Keyword recognition</h3>
+<h2 id="音声認識-speech">音声認識 (Speech)</h2>
+<h3 id="キーワード認識">キーワード認識</h3>
 <table>
 <thead>
 <tr>
@@ -249,23 +250,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Add a SpeechInputSource to your scene.</td>
-<td>Keyword service (e.g., Windows Speech Input Manager) must be added to the input system's data providers.</td>
+<td>セットアップ</td>
+<td>SpeechInputSource をシーンに追加してください。</td>
+<td>Windows Speech Input Manager などのキーワードサービスが入力システムのデータプロバイダに追加されている必要があります。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Recognized keywords are configured in the SpeechInputSource’s inspector.</td>
-<td>Keywords are configured in the <a href="Input/Speech.html">Mixed Reality Speech Commands Profile</a>.</td>
+<td>設定</td>
+<td>認識するキーワードをSpeechInputSource のインスペクタで設定します。</td>
+<td>キーワードは <a href="Input/Speech.html">Mixed Reality Speech Commands Profile</a> で設定します。</td>
 </tr>
 <tr>
-<td>Event handlers</td>
+<td>イベントハンドラ</td>
 <td><code>ISpeechHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="dictation">Dictation</h3>
+<h3 id="音声ディクテーション-dictation">音声ディクテーション (Dictation)</h3>
 <table>
 <thead>
 <tr>
@@ -276,19 +277,19 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Add a DictationInputManager to your scene.</td>
-<td>Dictation support requires service (e.g., Windows Dictation Input Manager) to be added to the Input System's data providers.</td>
+<td>セットアップ</td>
+<td>DictationInputManager をシーンに追加してください。</td>
+<td>Dictation のサポートには、Windows Dictation Input Manager などのサービスを、input system のデータプロバイダに追加する必要があります。</td>
 </tr>
 <tr>
-<td>Event handlers</td>
+<td>イベントハンドラ</td>
 <td><code>IDictationHandler</code></td>
 <td><code>IMixedRealityDictationHandler</code><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="spatial-awareness--mapping">Spatial awareness / mapping</h2>
-<h3 id="mesh">Mesh</h3>
+<h2 id="空間認識空間マッピング-spatial-awareness--mapping">空間認識・空間マッピング (Spatial awareness / mapping)</h2>
+<h3 id="メッシュ-mesh">メッシュ (Mesh)</h3>
 <table>
 <thead>
 <tr>
@@ -299,18 +300,18 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Add the SpatialMapping prefab to the scene.</td>
-<td>Enable the Spatial Awareness System in the Configuration Profile and add a spatial observer (e.g., Windows Mixed Reality Spatial Mesh Observer) to the Spatial Awareness System's data providers.</td>
+<td>セットアップ</td>
+<td>SpatialMapping プレハブをシーンに追加します。</td>
+<td>Configuration Profile 内の Spatial Awareness System を有効にし、 Windows Mixed Reality Spatial Mesh Observer などの空間オブザーバーを Spatial Awareness System のデータプロバイダに追加します。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Configure the scene instance in the inspector.</td>
-<td>Configure the settings on each spatial observer's profile.</td>
+<td>設定</td>
+<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>それぞれの空間オブザーバーのプロファイルを設定します。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="planes">Planes</h3>
+<h3 id="平面-plane">平面 (Plane)</h3>
 <table>
 <thead>
 <tr>
@@ -321,13 +322,13 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Use the <code>SurfaceMeshesToPlanes</code> script.</td>
-<td>Not yet implemented.</td>
+<td>セットアップ</td>
+<td><code>SurfaceMeshesToPlanes</code> スクリプトを使用します。</td>
+<td>未実装の状態です。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="spatial-understanding">Spatial understanding</h3>
+<h3 id="空間理解-spatial-awareness">空間理解 (Spatial Awareness)</h3>
 <table>
 <thead>
 <tr>
@@ -338,18 +339,18 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Add the SpatialUnderstanding prefab to the scene.</td>
-<td>Not yet implemented.</td>
+<td>セットアップ</td>
+<td>SpatialUnderstanding プレハブをシーンに追加します。</td>
+<td>未実装の状態です。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Configure the scene instance in the inspector.</td>
-<td>Not yet implemented.</td>
+<td>設定</td>
+<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>未実装の状態です。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="boundary">Boundary</h2>
+<h2 id="移動境界-boundary">移動境界 (Boundary)</h2>
 <table>
 <thead>
 <tr>
@@ -360,18 +361,18 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Add the <code>BoundaryManager</code> script to the scene.</td>
-<td>Enable the Boundary System in the Configuration Profile.</td>
+<td>セットアップ</td>
+<td><code>BoundaryManager</code> スクリプトをシーンに追加します。</td>
+<td>Configuration Profile 内の Boundary Systemを有効にします。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Configure the scene instance in the inspector.</td>
-<td>Configure the settings in the Boundary Visualization profile.</td>
+<td>設定</td>
+<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>Boundary Visualization profile 内にて設定します。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="sharing">Sharing</h2>
+<h2 id="シェアリング-sharing">シェアリング (Sharing)</h2>
 <table>
 <thead>
 <tr>
@@ -382,14 +383,14 @@
 </thead>
 <tbody>
 <tr>
-<td>Setup</td>
-<td>Sharing service: Add Sharing prefab to the scene. UNet: Use SharingWithUNET example.</td>
-<td>In-progress</td>
+<td>セットアップ</td>
+<td>Sharing service の場合: Sharing プレハブをシーンに追加します。<br>UNet の場合: SharingWithUNET example を使用してください。</td>
+<td>更新中の状態です。</td>
 </tr>
 <tr>
-<td>Configuration</td>
-<td>Configure the scene instances in the inspector.</td>
-<td>In-progress</td>
+<td>設定</td>
+<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>更新中の状態です。</td>
 </tr>
 </tbody>
 </table>
@@ -404,7 +405,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Button</td>
+<td>ボタン (Button)</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md">Interactable Objects</a></td>
 <td><a href="README_Button.html">Button</a></td>
 </tr>
@@ -414,7 +415,7 @@
 <td><a href="README_Interactable.html">Interactable</a></td>
 </tr>
 <tr>
-<td>Bounding Box</td>
+<td>バウンディングボックス (Bounding Box)</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_BoundingBoxGizmoExample.md">Bounding Box</a></td>
 <td><a href="README_BoundingBox.html">Bounding Box</a></td>
 </tr>
@@ -424,39 +425,39 @@
 <td><a href="README_AppBar.html">App Bar</a></td>
 </tr>
 <tr>
-<td>One Hand Manipulation (Grb and Move)</td>
+<td>片手操作 (掴む (Grab)、 移動 (Move))</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/Interactions/HandDraggable.cs">HandDraggable</a></td>
 <td><a href="README_ManipulationHandler.html">Manipulation Handler</a></td>
 </tr>
 <tr>
-<td>Two Hand Manipulation (Grab/Move/Rotate/Scale)</td>
+<td>両手操作 (掴む (Grab)/移動 (Move)/回転 (Rotate)/拡大縮小 (Scale))</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/Interactions/TwoHandManipulatable.cs">TwoHandManipulatable</a></td>
 <td><a href="README_ManipulationHandler.html">Manipulation Handler</a></td>
 </tr>
 <tr>
-<td>Keyboard</td>
+<td>キーボード</td>
 <td><a href="">Keyboard prefab</a></td>
 <td><a href="README_SystemKeyboard.html">System Keyboard</a></td>
 </tr>
 <tr>
-<td>Tooltip</td>
+<td>ツールチップ (Tooltip)</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_TooltipExample.md">Tooltip</a></td>
 <td><a href="README_Tooltip.html">Tooltip</a></td>
 </tr>
 <tr>
-<td>Object Collection</td>
+<td>オブジェクト選択</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ObjectCollection.md">Object Collection</a></td>
 <td><a href="README_ObjectCollection.html">Object Collection</a></td>
 </tr>
 <tr>
-<td>Solver</td>
+<td>ソルバー</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Utilities/Readme/README_SolverSystem.md">Solver</a></td>
 <td><a href="README_Solver.html">Solver</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="utilities">Utilities</h2>
-<p>Some Utilities have been reconciled as duplicates with the Solver system. Please file an issue if any of your needed scripts are missing.</p>
+<h2 id="ユーティリティ-utilities">ユーティリティ (Utilities)</h2>
+<p>一部のユーティリティは、ソルバーシステムと重複するように調整されています。 必要なスクリプトが見つからない場合は、問題を報告してください。</p>
 <table>
 <thead>
 <tr>
@@ -466,24 +467,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Billboard</td>
+<td>ビルボード (Billboard)</td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Billboard.html"><code>Billboard</code></a></td>
 </tr>
 <tr>
-<td>Tagalong</td>
-<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.RadialView.html"><code>RadialView</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Orbital.html"><code>Orbital</code></a> <a href="README_Solver.html">Solver</a></td>
+<td>タグアロング (Tagalong)</td>
+<td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.RadialView.html"><code>RadialView</code></a> あるいは <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Orbital.html"><code>Orbital</code></a> <a href="README_Solver.html">Solver</a></td>
 </tr>
 <tr>
 <td>FixedAngularSize</td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.ConstantViewSize.html"><code>ConstantViewSize</code></a> <a href="README_Solver.html">Solver</a></td>
 </tr>
 <tr>
-<td>FpsDisplay</td>
-<td><a href="Diagnostics/DiagnosticsSystemGettingStarted.html">Diagnostics System</a> (in Configuration Profile)</td>
+<td>FPS表示 (FpsDisplay)</td>
+<td><a href="Diagnostics/DiagnosticsSystemGettingStarted.html">Diagnostics System</a> (Configuration Profile 内にて)</td>
 </tr>
 <tr>
 <td>NearFade</td>
-<td>Built-in to <a href="README_MRTKStandardShader.html">Mixed Reality Toolkit Standard shader</a></td>
+<td><a href="README_MRTKStandardShader.html">Mixed Reality Toolkit Standard shader</a> に含まれています。</td>
 </tr>
 </tbody>
 </table>
