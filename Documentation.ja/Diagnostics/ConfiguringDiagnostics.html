@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Configuring the Diagnostics System | Mixed Reality Toolkit Documentation </title>
+    <title>&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Configuring the Diagnostics System | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.45.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,46 +80,45 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="configuring-the-diagnostics-system">Configuring the Diagnostics System</h1>
+<h1 id="診断システム-diagnostics-system-の構成">診断システム (Diagnostics System) の構成</h1>
 
-<p>The diagnostics system profile provides options for configuring:</p>
+<p>診断システムプロファイルには、次の構成オプションが提供されます。</p>
 <ul>
-<li><a href="#general-settings">General Settings</a></li>
-<li><a href="#profiler-settings">Profiler Settings</a></li>
+<li><a href="#%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E8%A8%AD%E5%AE%9A">一般的な設定</a></li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%A9%E3%81%AE%E8%A8%AD%E5%AE%9A">プロファイラの設定</a></li>
 </ul>
-<h2 id="general-settings">General Settings</h2>
-<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png" alt="Diagnostics General Settings"></p>
-<h3 id="show-diagnostics">Show Diagnostics</h3>
-<p>Indicates whether or not the diagnostics system is to display the configured diagnostic options.</p>
-<p>When disabled, all configured diagnostic options will be hidden.</p>
-<h4 id="programmatically-controlling-the-diagnostics-system">Programmatically controlling the Diagnostics System</h4>
-<p>It's also possible to toggle the visibility of the diagnostics system and the profiler at runtime.
-For example, the code below will hide the diagnostics system and profiler.</p>
+<h2 id="一般設定-general-settings">一般設定 (General Settings)</h2>
+<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png" alt="診断の一般的な設定"></p>
+<h3 id="診断の表示">診断の表示</h3>
+<p>診断システムが設定された診断オプションを表示するかどうかを示します。</p>
+<p>無効にすると、設定されたすべての診断オプションが非表示になります。</p>
+<h4 id="プログラムによる診断システムの制御">プログラムによる診断システムの制御</h4>
+<p>また、実行時に診断システムとプロファイラの可視性を切り替えることもできます。
+たとえば、次のコードでは、診断システムとプロファイラを非表示にします。</p>
 <pre><code class="lang-C#">if (MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityDiagnosticsSystem&gt;(out var service))
 {
     service.ShowDiagnostics = false;
     service.ShowProfiler = false;
 }
 </code></pre>
-<h2 id="profiler-settings">Profiler Settings</h2>
-<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfilerSettings.png" alt="Diagnostics Profiler Settings"></p>
-<h3 id="show-profiler">Show Profiler</h3>
-<p>Indicates whether or not the Visual Profiler is to be displayed.</p>
-<h3 id="frame-sample-rate">Frame Sample Rate</h3>
-<p>The amount of time, in seconds to collect frames for frame rate calculation. The range is 0 to 5 seconds.</p>
-<h3 id="window-anchor">Window Anchor</h3>
-<p>To what portion of the view port should the profiler window be anchored. The default value is Lower Center.</p>
-<h3 id="window-offset">Window Offset</h3>
-<p>The offset, from the center of the view port, to place the Visual Profiler. The offset will be in the direction
-of the <a href="#window-anchor">Window Anchor</a>.</p>
-<h3 id="window-scale">Window Scale</h3>
-<p>Size multiplier applied to the profiler window. For example, setting the value to 2 will double the window size.</p>
-<h3 id="window-follow-speed">Window Follow Speed</h3>
-<p>The speed at which to move the profiler window to maintain visibility within the view port.</p>
-<h2 id="see-also">See Also</h2>
+<h2 id="show-profiler-プロファイラの表示">Show Profiler （プロファイラの表示）</h2>
+<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfilerSettings.png" alt="診断プロファイラの設定"></p>
+<h3 id="プロファイラの表示">プロファイラの表示</h3>
+<p>ビジュアルプロファイラ (Visual Profiler) を表示するかどうかを示します。</p>
+<h3 id="frame-sample-rate-フレームサンプルレート">Frame Sample Rate (フレームサンプルレート)</h3>
+<p>フレームレート計算用にフレームを収集する時間 (秒単位) 。範囲は 0 ~ 5 秒です。</p>
+<h3 id="window-anchor-ウィンドウアンカー">Window Anchor (ウィンドウアンカー)</h3>
+<p>プロファイラウィンドウをビューポート (view port) のどの部分に固定するかを設定します。デフォルト値は下中央です。</p>
+<h3 id="window-offset-ウィンドウオフセット">Window Offset (ウィンドウオフセット)</h3>
+<p>ビューポート (view port) の中心からビジュアルプロファイラを配置するまでのオフセット。オフセットは<a href="#%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%82%A2%E3%83%B3%E3%82%AB%E3%83%BC" title="Window Anchor">ウィンドウアンカー (Window Anchor)</a>の方向です。</p>
+<h3 id="window-scale-ウィンドウスケール">Window Scale (ウィンドウスケール)</h3>
+<p>プロファイラウィンドウ (profiler window) に適用されるサイズ乗数。たとえば、値を 2 に設定すると、ウィンドウのサイズが 2 倍になります。</p>
+<h3 id="window-follow-speed-ウィンドウ追従スピード">Window Follow Speed (ウィンドウ追従スピード)</h3>
+<p>ビューポート (view port) 内の可視性を維持するためにプロファイラウィンドウを移動する速度。</p>
+<h2 id="参考に">参考に</h2>
 <ul>
-<li><a href="DiagnosticsSystemGettingStarted.html">Diagnostics System</a></li>
-<li><a href="UsingVisualProfiler.html">Using the Visual Profiler</a></li>
+<li><a href="DiagnosticsSystemGettingStarted.html">診断システム (Diagnostic System)</a></li>
+<li><a href="UsingVisualProfiler.html">ビジュアルプロファイラ (Visual Profiler) を使用する</a></li>
 </ul>
 </article>
           </div>
