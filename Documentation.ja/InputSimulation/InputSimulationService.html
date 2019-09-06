@@ -90,10 +90,10 @@
 <li>HoloLens 2 のアイトラッキング</li>
 </ul>
 <p>ユーザーは、従来のキーボードやマウスの組み合わせで実行時に操作をシミュレーションすることができます。それにより、デバイスにデプロイする前に Unity Editor 上でインタラクションをテストすることができます。</p>
-<blockquote>
-<p>[!警告]
-これは、Unity の XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot; では動作しません。Unity Editor 内でのシミュレーションは、MRTK の入力シミュレーションの制御を奪い取ります。MRTK の入力シミュレーションサービスを使用するには、XR Holographic Emulation を、Emulation Mode = <em>&quot;None&quot;</em> にセットする必要があります。</p>
-</blockquote>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>これは、Unity の XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot; では動作しません。Unity Editor 内でのシミュレーションは、MRTK の入力シミュレーションの制御を奪い取ります。MRTK の入力シミュレーションサービスを使用するには、XR Holographic Emulation を、Emulation Mode = <em>&quot;None&quot;</em> にセットする必要があります。</p>
+</div>
 <h2 id="入力シミュレーションサービスの有効化">入力シミュレーションサービスの有効化</h2>
 <p>MRTK では、入力シミュレーションはデフォルトで有効化されています。</p>
 <p>入力シミュレーションサービスは、<a href="../MixedRealityServices.html">Mixed Reality service</a> のオプションです。データプロバイダーとして、<a href="../Input/InputProviders.html">Input System profile</a> に追加することができます。</p>
@@ -102,10 +102,10 @@
 <li><strong>Platform(s)</strong> は、サービスがキーボードとマウスの入力に依存しているため、常に <em>Windows Editor</em> である必要があります</li>
 <li><strong>Profile</strong> は、入力シミュレーションの全ての設定を保持しています。</li>
 </ul>
-<blockquote>
-<p>[!警告]
-現時点では、どのタイプのプロファイルもアサインすることができます。別のプロファイルをサービスにアサインする場合は、必ず <em>Input Simulation</em> タイプのプロファイルを使用してください。そうしないと機能しません。</p>
-</blockquote>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>現時点では、どのタイプのプロファイルもアサインすることができます。別のプロファイルをサービスにアサインする場合は、必ず <em>Input Simulation</em> タイプのプロファイルを使用してください。そうしないと機能しません。</p>
+</div>
 <a target="_blank" href="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_InputSystemDataProviders.png">
   <img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_InputSystemDataProviders.png" title="Full Hand Mesh" width="80%" class="center">
 </a>
@@ -185,10 +185,10 @@
 </li>
 </ol>
 <p><em>Left/Middle/Right Mouse Hand Gesture</em> 設定を使用して、各マウスボタンを、手の形が異なるジェスチャーにマップすることができます。 <em>Default Hand Gesture</em> は、どのボタンも押されていないときの手の形です。</p>
-<blockquote>
-<p>[!注意]
-<em>Pinch</em> ジェスチャーは、この時点では &quot;Select&quot; アクションを発生させる唯一のジェスチャーです</p>
-</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p><em>Pinch</em> ジェスチャーは、この時点では &quot;Select&quot; アクションを発生させる唯一のジェスチャーです</p>
+</div>
 <h2 id="片手での操作">片手での操作</h2>
 <ol>
 <li>手をコントロールするキー（Space/左Shift）を押し続けてください</li>
