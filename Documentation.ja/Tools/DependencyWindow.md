@@ -1,7 +1,7 @@
 
 # Dependency Window （依存関係ウィンドウ）
 
-Unity ではよく、どのアセットが利用されていて、何がそのアセットを参照しているのかを明らかにするのが難しいことがあります。「Find References in Scene」オプションは、現在のシーンのみに関心がある場合にはうまく動作しますが、Unity プロジェクト全体についてはどうでしょうか？ こういう場合に、[Dependency Window（依存関係ウィンドウ）](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Tools/DependencyWindow) が役に立ちます。
+Unity ではよく、どのアセットが利用されていて、何がそのアセットを参照しているのかを明らかにするのが難しいことがあります。「Find References in Scene」オプションは、現在のシーンのみに関心がある場合にはうまく動作しますが、Unity プロジェクト全体についてはどうでしょうか？ このような場合に、[Dependency Window（依存関係ウィンドウ）](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Tools/DependencyWindow) が役に立ちます。
 
 Dependency Window は、どのようにアセットが参照され、お互いにどう依存しているかを表示します。依存関係はプロジェクトの YAML ファイルにある GUID をパースすることで計算されます。（ただし、スクリプトからスクリプトへの依存は考慮されません）
 
