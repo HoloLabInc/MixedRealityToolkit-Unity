@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Diagnostic System | Mixed Reality Toolkit Documentation </title>
+    <title>&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostic System) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Diagnostic System | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostic System) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.45.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,61 +80,54 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="diagnostic-system">Diagnostic System</h1>
+<h1 id="診断システム-diagnostic-system">診断システム (Diagnostic System)</h1>
 
-<p>The Mixed Reality Toolkit Diagnostics System provides diagnostic tools that run within the
-application to enable analysis of application issues.</p>
-<p>The first release of the diagnostics system contains the Visual Profiler to allow for analyzing
-performance issues while using the application.</p>
-<h2 id="getting-started">Getting Started</h2>
+<p>Mixed Reality Toolkit 診断システムは、アプリケーションの問題の分析を可能にするツールです。</p>
+<p>診断システムの最初のリリースには、アプリケーションの使用中にパフォーマンスの問題を分析するためのビジュアルプロファイラ (Visual Profiler) が含まれています。</p>
+<h2 id="はじめに">はじめに</h2>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>It is <strong><em>highly</em></strong> recommended that the diagnostics system be enabled throughout the entire product
-development cycle and disabled as the last change prior to building and releasing the final version.</p>
+<p>診断システムは、製品開発サイクル全体を通じて有効にし、最終バージョンをビルドしてリリースする前の最後の変更として無効にすることを <strong><em>強く</em></strong> お勧めします。</p>
 </div>
 <ol>
-<li><a href="#enable-diagnostics">Enable</a> the diagnostic system</li>
-<li><a href="#configure-diagnostic-options">Configure</a> diagnostic options</li>
-<li><a href="#build-and-deploy">Build and deploy</a></li>
+<li><a href="#%E8%A8%BA%E6%96%AD%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B">診断を有効にする</a></li>
+<li><a href="#%E8%A8%BA%E6%96%AD%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">診断のオプションを設定する</a></li>
+<li><a href="#%E3%83%93%E3%83%AB%E3%83%89%E3%81%A8%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ビルドとデプロイ</a></li>
 </ol>
-<h3 id="enable-diagnostics">Enable Diagnostics</h3>
-<p>The diagnostics system is managed by the MixedRealityToolkit object (or another <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">service registrar</a> component).</p>
-<p>The following steps presume use of the MixedRealityToolkit object. Steps required for other service registrars may be different.</p>
+<h3 id="診断を有効にする">診断を有効にする</h3>
+<p>診断システムは、MixedRealityToolkit オブジェクト (または別の<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">サービス登録 (service registar)</a>) コンポーネントによって管理されます。</p>
+<p>次の手順では、MixedRealityToolkit オブジェクトの使用を想定しています。他のサービスレジストラに必要な手順は異なる場合があります。</p>
 <ol>
-<li>Select the MixedRealityToolkit object in the scene hierarchy.</li>
+<li>シーンヒエラルキーで MixedRealityToolkit オブジェクトを選択します。</li>
 </ol>
-<p><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" alt="MRTK Configured Scene Hierarchy"></p>
+<p><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" alt="シーンヒエラルキーでMRTKの設定"></p>
 <ol start="2">
-<li>Navigate the Inspector panel to the Diagnostics System section and check Enable</li>
+<li>インスペクターで「Diagnostics System」セクションに移動し、「Enable」にチェックを入れます。</li>
 </ol>
-<p><img src="../../Documentation/Images/Diagnostics/MRTKConfig_Diagnostics.png" alt="Enable the Diagnostics System"></p>
+<p><img src="../../Documentation/Images/Diagnostics/MRTKConfig_Diagnostics.png" alt="診断を有効にする"></p>
 <ol start="3">
-<li>Select the Diagnostics System implementation</li>
+<li>診断システムの実行を選択する</li>
 </ol>
-<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsSelectSystemType.png" alt="Select the Diagnostics System Implementation"></p>
+<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsSelectSystemType.png" alt="診断システムの実装を選択する"></p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Users of the default profile (DefaultMixedRealityToolkitConfigurationProfile) will have the
-diagnostics system pre-configured to use the MixedRealityDiagnosticsSystem object.</p>
+<p>デフォルトのプロファイル (DefaultMixedRealityToolkitConfigurationProfiel) を使うユーザーは、事前に設定された診断システム MixedRealityDiagnosticsSystem オブジェクトを使用します。</p>
 </div>
-<h3 id="configure-diagnostic-options">Configure Diagnostic Options</h3>
-<p>The diagnostics system uses a configuration profile to specify which components are to be displayed
-and to configure their settings. Please see <a href="ConfiguringDiagnostics.html">Configuring the Diagnostics System</a>
-for more information pertaining to the available component settings.</p>
-<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfile.png" alt="Diagnostics Options"></p>
-<h3 id="build-and-deploy">Build and Deploy</h3>
-<p>Once the diagnostic system is configured with the desired options, the project can be built
-and deployed to the target platform.</p>
+<h3 id="診断のオプションを設定する">診断のオプションを設定する</h3>
+<p>診断システムは、設定プロファイルを使用して、表示するコンポーネントを指定し、それらの設定を行います。使用可能なコンポーネント設定の詳細については、<a href="../../Documentation/Diagnostics/ConfiguringDiagnostics.html">診断システムの設定</a>を参照してください。</p>
+<p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfile.png" alt="診断の設定オプション"></p>
+<h3 id="ビルドとデプロイ">ビルドとデプロイ</h3>
+<p>診断システムが望ましいオプションで設定されていれば、プロジェクトをターゲットプラットフォームにビルド、デプロイできます。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>While it is possible to use Unity's Play Mode while developing applications without requiring the build and deploy steps, it is important to evaluate the diagnostics system results using a compiled application running on the target hardware and platform.</p>
-<p>Performance diagnostics, such as the Visual Profiler, may not accurately reflect actual application performance when run from within the editor.</p>
+<p>アプリケーションを開発する際、ビルドとデプロイの手順が必要ない Unity の Play モードを利用することも可能ですが、ターゲットハードウェアとプラットフォーム上で実行されているコンパイル済みアプリケーションを使用して診断システムの結果を評価することが重要です。
+ビジュアルプロファイラ (Visual Profiler) などのパフォーマンス診断では、エディター内から実行されたときに実際のアプリケーション のパフォーマンスが正確に反映されない場合があります。</p>
 </div>
-<h2 id="see-also">See Also</h2>
+<h2 id="参考">参考</h2>
 <ul>
-<li><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Diagnostics.html">Diagnostics API documentation</a></li>
-<li><a href="ConfiguringDiagnostics.html">Configuring the Diagnostics System</a></li>
-<li><a href="UsingVisualProfiler.html">Using the Visual Profiler</a></li>
+<li><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Diagnostics.html">診断 API ドキュメンテーション</a></li>
+<li><a href="ConfiguringDiagnostics.html">診断システムの設定</a></li>
+<li><a href="UsingVisualProfiler.html">ビジュアルプロファイラー (Visual Profiler) を使用する</a></li>
 </ul>
 </article>
           </div>
