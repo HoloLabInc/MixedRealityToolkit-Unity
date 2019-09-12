@@ -85,7 +85,7 @@
 <p>入力シミュレーションサービスは、Unity Editor 上で使用できない場合があるデバイスやプラットフォームをエミュレートします。例：</p>
 <ul>
 <li>HoloLens または VR デバイスのヘッドトラッキング</li>
-<li>HoloLens のハンドジェスチャー</li>
+<li>HoloLens のハンドジェスチャ</li>
 <li>HoloLens 2 の多関節ハンドトラッキング</li>
 <li>HoloLens 2 のアイトラッキング</li>
 </ul>
@@ -142,9 +142,9 @@
 <p>HoloLens 2 のインタラクションモデルをエミュレートします</p>
 <p>このモードでは、手の正確な位置やタッチに基づいたインタラクションをシミュレートできます</p>
 </li>
-<li><p><em>Gestures</em>: Air Tap や基本的なジェスチャーを持ったシンプルな手をシミュレートします</p>
+<li><p><em>Gestures</em>: Air Tap や基本的なジェスチャを持ったシンプルな手をシミュレートします</p>
 <p><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/gestures">HoloLens interaction model</a> をエミュレートします。</p>
-<p>フォーカスは視線ポインタを使ってコントロールします。<em>Air Tap</em> ジェスチャーでボタンと対話します</p>
+<p>フォーカスは視線ポインタを使ってコントロールします。<em>Air Tap</em> ジェスチャでボタンと対話します</p>
 </li>
 </ul>
 <h2 id="手の動きのコントロール">手の動きのコントロール</h2>
@@ -160,7 +160,7 @@
 <p>手は、<em>mouse wheel</em> を使って遠ざけたり近づけたりすることができます。
 デフォルトでは、手はマウスのスクロールに応じてややゆっくり動きますが、<em>Hand Depth Multiplier</em> に大きな数字を入れることによって動きを速くすることができます。</p>
 <p>初期状態のカメラと手が表示される距離は、<em>Default Hand Distance.</em> で制御できます。</p>
-<p>デフォルトでは、シミュレートされた手の関節は完全に静的なものです。実機デバイスでは、ハンドトラッキングの原理的な特性として、いくらかのジッターやノイズが発生することに注意してください。
+<p>デフォルトでは、シミュレートされた手の関節は完全に静的なものです。実機デバイスでは、ハンドトラッキングの原理上、いくらかのジッターやノイズが発生することに注意してください。
 実機デバイスでは手のメッシュや関節が有効になっているのを見ることができます（そして、手を完全に静止させていても少しジッターが発生するのがわかります）。<em>Hand Jitter Amount</em> をプラスの値（例として上の画像にあるように 0.1 程度）にすることにより、ジッターのシミュレーションを行うことができます。</p>
 <a target="_blank" href="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandRotationSettings.png">
   <img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandRotationSettings.png" title="Full Hand Mesh" width="80%" class="center">
@@ -172,8 +172,8 @@
 <li>ロール : Z軸回転 (デフォルトでは X/Z キーが  時計回り/反時計回り回転に対応)</li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uRYfwuqsjBQ" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<h2 id="ハンドジェスチャー">ハンドジェスチャー</h2>
-<p>ピンチ、グラブ、指差しなどのハンドジェスチャーをシミュレートできます</p>
+<h2 id="ハンドジェスチャ">ハンドジェスチャ</h2>
+<p>ピンチ、グラブ、指差しなどのハンドジェスチャをシミュレートできます</p>
 <a target="_blank" href="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandGestureSettings.png">
   <img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandGestureSettings.png" title="Full Hand Mesh" width="80%" class="center">
 </a>
@@ -181,13 +181,13 @@
 <li><p>最初に、Manipuration キー（左Shift/Space）を使って手を有効にしてください</p>
 <p>別の方法では、Toggle キー（T/Y）を使って手の on/off を切り替えることもできます</p>
 </li>
-<li><p>操作の間、マウスボタンを押し続けることによってハンドジェスチャーを実行することができます</p>
+<li><p>操作の間、マウスボタンを押し続けることによってハンドジェスチャを実行することができます</p>
 </li>
 </ol>
-<p><em>Left/Middle/Right Mouse Hand Gesture</em> 設定を使用して、各マウスボタンを、手の形が異なるジェスチャーにマップすることができます。 <em>Default Hand Gesture</em> は、どのボタンも押されていないときの手の形です。</p>
+<p><em>Left/Middle/Right Mouse Hand Gesture</em> 設定を使用して、各マウスボタンを、手の形が異なるジェスチャにマップすることができます。 <em>Default Hand Gesture</em> は、どのボタンも押されていないときの手の形です。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p><em>Pinch</em> ジェスチャーは、この時点では &quot;Select&quot; アクションを発生させる唯一のジェスチャーです</p>
+<p><em>Pinch</em> ジェスチャは、この時点では &quot;Select&quot; アクションを発生させる唯一のジェスチャです</p>
 </div>
 <h2 id="片手での操作">片手での操作</h2>
 <ol>
@@ -206,7 +206,7 @@
 <ol>
 <li><em>Space</em> を押し続けて右手を操作します</li>
 <li>グラブしたいオブジェクトに手を動かします</li>
-<li>マウスボタンを押して <em>Pinch</em> ジェスチャーを有効にします。永続化モードではマウスボタンを離すまでジェスチャーが有効になります</li>
+<li>マウスボタンを押して <em>Pinch</em> ジェスチャを有効にします。永続化モードではマウスボタンを離すまでジェスチャが有効になります</li>
 </ol>
 </li>
 <li>同じ手順をもう片方の手で繰り返します。同じオブジェクトの別のポイントをグラブします</li>
