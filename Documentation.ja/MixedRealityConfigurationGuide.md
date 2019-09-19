@@ -121,13 +121,11 @@ Mixed Reality プロジェクトは、プロジェクトでのテレポーテー
 
 ## 空間認識 (Spatial Awareness) の設定
 
-Mixed Reality プロジェクトは、デフォルトで選択されたプロジェクト内の空間スキャン システムを操作するための再構築された空間認識システムを提供します。
-[MRTK 空間認識システム](Architecture/SpatialAwareness.html)の裏にあるアーキテクチャはこちらで表示できます。
+Mixed Reality プロジェクトは、空間スキャン システムと連携する再構成された空間認識システムを提供しており、これはデフォルトで選択されています。MRTK 空間認識システムの背後にあるアーキテクチャは[こちら](Architecture/SpatialAwareness.md)で見ることができます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_SpatialAwarenessSystemSelection.png" width="650px" style="display:block;">
 
-Mixed Reality Toolkit の空間認識設定を使用すると、アプリケーションの起動時に自動的に行うか、プログラムで後で行うかにかかわらず、
-システムの起動方法を調整したり、視野の範囲を設定することができます。
+Mixed Reality Toolkit の空間認識設定を使用すると、どのようにシステムが開始されるかを調整できます。それは、アプリケーションの起動時に自動的に行うことも、視野の範囲を設定するのと同様に後でプログラムから行うこともできます。
 
 また、メッシュとサーフェスの設定を行い、プロジェクトが周囲の環境をどのように認識するかをさらにカスタマイズすることもできます。
 
@@ -140,11 +138,11 @@ Mixed Reality Toolkit の空間認識設定を使用すると、アプリケー�
 
 ## 診断 (Diagnostics) の設定
 
-オプションですが、MRTK に非常に便利な機能は、プラグイン診断機能です。これにより、シーンへのデバッグログのスタイルが表示されます。
+オプションですが、MRTK の非常に便利な機能は、プラグイン診断機能です。これは、シーンへのデバッグ ログのスタイルです。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DiagnosticsSystemSelection.png" width="650px" style="display:block;">
 
-診断プロファイルには、シーン内の表示パネルを有効/無効にする便利なスイッチオン/オフなど、プロジェクトの実行中に監視するいくつかの簡単なシステムが提供されます。
+診断プロファイルは、シーン内の表示パネルを有効/無効にする便利なスイッチオン/オフなど、プロジェクト実行中での監視のためのいくつかの簡単なシステムを提供します。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DiagnosticsProfile.png" width="650px" style="display:block;">
 
@@ -154,20 +152,20 @@ Mixed Reality Toolkit の空間認識設定を使用すると、アプリケー�
 
 ## シーン システム (Scene system) の設定
 
-MRTK は、複雑なシーンのロード/アンロードの管理に役立つオプションを提供します。シーン システムがプロジェクトに適しているかどうかを判断するには、[シーン システムの開始ガイド](SceneSystem/SceneSystemGettingStarted.html)を参照してください。
+MRTK は、複雑なシーンのロード/アンロードの管理に役立つオプション サービスを提供します。シーン システムがプロジェクトに適しているかどうかを判断するには、[シーン システムの開始ガイド](SceneSystem/SceneSystemGettingStarted.md)を参照してください。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_SceneSystemProfile.png" width="650px" style="display:block;">
 
 ---
 <a name="services"/>
 
-## その他のサービスの設定
+## 追加サービスの設定
 
-Mixed Reality Toolkit のより高度な領域の1つは、フレームワークと任意の「サービス」の登録を可能にする[サービスロケータパターン](https://en.wikipedia.org/wiki/Service_locator_pattern)の実装です。これにより、フレームワークに新しい機能/システムを簡単に拡張でき、プロジェクトはこれらの機能を利用して独自のランタイムコンポーネントも登録できます。
+Mixed Reality Toolkit のより高度な領域の1つは、フレームワークに任意の「サービス」の登録を可能にする[サービス ロケーター パターン](https://en.wikipedia.org/wiki/Service_locator_pattern)の実装です。これにより、フレームワークに新しい機能/システムを簡単に拡張できるだけでなく、プロジェクトはこれらの機能を利用して独自のランタイムコンポーネントを登録することもできます。
 
 [Stephen Hodgson の Mixed Reality フレームワークに関する記事](https://medium.com/@stephen_hodgson/the-mixed-reality-framework-6fdb5c11feb2)で、基礎となるフレームワークとその実装についての詳細を読むことができます。
 
-登録済みのサービスは、MonoBehaviour または不格好なシングルトン パターンを実装するオーバーヘッドとコストなしで、すべての Unity イベントを最大限に活用できます。これにより、フォアグラウンド（foreground）プロセスとバックグラウンド (background) プロセス (スポーン システム、ランタイム ゲーム ロジックなど)の両方を実行するためのシーン オーバーヘッドのない純粋な C# コンポーネントを使用できます。
+登録済みのサービスは、MonoBehaviour または不格好なシングルトン パターンを実装するオーバーヘッドとコストなしで、すべての Unity イベントを最大限に活用できます。これにより、フォアグラウンド（foreground）プロセスとバックグラウンド (background) プロセスの両方で、シーン オーバーヘッドのない純粋な C# コンポーネントを使用できます。例えば、スポーン システム、ランタイム ゲーム ロジックなど、実質的には全てのもので利用できます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_RegisteredServiceProfidersProfile.png" width="650px" style="display:block;">
 
@@ -177,72 +175,72 @@ Mixed Reality Toolkit のより高度な領域の1つは、フレームワーク
 
 ## 入力アクション (Input actions) の設定
 
-入力アクションを使用すると、ランタイムプロジェクトからの物理的なインタラクションや入力を抽象化することができます。すべての物理入力 (コントローラー/手/マウス等) は、ランタイムプロジェクトで使用するための論理入力アクションに変換されます。これにより、入力元に関係なく、プロジェクトはシーン内でこれらのアクションを「実行する操作」または「対象とインタラクションする」として実装するだけでできます。
+入力アクションを使用すると、ランタイムプロジェクトからのすべての物理的なインタラクションや入力を抽象化することができます。すべての物理入力 (コントローラー/手/マウス等) は、ランタイムプロジェクトで使用するための論理入力アクションに変換されます。これにより、入力元に関係なく、プロジェクトはシーン内でこれらのアクションを「実行する操作」または「対象とのインタラクション」としてシンプルに実装できます。
 
-新しい入力アクションを作成するには、[Add a new Action] ボタンをクリックし、その内容にわかりやすいテキスト名を入力します。次に、アクションの軸 (データの１種類) のみを選択するか、物理コントローラーの場合は、それがアタッチできる物理入力タイプを選択するだけです。
+新しい入力アクションを作成するには、[Add a new Action] ボタンをクリックし、それが何を表すのかがわかりやすい名前を入力します。次に、アクションが伝える軸 (データ型) を選択するか、物理コントローラーの場合は、アクションにひもづく物理入力タイプを選択するだけです。例えば、以下のような軸やデータ型があります。
 
 | 軸拘束 | データ型 | 説明 | 使用例 |
 | :--- | :--- | :--- | :--- |
-| なし | データなし | 空のアクションまたはイベントに使用 | イベント トリガー |
-| 未加工 (予約済み) | object | 将来の使用のために予約済み| N/A |
-| デジタル | bool | boolean 値のオンまたはオフ型データ  | コントローラー ボタン |
-| 単一軸 | float | 単一の精度データ値  | トリガなど、範囲の入力  |
-| デュアル軸  | Vector2 | 複数軸のデュアル浮動小数点型日付  | Dpad またはサムスティック |
-| 3 つの Dof 位置 | Vector3 | 3つの浮動軸からの位置タイプデータ | 3D 位置スタイルのみコントローラー  |
-| 3 つの Dof 回転 | Quaternion | 4つの浮動軸を持つ回転のみの入力 | 3度スタイルのコントローラー、例えば Oculus Go コントローラー |
-| Six Dof | Mixed Reality Pose (Vector3, Quaternion) | Vector3 コンポーネントと Quaternion コンポーネントの両方を使用した位置と回転スタイルの入力 | モーション コントローラーまたは Pointer |
+| None（なし） | データなし | 空のアクションまたはイベントに使用 | イベント トリガー |
+| Raw（生データ） （予約済み） | object | 将来の使用のために予約済み| N/A |
+| Digital（デジタル） | bool | boolean 値のオン オフ データ型  | コントローラー ボタン |
+| Single Axis（1軸）| float | 単精度のデータ値  | トリガーなど、範囲のある入力  |
+| Dual Axis（2軸）| Vector2 | 複数軸のための、2つの float データ型 | 十字キーやジョイスティック |
+| Three Dof Position（3自由度位置） | Vector3 | 3つの float データからなる位置のタイプデータ | 3D 位置スタイルのみコントローラー  |
+| Three Dof Rotation（3自由度回転） | Quaternion | 4つの float 軸をもつ回転のみの入力 | 3軸のコントローラー、例えば Oculus Go コントローラー |
+| Six Dof（6自由度） | Mixed Reality Pose (Vector3, Quaternion) | Vector3 コンポーネントと Quaternion コンポーネントの両方を使用した位置と回転の入力 | モーション コントローラーまたは Pointer |
 
 入力アクションを利用するイベントは物理コントローラーに限定されず、プロジェクト内で実行時に新しいアクションを生成できます。
 
 > [!NOTE]
-> 入力アクションは、実行時に編集できない数少ないコンポーネントの 1 つであり、設計時のみ変更できます。このプロファイルは、各アクションに対して生成された ID に対するフレームワーク (およびプロジェクト) の依存関係により、プロジェクトの実行中に入れ替えをしないでください。
+> 入力アクションは、実行時に編集できない数少ないコンポーネントの 1 つであり、設計時のみ変更できます。このプロファイルは、各アクションに対して生成された ID に対しフレームワーク (およびプロジェクト) が依存しているため、プロジェクトの実行中に入れ替えをしないでください。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionsProfile.png" width="650px" style="display:block;">
 
 ---
 <a name="inputactionrules"/>
 
-## Input Action Rules プロフィル
+## Input Action Rules （入力アクション ルール）
 
 Input Action Rules を使用すると、1 つの入力アクションに対して発生したイベントを、そのデータ値に基づいて別のアクションに自動的に変換できます。これらはフレームワーク内でシームレスに管理され、パフォーマンスコストは発生しません。
 
-たとえば、単一のデュアル軸入力イベントを DPad から 4 つの対応する "DPad Up" / "DPad Down" / "Dpad Left" / "Dpad Right" アクションに変換します (下の図に示すように)。
+たとえば、1 つの十字キーの 2 軸入力イベントを、4 つの対応する "DPad Up" / "DPad Down" / "Dpad Left" / "Dpad Right" アクションに変換します (下の図に示すように)。
 
-これは、独自のコードで行うこともできます。しかし、これは非常に一般的なパターンであったので、フレームワークはこれを外から変更できるメカニズムを提供します。
+これは、独自のコードで行うこともできます。しかし、これは非常に一般的なパターンであったので、フレームワークはこれをすぐに使えるようにするメカニズムを提供しています。
 
-Input Action Rules は、使用可能な入力軸のいずれかに対して設定できます。ただし、1つの軸タイプからの入力アクションは、同じ軸タイプの別の入力アクションに変換できます。デュアル軸アクションを別のデュアル軸アクションにマップできますが、デジタルアクションまたはアクションなしにはマップできません。
+Input Action Rules は、使用可能な入力軸のすべてに対して設定できます。ただし、1つの軸タイプからの入力アクションは、同じ軸タイプの別の入力アクションに変換できます。2 軸アクションを別の 2 軸アクションにマップできますが、デジタルアクションまたは None アクションにはマップできません。
 
 ![](../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionRulesProfile.png)
 
 ---
 <a name="pointer"/>
 
-## Pointers の設定
+## Pointer （ポインター）の設定
 
-入力の向きとヒットテストの両方を、シーン内の任意のオブジェクト (コライダがアタッチされている、または UI コンポーネント) に対して行います。Pointers は、デフォルトでは、コントローラー、ヘッドセット(視線/フォーカス)、マウス/タッチ入力用に自動的に設定されます。
+ポインターは、シーン内ですべての入力デバイスからの相互作用を働かせるために使われ、入力の向きとヒット テストの両方を、シーン内の任意のオブジェクト (コライダーがアタッチされているもの、または UI コンポーネント) に対し与えます。ポインターは、デフォルトでは、コントローラー、ヘッドセット(ゲイズ / フォーカス)、マウス / タッチ入力用に自動的に設定されます。
 
-Pointers は、Mixed Reality Toolkit によって提供される多くのラインコンポーネントの 1 つを使用してアクティブシーン内で可視化することも、 MRTK IMixedRealityPointer インターフェイスを実装している場合は独自の要素を使用して可視化することもできます。
+ポインターは、Mixed Reality Toolkit によって提供される多くのラインコンポーネントの 1 つを使用してアクティブなシーン内で可視化することもできますし、MRTK IMixedRealityPointer インターフェイスを実装している場合は独自のコンポーネントを使用して可視化することもできます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputPointerProfile.png" width="650px" style="display:block;">
 
 
-* Pointing Extent: 注視を含むすべてのポインターのグローバル ポインティング範囲を決定。
-* Pointing Raycast Layer Masks: レイキャストに対してどのレイキャストを行うレイヤーを決定します。
-* Debug Draw Pointing Rays: レイキャストに使用されるレイを可視化するためのデバッグ ヘルパー。
-* Debug Draw Pointing Rays Colors: 可視化に使用する一連の色。
-* Gaze cursor prefab: 任意のシーンにグローバルな視線カーソルを簡単に指定できます。
+* Pointing Extent: ゲイズを含むすべてのポインターのグローバルなポインティング範囲を決定します。
+* Pointing Raycast Layer Masks: ポインターがどのレイヤーに対してレイキャストを行うかを決定します。
+* Debug Draw Pointing Rays: レイキャストに使用されるレイを可視化するためのデバッグ ヘルパー
+* Debug Draw Pointing Rays Colors: 可視化に使用する色のセット
+* Gaze cursor prefab: 任意のシーンにグローバルなゲイズ カーソルを簡単に指定できるようにします。
 
-必要に応じて、Gaze Provider にすばやく移り、Gaze の特定の値をオーバーライドするための追加のヘルパーボタンがあります。
+必要に応じて Gaze のなにか特定の値をオーバーライドするために、Gaze Provider にすばやくジャンプするための追加のヘルパーボタンがあります。
 
 ---
 <a name="gestures"/>
 
 ## ジェスチャ (Gestures) の設定
 
-ジェスチャは、さまざまな SDK (HoloLens など) によって提供されるさまざまな「ジェスチャ」入力メソッドに入力アクションを割り当てることができるシステム固有の実装です。
+ジェスチャは、入力アクションをさまざまな SDK (HoloLens など) によって提供されるさまざまな「ジェスチャ」入力メソッドに割り当てることができるシステム固有の実装です。
 
 > [!NOTE]
-> 現在のジェスチャの実装は HoloLens 専用で、将来ツールキットに追加される他のシステムに対して拡張されます (日付は未定です)。
+> 現在のジェスチャの実装は HoloLens 専用で、将来ツールキットに他のシステムが追加される際に拡張される予定です (日付は未定です)。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_GesturesProfile.png" width="650px" style="display:block;">
 
@@ -254,7 +252,7 @@ Pointers は、Mixed Reality Toolkit によって提供される多くのライ�
 ジェスチャと同様に、一部のランタイム プラットフォームでは、Unity プロジェクトで受信できるコマンドを生成する機能を備えたインテリジェントな "Speech to Text" 機能も提供します。この設定プロファイルを使用すると、登録済みの 「単語」を設定し、プロジェクトで受信できる入力アクションに変換できます。必要に応じて、キーボード アクションにアタッチすることもできます。
 
 > [!IMPORTANT]
-> このシステムは現在、HoloLens や Windows 10 デスクトップなどの Windows 10 プラットフォームで実行されている場合にのみ音声認識をサポートしており、将来 MRTK に追加される他のシステムでも拡張される予定です (日付はまだありません)。
+> このシステムは現在、HoloLens や Windows 10 デスクトップなどの Windows 10 プラットフォームで実行されている場合にのみ音声認識をサポートしており、将来 MRTK に他のシステムが追加される際に拡張される予定です (日付は未定です)。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_SpeechCommandsProfile.png" width="650px" style="display:block;">
 
