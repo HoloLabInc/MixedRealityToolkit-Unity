@@ -264,14 +264,14 @@ Input Action Rules は、使用可能な入力軸のすべてに対して設定�
 
 Mixed Reality Toolkit の主要な設定画面の1つは、プロジェクトで使用できるさまざまな種類のコントローラーを設定およびマッピングする機能です。
 
-以下の設定画面では、ツールキットで現在使われているコントローラーのいずれかを設定できます。
+以下の設定画面では、ツールキットに現在認識されているコントローラーのいずれかを設定できます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ControllerMappingProfile.png" width="650px" style="display:block;">
 
-MRTK は、次のコントローラー/システムのデフォルト設定を提供します。
+MRTK は、以下のコントローラー / システムのデフォルト設定を提供しています。
 
 * マウス (3D 空間マウスのサポートを含む)
-* タッチスクリーン
+* タッチ スクリーン
 * Xbox コントローラー
 * Windows Mixed Reality コントローラー
 * HoloLens ジェスチャー
@@ -280,7 +280,7 @@ MRTK は、次のコントローラー/システムのデフォルト設定を�
 * Oculus Remote コントローラー
 * 汎用 OpenVR デバイス (上級ユーザーのみ)
 
-あらかじめ構築されたコントローラー システムのいずれかの画像をクリックすると、対応するすべての入力に対して単一の入力アクションを設定できます (以下の Oculus Touch コントローラーの設定画面を参照)。
+あらかじめ構築されたコントローラー システムのいずれかの画像をクリックすると、対応するすべての入力に対して 1 つの入力アクションを設定できます (例えば、以下の Oculus Touch コントローラーの設定画面をご覧ください)。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_OculusTouchConfigScreen.png" width="650px" style="display:block;">
 
@@ -291,27 +291,27 @@ MRTK は、次のコントローラー/システムのデフォルト設定を�
 
 ## コントローラーの可視化の設定
 
-コントローラー マッピングに加えて、シーン内でのコントローラーの表示方法をカスタマイズするための個別の設定プロファイルが用意されています。
+コントローラーのマッピングに加えて、シーン内でのコントローラーの表示方法をカスタマイズするための個別の設定プロファイルが用意されています。
 
-これは、「Global」(特定のハンド用コントローラーのすべてのインスタンス) または個々のコントローラー タイプ/ハンドに固有の設定が可能です。
+これは、「Global」(特定のハンド用コントローラーのすべてのインスタンス) または個々のコントローラー タイプ/ハンドに対して個別に設定が可能です。
 
 > [!IMPORTANT]
-> MRTK は現在、Unity が提供されていない、数多くのネイティブ SDKのコントローラーのモデルの gLTF モデルをロード/レンダリングする機能をサポートしていません。これは、使用可能なときに追加されます。
+> Unity が gLTF モデル（多くの SDK で提供されているでデフォルトの形式）をロード、レンダリングする機能を提供していないため、MRTK は現在ネイティブ SDK のコントローラー モデルをサポートしていません。これは、利用可能になった際に、拡張する予定です。
 
-シーン内のコントローラー リプレゼンテーションを物理コントローラーの位置からオフセットする必要がある場合は、コントローラー モデルのプレハブに対してオフセットを設定するだけです (例えば、コントローラー プレハブの変換位置をオフセット位置で設定します)。
+シーン内のコントローラーの表示を物理コントローラーの位置からオフセットする必要がある場合は、コントローラー モデルのプレハブに対してオフセットを設定するだけです (例えば、コントローラー プレハブの transform position をオフセット位置に設定します)。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ControllerVisualizationProfile.png" width="650px" style="display:block;">
 
 
 <a name="inspectors"/>
 
-## Service Inspectors
+## サービス インスペクター (Service Inspectors)
 
-サービス インスペクターは、シーン内オブジェクトを生成する、エディタ上のみの機能です。これらのオブジェクトを選択すると、ドキュメントリンクを提供する Inspector (インスペクター) が表示され、エディタの見た目を制御し、サービスの状態に関する情報が表示されます。
+サービス インスペクターは、アクティブなサービスを表すシーン内オブジェクトを生成する、エディタ上のみの機能です。これらのオブジェクトを選択すると、\[Inspector]（インスペクター）にドキュメントへのリンク、エディターでの可視化のコントロール、サービスの状態に関する情報が表示されます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ServiceInspectors.PNG" width="350px" style="display:block;">
 
-Configuration Profile の Editor Settings の Use Service Inspectors をオンにすると、サービスインスペクターを有効にできます。
+Configuration Profile の Editor Settings の \[Use Service Inspectors] をチェックすると、サービス インスペクターを有効にできます。
 
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_EnableServiceInspectors.PNG" width="650px" style="display:block;"><br/>
 <sup>サービス インスペクターを有効にする</sup>
