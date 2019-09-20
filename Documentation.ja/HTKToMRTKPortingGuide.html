@@ -8,7 +8,7 @@
     <title>HTK2017 &#12363;&#12425; MRTK v2 &#12408;&#12398;&#31227;&#26893;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="HTK2017 &#12363;&#12425; MRTK v2 &#12408;&#12398;&#31227;&#26893;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.45.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -105,7 +105,7 @@
 </tr>
 <tr>
 <td>設定</td>
-<td>シーン内の個々のスクリプトのインスペクタで設定されます。</td>
+<td>シーン内の個々のスクリプトのインスペクターで設定されます。</td>
 <td>以下に示す Mixed Reality Input System プロファイルおよび関連するプロファイルによって設定されます。</td>
 </tr>
 </tbody>
@@ -120,8 +120,8 @@
 <li>Mixed Reality Pointer Profile</li>
 </ul>
 <p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html">Gaze Provider</a> の設定はシーン内の Main Camera オブジェクト上で変更されています。</p>
-<p>Windows Mixed Reality Device Manager などのプラットフォームサポートコンポーネントは、対応するサービスのデータプロバイダに追加する必要があります。</p>
-<h3 id="インターフェースおよびイベントの対応付け">インターフェースおよびイベントの対応付け</h3>
+<p>Windows Mixed Reality Device Manager などのプラットフォーム サポート コンポーネントは、対応するサービスのデータ プロバイダーに追加する必要があります。</p>
+<h3 id="インターフェイスおよびイベントの対応付け">インターフェイスおよびイベントの対応付け</h3>
 <p>一部のイベントに関しては固有のイベントがなくなり、MRTK v2 では<a href="Input/InputActions.html">MixedRealityInputAction</a> に含まれます。
 これらの動作は Input Actions プロファイルで指定され、Controller Mapping profile 内で特定のコントローラーやプラットフォームに対応付けされます。<code>OnInputDown</code> のようなイベントは MixedRealityInputAction タイプをチェックする必要があります。</p>
 <p>関連する input systems:</p>
@@ -233,7 +233,7 @@
 </tr>
 <tr>
 <td>設定</td>
-<td>Camera の設定は、プレハブインスタンスにて行います。</td>
+<td>Camera の設定は、プレハブ インスタンスにて行います。</td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCameraProfile.html">Mixed Reality Camera Profile</a> にて Camera の設定を行います。</td>
 </tr>
 </tbody>
@@ -252,15 +252,15 @@
 <tr>
 <td>セットアップ</td>
 <td>SpeechInputSource をシーンに追加してください。</td>
-<td>Windows Speech Input Manager などのキーワードサービスが入力システムのデータプロバイダに追加されている必要があります。</td>
+<td>Windows Speech Input Manager などのキーワード サービスが入力システムのデータ プロバイダーに追加されている必要があります。</td>
 </tr>
 <tr>
 <td>設定</td>
-<td>認識するキーワードをSpeechInputSource のインスペクタで設定します。</td>
+<td>認識するキーワードをSpeechInputSource のインスペクターで設定します。</td>
 <td>キーワードは <a href="Input/Speech.html">Mixed Reality Speech Commands Profile</a> で設定します。</td>
 </tr>
 <tr>
-<td>イベントハンドラ</td>
+<td>イベント ハンドラー</td>
 <td><code>ISpeechHandler</code></td>
 <td><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a></td>
 </tr>
@@ -279,10 +279,10 @@
 <tr>
 <td>セットアップ</td>
 <td>DictationInputManager をシーンに追加してください。</td>
-<td>Dictation のサポートには、Windows Dictation Input Manager などのサービスを、input system のデータプロバイダに追加する必要があります。</td>
+<td>Dictation のサポートには、Windows Dictation Input Manager などのサービスを、input system のデータ プロバイダーに追加する必要があります。</td>
 </tr>
 <tr>
-<td>イベントハンドラ</td>
+<td>イベント ハンドラー</td>
 <td><code>IDictationHandler</code></td>
 <td><code>IMixedRealityDictationHandler</code><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a></td>
 </tr>
@@ -302,11 +302,11 @@
 <tr>
 <td>セットアップ</td>
 <td>SpatialMapping プレハブをシーンに追加します。</td>
-<td>Configuration Profile 内の Spatial Awareness System を有効にし、 Windows Mixed Reality Spatial Mesh Observer などの空間オブザーバーを Spatial Awareness System のデータプロバイダに追加します。</td>
+<td>Configuration Profile 内の Spatial Awareness System を有効にし、 Windows Mixed Reality Spatial Mesh Observer などの空間オブザーバーを Spatial Awareness System のデータ プロバイダーに追加します。</td>
 </tr>
 <tr>
 <td>設定</td>
-<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>インスペクター内でシーン インスタンスを設定します。</td>
 <td>それぞれの空間オブザーバーのプロファイルを設定します。</td>
 </tr>
 </tbody>
@@ -345,7 +345,7 @@
 </tr>
 <tr>
 <td>設定</td>
-<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>インスペクター内でシーン インスタンスを設定します。</td>
 <td>未実装の状態です。</td>
 </tr>
 </tbody>
@@ -367,7 +367,7 @@
 </tr>
 <tr>
 <td>設定</td>
-<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>インスペクター内でシーン インスタンスを設定します。</td>
 <td>Boundary Visualization profile 内にて設定します。</td>
 </tr>
 </tbody>
@@ -389,7 +389,7 @@
 </tr>
 <tr>
 <td>設定</td>
-<td>インスペクタ内でシーンインスタンスを設定します。</td>
+<td>インスペクター内でシーン インスタンスを設定します。</td>
 <td>更新中の状態です。</td>
 </tr>
 </tbody>
@@ -415,7 +415,7 @@
 <td><a href="README_Interactable.html">Interactable</a></td>
 </tr>
 <tr>
-<td>バウンディングボックス (Bounding Box)</td>
+<td>バウンディング ボックス (Bounding Box)</td>
 <td><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_BoundingBoxGizmoExample.md">Bounding Box</a></td>
 <td><a href="README_BoundingBox.html">Bounding Box</a></td>
 </tr>
@@ -457,7 +457,7 @@
 </tbody>
 </table>
 <h2 id="ユーティリティ-utilities">ユーティリティ (Utilities)</h2>
-<p>一部のユーティリティは、ソルバーシステムと重複するように調整されています。 必要なスクリプトが見つからない場合は、問題を報告してください。</p>
+<p>一部のユーティリティは、ソルバー システムと重複するように調整されています。 必要なスクリプトが見つからない場合は、問題を報告してください。</p>
 <table>
 <thead>
 <tr>

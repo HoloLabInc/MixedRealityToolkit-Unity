@@ -8,7 +8,7 @@
     <title>Dependency Window &#65288;&#20381;&#23384;&#38306;&#20418;&#12454;&#12451;&#12531;&#12489;&#12454;&#65289; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Dependency Window &#65288;&#20381;&#23384;&#38306;&#20418;&#12454;&#12451;&#12531;&#12489;&#12454;&#65289; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.45.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -85,7 +85,7 @@
 <p>Unity ではよく、どのアセットが利用されていて、何がそのアセットを参照しているのかを明らかにするのが難しいことがあります。「Find References in Scene」オプションは、現在のシーンのみに関心がある場合にはうまく動作しますが、Unity プロジェクト全体についてはどうでしょうか？ このような場合に、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Tools/DependencyWindow">Dependency Window（依存関係ウィンドウ）</a> が役に立ちます。</p>
 <p>Dependency Window は、どのようにアセットが参照され、お互いにどう依存しているかを表示します。依存関係はプロジェクトの YAML ファイルにある GUID をパースすることで計算されます。（ただし、スクリプトからスクリプトへの依存は考慮されません）</p>
 <h3 id="使い方">使い方</h3>
-<p>Dependency Window を開くには、 <em>Mixed Reality Toolkit-&gt;Utilities-&gt;Dependency Window</em> を選択します。これによってウィンドウが開き、自動的にプロジェクトの依存関係グラフが作られ始めます。依存関係グラフができると、プロジェクトタブ内で、依存関係を見るためにアセットを選択できるようになります。</p>
+<p>Dependency Window を開くには、 <em>Mixed Reality Toolkit-&gt;Utilities-&gt;Dependency Window</em> を選択します。これによってウィンドウが開き、自動的にプロジェクトの依存関係グラフが作られ始めます。依存関係グラフができると、プロジェクト タブ内で、依存関係を見るためにアセットを選択できるようになります。</p>
 <p><img src="../../Documentation/Images/DependencyWindow/MRTK_Dependency_Window.png" alt=""></p>
 <p>ウィンドウには、現在選択しているアセットが依存しているアセットのリストと、選択しているアセットに依存しているアセットの階層的なリストが表示されます。もし、現在選択しているアセットに依存しているものが何もなければ、そのアセットをプロジェクトから削除することを検討できます。（ただし、いくつかのアセットは、Shader.Find() のような API を通じてプログラムでロードされるので、依存関係が追跡されないかもしれません）</p>
 <p>Dependency Window では、どのアセットからも参照されておらず、削除することを検討できるすべてのアセットのリストも表示できます。</p>
