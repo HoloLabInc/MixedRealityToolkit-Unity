@@ -81,7 +81,7 @@
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 
-<p><img src="../Images/EyeTracking/mrtk_et_targetselect.png" alt="MRTK"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png" alt="MRTK"></p>
 <h1 id="eye-supported-target-selection">Eye-supported target selection</h1>
 <p>This page discusses different options for accessing eye gaze data and eye gaze specific events to select targets in MRTK. Eye tracking allows for fast and effortless target selections using a combination of information about what a user is looking at with additional inputs such as <em>hand tracking</em> and <em>voice commands</em>:</p>
 <ul>
@@ -303,7 +303,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
 <ol start="2">
 <li>Add the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.EyeTrackingTarget.html"><code>EyeTrackingTarget</code></a> script to your target GameObject and reference the <em>RotateTarget()</em> function in the UnityEvent trigger as shown the screenshot below:</li>
 </ol>
-<p><img src="../Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg" alt="EyeTrackingTarget sample"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg" alt="EyeTrackingTarget sample"></p>
 <h3 id="example-3-pop-those-gems-aka-multimodal-eye-gaze-supported-target-selection">Example #3: Pop those gems aka <em>multimodal eye-gaze-supported target selection</em></h3>
 <p>In the previous example, we have shown how easy it is to detect whether a target is looked at and how to trigger a reaction to that. Next, let's make the gems explode using the <em>OnSelected()</em> event from the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.EyeTrackingTarget.html"><code>EyeTrackingTarget</code></a>. The interesting part is <em>how</em> the selection is triggered. The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.EyeTrackingTarget.html"><code>EyeTrackingTarget</code></a>
 allows for quickly assigning different ways to invoke a selection:</p>
@@ -335,7 +335,7 @@ This means that the user can simply raise their hand and pinch their thumb and i
 </ol>
 </li>
 </ul>
-<p><img src="../Images/EyeTracking/mrtk_et_voicecmdsample.jpg" alt="Voice commands EyeTrackingTarget sample"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_voicecmdsample.jpg" alt="Voice commands EyeTrackingTarget sample"></p>
 <p>When a gem is selected it will explode, making a sound and disappear. This is handled by the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.HitBehaviorDestroyOnSelect.html"><code>HitBehaviorDestroyOnSelect</code></a> script. You have two options:</p>
 <ul>
 <li><p><strong>In the Unity Editor:</strong>

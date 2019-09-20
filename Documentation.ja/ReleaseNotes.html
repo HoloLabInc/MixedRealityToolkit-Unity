@@ -201,7 +201,7 @@ services (ex: Input System).</p>
 recommended MRTK configurations for best performance.</p>
 <p>To configure the application for HoloLens (1st gen) optimized settings, set the
 Mixed Reality Toolkit's <strong>Active Profile</strong> to <strong>DefaultHoloLens1ConfigurationProfile</strong>.</p>
-<p><img src="./Images/ReleaseNotes/DefaultHoloLens1ConfigurationProfile.png" alt="Default HoloLens (1st gen) Configuration Profile"></p>
+<p><img src="../Documentation/Images/ReleaseNotes/DefaultHoloLens1ConfigurationProfile.png" alt="Default HoloLens (1st gen) Configuration Profile"></p>
 <p><strong>Dependency window</strong></p>
 <p>A <a href="Tools/DependencyWindow.html">dependency window</a> has been added which displays how assets reference and depend on each other.
 This tool can be used to easily determine which assets within a project are not being used.</p>
@@ -234,7 +234,7 @@ solvers are now an official feature (no longer experimental) and have improved d
 <p><strong>IMixedRealityRaycastProvider</strong></p>
 <p>The input system was updated to allow for raycast customization, via custom implementations of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityRaycastProvider.html"><code>IMixedRealityRaycastProvider</code></a>.</p>
 <p>Specify the desired raycast provider in the Input System's configuration profile.</p>
-<p><img src="Images/ReleaseNotes/SelectRaycastProvider.png" alt="Selecting the Raycast provider"></p>
+<p><img src="../Documentation/Images/ReleaseNotes/SelectRaycastProvider.png" alt="Selecting the Raycast provider"></p>
 <p><strong>Improved solvers</strong></p>
 <p>Solvers can now be controlled by the first available hand/controller instead of being locked to left or right handedness. Old value types of <em>Tracked Target Type</em> need to be updated to the new non-obsolete values.</p>
 <p><img src="../Documentation/Images/Solver/TrackedObjectType-Example.gif" alt="Solver"></p>
@@ -357,7 +357,7 @@ Visual Studio.</p>
 <p><strong>VR/Immersive devices: Content in some demo scenes is placed below the user</strong></p>
 <p>Some demo scenes contained in the Examples package are optimized for HoloLens device's (headset's y position is 0). These scenes
 may place objects below the user when run on VR/Immersive device's (headset's Y position is the distance from the floor). To work around this issue, select the <strong>Scene Content</strong> object, in the Hierarchy, and set the Transform's Position Y value to <strong>1.5</strong> (1.5 meters, or the preferred headset height).</p>
-<p><img src="Images/ReleaseNotes/AdjustContentHeight.png" alt="Adjusting Scene Content Height"></p>
+<p><img src="../Documentation/Images/ReleaseNotes/AdjustContentHeight.png" alt="Adjusting Scene Content Height"></p>
 </article>
           </div>
           

@@ -114,12 +114,12 @@
 <h5 id="transparent-mrtk-standard-shader">Transparent MRTK Standard shader</h5>
 <p>For transparent materials using the <a href="README_MRTKStandardShader.html">MRTK Standard shader</a>, select the material to view it in the <em>Inspector</em> window. Then click the <em>Fix Now</em> button to convert the material to write to depth (i.e Z-Write On).</p>
 <p>Before</p>
-<p><img src="Images/Performance/DepthBufferFixNow_Before.png" alt="Depth Buffer Before Fix MRTK Standard Shader"></p>
+<p><img src="../Documentation/Images/Performance/DepthBufferFixNow_Before.PNG" alt="Depth Buffer Before Fix MRTK Standard Shader"></p>
 <p>After</p>
-<p><img src="Images/Performance/DepthBufferFixNow_After.png" alt="Depth Buffer Fixed MRTK Standard Shader"></p>
+<p><img src="../Documentation/Images/Performance/DepthBufferFixNow_After.PNG" alt="Depth Buffer Fixed MRTK Standard Shader"></p>
 <h5 id="text-mesh-pro">Text Mesh Pro</h5>
 <p>For Text Mesh Pro objects, select the TMP GameObject to view it in the inspector. Under the material component, switch the shader for the assigned material to use the MRTK TextMeshPro shader.</p>
-<p><img src="Images/Performance/TextMeshPro-DepthBuffer-Fix.PNG" alt="Text Mesh Pro Depth Buffer Fix"></p>
+<p><img src="../Documentation/Images/Performance/TextMeshPro-DepthBuffer-Fix.PNG" alt="Text Mesh Pro Depth Buffer Fix"></p>
 <h5 id="custom-shader">Custom shader</h5>
 <p>If writing a custom shader, add the <a href="https://docs.unity3d.com/Manual/SL-CullAndDepth.html">ZWrite flag</a> to the top of the <em>Pass</em> block definition to configure the shader to write to the depth buffer.</p>
 <pre><code>Shader &quot;Custom/MyShader&quot;

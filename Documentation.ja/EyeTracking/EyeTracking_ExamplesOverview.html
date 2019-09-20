@@ -89,7 +89,7 @@ This enables users to quickly and effortlessly select and move holographic conte
 The demos also include an example for eye-gaze-directed scroll, pan and zoom of text and images on a slate.
 Finally, an example is provided for recording and visualizing the user's visual attention on a 2D slate.
 In the following, we will go into more detail what each of the different samples in the <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/EyeTracking">MRTK eye tracking example package</a> includes:</p>
-<p><img src="../Images/EyeTracking/mrtk_et_list_et_scenes.jpg" alt="List of eye tracking scenes"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_list_et_scenes.jpg" alt="List of eye tracking scenes"></p>
 <p>We will start with a quick overview of what the individual eye tracking demo scenes are about.
 The MRTK eye tracking demo scenes are <a href="https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html">loaded additively</a> which we will explain below how to set up.</p>
 <h2 id="overview-of-the-eye-tracking-demo-samples">Overview of the eye tracking demo samples</h2>
@@ -131,21 +131,21 @@ prior to building the app in Visual Studio.</p>
 <p>The <em>EyeTrackingDemo-00-RootScene</em> is the base (<em>root</em>) scene that has all the core MRTK components included.
 This is the scene that you need to load first and from which you will run the eye tracking demos.
 It comes with a graphical scene menu that allows you to easily switch between the different eye tracking samples which will be <a href="https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html">loaded additively</a>.</p>
-<p><img src="../Images/EyeTracking/mrtk_et_scenemenu.jpg" alt="Scene menu in eye tracking sample"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_scenemenu.jpg" alt="Scene menu in eye tracking sample"></p>
 <p>The root scene includes a few core components that will persist across the additively loaded scenes, such as the MRTK configured profiles and scene camera.
 The <em>MixedRealityBasicSceneSetup</em> (see screenshot below) includes a script that will automatically load the referenced scene on startup.
 By default this is <em>EyeTrackingDemo-02-TargetSelection</em>.</p>
-<p><img src="../Images/EyeTracking/mrtk_et_onloadstartscene.jpg" alt="Example for the OnLoadStartScene script"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg" alt="Example for the OnLoadStartScene script"></p>
 <h3 id="2-adding-scenes-to-the-build-menu">2. Adding scenes to the Build menu</h3>
 <p>To load additive scenes during runtime, you must add these scenes to your <em>Build Settings -&gt; Scenes in Build</em> menu first.
 It is important that the root scene is shown as the first scene in the list:</p>
-<p><img src="../Images/EyeTracking/mrtk_et_build_settings.jpg" alt="Build Settings scene menu for eye tracking samples"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_build_settings.jpg" alt="Build Settings scene menu for eye tracking samples"></p>
 <h3 id="3-play-the-eye-tracking-samples-in-the-unity-editor">3. Play the eye tracking samples in the Unity Editor</h3>
 <p>After adding the eye tracking scenes to the Build Settings and loading the <em>EyeTrackingDemo-00-RootScene</em>, there is one last thing you may want to check: Is the <em>'OnLoadStartScene'</em> script that is attached to the <em>MixedRealityBasicSceneSetup</em> GameObject enabled? This is to let the root scene know which demo scene to load first.</p>
-<p><img src="../Images/EyeTracking/mrtk_et_onloadstartscene.jpg" alt="Example for the OnLoad_StartScene script"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg" alt="Example for the OnLoad_StartScene script"></p>
 <p>Let's roll! Hit <em>&quot;Play&quot;</em>!
 You should see several gems appear and should see the scene menu at the top.</p>
-<p><img src="../Images/EyeTracking/mrtk_et_targetselect.png" alt="Sample screenshot from the ET target select scene"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png" alt="Sample screenshot from the ET target select scene"></p>
 <p>You should notice a small semitransparent circle at the center of your game view.
 This acts as an indicator (cursor) of your <em>simulated eye gaze</em>:
 Simply press down the <em>right mouse button</em> and move the mouse to change its position.
@@ -172,7 +172,7 @@ No problem! Here is what you can do:</p>
 <li>In the <em>root</em> scene, disable the <em>'OnLoadStartScene'</em> script</li>
 <li><em>Drag and drop</em> one of the eye tracking test scenes that are described below (or any other scene) into your <em>Hierarchy</em> view as shown in the screenshot below.</li>
 </ol>
-<p><img src="../Images/EyeTracking/mrtk_et_additivescene.jpg" alt="Example for additive scene"></p>
+<p><img src="../../Documentation/Images/EyeTracking/mrtk_et_additivescene.jpg" alt="Example for additive scene"></p>
 <ol start="4">
 <li>Press <em>Play</em></li>
 </ol>

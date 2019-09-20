@@ -93,10 +93,10 @@
 <li><p><em>Pointing Raycast Layer Masks</em> - This is a prioritized array of LayerMasks to determine what possible GameObjects any given Pointer can interact and the order of interaction to attempt. This is may be useful to ensure Pointers interact with UI elements first before other scene objects.</p>
 </li>
 </ul>
-<p><img src="../Images/Input/Pointers/PointerProfile.PNG" alt="Pointer Profile Example"></p>
+<p><img src="../../Documentation/Images/Input/Pointers/PointerProfile.PNG" alt="Pointer Profile Example"></p>
 <h3 id="pointer-options-configuration">Pointer options configuration</h3>
 <p>The default MRTK Pointer Profile configuration includes the following pointer classes and associated prefabs out-of-box. The list of pointers available to the system at runtime is defined under <em>Pointer Options</em> in the Pointer profile. Developers can utilize this list to reconfigure existing Pointers, add new Pointers, or delete one.</p>
-<p><img src="../Images/Input/Pointers/PointerOptionsProfile.PNG" alt="Pointer Options Profile Example"></p>
+<p><img src="../../Documentation/Images/Input/Pointers/PointerOptionsProfile.PNG" alt="Pointer Options Profile Example"></p>
 <p>Each pointer entry pointer is defined by the following set of data:</p>
 <ul>
 <li><p><em>Controller Type</em> - The set of controllers that a pointer is valid for.</p>
@@ -122,7 +122,7 @@ the articulated hand controller is associated with the <em>PokePointer</em>, <em
 </div>
 <h3 id="default-pointer-classes">Default pointer classes</h3>
 <p>The following classes are the out-of-box MRTK pointers available and defined in the default <em>MRTK Pointer Profile</em> outlined above. Each pointer prefab provided under <em>Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers</em> contains one of these pointer components attached.</p>
-<p><img src="../Images/Input/Pointers/MRTK_Pointers.png" alt="MRTK Default Pointers"></p>
+<p><img src="../../Documentation/Images/Input/Pointers/MRTK_Pointers.png" alt="MRTK Default Pointers"></p>
 <h4 id="far-pointers">Far pointers</h4>
 <h5 id="linepointer"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.LinePointer.html"><code>LinePointer</code></a></h5>
 <p>A base pointer class, draws lines from the source of the input (i.e. the controller) in the pointer direction. Generally, children classes such  the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.html"><code>ShellHandRayPointer</code></a> and the teleport pointers are instantiated and utilized (which also draw lines to indicate where teleportation will end up at) instead of this class which primarily provides common functionality.</p>

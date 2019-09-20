@@ -397,15 +397,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Architecture/InputSystem/Terminology.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Architecture/InputSystem/Terminology.html",
-          "hash": "hRfH54GnN3SgQ3e7pOCZ4Q=="
+          "hash": "dq7PUF8YwVOlziIZn1dZyg=="
         }
       },
       "is_incremental": false,
@@ -424,15 +421,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Architecture/SpatialAwareness.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Architecture/SpatialAwareness.html",
-          "hash": "gTGsoonQlRzC5czj5E/VOQ=="
+          "hash": "64WlmDvkuYFV9ajxy8gyoA=="
         }
       },
       "is_incremental": false,
@@ -499,15 +493,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Contributing/CONTRIBUTING.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Contributing/CONTRIBUTING.html",
-          "hash": "xpnpa3hncxdvtVRtSj6MyQ=="
+          "hash": "JBYSjzexRBXLBpJyCoBV2g=="
         }
       },
       "is_incremental": false,
@@ -538,15 +529,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Contributing/DocumentationGuide.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Contributing/DocumentationGuide.html",
-          "hash": "KVIvbSkHS+0xUjuVI+M1/A=="
+          "hash": "cSnkD6Syj3vgbyCBKIp8cw=="
         }
       },
       "is_incremental": false,
@@ -673,30 +661,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_BasicSetup.html",
-          "hash": "3UX98X8U+tFvqdw/s/iAPw=="
+          "hash": "xKPQVld6dvViPU3B7qPtrA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_ExamplesOverview.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_ExamplesOverview.html",
-          "hash": "yBVkCWMNYG0pd7ShprV6Hg=="
+          "hash": "nSlOtomGBX9+crNcxQ/TaA=="
         }
       },
       "is_incremental": false,
@@ -715,30 +697,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyesAndHands.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_EyesAndHands.html",
-          "hash": "x3AmIGSd/T+iSSluYdTfmQ=="
+          "hash": "yfMjN1FwUeGjeMXhd6PZOg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_IsUserCalibrated.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_IsUserCalibrated.html",
-          "hash": "k8rGJGEA/D+hGe9oLF0jHQ=="
+          "hash": "1iAUPGrdixkXK98SdPbKPw=="
         }
       },
       "is_incremental": false,
@@ -757,45 +733,36 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_Navigation.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_Navigation.html",
-          "hash": "PaPL5+ZvO06i7YYLgaYRmA=="
+          "hash": "v/0A8pQ1/LJUjeXHii46tA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_Positioning.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_Positioning.html",
-          "hash": "cKFWovvmtHsWn2xCFHytzQ=="
+          "hash": "q4f0etj6IXlmEv2JZ1pk4w=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/EyeTracking/EyeTracking_TargetSelection.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/EyeTracking/EyeTracking_TargetSelection.html",
-          "hash": "1LVasKsH3ouQ6YE+GQ01Lg=="
+          "hash": "ndtqp7efXHQ2d+kNFGj2Ww=="
         }
       },
       "is_incremental": false,
@@ -807,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/GettingStartedWithTheMRTK.html",
-          "hash": "Pk8mc+o6VaovC/mpYG2sNQ=="
+          "hash": "AtKDwuDJk0S4XB1O9/rkKA=="
         }
       },
       "is_incremental": false,
@@ -922,15 +889,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Input/Pointers.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Input/Pointers.html",
-          "hash": "kycsveZNYt4uJYyzPJOfZw=="
+          "hash": "1NgQTrpeMsz/HR1q+5lwRQ=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/MixedRealityConfigurationGuide.html",
-          "hash": "1MJs1wQH5PRaVxrKD5vVjg=="
+          "hash": "FwVeelg8rHDEbTInXAnuSw=="
         }
       },
       "is_incremental": false,
@@ -1180,15 +1144,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/README_ManipulationHandler.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/README_ManipulationHandler.html",
-          "hash": "1rkC5rH8kTpj1R1kJzJKkQ=="
+          "hash": "00MQdtqr63LiTYZW4I9Qmw=="
         }
       },
       "is_incremental": false,
@@ -1291,45 +1252,36 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/ReleaseNotes.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/ReleaseNotes.html",
-          "hash": "GsfWnFVAvJzEb/QjGwSP5A=="
+          "hash": "03Xy7EbFeTMESF7MC/5hXw=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemContentLoading.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/SceneSystem/SceneSystemContentLoading.html",
-          "hash": "haKIuybN7PGU3tN3+qADMA=="
+          "hash": "9HK2GGa/bRP6RK6Sh0MBRg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemGettingStarted.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/SceneSystem/SceneSystemGettingStarted.html",
-          "hash": "nsXnll3PwNA/pKgf1m4gZw=="
+          "hash": "9zlz7AWf7xXQ2mA2ql+V1A=="
         }
       },
       "is_incremental": false,
@@ -1360,15 +1312,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/SceneSystem/SceneSystemSceneTypes.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/SceneSystem/SceneSystemSceneTypes.html",
-          "hash": "LecijMDaQyhBX+2l6Dnqdw=="
+          "hash": "v+qvSg2+IVJ2y7/sK+Kpew=="
         }
       },
       "is_incremental": false,
@@ -1404,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.html",
-          "hash": "1Of7XabqKfo4O6/6PI75QA=="
+          "hash": "mFYvFPuV2Xu+4X2poOk/6w=="
         }
       },
       "is_incremental": false,
@@ -1495,30 +1444,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/Updating.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/Updating.html",
-          "hash": "PJynI+v+tPUCesrQWvS72w=="
+          "hash": "wlN4kfCQOIsXBhFCWXL9OQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/hologram-stabilization.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/hologram-stabilization.html",
-          "hash": "im7cFyC5xxJbUnjG3MZI0g=="
+          "hash": "7kOHbOTyj1z/CA5TqOSJlA=="
         }
       },
       "is_incremental": false,
@@ -19958,9 +19901,9 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -19971,9 +19914,9 @@
           "total_file_count": 212,
           "skipped_file_count": 0
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
