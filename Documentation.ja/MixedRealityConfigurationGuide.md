@@ -33,30 +33,30 @@ Mixed Reality Toolkit のすべての「デフォルト」プロファイルは�
 
 ここから、MRTK のすべての設定プロファイルに移動できます。
 
-* [エクスペリエンスの設定 (Experience settings)](#experience)
-* [カメラの設定 (Camera settings)](#camera)
-* [入力システムの設定 (Input system settings)](#inputsystem)
-* [境界 (Boundary) 可視化の設定](#boundary)
-* [テレポーテーション システム (Teleportation system) の選択](#teleportation)
-* [空間認識 (Spatial Awareness) の設定](#spatialawareness)
-* [診断 (Diagnostics) の設定](#diagnostic)
-* [シーン システム (Scene system) の設定](#scenesystem)
-* [その他のサービスの設定](#services)
-* [入力アクション (Input actions) の設定](#inputactions)
-* [Input Action Rules プロフィル](#inputactionrules)
-* [Pointers の設定](#pointer)
-* [ジェスチャ (Gestures) の設定](#gestures)
-* [音声コマンド (Speech Commands)](#speech)
-* [コントローラーマッピング (Controller mapping) の設定](#mapping)
-* [コントローラーの可視化の設定](#visualization)
-* [Service Inspectors](#inspectors)
+* [Experience settings（エクスペリエンスの設定）](#experience)
+* [Camera settings（カメラの設定）](#camera)
+* [Input system settings（入力システムの設定）](#inputsystem)
+* [Boundary visualization settings（境界可視化の設定）](#boundary)
+* [Teleportation system selection（テレポーテーション システムの選択）](#teleportation)
+* [Spatial awareness settings（空間認識の設定）](#spatialawareness)
+* [Diagnostics settings（診断の設定）](#diagnostic)
+* [Scene system settings（シーン システムの設定）](#scenesystem)
+* [追加サービスの設定](#services)
+* [Input actions settings（入力アクションの設定）](#inputactions)
+* [Input action rules （入力アクション ルール）](#inputactionrules)
+* [Pointer configuration（ポインターの設定）](#pointer)
+* [Gestures configuration（ジェスチャの設定）](#gestures)
+* [Speech commands（音声コマンド）](#speech)
+* [Controller mapping configuration（コントローラー マッピングの設定）](#mapping)
+* [Controller visualization settings（コントローラーの可視化の設定）](#visualization)
+* [Service Inspectors（サービス インスペクター）](#inspectors)
 
 これらの設定プロファイルについては、以下の関連セクションで詳しく説明します。
 
 ---
 <a name="experience"/>
 
-## エクスペリエンスの設定 (Experience settings)
+## Experience settings（エクスペリエンスの設定）
 
 Mixed Reality Toolkit のメイン設定ページにあるこの項目では、プロジェクトの Mixed Reality 環境のデフォルトの操作が定義されます。
 
@@ -65,7 +65,7 @@ Mixed Reality Toolkit のメイン設定ページにあるこの項目では、�
 ---
 <a name="camera"/>
 
-## カメラの設定 (Camera settings)
+## Camera settings（カメラの設定）
 
 カメラ設定では、Mixed Reality プロジェクトのカメラの設定方法を定義し、一般的なクリッピング (clipping) 、クオリティ、透明度 (transparency) の設定を定義します。
 
@@ -75,7 +75,7 @@ Mixed Reality Toolkit のメイン設定ページにあるこの項目では、�
 ---
 <a name="inputsystem"/>
 
-## 入力システムの設定 (Input system settings)
+## Input system settings（入力システムの設定）
 
 Mixed Reality プロジェクトは、すべての入力イベントを取り扱うための堅牢で十分に熟練した入力システムを提供しており、これはデフォルトで選択されています。
 
@@ -87,20 +87,20 @@ MRTK が提供する入力システムの背後にはその他のいくつかの
 
 個々のプロファイルの詳細は以下のとおりです。
 
-* Focus Settings
-* [Input actions settings](#inputactions)
-* [Input actions rules](#inputactionrules)
-* [Pointer configuration](#pointer)
-* [Gestures configuration](#gestures)
-* [Speech commands](#speech)
-* [Controller mapping configuration](#mapping)
-* [Controller visualization settings](#visualization)
+* Focus Settings（フォーカスの設定）
+* [Input actions settings（入力アクションの設定）](#inputactions)
+* [Input action rules （入力アクション ルール）](#inputactionrules)
+* [Pointer configuration（ポインターの設定）](#pointer)
+* [Gestures configuration（ジェスチャの設定）](#gestures)
+* [Speech commands（音声コマンド）](#speech)
+* [Controller mapping configuration（コントローラー マッピングの設定）](#mapping)
+* [Controller visualization settings（コントローラーの可視化の設定）](#visualization)
 
 
 ---
 <a name="boundary"/>
 
-## 境界 (Boundary) 可視化の設定
+## Boundary visualization settings（境界可視化の設定）
 
 境界 (Boundary) システムは、元となるプラットフォームの境界/ガーディアン システムから取得した境界を解釈します。境界ビジュアライザー (Boundary visualizer) 設定を使用すると、シーン内で記録された境界をユーザーの位置に対して自動的に表示できます。境界線は、ユーザーがシーン内でテレポートする場所に基づいて反応/更新も行われます。
 
@@ -110,7 +110,7 @@ MRTK が提供する入力システムの背後にはその他のいくつかの
 ---
 <a name="teleportation"/>
 
-## テレポーテーション システム (Teleportation system) の選択
+## Teleportation system selection（テレポーテーション システムの選択）
 
 Mixed Reality プロジェクトは、プロジェクトでのテレポーテーション イベントを管理するための完全な機能を備えたテレポーテーション システムを提供しており、これはデフォルトで選択されています。
 
@@ -119,7 +119,7 @@ Mixed Reality プロジェクトは、プロジェクトでのテレポーテー
 ---
 <a name="spatialawareness"/>
 
-## 空間認識 (Spatial Awareness) の設定
+## Spatial awareness settings（空間認識の設定）
 
 Mixed Reality プロジェクトは、空間スキャン システムと連携する再構成された空間認識システムを提供しており、これはデフォルトで選択されています。MRTK 空間認識システムの背後にあるアーキテクチャは[こちら](Architecture/SpatialAwareness.md)で見ることができます。
 
@@ -136,7 +136,7 @@ Mixed Reality Toolkit の空間認識設定を使用すると、どのように�
 ---
 <a name="diagnostic"/>
 
-## 診断 (Diagnostics) の設定
+## Diagnostics settings（診断の設定）
 
 オプションですが、MRTK の非常に便利な機能は、プラグイン診断機能です。これは、シーンへのデバッグ ログのスタイルです。
 
@@ -150,7 +150,7 @@ Mixed Reality Toolkit の空間認識設定を使用すると、どのように�
 ---
 <a name="scenesystem"/>
 
-## シーン システム (Scene system) の設定
+## Scene system settings（シーン システムの設定）
 
 MRTK は、複雑なシーンのロード/アンロードの管理に役立つオプション サービスを提供します。シーン システムがプロジェクトに適しているかどうかを判断するには、[シーン システムの開始ガイド](SceneSystem/SceneSystemGettingStarted.md)を参照してください。
 
@@ -173,7 +173,7 @@ Mixed Reality Toolkit のより高度な領域の1つは、フレームワーク
 ---
 <a name="inputactions"/>
 
-## 入力アクション (Input actions) の設定
+## Input actions settings（入力アクションの設定）
 
 入力アクションを使用すると、ランタイムプロジェクトからのすべての物理的なインタラクションや入力を抽象化することができます。すべての物理入力 (コントローラー/手/マウス等) は、ランタイムプロジェクトで使用するための論理入力アクションに変換されます。これにより、入力元に関係なく、プロジェクトはシーン内でこれらのアクションを「実行する操作」または「対象とのインタラクション」としてシンプルに実装できます。
 
@@ -200,9 +200,9 @@ Mixed Reality Toolkit のより高度な領域の1つは、フレームワーク
 ---
 <a name="inputactionrules"/>
 
-## Input Action Rules （入力アクション ルール）
+## Input action rules （入力アクション ルール）
 
-Input Action Rules を使用すると、1 つの入力アクションに対して発生したイベントを、そのデータ値に基づいて別のアクションに自動的に変換できます。これらはフレームワーク内でシームレスに管理され、パフォーマンスコストは発生しません。
+Input action rules を使用すると、1 つの入力アクションに対して発生したイベントを、そのデータ値に基づいて別のアクションに自動的に変換できます。これらはフレームワーク内でシームレスに管理され、パフォーマンスコストは発生しません。
 
 たとえば、1 つの十字キーの 2 軸入力イベントを、4 つの対応する "DPad Up" / "DPad Down" / "Dpad Left" / "Dpad Right" アクションに変換します (下の図に示すように)。
 
@@ -215,7 +215,7 @@ Input Action Rules は、使用可能な入力軸のすべてに対して設定�
 ---
 <a name="pointer"/>
 
-## Pointer （ポインター）の設定
+## Pointer configuration（ポインターの設定）
 
 ポインターは、シーン内ですべての入力デバイスからの相互作用を働かせるために使われ、入力の向きとヒット テストの両方を、シーン内の任意のオブジェクト (コライダーがアタッチされているもの、または UI コンポーネント) に対し与えます。ポインターは、デフォルトでは、コントローラー、ヘッドセット(ゲイズ / フォーカス)、マウス / タッチ入力用に自動的に設定されます。
 
@@ -235,7 +235,7 @@ Input Action Rules は、使用可能な入力軸のすべてに対して設定�
 ---
 <a name="gestures"/>
 
-## ジェスチャ (Gestures) の設定
+## Gestures configuration（ジェスチャの設定）
 
 ジェスチャは、入力アクションをさまざまな SDK (HoloLens など) によって提供されるさまざまな「ジェスチャ」入力メソッドに割り当てることができるシステム固有の実装です。
 
@@ -247,7 +247,7 @@ Input Action Rules は、使用可能な入力軸のすべてに対して設定�
 ---
 <a name="speech"/>
 
-## 音声コマンド (Speech Commands)
+## Speech Commands（音声コマンド）
 
 ジェスチャと同様に、一部のランタイム プラットフォームでは、Unity プロジェクトで受信できるコマンドを生成する機能を備えたインテリジェントな "Speech to Text" 機能も提供します。この設定プロファイルを使用すると、登録済みの 「単語」を設定し、プロジェクトで受信できる入力アクションに変換できます。必要に応じて、キーボード アクションにアタッチすることもできます。
 
@@ -260,7 +260,7 @@ Input Action Rules は、使用可能な入力軸のすべてに対して設定�
 ---
 <a name="mapping"/>
 
-## コントローラーマッピング (Controller mapping) の設定
+## Controller mapping configuration（コントローラー マッピングの設定）
 
 Mixed Reality Toolkit の主要な設定画面の1つは、プロジェクトで使用できるさまざまな種類のコントローラーを設定およびマッピングする機能です。
 
@@ -289,7 +289,7 @@ MRTK は、以下のコントローラー / システムのデフォルト設定
 ---
 <a name="visualization"/>
 
-## コントローラーの可視化の設定
+## Controller visualization settings（コントローラーの可視化の設定）
 
 コントローラーのマッピングに加えて、シーン内でのコントローラーの表示方法をカスタマイズするための個別の設定プロファイルが用意されています。
 
@@ -305,7 +305,7 @@ MRTK は、以下のコントローラー / システムのデフォルト設定
 
 <a name="inspectors"/>
 
-## サービス インスペクター (Service Inspectors)
+## Service Inspectors（サービス インスペクター）
 
 サービス インスペクターは、アクティブなサービスを表すシーン内オブジェクトを生成する、エディタ上のみの機能です。これらのオブジェクトを選択すると、\[Inspector]（インスペクター）にドキュメントへのリンク、エディターでの可視化のコントロール、サービスの状態に関する情報が表示されます。
 
