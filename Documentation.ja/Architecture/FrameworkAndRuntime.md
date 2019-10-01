@@ -1,19 +1,18 @@
-# Framework and runtime
+# フレームワークとランタイム
 
 ## Changes to the scene
 
-To use the toolkit an instance of the MixedRealityToolkit script must be in your scene.
-To add one use the menu option: Mixed Reality Toolkit -> Add to Scene and Configure. This
-instance is responsible for registering, updating and tearing down services. It's also
-where your configuration profile is chosen.
+ツールキットを使うためには、MixedRealityToolkit スクリプトのインスタンスがシーンに存在しなければなりません。
+追加するには、メニューの [Mixed Reality Toolkit] -> [Add to Scene and Configure] オプションをお使いください。
+このインスタンスは、サービスの登録、更新、破棄を担当しています。
+設定プロファイルを選択する場所でもあります。
 
-Apart form adding the MRTK GameObject to the scene the menu option will also:
+このメニュー オプションは、シーンに MRTK ゲームオブジェクトを追加するだけでなく、以下のことも行います。
 
-- Add the MixedRealityPlayspace, which is used by many other MRTK components to reason over
-  world and local space transformations.
-- Move the main Camera as a child of the MixedRealityPlayspace (and also adding some input and gaze
-  related scripts to the main Camera, which help power UnityUI and gaze related input
-  functionality).
+- MixedRealityPlayspace を追加する。
+これは、多くのほかの MRTK コンポーネントが、ワールド空間とローカル空間の変換を処理するために利用されます。
+- メイン カメラを MixedRealityPlayspace の子になるよう移動させます。
+（そして、いくつかのインプットやゲイズに関するスクリプトをメイン カメラに追加します。このスクリプトは、UnityUI やゲイズ関連のインプット機能を手助けします。）
 
 ## MixedRealityToolkit object and runtime
 
