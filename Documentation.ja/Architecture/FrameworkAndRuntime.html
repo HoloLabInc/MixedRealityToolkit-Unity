@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Framework and runtime | Mixed Reality Toolkit Documentation </title>
+    <title>&#12501;&#12524;&#12540;&#12512;&#12527;&#12540;&#12463;&#12392;&#12521;&#12531;&#12479;&#12452;&#12512; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Framework and runtime | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="&#12501;&#12524;&#12540;&#12512;&#12527;&#12540;&#12463;&#12392;&#12521;&#12531;&#12479;&#12452;&#12512; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,35 +80,31 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="framework-and-runtime">Framework and runtime</h1>
+<h1 id="フレームワークとランタイム">フレームワークとランタイム</h1>
 
-<h2 id="changes-to-the-scene">Changes to the scene</h2>
-<p>To use the toolkit an instance of the MixedRealityToolkit script must be in your scene.
-To add one use the menu option: Mixed Reality Toolkit -&gt; Add to Scene and Configure. This
-instance is responsible for registering, updating and tearing down services. It's also
-where your configuration profile is chosen.</p>
-<p>Apart form adding the MRTK GameObject to the scene the menu option will also:</p>
+<h2 id="シーンへの変更">シーンへの変更</h2>
+<p>ツールキットを使うためには、MixedRealityToolkit スクリプトのインスタンスがシーンに存在しなければなりません。
+追加するには、メニューの [Mixed Reality Toolkit] -&gt; [Add to Scene and Configure] オプションをお使いください。
+このインスタンスは、サービスの登録、更新、破棄を担当しています。
+設定プロファイルを選択する場所でもあります。</p>
+<p>このメニュー オプションは、シーンに MRTK ゲームオブジェクトを追加するだけでなく、以下のことも行います。</p>
 <ul>
-<li>Add the MixedRealityPlayspace, which is used by many other MRTK components to reason over
-world and local space transformations.</li>
-<li>Move the main Camera as a child of the MixedRealityPlayspace (and also adding some input and gaze
-related scripts to the main Camera, which help power UnityUI and gaze related input
-functionality).</li>
+<li>MixedRealityPlayspace を追加する。
+これは、多くのほかの MRTK コンポーネントが、ワールド空間とローカル空間の変換を処理するために利用されます。</li>
+<li>メイン カメラを MixedRealityPlayspace の子になるよう移動させます。
+（そして、いくつかのインプットやゲイズに関するスクリプトをメイン カメラに追加します。
+このスクリプトは、UnityUI やゲイズ関連のインプット機能を手助けします。）</li>
 </ul>
-<h2 id="mixedrealitytoolkit-object-and-runtime">MixedRealityToolkit object and runtime</h2>
-<p>The MRTK has several core services. Some coordinate with one another; others are independent.
-All share the same life cycle - startup, registration, update and teardown - and this life
-cycle stands apart from Unity's MonoBehavior life cycle. This
-<a href="https://medium.com/@stephen_hodgson/the-mixed-reality-framework-6fdb5c11feb2">medium post</a> explains
-some of the background and motivation behind this approach. MRTK has a single
-object that manages life and runtime of its services.</p>
-<p>This entity ensures that:</p>
+<h2 id="mixedrealitytoolkit-オブジェクトとランタイム">MixedRealityToolkit オブジェクトとランタイム</h2>
+<p>MRTK には、いくつかのコア サービスがあります。お互いに関連しているものもあれば、独立しているものもあります。
+すべてのサービスは同じライフ サイクル（スタートアップ、登録、アップデート、破棄）を共有しており、このライフ サイクルは Unity の MonoBehavior のライフ サイクルからは独立しています。
+この <a href="https://medium.com/@stephen_hodgson/the-mixed-reality-framework-6fdb5c11feb2">Medium の記事</a> で、このアプローチの裏にある背景や動機のいくつかが説明されています。
+MRTK は、そのサービスの存続とランタイムを管理する、単一のオブジェクトを持っています。</p>
+<p>このオブジェクトは、以下のことを保証しています。</p>
 <ul>
-<li>when the game starts, discovery and initialization of services happens in a pre-defined order.</li>
-<li>it provides a mechanism for services to register themselves (i.e. “I support this service!”) and for other
-callers to get a hold of those services.</li>
-<li>it provides the Update()/LateUpdate() calls and forwards them onto the various services
-(i.e. via UpdateAllServices/LateUpdateAllServices).</li>
+<li>ゲームが開始したときに、事前に定義された順番でサービスの検出と初期化が行われること。</li>
+<li>サービスが自身を登録し（「自分はこのサービスをサポートしています！」）、他の呼び出し元がそれらのサービスを見つけるメカニズムを提供していること。</li>
+<li>Update() や LateUpdate() の呼び出しを提供し、それらを様々なサービスにフォワードすること　(UpdateAllServices や LateUpdateAllServices を通じて）。</li>
 </ul>
 </article>
           </div>
