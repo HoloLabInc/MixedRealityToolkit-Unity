@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Detecting platform capabilities | Mixed Reality Toolkit Documentation </title>
+    <title>&#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12398; Capabilities&#65288;&#27231;&#33021;&#65289;&#12434;&#26908;&#20986;&#12377;&#12427; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Detecting platform capabilities | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="&#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12398; Capabilities&#65288;&#27231;&#33021;&#65289;&#12434;&#26908;&#20986;&#12377;&#12427; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
@@ -80,59 +80,59 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="detecting-platform-capabilities">Detecting platform capabilities</h1>
+<h1 id="プラットフォームの-capabilities機能を検出する">プラットフォームの Capabilities（機能）を検出する</h1>
 
-<p>A common question asked of the MRTK involves knowing which specific device (ex: Microsoft HoloLens 2) is being
-used to run an application. Identifying the exact hardware can be challenging on different platforms. The MRTK
-instead provides a way identify specific capabilities of the system (for example, if the system has the articulated
-hands capability).</p>
-<h2 id="capabilities">Capabilities</h2>
-<p>The Mixed Reality Toolkit provides the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCapability.html">MixedRealityCapability</a>
-enumeration which defines a set of capabilities for which an application can query at runtime. This enum contains the
-complete set of capabilities for which the Mixed Reality Toolkit supports checking.</p>
-<h3 id="input-system-capabilities">Input System capabilities</h3>
-<p>The input system supports querying the following capabilities.</p>
+<p>MRTK についてよくある質問は、アプリケーションを実行するのにどのデバイス
+（例えば Microsoft HoloLens 2) が使われているのかを知る方法に関するものです。
+正確なハードウェアを特定することは、プラットフォームによっては困難です。
+代わりに、MRTK はシステムの特定の機能（例えば、システムが Articulated hand（多関節ハンド）の機能を持っているかどうか）を特定する方法を提供しています。</p>
+<h2 id="capabilities機能">Capabilities（機能）</h2>
+<p>Mixed Reality Toolkit は <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCapability.html">MixedRealityCapability</a>
+という列挙型を提供しており、これはアプリケーションがランタイムで問い合わせを行うための機能のセットを定義しています。
+この列挙型は Mixed Reality Toolkit がチェック可能な機能の完全なセットを含んでいます。</p>
+<h3 id="input-system-capabilitiesインプットシステムの機能">Input System capabilities（インプットシステムの機能）</h3>
+<p>インプットシステムは、以下の機能の問い合わせをサポートしています。</p>
 <table>
 <thead>
 <tr>
-<th>Capability</th>
-<th>Description</th>
+<th>機能</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ArticulatedHand</td>
-<td>Articulated hand input</td>
+<td>Articulated hand（多関節ハンド）のインプット</td>
 </tr>
 <tr>
 <td>EyeTracking</td>
-<td>Eye gaze targeting</td>
+<td>Eye gaze（アイ ゲイズ）のターゲティング</td>
 </tr>
 <tr>
 <td>GGVHand</td>
-<td>Gaze-Gesture-Voice hand input</td>
+<td>Gaze-Gesture-Voice（ゲイズ、ジェスチャー、ボイス）のハンド インプット</td>
 </tr>
 <tr>
 <td>MotionController</td>
-<td>Motion controller input</td>
+<td>モーション コントローラーのインプット</td>
 </tr>
 <tr>
 <td>VoiceCommand</td>
-<td>Voice commands using app defined keywords</td>
+<td>アプリで定義したキーワードを使ったボイス コマンド</td>
 </tr>
 <tr>
 <td>VoiceDictation</td>
-<td>Voice to text dictation</td>
+<td>音声によるテキスト ディクテーション</td>
 </tr>
 </tbody>
 </table>
-<p>This example checks to see if the input system has loaded a data provider with support for articulated hands.</p>
-<pre><code class="lang-C#">// Get the input system.
+<p>以下の例は、多関節ハンドをサポートしたデータ プロバイダーをインプット システムがロードしたかどうかをチェックしています。</p>
+<pre><code class="lang-C#">// input system を取得する
 IMixedRealityInputSystem inputSystem = null;
 MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityInputSystem&gt;(out inputSystem);
 if (inputSystem == null)
 {
-    // Failed to get the input system.
+    // input system の取得に失敗
 }
 
 bool supportsArticulatedHands = false;
@@ -143,37 +143,37 @@ if (capabilityCheck != null)
     supportsArticulatedHands = capabilityCheck.CheckCapability(MixedRealityCapability.ArticulatedHand);
 }
 </code></pre>
-<h3 id="spatial-awareness-capabilities">Spatial Awareness capabilities</h3>
-<p>The spatial awareness system supports querying the following capabilities.</p>
+<h3 id="spatial-awareness-capabilities空間認識の機能">Spatial Awareness capabilities（空間認識の機能）</h3>
+<p>空間認識システムは、以下の機能の問い合わせをサポートしています。</p>
 <table>
 <thead>
 <tr>
-<th>Capability</th>
-<th>Description</th>
+<th>機能</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>SpatialAwarenessMesh</td>
-<td>Spatial meshes</td>
+<td>Spatial meshes（空間メッシュ）</td>
 </tr>
 <tr>
 <td>SpatialAwarenessPlane</td>
-<td>Spatial planes</td>
+<td>Spatial planes（空間プレーン）</td>
 </tr>
 <tr>
 <td>SpatialAwarenessPoint</td>
-<td>Spatial points</td>
+<td>Spatial points（空間ポイント）</td>
 </tr>
 </tbody>
 </table>
-<p>This example checks to see if the spatial awareness system has loaded a data provider with support for spatial meshes.</p>
-<pre><code class="lang-C#">// Get the spatial awareness system.
+<p>以下の例は、空間メッシュをサポートしたデータ プロバイダーを空間認識システムがロードしたかどうかをチェックしています。</p>
+<pre><code class="lang-C#">// spatial awareness system を取得する
 IMixedRealitySpatialAwarenessSystem spatialAwarenessSystem = null;
 MixedRealityServiceRegistry.TryGetService&lt;IMixedRealitySpatialAwarenessSystem&gt;(out spatialAwarenessSystem);
 if (spatialAwarenessSystem == null)
 {
-    // Failed to get the spatial awareness system.
+    // spatial awareness system の取得に失敗
 }
 
 bool supportsSpatialMesh = false;
@@ -184,7 +184,7 @@ if (capabilityCheck != null)
     supportsSpatialMesh = capabilityCheck.CheckCapability(MixedRealityCapability.SpatialAwarenessMesh);
 }
 </code></pre>
-<h2 id="see-also">See Also</h2>
+<h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.IMixedRealityCapabilityCheck.html">IMixedRealityCapabilityCheck API documentation</a></li>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCapability.html">MixedRealityCapability enum documentation</a></li>
