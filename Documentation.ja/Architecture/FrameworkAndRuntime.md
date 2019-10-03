@@ -1,6 +1,6 @@
 # フレームワークとランタイム
 
-## Changes to the scene
+## シーンへの変更
 
 ツールキットを使うためには、MixedRealityToolkit スクリプトのインスタンスがシーンに存在しなければなりません。
 追加するには、メニューの [Mixed Reality Toolkit] -> [Add to Scene and Configure] オプションをお使いください。
