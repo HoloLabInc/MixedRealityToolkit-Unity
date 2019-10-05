@@ -1,17 +1,15 @@
-# Teleport System
+# Teleport System（テレポートシステム）
 
-The teleport system is a sub-system of the MRTK that handles teleporting the user when the
-application is using an opaque display. For AR experiences (like HoloLens), the teleportation
-system is not active. For immersive HMD experiences (OpenVR, WMR) the teleport system can
-be enabled.
+テレポート システムは MRTK のサブシステムで、アプリケーションが不透明なディスプレイ (opaque display) を使用しているときにユーザのテレポートの処理をします。AR 体験( HoloLens など)の場合、テレポート システムが非アクティブです。没入型 HMD エクスペリエンス ( OpenVR、WMR ) でのテレポート システムを有効にすることができます。
 
-## Enabling and disabling
 
-The teleport system can be enabled or disabled by toggling the checkbox in its profile.
-This can be done by selecting the MixedRealityToolkit object in the scene, clicking
-"Teleport" and then toggling the "Enable Teleport System" checkbox.
+## 有効と無効の設定
 
-This can also be done at runtime:
+テレポート システムは、プロファイルのチェック ボックスをオン/オフに切り替えることができます。
+シーン内の MixedRealityToolkit オブジェクトを選択し、
+"Teleport" をクリックしてから "Enable Teleport System" のチェック ボックスをオンにすることで設定できます。
+
+ランタイム (runtime) で実行することもできます。
 
 ```csharp
 void DisableTeleportSystem()
@@ -25,19 +23,18 @@ void EnableTeleportSystem()
 }
 ```
 
-## Events
+## イベント
 
-The teleport system exposes events through the [`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler)
-interface to provide signals on when teleport actions begin, end, or get cancelled.
-See the linked API documentation for more details on the mechanics of the events
-and their associated payload.
+テレポート システムは[`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler) を通じてイベントを公開します。
+インターフェイスは、テレポート アクションの開始、終了、またはキャンセル時に通知を提供します。
+イベントの仕組みとそれに関連する負荷などの詳細については、リンク付きの API ドキュメントをご参照ください。
 
-## Usage
+## 使い方
 
-### How to register for teleportation events
+### テレポート　イベントの登録方法
 
-The code below shows how to create a MonoBehaviour that will listen for teleportation
-events. This code assumes that the teleport system is enabled.
+次のコードは、テレポーテーションのイベントに待機する (Listen) MonoBehaviour を作成する方法を示しています。
+このコードの前提は、テレポート システムが有効になっていることです。
 
 ```csharp
 using Microsoft.MixedReality.Toolkit;
