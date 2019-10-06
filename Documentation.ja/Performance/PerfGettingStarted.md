@@ -2,16 +2,16 @@
 
 ## 始める
 
-パフォーマンスを合理化する最も簡単な方法は、フレームレート、またはアプリケーションが１秒間に画像をレンダリングできる回数を使用することです。ターゲットとするプラットフォームのアウトラインに従ってターゲットフレームレートを満たすことが重要です（つまり、[Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality)、 [Oculus](https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/)など）。たとえば、HoloLensでは、ターゲットフレームレートは 60 FPS です。低フレームレートのアプリケーションは、[ホログラムの安定化](../hologram-Stabilization.md) の悪化、ワールドトラッキング、ハンドトラッキングなど、ユーザーエクスペリエンスの低下を招く可能性があります。開発者が高品質のフレームレートを追跡して達成できるように、Mixed Reality Toolkit はさまざまなツールとスクリプトを提供します。
+パフォーマンスを合理化する最も簡単な方法は、フレームレート、またはアプリケーションが１秒間に画像をレンダリングできる回数を使用することです。ターゲットとするプラットフォームのアウトラインに従ってターゲットフレームレートを満たすことが重要です（つまり、[Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality)、 [Oculus](https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/)など）。たとえば、HoloLensでは、ターゲットフレームレートは 60 FPS です。低フレームレートのアプリケーションは、[ホログラムの安定化](../hologram-Stabilization.md) の悪化、ワールドトラッキング、ハンドトラッキングなど、ユーザー エクスペリエンスの低下を招く可能性があります。開発者が高品質のフレームレートを追跡して達成できるように、Mixed Reality Toolkit はさまざまなツールとスクリプトを提供します。
 
-### Visual Profiler
+### Visual Profiler (ビジュアル プロファイラー)
 
-To continuously track performance over the lifetime of development, it is highly recommended to always show a framerate visual while running & debugging an application. The Mixed Reality Toolkit provides the [Visual Profiler](../Diagnostics/UsingVisualProfiler.md) diagnostic tool which gives real-time information about the current FPS and memory usage in application view. The Visual Profiler can be configured via the [Diagnostics System Settings](../Diagnostics/DiagnosticsSystemGettingStarted.md) under the [MRTK Profiles Inspector](../MixedRealityConfigurationGuide.md).
+開発期間全体にわたってパフォーマンスを継続的に追跡するために、アプリケーションの実行およびデバッグ中に常にフレームレートのビジュアルを表示することを強くお勧めします。 Mixed Reality Toolkit は、アプリケーション ビューで現在の FPS とメモリ使用量に関するリアルタイムの情報を示す [Visual Profiler](../Diagnostics/UsingVisualProfiler.md) 診断ツールを提供します。Visual Profiler は、[MRTK Profiles Inspector](../MixedRealityConfigurationGuide.md) の下の [Diagnostics System Settings (診断システムの設定)](../Diagnostics/DiagnosticsSystemGettingStarted.md) を使用して構成できます。
 
-Furthermore, it is particularly important to utilize the Visual Profiler to track framerate when running on device as opposed to running in Unity editor or an emulator. The most accurate performance results will be depicted when running on device with [Release configuration builds](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019).
+さらに、Unity エディターまたはエミュレーターで実行するのではなく、デバイスで実行する場合、Visual Profiler を使用してフレームレートを追跡することが特に重要になります。[Release configuration builds](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019) の場合、最も正確なパフォーマンス結果が表示されます。
 
 > [!NOTE]
-> If building for Windows Mixed Reality, then deploy with [MASTER configuration builds](https://docs.microsoft.com/en-us/windows/mixed-reality/exporting-and-building-a-unity-visual-studio-solution#building_and_deploying_a_unity_visual_studio_solution)
+> Windows Mixed Reality でビルドする場合は、[MASTER configuration builds](https://docs.microsoft.com/en-us/windows/mixed-reality/exporting-and-building-a-unity-visual-studio-solution#building_and_deploying_a_unity_visual_studio_solution) でビルドします。
 
 ![Visual Profiler Interface](../../Documentation/Images/Diagnostics/VisualProfiler.png)
 
