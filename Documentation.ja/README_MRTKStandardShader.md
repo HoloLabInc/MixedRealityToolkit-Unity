@@ -56,7 +56,7 @@ For static lighting the shader will respect lightmaps built by Unity's [Lightmap
 
 ### Hover Light (ホバー ライト)
 
-A Hover Light is a Fluent Design System paradigm that mimics a "point light" hovering near the surface of an object. Often used for far away cursor lighting the application can control the properties of a Hover Light via the [**HoverLight.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.HoverLight). Up to 3 Hover Lights are supported at a time.
+Hover Light は、オブジェクトの表面近くでホバリングする「Point Light (ポイント ライト)」を模倣する Fluent Design System (フルーエント デザイン システム) のパラダイムです。多くの場合、アプリケーションは [**HoverLight.cs**](xref：Microsoft.MixedReality.Toolkit.Utilities.HoverLight) を介して Hover Light のプロパティを制御できます。一度に最大3つの Hover Light がサポートされます。
 
 ### Proximity Light (近接ライト)
 
