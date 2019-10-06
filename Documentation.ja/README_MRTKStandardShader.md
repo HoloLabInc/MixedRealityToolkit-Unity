@@ -58,27 +58,27 @@ For static lighting the shader will respect lightmaps built by Unity's [Lightmap
 
 A Hover Light is a Fluent Design System paradigm that mimics a "point light" hovering near the surface of an object. Often used for far away cursor lighting the application can control the properties of a Hover Light via the [**HoverLight.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.HoverLight). Up to 3 Hover Lights are supported at a time.
 
-### Proximity Light
+### Proximity Light (近接ライト)
 
-A Proximity Light is a Fluent Design System paradigm that mimics a "gradient inverse point light" hovering near the surface of an object. Often used for near cursor lighting the application can control the properties of a Proximity Light via the [**ProximityLight.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ProximityLight). Up to 2 Proximity Lights are supported at a time.
+Proximity Light は、オブジェクトの表面近くでホバリングする「Gradient inverse point light (階調度反転ポイント ライト) 」を模倣する Fluent Design System (フルーエント デザイン システム) のパラダイムです。多くの場合、カーソルの近辺のライトに使用され、アプリケーションは [**ProximityLight.cs**](xref：Microsoft.MixedReality.Toolkit.Utilities.ProximityLight) を介してP roximity Light のプロパティを制御できます。一度に最大2つの Proximity Light がサポートされます。
 
-## Lightweight Scriptable Render Pipeline Support
+## Lightweight Scriptable Render Pipeline (軽量スクリプタブル レンダー パイプライン) のサポート
 
-The MRTK contains an upgrade path to allow developers to utilize Unity's Lightweight Scriptable Render Pipeline (LWRP) with MRTK shaders. Tested in Unity 2019.1.1f1 and Lightweight RP 5.7.2 package. or instructions on getting started with the LWRP please see [this page](https://docs.unity3d.com/Packages/com.unity.render-pipelines.lightweight@5.10/manual/getting-started-with-lwrp.html).
+MRTKには、開発者が Unity の MRTK のシェーダー で Lightweight Scriptable Render Pipeline (LWRP) を利用できるようにするアップグレード パスが含まれています。Unity 2019.1.1f1 および Lightweight RP 5.7.2 パッケージでテスト済みです。またはLWRPの使用開始手順は[こちらのページ](https://docs.unity3d.com/Packages/com.unity.render-pipelines.lightweight@5.10/manual/getting-started-with-lwrp.html) を参照してください。
 
-To perform the MRTK upgrade select: **Mixed Reality Toolkit -> Utilities -> Upgrade MRTK Standard Shader for Lightweight Render Pipeline**
+MRTK アップグレードを実行するには **Mixed Reality Toolkit -> Utilities -> Upgrade MRTK Standard Shader for Lightweight Render Pipeline** を選択してください。
 
 ![lwrp upgrade](../Documentation/Images/MRTKStandardShader/MRTK_LWRPUpgrade.jpg)
 
-After the upgrade occurs the MRTK/Standard shader will be altered and any magenta (shader error) materials should be fixed. To verify the upgrade successfully occurred please check the console for: **Upgraded Assets/MixedRealityToolkit/StandardAssets/Shaders/MixedRealityStandard.shader for use with the Lightweight Render Pipeline.**
+アップグレードが終わると、MRTK/Standard shader が変更され、マゼンタ (シェーダーエラー) のマテリアルが修正されます。アップグレードが正常に行われたことを確認するには、コンソールで以下を確認してください。:  **Upgraded Assets/MixedRealityToolkit/StandardAssets/Shaders/MixedRealityStandard.shader for use with the Lightweight Render Pipeline.**
 
-## Texture Combiner
+## Texture Combiner (テクスチャー コンバイナー)
 
-To improve parity with the Unity Standard shader per pixel metallic, smoothness, emissive, and occlusion values can all be controlled via [channel packing](http://wiki.polycount.com/wiki/ChannelPacking). For example:
+ピクセルごとの Unity Standard shader とのパリティを向上させるために、[Channel packing (チャンネル パッキング)](http://wiki.polycount.com/wiki/ChannelPacking)を使用して、metallic (金属らしさ)、smoothness (滑らかさ)、emissive (放射)、および occlusion (オクルージョン) の値をすべて制御できます。例えば：
 
 ![channel map example](../Documentation/Images/MRTKStandardShader/MRTK_ChannelMap.gif)
 
-When you use channel packing, you only have to sample and load one texture into memory instead of four separate ones. When you write your texture maps in a program like Substance or Photoshop, you can pack hand pack them like so:
+Channel packing を使用する場合、４つの個別のテクスチャではなく、１つのテクスチャをサンプリングしてメモリにロードするだけで済みます。 Substance やPhotoshop などのプログラムでテクスチャマップを作成する場合、次のように手動でパックすることができます。
 
 | Channel | Property             |
 |---------|----------------------|
@@ -87,11 +87,11 @@ When you use channel packing, you only have to sample and load one texture into 
 | Blue    | Emission (Greyscale) |
 | Alpha   | Smoothness           |
 
-Or, you can use the MRTK Texture Combiner Tool. To open the tool select: **Mixed Reality Toolkit -> Utilities -> Texture Combiner** which will open the below window:
+または、MRTK Texture Combiner Tool を使うこともできます。ツールを開くには、 **Mixed Reality Toolkit -> Utilities -> Texture Combiner** を選択し、以下のウィンドウを開きます。:
 
 ![texture combiner example](../Documentation/Images/MRTKStandardShader/MRTK_TextureCombiner.jpg)
 
-This windows can be automatically filled out by selecting a Unity Standard shader and clicking "Autopopulate from Standard Material." Or, you can manually specify a texture (or constant value) per red, green, blue, or alpha channel. The texture combination is GPU accelerated and does not require the input texture to be CPU accessible.
+このウィンドウは、Unity Standard shader を選択し、「Autopopulate from Standard Material」をクリックすることで、自動的に入力できます。または、赤、緑、青、またはアルファチャネルごとにテクスチャ (または定数値) を手動で指定できます。このテクスチャの組み合わせは、 GPU アクセラレーションであり、入力テクスチャが CPU にアクセス可能である必要はありません。
 
 ## その他の機能のドキュメント
 
