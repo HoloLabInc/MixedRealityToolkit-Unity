@@ -1,8 +1,8 @@
-# Performance
+# パフォーマンス
 
-## Getting started
+## 始める
 
-The easiest way to rationalize performance is via framerate or how many times your application can render an image per second. It is important to meet the target framerate as outlined by the platform being targeted(i.e [Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality), [Oculus](https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/), etc). For example, on HoloLens, the target framerate is 60 FPS. Low framerate applications can result in deteriorated user experiences such as worsened [hologram stabilization](../hologram-Stabilization.md), world tracking, hand tracking, and more. To help developers track and achieve quality framerate, the Mixed Reality Toolkit provides a variety of tools and scripts.
+パフォーマンスを合理化する最も簡単な方法は、フレームレート、またはアプリケーションが１秒間に画像をレンダリングできる回数を使用することです。ターゲットとするプラットフォームのアウトラインに従ってターゲットフレームレートを満たすことが重要です（つまり、[Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality)、 [Oculus](https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/)など）。たとえば、HoloLensでは、ターゲットフレームレートは 60 FPS です。低フレームレートのアプリケーションは、[ホログラムの安定化](../hologram-Stabilization.md) の悪化、ワールドトラッキング、ハンドトラッキングなど、ユーザーエクスペリエンスの低下を招く可能性があります。開発者が高品質のフレームレートを追跡して達成できるように、Mixed Reality Toolkit はさまざまなツールとスクリプトを提供します。
 
 ### Visual Profiler
 
