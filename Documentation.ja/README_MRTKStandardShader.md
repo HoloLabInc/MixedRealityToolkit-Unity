@@ -2,7 +2,7 @@
 
 ![Standard shader examples](../Documentation/Images/MRTKStandardShader/MRTK_StandardShader.jpg)
 
-MRTK Standard shading システムは，単一で柔軟なシェーダーで， Unityの Standard shader に似たビジュアルを実現しつつ，[フルーエントデザインシステム (Fluent Design System)](https://www.microsoft.com/design/fluent/) の原則に則り，加えて MR デバイスでパフォーマンスを維持することができます。
+MRTK Standard shading システムは，単一で柔軟なシェーダーで， Unityの Standard shader に似たビジュアルを実現しつつ，[Fluent Design System (フルーエントデザインシステム)](https://www.microsoft.com/design/fluent/) の原則に則り，加えて MR デバイスでパフォーマンスを維持することができます。
 
 ## サンプルシーン
 
@@ -17,9 +17,9 @@ MRTK Standard shading システムは，単一で柔軟なシェーダーで， 
 
 ## アーキテクチャ
 
-MRTK/Standard Shader　は、[Unity のシェーダープログラムのバリアント機能](https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html) というマテリアルのプロパティに応じて最適な Shader コードを自動生成生成する機能を使った、ウーバーシェーダー (uber shader) です。ユーザがマテリアルインスペクタ内のマテリアルプロパティを選択すると，マテリアルのプロパティで有効にした機能のみにパフォーマンスコストがかかります。
+MRTK/Standard Shader　は、[Unity のシェーダープログラムのバリアント機能](https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html) というマテリアルのプロパティに応じて最適な Shader コードを自動生成生成する機能を使った、Uber Shader (ウーバーシェーダー) です。ユーザがマテリアル インスペクター内のマテリアル プロパティを選択すると，マテリアルのプロパティで有効にした機能のみにパフォーマンス コストがかかります。
 
-**MixedRealityStandardShaderGUI.cs** という MRTK/Standard Shader 用のカスタムマテリアルインスペクタがあります。インスペクタはユーザの選択に基づいて自動的に Shader 機能の有効/無効をユーザの選択し，レンダリング状態のセットアップを補助します。各機能の詳細情報は，各プロパティ上にカーソルを置いて，Unity Editor のツールチップを確認してください。
+**MixedRealityStandardShaderGUI.cs** という MRTK/Standard Shader 用のカスタム マテリアル インスペクタがあります。インスペクタはユーザの選択に基づいて自動的に Shader 機能の有効/無効をユーザの選択し，レンダリング状態のセットアップを補助します。各機能の詳細情報は，各プロパティ上にカーソルを置いて，Unity エディターのツールチップを確認してください。
 
 ![Material Inspector](../Documentation/Images/MRTKStandardShader/MRTK_MaterialInspector.jpg)
 
@@ -35,26 +35,26 @@ MRTK Standard shader の統計サンプル
 
 ![MRTK Standard Shader Statistics](../Documentation/Images/Performance/MRTKStandardShader-Stats.PNG)
 
-> [!注釈]
+> [!NOTE]
 > これらの結果は、Unity インスペクタで [Shader アセット](https://docs.unity3d.com/Manual/class-Shader.html) を選択して表示し、*Compile and show code* ボタンをクリックして生成できます。
 
-## Lighting
+## ライティング
 
-The MRTK/Standard uses a simple approximation for lighting. Because this shader does not calculate for physical correctness and energy conservation, it renders quickly and efficient. Blinn-Phong is the primary lighting technique which is blended with Fresnel and image based lighting to approximate physically based lighting. The shader supports the following lighting techniques:
+MRTK/Standard は、ライティングに単純な近似を使用します。このシェーダーは物理的な正確さとエネルギー保存を計算しないため、迅速かつ効率的にレンダリングします。 Blinn-Phong (ブリンフォン) は、物理ベースのライティングに近づけるために，フレネルおよび画像ベースのライティングとブレンドする基本的なライティング技術です。シェーダーは、次のライティング技術をサポートしています。
 
-### Directional Light
+### Directional Light (指向性ライト)
 
-The shader will respect the direction, color, and intensity of the first Unity Directional Light in the scene (if enabled). Dynamic point lights, spot lights, or any other Unity light will not be considered in real time lighting.
+シェーダーは、シーン内の最初の Unity の Directional Light の方向、色、および強度を考慮します (有効な場合)。ダイナミック ポイント ライト、スポット ライト、またはその他の Unity ライトは、リアルタイム ライティングでは考慮されません。
 
-### Spherical Harmonics
+### Spherical Harmonics (球面調和関数)
 
-The shader will use Light Probes to approximate lights in the scene using [Spherical Harmonics](https://docs.unity3d.com/Manual/LightProbes-TechnicalInformation.html) if enabled. Spherical harmonics calculations are performed per vertex to reduce calculation cost.
+シェーダーは、[Spherical Harmonics](https://docs.unity3d.com/Manual/LightProbes-TechnicalInformation.html) が有効であれば，これを用いてライトプローブで、シーン内のライトを近似します。Spherical Harmonics の計算は、計算コストを削減するために頂点ごとに実行されます。
 
-### Lightmapping
+### Lightmapping (ライトマッピング)
 
 For static lighting the shader will respect lightmaps built by Unity's [Lightmapping system](https://docs.unity3d.com/Manual/Lightmapping.html) simply mark the renderer as static (or lightmap static) to use lightmaps.
 
-### Hover Light
+### Hover Light (ホバー ライト)
 
 A Hover Light is a Fluent Design System paradigm that mimics a "point light" hovering near the surface of an object. Often used for far away cursor lighting the application can control the properties of a Hover Light via the [**HoverLight.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.HoverLight). Up to 3 Hover Lights are supported at a time.
 
@@ -93,44 +93,44 @@ Or, you can use the MRTK Texture Combiner Tool. To open the tool select: **Mixed
 
 This windows can be automatically filled out by selecting a Unity Standard shader and clicking "Autopopulate from Standard Material." Or, you can manually specify a texture (or constant value) per red, green, blue, or alpha channel. The texture combination is GPU accelerated and does not require the input texture to be CPU accessible.
 
-## Additional Feature Documentation
+## その他の機能のドキュメント
 
-Below are extra details on a handful of features details available with the MRTK/Standard shader.
+以下は、MRTK/Standard shader で利用できるいくつかの機能の詳細に関する追加項目です。
 
-Performant plane, sphere, and box shape clipping with the ability to specify which side of the primitive to clip against (inside or outside). You can find a scene that demonstrates advanced usage of clipping primitives in the  **ClippingExamples** scene under: [MixedRealityToolkit.Examples/Demos/StandardShader/Scenes/](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/StandardShader/Scenes)
+プリミティブプレーンのどちら側 (内側または外側) をクリップするかを指定する機能を備えた、高性能の平面、球、およびボックスシェイプクリッピング。**ClippingExamples** シーンの下に、クリッピングプリミティブの高度な使用法を示すシーンがあります: [MixedRealityToolkit.Examples/Demos/StandardShader/Scenes/](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/StandardShader/Scenes)
 
 ![primitive clipping](../Documentation/Images/MRTKStandardShader/MRTK_PrimitiveClipping.gif)
 
-[**ClippingPlane.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingPlane), [**ClippingSphere.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingSphere), and [**ClippingBox.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox) can be used to easily control clipping primitive properties.
+[**ClippingPlane.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingPlane)、 [**ClippingSphere.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingSphere)、 そして [**ClippingBox.cs**](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox) は、簡単にクリッピングのプリミティブなプロパティの制御に使うことができます。
 
 ![primitive clipping gizmos](../Documentation/Images/MRTKStandardShader/MRTK_PrimitiveClippingGizmos.gif)
 
-Built in configurable stencil test support to achieve a wide array of effects. Such as portals:
+組み込みの構成可能なステンシル テスト サポートにより、さまざまな効果を実現します。ポータルなど：
 
 ![stencil test](../Documentation/Images/MRTKStandardShader/MRTK_StencilTest.gif)
 
-Instanced color support to give thousands of GPU instanced meshes unique material properties:
+Instanced color のサポートにより、数千のGPUインスタンス化メッシュに固有のマテリアル プロパティを提供します。
 
 ![instanced properties](../Documentation/Images/MRTKStandardShader/MRTK_InstancedProperties.gif)
 
-Triplanar mapping is a technique to programmatically texture a mesh. Often used in terrain, meshes without UVs, or difficult to unwrap shapes. This implementation supports world or local space projection, the specification of blending smoothness, and normal map support. Note, each texture used requires 3 texture samples, so please use sparingly in performance critical situations.
+Triplanar mapping (３平面マッピング) は、プログラムでメッシュをテクスチャリングする手法です。多くの場合、地形、UVのないメッシュ、または形状の展開が困難なメッシュで使用されます。この実装は、ワールド空間またはローカル空間の投影、ブレンドの滑らかさの指定、および法線マップをサポートしています。使用する各テクスチャには3つのテクスチャサンプルが必要なので、パフォーマンスが重要な状況では控えめに使用してください。
 
 ![triplanar](../Documentation/Images/MRTKStandardShader/MRTK_TriplanarMapping.gif)
 
-A checkbox to control albedo optimizations. As an optimization albedo operations are disabled when no albedo texture is specified. This is useful for controlling [remote texture loading](http://dotnetbyexample.blogspot.com/2018/10/workaround-remote-texture-loading-does.html).
+アルベドの最適化を制御するチェックボックス。最適化として、アルベドテクスチャが指定されていない場合、アルベド操作は無効になります。これは、[リモートテクスチャの読み込み](http://dotnetbyexample.blogspot.com/2018/10/workaround-remote-texture-loading-does.html) の制御に役立ちます。
 
-Simply check this box:
+このボックスをチェックするだけです：
 
 ![albedo assignment](../Documentation/Images/MRTKStandardShader/MRTK_AlbedoAssignment.jpg)
 
-Per pixel clipping textures, local edge based anti aliasing, and normal map scaling are supported.
+ピクセルごとのクリッピング テクスチャ、ローカル エッジ ベースのアンチエイリアシング、および法線マップ スケーリングがサポートされています。
 
 ![normal map scale](../Documentation/Images/MRTKStandardShader/MRTK_NormalMapScale.gif)
 
-Vertex extrusion in world space. Useful for visualizing extruded bounding volumes or transitions in/out meshes.
+ワールド空間での頂点押し出し。押し出された境界ボリュームまたはメッシュの遷移を可視化するのに役立ちます。
 
 ![normal map scale](../Documentation/Images/MRTKStandardShader/MRTK_VertexExtrusion.gif)
 
-## See also
+## 関連項目
 
 - [Interactable](README_Interactable.md)
