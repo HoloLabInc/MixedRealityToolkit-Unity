@@ -1,13 +1,13 @@
 # Teleport System（テレポートシステム）
 
-テレポート システムは MRTK のサブシステムで、アプリケーションが不透明なディスプレイ (opaque display) を使用しているときにユーザのテレポートの処理をします。AR 体験( HoloLens など)の場合、テレポート システムが非アクティブです。没入型 HMD エクスペリエンス ( OpenVR、WMR ) でのテレポート システムを有効にすることができます。
+テレポート システムは MRTK のサブシステムで、アプリケーションが Opaque Display (不透明なディスプレイ) を使用しているときにユーザーのテレポートの処理をします。AR 体験( HoloLens など )の場合、テレポート システムが非アクティブです。没入型 HMD エクスペリエンス ( OpenVR、WMR ) 向けにテレポート システムを有効にすることができます。
 
 
 ## 有効と無効の設定
 
-テレポート システムは、プロファイルのチェック ボックスをオン/オフに切り替えることができます。
+テレポート システムは、プロファイルのチェックボックスをオン/オフに切り替えることができます。
 シーン内の MixedRealityToolkit オブジェクトを選択し、
-"Teleport" をクリックしてから "Enable Teleport System" のチェック ボックスをオンにすることで設定できます。
+"Teleport" をクリックしてから "Enable Teleport System" のチェックボックスを有効にすることで設定できます。
 
 ランタイム (runtime) で実行することもできます。
 
@@ -25,16 +25,15 @@ void EnableTeleportSystem()
 
 ## イベント
 
-テレポート システムは[`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler) を通じてイベントを公開します。
+テレポート システムは[`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler) を通してイベントを公開します。
 インターフェイスは、テレポート アクションの開始、終了、またはキャンセル時に通知を提供します。
 イベントの仕組みとそれに関連する負荷などの詳細については、リンク付きの API ドキュメントをご参照ください。
 
 ## 使い方
 
-### テレポート　イベントの登録方法
+### テレポーテーション イベントの登録方法
 
-次のコードは、テレポーテーションのイベントに待機する (Listen) MonoBehaviour を作成する方法を示しています。
-このコードの前提は、テレポート システムが有効になっていることです。
+次のコードは、テレポーテーションのイベントをリッスンする MonoBehaviour を作成する方法を示しています。ここのコードはテレポート システムが有効になっていることを前提とします。
 
 ```csharp
 using Microsoft.MixedReality.Toolkit;
