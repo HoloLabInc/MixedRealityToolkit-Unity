@@ -1,42 +1,42 @@
-# Slate #
+# Slate (スレート)#
 
 ![Slate](../Documentation/Images/Slate/MRTK_Slate_Main.png)
 
-The Slate prefab offers a thin window style control for displaying 2D content, for example plain text or articles including media. It offers a grabbable title bar as well as *Follow Me* and *Close* functionality. The content window can be scrolled via articulated hand input.
+スレート プレハブは、2D コンテンツを表示するための薄いウィンドウ型のコントロールを提供しています (例えば、プレーンテキストやメディアを含む記事)。これは、掴める (grabbable) タイトルバーだけでなく、*Follow Me* と *Close* 機能を提供しています。コンテンツ ウィンドウは、多関節のハンドの入力を介してスクロールすることができます。
 
-## How to use a slate control ##
-A slate control is composed of the following elements:
+## スレートをコントロールする方法 ##
+スレートをコントロールする方法は、次の要素で構成されます:
 
-* **TitleBar**: The entire title bar on top of the slate.
-* **Title**: The title area on the left side of the title bar.
-* **Buttons**: The button area on the right side of the title bar.
-* **BackPlate**: The back side of the slate.
-* **ContentQuad**: Content is assigned as material. The example uses a sample material 'PanContent'.
+* **TitleBar**: スレートの上にあるタイトル バー全体。
+* **Title**: タイトル バーの左側のタイトル領域。
+* **Buttons**: タイトル バーの右側のボタン領域。
+* **BackPlate**: スレートの裏側。
+* **ContentQuad**: コンテンツはマテリアルとして割り当てられます。この例では、サンプル マテリアル 'PanContent' を使用しています。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Structure.png" width="650">
 
-## Bounding Box ##
-A slate control contains a bounding box script for scaling and rotating. For more information on bounding box, please see the [Bounding box](README_BoundingBox.md) page.
+## Bounding Box (バウンディング ボックス) ##
+スレート コントロールには、スケーリングと回転用のバウンディング ボックス スクリプトが含まれています。バウンディング ボックスの詳細については、[バウンディング ボックスス](README_BoundingBox.md) ページを参照してください。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Box.png" width="650">
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Scale.png" width="650">
 
-## Buttons ##
-A standard slate offers two buttons as default on the top right of the title bar:
+## ボタン ##
+標準スレートには、デフォルトでタイトル バーの右上に 2 つのボタンがあります。
 
-* **Follow Me**: Toggles an orbital solver components to make the slate object follow the user.
-* **Close**: Disables the slate object.
+* **Follow Me**: Toggles と orbital solver コンポーネントでユーザーをフォローさせることができます。
+* **Close**: スレートを無効にする。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Buttons.png" width="650">
 
-## Scripts ##
-In general, the `NearInteractionTouchable.cs` script must be attached to any object that is intended to receive touch events from the `IMixedRealityTouchHandler`.
+## スクリプト ##
+一般的に、 スクリプト `NearInteractionTouchable.cs` は `IMixedRealityTouchHandler` からのタッチイベントを受け取るために、必ず何からしらのオブジェクトにアタッチするこは必要です。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Scripts.png">
 
-* `HandInteractionPan.cs` This script handles articulated hand input for touching and moving the content on the slate's *ContentQuad*.
+* `HandInteractionPan.cs` このスクリプトは、多関節のハンド入力を処理することにより、スレートの *ContentQuad* 上のコンテンツに触れたり移動させたりします。
 
-* `HandInteractionPanZoom.cs`: In addition to the panning interaction, this script supports two-handed zooming.
+* `HandInteractionPanZoom.cs`: このスクリプトは、パン (Pan、水平または垂直方向に移動させる) 操作に加えて、両手でのズームをサポートしています。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_PanZoom.png" width="500">
