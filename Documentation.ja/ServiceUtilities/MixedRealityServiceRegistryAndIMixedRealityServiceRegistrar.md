@@ -1,30 +1,33 @@
-# What are the MixedRealityServiceRegistry and IMixedRealityServiceRegistrar?
+# MixedRealityServiceRegistry と IMixedRealityServiceRegistrar とは何か?
 
-The Mixed Reality Toolkit has two very similarly named components that perform related tasks: 
-MixedRealityServiceRegistry and IMixedRealityServiceRegistrar.
+Mixed Reality Toolkit には、関連するタスクを行う2つの非常に似た名前のコンポーネントがあります。
+MixedRealityServiceRegistry と IMixedRealityServiceRegistrar です。
 
 ## MixedRealityServiceRegistry
 
-The [MixedRealityServiceRegistry](xref:Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry) is
-the component that contains instances of each registered service (core systems and extension services).
+[MixedRealityServiceRegistry](xref:Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry) は
+登録されたサービス（コア システムとエクステンション サービス）のそれぞれのインスタンスを含むコンポーネントです。
 
 > [!NOTE]
-> The MixedRealityServiceRegistry contains instances of objects that 
+> MixedRealityServiceRegistry は、contains instances of objects that 
 implement [IMixedRealityService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityService) interface, including [IMixedRealityExtensionService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService). 
+> MixedRealityServiceRegistry は、[IMixedRealityExtensionService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService) を含む [IMixedRealityService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityService) インターフェイスを実装したオブジェクトのインスタンスを含んでいます。
 >
+> [IMixedRealityDataProvider](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider) (IMixedRealityService のサブクラス) を実装しているオブジェクトは、明示的には MixedRealityServiceRegistry に登録されていません。これらのオブジェクトは、個々のサービス（例えば、Spatial Awareness）によって管理されています。
+
 >Objects implementing the [IMixedRealityDataProvider](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider) (a subclass of IMixedRealityService) are explicitly not registered in the MixedRealityServiceRegistry. These objects are managed by the individual services (ex: Spatial Awareness).
 
 The MixedRealityServiceRegistry is implemented as a static C# class and is the recommended pattern to
 use to acquire service instances in application code.
 
-The following snippet demonstrates acquiring an IMixedRealityInputSystem instance.
+以下のスニペットは、IMixedRealityInputSystem のインスタンスを取得するデモです。
 
 ```
 IMixedRealityInputSystem inputSystem = null;
 
 if (!MixedRealityServiceRegistry.TryGetService<IMixedRealityInputSystem>(out inputSystem))
 {
-    // Failed to acquire the input system. It may not have been registered
+    // input system の取得に失敗。登録されていないかもしれない。
 }
 ```
 
@@ -56,7 +59,7 @@ management components or called by services that require additional service comp
 correctly. Application code should, generally, not call these methods as doing so may cause the application
 to behave unpredictably (ex: a cached service instance may become invalid).
 
-## See also
+## 関連項目
 
 - [IMixedRealityServiceRegistrar API documentation](xref:Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar)
 - [MixedRealityServiceRegistry API documentation](xref:Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry)
