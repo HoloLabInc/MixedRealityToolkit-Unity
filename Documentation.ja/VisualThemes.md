@@ -16,7 +16,7 @@ To create a new [`Theme`](xref:Microsoft.MixedReality.Toolkit.UI.Theme) asset:
 
 Example Theme configuration assets can be found under [MixedRealityToolkit.SDK/Features/UX/Interactable/Themes](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Themes).
 
-![Theme ScriptableObject example in inspector](Images/VisualThemes/ThemeInspectorExample.png)
+![Theme ScriptableObject example in inspector](../Documentation/Images/VisualThemes/ThemeInspectorExample.png)
 
 ### States
 
@@ -27,7 +27,7 @@ To create a new [`State`](xref:Microsoft.MixedReality.Toolkit.UI.States) asset:
 1) Right click in the *Project Window*
 1) Select **Create** > **Mixed Reality Toolkit** > **State**
 
-![States ScriptableObject example in inspector](Images/Interactable/DefaultInteractableStates.png)
+![States ScriptableObject example in inspector](../Documentation/Images/Interactable/DefaultInteractableStates.png)
 
 A [`State`](xref:Microsoft.MixedReality.Toolkit.UI.States) ScriptableObject defines both the list of states as well as the type of *StateModel* to create for these states. A *StateModel* is a class that extends [`BaseStateModel`](xref:Microsoft.MixedReality.Toolkit.UI.BaseStateModel) and implements the state machine logic to generate the current state at runtime. The current state from this class is generally used by Theme Engines at runtime to dictate what values to set against material properties, GameObject transforms, and more.
 

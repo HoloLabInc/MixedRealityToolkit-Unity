@@ -14,7 +14,7 @@ The component allows for three primary sections of configuration:
 
 ### General input settings
 
-![General Interactable Settings](Images/Interactable/InputFeatures_short.png)
+![General Interactable Settings](../Documentation/Images/Interactable/InputFeatures_short.png)
 
 **States**
 
@@ -22,7 +22,7 @@ The component allows for three primary sections of configuration:
 
 The [**DefaultInteractableStates**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) ships with MRTK out-of-box and is the default parameter for *Interactable* components.
 
-![States ScriptableObject example in inspector](Images/Interactable/DefaultInteractableStates.png)
+![States ScriptableObject example in inspector](../Documentation/Images/Interactable/DefaultInteractableStates.png)
 
 The *DefaultInteractableStates* asset contains four states and utilizes the [`InteractableStates`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableStates) state model implementation.
 
@@ -98,7 +98,7 @@ The current Selection Mode can be queried at runtime via [`Interactable.ButtonMo
 
 Themes work a lot like materials. They are scriptable objects that contain a list of properties that will be assigned to an object based on the current state. Themes are also re-usable and can be assigned across multiple *Interactable* UX objects.
 
-![Interactable Profiles](Images/Interactable/Profiles_Themes.png)
+![Interactable Profiles](../Documentation/Images/Interactable/Profiles_Themes.png)
 
 ## Events
 
@@ -106,7 +106,7 @@ Every *Interactable* component has an *OnClick* event that fires when the compon
 
 Click the *Add Event* button to add a new type of Event Receiver definition. Once added, select the type of Event desired.
 
-![Events example](Images/Interactable/Events.png))
+![Events example](../Documentation/Images/Interactable/Events.png))
 
 There are different types of event receivers to respond to different types of input. MRTK ships with the following set of receivers out-of-box.
 
@@ -121,7 +121,7 @@ There are different types of event receivers to respond to different types of in
 
 A custom receiver can be created by making a new class that extends [`ReceiverBase`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase).
 
-![Event Toggle Receiver Example](Images/Interactable/Event_toggle.png)
+![Event Toggle Receiver Example](../Documentation/Images/Interactable/Event_toggle.png)
 
 *Example of a Toggle Event Receiver*
 
@@ -213,7 +213,7 @@ While the [`SelectionMode`](xref:Microsoft.MixedReality.Toolkit.UI.SelectionMode
 
 *CanSelect* means the the *Interactable* can go from *off* to *on* while the *CanDeselect* means the inverse.
 
-![Profile Toggle Visual Themes Example](Images/Interactable/Profile_toggle.png)
+![Profile Toggle Visual Themes Example](../Documentation/Images/Interactable/Profile_toggle.png)
 
 Developers can utilize the [`SetToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) and [`IsToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) interfaces to get/set the toggle state of an *Interactable* via code.
 
@@ -251,7 +251,7 @@ With dimensions being a numeric value, up to 9 themes can be added to control th
 
 Every click event will advance the `DimensionIndex` by 1 at runtime until the `Dimensions` value is reached then the cycle will reset to 0.
 
-![Multi-Dimensional profile example](Images/Interactable/Profile_multiDimensions.png)
+![Multi-Dimensional profile example](../Documentation/Images/Interactable/Profile_multiDimensions.png)
 
 Developers can assess the [`DimensionIndex`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) to determine which dimension is currently active.
 
