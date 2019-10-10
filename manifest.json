@@ -937,12 +937,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/InputSimulation/InputSimulationService.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/InputSimulation/InputSimulationService.html",
-          "hash": "UbDw9JD3+o6+x5QTNIYg9Q=="
+          "hash": "25nQA/BsCkXZCQmxi9+KQA=="
         }
       },
       "is_incremental": false,
@@ -19914,17 +19917,17 @@
           "total_file_count": 212,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 1076,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1076,
           "skipped_file_count": 0
         }
       }
