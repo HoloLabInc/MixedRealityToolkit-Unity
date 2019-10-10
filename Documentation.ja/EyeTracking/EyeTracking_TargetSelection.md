@@ -1,4 +1,4 @@
-![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png)
+![MRTK](../Images/EyeTracking/mrtk_et_targetselect.png)
 
 # Eye-supported target selection
 
@@ -75,7 +75,7 @@ The _IMixedRealityPointerHandler_ interface requires implementing the following 
 _OnPointerUp_, _OnPointerDown_, and _OnPointerClicked_.
 
 In the example below, we change the color of a hologram by looking at it and pinching or saying "select".
-The required action to trigger the event is defined by `eventData.MixedRealityInputAction == selectAction` whereby we can set the type of `selectAction` in the Unity Editor - by default it's the "Select" action. The types of available [MixedRealityInputActions](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/InputActions.html) can be configured in the MRTK Profile via _MRTK Configuration Profile_ -> _Input_ -> _Input Actions_.
+The required action to trigger the event is defined by `eventData.MixedRealityInputAction == selectAction` whereby we can set the type of `selectAction` in the Unity Editor - by default it's the "Select" action. The types of available [MixedRealityInputActions](../Input/InputActions.md) can be configured in the MRTK Profile via _MRTK Configuration Profile_ -> _Input_ -> _Input Actions_.
 
 ```csharp
    public class ColorTap : MonoBehaviour, IMixedRealityFocusHandler, IMixedRealityPointerHandler
@@ -251,7 +251,7 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
 
 2. Add the [`EyeTrackingTarget`](xref:Microsoft.MixedReality.Toolkit.Input.EyeTrackingTarget) script to your target GameObject and reference the _RotateTarget()_ function in the UnityEvent trigger as shown the screenshot below:
 
-![EyeTrackingTarget sample](../../Documentation/Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg)
+![EyeTrackingTarget sample](../Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg)
 
 ### Example #3: Pop those gems aka _multimodal eye-gaze-supported target selection_
 
@@ -274,7 +274,7 @@ This means that the user can simply raise their hand and pinch their thumb and i
             - Associate the action you just created
             - Assign a _KeyCode_ to allow for triggering the action via a button press
 
-![Voice commands EyeTrackingTarget sample](../../Documentation/Images/EyeTracking/mrtk_et_voicecmdsample.jpg)
+![Voice commands EyeTrackingTarget sample](../Images/EyeTracking/mrtk_et_voicecmdsample.jpg)
 
 When a gem is selected it will explode, making a sound and disappear. This is handled by the [`HitBehaviorDestroyOnSelect`](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.HitBehaviorDestroyOnSelect) script. You have two options:
 - **In the Unity Editor:**
