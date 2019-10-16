@@ -20,4 +20,6 @@ MRTK の Input System (入力システム)では、次のことが可能です�
 <img src="../../Documentation/Images/Input/MRTK_Input_EventFlow.png" width="200px" style="display:block;margin-left:auto;margin-right:auto;">
 <sup>イベント フロー</sup>
 
-入力イベントは UI コンポーネントで直接処理できますが、ポインター イベントを使用して実装をデバイスに依存しないようにすることをお勧めします。
+[入力イベントを直接 UI コンポーネント](InputEvents.md)で扱うこともできますが、[ポインター イベント](pointers.md#pointer-event-interfaces)を使用して実装をデバイスに依存しないようにすることをお勧めします。
+
+MRTK は、デバイスから独立した方法で、入力の状態を直接問い合わせるいくつかの便利な方法も提供しています。詳細については、[Accessing Input State in MRTK](InputState.md) をご覧ください。
