@@ -45,7 +45,6 @@ Mixed Reality Toolkit のサービスには、プラットフォーム固有の�
 
 空間認識システムは、データ プロバイダーが現実世界に関するメッシュデータをシステムに提供するという点で類似しています。Spatial Awareness プロファイルには、少なくとも 1 つの Spatial Observer (空間オブザーバー) が登録されている必要があります。空間オブザーバーは通常、プラットフォーム固有のエンドポイント（つまり、HoloLens）からさまざまな種類のメッシュデータを提供するためのプロバイダーとして機能するプラットフォーム固有のコンポーネントです。
 
-
 1. *Spatial Awareness System* プロファイルを開く
 
     ![Spatial Awareness System Profile](../../Documentation/Images/SpatialAwareness/SpatialAwarenessProfile.png)
@@ -59,18 +58,6 @@ Mixed Reality Toolkit のサービスには、プラットフォーム固有の�
 
 > [!NOTE]
 > [DefaultMixedRealityToolkitConfigurationProfile](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/DefaultMixedRealityToolkitConfigurationProfile.asset) のユーザーは、[`WindowsMixedRealitySpatialMeshObserver`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver) クラスを使用する Windows Mixed Reality プラットフォーム用に事前設定された Spatial Awareness システムを使用します
-
-#### オブザーバーの設定
-
-空間オブザーバーがシステムに登録されると、目的のデータを提供するように構成されます。空間オブザーバーを構成する場合、多くの実装では、オブザーバーの構成プロファイルに共通の既定値を自動設定します。
-
-1. Spatial Observer プロファイルを開く
-
-![Spatial Mesh Observer Profile](../../Documentation/Images/SpatialAwareness/SpatialAwarenessMeshObserverProfile.png)
-
-2. 必要なオプションを設定する
-
-前の手順の図は、空間メッシュ オブザーバーの構成プロファイルを示しています。メッシュ オブザーバーが使用できる特定の設定に関する詳細については、[Configuring the Spatial Awareness Mesh Observer](ConfiguringSpatialAwarenessMeshObserver.md) を参照してください。他のオブザーバーも同様の設定を持つ可能性があります。
 
 ### ビルドとデプロイ
 
