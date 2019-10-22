@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Microsoft.MixedReality.Toolkit.Utilities
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.46.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -104,6 +104,9 @@ that make the most sense for the specific instruction type.</p>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.AwaiterExtensions.SimpleCoroutineAwaiter-1.html">AwaiterExtensions.SimpleCoroutineAwaiter&lt;T&gt;</a></h4>
       <section><p>Processes Coroutine and notifies completion with result.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.BaseMeshOutline.html">BaseMeshOutline</a></h4>
+      <section><p>Abstract component to encapsulate common functionality around outline components.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.BaseMixedRealityLineDataProvider.html">BaseMixedRealityLineDataProvider</a></h4>
       <section><p>Base class that provides data about a line.</p>
 </section>
@@ -182,6 +185,22 @@ object scale. This component should be used in conjunction with the
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MeshLineRenderer.html">MeshLineRenderer</a></h4>
       <section><p>Creates instances of a mesh along the line</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MeshOutline.html">MeshOutline</a></h4>
+      <section><p>Component which can be used to render an outline around a mesh renderer. Enabling this component introduces an additional render pass
+of the object being outlined, but is designed to run performantly on mobile Mixed Reality devices and does not utilize any post processes.
+This behavior is designed to be used in conjunction with the MRTK/Standard shader. Limitations of this effect include it not working well
+on objects which are not watertight (or required to be two sided) and depth sorting issues can occur on overlapping objects.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MeshOutlineHierarchy.html">MeshOutlineHierarchy</a></h4>
+      <section><p>Component which can be used to render an outline around a hierarchy of mesh renderers using
+the <a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MeshOutline.html">MeshOutline</a> component.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MeshSmoother.html">MeshSmoother</a></h4>
+      <section><p>Component which can be used to automatically generate smoothed normals on a mesh and pack
+those normals into a UV set. Smoothed normals can be used for a variety of effects including
+extruding disjoint meshes along a vertex normal. This behavior is designed to be used in conjunction
+with the MRTK/Standard shader which assumes smoothed normals are packed into the 3rd UV set.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.MixedRealityLineRenderer.html">MixedRealityLineRenderer</a></h4>
       <section><p>Implements Unity's built in line renderer component, and applies the line data to it.</p>
 </section>
@@ -210,6 +229,11 @@ the &quot;MixedRealityToolkit/Standard&quot; shader &quot;_ProximityLight&quot; 
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.RectangleLineDataProvider.html">RectangleLineDataProvider</a></h4>
       <section><p>Defines a line in the shape of a rectangle.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.RectTransformCubeScaler.html">RectTransformCubeScaler</a></h4>
+      <section><p>RectTransforms do not scale 3d objects (such as unit cubes) to fit within their bounds.
+This helper class will apply a scale to fit a unit cube into the bounds specified by the RectTransform.
+The Z component is scaled to the min of the X and Y components.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Rest.html">Rest</a></h4>
       <section><p>REST Class for CRUD Transactions.</p>
 </section>
@@ -225,6 +249,9 @@ Pressing &quot;update collection&quot; will run the randomization, feel free to 
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.SplineDataProvider.html">SplineDataProvider</a></h4>
       <section><p>Creates a spline based on control points.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.StandardShaderUtility.html">StandardShaderUtility</a></h4>
+      <section><p>Mixed Reality standard shader utility class with commonly used constants, types and convenience methods.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.StripMeshLineRenderer.html">StripMeshLineRenderer</a></h4>
       <section><p>Draws a strip of polygons along the line</p>
 </section>
@@ -236,6 +263,10 @@ Pressing &quot;update collection&quot; will run the randomization, feel free to 
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.TileGridObjectCollection.html">TileGridObjectCollection</a></h4>
       <section><p>A basic grid layout for game objects of a consistent size</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.TypeCacheUtility.html">TypeCacheUtility</a></h4>
+      <section><p>Utility class to store subclasses of particular base class keys
+Reloads between play mode/edit mode and after re-compile of scripts</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.WaitForBackgroundThread.html">WaitForBackgroundThread</a></h4>
       <section></section>
@@ -320,6 +351,9 @@ It is up to the developer to determine whether this affects the use of a control
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.SolverOrientationType.html">SolverOrientationType</a></h4>
       <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.SupportedApplicationModes.html">SupportedApplicationModes</a></h4>
+      <section><p>The supported Application modes for specific features.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.SupportedPlatforms.html">SupportedPlatforms</a></h4>
       <section><p>The supported platforms for Mixed Reality Toolkit Components and Features.</p>
 </section>

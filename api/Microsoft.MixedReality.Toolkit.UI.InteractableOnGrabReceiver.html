@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class InteractableOnGrabReceiver
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.46.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@ When the grab states change, on or off, these events are triggered</p>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html#Microsoft_MixedReality_Toolkit_UI_ReceiverBase_uEvent">ReceiverBase.uEvent</a>
     </div>
     <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html#Microsoft_MixedReality_Toolkit_UI_ReceiverBase_Event">ReceiverBase.Event</a>
+    </div>
+    <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html#Microsoft_MixedReality_Toolkit_UI_ReceiverBase_Host">ReceiverBase.Host</a>
     </div>
     <div>
@@ -149,8 +152,20 @@ When the grab states change, on or off, these events are triggered</p>
   
   
   <a id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver__ctor_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.#ctor*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver__ctor" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.#ctor">InteractableOnGrabReceiver()</h4>
+  <div class="markdown level1 summary"><p>Creates a receiver that raises grab start and end events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InteractableOnGrabReceiver()</code></pre>
+  </div>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver__ctor_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.#ctor*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver__ctor_UnityEvent_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.#ctor(UnityEvent)">InteractableOnGrabReceiver(UnityEvent)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a receiver that raises grab start and end events.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -178,7 +193,8 @@ When the grab states change, on or off, these events are triggered</p>
   
   
   <h4 id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver_OnRelease" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.OnRelease">OnRelease</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoked on grab release</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -199,13 +215,42 @@ When the grab states change, on or off, these events are triggered</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver_OnGrab_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.OnGrab*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver_OnGrab" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.OnGrab">OnGrab</h4>
+  <div class="markdown level1 summary"><p>Invoked on grab start</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent OnGrab { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
   
   <a id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver_OnUpdate_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.OnUpdate*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_UI_InteractableOnGrabReceiver_OnUpdate_Microsoft_MixedReality_Toolkit_UI_InteractableStates_Microsoft_MixedReality_Toolkit_UI_Interactable_" data-uid="Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.OnUpdate(Microsoft.MixedReality.Toolkit.UI.InteractableStates,Microsoft.MixedReality.Toolkit.UI.Interactable)">OnUpdate(InteractableStates, Interactable)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The state has changed</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
