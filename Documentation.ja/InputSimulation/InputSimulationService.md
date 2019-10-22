@@ -142,7 +142,7 @@ _Left/Middle/Right Mouse Hand Gesture_ 設定を使用して、それぞれの�
 
 ## GGV インタラクション
 
-1. [Input Simulation Profile](#enabling-the-input-simulation-service) で、__Hand Simulation Mode__ を _Gestures_ にすることにより、GGV のシミュレーションに切り替えることができます
+1. [Input Simulation Profile](#入力シミュレーション-サービスの有効化) で、__Hand Simulation Mode__ を _Gestures_ にすることにより、GGV のシミュレーションに切り替えることができます
 1. カメラを回転させて、視線カーソルをインタラクション可能なオブジェクトにポイントします（マウスの右クリックを使用）
 1. _Space_ を押し続けて、右ハンドを操作します
 1. _left mouse button_ を押し続けてインタラクションします
