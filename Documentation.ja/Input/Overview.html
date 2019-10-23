@@ -96,7 +96,8 @@
 <p>コントローラーには、<a href="Pointers.html"><strong>Pointers (ポインター)</strong></a> をアタッチして、シーンを照会してフォーカスのあるゲーム オブジェクトを決定し、<a href="Pointers.html#pointer-event-interfaces"><strong>Pointer Events (ポインター イベント)</strong></a> を発生させることができます。例として、<em>line pointer (ライン ポインター)</em> はレイの原点と方向を計算するためにコントローラーの姿勢を利用し、シーンに対してレイキャストを行います。各コントローラーに対して作成されたポインターは、<em>Input System Profile</em> の下の <strong>Pointer Profile</strong> で設定されます。</p>
 <img src="../../Documentation/Images/Input/MRTK_Input_EventFlow.png" width="200px" style="display:block;margin-left:auto;margin-right:auto;">
 <sup>イベント フロー</sup>
-<p>入力イベントは UI コンポーネントで直接処理できますが、ポインター イベントを使用して実装をデバイスに依存しないようにすることをお勧めします。</p>
+<p><a href="InputEvents.html">入力イベントを直接 UI コンポーネント</a>で扱うこともできますが、<a href="Pointers.html#pointer-event-interfaces">ポインター イベント</a>を使用して実装をデバイスに依存しないようにすることをお勧めします。</p>
+<p>MRTK は、デバイスから独立した方法で、入力の状態を直接問い合わせるいくつかの便利な方法も提供しています。詳細については、<a href="InputState.html">Accessing Input State in MRTK</a> をご覧ください。</p>
 </article>
           </div>
           
