@@ -20,7 +20,7 @@ Mixed Reality Toolkit を始めるには、次のものが必要です。
 
 ## チュートリアルを始める
 
-MRTK、または MR 開発が初めての場合は、MRTKv2 を使った [チュートリアルを始める](https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base)をチェックすることをお勧めします。コアとなるビルディングブロックについては、[MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)](https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101) をチェックしてください。
+MRTK、または MR 開発が初めての場合は、MRTK v2 を使った [チュートリアルを始める](https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base)をチェックすることをお勧めします。コアとなるビルディング ブロックについては、[MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)](https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101) をチェックしてください。
 
 ## MRTK を Unity Project に追加する
 
