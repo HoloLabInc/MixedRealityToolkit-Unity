@@ -86,6 +86,13 @@
 <p>Button (ボタン) を使うと、ユーザは即座にアクションを引き起こすことができます。Mixed Reality の最も基本的なコンポーネントの１つです。MRTK は、様々なタイプのボタン プレハブを提供しています。</p>
 <h2 id="mrtk-のボタン-プレハブ">MRTK のボタン プレハブ</h2>
 <p><code>MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs</code> フォルダ下のボタン プレハブのサンプル</p>
+<h3 id="unity-ui-の-画像グラフィック-ベースのボタン">Unity UI の 画像/グラフィック ベースのボタン</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a></li>
+<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a></li>
+<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a></li>
+</ul>
+<h3 id="colliderコライダー-ベースのボタン">Collider（コライダー） ベースのボタン</h3>
 <table>
 <thead>
 <tr>
@@ -135,6 +142,15 @@
 <p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/Button.prefab"><code>Button.prefab</code></a> は、 <a href="README_Interactable.html">Interactable</a> のコンセプトに基づいており、ボタンまたはその他のタイプのインタラクション可能な面に簡単な UI コントロールを提供します。 ベースライン ボタンは、近くのインタラクション要素に対して Articulated hand (多関節ハンド) で入力する場合や、遠くのインタラクション要素に対してゲイズ＋エアタップなど、利用可能な全ての入力方法をサポートします。音声コマンドを使用してボタンをトリガーすることもできます。</p>
 <p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab"><code>PressableButtonHoloLens2.prefab</code></a> は、HoloLens 2 のシェル スタイル ボタンで、ダイレクト ハンド トラッキングの入力用に精密な動きをサポートします。 <code>Interactable</code> のスクリプトと <code>PressableButton</code> のスクリプトを組合わせています。</p>
 <h2 id="pressable-button-押しボタン-の使い方">Pressable button (押しボタン) の使い方</h2>
+<h3 id="unity-ui-ベースのボタン">Unity UI ベースのボタン</h3>
+<p>以下の設定で Canvas を作成します。</p>
+<ul>
+<li>Render Mode を World Space に設定</li>
+<li>スケールを 0.001 に</li>
+<li>CanvasUtility コンポーネントを追加</li>
+</ul>
+<p>その後、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a>、 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a>、または <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a> を Canvas にドラッグしてください。</p>
+<h3 id="コライダー-ベースのボタン">コライダー ベースのボタン</h3>
 <p>単に <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab"><code>PressableButtonHoloLens2.prefab</code></a> または<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2Unplated.prefab"><code>PressableButtonHoloLens2Unplated.prefab</code></a> をドラッグしてシーンに置くだけです。これらのボタン プレハブは、Articulated hand (多関節ハンド) 入力やゲイズなど、様々なタイプの入力に対して視聴覚フィードバックするように既に設定されています。</p>
 <p>プレハブ自体と <a href="README_Interactable.html">Interactable</a> コンポーネントで公開されているイベントを使用して、追加のアクションをトリガーできます。 <a href="README_HandInteractionExamples.html">HandInteractionExample のシーン</a>の pressable buttons は、Interactable の <em>OnClick</em> イベントを使って、キューブの色の変更をトリガーします。このイベントは、ゲイズ、エアタップ、ハンド レイ などの様々なタイプの入力メソッド、及び pressable button のスクリプトを介した物理的なボタンの押下に対してトリガーされます。</p>
 <img src="../Documentation/Images/Button/MRTK_Button_HowToUse_Interactable.png" width="450">
@@ -163,6 +179,16 @@
 <h2 id="プレハブのレイアウト">プレハブのレイアウト</h2>
 <p><em>ButtonContent</em> オブジェクトには、フロント プレート、テキスト ラベル、およびアイコンが含まれています。 <em>FrontPlate</em>は、<em>Button_Box</em> シェーダーを使用して、人差し指の近接に応答します。 光る境界線、近接ライト、およびタッチのパルス エフェクトを示します。 テキスト ラベルは TextMesh Pro で作成されます。 <em>SeeItSayItLabel</em> の可視性は、<a href="README_Interactable.html">Interactable</a> のテーマによって制御されます。</p>
 <p><img src="../Documentation/Images/Button/MRTK_Button_Layout.png" alt="Button"></p>
+<h2 id="アイコンとテキストの変更方法">アイコンとテキストの変更方法</h2>
+<p>ボタンのテキストを変更するには、<em>IconAndText</em> 配下の <em>TextMeshPro</em> オブジェクトの <em>Text</em> コンポーネントを更新します。アイコンを変更するには、<em>UIButtonSquareIcon</em> オブジェクトにアサインされているマテリアルを置き換えます。デフォルトでは、<em>HolographicButtonIconFontMaterial</em> がアサインされています。</p>
+<img src="../Documentation/Images/Button/MRTK_Button_IconUpdate1.png">
+<p>新しいアイコンのマテリアルを作成するには、既存のアイコン マテリアルの1つを複製します。アイコン マテリアルは<code>MixedRealityToolkit.SDK/Features/UX/Interactable/Materials</code> フォルダー内にあります。</p>
+<img src="../Documentation/Images/Button/MRTK_Button_IconUpdate2.png" width="350">
+<p>新しい PNG テクスチャを作成し、Unity にインポートします。既存の PNG ファイルのアイコンの例を参考にしてください。<code>MixedRealityToolkit.SDK/Features/UX/Interactable/Textures</code></p>
+<p>新しく作った PNG テクスチャを、マテリアルの <em>Albedo</em> プロパティにドラッグ アンド ドロップします。</p>
+<img src="../Documentation/Images/Button/MRTK_Button_IconUpdate3.png">
+<p>マテリアルを <em>UIButtonSquareIcon</em> オブジェクトにアサインします。</p>
+<img src="../Documentation/Images/Button/MRTK_Button_IconUpdate4.png">
 <h2 id="音声コマンド-see-it-say-it">音声コマンド ('See-it, Say-it')</h2>
 <p><strong>Speech Input Handler (音声入力ハンドラー)</strong>
 Pressable Buttonの <a href="README_Interactable.html">Interactable</a> スクリプトは、すでに <code>IMixedRealitySpeechHandler</code>を実装しています。 ここで音声コマンドのキーワードを設定できます。</p>
@@ -201,8 +227,7 @@ Pressable Button プレハブには、<em>SeeItSayItLabel</em> オブジェク�
 <img src="../Documentation/Images/Button/MRTK_PressableButtonCube6.png" width="450">
 <h3 id="4-視覚的な状態とファー-インタラクションイベントの処理を加える">4. 視覚的な状態とファー インタラクションイベントの処理を加える</h3>
 <p><a href="README_Interactable.html">Interactable</a> は、さまざまなタイプの入力インタラクションの視覚的な状態を簡単に作成できるスクリプトです。 また、ファー インタラクション イベントも処理します。<code>Interactable.cs</code> を追加し、キューブ オブジェクトを <strong>Profiles</strong> の下の <strong>Target</strong> フィールドにドラッグ アンド ドロップします。 次に、<strong>ScaleOffsetColorTheme</strong> タイプの新しいテーマを作成します。このテーマでは、<strong>Focus</strong> や <strong>Pressed</strong> などの特定のインタラクションの状態におけるオブジェクトの色を指定できます。スケールとオフセットも制御できます。<strong>Easing</strong> をチェックし、継続時間を設定して視覚的な変化をスムーズにします。</p>
- <img src="../Documentation/Images/Button/MRTK_PressableButtonCube8.png" width="450">
- <img src="../Documentation/Images/Button/MRTK_PressableButtonCube9.png" width="450">
+<p><img src="../Documentation/Images/Button/mrtk_button_profiles.gif" alt="プロファイルのテーマを選択"></p>
 <p>オブジェクトが遠く (ハンド レイ、またはゲイズ カーソル) と近く (ハンド) の両方のインタラクションに応答するのがわかります。</p>
 <img src="../Documentation/Images/Button/MRTK_PressableButtonCubeRun3.jpg">
 <img src="../Documentation/Images/Button/MRTK_PressableButtonCubeRun4.jpg">
@@ -212,6 +237,11 @@ Pressable Button プレハブには、<em>SeeItSayItLabel</em> オブジェク�
 <img src="../Documentation/Images/Button/MRTK_Button_Custom2.png" width="450">
 <p>各ピアノのキーには、<code>PressableButton</code> と <code>NearInteractionTouchable</code> のスクリプトが割り当てられています。<code>NearInteractionTouchable</code> の <em>Local Forward</em> の方向が正しいことを確認することが重要です。エディターでは白い矢印で表されます。矢印がボタンの前面からその先を指していることを確認してください。</p>
 <img src="../Documentation/Images/Button/MRTK_Button_Custom3.png" width="450">
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="README_Interactable.html">Interactable</a></li>
+<li><a href="VisualThemes.html">Visual Themes</a></li>
+</ul>
 </article>
           </div>
           
