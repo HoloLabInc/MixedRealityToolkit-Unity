@@ -162,7 +162,7 @@ Editor 内の入力シミュレーション を使って、[手](InputSimulation
 * [MRTK Examples Hub](README_ExampleHub.md) を試す。(事前にビルドされたアプリケーション パッケージはリリース ページに含まれています)
 * [Mixed Reality Toolkit プロファイル設定ガイド](MixedRealityConfigurationGuide.md) で MRTK Configuration profile の使い方を学ぶ。
 * [MRTK のアーキテクチャ](./Architecture/Overview.md) を、学ぶ。
-* [入力の概要](./Input/Overview.md) を、学ぶ。
+* [MRTK のインプット システム](./Input/Overview.md) を、学ぶ。
 * 複合現実感の設計と開発を強化する [MRTK's Tools](../README.md#tools) について学ぶ。
 * [入力シミュレーションサービス (Input Simulation Service)](InputSimulation/InputSimulationService.md) を読み、エディタでハンド入力をシミュレートする方法を学ぶ。
 
