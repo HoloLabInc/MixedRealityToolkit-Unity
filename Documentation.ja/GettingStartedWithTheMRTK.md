@@ -157,7 +157,7 @@ Editor 内の入力シミュレーション を使って、[手](InputSimulation
 
 お勧めの次のステップを紹介します。
 
-* [MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions](https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101) では、グラブ、移動、スケール、回転などの一般的な空間的インタラクションの実現方法について学ぶ。
+* [MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions](https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101) で、グラブ、移動、スケール、回転などの一般的な空間的インタラクションの実現方法について学ぶ。
 * [UI とインタラクションのビルディング ブロック](../README.md#ui-and-interaction-building-blocks) で UX コントロール について学ぶ。
 * [MRTK Examples Hub](README_ExampleHub.md) (事前にビルドされたアプリケーションパッケージはリリースページに含まれています) を試す。
 * [Mixed Reality Toolkit プロファイル設定ガイド](MixedRealityConfigurationGuide.md) で MRTK Configuration profile の使い方を学ぶ。
