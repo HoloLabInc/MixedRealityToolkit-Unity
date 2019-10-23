@@ -24,7 +24,7 @@ MRTK、または MR 開発が初めての場合は、MRTK v2 を使った [チ�
 
 ## MRTK を Unity Project に追加する
 
-Mixed Reality Toolkitは、Nuget.org からダウンロードできます。詳細は [MRTK NuGet Package](MRTKNuGetPackage.md) を参照してください。
+Mixed Reality Toolkit は、Nuget.org からダウンロードできます。詳細は [MRTK NuGet Package](MRTKNuGetPackage.md) を参照してください。
 
 ### 最新の MRTK Unity パッケージを取得する
 
