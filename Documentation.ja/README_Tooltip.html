@@ -89,7 +89,7 @@
 <p>この方法を使用するには、単にゲーム オブジェクトと<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Tooltips">Tooltip プレハブ</a> をシーンの <a href="%E3%83%92%E3%82%A8%E3%83%A9%E3%83%AB%E3%82%AD%E3%83%BC">Hierarchy</a> に追加するだけです。プレハブのインスペクタ パネルで、<em>Tooltip</em> (スクリプト)を展開します。Tip State を選択し、Tooltip の設定を行います。Tooltip のテキスト フィールドにそれぞれのテキストを入力します。<em>ToolTipConnector</em> (スクリプト) を展開し、Tooltip を持たせるオブジェクトを <a href="%E3%83%92%E3%82%A8%E3%83%A9%E3%83%AB%E3%82%AD%E3%83%BC">Hierarchy</a> から <em>Target</em> というフィールドにドラッグします。これにより、Tooltip がオブジェクトにアタッチされます。
 <img src="../Documentation/Images/Tooltip/MRTK_Tooltip_Connector.png" alt="Tooltip"></p>
 <p>この使用方法は、Tooltip が常に表示される場合や、Tooltip コンポーネントの Tooltip State プロパティをスクリプトで変更して表示/非表示を切り替える場合を想定しています。</p>
-<h2 id="動的に-tooltip-を作成する">動的に Tooltip を作成する##</h2>
+<h2 id="動的に-tooltip-を作成する">動的に Tooltip を作成する</h2>
 <p>Tooltip は、事前に設定しておいてタップやフォーカスによって表示と非表示を行うだけでなく、実行時にオブジェクトに動的に追加することもできます。 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Scripts/Tooltips/ToolTipSpawner.cs"><code>ToolTipSpawner</code></a> スクリプトを任意のゲーム オブジェクトに追加するだけです。スクリプトのインスペクターにて、設定された期間が過ぎると Tooltip が消えるように生存期間を設定したり、現れたり消えたりする際の遅延時間を設定したりできます。Tooltip は背景の見た目のようなスタイルのプロパティも備えており、ToolTipSpawner スクリプトで設定できます。デフォルトでは、Tooltip は ToolTipSpawner スクリプトを持つオブジェクトに固定されます。これは、アンカー フィールドに GameObject を割り当てることで変更できます。</p>
 <h2 id="サンプルシーン">サンプルシーン</h2>
 <p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/UX/Tooltips/Scenes">サンプルシーン</a>では、Tooltip のさまざまな例を見つけることができます。</p>
