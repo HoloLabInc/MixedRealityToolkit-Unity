@@ -33,7 +33,7 @@ void EnableTeleportSystem()
 
 ### テレポーテーション イベントの登録方法
 
-次のコードは、テレポーテーションのイベントをリッスンする MonoBehaviour を作成する方法を示しています。ここのコードはテレポート システムが有効になっていることを前提とします。
+次のコードは、テレポーテーションのイベントをリッスンする MonoBehaviour を作成する方法を示しています。このコードはテレポート システムが有効になっていることを前提とします。
 
 ```csharp
 using Microsoft.MixedReality.Toolkit;
