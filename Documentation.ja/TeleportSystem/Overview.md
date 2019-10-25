@@ -25,7 +25,7 @@ void EnableTeleportSystem()
 
 ## イベント
 
-テレポート システムは[`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler) を通してイベントを公開します。
+テレポート システムは [`IMixedRealityTeleportHandler`](xref:Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler) インターフェイスを通してイベントを公開します。
 インターフェイスは、テレポート アクションの開始、終了、またはキャンセル時に通知を提供します。
 イベントの仕組みとそれに関連する負荷などの詳細については、リンク付きの API ドキュメントをご参照ください。
 
