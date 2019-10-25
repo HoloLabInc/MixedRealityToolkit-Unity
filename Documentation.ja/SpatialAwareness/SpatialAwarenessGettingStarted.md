@@ -31,7 +31,7 @@ Mixed Reality Toolkit には、いくつかのデフォルトの事前設定プ�
 
     ![MRTK Configured Scene Hierarchy](../../Documentation/Images/MRTK_ConfiguredHierarchy.png)
 
-1. *空間認識システム* セクションに移動し、*Enable Spatial Awareness System* にチェックを入れる
+1. *Spatial Awareness System* セクションに移動し、*Enable Spatial Awareness System* にチェックを入れる
 
     ![Enable Spatial Awareness](../../Documentation/Images/SpatialAwareness/MRTKConfig_SpatialAwareness.png)
 
