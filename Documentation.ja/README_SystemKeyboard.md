@@ -2,7 +2,7 @@
 
 ![System keyboard](../Documentation/Images/SystemKeyboard/MRTK_SystemKeyboard_Main.png)
 
-Unity アプリケーションならば、いつでもシステム キーボードを呼び出すことができます。システム キーボードはターゲット プラットフォームの機能に応じて動作し、たとえば HoloLens 2 のキーボードはダイレクト ハンド インタラクションをサポートしますが、HoloLens (第 1 世代) のキーボードは GGV をサポートすることに注意してください。<sup>[1](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze)</sup>.
+Unity アプリケーションならば、いつでもシステム キーボードを呼び出すことができます。システム キーボードはターゲット プラットフォームの機能に応じて動作し、たとえば HoloLens 2 のキーボードはダイレクト ハンド インタラクションをサポートしますが、HoloLens (第 1 世代) のキーボードは GGV<sup>[1](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze)</sup> をサポートすることに注意してください。
 
 ## System keyboard (システム キーボード) の呼び出し方 ##
 
