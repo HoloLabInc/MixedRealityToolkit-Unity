@@ -35,7 +35,7 @@
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Scripts.png">
 
-* `HandInteractionPan.cs` このスクリプトは、多関節のハンド入力を処理することにより、スレートの *ContentQuad* 上のコンテンツに触れたり移動させたりします。
+* `HandInteractionPan.cs` このスクリプトは、多関節ハンドの入力を処理することにより、スレートの *ContentQuad* 上のコンテンツに触れたり移動したりできます。
 
 * `HandInteractionPanZoom.cs`: このスクリプトは、パン (Pan、水平または垂直方向に移動させる) 操作に加えて、両手でのズームをサポートしています。
 
