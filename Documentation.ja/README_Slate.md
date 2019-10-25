@@ -25,7 +25,7 @@
 ## ボタン ##
 標準スレートには、デフォルトでタイトル バーの右上に 2 つのボタンがあります。
 
-* **Follow Me**: Toggles と orbital solver コンポーネントでユーザーをフォローさせることができます。
+* **Follow Me**: スレート オブジェクトがユーザーを追いかけるようにするための orbital solver コンポーネントをトグルする。
 * **Close**: スレート オブジェクトを無効にする。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Buttons.png" width="650">
