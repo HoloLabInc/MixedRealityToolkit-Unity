@@ -16,7 +16,7 @@
 <img src="../Documentation/Images/Slate/MRTK_Slate_Structure.png" width="650">
 
 ## Bounding Box (バウンディング ボックス) ##
-スレート コントロールには、スケーリングと回転用のバウンディング ボックス スクリプトが含まれています。バウンディング ボックスの詳細については、[バウンディング ボックスス](README_BoundingBox.md) ページを参照してください。
+スレート コントロールには、スケーリングと回転用のバウンディング ボックス スクリプトが含まれています。バウンディング ボックスの詳細については、[バウンディング ボックス](README_BoundingBox.md) ページを参照してください。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Box.png" width="650">
 
