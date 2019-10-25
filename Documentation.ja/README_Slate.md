@@ -31,7 +31,7 @@
 <img src="../Documentation/Images/Slate/MRTK_Slate_Buttons.png" width="650">
 
 ## スクリプト ##
-一般的に、 スクリプト `NearInteractionTouchable.cs` は `IMixedRealityTouchHandler` からのタッチイベントを受け取るために、必ず何からしらのオブジェクトにアタッチするこは必要です。
+一般的に、`NearInteractionTouchable.cs` スクリプトは `IMixedRealityTouchHandler` からのタッチ イベントを受け取りたいすべてのオブジェクトにアタッチする必要があります。
 
 <img src="../Documentation/Images/Slate/MRTK_Slate_Scripts.png">
 
