@@ -9,16 +9,12 @@ MixedRealityServiceRegistry と IMixedRealityServiceRegistrar です。
 登録されたサービス（コア システムとエクステンション サービス）のそれぞれのインスタンスを含むコンポーネントです。
 
 > [!NOTE]
-> MixedRealityServiceRegistry は、contains instances of objects that 
-implement [IMixedRealityService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityService) interface, including [IMixedRealityExtensionService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService). 
 > MixedRealityServiceRegistry は、[IMixedRealityExtensionService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService) を含む [IMixedRealityService](xref:Microsoft.MixedReality.Toolkit.IMixedRealityService) インターフェイスを実装したオブジェクトのインスタンスを含んでいます。
 >
 > [IMixedRealityDataProvider](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider) (IMixedRealityService のサブクラス) を実装しているオブジェクトは、明示的には MixedRealityServiceRegistry に登録されていません。これらのオブジェクトは、個々のサービス（例えば、Spatial Awareness）によって管理されています。
 
->Objects implementing the [IMixedRealityDataProvider](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider) (a subclass of IMixedRealityService) are explicitly not registered in the MixedRealityServiceRegistry. These objects are managed by the individual services (ex: Spatial Awareness).
-
-The MixedRealityServiceRegistry is implemented as a static C# class and is the recommended pattern to
-use to acquire service instances in application code.
+MixedRealityServiceRegistry は静的な C# クラスとして実装されており、
+アプリケーション コードでサービスのインスタンスを取得するのに使われる推奨パターンです。
 
 以下のスニペットは、IMixedRealityInputSystem のインスタンスを取得するデモです。
 
@@ -33,15 +29,14 @@ if (!MixedRealityServiceRegistry.TryGetService<IMixedRealityInputSystem>(out inp
 
 ## IMixedRealityServiceRegistrar
 
-The [IMixedRealityServiceRegistrar](xref:Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar)
-is the interface that defines the functionality implemented by components that manage the registration
-of one or more services. Components that implement IMixedRealityServiceRegistrar are responsible for
-adding and removing the data within the MixedRealityServiceRegistry. The [MixedRealityToolkit](xref:Microsoft.MixedReality.Toolkit.MixedRealityToolkit)
-object is one such component.
+[IMixedRealityServiceRegistrar](xref:Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar)
+は、1つまたは複数のサービスの登録を管理するコンポーネントで実装される機能を定義したインターフェイスです。
+IMixedRealityServiceRegistrar を実装したコンポーネントは、MixedRealityServiceRegistry 内のデータの追加と削除を行う責務があります。
+[MixedRealityToolkit](xref:Microsoft.MixedReality.Toolkit.MixedRealityToolkit) オブジェクトはそのようなコンポーネントの一つです。
 
-Other registrars can be found in the MixedRealityToolkit.SDK.Experimental.Features
-folder. These components can be used to add single service (ex: Spatial Awareness) support
-to an application. These single service managers are listed below.
+その他の registrars は MixedRealityToolkit.SDK.Experimental.Features フォルダーにて見つけることができます。
+これらのコンポーネントは、単一のサービス（例えば、Spatial Awareness）のサポートをアプリケーションに追加するのに使うことができます。
+これらの、単一サービスのマネージャーは以下の通りです。
 
 - [BoundarySystemManager](xref:Microsoft.MixedReality.Toolkit.Experimental.Boundary.BoundarySystemManager)
 - [CameraSystemManager](xref:Microsoft.MixedReality.Toolkit.Experimental.CameraSystem.CameraSystemManager)
@@ -50,14 +45,12 @@ to an application. These single service managers are listed below.
 - [SpatialAwarenessSystemManager](xref:Microsoft.MixedReality.Toolkit.Experimental.SpatialAwareness.SpatialAwarenessSystemManager)
 - [TeleportSystemManager](xref:Microsoft.MixedReality.Toolkit.Experimental.Teleport.TeleportSystemManager)
 
-Each of the above components, with the exception of the InputSystemManager, are responsible for
-managing the registration and status of a single service type. The InputSystem requires some additional
-support services (ex: FocusProvider) that are also managed by the InputSystemManager.
+上記コンポーネントの内 InputSystemManager 以外のものは、単一のサービス タイプの登録と状態を管理する責務があります。
+InputSystem はいくつかの追加のサポート サービス（例えば、FocusProvider）を必要とし、それらもまた InputSystemManager によって管理されます。
 
-In general, the methods defined by IMixedRealityServiceRegistrar are called internally by service
-management components or called by services that require additional service components to function
-correctly. Application code should, generally, not call these methods as doing so may cause the application
-to behave unpredictably (ex: a cached service instance may become invalid).
+一般的に、IMixedRealityServiceRegistrar によって定義されたメソッドはサービス マネジメント コンポーネントによって内部的に呼ばれる、もしくは、正しく機能するために追加のサービス コンポーネントを必要とするサービスによって呼ばれます。
+アプリケーション コードは、一般的に、これらのメソッドを呼ぶべきではありません。
+アプリケーションが予想外の動きをする（例えば、キャッシュされたサービス インスタンスが無効になるかもしれない）可能性があるためです。
 
 ## 関連項目
 
