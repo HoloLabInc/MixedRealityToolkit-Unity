@@ -50,7 +50,7 @@ Mixed Reality Toolkit のサービスには、プラットフォーム固有の�
     ![Spatial Awareness System Profile](../../Documentation/Images/SpatialAwareness/SpatialAwarenessProfile.png)
 
 1. *Add Spatial Observer* ボタンをクリックする
-1. *Spatial Observer 実装タイプ* を選択する
+1. *Spatial Observer の実装タイプ* を選択する
 
     ![Select the Spatial Observer Implementation](../../Documentation/Images/SpatialAwareness/SpatialAwarenessSelectObserver.png)
 
