@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>&#31354;&#38291;&#35469;&#35672; (Spatial Awareness) | Mixed Reality Toolkit Documentation </title>
+    <title>Spatial Awareness (&#31354;&#38291;&#35469;&#35672;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="&#31354;&#38291;&#35469;&#35672; (Spatial Awareness) | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Spatial Awareness (&#31354;&#38291;&#35469;&#35672;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.46.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,62 +80,82 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="空間認識-spatial-awareness">空間認識 (Spatial Awareness)</h1>
+<h1 id="spatial-awareness-空間認識">Spatial Awareness (空間認識)</h1>
 
 <p><img src="../../Documentation/Images/SpatialAwareness/MRTK_SpatialAwareness_Main.png" alt="Spatial Awareness"></p>
 <p>空間認識システムは、複合現実アプリケーションで現実世界の環境認識を提供します。 Microsoft HoloLens で導入されたとき、空間認識は環境のジオメトリを表すメッシュのコレクションを提供し、ホログラムと現実世界の間の魅力的なインタラクションを可能にしました。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>現時点では、Mixed Reality Toolkit には、HoloToolkit に元々パッケージされていた Spatial Understanding (空間理解) アルゴリズムは付属していません。 通常、Spatial Understanding では、空間メッシュデータを変換して、平面、壁、床、天井などの単純化またはグループ化されたメッシュデータを作成します。</p>
+</div>
 <h2 id="はじめに">はじめに</h2>
 <p>空間認識のサポートを追加するには、Mixed Reality Toolkit の 2 つの主要なコンポーネント (空間認識システムとサポートされているプラットフォーム プロバイダー) が必要です。</p>
 <ol>
-<li>空間認識システムを<a href="#%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98-spatial-awareness-%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B">有効</a>にする</li>
-<li>1 つ以上の空間オブザーバーを<a href="#%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E7%99%BB%E9%8C%B2">登録</a>して<a href="#%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">設定</a>する</li>
+<li>空間認識システムを<a href="#%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B">有効</a>にする</li>
+<li>メッシュデータを提供するために 1 つ以上の空間オブザーバーを<a href="#%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E7%99%BB%E9%8C%B2">登録</a>して<a href="ConfiguringSpatialAwarenessMeshObserver.html">設定</a>する</li>
 <li>空間認識をサポートするプラットフォームに<a href="#%E3%83%93%E3%83%AB%E3%83%89%E3%81%A8%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ビルドしてデプロイ</a>する</li>
 </ol>
-<h3 id="空間認識-spatial-awareness-を有効にする">空間認識 (Spatial Awareness) を有効にする</h3>
-<p>空間認識システムは、MixedRealityToolkit オブジェクト (または別の <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">サービス レジストラ</a> コンポーネント) によって管理されます。以下の手順は、このシステムが既に有効になっている既定のプロファイル (DefaultMixedRealityToolkitConfigurationProfile) のユーザーには必要ありません。次の手順では、MixedRealityToolkit オブジェクトの使用を想定しています。他のサービス レジストラで必要な手順は異なる場合があります。</p>
-<div class="NOTE">
-<h5>Note</h5>
-<p>空間認識システムは、既定の HoloLens 2 プロファイル (DefaultHoloLens2ConfigurationProfile) ではデフォルトで無効になっており、その目的は、メッシュの計算とレンダリングの視覚的なオーバーヘッドを回避することです。</p>
-</div>
+<h3 id="空間認識システムを有効にする">空間認識システムを有効にする</h3>
+<p>空間認識システムは、MixedRealityToolkit オブジェクト (または別の <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">サービス レジストラ</a> コンポーネント) によって管理されます。以下の手順に従って、<em>MixedRealityToolkit</em> プロファイルで <em>Spatial Awareness システム</em> を有効または無効にします。</p>
+<p>Mixed Reality Toolkit には、いくつかのデフォルトの事前設定プロファイルが付属しています。これらの一部では、空間認識システムがデフォルトで有効または無効になっています。この事前設定の目的は、特に無効になっている場合、メッシュの計算とレンダリングの視覚的なオーバーヘッドを回避することです。</p>
+<table>
+<thead>
+<tr>
+<th>プロファイル</th>
+<th>デフォルトの有効/無効設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/HoloLens1/DefaultHoloLens1ConfigurationProfile.asset">DefaultHoloLens1ConfigurationProfile</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/HoloLens2/DefaultHoloLens2ConfigurationProfile.asset">DefaultHoloLens2ConfigurationProfile</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/DefaultMixedRealityToolkitConfigurationProfile.asset">DefaultMixedRealityToolkitConfigurationProfile</a></td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <ol>
-<li>[Hierarchy] (ヒエラルキー) から MixedRealityToolkit オブジェクトを選択する</li>
-</ol>
+<li><p>[Inspector] (インスペクター) パネルを開くために [Hierarchy] (ヒエラルキー) から MixedRealityToolkit オブジェクトを選択する</p>
 <p><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" alt="MRTK Configured Scene Hierarchy"></p>
-<ol start="2">
-<li>[Inspector] (インスペクター) の空間認識システム セクションに移動し、<em>Enable Spatial Awareness System</em> にチェックを入れる</li>
-</ol>
+</li>
+<li><p><em>Spatial Awareness System</em> セクションに移動し、<em>Enable Spatial Awareness System</em> にチェックを入れる</p>
 <p><img src="../../Documentation/Images/SpatialAwareness/MRTKConfig_SpatialAwareness.png" alt="Enable Spatial Awareness"></p>
-<ol start="3">
-<li>Spatial Awareness System の実装を選択する</li>
-</ol>
+</li>
+<li><p>目的の空間認識システムの実装タイプを選択します。 <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem.html"><code>MixedRealitySpatialAwarenessSystem</code></a> がデフォルトで提供されます。</p>
 <p><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessSelectSystemType.png" alt="Select the Spatial Awareness System Implementation"></p>
+</li>
+</ol>
 <h3 id="オブザーバーの登録">オブザーバーの登録</h3>
-<p>空間認識システムがアプリケーションに現実世界に関するデータを提供する前に、少なくとも 1 つの空間オブザーバーを登録する必要があります。空間オブザーバーは、一般にプラットフォーム固有のコンポーネントで、提供されるデータの種類 (例: メッシュ) が異なる可能性があります。</p>
+<p>Mixed Reality Toolkit のサービスには、プラットフォーム固有のデータと実装制御でメイン サービスを補完する<a href="../Architecture/SystemsExtensionsProviders.html">データ プロバイダー サービス</a>を含めることができます。 例として、さまざまなプラットフォーム固有の API からコントローラーおよびその他の関連入力情報を取得する<a href="../Input/InputProviders.html">複数のデータ プロバイダー</a>を持つ Mixed Reality Input System があります。</p>
+<p>空間認識システムは、データ プロバイダーが現実世界に関するメッシュデータをシステムに提供するという点で類似しています。Spatial Awareness プロファイルには、少なくとも 1 つの Spatial Observer (空間オブザーバー) が登録されている必要があります。空間オブザーバーは通常、プラットフォーム固有のエンドポイント（つまり、HoloLens）からさまざまな種類のメッシュデータを提供するためのプロバイダーとして機能するプラットフォーム固有のコンポーネントです。</p>
 <ol>
-<li>Spatial Awareness System プロファイルを開く</li>
-</ol>
+<li><p><em>Spatial Awareness System</em> プロファイルを開く</p>
 <p><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessProfile.png" alt="Spatial Awareness System Profile"></p>
-<ol start="2">
-<li>&quot;Add Spatial Observer&quot; をクリックする</li>
-<li>Spatial Observer の実装を選択する</li>
-</ol>
+</li>
+<li><p><em>Add Spatial Observer</em> ボタンをクリックする</p>
+</li>
+<li><p><em>Spatial Observer の実装タイプ</em> を選択する</p>
 <p><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessSelectObserver.png" alt="Select the Spatial Observer Implementation"></p>
+</li>
+<li><p>必要に応じて<a href="ConfiguringSpatialAwarenessMeshObserver.html">オブザーバーの構成プロパティを変更</a>する</p>
+</li>
+</ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>既定のプロファイル (DefaultMixedRealitSpatialAwarenessSystemProfile) のユーザーは、Mixed Reality Toolkit Windows Mixed Reality Provider パッケージの <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver.html">WindowsMixedRealitySpatialMeshObserver</a> を使用するように事前設定された空間認識システムを使用できます。</p>
+<p><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/DefaultMixedRealityToolkitConfigurationProfile.asset">DefaultMixedRealityToolkitConfigurationProfile</a> のユーザーは、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver.html"><code>WindowsMixedRealitySpatialMeshObserver</code></a> クラスを使用する Windows Mixed Reality プラットフォーム用に事前設定された Spatial Awareness システムを使用します</p>
 </div>
-<h4 id="オブザーバーの設定">オブザーバーの設定</h4>
-<p>空間オブザーバーがシステムに登録されると、目的のデータを提供するように構成されます。空間オブザーバーを構成する場合、多くの実装では、オブザーバーの構成プロファイルに共通の既定値を自動設定します。</p>
-<ol>
-<li>Spatial Observer プロファイルを開く</li>
-</ol>
-<p><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessMeshObserverProfile.png" alt="Spatial Mesh Observer Profile"></p>
-<ol start="2">
-<li>必要なオプションを設定する</li>
-</ol>
-<p>前の手順の図は、空間メッシュ オブザーバーの構成プロファイルを示しています。メッシュ オブザーバーが使用できる特定の設定に関する詳細については、<a href="ConfiguringSpatialAwarenessMeshObserver.html">Configuring the Spatial Awareness Mesh Observer</a> を参照してください。他のオブザーバーも同様の設定を持つ可能性があります。</p>
 <h3 id="ビルドとデプロイ">ビルドとデプロイ</h3>
 <p>空間認識システムを目的のオブザーバーで構成すると、プロジェクトをビルドしてターゲット プラットフォームにデプロイできます。</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Windows Mixed Reality プラットフォーム（例：HoloLens）を対象とする場合、デバイスで Spatial Awareness システムを使用するには、<a href="https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-mapping-in-unity">Spatial Perception capability</a> が有効になっていることを確認することが重要です。</p>
+</div>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>Microsoft HoloLens を含む一部のプラットフォームでは、Unity 内からリモート実行をサポートしています。この機能により、ビルドとデプロイの手順を必要とせずに、迅速な開発とテストが可能になります。ターゲット ハードウェアとプラットフォームで実行される、ビルドおよびデプロイされたバージョンのアプリケーションを使用して、最終的な受け入れテストを行うようにしてください。</p>
@@ -143,8 +163,11 @@
 <h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.SpatialAwareness.html">Spatial Awareness API documentation</a></li>
-<li><a href="ConfiguringSpatialAwarenessMeshObserver.html">Configuring the Spatial Awareness Mesh Observer</a></li>
-<li><a href="SpatialObjectMeshObserver.html">Spatial Object Mesh Observer</a></li>
+<li><a href="ConfiguringSpatialAwarenessMeshObserver.html">Configuring Observer for Device</a></li>
+<li><a href="SpatialObjectMeshObserver.html">Configuring Observer for Editor</a></li>
+<li><a href="CreateDataProvider.html">Creating a custom Observer</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-mapping">Spatial Mapping Overview WMR</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/spatial-mapping-in-unity">Spatial Mapping in Unity WMR</a></li>
 </ul>
 </article>
           </div>
