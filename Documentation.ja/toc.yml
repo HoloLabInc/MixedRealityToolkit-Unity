@@ -17,7 +17,7 @@
   items:
   - name: 全体像
     href: Architecture/Overview.md
-  - name: Framework and Runtime
+  - name: フレームワークとランタイム
     href: Architecture/FrameworkAndRuntime.md
   - name: Input System
     items:
@@ -97,7 +97,7 @@
       href: README_HandInteractionExamples.md
     - name: Eye Tracking Interaction Example
       href: EyeTracking/EyeTracking_ExamplesOverview.md
-  - name: Detecting Platform Capabilities
+  - name: プラットフォームの Capabilities（機能）を検出する
     href: DetectingPlatformCapabilities.md
   - name: MRTK Standard Shader
     href: README_MRTKStandardShader.md
