@@ -7,7 +7,7 @@
 
 テレポート システムは、プロファイルのチェックボックスをオン/オフに切り替えることができます。
 シーン内の MixedRealityToolkit オブジェクトを選択し、
-"Teleport" をクリックしてから "Enable Teleport System" のチェックボックスを有効にすることで設定できます。
+"Teleport" をクリックしてから "Enable Teleport System" のチェックボックスをトグルすることで設定できます。
 
 ランタイム (runtime) で実行することもできます。
 
