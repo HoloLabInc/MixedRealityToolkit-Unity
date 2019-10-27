@@ -1,6 +1,6 @@
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png)
 
-# Eye-supported target selection
+# ターゲット選択に関する目のサポート
 
 This page discusses different options for accessing eye gaze data and eye gaze specific events to select targets in MRTK. Eye tracking allows for fast and effortless target selections using a combination of information about what a user is looking at with additional inputs such as _hand tracking_ and _voice commands_:
 
