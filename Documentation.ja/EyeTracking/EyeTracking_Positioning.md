@@ -1,6 +1,6 @@
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_positioning.png)
 
-# Eye-supported target positioning in MRTK
+# MRTK におけるターゲットの位置づけに関する目のサポート
 
 <!-- TODO: Add content -->
 _We're currently restructuring and improving the MRTK documentation. 
