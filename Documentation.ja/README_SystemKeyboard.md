@@ -1,10 +1,10 @@
-# System keyboard #
+# System keyboard (システム キーボード) #
 
 ![System keyboard](../Documentation/Images/SystemKeyboard/MRTK_SystemKeyboard_Main.png)
 
-A Unity application can invoke the system keyboard at any time. Note that the system keyboard will behave according to the target platform's capabilities, for example the keyboard on HoloLens 2 would support direct hand interactions, while the keyboard on HoloLens (1st gen) would support GGV<sup>[1](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze)</sup>.
+Unity アプリケーションならば、いつでもシステム キーボードを呼び出すことができます。システム キーボードはターゲット プラットフォームの機能に応じて動作し、たとえば HoloLens 2 のキーボードはダイレクト ハンド インタラクションをサポートしますが、HoloLens (第 1 世代) のキーボードは GGV<sup>[1](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze)</sup> をサポートすることに注意してください。
 
-## How to invoke the system keyboard ##
+## System keyboard (システム キーボード) の呼び出し方 ##
 
 ``` csharp
     public TouchScreenKeyboard keyboard;
@@ -17,7 +17,7 @@ A Unity application can invoke the system keyboard at any time. Note that the sy
     }
 ```
 
-## How to read the input ##
+## 入力の読み込み方 ##
 
 ``` csharp
 
@@ -35,6 +35,5 @@ A Unity application can invoke the system keyboard at any time. Note that the sy
     }
 ```
 
-## System keyboard example ##
-You can see simple example of how to bring up system keyboard in 
-[`OpenKeyboard.cs`](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Script/OpenKeyboard.cs)
+## System keyboard (システム キーボード) のサンプル ##
+システム キーボードを表示する簡単な例は、[`OpenKeyboard.cs`](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Script/OpenKeyboard.cs) にて見ることができます。
