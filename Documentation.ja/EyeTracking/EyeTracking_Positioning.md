@@ -1,13 +1,13 @@
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_positioning.png)
 
-# Eye-supported target positioning in MRTK
+# MRTK における目で操作できるターゲットの位置づけ
 
 <!-- TODO: Add content -->
-_We're currently restructuring and improving the MRTK documentation. 
-This content will be updated soon! 
-If you have any questions regarding this section please post in our MRTK slack channel._
+_現在、MRTKドキュメントの再構築と改善を行っています。
+このコンテンツは間もなく更新されます!
+このセクションに関するご質問は、MRTK Slackチャンネルにご投稿ください。_
 
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_positioning_slider.png)
 
 ---
-[Back to "Eye tracking in the MixedRealityToolkit"](EyeTracking_Main.md)
+["MixedRealityToolkit のアイトラッキング" に戻る](EyeTracking_Main.md)
