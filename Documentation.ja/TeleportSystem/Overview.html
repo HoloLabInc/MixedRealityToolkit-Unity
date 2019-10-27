@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Teleport System | Mixed Reality Toolkit Documentation </title>
+    <title>Teleport System&#65288;&#12486;&#12524;&#12509;&#12540;&#12488;&#12471;&#12473;&#12486;&#12512;&#65289; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Teleport System | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Teleport System&#65288;&#12486;&#12524;&#12509;&#12540;&#12488;&#12471;&#12473;&#12486;&#12512;&#65289; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.46.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,17 +80,14 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="teleport-system">Teleport System</h1>
+<h1 id="teleport-systemテレポートシステム">Teleport System（テレポートシステム）</h1>
 
-<p>The teleport system is a sub-system of the MRTK that handles teleporting the user when the
-application is using an opaque display. For AR experiences (like HoloLens), the teleportation
-system is not active. For immersive HMD experiences (OpenVR, WMR) the teleport system can
-be enabled.</p>
-<h2 id="enabling-and-disabling">Enabling and disabling</h2>
-<p>The teleport system can be enabled or disabled by toggling the checkbox in its profile.
-This can be done by selecting the MixedRealityToolkit object in the scene, clicking
-&quot;Teleport&quot; and then toggling the &quot;Enable Teleport System&quot; checkbox.</p>
-<p>This can also be done at runtime:</p>
+<p>テレポート システムは MRTK のサブシステムで、アプリケーションが Opaque Display (不透明なディスプレイ) を使用しているときにユーザーのテレポートの処理をします。AR 体験 (HoloLens など) の場合、テレポート システムは非アクティブです。没入型 HMD エクスペリエンス (OpenVR、WMR) では、テレポート システムを有効にすることができます。</p>
+<h2 id="有効と無効の設定">有効と無効の設定</h2>
+<p>テレポート システムは、プロファイルのチェックボックスをトグルすることで有効にしたり無効にしたりできます。
+シーン内の MixedRealityToolkit オブジェクトを選択し、
+&quot;Teleport&quot; をクリックしてから &quot;Enable Teleport System&quot; のチェックボックスをトグルすることで設定できます。</p>
+<p>ランタイム (runtime) で実行することもできます。</p>
 <pre><code class="lang-csharp">void DisableTeleportSystem()
 {
     CoreServices.TeleportSystem.Disable();
@@ -101,15 +98,13 @@ void EnableTeleportSystem()
     CoreServices.TeleportSystem.Enable();
 }
 </code></pre>
-<h2 id="events">Events</h2>
-<p>The teleport system exposes events through the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler.html"><code>IMixedRealityTeleportHandler</code></a>
-interface to provide signals on when teleport actions begin, end, or get cancelled.
-See the linked API documentation for more details on the mechanics of the events
-and their associated payload.</p>
-<h2 id="usage">Usage</h2>
-<h3 id="how-to-register-for-teleportation-events">How to register for teleportation events</h3>
-<p>The code below shows how to create a MonoBehaviour that will listen for teleportation
-events. This code assumes that the teleport system is enabled.</p>
+<h2 id="イベント">イベント</h2>
+<p>テレポート システムは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Teleport.IMixedRealityTeleportHandler.html"><code>IMixedRealityTeleportHandler</code></a> インターフェイスを通してイベントを公開します。
+このインターフェイスは、テレポート アクションの開始、終了、またはキャンセル時に通知を提供します。
+イベントの仕組みとそれに関連するデータの詳細については、リンク先の API ドキュメントをご参照ください。</p>
+<h2 id="使い方">使い方</h2>
+<h3 id="テレポーテーション-イベントの登録方法">テレポーテーション イベントの登録方法</h3>
+<p>次のコードは、テレポーテーションのイベントをリッスンする MonoBehaviour を作成する方法を示しています。このコードはテレポート システムが有効になっていることを前提とします。</p>
 <pre><code class="lang-csharp">using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Teleport;
 using UnityEngine;
