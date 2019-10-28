@@ -27,7 +27,7 @@ Object collection はオブジェクトの列を事前定義された三次元�
 
 ## Object collection のサンプル ##
 
-[ObjectCollectionExamples.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/UX/Collections/Scenes/ObjectCollectionExamples.unity) のサンプルシーンには、Object collection のさまざまなタイプの例が含まれています。
+[ObjectCollectionExamples.unity](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/UX/Collections/Scenes/ObjectCollectionExamples.unity) のサンプル シーンには、Object collection のさまざまなタイプの例が含まれています。
 
 [Periodic table of the elements](https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable) は、Object collection がどのように動くかをデモンストレーションするサンプル アプリです。
 3D の原子の箱を異なる形状にレイアウトするために、Object collection を使っています。
