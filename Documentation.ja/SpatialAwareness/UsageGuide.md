@@ -1,151 +1,152 @@
-# Configuring Mesh Observers via code
+# コードを用いたメッシュオブザーバーの設定
 
-This article will discuss some of the key mechanisms and APIs to programmatically configure the [Spatial Awareness system](SpatialAwarenessGettingStarted.md) and related *Mesh Observer* data providers.
+この章では、[空間認識システム](SpatialAwarenessGettingStarted.md) と、関連する*メッシュオブザーバー*のデータプロバイダーのプログラムによる設定について、いくつかキーとなるメカニズムやAPIについて議論します。
 
-## Accessing Mesh Observers
+## メッシュオブザーバーへのアクセス
 
-Mesh Observer classes that implement the [`IMixedRealitySpatialAwarenessMeshObserver`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessMeshObserver) interface provide platform-specific mesh data to the Spatial Awareness system. Multiple Observers can be configured in the Spatial Awareness profile.
+メッシュオブザーバークラスは[`IMixedRealitySpatialAwarenessMeshObserver`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessMeshObserver)インタフェースを実装し、空間認識システムにメッシュデータを紐づけるプラットフォームを提供します。複数のオブザーバーは空間認識プロファイルによって設定されます。
 
-Accessing the data providers of the Spatial Awareness system is mostly the same as for any other Mixed Reality Toolkit service. The Spatial Awareness service must be casted to the [`IMixedRealityDataProviderAccess`](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess) interface to access via the `GetDataProvider<T>` APIs, which can then be utilized to access the Mesh Observer objects directly at runtime.
+空間認識システムのデータプロバイダーへのアクセスは、ほぼ他のMixed Reality Toolkitサービスと同様です。
+空間認識サービスは、`GetDataProvider<T>`APIを介した[`IMixedRealityDataProviderAccess`](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess)インターフェースへキャストされる必要があります。また空間認識サービスは、その後実行時に直接メッシュオブザーバーオブジェクトにアクセスするために利用されます。
 
 ```csharp
-// Use CoreServices to quickly get access to the IMixedRealitySpatialAwarenessSystem
+// CoreServicesを使用しIMixedRealitySpatialAwarenessSystemへ高速にアクセスします
 var spatialAwarenessService = CoreServices.SpatialAwarenessSystem;
 
-// Cast to the IMixedRealityDataProviderAccess to get access to the data providers
+// データプロバイダーへアクセスするためにIMixedRealityDataProviderAccessへキャストします
 var dataProviderAccess = spatialAwarenessService as IMixedRealityDataProviderAccess;
 
-// Get the first Mesh Observer available, generally we have only one registered
+//利用可能な最初のメッシュオブザーバーを取得し、一般的に登録した一つのみ使用するようにします
 var meshObserver = dataProviderAccess.GetDataProvider<IMixedRealitySpatialAwarenessMeshObserver>();
 
-// Get the SpatialObjectMeshObserver specifically
+// SpatialObjectMeshObserverを具体的に取得します
 var meshObserverName = "Spatial Object Mesh Observer";
 var spatialObjectMeshObserver = dataProviderAccess.GetDataProvider<IMixedRealitySpatialAwarenessMeshObserver>(meshObserverName);
 ```
 
-## Starting and stopping mesh observation
+## メッシュオブザーバーの開始と終了
 
-One of the most common tasks when dealing with the Spatial Awareness system is turning the feature off/on dynamically at runtime. This is done per Observer via the [`IMixedRealitySpatialAwarenessObserver.Resume`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver.Resume) and [`IMixedRealitySpatialAwarenessObserver.Suspend`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver.Suspend) APIs.
+空間認識システムを扱う際の共通のタスクの一つは実行時に直接機能をオン/オフすることです。[`IMixedRealitySpatialAwarenessObserver.Resume`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver.Resume) と[`IMixedRealitySpatialAwarenessObserver.Suspend`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver.Suspend) APIを用いてオブザーバーごとに実行されます。
 
 ```csharp
-// Cast the Spatial Awareness system to IMixedRealityDataProviderAccess to get an Observer
+// オブザーバーを取得するために空間認識システムをIMixedRealityDataProviderAccessへキャストします
 var access = CoreServices.SpatialAwarenessSystem as IMixedRealityDataProviderAccess;
 
-// Get the first Mesh Observer available, generally we have only one registered
+// 最初のメッシュオブザーバーを利用可能にし、一般的に登録した一つのみ使用するようにします
 var observer = access.GetDataProvider<IMixedRealitySpatialAwarenessMeshObserver>();
 
-// Suspends observation of spatial mesh data
+// 空間メッシュデータの監視を停止します
 observer.Suspend();
 
-// Resumes observation of spatial mesh data
+// 空間メッシュデータの監視を再起動します
 observer.Resume();
 ```
 
-This code functionality can also be simplified via access through the Spatial Awareness system directly.
+このコードの機能性は、空間認識システムを通して直接的にアクセスするように単純化されています。
 
 ```csharp
 var meshObserverName = "Spatial Object Mesh Observer";
 CoreServices.SpatialAwarenessSystem.ResumeObserver<IMixedRealitySpatialAwarenessMeshObserver>(meshObserverName);
 ```
 
-### Starting and stopping all mesh observation
+### 全てのメッシュの監視の開始と終了
 
-It is generally convenient to start/stop all mesh observation in the application. This can be achieved through the helpful Spatial Awareness system APIs, [`ResumeObservers()`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessSystem.ResumeObservers) and [`SuspendObservers()`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessSystem.SuspendObservers).
+アプリケーションにおける全てのメッシュの監視を開始および終了することは、多くの場合便利です。
+有用な空間認識APIである[`ResumeObservers()`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessSystem.ResumeObservers) および [`SuspendObservers()`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessSystem.SuspendObservers)によって、全メッシュの開始と終了を行うことができます。
 
 ```csharp
-// Resume Mesh Observation from all Observers
+// 全てのメッシュオブザーバーの再起動
 CoreServices.SpatialAwarenessSystem.ResumeObservers();
 
-// Suspend Mesh Observation from all Observers
+// 全てのメッシュオブザーバーの終了
 CoreServices.SpatialAwarenessSystem.SuspendObservers();
 ```
 
-## Enumerating and accessing the meshes
+## メッシュへの列挙およびアクセス
 
-Accessing the meshes can be done per Observer and then enumerating through the
-meshes known to that Mesh Observer via the [`IMixedRealitySpatialAwarenessMeshObserver`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessMeshObserver) API.
+メッシュへのアクセスはオブザーバーごとに実行され、その後[`IMixedRealitySpatialAwarenessMeshObserver`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessMeshObserver) APIによって、メッシュをメッシュオブザーバーへ知らせることで列挙します。
 
-If running in editor, one can use the [`AssetDatabase.CreateAsset()`](https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html) to save the `Mesh` object to an asset file.
+もしエディタ上で実行する際、[`AssetDatabase.CreateAsset()`](https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html)を使って`Mesh` オブジェクトを一つのアセットファイルに記録できます。
 
-If running on device, there are many community and store plugins available to serialize the `MeshFilter` data into a model file type([OBJ Example](http://wiki.unity3d.com/index.php/ObjExporter)).
+もしデバイス上で使用する場合、`MeshFilter`データを一つのモデルファイルタイプへシリアライズすることが可能なコミュニティやストアプラグインが存在します([OBJ Example](http://wiki.unity3d.com/index.php/ObjExporter))。
 
 ```csharp
-// Cast the Spatial Awareness system to IMixedRealityDataProviderAccess to get an Observer
+// オブザーバー取得のために空間認識システムをIMixedRealityDataProviderAccessへキャストする
 var access = CoreServices.SpatialAwarenessSystem as IMixedRealityDataProviderAccess;
 
-// Get the first Mesh Observer available, generally we have only one registered
+// 最初のメッシュオブザーバーを利用可能にし、一般的に登録した一つのみ使用するようにします
 var observer = access.GetDataProvider<IMixedRealitySpatialAwarenessMeshObserver>();
 
-// Loop through all known Meshes
+// 全てのメッシュをループします
 foreach (SpatialAwarenessMeshObject meshObject in observer.Meshes.Values)
 {
     Mesh mesh = meshObject.Filter.mesh;
-    // Do something with the Mesh object
+    // メッシュオブジェクトに対しての実装をここに記述する
 }
 ```
 
-## Showing and hiding the spatial mesh
+## 空間メッシュの表示と非表示
 
-It's possible to programmatically hide/show meshes using the sample code below:
+空間メッシュの表示と非表示は以下のコードを用いてプログラマブルに利用可能です:
 
 ```csharp
-// Cast the Spatial Awareness system to IMixedRealityDataProviderAccess to get an Observer
+// オブザーバーを取得するために空間認識システムをIMixedRealityDataProviderAccessへキャストします
 var access = CoreServices.SpatialAwarenessSystem as IMixedRealityDataProviderAccess;
 
-// Get the first Mesh Observer available, generally we have only one registered
+// 最初のメッシュオブザーバーを利用可能にし、一般的に登録した一つのみ使用するようにします
 var observer = access.GetDataProvider<IMixedRealitySpatialAwarenessMeshObserver>();
 
-// Set to not visible
+// 非表示
 observer.DisplayOption = SpatialAwarenessMeshDisplayOptions.None;
 
-// Set to visible and the Occlusion material
+// 表示およびオクルージョンマテリアルに設定します
 observer.DisplayOption = SpatialAwarenessMeshDisplayOptions.Occlusion;
 ```
 
-## Registering for Mesh Observation events
+## メッシュオブザーバーイベントのための登録
 
-Components can implement the `IMixedRealitySpatialAwarenessObservationHandler<SpatialAwarenessMeshObject>` and then register with the Spatial Awareness system to receive Mesh Observation events.
+コンポーネントは`IMixedRealitySpatialAwarenessObservationHandler<SpatialAwarenessMeshObject>`を実装可能で、その後空間認識システムをメッシュオブザーバーイベントを返すように登録します。
 
-The [DemoSpatialMeshHandler](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Examples/Demos/SpatialAwareness/Scripts/DemoSpatialMeshHandler.cs) script is a useful example and starting point for listening to Mesh Observer events.
+[DemoSpatialMeshHandler](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Examples/Demos/SpatialAwareness/Scripts/DemoSpatialMeshHandler.cs)スクリプトは便利な例でありメッシュオブザーバーイベントの受け取りの第一歩となります。
 
-This is a simplified example of *DemoSpatialMeshHandler* script and Mesh Observation event listening.
+これは*DemoSpatialMeshHandler*スクリプトおよびメッシュオブザーバーイベントの受け取りのシンプルな例です
 
 ```csharp
-// Simplify type
+// 単純化された型
 using SpatialAwarenessHandler = IMixedRealitySpatialAwarenessObservationHandler<SpatialAwarenessMeshObject>;
 
 public class MyMeshObservationExample : MonoBehaviour, SpatialAwarenessHandler
 {
     private void OnEnable()
     {
-        // Register component to listen for Mesh Observation events, typically done in OnEnable()
+        // メッシュオブザーバーイベントを受け取るコンポーネントを登録し、通常はOnEnableメソッドで実行されます
         CoreServices.SpatialAwarenessSystem.RegisterHandler<SpatialAwarenessHandler>(this);
     }
 
     private void OnDisable()
     {
-        // Unregister component from Mesh Observation events, typically done in OnDisable()
+        // メッシュオブザーバーイベントを受け取るコンポーネントを解除し、通常はOnDisableメソッドで実行されます
         CoreServices.SpatialAwarenessSystem.UnregisterHandler<SpatialAwarenessHandler>(this);
     }
 
     public virtual void OnObservationAdded(MixedRealitySpatialAwarenessEventData<SpatialAwarenessMeshObject> eventData)
     {
-        // Do stuff
+        // ここに実装を書く
     }
 
     public virtual void OnObservationUpdated(MixedRealitySpatialAwarenessEventData<SpatialAwarenessMeshObject> eventData)
     {
-        // Do stuff
+        // ここに実装を書く
     }
 
     public virtual void OnObservationRemoved(MixedRealitySpatialAwarenessEventData<SpatialAwarenessMeshObject> eventData)
     {
-        // Do stuff
+        // ここに実装を書く
     }
 }
 ```
 
-## See Also
+## その他の参照
 
 - [Spatial Awareness Getting Started](SpatialAwarenessGettingStarted.md)
 - [Configuring the Spatial Awareness Mesh Observer](ConfiguringSpatialAwarenessMeshObserver.md)
