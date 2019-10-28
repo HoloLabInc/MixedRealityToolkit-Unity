@@ -2,7 +2,7 @@
 
 ![Object collection](../Documentation/Images/ObjectCollection/MRTK_ObjectCollection_Main.jpg)
 
-Object collection はオブジェクトの列を事前定義された三次元形状にレイアウトすることを助けるスクリプトです。これは、平面、円柱、球、放射状を含む、さまざまな面形状をサポートしています。半径、サイズ、アイテムの間のスペースは調整可能です。Unity のすべてのオブジェクトをサポートしているため、2D オブジェクトと 3D オブジェクトの両方のレイアウトに利用可能です。
+Object collection はオブジェクトの列を事前定義された三次元形状にレイアウトすることを助けるスクリプトです。これは、平面、円柱、球、放射状を含む、さまざまな面タイプをサポートしています。半径、サイズ、アイテムの間のスペースは調整可能です。Unity のすべてのオブジェクトをサポートしているため、2D オブジェクトと 3D オブジェクトの両方のレイアウトに利用可能です。
 
 # Object collection のスクリプト #
 - [`GridObjectCollection.cs`](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Scripts/Collections/GridObjectCollection.cs) は、円柱、平面、球、放射状の面タイプをサポートしています。
