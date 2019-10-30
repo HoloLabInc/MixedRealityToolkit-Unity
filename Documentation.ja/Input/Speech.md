@@ -1,4 +1,4 @@
-# 音声
+# Speech (音声)
 
 *Windows Speech Input* などの音声入力プロバイダーは、コントローラーを作成しませんが、代わりに認識時に音声入力イベントを発生させるキーワードを定義することができます。 *Input System Profile* の **Speech Commands Profile** は、認識するキーワードを設定する場所です。各コマンドでは次のこともできます：
 
@@ -18,7 +18,7 @@
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler2.png">
 
-別の方法として、開発者はカスタムスクリプトコンポーネントに [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) インターフェイスを実装することにより [音声入力イベントを扱う](InputEvents.md#input-event-interface-example) ことができます。
+別の方法として、開発者はカスタム スクリプト コンポーネントに [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) インターフェイスを実装することにより [音声入力イベントを扱う](InputEvents.md#input-event-interface-example) ことができます。
 
 ## サンプルシーン
 
