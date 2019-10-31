@@ -1,4 +1,4 @@
-# Slate (スレート)#
+# Slate (スレート) #
 
 ![Slate](../Documentation/Images/Slate/MRTK_Slate_Main.png)
 
