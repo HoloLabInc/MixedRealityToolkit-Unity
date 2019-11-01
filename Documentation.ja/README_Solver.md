@@ -35,41 +35,43 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 
 ## How to change tracking reference
 
-The *Tracked Target Type* property of the [`SolverHandler`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler) component defines the point of reference all solvers will use to calculate their algorithms. For example, a value type of [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) with a simple [`SurfaceMagnetism`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism) component will result in a raycast from the head and in the direction of the user's gaze for solving what surface is hit. Potential values for the `TrackedTargetType` property are:
+ [`SolverHandler`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler) コンポーネントの *Tracked Target Type* プロパティは、全てのソルバーがアルゴリズムを計算するときに使用する参照点を定義します。例えば、シンプルな [`SurfaceMagnetism`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism) コンポーネントとともに [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) が指定された場合、頭からユーザーのゲイズ方向へのレイキャストが、どの面にヒットするかを解決するために使われます。`TrackedTargetType` プロパティに設定可能な値は以下の通りです。
 
-* *Head* : Point of reference from the camera
-* *MotionController*: Point of reference from a motion controller
-    * Use the `TrackedHandedness` property to select the handedness preference (i.e Left, Right, Both)
+* *Head* : カメラからの参照点
+* *MotionController*: モーション コントローラーからの参照点
+    * どちらの手（左手、右手、両手）を優先するかを選択するには、`TrackedHandedness` プロパティを使用します。
 * *HandJoint*: Point of reference from a hand
     * Use the `TrackedHandedness` property to select the handedness preference (i.e Left, Right, Both)
     * Use the  `TrackedHandJoint` property to determine the joint transform to utilize
 * *CustomOverride*: Point of reference from the assigned `TransformOverride`
 
 > [!NOTE]
-> For both *MotionController* and *HandJoint* types, the solver handler will attempt to provide the left controller/hand transform first and then the right if the former is not available or unless the `TrackedHandedness` property specifies otherwise.
+> *MotionController* と *HandJoint* タイプの両方について、`TrackedHandedness` プロパティが `Both` の場合、ソルバー ハンドラーは左のコントローラー/ハンドのトランスフォームを提供しようとし、左が利用できなければ右の値を提供しようとします。
 
 ![Solver](../Documentation/Images/Solver/TrackedObjectType-Example.gif)
 <br/>
-*Example of various properties associated with each TrackedTargetType*
+*TrackedTargetType に関連するさまざまなプロパティの例*
 
 ## How to chain Solvers
 
-It is possible to add multiple `Solver` components to the same GameObject thus chaining their algorithms. The `SolverHandler` components handles updating all solvers on the same GameObject. By default the `SolverHandler` calls `GetComponents<Solver>()` on Start which will return the Solvers in the order that they appear in the inspector.
+複数の `Solver` コンポーネントを同じゲームオブジェクトに追加し、アルゴリズムを連鎖させることが可能です。`SolverHandler` コンポーネントは、同じゲームオブジェクト上のすべてのソルバーの更新を取り扱います。デフォルトでは `SolverHandler` は Start で `GetComponents<Solver>()` を呼び出し、これはインスペクターで表示される順序でソルバーを返します。
+さらに、*Updated Linked Transform* プロパティを true に設定すると、
 
 Furthermore, setting the *Updated Linked Transform* property to true will instruct that `Solver` to save it's calculated position, orientation, & scale to an intermediary variable accessible by all Solvers (i.e `GoalPosition`). When false, the `Solver` will update the GameObject's transform directly. By saving the transform properties to an intermediary location, other Solvers are able to perform their calculations starting from the intermediary variable. This is because Unity does not allow updates to gameObject.transform to stack within the same frame.
 
 > [!NOTE]
-> Developers can modify the order of execution of Solvers by setting the `SolverHandler.Solvers` property directly.
+> 開発者は、`SolverHandler.Solvers` プロパティを直接設定することでソルバーの実行順序を変更することができます。
 
 ## How to create a new Solver
+すべてのソルバーは抽象基底クラスである [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver) を継承しなければなりません。
+
+以下のコードは、`InFront` という新しいソルバー コンポーネントの例です。これは、アタッチされたオブジェクトを `SolverHandler.TransformTarget` の前 2m の位置に配置します。もし、`SolverHandler.TrackedTargetType` が [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) に設定された場合、`SolverHandler.TransformTarget` はカメラのトランスフォームとなり、このソルバーはすべてのフレームでアタッチされたゲームオブジェクトユーザーのゲイズの前 2m の位置に配置します。
 
 All solvers must inherit from the abstract base class, [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver). The primary requirements of a Solver extension involves overriding the `SolverUpdate` method. In this method, developers should update the inherited `GoalPosition`, `GoalRotation` and `GoalScale` properties to the desired values. Furthermore, it is generally valuable to leverage `SolverHandler.TransformTarget` as the frame of reference desired by the consumer.
 
-The code provided below gives an example of a new Solver component called `InFront` that places the attached object 2m in front of the `SolverHandler.TransformTarget`. If the `SolverHandler.TrackedTargetType` is set by the consumer as [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head), then the `SolverHandler.TransformTarget` will be the camera transform and thus this Solver will place the attached GameObject 2m in front of the users' gaze every frame.
-
 ```csharp
 /// <summary>
-/// InFront solver positions an object 2m in front of the tracked transform target
+/// InFront ソルバーは追跡されるトランスフォーム ターゲットの前 2 m の位置にオブジェクトを配置します
 /// </summary>
 public class InFront : Solver
 {
