@@ -5,7 +5,7 @@
 <!-- TODO: Add content -->
 _現在、MRTKドキュメントの再構築と改善を行っています。
 このコンテンツは間もなく更新されます!
-このセクションに関するご質問は、MRTK Slackチャンネルにご投稿ください。_
+このセクションに関するご質問は、MRTK Slack チャンネルにご投稿ください。_
 
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_positioning_slider.png)
 
