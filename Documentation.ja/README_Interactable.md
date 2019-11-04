@@ -34,7 +34,7 @@
 
 * **Disabled**: このボタンはインタラクティブであってはなりません。また、何らかの理由でこのボタンが現在使用できないことが視覚的なフィードバックによってユーザーに通知されます。理論的には、disabled 状態には他のすべての状態を含めることができますが、Enabled がオフの場合は、Disabled 状態が他のすべての状態より優先されます。
 
-リスト内の順序に応じて、ビット値 (#) が状態に割り当てられます。
+リスト内の順序に応じて、ビット値 (#) がステートに割り当てられます。
 
 > [!NOTE]
 >  一般に、*Interactable* コンポーネントを作成する場合は、 [**DefaultInteractableStates**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) を使用することをお勧めします。
