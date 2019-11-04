@@ -52,22 +52,18 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 <br/>
 *TrackedTargetType に関連するさまざまなプロパティの例*
 
-## How to chain Solvers
+## Solver (ソルバー) を連鎖させる方法
 
 複数の `Solver` コンポーネントを同じゲームオブジェクトに追加し、アルゴリズムを連鎖させることが可能です。`SolverHandler` コンポーネントは、同じゲームオブジェクト上のすべてのソルバーの更新を取り扱います。デフォルトでは `SolverHandler` は Start で `GetComponents<Solver>()` を呼び出し、これはインスペクターで表示される順序でソルバーを返します。
-さらに、*Updated Linked Transform* プロパティを true に設定すると、
-
-Furthermore, setting the *Updated Linked Transform* property to true will instruct that `Solver` to save it's calculated position, orientation, & scale to an intermediary variable accessible by all Solvers (i.e `GoalPosition`). When false, the `Solver` will update the GameObject's transform directly. By saving the transform properties to an intermediary location, other Solvers are able to perform their calculations starting from the intermediary variable. This is because Unity does not allow updates to gameObject.transform to stack within the same frame.
+さらに、*Updated Linked Transform* プロパティを true に設定すると、`Solver` は計算した位置、姿勢、スケールをすべてのソルバー(すなわち、 `GoalPosition`)からアクセスできる仲介変数に保存します。false の場合は、`Solver` はゲームオブジェクトのトランスフォームを直接更新します。トランスフォームのプロパティを仲介の場所に保存すると、他のソルバーがその仲介変数から計算を始めることができます。この理由は、Unity は gameObject.transform を同じフレーム内にスタックして更新することを許容していないからです。
 
 > [!NOTE]
 > 開発者は、`SolverHandler.Solvers` プロパティを直接設定することでソルバーの実行順序を変更することができます。
 
-## How to create a new Solver
-すべてのソルバーは抽象基底クラスである [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver) を継承しなければなりません。
+## 新しい Solver (ソルバー) の作り方
+すべてのソルバーは抽象基底クラスである [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver) を継承しなければなりません。Solver の拡張に主に必要となるのは、`SolverUpdate` メソッドのオーバーライドに関するものです。このメソッドで、開発者は継承された `GoalPosition`、`GoalRotation`、`GoalScale` プロパティを望ましい値に更新すべきです。さらに、`SolverHandler.TransformTarget` を、コンシューマーが望む参照座標系として利用すると、たいていの場合に役に立つでしょう。
 
 以下のコードは、`InFront` という新しいソルバー コンポーネントの例です。これは、アタッチされたオブジェクトを `SolverHandler.TransformTarget` の前 2m の位置に配置します。もし、`SolverHandler.TrackedTargetType` が [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) に設定された場合、`SolverHandler.TransformTarget` はカメラのトランスフォームとなり、このソルバーはすべてのフレームでアタッチされたゲームオブジェクトユーザーのゲイズの前 2m の位置に配置します。
-
-All solvers must inherit from the abstract base class, [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver). The primary requirements of a Solver extension involves overriding the `SolverUpdate` method. In this method, developers should update the inherited `GoalPosition`, `GoalRotation` and `GoalScale` properties to the desired values. Furthermore, it is generally valuable to leverage `SolverHandler.TransformTarget` as the frame of reference desired by the consumer.
 
 ```csharp
 /// <summary>
