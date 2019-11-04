@@ -1,4 +1,4 @@
-# Interactable (対話型 : インターラクティブル)
+# Interactable (インタラクタブル、インタラクション可能な)
 
 ![Interactable](../Documentation/Images/Interactable/InteractableExamples.png)
 
