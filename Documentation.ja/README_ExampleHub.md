@@ -14,7 +14,7 @@ MRTK Examples Hub は、[Scene Transition Service](https://microsoft.github.io/M
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Hierarchy.png" width="300">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Inspector1.png" width="450">
 
-インスペクタの下部に、 Scene System Profile で定義されているシーンのリストが表示されます。シーン名をクリックすると、ロード/アンロードできます。
+インスペクターの下部に、 Scene System Profile で定義されているシーンのリストが表示されます。シーン名をクリックすると、ロード/アンロードできます。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Inspector2.png" width="550">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem3.png"> リスト内のシーン名をクリックして _MRTKExamplesHub_ シーンをロードする例。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem4.png"> _loading _HandInteractionExamples_ シーンをロードする例。
