@@ -31,17 +31,17 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 > [!NOTE]
 > ソルバーシステムの使い方の例は、**SolverExamples.scene** ファイルにて見つけることができます。
 
-## How to change tracking reference
+## 追跡参照を変更する方法
 
  [`SolverHandler`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler) コンポーネントの *Tracked Target Type* プロパティは、全てのソルバーがアルゴリズムを計算するときに使用する参照点を定義します。例えば、シンプルな [`SurfaceMagnetism`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism) コンポーネントとともに [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) が指定された場合、頭からユーザーのゲイズ方向へのレイキャストが、どの面にヒットするかを解決するために使われます。`TrackedTargetType` プロパティに設定可能な値は以下の通りです。
 
 * *Head* : カメラからの参照点
 * *MotionController*: モーション コントローラーからの参照点
     * どちらの手（左手、右手、両手）を優先するかを選択するには、`TrackedHandedness` プロパティを使用します。
-* *HandJoint*: Point of reference from a hand
-    * Use the `TrackedHandedness` property to select the handedness preference (i.e Left, Right, Both)
-    * Use the  `TrackedHandJoint` property to determine the joint transform to utilize
-* *CustomOverride*: Point of reference from the assigned `TransformOverride`
+* *HandJoint*: ハンドからの参照点
+    * どちらの手（左手、右手、両手）を優先するかを選択するには、`TrackedHandedness` プロパティを使用します。
+    * 利用するジョイントのトランスフォームを決定するには、`TrackedHandJoint` プロパティを使用します。
+* *CustomOverride*: アサインされた `TransformOverride` からの参照点
 
 > [!NOTE]
 > *MotionController* と *HandJoint* タイプの両方について、`TrackedHandedness` プロパティが `Both` の場合、ソルバー ハンドラーは左のコントローラー/ハンドのトランスフォームを提供しようとし、左が利用できなければ右の値を提供しようとします。
