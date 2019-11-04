@@ -2,7 +2,7 @@
 
 ![Interactable](../Documentation/Images/Interactable/InteractableExamples.png)
 
-[`Interactable`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) コンポーネントは、あらゆるオブジェクトを容易に対話可能にし、入力に応答するオールインワンコンテナです。Interactable は、タッチ、ハンド レイ、音声認識などを含むすべてのタイプの入力のためのキャッチオールとして機能し、これらの相互作用を [イベント](#events) および [ビジュアル テーマ (Visual Themes)](visualthemes.md) の応答に流し込みます。このコンポーネントを使用すると、ボタンの作成やフォーカスのあるオブジェクトの色の変更などを簡単に行うことができます。
+[`Interactable`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) コンポーネントは、あらゆるオブジェクトを容易に *interactable(インタラクション可能)* にし、入力に応答させるオールインワン コンテナです。Interactable は、タッチ、ハンド レイ、音声などを含むすべてのタイプの入力のためのキャッチオールとして機能し、これらのインタラクションを [イベント](#events) および [Visual Themes (ビジュアル テーマ)](visualthemes.md) の応答に流し込みます。このコンポーネントを使用すると、ボタンの作成やフォーカスによるオブジェクトの色の変更などを簡単に行うことができます。
 
 ## Interactable の設定方法
 
