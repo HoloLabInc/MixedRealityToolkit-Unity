@@ -26,7 +26,7 @@
 
 *DefaultInteractableStates* アセットには4つのステートが含まれており、[`InteractableStates`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableStates) ステート モデルの実装を利用します。
 
-* **Default**: 何も起こっていません。これは最も独立したベース状態です。
+* **Default**: 何も起こっていません。これは最も独立したベース ステートです。
 
 * **Focus**: オブジェクトがポイントされています。これは単一のステートで、他のステートは現在設定されていませんが、Default より優先されます。
 
