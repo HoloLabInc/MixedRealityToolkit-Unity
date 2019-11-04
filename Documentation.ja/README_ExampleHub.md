@@ -29,7 +29,7 @@ MRTK Examples Hub は、[Scene Transition Service](https://microsoft.github.io/M
 ## MRTKExamplesHub でシーンをロードする方法 ##
 **MRTKExamplesHub** シーンには、 ``ExamplesHubButton`` prefab (プレハブ)があります。 
 プレハブに ``ExamplesHubButton`` を含む **FrontPlate** オブジェクトがあります。 
-Interactableの ``OnClick()`` と ``OnTouch()`` イベントを使用すると、**LoadContentScene** スクリプトの **LoadContent()** 関数がトリガーされます。 
+Interactable の ``OnClick()`` と ``OnTouch()`` イベントを使用すると、**LoadContentScene** スクリプトの **LoadContent()** 関数がトリガーされます。 
 **LoadContentScene** スクリプトのインスペクタで、ロードするシーン名を定義できます。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem6.png">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem8.png" width="450">
