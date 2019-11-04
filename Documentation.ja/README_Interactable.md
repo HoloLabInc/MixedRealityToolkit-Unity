@@ -20,7 +20,7 @@
 
 *States* は [Interactable プロファイル](#interactable-プロファイル)と[ビジュアル テーマ](VisualThemes.md)で利用する、押された、見られている、といったインタラクションのフェーズを定義する [ScriptableObject](https://docs.unity3d.com/Manual/class-ScriptableObject.html) パラメータです。
 
-[**DefaultInteractableStates**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) は MRTK の Out-Of-Box に付属しており、*Interactable* コンポーネントの既定のパラメータです。
+[**DefaultInteractableStates**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) は MRTK にそのまま含まれている、*Interactable* コンポーネントのデフォルトのパラメーターです。
 
 ![States ScriptableObject example in inspector](../Documentation/Images/Interactable/DefaultInteractableStates.png)
 
