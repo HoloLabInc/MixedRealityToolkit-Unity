@@ -9,7 +9,7 @@
 このコンポーネントには、3つの主要な構成セクションがあります:
 
 1) [General 入力設定](#general-入力設定)
-1) 複数のGameObjectを対象とした [ビジュアル テーマ](VisualThemes.md)
+1) 複数の GameObject を対象とした [ビジュアル テーマ](VisualThemes.md)
 1) [イベント ハンドラ](#events)
 
 ### General 入力設定
