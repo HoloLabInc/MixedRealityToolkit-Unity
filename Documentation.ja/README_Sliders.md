@@ -1,40 +1,40 @@
-# Sliders
+# Sliders (スライダ)
 ![](../Documentation/Images/Slider/MRTK_UX_Slider_Main.jpg)
 
-Sliders are UI components that allow you to continuously change a value by moving a slider on a track. Currently the Pinch Slider can be moved by directly grabbing the slider, either directly or at a distance. Sliders work on AR and VR, using motion controllers, hands, or Gesture + Voice.
+スライダは、トラック上でスライダを動かして値を連続的に変更できるUIコンポーネントです。現在のところ、Pinch Slider (ピッチ スライダ) は、直接または一定の距離でスライダをつかんで移動できます。スライダは、モーション コントローラ、ハンド、または、ジェスチャ+音声を使用して、AR および VR で動作します。
 
-## Example scene
-You can find examples in the **SliderExample** scene under:
+## サンプルシーン
+**SliderExample** シーンの以下の場所にサンプルがあります。:
 [MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes/](/Assets/MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes)
 
-## How to use Sliders
-Drag and drop the **PinchSlider** prefab into the scene hierarchy. If you want to modify or create your own slider, remember to do the following:
+## スライダの使用方法
+**PinchSlider** プレハブをシーン ヒエラルキにドラッグ＆ドロップします。独自のスライダを変更または作成する場合は、次の操作を行います:
 
-- Make sure your that your thumb object has a collider on it. In the PinchSlider prefab, the collider is on `SliderThumb/Button_AnimationContainer/Slider_Button`
-- Make sure that the object containing the collider also has a Near Interaction Grabbable component on it, if you want to be able to grab the slider near.
+- thumb オブジェクトにコライダがあることを確認します。PinchSlider プレハブでは、コライダは `SliderThumb/Button_AnimationContainer/Slider_Button` にあります。
+- スライダを近くでつかみたい場合は、コライダを含むオブジェクトにも Near Interaction Grabbable (握ることが可能な近接相互作用) コンポーネントがあることを確認します。
 
-We also recommend using the following hierarchy
+また、次のヒエラルキを使用することをお勧めします
 
-- PinchSlider - Contains the sliderComponent
-  - SliderThumb - Contains the movable thumb
-  - TrackVisuals - Containing the track and any other visuals
-  - OtherVisuals - Containing any other visuals
+- PinchSlider - sliderComponent が含まれます
+  - SliderThumb - 移動可能な thumb を含みます
+  - TrackVisuals - トラックやその他のビジュアルを含みます
+  - OtherVisuals - その他のビジュアルを含みます
 
-## Slider Events
-Sliders expose the following events:
-- OnValueUpdated - Called whenever the slider value changes
-- OnInteractionStarted - Called when the user grabs the slider
-- OnInteractionEnded - Called when the user releases the slider
-- OnHoverEntered - Called when the user's hand / controller hovers over the slider, using either near or far interaction.
-- OnHoverExited - Called when the user's hand / controller is no longer near the slider.
+## スライダ イベント
+スライダは次のイベントを公開します:
+- OnValueUpdated - スライダの値が変更されるたびに呼び出されます
+- OnInteractionStarted - ユーザがスライダをつかんだときに呼び出されます
+- OnInteractionEnded - ーザがスライダを離したときに呼び出されます
+- OnHoverEntered - ユーザのハンドまたはコントローラが、近くまたは遠くのインタラクションを使用してスライダの上に移動したときに呼び出されます
+- OnHoverExited - ユーザのハンドまたはコントローラが、スライダの近くにない場合に呼び出されます。
 
-## Configuring Slider Bound and Axis
-You can directly move the starting and end points of the slider by moving the handles in the Scene:
+## スライダの境界と軸の設定
+シーン内でハンドルを移動することにより、スライダの開始点と終了点を直接移動できます:
 
 ![Sliders Config](../Documentation/Images/Sliders/MRTK_Sliders_Setup.png)
 
-You can also specify the axis (in local space) of the slider via the _Slider Axis_ field
+_Slider Axis_ フィールドを使用してスライダの軸 (ローカル空間) を指定することもできます。
 
-If you cannot use the handles, you can instead specify the start and end points of the slider via the _Slider Start Distance_ and _Slider End Distance_ fields. These specify start / end position of slider as a distance from the slider's center, in local coordinates. This means that once you set the slider start and end distances as you want them, you can scale the slider to be smaller or larger without needing to update the start and end distances.
+ハンドルを使用できない場合は、 _Slider Start Distance_ フィールドと _Slider End Distance_ フィールドを使用して、スライダの開始点と終了点を指定できます。スライダの開始 / 終了位置を、スライダの中心からの距離としてローカル座標で指定します。つまり、スライダの開始距離と終了距離を必要に応じて設定すると、開始距離と終了距離を更新しなくても、スライダを拡大または縮小できます。
 
 
