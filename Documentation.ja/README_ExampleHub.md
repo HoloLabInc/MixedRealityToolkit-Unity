@@ -41,7 +41,7 @@ Interactable の ``OnClick()`` と ``OnTouch()`` イベントを使用すると�
 MixedRealityToolkit.SceneSystem.LoadContent(contentName, loadSceneMode);
 ```
  
-## メインメニュー画面に戻る ##
+## メイン メニュー シーンに戻る ##
 メイン メニュー シーン (MRTKExamplesHubMainMenu シーン) に戻るには、同じシーン システムの `LoadContent()` メソッドを使用します。**ToggleFeaturesPanelExamplesHub.prefab** は、**LoadContentScene** スクリプトを含む[ホーム] ボタンを提供します。各シーンでこのプレハブを使用するかカスタム ホーム ボタンを提供して、ユーザーがメイン シーンに戻ることができるようにします。 **MRTKExamplesHub** は共有 コンテナ シーンであるため、**MRTKExamplesHub** シーンに **ToggleFeaturesPanelExamplesHub.prefab** を配置すると常時表示できます。各サンプル シーンでは、**ToggleFeaturesPanel.prefab** が非表示/非アクティブであることを確認してください。
 
 <img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHubToggleFeaturesPanel.png">
