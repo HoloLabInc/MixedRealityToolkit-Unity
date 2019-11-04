@@ -22,7 +22,7 @@ MRTK Examples Hub は、[Scene Transition Service](https://microsoft.github.io/M
 複数のシーンをロードする例。
 
 ## シーンの実行 ##
-このシーンは、Unity のゲームモードとデバイスの両方で機能します。Unity エディタで **MRTKExamplesHub** シーンを実行し、MRTK の入力シミュレーションを使用してシーンの内容を操作します。ビルドと配置を行うには、シーン システムのリストに含まれる他のシーンとともに **MRTKExamplesHub** シーンをビルドします。インスペクタでは、 [Build Settings] にシーンを簡単に追加することもできます。 [Build Settings] で、 **MRTKExamplesHub** シーンがリストの一番上のインデックス 0 にあることを確認します。
+このシーンは、Unity のゲーム モードとデバイスの両方で機能します。Unity エディタで **MRTKExamplesHub** シーンを実行し、MRTK の入力シミュレーションを使用してシーンの内容を操作します。ビルドと配置を行うには、シーン システムのリストに含まれる他のシーンとともに **MRTKExamplesHub** シーンをビルドします。インスペクターでは、 [Build Settings] にシーンを簡単に追加することもできます。 [Build Settings] で、 **MRTKExamplesHub** シーンがリストの一番上のインデックス 0 にあることを確認します。
 
 <img src="../Documentation/Images/ExamplesHub/MRTK_ExamlesHub_BuildSettings.png" width="450">
 
