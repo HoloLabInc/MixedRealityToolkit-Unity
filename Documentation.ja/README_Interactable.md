@@ -24,7 +24,7 @@
 
 ![States ScriptableObject example in inspector](../Documentation/Images/Interactable/DefaultInteractableStates.png)
 
-*DefaultInteractableStates* アセットには4つの状態が含まれており、[`InteractableStates`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableStates) ステート モデルの実装を利用します。
+*DefaultInteractableStates* アセットには4つのステートが含まれており、[`InteractableStates`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableStates) ステート モデルの実装を利用します。
 
 * **Default**: 何も起こっていません。これは最も独立したベース状態です。
 
