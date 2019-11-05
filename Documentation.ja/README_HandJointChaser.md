@@ -1,14 +1,14 @@
 # Hand Joint Chaser Example
 ![](../Documentation/Images/HandJointChaser/MRTK_HandJointChaser_Main.jpg)
-This example scene demonstrates how to use Solver to attach objects to the hand joints. 
+このサンプルシーンでは、Solver (ソルバ) を使用して手のジョイントにオブジェクトをアタッチする方法を示します。
 
-## Example scene
-You can find the example scene **HandJointChaserExample** scene under:
+## サンプル シーン
+サンプル シーン **HandJointChaserExample** シーンは、次の場所にあります:
 [MixedRealityToolkit.Examples/Demos/Input/Scenes/](/Assets/MixedRealityToolkit.Examples/Demos/Input/Scenes)
 
-## Solver Handler
-Click **Tracked Object To Reference** and select **Hand Joint Left** or **Hand Joint Right**. You will be able to see **Tracked Hand Joint** drop down. From the drop down list, you can select specific joint to track.
-This example scene uses Radial View Solver to make an object follow the target object. See [Solver](README_Solver.md) page for more details. 
+## ソルバ ハンドラ
+ **Tracked Object To Reference** をクリックし、**Hand Joint Left** または **Hand Joint Right** を選択します。**Tracked Hand Joint** ドロップ ダウンが表示されます。ドロップ ダウン リストから、トラックする特定のジョイントを選択できます。
+この例のシーンでは、放射状 ビュー ソルバを使用して、オブジェクトをターゲット オブジェクトに追従させます。詳細については、[Solver](README_Solver.md) ページを参照してください。
 
 
 ![](../Documentation/Images/HandJointChaser/MRTK_Solver_HandJoint.jpg)
