@@ -1,69 +1,65 @@
-# Input System
+# Input System (入力システム)
 
-The input system is one of the largest systems out of all the features offered by the MRTK.
-So many things within the toolkit build on top of it (pointers, focus, prefabs). The code within the input
-system is what allows for natural interactions like grab and rotate across platforms.
+入力システムは、MRTK が提供するすべての機能の中で最大のシステムの 1 つです。
+ツールキット内の非常に多くのものがその上に構築されます(ポインター、フォーカス、プレハブ)。
+入力システム内のコードは、プラットフォーム間でのグラブや回転などの自然なインタラクションを可能にします。
 
-The input system has some of its own terminology that are worth defining:
+入力システムには、定義する価値のある独自の用語がいくつかあります:
 
-- **Data providers**
+- **Data providers (データ プロバイダー)**
 
-    The input settings in the input profile have references to entities known as data providers - another word
-    that describes these are device managers. These are components whose job is to extend the MRTK input system
-    by interfacing with a specific underlying system. An example of a provider is the Windows Mixed Reality provider,
-    whose job it is to talk with the underlying Windows Mixed Reality APIs, and then translate the data from
-    those APIs into MRTK-specific input concepts below. Another example would be the OpenVR provider (whose job it
-    is to talk to Unity-abstracted version of OpenVR APIs and then translate that data into MRTK input concepts).
+    Input Profile (入力プロファイル) の入力設定には、データ プロバイダー (別名デバイス マネージャー) と呼ばれるエンティティへの参照があります。
+    これらは、特定の基礎となるシステムとのインターフェイスによって MRTK の入力システムを拡張することを役割とするコンポーネントです。
+    プロバイダーの例は、Windows Mixed Reality プロバイダーです。その役割は、基礎となる Windows Mixed Reality API と通信し、
+    それらの API からのデータを以下のMRTK 固有の入力概念に変換することです。
+    別の例は、OpenVR プロバイダーです (その役割は、OpenVR API の Unity の抽象バージョンと通信し、そのデータを MRTK 入力概念に変換することです)。
 
-- **Controller**
+- **Controller (コントローラー)**
 
-    A representation of a physical controller (whether it’s a 6-degree-of-freedom controller, a HoloLens 1-style
-    hand with gesture support, a fully articulated hand, a leap motion controller, etc.). Controllers are spawned
-    by device managers (i.e. the WMR device manager will spawn a controller and manage its lifetime when it sees an
-    articulated hand coming into existence).
+    物理コントローラーを表したものです (6 自由度コントローラー、ジェスチャ サポート付きの HoloLens 1 スタイルの手、
+    多関節ハンド、Leap Motion コントローラーなど)。コントローラーは、デバイス マネージャーによって生成されます
+    (つまり、WMR デバイス マネージャーは、多関節ハンドの存在を確認すると、コントローラーを生成し、そのライフタイムを管理します)。
 
-- **Pointer**
+- **Pointer (ポインター)**
 
-    Controller use pointers to interact with game objects. For example, the near interaction pointer is 
-    responsible to detecting when the hand (which is a controller) is close to objects that advertise 
-    themselves as supporting ‘near interaction’. Other examples for pointers are teleportation or far
-    pointers (i.e. the shell hand ray pointer) that use far raycasts to engage with content that is
-    longer than arms length from the user.
+    コントローラーはポインターを使用してゲームオブジェクトとやり取りします。例えば、ニア インタラクション ポインターは、
+    (コントローラーである) 手が ‘near interaction’ をサポートしていると宣伝するオブジェクトに近づいたことを検出します。
+    ポインターの他の例としては、テレポーテーションまたはファー ポインター (シェル ハンド レイ ポインター) があり、
+    ファー レイキャストを使用して、ユーザーからの腕の長さよりも長いコンテンツを処理します。
 
-    Pointers are created by the device manager, and then attached to an input source. To get all of the
-    pointers for a controller, do: ```controller.InputSource.Pointers```
+    ポインターはデバイス マネージャーによって作成され、入力ソースにアタッチされます。
+    コントローラーのすべてのポインターを取得するには、次のようにします: ```controller.InputSource.Pointers```
 
-    Note that a controller can be associated with many different pointers at the same time – in order
-    to ensure that this doesn’t devolve into chaos, there is a pointer mediator which controls which
-    pointers are allowed to be active (for example, the mediator will disable far interaction pointers
-    when near interaction is detected).
+    コントローラーは同時に多くの異なるポインターに関連付けることができることに注意してください。
+    これが混乱に陥らないように、どのポインターをアクティブにするかを制御する Pointer Mediator (ポインター メディエーター) があります
+    (例えば、メディエーターは ニア インタラクションが検出された場合、ファー インタラクション ポインターを無効にします)。
 
-- **Focus**
+- **Focus (フォーカス)**
 
-    Pointer events are sent to objects in **focus**. Focus selection will vary by pointer type - a hand ray
-    pointer will use raycasts, while a poke pointer will use spherecasts. An object must implement
-    IMixedRealityFocusHandler to receive focus. It's possible to globally register an object to receive
-    unfiltered pointer events, but this approach is not recommended.
+    ポインター イベントは、**フォーカス**でオブジェクトに送信されます。 フォーカスの選択は、ポインターの種類によって異なります - ハンド レイ ポインターは
+    レイキャストを使用し、ポーク ポインターはスフィアキャストを使用します。 オブジェクトは、フォーカスを受け取るために
+    IMixedRealityFocusHandler を実装する必要があります。 オブジェクトをグローバルに登録して、
+    フィルター処理されていないポインター イベントを受け取ることは可能ですが、この方法はお勧めしません。
 
-    The component that updates which objects are in focus is the [FocusProvider](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Services/InputSystem/FocusProvider.cs)
+    どのオブジェクトがフォーカスされているかを更新するコンポーネントは [FocusProvider](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Services/InputSystem/FocusProvider.cs) です。
 
-- **Cursor** 
+- **Cursor (カーソル)**
 
-    An entity associated with a pointer that gives additional visual cues around pointer interaction. For example,
-    the FingerCursor will render a ring around your finger, and may rotate that ring when your finger is close to
-    ‘near interactable’ objects. A pointer can be associated with a single cursor at time.
+    ポインター インタラクションの周りに追加の視覚的効果を与えるポインターに関連付けられたエンティティです。
+    例えば、FingerCursor は指の周りにリングを描画し、指が ‘near interactable’ オブジェクトの近くにあるときにそのリングを回転させる場合があります。
+    ポインターは、一度に 1 つのカーソルに関連付けることができます。
 
-- **Interaction and Manipulation**
+- **Interaction and Manipulation (インタラクションとマニピュレーション)**
 
-    Objects can be tagged with an interaction or manipulation script. This may be via a [`Interactable`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable), or something like
-    [`NearInteractionGrabbable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable)/[`ManipulationHandler`](xref:Microsoft.MixedReality.Toolkit.UI.ManipulationHandler).
+    オブジェクトは、インタラクションまたはマニピュレーション スクリプトでタグ付けできます。
+    これは [`Interactable`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable)、または  [`NearInteractionGrabbable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable)/[`ManipulationHandler`](xref:Microsoft.MixedReality.Toolkit.UI.ManipulationHandler) のようなものを介する場合があります。
 
-    For example, NearInteractionGrabbable and NearInteractionTouchable allow for certain pointers (especially
-    near interaction pointers) to know which objects can be focused on.
+    例えば、NearInteractionGrabbable と NearInteractionTouchable を使用すると、特定のポインター (特にニア インタラクション ポインター) で、
+    どのオブジェクトにフォーカスできるかを知ることができます。
 
-    Interactable and ManipulationHandler, are examples of components that listen to pointer events to modify
-    UI visuals or move/scale/rotate game objects.
+    Interactable および ManipulationHandler は、ポインター イベントをリッスンして UI の見た目を変更したり、
+    ゲームオブジェクトを移動/スケーリング/回転するコンポーネントの例です。
 
-The image below captures the high level build up (from bottom up) of the MRTK input stack:
+以下の画像は、MRTK 入力スタックの高レベルのビルドアップ (下から上) を示しています:
 
 ![Input System Diagram](../../../Documentation/Images/Input/MRTK_InputSystem.png)
