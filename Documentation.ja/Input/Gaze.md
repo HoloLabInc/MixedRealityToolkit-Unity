@@ -1,50 +1,35 @@
-# Gaze
+# Gaze (ゲイズ)
 
-[Gaze](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze) is a form of input that interacts
-with the world based on where the user is looking. Gaze exists in two different flavors
+[Gaze](https://docs.microsoft.com/ja-jp/windows/mixed-reality/gaze) は、ユーザがどこを見ているかに基づいています。ゲイズには2つの異なる特徴があります。
 
-## Head gaze
+## ヘッド ゲイズ
 
-This type of gaze is based on the direction that the head/camera is looking at. Head gaze is active
-on systems that don't support eye gaze, or in cases where the hardware may support eye gaze, but
-the right set of [permissions and setup](../EyeTracking/EyeTracking_BasicSetup.md#eye-tracking-requirements-checklist)
-has not been performed.
+このタイプのゲイズは、頭/カメラが向いている方向に基づきます。ヘッド ゲイズがアクティブである目のゲイズをサポートしていないシステムや、ハードウェアが目のゲイズをサポートしている可能性があるが [アクセス許可とセットアップ](../EyeTracking/EyeTracking_BasicSetup.md#eye-tracking-requirements-checklist) が正しく実行されていない場合にアクティブになります。
 
-Head gaze is usually associated with HoloLens 1 style interactions involving looking at object by
-placing it in the center of the Holographic Frame and then performing the air tap gesture.
+ヘッド ゲイズは、通常、HoloLens 1 スタイルのインタラクションに関連しており、次のような方法でオブジェクトを見ることができます。
+ホログラフィックフレームの中央に配置し、エア タップのジェスチャを実行します。
 
-## Eye gaze
+## アイ ゲイズ (視線)
 
-This type of gaze is based on where the user's eyes are looking. Eye gaze is only present
-on systems that support eye tracking. See the
-[eye tracking documentation](../EyeTracking/EyeTracking_Main.md) for more details on how
-to use eye gaze.
+このタイプのゲイズは、ユーザの目がどこを見ているかに基づいています。視線は視線追跡をサポートするシステムにのみ存在します。視線の使用方法の詳細については、[アイ トラッキング文書](../EyeTracking/EyeTracking_Main.md) を参照してください。
 
 ## GazeProvider
 
-Gaze functionality (both head and eye) is provided by the
-[GazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.GazeProvider). This provider can be configured
-in the *Pointer* section of the input system profile:
+ゲイズ機能 (ヘッドと視線) は、[GazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.GazeProvider) によって提供されます。このプロバイダは入力システムプロファイルの *Pointer* セクションで次の操作を行います:
 
 ![Gaze Configuration Entrypoint](../../Documentation/Images/Input/GazeConfigurationEntrypoint.png)
 
-Like other sources of input, the gaze provider interacts with objects in the scene
-through use of a pointer [(see this document for information on pointers)](../Architecture/InputSystem/ControllersPointersAndFocus.md).
-In the case of the gaze provider, its pointer is an implemented via `InternalGazePointer`
-and is not configured through a profile.
+他の入力ソースと同様に、GazeProvider はポインタ [(see this document for information on pointers)](../Architecture/InputSystem/ControllersPointersAndFocus.md) を使用してシーン内のオブジェクトと対話します。
+GazeProvider の場合、ポインタは `InternalGazePointer` によって実装され、プロファイルを使用して設定されます。
 
-It is possible to replace the stock GazeProvider with an alternate implementation by changing
-*Gaze Provider Type* to reference a different class that implements
-[IMixedRealityGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider)
-and [IMixedRealityEyeGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider).
-It's generally recommended to use the stock GazeProvider (and filing issues in when finding
-bugs) as re-implementing the GazeProvider is non-trivial.
+*Gaze Provider Type* を [IMixedRealityGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider) と [IMixedRealityEyeGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider) を実装する別のクラスを参照するように変更することで、標準の GazeProvider を別の実装に置き換えることができます。
+GazeProvider の再実装は簡単ではないので、通常はストック GazeProvider (およびバグ発見時の問題報告) を使うことをお勧めします。
 
-## Usage
+## 使用方法
 
-### How get the current gaze target
+### 現在の gaze targer (ゲイズ ターゲット) を取得する方法
 
-This sample shows how to get the current game object that is targetted by the user gaze.
+このサンプルは、ユーザのゲイズのターゲットとなる現在のゲームオブジェクトを取得する方法を示します。
 
 ```csharp
 void LogCurrentGazeTarget()
@@ -57,10 +42,9 @@ void LogCurrentGazeTarget()
 }
 ```
 
-### How to get the current gaze direction and origin
+### 現在のゲイズの方向と原点を取得する方法
 
-This sample shows how to get the Vector3 representing the direction of the user gaze
-and the origin (the point from which the direction is going).
+このサンプルは、ユーザの視線の方向と原点 (方向が向かっている点) を表す Vector3 を取得する方法を示します。
 
 ```csharp
 void LogGazeDirectionOrigin()
@@ -72,4 +56,3 @@ void LogGazeDirectionOrigin()
         + CoreServices.InputSystem.GazeProvider.GazeOrigin);
 }
 ```
-
