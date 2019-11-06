@@ -1,62 +1,63 @@
-# Text Prefab
-These prefabs are optimized for the rendering quality in Windows Mixed Reality. For more information, please read the guideline [Text in Unity](https://docs.microsoft.com/en-us/windows/mixed-reality/text-in-unity) on Microsoft Windows Dev Center.
+# Text Prefab (テキスト プレハブ)
+
+これらのプレハブは、Windows Mixed Reality のレンダリング品質向けに最適化されています。詳細については、Microsoft Windows Dev Center のガイドライン [Text in Unity](https://docs.microsoft.com/en-us/windows/mixed-reality/text-in-unity) を参照してください。
 
 #### [3DTextPrefab.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
 
-3D Text Mesh prefab with optimized scaling factor at 2-meter distance. (Please read the instructions below)
+2 メートルの距離でスケーリング係数が最適化された 3D Text Mesh プレハブ (以下の手順をお読みください)。
 
 #### [UITextPrefab.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
 
-UI Text Mesh prefab with optimized scaling factor at 2-meter distance. (Please read the instructions below)
+2 メートルの距離で最適化されたスケーリング係数を持つ UI Text Mesh プレハブ (以下の手順をお読みください)。
 
 #### [Fonts](/Assets/MixedRealityToolkit/StandardAssets/Fonts)
 
-Open-source fonts included in Mixed Reality Toolkit.
+Mixed Reality Toolkit に含まれるオープンソースフォント。
 
 
-**IMPORTANT: Text Prefab uses open source font 'Selawik'. To use Text Prefab with different font, please import font file and follow the instruction below. Below example shows how to use 'Segoe UI' font with Text Prefab.**
+**IMPORTANT: テキストプレハブはオープンソースフォント 'Selawik' を使用します。別のフォントでテキストプレハブを使用するには、フォントファイルをインポートして、以下の指示に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。**
 
 ![Importing Segoe UI font file](../Documentation/Images/TextPrefab/TextPrefabInstructions01.png)
 
-1. Assign font texture to 3DTextSegoeUI.mat material. 
+1. フォントテクスチャを 3DTextSegoeUI.mat マテリアルに割り当てます。
 
 ![Assigning font texture](../Documentation/Images/TextPrefab/TextPrefabInstructions02.png)
 
-2. On 3DTextSegoeUI.mat material, select the shader Custom/3DTextShader.shader. 
+2. 3DTextSegoeUI.mat マテリアルで、シェーダー Custom / 3DTextShader.shader を選択します。
 
 ![Assigning shader](../Documentation/Images/TextPrefab/TextPrefabInstructions03.png)
 
-3. Assign Segoe UI font and 3DTextSegoeUI material to the text components in the prefabs.
+3. Segoe UI フォントと 3DTextSegoeUI マテリアルをプレハブのテキストコンポーネントに割り当てます。
 
 ![Assigning font file and material](../Documentation/Images/TextPrefab/TextPrefabInstructions04.png)
 
-**Working with Fonts in Unity**
+**Unity でフォントを操作する**
 
-When adding a new 3D TextMesh to a scene in Unity there are two issues that are visually apparent. One, the font appears very large and two, the font appears very blurry. It is also interesting to notice that the default Font Size value is set to zero in the Inspector. Replacing this zero value with 13 will show no difference in size, because 13 is actually the default value.
+Unity のシーンに新しい 3D TextMesh を追加するとき、視覚的に明らかな 2 つの問題があります。 1 つ目は、フォントが非常に大きく表示され、2 つ目は、フォントが非常にぼやけて表示されます。また、インスペクタでデフォルトのフォントサイズの値がゼロに設定されていることにも注目してください。このゼロ値を 13 に置き換えても、実際には 13 がデフォルト値であるため、サイズに違いはありません。
 
-Unity assumes all new elements added to a scene is 1 Unity Unit in size, or 100%  Transform scale, which translates to about 1 meter on the HoloLens. In the case of fonts, the bounding box for a 3D TextMesh comes in, by default at about 1 meter in height.
+Unity は、シーンに追加されるすべての新しい要素のサイズが 1 ユニティ単位、または HoloLens で約 1 メートルに変換される 100% 変換スケールであることを前提としています。フォントの場合、3D TextMesh の境界ボックスが入ります。デフォルトでは、高さは約 1 メートルです。
 
-**Font Scale and Font Sizes**
+**フォント スケールとフォント サイズ**
 
-Most visual designers use Points to define font sizes in the real world, as well as their design programs. There are about 2835 (2,834.645666399962) points in 1 meter. Based on the point system conversion to 1 meter and Unity's default TextMesh Font Size of 13, the simple math of 13 divided by 2835 equals 0.0046 (0.004586111116 to be exact) provides a good standard scale to start with, though some may wish to round to 0.005.
+ほとんどのビジュアルデザイナーは、Points を使用して、現実世界のフォントサイズとデザインプログラムを定義します。 1 メートルは約 2835 (2,834.645666399962) ポイントになります。ポイント システムの 1 メートルへの変換と Unity のデフォルトの TextMesh フォント サイズ 13 に基づいて、13 を 2835 で割った単純な数学は 0.0046 (正確には 0.004586111116) に等しいため、最初に適切な標準スケールが提供されます。ただし、0.005 に丸めることもできます。
 
-Either way, scaling the Text object or container to these values will not only allow for the 1:1 conversion of font sizes from a design program, but also provides a standard to maintain consistency throughout the application or game.
+いずれにしても、Text オブジェクトまたはコンテナをこれらの値にスケーリングすると、デザイン プログラムからのフォント サイズの 1：1 変換が可能になるだけでなく、アプリケーションまたはゲーム全体で一貫性を維持するための標準も提供されます。
 
 **UI Text**
 
-When adding a UI or canvas based Text element to a scene, the size disparity is greater still. The differences in the two sizes is about 1000%, which would bring the scale factor for UI based Text components to 0.00046 (0.0004586111116 to be exact) or 0.0005 for the rounded value.
+UI またはキャンバス ベースのテキスト要素をシーンに追加すると、サイズの不均衡はさらに大きくなります。 2つのサイズの違いは約1000％で、UI ベースのテキスト コンポーネントのスケール ファクターは 0.00046 (正確には 0.0004586111116) または丸められた値の場合は 0.0005 になります。
  
-**Disclaimer**: The default value of any font may be effected by the texture size of that font or how the font was imported into Unity. These tests were performed based on the default Arial font in Unity, as well as one other imported font.
+**免責事項**: 任意のフォントのデフォルト値は、そのフォントのテクスチャ サイズまたはフォントが Unity にインポートされた方法によって影響を受ける場合があります。これらのテストは、Unity のデフォルトの Arial フォントと、インポートされた他の 1 つのフォントに基づいて実行されました。
 
 ![Font size with scaling factors](../Documentation/Images/TextPrefab/TextPrefabInstructions07.png)
 
 ### [Text3DSelawik.mat](/Assets/MixedRealityToolkit/StandardAssets/Materials/)
 
-Material for 3DTextPrefab with occlusion support. Requires 3DTextShader.shader
+オクルージョンをサポートする 3DTextPrefab のマテリアル。3DTextShader.shader が必要ですが
 
 ![Default Font material vs 3DTextSegoeUI material](../Documentation/Images/TextPrefab/TextPrefabInstructions06.png)
 
 
 ### [Text3DShader.shader](/Assets/MixedRealityToolkit/StandardAssets/Shaders/)
 
-Shader for 3DTextPrefab with occlusion support.
+オクルージョンをサポートする 3DTextPrefab 用シェーダー。
