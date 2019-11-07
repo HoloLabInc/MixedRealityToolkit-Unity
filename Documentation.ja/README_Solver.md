@@ -21,7 +21,7 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 * [`ConstantViewSize`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.ConstantViewSize): 参照オブジェクトから見て、一定のサイズを保つように大きさを変えます。
 * [`RadialView`](#radialview): 参照オブジェクトからみて、オブジェクトが視野の中に入るようにします。
 * [`SurfaceMagnetism`](#surfacemagnetism): ワールドの面にレイを飛ばし、オブジェクトをその面に合わせます。
-* [`Momentum`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Momentum): 他のソルバーやコンポーネントによって動かされるオブジェクトに対して、慣性や弾性をシミュレーションするために、加速度、速度、摩擦を適用します。
+* [`Momentum`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Momentum): 他のソルバーやコンポーネントによって動かされるオブジェクトに対して、運動量や弾性をシミュレーションするために、加速度、速度、摩擦を適用します。
 * [`InBetween`](#inbetween): オブジェクトが2つのトラックされたオブジェクトの間にあるように保ちます。
 * [`HandConstraint`](#hand-menu-with-handconstraint-and-handconstraintpalmup): オブジェクトが、ハンドと交差しない領域内でハンドを追従するように制約します。メニューなどの、ハンドに拘束されたインタラクティブなコンテンツに便利です。このソルバーは [IMixedRealityHand](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand) とともに動作するよう意図されていますが、[IMixedRealityController](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityController) とも動作します。
 * [`HandConstraintPalmUp`](#hand-menu-with-handconstraint-and-handconstraintpalmup): HandConstraint から派生していますが、有効化の前に手のひらがユーザーを向いているかをテストするロジックが含まれています。このソルバーは [IMixedRealityHand](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand) コントローラーでのみ動作し、他のコントローラー タイプについては、このソルバーは基底クラスと全く同じ動作をします。
