@@ -29,7 +29,7 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 ソルバー システムを使うためには、上記コンポーネントの一つをゲームオブジェクトに単に追加するだけです。全てのソルバーは [`SolverHandler`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler) を必要とするため、[`SolverHandler`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler) は Unity によって自動的に作成されます。
 
 > [!NOTE]
-> ソルバーシステムの使い方の例は、**SolverExamples.scene** ファイルにて見つけることができます。
+> ソルバー システムの使い方の例は、**SolverExamples.scene** ファイルにて見つけることができます。
 
 ## 追跡参照を変更する方法
 
