@@ -2,47 +2,47 @@
 
 ![MRTK Examples Hub](../Documentation/Images/ExamplesHub/MRTK_ExamplesHub.png)
 
-MRTK Examples Hub is a Unity scene that makes it easy to experience multiple scenes. It uses MRTK's Scene System to load & unload the scenes. 
+MRTK Examples Hub は、複数の scene (シーン)を簡単に体験できる Unity シーンです。シーンのロードとアンロードには MRTK のシーン システムを使用します。 
 
-**MRTKExamplesHub.unity** is the container scene that has shared components including ``MixedRealityToolkit`` and ``MixedRealityPlayspace``. **MRTKExamplesHubMainMenu.unity** scene has the cube buttons.
+**MRTKExamplesHub.unity** は、``MixedRealityToolkit`` や ``MixedRealityPlayspace``などのコンポーネントを共有するコンテナ シーンです。**MRTKExamplesHubMainMenu.unity** は、立方体ボタンがあります。
 
-## Prerequisite ##
-MRTK Examples Hub uses [Scene Transition Service](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html) and related scripts. If you are using MRTK through Unity packages, please import **Microsoft.MixedReality.Toolkit.Unity.Extensions.x.x.x.unitypackage** which is part of the [release packages](https://github.com/microsoft/MixedRealityToolkit-Unity/releases). If you are using MRTK through the repository clone, you should already have **MixedRealityToolkit.Extensions** folder in your project.
+## 前提条件 ##
+MRTK Examples Hub は、[Scene Transition Service](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation.ja/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html) および関連スクリプトを使用します。Unity パッケージを介して、MRTK を使用している場合は、 [release packages](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) の一部である **Microsoft.MixedReality.Toolkit.Unity.Extensions.x.x.x.unitypackage** をインポートしてください。リポジトリをクローンして MRTK を使っている場合は、すでに **MixedRealityToolkit.Extensions** フォルダがプロジェクタ内にあるはずです。
 
-## MRTKExamplesHub Scene and the Scene System ##
-Open **MRTKExamplesHub.unity** which is located at ``MixedRealityToolkit.Examples/Demos/ExamplesHub/Scenes/`` It is an empty scene with MixedRealityToolkit, MixedRealityPlayspace and LoadHubOnStartup. This scene is configured to use MRTK's Scene System. Click ``MixedRealitySceneSystem`` under MixedRealityToolkit. It will display the Scene System's information in the Inspector panel.
+## MRTKExamplesHub シーンとシーン システム ##
+``MixedRealityToolkit.Examples/Demos/ExamplesHub/Scenes/`` にある **MRTKExamplesHub.unity** を開きます。これは、MixedRealityToolkit、MixedRealityPlayspace および LoadHubOnStartup を含む空のシーンです。このシーンは、MRTK のシーン システムを使うように設定されています。MixedRealityToolkit 配下の ``MixedRealitySceneSystem`` をクリックします。Inspector (インスペクター) パネルにシーン システムの情報が表示されます。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Hierarchy.png" width="300">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Inspector1.png" width="450">
 
-On the bottom of the Inspector, it displays the list of the scenes defined in the Scene System Profile. You can click the scene names to load/unload them. 
+インスペクターの下部に、 Scene System Profile で定義されているシーンのリストが表示されます。シーン名をクリックすると、ロード/アンロードできます。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Inspector2.png" width="550">
-<br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem3.png">Example of loading _MRTKExamplesHub_ scene by clicking the scene name in the list.
-<br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem4.png">Example of loading _HandInteractionExamples_ scene.
+<br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem3.png"> リスト内のシーン名をクリックして _MRTKExamplesHub_ シーンをロードする例。
+<br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem4.png"> _HandInteractionExamples_ シーンをロードする例。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem5.png">
-Example of loading multiple scenes.
+複数のシーンをロードする例。
 
-## Running the scene ##
-The scene works in both Unity's game mode and on device. Run the **MRTKExamplesHub** scene in the Unity editor and use MRTK's input simulation to interact with the scene contents. To build and deploy, simply build **MRTKExamplesHub** scene with other scenes that are included in the Scene System's list. The inspector also makes it easy to add scenes to the Build Settings. In the Building Settings, make sure **MRTKExamplesHub** scene is on the top of the list at index 0.
+## シーンの実行 ##
+このシーンは、Unity のゲーム モードとデバイスの両方で機能します。Unity エディタで **MRTKExamplesHub** シーンを実行し、MRTK の入力シミュレーションを使用してシーンの内容を操作します。ビルドと配置を行うには、シーン システムのリストに含まれる他のシーンとともに **MRTKExamplesHub** シーンをビルドします。インスペクターでは、 [Build Settings] にシーンを簡単に追加することもできます。 [Build Settings] で、 **MRTKExamplesHub** シーンがリストの一番上のインデックス 0 にあることを確認します。
 
 <img src="../Documentation/Images/ExamplesHub/MRTK_ExamlesHub_BuildSettings.png" width="450">
 
-## How MRTKExamplesHub loads a scene ##
-In the **MRTKExamplesHub** scene, you can find the ``ExamplesHubButton`` prefab. 
-There is a **FrontPlate** object in the prefab which contains ``Interactable``. 
-Using the Interactable's ``OnClick()`` and ``OnTouch()`` event, it triggers the **LoadContentScene** script's **LoadContent()** function. 
-In the **LoadContentScene** script's Inspector, you can define the scene name to load.
+## MRTKExamplesHub でシーンをロードする方法 ##
+**MRTKExamplesHub** シーンには、 ``ExamplesHubButton`` prefab (プレハブ)があります。 
+このプレハブには、``Interactable`` を含む **FrontPlate** オブジェクトがあります。 
+Interactable の ``OnClick()`` と ``OnTouch()`` イベントを使用すると、**LoadContentScene** スクリプトの **LoadContent()** 関数がトリガーされます。 
+**LoadContentScene** スクリプトのインスペクターで、ロードするシーン名を定義できます。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem6.png">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem8.png" width="450">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem7.png" width="450">
 
-The script uses the Scene System's LoadContent() function to load the scene. 
-Please refer to the [Scene System](SceneSystem/SceneSystemGettingStarted.md) page for more details.
+このスクリプトは、シーン システムの LoadContent() 関数を使用してシーンをロードします。 
+詳細については、[Scene System](SceneSystem/SceneSystemGettingStarted.md) ページを参照してください。
 ```csharp
 MixedRealityToolkit.SceneSystem.LoadContent(contentName, loadSceneMode);
 ```
  
-## Returning to the main menu scene ##
-To return to the main menu scene (MRTKExamplesHubMainMenu scene), you can use the same Scene System `LoadContent()` method. The **ToggleFeaturesPanelExamplesHub.prefab** provides the 'Home' button which contains the **LoadContentScene** script. Use this prefab or provide a custom home button in each scene to allow the user to return to the main scene. One can put the **ToggleFeaturesPanelExamplesHub.prefab** in the **MRTKExamplesHub** scene to make it always visible since **MRTKExamplesHub** is a shared container scene. Make sure to hide/deactivate **ToggleFeaturesPanel.prefab** in each example scene.
+## メイン メニュー シーンに戻る ##
+メイン メニュー シーン (MRTKExamplesHubMainMenu シーン) に戻るには、同じシーン システムの `LoadContent()` メソッドを使用します。**ToggleFeaturesPanelExamplesHub.prefab** は、**LoadContentScene** スクリプトを含む[ホーム] ボタンを提供します。各シーンでこのプレハブを使用するかカスタム ホーム ボタンを提供して、ユーザーがメイン シーンに戻ることができるようにします。 **MRTKExamplesHub** は共有 コンテナ シーンであるため、**MRTKExamplesHub** シーンに **ToggleFeaturesPanelExamplesHub.prefab** を配置すると常時表示できます。各サンプル シーンでは、**ToggleFeaturesPanel.prefab** が非表示/非アクティブであることを確認してください。
 
 <img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHubToggleFeaturesPanel.png">
 
@@ -50,12 +50,12 @@ To return to the main menu scene (MRTKExamplesHubMainMenu scene), you can use th
 
 
 
-## Adding additional buttons ##
-In the **CubeCollection** object, duplicate (or add) _ExampleHubButton_ prefabs and click **Update Collection** in the ``GridObjectCollection``. 
-This will update the cylinder layout based on the new total number of buttons. 
-Please refer to the [Object Collection](README_ObjectCollection.md) page for more details.
+## ボタンの追加 ##
+**CubeCollection** オブジェクトで、_ExampleHubButton_ プレハブを複製 (または追加) し、``GridObjectCollection`` の **Update Collection** をクリックします。 
+これにより、新しいボタンの総数に基づいて円柱のレイアウトが更新されます。 
+詳細については [Object Collection](README_ObjectCollection.md) ページを参照してください。
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem9.png">
 <br/><br/><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_SceneSystem10.png">
 
-After adding the buttons, update the scene name in the **LoadContentScene** script(explained above). 
-Add additional scenes to the Scene System's profile.
+ボタンを追加したら、上記のように **LoadContentScene** スクリプト内のシーン名を更新します。
+シーン システムのプロファイルにシーンを追加します。
