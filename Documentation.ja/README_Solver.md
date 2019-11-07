@@ -59,7 +59,7 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 > 開発者は、`SolverHandler.Solvers` プロパティを直接設定することでソルバーの実行順序を変更することができます。
 
 ## 新しい Solver (ソルバー) の作り方
-すべてのソルバーは抽象基底クラスである [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver) を継承しなければなりません。Solver の拡張に主に必要となるのは、`SolverUpdate` メソッドのオーバーライドに関するものです。このメソッドで、開発者は継承された `GoalPosition`、`GoalRotation`、`GoalScale` プロパティを望ましい値に更新すべきです。さらに、`SolverHandler.TransformTarget` を、コンシューマーが望む参照座標系として利用すると、たいていの場合に役に立つでしょう。
+すべてのソルバーは抽象基底クラスである [`Solver`](xref:Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver) を継承しなければなりません。Solver の拡張に主に必要となるのは、`SolverUpdate` メソッドのオーバーライドに関するものです。このメソッドで、開発者は継承された `GoalPosition`、`GoalRotation`、`GoalScale` プロパティを望ましい値に更新すべきです。さらに、`SolverHandler.TransformTarget` を、利用者が望む参照座標系として利用すると、たいていの場合に役に立つでしょう。
 
 以下のコードは、`InFront` という新しいソルバー コンポーネントの例です。これは、アタッチされたオブジェクトを `SolverHandler.TransformTarget` の前 2m の位置に配置します。もし、`SolverHandler.TrackedTargetType` が [`Head`](xref:Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.Head) に設定された場合、`SolverHandler.TransformTarget` はカメラのトランスフォームとなり、このソルバーはすべてのフレームでアタッチされたゲームオブジェクトユーザーのゲイズの前 2m の位置に配置します。
 
