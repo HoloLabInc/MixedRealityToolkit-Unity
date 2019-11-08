@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Gaze | Mixed Reality Toolkit Documentation </title>
+    <title>Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Gaze | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,40 +80,25 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="gaze">Gaze</h1>
+<h1 id="gaze-ゲイズ">Gaze (ゲイズ)</h1>
 
-<p><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/gaze">Gaze</a> is a form of input that interacts
-with the world based on where the user is looking. Gaze exists in two different flavors</p>
-<h2 id="head-gaze">Head gaze</h2>
-<p>This type of gaze is based on the direction that the head/camera is looking at. Head gaze is active
-on systems that don't support eye gaze, or in cases where the hardware may support eye gaze, but
-the right set of <a href="../EyeTracking/EyeTracking_BasicSetup.html#eye-tracking-requirements-checklist">permissions and setup</a>
-has not been performed.</p>
-<p>Head gaze is usually associated with HoloLens 1 style interactions involving looking at object by
-placing it in the center of the Holographic Frame and then performing the air tap gesture.</p>
-<h2 id="eye-gaze">Eye gaze</h2>
-<p>This type of gaze is based on where the user's eyes are looking. Eye gaze is only present
-on systems that support eye tracking. See the
-<a href="../EyeTracking/EyeTracking_Main.html">eye tracking documentation</a> for more details on how
-to use eye gaze.</p>
+<p><a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/gaze">Gaze</a> は、ユーザーがどこを見ているかに基づいて世界とインタラクションする入力方式です。ゲイズには、異なる2つの種類があります。</p>
+<h2 id="ヘッド-ゲイズ">ヘッド ゲイズ</h2>
+<p>このタイプのゲイズは、頭/カメラが向いている方向に基づきます。ヘッド ゲイズは、アイ ゲイズをサポートしていないシステムや、ハードウェアはアイ ゲイズをサポートしている可能性があるが <a href="../EyeTracking/EyeTracking_BasicSetup.html#eye-tracking-requirements-checklist">アクセス許可とセットアップ</a> が正しく実行されていない場合において、アクティブになります。</p>
+<p>ヘッド ゲイズは、通常、HoloLens 1 スタイルのインタラクションに関連しています。
+それは、オブジェクトがホログラフィック フレームの中央に配置されるようにオブジェクトを見て、エア タップのジェスチャを実行するというものです。</p>
+<h2 id="アイ-ゲイズ-視線">アイ ゲイズ (視線)</h2>
+<p>このタイプのゲイズは、ユーザーの目がどこを見ているかに基づいています。アイ ゲイズはアイ トラッキングをサポートするシステムにのみ存在します。アイ ゲイズの使用方法の詳細については、<a href="../EyeTracking/EyeTracking_Main.html">アイ トラッキングのドキュメント</a> を参照してください。</p>
 <h2 id="gazeprovider">GazeProvider</h2>
-<p>Gaze functionality (both head and eye) is provided by the
-<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html">GazeProvider</a>. This provider can be configured
-in the <em>Pointer</em> section of the input system profile:</p>
+<p>ゲイズの機能 (ヘッドと視線の両方) は、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html">GazeProvider</a> によって提供されます。このプロバイダーは入力システム プロファイルの <em>Pointer</em> セクションで設定できます:</p>
 <p><img src="../../Documentation/Images/Input/GazeConfigurationEntrypoint.png" alt="Gaze Configuration Entrypoint"></p>
-<p>Like other sources of input, the gaze provider interacts with objects in the scene
-through use of a pointer <a href="../Architecture/InputSystem/ControllersPointersAndFocus.html">(see this document for information on pointers)</a>.
-In the case of the gaze provider, its pointer is an implemented via <code>InternalGazePointer</code>
-and is not configured through a profile.</p>
-<p>It is possible to replace the stock GazeProvider with an alternate implementation by changing
-<em>Gaze Provider Type</em> to reference a different class that implements
-<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html">IMixedRealityGazeProvider</a>
-and <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider.html">IMixedRealityEyeGazeProvider</a>.
-It's generally recommended to use the stock GazeProvider (and filing issues in when finding
-bugs) as re-implementing the GazeProvider is non-trivial.</p>
-<h2 id="usage">Usage</h2>
-<h3 id="how-get-the-current-gaze-target">How get the current gaze target</h3>
-<p>This sample shows how to get the current game object that is targetted by the user gaze.</p>
+<p>他の入力ソースと同様に、GazeProvider はポインター <a href="../Architecture/InputSystem/ControllersPointersAndFocus.html">(ポインターに関する情報はこのドキュメントをご覧ください)</a> を使用してシーン内のオブジェクトとインタラクションします。
+GazeProvider の場合、ポインターは <code>InternalGazePointer</code> によって実装され、プロファイルによって設定されていません。</p>
+<p><em>Gaze Provider Type</em> を <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html">IMixedRealityGazeProvider</a> と <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider.html">IMixedRealityEyeGazeProvider</a> を実装する別のクラスを参照するように変更することで、標準の GazeProvider を別の実装に置き換えることができます。
+GazeProvider の再実装は簡単ではないので、通常は標準の GazeProvider を使う (バグを発見した場合は問題を報告する) ことをお勧めします。</p>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="現在の-gaze-target-ゲイズ-ターゲット-を取得する方法">現在の gaze target (ゲイズ ターゲット) を取得する方法</h3>
+<p>このサンプルは、ユーザーのゲイズのターゲットとなっている現在のゲームオブジェクトを取得する方法を示します。</p>
 <pre><code class="lang-csharp">void LogCurrentGazeTarget()
 {
     if (CoreServices.InputSystem.GazeProvider.GazeTarget)
@@ -123,9 +108,8 @@ bugs) as re-implementing the GazeProvider is non-trivial.</p>
     }
 }
 </code></pre>
-<h3 id="how-to-get-the-current-gaze-direction-and-origin">How to get the current gaze direction and origin</h3>
-<p>This sample shows how to get the Vector3 representing the direction of the user gaze
-and the origin (the point from which the direction is going).</p>
+<h3 id="現在のゲイズの方向と原点を取得する方法">現在のゲイズの方向と原点を取得する方法</h3>
+<p>このサンプルは、ユーザのゲイズの方向と原点 (ゲイズの方向がどの点から出ているか) を表す Vector3 を取得する方法を示します。</p>
 <pre><code class="lang-csharp">void LogGazeDirectionOrigin()
 {
     Debug.Log(&quot;Gaze is looking in direction: &quot;
