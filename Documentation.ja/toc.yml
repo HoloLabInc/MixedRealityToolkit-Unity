@@ -19,9 +19,9 @@
     href: Architecture/Overview.md
   - name: フレームワークとランタイム
     href: Architecture/FrameworkAndRuntime.md
-  - name: Input System
+  - name: Input System (入力システム)
     items:
-    - name: Terminology
+    - name: 用語
       href: Architecture/InputSystem/Terminology.md
     - name: Core System
       href: Architecture/InputSystem/CoreSystem.md
@@ -35,9 +35,9 @@
     href: Profiles/Profiles.md
   - name: プロファイル設定
     href: MixedRealityConfigurationGuide.md
-  - name: Input
+  - name: Input (入力)
     items:
-    - name: Input Overview
+    - name: 入力の概要
       href: Input/Overview.md
     - name: Input Providers
       href: Input/InputProviders.md
@@ -45,7 +45,7 @@
       href: Input/InputEvents.md
     - name: Input Actions
       href: Input/InputActions.md
-    - name: Controllers
+    - name: Controllers (コントローラー)
       href: Input/Controllers.md
     - name: Pointers
       href: Input/Pointers.md
@@ -83,17 +83,17 @@
       href: README_FingertipVisualization.md
     - name: App Bar
       href: README_AppBar.md
-    - name: Object Collection
+    - name: Object Collection (オブジェクトコレクション)
       href: README_ObjectCollection.md
-    - name: Slate
+    - name: Slate (スレート)
       href: README_Slate.md
-    - name: System Keyboard
+    - name: System Keyboard (システム キーボード)
       href: README_SystemKeyboard.md
-    - name: Tooltips
+    - name: Tooltips (ツールチップ)
       href: README_Tooltip.md
     - name: Solvers
       href: README_Solver.md
-    - name: Hand Interaction Example
+    - name: ハンド インタラクションのサンプル シーン
       href: README_HandInteractionExamples.md
     - name: Eye Tracking Interaction Example
       href: EyeTracking/EyeTracking_ExamplesOverview.md
@@ -125,7 +125,7 @@
       href: SceneSystem/SceneSystemLoadProgress.md
     - name: Lighting Scene Operations
       href: SceneSystem/SceneSystemLightingScenes.md
-  - name: Teleport System
+  - name: Teleport System (テレポートシステム)
     href: TeleportSystem/Overview.md
   - name: Boundary System
     items:
@@ -141,11 +141,11 @@
       href: Diagnostics/ConfiguringDiagnostics.md
     - name: ビジュアル プロファイラーを使用する
       href: Diagnostics/UsingVisualProfiler.md
-  - name: Services
+  - name: Services (サービス)
     items:
     - name: What makes a mixed reality feature
       href: MixedRealityServices.md
-    - name: What are the MixedRealityServiceRegistry and IMixedRealityServiceRegistrar
+    - name: MixedRealityServiceRegistry と IMixedRealityServiceRegistrar とは何か
       href: ServiceUtilities/MixedRealityServiceRegistryAndIMixedRealityServiceRegistrar.md
     - name: Extension services
       href: Extensions/ExtensionServices.md
