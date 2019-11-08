@@ -20,7 +20,7 @@
 ![Gaze Configuration Entrypoint](../../Documentation/Images/Input/GazeConfigurationEntrypoint.png)
 
 他の入力ソースと同様に、GazeProvider はポインター [(ポインターに関する情報はこのドキュメントをご覧ください)](../Architecture/InputSystem/ControllersPointersAndFocus.md) を使用してシーン内のオブジェクトとインタラクションします。
-GazeProvider の場合、ポインタは `InternalGazePointer` によって実装され、プロファイルを使用して設定されます。
+GazeProvider の場合、ポインターは `InternalGazePointer` によって実装され、プロファイルによって設定されていません。
 
 *Gaze Provider Type* を [IMixedRealityGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider) と [IMixedRealityEyeGazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider) を実装する別のクラスを参照するように変更することで、標準の GazeProvider を別の実装に置き換えることができます。
 GazeProvider の再実装は簡単ではないので、通常はストック GazeProvider (およびバグ発見時の問題報告) を使うことをお勧めします。
