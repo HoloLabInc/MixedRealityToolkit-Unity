@@ -1,6 +1,6 @@
 # Gaze (ゲイズ)
 
-[Gaze](https://docs.microsoft.com/ja-jp/windows/mixed-reality/gaze) は、ユーザがどこを見ているかに基づいています。ゲイズには2つの異なる特徴があります。
+[Gaze](https://docs.microsoft.com/ja-jp/windows/mixed-reality/gaze) は、ユーザーがどこを見ているかに基づいて世界とインタラクションする入力方式です。ゲイズには、異なる2つの種類があります。
 
 ## ヘッド ゲイズ
 
