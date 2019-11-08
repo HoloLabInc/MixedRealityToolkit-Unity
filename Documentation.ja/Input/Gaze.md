@@ -15,7 +15,7 @@
 
 ## GazeProvider
 
-ゲイズ機能 (ヘッドと視線) は、[GazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.GazeProvider) によって提供されます。このプロバイダは入力システムプロファイルの *Pointer* セクションで次の操作を行います:
+ゲイズの機能 (ヘッドと視線の両方) は、[GazeProvider](xref:Microsoft.MixedReality.Toolkit.Input.GazeProvider) によって提供されます。このプロバイダーは入力システム プロファイルの *Pointer* セクションで設定できます:
 
 ![Gaze Configuration Entrypoint](../../Documentation/Images/Input/GazeConfigurationEntrypoint.png)
 
