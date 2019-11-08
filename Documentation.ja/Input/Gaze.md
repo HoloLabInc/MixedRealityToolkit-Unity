@@ -44,7 +44,7 @@ void LogCurrentGazeTarget()
 
 ### 現在のゲイズの方向と原点を取得する方法
 
-このサンプルは、ユーザの視線の方向と原点 (方向が向かっている点) を表す Vector3 を取得する方法を示します。
+このサンプルは、ユーザのゲイズの方向と原点 (ゲイズの方向がどの点から出ているか) を表す Vector3 を取得する方法を示します。
 
 ```csharp
 void LogGazeDirectionOrigin()
