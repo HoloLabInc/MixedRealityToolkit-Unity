@@ -90,7 +90,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 *Interactable* では、*Dimension* ごとに複数のテーマを定義することもできます。たとえば、*SelectionMode=Toggle* の場合、あるテーマを *Interactable* が *deselected* のときに適用させ、別のテーマをコンポーネントが *selected* のときに適用させられます。
 
-現在の選択モードは、実行時に [`Interactable.ButtonMode`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.ButtonMode) を使用して照会できます。実行時にモードを更新するには、 [`Interactable.Dimensions`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.Dimensions) プロパティを使用して、目的の機能に一致させます。さらに、*Toggle* および *Multi-Dimension* モードで便利な現在の寸法には、[`Interactable.CurrentDimension`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.CurrentDimension) からアクセスできます。
+現在の選択モードは、実行時に [`Interactable.ButtonMode`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.ButtonMode) を使用して照会できます。実行時にモードを更新するには、 [`Interactable.Dimensions`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.Dimensions) プロパティを使用して、目的の機能に一致させます。さらに、*Toggle* および *Multi-Dimension* モードで役立つ、現在の Dimension には、[`Interactable.CurrentDimension`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.CurrentDimension) からアクセスできます。
 
 ### Interactable プロファイル
 
