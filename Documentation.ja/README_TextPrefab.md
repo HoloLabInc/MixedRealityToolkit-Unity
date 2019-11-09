@@ -53,7 +53,7 @@ UI またはキャンバス ベースの Text 要素をシーンに追加する�
 
 ### [Text3DSelawik.mat](/Assets/MixedRealityToolkit/StandardAssets/Materials/)
 
-オクルージョンをサポートする 3DTextPrefab のマテリアル。3DTextShader.shader が必要ですが
+オクルージョンをサポートする 3DTextPrefab のマテリアル。3DTextShader.shader が必要です。
 
 ![Default Font material vs 3DTextSegoeUI material](../Documentation/Images/TextPrefab/TextPrefabInstructions06.png)
 
