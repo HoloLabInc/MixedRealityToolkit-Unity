@@ -31,7 +31,7 @@ Mixed Reality Toolkit に含まれるオープンソースフォント。
 
 ![Assigning font file and material](../Documentation/Images/TextPrefab/TextPrefabInstructions04.png)
 
-**Unity でフォントを操作する**
+**Unity でフォントを扱う**
 
 Unity のシーンに新しい 3D TextMesh を追加するとき、視覚的に明らかな 2 つの問題があります。 1 つ目は、フォントが非常に大きく表示され、2 つ目は、フォントが非常にぼやけて表示されます。また、インスペクタでデフォルトのフォントサイズの値がゼロに設定されていることにも注目してください。このゼロ値を 13 に置き換えても、実際には 13 がデフォルト値であるため、サイズに違いはありません。
 
