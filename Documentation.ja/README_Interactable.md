@@ -108,7 +108,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 ![Events example](../Documentation/Images/Interactable/Events.png))
 
-さまざまなタイプの入力に応答するイベント受信側には、さまざまなタイプがあります。MRTK には、次のレシーバーが同梱されています。
+さまざまなタイプの入力に応答する、さまざまなタイプのイベント レシーバーがあります。MRTK には、次のレシーバーが同梱されています。
 
 * [`InteractableAudioReceiver`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableAudioReceiver)
 * [`InteractableOnClickReceiver`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableOnClickReceiver)
