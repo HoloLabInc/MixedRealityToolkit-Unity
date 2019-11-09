@@ -8,7 +8,7 @@
 [MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes/](/Assets/MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes)
 
 ## スライダの使用方法
-**PinchSlider** プレハブをシーン ヒエラルキにドラッグ＆ドロップします。独自のスライダを変更または作成する場合は、次の操作を行います:
+**PinchSlider** プレハブをシーン ヒエラルキーにドラッグ＆ドロップします。独自のスライダを変更または作成する場合は、次の操作を行います:
 
 - thumb オブジェクトにコライダがあることを確認します。PinchSlider プレハブでは、コライダは `SliderThumb/Button_AnimationContainer/Slider_Button` にあります。
 - スライダを近くでつかみたい場合は、コライダを含むオブジェクトにも Near Interaction Grabbable (握ることが可能な近接相互作用) コンポーネントがあることを確認します。
