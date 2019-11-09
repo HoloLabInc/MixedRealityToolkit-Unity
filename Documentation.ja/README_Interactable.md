@@ -50,7 +50,7 @@
 
 **Enabled**
 
-Interactable を有効にするかどうかを切り替えます。これは、コードの [`Interactable.IsEnabled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsEnabled) に対応します。
+Interactable が開始時に有効かどうかを切り替えます。これは、コードの [`Interactable.IsEnabled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsEnabled) に対応します。
 
 *Interactable* の enabled プロパティーは、GameObject/Component (例:SetActiveなど) で設定された enabled プロパティーとは異なります。GameObject または *Interactable* MonoBehavior を無効にすると、入力、ビジュアル テーマ、イベントなど、クラス内のすべてのものの実行が無効になります。[`Interactable.IsEnabled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsEnabled) を介して無効にすると、ほとんどの入力処理が無効になり、関連する入力状態がリセットされます。ただし、クラスはすべてのフレームを実行し、無視される入力イベントを受け取ります。これは、Interactable をビジュアル テーマを介して無効状態で表示する場合に便利です。この典型的な例は、すべての必須入力フィールドが完了するのを待つ送信ボタンです。
 
