@@ -13,7 +13,7 @@
 - thumb オブジェクトにコライダーがあることを確認します。PinchSlider プレハブでは、コライダーは `SliderThumb/Button_AnimationContainer/Slider_Button` にあります。
 - スライダーを近くでつかみたい場合は、コライダーを含むオブジェクトが Near Interaction Grabbable コンポーネントも持っていることを確認します。
 
-また、次のヒエラルキを使用することをお勧めします
+また、次のヒエラルキーを使用することをお勧めします
 
 - PinchSlider - sliderComponent が含まれます
   - SliderThumb - 移動可能な thumb を含みます
