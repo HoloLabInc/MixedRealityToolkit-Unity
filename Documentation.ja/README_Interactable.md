@@ -104,7 +104,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 すべての *Interactable* コンポーネントには、コンポーネントが単純に選択されたときに発火する *OnClick* イベントがあります。ただし、*Interactable* は、*OnClick* 以外の入力イベントの検出にも使用できます。
 
-イベントレシーバ定義の新しいタイプを追加するには、[*Add Event*] ボタンをクリックします。追加したら、目的のイベントのタイプを選択します。
+Event Receiver (イベント レシーバー) 定義の新しいタイプを追加するには、[*Add Event*] ボタンをクリックします。追加したら、目的のイベントのタイプを選択します。
 
 ![Events example](../Documentation/Images/Interactable/Events.png))
 
