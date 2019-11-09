@@ -56,7 +56,7 @@ Interactable が開始時に有効かどうかを切り替えます。これは�
 
 **Input Actions**
 
-入力設定またはコントローラマッピングプロファイルから、*Interactable* コンポーネントが反応する [input action](./Input/InputActions.md) を選択します。
+入力設定またはコントローラー マッピング プロファイルから、*Interactable* コンポーネントが反応する [input action](./Input/InputActions.md) を選択します。
 
 このプロパティは、コードの実行時に [`Interactable.InputAction`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.InputAction) を使用して設定できます。
 
