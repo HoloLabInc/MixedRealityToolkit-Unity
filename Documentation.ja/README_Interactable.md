@@ -39,7 +39,7 @@
 > [!NOTE]
 >  一般に、*Interactable* コンポーネントを作成する場合は、 [**DefaultInteractableStates**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) を使用することをお勧めします。
 >
-> ただし、テーマの駆動に使用できる Interactable の状態は17ありますが、一部は他のコンポーネントによって駆動されるように設計されています。以下は、機能が組み込まれているもののリストです。
+> ただし、テーマの駆動に使用できる Interactable のステートは17ありますが、一部は他のコンポーネントによって駆動されるように設計されています。以下は、そのようなステートで、機能が組み込まれているもののリストです。
 >
 > * Visited: Interactable がクリックされました。
 > * Toggled: ボタンがトグル状態になっているか、Dimension index が奇数です。
