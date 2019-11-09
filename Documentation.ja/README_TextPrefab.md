@@ -27,7 +27,7 @@ Mixed Reality Toolkit に含まれるオープンソースフォント。
 
 ![Assigning shader](../Documentation/Images/TextPrefab/TextPrefabInstructions03.png)
 
-3. Segoe UI フォントと 3DTextSegoeUI マテリアルをプレハブのテキストコンポーネントに割り当てます。
+3. Segoe UI フォントと 3DTextSegoeUI マテリアルをプレハブのテキスト コンポーネントに割り当てます。
 
 ![Assigning font file and material](../Documentation/Images/TextPrefab/TextPrefabInstructions04.png)
 
