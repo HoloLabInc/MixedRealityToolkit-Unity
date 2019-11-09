@@ -23,7 +23,7 @@ Mixed Reality Toolkit に含まれるオープンソースフォント。
 
 ![Assigning font texture](../Documentation/Images/TextPrefab/TextPrefabInstructions02.png)
 
-2. 3DTextSegoeUI.mat マテリアルで、シェーダー Custom / 3DTextShader.shader を選択します。
+2. 3DTextSegoeUI.mat マテリアルで、Custom/3DTextShader.shader シェーダーを選択します。
 
 ![Assigning shader](../Documentation/Images/TextPrefab/TextPrefabInstructions03.png)
 
