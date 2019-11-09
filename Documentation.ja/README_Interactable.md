@@ -84,7 +84,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 使用可能な選択モードは次のとおりです:
 
-* **Button** - *Dimensions* = 1 の場合、*Interactable* をクリック可能
+* **Button** - *Dimensions* = 1、シンプルなクリック可能な *Interactable*
 * **Toggle** - *Dimensions* = 2 の場合、*Interactable* は *on*/*off* 状態を交互に切り替えます
 * **Multi-dimension** - *Dimensions* >= 3 の場合、クリックするたびに現在の dimension level に 1 加算します。ボタンの状態をリストなどに定義する場合に便利です。
 
