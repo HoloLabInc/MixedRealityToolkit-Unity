@@ -4,7 +4,7 @@
 
 #### [3DTextPrefab.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
 
-2 メートルの距離でスケーリング係数が最適化された 3D Text Mesh プレハブ (以下の手順をお読みください)。
+2 メートルの距離で最適化されたスケーリング係数を持つ 3D Text Mesh プレハブ (以下の手順をお読みください)。
 
 #### [UITextPrefab.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
 
