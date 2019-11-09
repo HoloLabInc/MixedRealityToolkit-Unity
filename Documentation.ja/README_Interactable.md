@@ -123,7 +123,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 ![Event Toggle Receiver Example](../Documentation/Images/Interactable/Event_toggle.png)
 
-*トリガー イベント レシーバーの例*
+*Toggle Event Receiver の例*
 
 ### Interactable Receivers
 
