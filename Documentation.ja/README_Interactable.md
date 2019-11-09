@@ -44,7 +44,7 @@
 > * Visited: Interactable がクリックされました。
 > * Toggled: ボタンがトグル状態になっているか、Dimension index が奇数です。
 > * Gesture: ハンドまたはコントローラーが押され、元の位置から移動しました。
-> * VoiceCommand: 音声コマンドを使用して、Interactable をトリガーしました.
+> * VoiceCommand: Interactable をトリガーするのに音声コマンドが使われました。
 > * PhysicalTouch: タッチ入力が検出されました。 [`NearInteractionTouchable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) を使用して有効にしてください。
 > * Grab: ハンド入力がオブジェクトの境界をグラブしています。[`NearInteractionGrabbable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable) を使用して有効にしてください。
 
