@@ -129,7 +129,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
  [`InteractableReceiver`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableReceiver) コンポーネントを使用すると、イベントをsource *Interactable* コンポーネントの外部で定義できます。*InteractableReceiver* は、別の *Interactable* によって開始されたフィルター処理済みイベント タイプをリッスンします。*Interactable* プロパティが直接割り当てられていない場合、*Search Scope* プロパティは、*InteractableReceiver* が自身、親、または、子 GameObject のいずれかでイベントをリッスンする方向を定義します。
 
-[`InteractableReceiverList`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList) も同じように動作しますが、一致するイベントのリストが表示されます。
+[`InteractableReceiverList`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList) も同じように動作しますが、マッチするイベントがリストとなっています。
 
 <img src="../Documentation/Images/Interactable/InteractableReceiver.png" width="450">
 
