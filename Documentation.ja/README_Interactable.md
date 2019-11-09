@@ -70,7 +70,7 @@ true の場合、選択した [input action](./Input/InputActions.md) のグロ�
 
 音声対話で OnClick イベントをトリガーするための、MRTK Speech Commands Profile で設定された [Speech command (音声コマンド)](./Input/Speech.md) です。
 
-このプロパティは、コードの実行時に [`Interactable.VoiceCommand`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.VoiceCommand) を使用して設定できます。
+このプロパティは、実行時に [`Interactable.VoiceCommand`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.VoiceCommand) を使用してコードで設定できます。
 
 **Requires Focus**
 
