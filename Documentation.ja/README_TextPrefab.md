@@ -15,7 +15,7 @@
 Mixed Reality Toolkit に含まれるオープンソースフォント。
 
 
-**IMPORTANT: テキストプレハブはオープンソースフォント 'Selawik' を使用します。別のフォントでテキストプレハブを使用するには、フォントファイルをインポートして、以下の指示に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。**
+**重要: テキスト プレハブはオープン ソース フォント 'Selawik' を使用しています。別のフォントでテキスト プレハブを使用するには、フォント ファイルをインポートして、以下の手順に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。**
 
 ![Importing Segoe UI font file](../Documentation/Images/TextPrefab/TextPrefabInstructions01.png)
 
