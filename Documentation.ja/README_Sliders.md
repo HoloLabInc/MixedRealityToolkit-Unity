@@ -4,7 +4,7 @@
 スライダーは、トラック上でスライダーを動かして、値を連続的に変更できる UI コンポーネントです。現在のところ、Pinch Slider (ピッチ スライダー) は、直接または少し離れた位置でスライダーをつかんで移動できます。スライダーは、モーション コントローラー、ハンド、または、ジェスチャ+音声を使用して、AR および VR で動作します。
 
 ## サンプルシーン
-**SliderExample** シーンの以下の場所にサンプルがあります。:
+以下の場所の **SliderExample** シーンにサンプルがあります:
 [MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes/](/Assets/MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes)
 
 ## スライダの使用方法
