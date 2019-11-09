@@ -15,7 +15,7 @@
 
 また、次のヒエラルキーを使用することをお勧めします
 
-- PinchSlider - sliderComponent が含まれます
+- PinchSlider - sliderComponent を含みます
   - SliderThumb - 移動可能な thumb を含みます
   - TrackVisuals - トラックやその他のビジュアルを含みます
   - OtherVisuals - その他のビジュアルを含みます
