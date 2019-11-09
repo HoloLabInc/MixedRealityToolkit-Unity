@@ -74,7 +74,7 @@ true の場合、選択した [input action](./Input/InputActions.md) のグロ�
 
 **Requires Focus**
 
-true の場合、音声コマンドは、ポインタからすでにフォーカスがある場合にのみ、*Interactable* をアクティブにします。false の場合、*Interactable* は選択した音声コマンドのグローバルリスナーとして機能します。複数のグローバルスピーチリスナーをシーン内に編成するのは困難な場合があるため、既定値の動作は true です。
+true の場合、音声コマンドは、ポインタからすでにフォーカスがある場合にのみ、*Interactable* を作動させます。false の場合、*Interactable* は選択した音声コマンドのグローバル リスナーとして機能します。複数のグローバル スピーチ リスナーをシーン内で整理するのは困難な場合があるため、デフォルトの動作は true です。
 
 このプロパティは、コードの実行時に [`Interactable.VoiceRequiresFocus`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.VoiceRequiresFocus) を使用して設定できます。
 
