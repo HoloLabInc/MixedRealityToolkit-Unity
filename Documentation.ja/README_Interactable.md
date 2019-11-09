@@ -64,7 +64,7 @@ Interactable が開始時に有効かどうかを切り替えます。これは�
 
 true の場合、選択した [input action](./Input/InputActions.md) のグローバル入力リスナーとしてコンポーネントがマークされます。デフォルトの動作は false で、入力はこの *Interactable* collider/GameObject のみに制限されます。
 
-このプロパティは、コードの実行時に [`Interactable.IsGlobal`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsGlobal) を使用して設定できます。
+このプロパティは、実行時に [`Interactable.IsGlobal`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsGlobal) を使用してコードで設定できます。
 
 **Speech Command (音声コマンド)**
 
