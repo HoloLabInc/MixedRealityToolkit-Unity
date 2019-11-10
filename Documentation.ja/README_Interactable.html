@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interactable | Mixed Reality Toolkit Documentation </title>
+    <title>Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interactable | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
@@ -80,82 +80,82 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="interactable">Interactable</h1>
+<h1 id="interactable-インタラクタブルインタラクション可能な">Interactable (インタラクタブル、インタラクション可能な)</h1>
 
 <p><img src="../Documentation/Images/Interactable/InteractableExamples.png" alt="Interactable"></p>
-<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>Interactable</code></a> component is an all-in-one container to make any object easily <em>interactable</em> and responsive to input. Interactable acts as a catch-all for all types of input including touch, hand rays, speech etc and funnel these interactions into <a href="#events">events</a> and <a href="VisualThemes.html">visual theme</a> responses. This component provides an easy way to make buttons, change color on objects with focus, and more.</p>
-<h2 id="how-to-configure-interactable">How to configure Interactable</h2>
-<p>The component allows for three primary sections of configuration:</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>Interactable</code></a> コンポーネントは、あらゆるオブジェクトを容易に <em>interactable(インタラクション可能)</em> にし、入力に応答させるオールインワン コンテナです。Interactable は、タッチ、ハンド レイ、音声などを含むすべてのタイプの入力のためのキャッチオールとして機能し、これらのインタラクションを <a href="#events">イベント</a> および <a href="VisualThemes.html">Visual Themes (ビジュアル テーマ)</a> の応答に流し込みます。このコンポーネントを使用すると、ボタンの作成やフォーカスによるオブジェクトの色の変更などを簡単に行うことができます。</p>
+<h2 id="interactable-の設定方法">Interactable の設定方法</h2>
+<p>このコンポーネントには、3つの主要な構成セクションがあります:</p>
 <ol>
-<li><a href="#general-input-settings">General input configuration</a></li>
-<li><a href="VisualThemes.html">Visual Themes</a> targeted against multiple GameObjects</li>
-<li><a href="#events">Event handlers</a></li>
+<li><a href="#general-%E5%85%A5%E5%8A%9B%E8%A8%AD%E5%AE%9A">General 入力設定</a></li>
+<li>複数の GameObject を対象とした <a href="VisualThemes.html">ビジュアル テーマ</a></li>
+<li><a href="#events">イベント ハンドラ</a></li>
 </ol>
-<h3 id="general-input-settings">General input settings</h3>
+<h3 id="general-入力設定">General 入力設定</h3>
 <p><img src="../Documentation/Images/Interactable/InputFeatures_short.png" alt="General Interactable Settings"></p>
-<p><strong>States</strong></p>
-<p><em>States</em> is a <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">ScriptableObject</a> parameter that defines the interactions phases, like press or observed, for <a href="#interactable-profiles">Interactable Profiles</a> and <a href="VisualThemes.html">Visual Themes</a>.</p>
-<p>The <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> ships with MRTK out-of-box and is the default parameter for <em>Interactable</em> components.</p>
+<p><strong>States (ステート)</strong></p>
+<p><em>States</em> は <a href="#interactable-%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">Interactable プロファイル</a>と<a href="VisualThemes.html">ビジュアル テーマ</a>で利用する、押された、見られている、といったインタラクションのフェーズを定義する <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">ScriptableObject</a> パラメータです。</p>
+<p><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> は MRTK にそのまま含まれている、<em>Interactable</em> コンポーネントのデフォルトのパラメーターです。</p>
 <p><img src="../Documentation/Images/Interactable/DefaultInteractableStates.png" alt="States ScriptableObject example in inspector"></p>
-<p>The <em>DefaultInteractableStates</em> asset contains four states and utilizes the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStates.html"><code>InteractableStates</code></a> state model implementation.</p>
+<p><em>DefaultInteractableStates</em> アセットには4つのステートが含まれており、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStates.html"><code>InteractableStates</code></a> ステート モデルの実装を利用します。</p>
 <ul>
-<li><p><strong>Default</strong>: Nothing is happening, this is the most isolated base state.</p>
+<li><p><strong>Default</strong>: 何も起こっていません。これは最も独立したベース ステートです。</p>
 </li>
-<li><p><strong>Focus</strong>: The object is being pointed at. This is a single state, no other states are currently set, but it will out rank Default.</p>
+<li><p><strong>Focus</strong>: オブジェクトがポイントされています。これは単一のステートで、他のステートは現在設定されていませんが、Default より優先されます。</p>
 </li>
-<li><p><strong>Press</strong>: The object is being pointed at and a button or hand is pressing. The Press state out ranks Default and Focus. This state will also get set as a fallback to Physical Press.</p>
+<li><p><strong>Press</strong>: オブジェクトがポイントされており、ボタンまたはハンドが押しています。Press ステートは Default と Focus よりも優先されます。このステートは、Physical Press (物理的な押下) に対するフォールバックとしても設定されます。</p>
 </li>
-<li><p><strong>Disabled</strong>: The button should not be interactive and visual feedback will let the user know for some reason this button is not usable at this time. In theory, the disabled state could contain all other states, but when Enabled is turned off, the Disabled state trumps all other states.</p>
+<li><p><strong>Disabled</strong>: このボタンはインタラクティブであってはなりません。また、何らかの理由でこのボタンが現在使用できないことが視覚的なフィードバックによってユーザーに通知されます。理論的には、Disabled ステートには他のすべての状態を含めることができますが、Enabled がオフの場合は、Disabled ステートが他のすべてのステートより優先されます。</p>
 </li>
 </ul>
-<p>A bit value (#) is assigned to the state depending on the order in the list.</p>
+<p>リスト内の順序に応じて、ビット値 (#) がステートに割り当てられます。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>It is generally recommended to utilize the <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> when creating <em>Interactable</em> components.</p>
-<p>However, there are 17 Interactable states available that can be used to drive themes, though some are meant to be driven by other components. Here is a list of those with built-in functionality.</p>
+<p>一般に、<em>Interactable</em> コンポーネントを作成する場合は、 <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> を使用することをお勧めします。</p>
+<p>ただし、テーマの駆動に使用できる Interactable のステートは17ありますが、一部は他のコンポーネントによって駆動されるように設計されています。以下は、そのようなステートで、機能が組み込まれているもののリストです。</p>
 <ul>
-<li>Visited: the Interactable has been clicked.</li>
-<li>Toggled: The button is in a toggled state or Dimension index is an odd number.</li>
-<li>Gesture: The hand or controller was pressed and has moved from the original position.</li>
-<li>VoiceCommand: A speech command was used to trigger the Interactable.</li>
-<li>PhysicalTouch: A touch input is currently detected, use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html"><code>NearInteractionTouchable</code></a> to enable.</li>
-<li>Grab: A hand is currently grabbing in the bounds of the object, use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html"><code>NearInteractionGrabbable</code></a> to enable</li>
+<li>Visited: Interactable がクリックされました。</li>
+<li>Toggled: ボタンがトグル状態になっているか、Dimension index が奇数です。</li>
+<li>Gesture: ハンドまたはコントローラーが押され、元の位置から移動しました。</li>
+<li>VoiceCommand: Interactable をトリガーするのに音声コマンドが使われました。</li>
+<li>PhysicalTouch: タッチ入力が現在検出されています。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html"><code>NearInteractionTouchable</code></a> を使用して有効にしてください。</li>
+<li>Grab: ハンドが現在オブジェクトの境界内でグラブしています。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html"><code>NearInteractionGrabbable</code></a> を使用して有効にしてください。</li>
 </ul>
 </div>
-<p><strong>Enabled</strong></p>
-<p>Toggles whether an Interactable will start enabled or not. This corresponds to the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled"><code>Interactable.IsEnabled</code></a> in code.</p>
-<p>An <em>Interactable's</em> enabled property is different than the enabled property configured via GameObject/Component (i.e SetActive etc). Disabling the GameObject or <em>Interactable</em> MonoBehavior will disable everything in the class from running including input, visual themes, events, etc. Disabling via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled"><code>Interactable.IsEnabled</code></a> will disable most input handling, reseting related input states. However, the class will still run every frame and receive input events which will be ignored. This is useful for displaying the Interactable in a disabled state which can be done via Visual Themes. A typical example of this would be a submit button waiting for all the required input fields to be completed.</p>
-<p><strong>Input Actions</strong></p>
-<p>Select the <a href="Input/InputActions.html">input action</a>, from the input configuration or controller mapping profile, that the <em>Interactable</em> component should react to.</p>
-<p>This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_InputAction"><code>Interactable.InputAction</code></a>.</p>
-<p><strong>IsGlobal</strong></p>
-<p>If true, this will mark the component as a global input listener for the selected <a href="Input/InputActions.html">input action</a>. Default behavior is false which will restrict input to only this <em>Interactable</em> collider/GameObject.</p>
-<p>This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsGlobal"><code>Interactable.IsGlobal</code></a>.</p>
-<p><strong>Speech Command</strong></p>
-<p><a href="Input/Speech.html">Speech command</a>, from the MRTK Speech Commands Profile, to trigger an OnClick event for voice interaction.</p>
-<p>This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceCommand"><code>Interactable.VoiceCommand</code></a>.</p>
-<p><strong>Requires Focus</strong></p>
-<p>If true, the voice command will only activate the <em>Interactable</em> if and only if it already has focus from a pointer. If false, then the <em>Interactable</em> will act as a global listener for the selected voice command. The default behavior is true, as multiple global speech listeners can be difficult to organize in a scene.</p>
-<p>This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceRequiresFocus"><code>Interactable.VoiceRequiresFocus</code></a>.</p>
-<p><strong>Selection Mode</strong></p>
-<p>This property defines the selection logic. When an <em>Interactable</em> is clicked, it iterates into a next <em>Dimension</em> level. <em>Dimensions</em> is similar to rank and defines a state outside of inputs (i.e focus, press etc). They are useful for defining Toggle states or other multi-rank states associated with a button. The current Dimension level is tracked by <code>Interactable.DimensionIndex</code>.</p>
-<p>The selection modes available are:</p>
+<p><strong>Enabled (有効)</strong></p>
+<p>Interactable が開始時に有効かどうかを切り替えます。これは、コードの <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled"><code>Interactable.IsEnabled</code></a> に対応します。</p>
+<p><em>Interactable</em> の enabled プロパティは、GameObject/Component で (SetActive などによって) 設定された enabled プロパティとは異なります。GameObject または <em>Interactable</em> MonoBehavior を無効にすると、入力、ビジュアル テーマ、イベントなど、クラス内のすべてのものの実行が無効になります。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled"><code>Interactable.IsEnabled</code></a> を介して無効にすると、ほとんどの入力処理が無効になり、関連する入力ステートがリセットされます。ただし、クラスはすべてのフレームで実行され、無視される入力イベントを受け取ります。これは、Interactable をビジュアル テーマを介して disabled ステートで表示する場合に便利です。この典型的な例は、すべての必須入力フィールドが完了するのを待つ送信ボタンです。</p>
+<p><strong>Input Actions (入力アクション)</strong></p>
+<p>入力設定またはコントローラー マッピング プロファイルから、<em>Interactable</em> コンポーネントが反応する <a href="Input/InputActions.html">input action</a> を選択します。</p>
+<p>このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_InputAction"><code>Interactable.InputAction</code></a> を使用してコードで設定できます。</p>
+<p><strong>IsGlobal (グローバルである)</strong></p>
+<p>true の場合、選択した <a href="Input/InputActions.html">input action</a> のグローバル入力リスナーとしてコンポーネントがマークされます。デフォルトの動作は false で、この <em>Interactable</em> collider/GameObject のみへの入力に制限されます。</p>
+<p>このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsGlobal"><code>Interactable.IsGlobal</code></a> を使用してコードで設定できます。</p>
+<p><strong>Speech Command (音声コマンド)</strong></p>
+<p>音声対話で OnClick イベントをトリガーするための、MRTK Speech Commands Profile で設定された <a href="Input/Speech.html">Speech command (音声コマンド)</a> です。</p>
+<p>このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceCommand"><code>Interactable.VoiceCommand</code></a> を使用してコードで設定できます。</p>
+<p><strong>Requires Focus (フォーカスが必要)</strong></p>
+<p>true の場合、音声コマンドは、ポインタからすでにフォーカスがある場合にのみ、<em>Interactable</em> を作動させます。false の場合、<em>Interactable</em> は選択した音声コマンドのグローバル リスナーとして機能します。複数のグローバル スピーチ リスナーをシーン内で整理するのは困難な場合があるため、デフォルトの動作は true です。</p>
+<p>このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceRequiresFocus"><code>Interactable.VoiceRequiresFocus</code></a> を使用してコードで設定できます。</p>
+<p><strong>Selection Mode (選択モード)</strong></p>
+<p>このプロパティは、選択ロジックを定義します。<em>Interactable</em> がクリックされると、次の <em>Dimension</em> レベルに反復されます。<em>Dimensions</em> はランクと似ており、入力 (フォーカス、押下など) の外側の状態を定義します。これらは、ボタンに関連付けられたトグル状態やその他のマルチランク状態を定義する場合に便利です。現在の Dimension レベルは、<code>Interactable.DimensionIndex</code> で取得できます。</p>
+<p>使用可能な選択モードは次のとおりです:</p>
 <ul>
-<li><strong>Button</strong> - <em>Dimensions</em> = 1, simple clickable <em>Interactable</em></li>
-<li><strong>Toggle</strong> - <em>Dimensions</em> = 2, <em>Interactable</em> alternates between <em>on</em>/<em>off</em> state</li>
-<li><strong>Multi-dimension</strong> - <em>Dimensions</em> &gt;= 3, every click increases the current dimension level + 1. Useful for defining a button state to a list, etc.</li>
+<li><strong>Button</strong> - <em>Dimensions</em> = 1、シンプルなクリック可能な <em>Interactable</em></li>
+<li><strong>Toggle</strong> - <em>Dimensions</em> = 2、<em>Interactable</em> は <em>on</em>/<em>off</em> 状態を交互に切り替えます</li>
+<li><strong>Multi-dimension</strong> - <em>Dimensions</em> &gt;= 3、クリックするたびに現在の dimension level に 1 加算します。ボタンの状態をリストなどに定義する場合に便利です。</li>
 </ul>
-<p><em>Interactable</em> also allows for multiple Themes to be defined per <em>Dimension</em>. For example when <em>SelectionMode=Toggle</em>, one theme may be applied when the <em>Interactable</em> is <em>deselected</em> and another theme applied when the component is <em>selected</em>.</p>
-<p>The current Selection Mode can be queried at runtime via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_ButtonMode"><code>Interactable.ButtonMode</code></a>. Updating the mode at runtime can be achieved by setting the  <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_Dimensions"><code>Interactable.Dimensions</code></a> property to match the desired functionality. Furthermore, the current dimension, useful for <em>Toggle</em> and <em>Multi-Dimension</em> modes, can be accessed via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_CurrentDimension"><code>Interactable.CurrentDimension</code></a>.</p>
-<h3 id="interactable-profiles">Interactable Profiles</h3>
-<p><em>Profiles</em> are items that create a relationship between a GameObject and a <a href="VisualThemes.html">Visual Theme</a>. The profile defines what content will be manipulated by a theme when a <a href="#general-input-settings">state change occurs</a>.</p>
-<p>Themes work a lot like materials. They are scriptable objects that contain a list of properties that will be assigned to an object based on the current state. Themes are also re-usable and can be assigned across multiple <em>Interactable</em> UX objects.</p>
+<p><em>Interactable</em> では、<em>Dimension</em> ごとに複数のテーマを定義することもできます。たとえば、<em>SelectionMode=Toggle</em> の場合、あるテーマを <em>Interactable</em> が <em>deselected</em> のときに適用させ、別のテーマをコンポーネントが <em>selected</em> のときに適用させられます。</p>
+<p>現在の選択モードは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_ButtonMode"><code>Interactable.ButtonMode</code></a> を使用して照会できます。実行時にモードを更新するには、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_Dimensions"><code>Interactable.Dimensions</code></a> プロパティを使用して、目的の機能に一致させます。さらに、<em>Toggle</em> および <em>Multi-Dimension</em> モードで役立つ、現在の Dimension には、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_CurrentDimension"><code>Interactable.CurrentDimension</code></a> からアクセスできます。</p>
+<h3 id="interactable-プロファイル">Interactable プロファイル</h3>
+<p><em>Profiles</em> は、GameObject と <a href="VisualThemes.html">ビジュアル テーマ</a> の間の関係を作成するアイテムです。プロファイルは、<a href="#general-%E5%85%A5%E5%8A%9B%E8%A8%AD%E5%AE%9A">ステートの変更が起こる</a> 時にテーマによって操作されるコンテンツを定義します。</p>
+<p>テーマはマテリアルのような働きをします。これらは、現在の状態に基づいてオブジェクトに割り当てられるプロパティのリストを含むスクリプタブル オブジェクトです。テーマも再利用可能で、複数の <em>Interactable</em> UX オブジェクトに割り当てることができます。</p>
 <p><img src="../Documentation/Images/Interactable/Profiles_Themes.png" alt="Interactable Profiles"></p>
 <h2 id="events">Events</h2>
-<p>Every <em>Interactable</em> component has an <em>OnClick</em> event that fires when the component is simply selected. However, <em>Interactable</em> can be used to detect input events other than just <em>OnClick</em>.</p>
-<p>Click the <em>Add Event</em> button to add a new type of Event Receiver definition. Once added, select the type of Event desired.</p>
+<p>すべての <em>Interactable</em> コンポーネントには、コンポーネントが単純に選択されたときに発火する <em>OnClick</em> イベントがあります。ただし、<em>Interactable</em> は、<em>OnClick</em> 以外の入力イベントの検出にも使用できます。</p>
+<p>Event Receiver (イベント レシーバー) 定義の新しいタイプを追加するには、[<em>Add Event</em>] ボタンをクリックします。追加したら、目的のイベントのタイプを選択します。</p>
 <p><img src="../Documentation/Images/Interactable/Events.png" alt="Events example">)</p>
-<p>There are different types of event receivers to respond to different types of input. MRTK ships with the following set of receivers out-of-box.</p>
+<p>さまざまなタイプの入力に応答する、さまざまなタイプのイベント レシーバーがあります。MRTK には、次のレシーバーが同梱されています。</p>
 <ul>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableAudioReceiver.html"><code>InteractableAudioReceiver</code></a></li>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnClickReceiver.html"><code>InteractableOnClickReceiver</code></a></li>
@@ -166,35 +166,35 @@
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnToggleReceiver.html"><code>InteractableOnToggleReceiver</code></a></li>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnTouchReceiver.html"><code>InteractableOnTouchReceiver</code></a></li>
 </ul>
-<p>A custom receiver can be created by making a new class that extends <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase</code></a>.</p>
+<p>カスタム レシーバーを作成するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase</code></a> を拡張する新しいクラスを作成します。</p>
 <p><img src="../Documentation/Images/Interactable/Event_toggle.png" alt="Event Toggle Receiver Example"></p>
-<p><em>Example of a Toggle Event Receiver</em></p>
+<p><em>Toggle Event Receiver の例</em></p>
 <h3 id="interactable-receivers">Interactable Receivers</h3>
-<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiver.html"><code>InteractableReceiver</code></a> component allows for events to be defined outside of the source <em>Interactable</em> component. The <em>InteractableReceiver</em> will listen for a filtered event type fired by another <em>Interactable</em>. If the <em>Interactable</em> property is not directly assigned, then the <em>Search Scope</em> property defines the direction the <em>InteractableReceiver</em> listens for events which is either on it's self, in a parent, or in a child GameObject.</p>
-<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList.html"><code>InteractableReceiverList</code></a> acts in a similar fashion but for a list of matching events.</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiver.html"><code>InteractableReceiver</code></a> コンポーネントを使用すると、元となる <em>Interactable</em> コンポーネントの外部でイベントを定義できます。<em>InteractableReceiver</em> は、別の <em>Interactable</em> によって発火されるフィルターされたイベント タイプをリッスンします。<em>Interactable</em> プロパティが直接割り当てられていない場合、<em>Search Scope</em> プロパティは、自身、親、または、子 GameObject のどの方向で <em>InteractableReceiver</em> がイベントをリッスンするかを定義します。</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList.html"><code>InteractableReceiverList</code></a> も同じように動作しますが、マッチするイベントがリストとなっています。</p>
 <img src="../Documentation/Images/Interactable/InteractableReceiver.png" width="450">
-<h3 id="create-custom-events">Create custom events</h3>
-<p>Like <a href="VisualThemes.html#custom-theme-engines">Visual Themes</a>, events can be extended to detect any state pattern or to expose functionality.</p>
-<p>Custom events can be created in two main ways:</p>
+<h3 id="カスタム-イベントを作成">カスタム イベントを作成</h3>
+<p><a href="VisualThemes.html#custom-theme-engines">Visual Themes</a> と同様に、イベントを拡張して任意の状態パターンを検出したり、機能を公開したりすることができます。</p>
+<p>カスタムイベントは、主に次の2つの方法で作成できます:</p>
 <ol>
-<li><p>Extend the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase</code></a> class to create a custom event that will show up in the dropdown list of event types. A Unity event is provided by default, but additional Unity events can be added or the event can be set to hide Unity events. This functionality allows a designer to work with an engineer on a project to create a custom event that the designer can setup in the editor.</p>
+<li><p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase</code></a> クラスを拡張して、イベント タイプのドロップダウン リストに表示されるカスタム イベントを作成します。Unity イベントはデフォルトで提供されますが、追加の Unity イベントを追加したり、Unity イベントを非表示に設定したりすることができます。この機能を使用すると、プロジェクトにおいてデザイナーはエンジニアと協力し、デザイナーがエディターで設定できるカスタム イベントを作成できます。</p>
 </li>
-<li><p>Extend the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html"><code>ReceiverBaseMonoBehavior</code></a> class to create a completely custom event component that can reside on the <em>Interactable</em> or another object. The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html"><code>ReceiverBaseMonoBehavior</code></a> will reference the <em>Interactable</em> to detect state changes.</p>
+<li><p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html"><code>ReceiverBaseMonoBehavior</code></a> クラスを拡張して、<em>Interactable</em> または別のオブジェクトに配置できる完全にカスタムなイベント コンポーネントを作成します。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html"><code>ReceiverBaseMonoBehavior</code></a> は、<em>Interactable</em> を参照してステートの変化を検出します。</p>
 </li>
 </ol>
-<h4 id="example-of-extending-receiverbase">Example of extending <code>ReceiverBase</code></h4>
-<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html"><code>CustomInteractablesReceiver</code></a> class under <code>MixedRealityToolkit.Examples</code> displays status information about an <em>Interactable</em> and is an example how to create a custom Event Receiver.</p>
+<h4 id="receiverbase-の拡張例"><code>ReceiverBase</code> の拡張例</h4>
+<p><code>MixedRealityToolkit.Examples</code> 配下の <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html"><code>CustomInteractablesReceiver</code></a> クラスは、<em>Interactable</em> に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。</p>
 <pre><code class="lang-csharp">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
 {
-    HideUnityEvents = true; // hides Unity events in the receiver - meant to be code only
+    HideUnityEvents = true; // レシーバーの Unity イベントを非表示にします。コードのみであると意味します。
 }
 </code></pre>
-<p>The following methods are useful to override/implement when creating a custom Event Receiver. <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnUpdate()</code></a> is an abstract method that can be used to detect state patterns/transitions. Furthermore, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnVoiceCommand()</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnClick()</code></a> methods are useful for creating custom event logic when the <em>Interactable</em> is selected.</p>
+<p>次のメソッドは、カスタム イベント レシーバーの作成時にオーバーライドまたは実装する場合に便利です。 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnUpdate()</code></a> は、ステートのパターン/遷移の検出に使用できる抽象メソッドです。さらに、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnVoiceCommand()</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnClick()</code></a> メソッドは、<em>Interactable</em> が選択されている場合にカスタム イベント ロジックを作成するのに便利です。</p>
 <pre><code class="lang-csharp">public override void OnUpdate(InteractableStates state, Interactable source)
 {
     if (state.CurrentState() != lastState)
     {
-        // the state has changed, do something new
+        // 状態が変わったので、何か新しいことをする
         lastState = state.CurrentState();
         ...
     }
@@ -204,8 +204,8 @@ public virtual void OnVoiceCommand(InteractableStates state, Interactable source
                                     string command, int index = 0, int length = 1)
 {
     base.OnVoiceCommand(state, source, command, index, length);
-    // voice command called, perform some action
-}  
+    // 音声コマンドが呼ばれたので、何かアクションを実行する
+}  
 
 public virtual void OnClick(InteractableStates state,
                             Interactable source,
@@ -215,72 +215,72 @@ public virtual void OnClick(InteractableStates state,
     // click called, perform some action
 }
 </code></pre>
-<h5 id="displaying-custom-event-receiver-fields-in-the-inspector">Displaying custom Event Receiver fields in the inspector</h5>
-<p><em>ReceiverBase</em> scripts use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField.html"><code>InspectorField</code></a> attributes to expose custom properties in the inspector. Here's an example of Vector3 a custom property with tooltip and label information. This property will show up as configurable in the inspector when an <em>Interactable</em> GameObject is selected and has the associated <em>Event Receiver</em> type added.</p>
+<h5 id="inspector-にカスタム-イベント-レシーバー-フィールドを表示">Inspector にカスタム イベント レシーバー フィールドを表示</h5>
+<p><em>ReceiverBase</em> スクリプトは、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField.html"><code>InspectorField</code></a> 属性を使用して Inspector (インスペクター) にカスタム プロパティを公開します。次に、Vector3 のツールチップとラベル情報を持つカスタム プロパティの例を示します。このプロパティは、<em>Interactable</em> GameObject が選択され、関連付けられた <em>Event Receiver</em> タイプが追加されている場合に、インスペクターで設定可能として表示されます。</p>
 <pre><code class="lang-csharp">[InspectorField(Label = &quot;&lt;Property label&gt;&quot;,Tooltip = &quot;&lt;Insert tooltip info&gt;&quot;,Type = InspectorField.FieldTypes.Vector3)]
 public Vector3 EffectOffset = Vector3.zero;
 </code></pre>
-<h2 id="how-to-use-interactable">How to use Interactable</h2>
-<h3 id="building-a-simple-button">Building a simple button</h3>
-<p>One can create a simple button by simply adding the <em>Interactable</em> component to a GameObject that is configured to receive input events. It can have  has a collider on it or on a child to receive input. If using <em>Interactable</em> with a Unity UI based GameObjects it should be under the Canvas GameObject.</p>
-<p>Take the button one step further, by creating a new profile, assigning the GameObject itself and creating a new theme. Furthermore, use the <em>OnClick</em> event to make something happen.</p>
+<h2 id="interactable-の使用方法">Interactable の使用方法</h2>
+<h3 id="シンプルなボタンを作成する">シンプルなボタンを作成する</h3>
+<p>入力イベントを受信するように構成された GameObject に <em>Interactable</em> コンポーネントを追加するだけで、簡単なボタンを作成することができます。入力を受け取るために自身または子要素にコライダーを持っていることがあります。Unity UI ベースの GameObject で <em>Interactable</em> を使用する場合は、Canvas GameObject の下に配置する必要があります。</p>
+<p>ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、<em>OnClick</em> イベントを使用して、何かを実行します。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Making a <a href="README_Button.html">button pressable</a> requires the<code>PressableButton</code> component. Additionally, the <code>PhysicalPressEventRouter</code> component is needed to funnel press events to the <em>Interactable</em> component.</p>
+<p>押下可能な <a href="README_Button.html">Button (ボタン)</a> を作成するには、<code>PressableButton</code> コンポーネントが必要です。さらに、<code>PhysicalPressEventRouter</code> コンポーネントは、押下イベントを <em>Interactable</em> コンポーネントに転送するために必要です。</p>
 </div>
-<h3 id="creating-toggle-and-multi-dimension-buttons">Creating Toggle and Multi-Dimension buttons</h3>
-<h4 id="toggle-button">Toggle button</h4>
-<p>To make a button Toggle-able, change the the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html"><code>Selection Mode</code></a> field to type <code>Toggle</code>. In the <em>Profiles</em> section, a new toggled theme is added for each profile that is used when the <em>Interactable</em> is toggled on.</p>
-<p>While the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html"><code>SelectionMode</code></a> is set to Toggle, the <em>IsToggled</em> check box can be used to set the default value of the control at runtime initialization.</p>
-<p><em>CanSelect</em> means the the <em>Interactable</em> can go from <em>off</em> to <em>on</em> while the <em>CanDeselect</em> means the inverse.</p>
+<h3 id="toggle-button-トグル-ボタン-と-multi-dimension-ボタンの作成">Toggle Button (トグル ボタン) と Multi-Dimension ボタンの作成</h3>
+<h4 id="トグル-ボタン">トグル ボタン</h4>
+<p>ボタンをトグル可能にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html"><code>Selection Mode</code></a> フィールドを <code>Toggle</code> タイプに変更します。<em>Profiles</em> セクションでは、それぞれのプロファイルに、<em>Interactable</em> がトグル オンになっている場合に使用される新しいトグル用のテーマが追加されます。</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html"><code>SelectionMode</code></a> が <code>Toggle</code> に設定されている場合、<em>IsToggled</em> チェック ボックスを使用して、実行時初期化時のコントロールのデフォルト値を設定できます。</p>
+<p><em>CanSelect</em> は、<em>Interactable</em> が <em>off</em> から <em>on</em> に遷移できることを意味し、<em>CanDeselect</em> はその逆を意味します。</p>
 <p><img src="../Documentation/Images/Interactable/Profile_toggle.png" alt="Profile Toggle Visual Themes Example"></p>
-<p>Developers can utilize the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>SetToggled</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>IsToggled</code></a> interfaces to get/set the toggle state of an <em>Interactable</em> via code.</p>
-<pre><code class="lang-csharp">// If using SelectionMode = Toggle (i.e Dimensions == 2)
+<p>開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>SetToggled</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>IsToggled</code></a> インタフェースを使用して、コードを介して <em>Interactable</em> のトグル状態を取得/設定できます。</p>
+<pre><code class="lang-csharp">// SelectionMode = Toggle (すなわち Dimensions == 2) を使用する場合
 
-// Make the Interactable selected and toggled on
+// Interactable を選択して、トグルをオンにする
 myInteractable.IsToggled = true;
 
-// Get whether the Interactable is selected or not
+// Interactable が選択されているかを取得する
 bool isSelected = myInteractable.IsToggled;
 </code></pre>
-<h5 id="toggle-button-collection">Toggle button collection</h5>
-<p>It is common to have a list of toggle buttons where only one can be active at any given time, also known as a radial set or radio buttons etc.</p>
-<p>Use the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html"><code>InteractableToggleCollection</code></a> component to enable this functionality. This control ensures only one <em>Interactable</em> is toggled on at any given time. The <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab"><em>RadialSet</em> prefab</a> is also a great starting point out-of-box.</p>
-<p>To create a custom radial button group:</p>
+<h5 id="トグル-ボタン-コレクション">トグル ボタン コレクション</h5>
+<p>トグル ボタンのリストを作り、一度にアクティブにできるのは1つだけにすることがよくあります。これはラジアル セットまたはラジオ ボタンなどとも呼ばれます。</p>
+<p>この機能を有効にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html"><code>InteractableToggleCollection</code></a> コンポーネントを使用します。このコントロールにより、常に1つの <em>Interactable</em> のみがオンになります。<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab"><em>RadialSet</em> prefab</a> も、すぐに使える素晴らしい出発点です。</p>
+<p>カスタム ラジオ ボタン グループを作成するには:</p>
 <ol>
-<li>Create multiple <em>Interactable</em> GameObjects/buttons</li>
-<li>Set each <em>Interactable</em> with <em>SelectionMode</em> = Toggle, <em>CanSelect</em> = true, and <em>CanDeselect</em> = false</li>
-<li>Create an empty parent GameObject over all the <em>Interactables</em> and add the <em>InteractableToggleCollection</em> component</li>
-<li>Add all <em>Interactables</em> to the <em>ToggleList</em> on the <em>InteractableToggleCollection</em></li>
-<li>Set the <em>InteractableToggleCollection.CurrentIndex</em> property to determine which button is selected by default at start</li>
+<li>複数の <em>Interactable</em> GameObjects/ボタンを作成します。</li>
+<li>それぞれの <em>Interactable</em> を <em>SelectionMode</em> = Toggle、<em>CanSelect</em> = true、および、<em>CanDeselect</em> = false に設定します。</li>
+<li>すべての <em>Interactables</em> に対して、空の親 GameObject を作成し、<em>InteractableToggleCollection</em> コンポーネントを追加します。</li>
+<li>すべての <em>Interactables</em> を <em>InteractableToggleCollection</em> の <em>ToggleList</em> に追加します。</li>
+<li><em>InteractableToggleCollection.CurrentIndex</em> プロパティを設定して、起動時にデフォルトで選択されるボタンを決定します。</li>
 </ol>
 <img src="../Documentation/Images/Interactable/InteractableToggleCollection.png" width="450">
-<h4 id="multi-dimensional-button">Multi-Dimensional button</h4>
-<p>Multi-Dimension selection mode is used to create sequential buttons, or a button that has more than two steps, like controlling speed with three values, Fast (1x), Faster (2x) or Fastest (3x).</p>
-<p>With dimensions being a numeric value, up to 9 themes can be added to control the text label or texture of the button for each speed setting, using a different theme for each of step.</p>
-<p>Every click event will advance the <code>DimensionIndex</code> by 1 at runtime until the <code>Dimensions</code> value is reached then the cycle will reset to 0.</p>
+<h4 id="multi-dimension-ボタン">Multi-Dimension ボタン</h4>
+<p>Multi-Dimension 選択モードは、連続的なボタンや、速い(1倍)、やや速い(2倍)、最も速い(3倍) という3つの値で速度をコントロールするといったような、3つ以上のステップを持つボタンを作成するために使用します。</p>
+<p>Dimensions が数値の場合、最大9つのテーマを追加して、それぞれの速度設定のボタンのテキスト ラベルまたはテクスチャを制御できます。各ステップには異なるテーマを使用します。</p>
+<p>すべてのクリックイベントは実行時に <code>DimensionIndex</code> の値を 1 ずつ進め、<code>Dimensions</code> の値に到達すると、このサイクルは 0 にリセットされます。</p>
 <p><img src="../Documentation/Images/Interactable/Profile_multiDimensions.png" alt="Multi-Dimensional profile example"></p>
-<p>Developers can assess the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>DimensionIndex</code></a> to determine which dimension is currently active.</p>
-<pre><code class="lang-csharp">// If using SelectionMode = Multi-dimension (i.e Dimensions &gt;= 3)
+<p>開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>DimensionIndex</code></a> を評価して、どのディメンションが現在アクティブかを判断できます。</p>
+<pre><code class="lang-csharp">// SelectionMode = Multi-dimension (すなわち Dimensions &gt;= 3) を使用する場合 
 
-//Access the current DimensionIndex
+// 現在の DimensionIndex にアクセスする
 int currentDimension = myInteractable.CurrentDimension;
 
-//Set the current DimensionIndex to 2
+// 現在の DimensionIndex に 2 をセットする
 myInteractable.CurrentDimension = 2;
 
-// Promote Dimension to next level
+// Dimension を次のレベルに昇格する
 myInteractable.IncreaseDimension();
 </code></pre>
-<h3 id="create-interactable-at-runtime">Create Interactable at runtime</h3>
-<p><em>Interactable</em> can be easily added to any GameObject at runtime. The following example demonstrates how to assign a profile with a <a href="VisualThemes.html">visual theme</a>.</p>
+<h3 id="実行時に-interactable-を作成する">実行時に Interactable を作成する</h3>
+<p><em>Interactable</em> は、実行時に任意の GameObject に簡単に追加できます。以下に <a href="VisualThemes.html">ビジュアル テーマ</a> を使用してプロファイルを割り当てる例を示します。</p>
 <pre><code class="lang-csharp">var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 var interactable = interactableObject.AddComponent&lt;Interactable&gt;();
 
-// Get the default configuration for the Theme engine InteractableColorTheme
+// テーマ エンジン InteractableColorTheme のデフォルトの設定を取得する
 var newThemeType = ThemeDefinition.GetDefaultThemeDefinition&lt;InteractableColorTheme&gt;().Value;
 
-// Define a color for every state in our Default Interactable States
+// デフォルトの Interactable ステートでのすべてのステートのカラーを定義する
 newThemeType.StateProperties[0].Values = new List&lt;ThemePropertyValue&gt;()
 {
     new ThemePropertyValue() { Color = Color.black},  // Default
@@ -301,18 +301,18 @@ interactable.Profiles = new List&lt;InteractableProfileItem&gt;()
     },
 };
 
-// Force the Interactable to be clicked
+// Interactable を強制的にクリックする
 interactable.TriggerOnClick()
 </code></pre>
-<h3 id="interactable-events-via-code">Interactable Events via code</h3>
-<p>One can add an action to the base <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_OnClick"><code>Interactable.OnClick</code></a> event via code with the following example.</p>
+<h3 id="コードを使用した-interactable-イベント">コードを使用した Interactable イベント</h3>
+<p>次の例のようなコードを使用して、ベースとなる <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_OnClick"><code>Interactable.OnClick</code></a> イベントにアクションを追加できます。</p>
 <pre><code class="lang-csharp">public static void AddOnClick(Interactable interactable)
 {
     interactable.OnClick.AddListener(() =&gt; Debug.Log(&quot;Interactable clicked&quot;));
 }
 </code></pre>
-<p>Use the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>Interactable.AddReceiver&lt;T&gt;()</code></a> function to add event receivers dynamically at runtime.</p>
-<p>The example code below demonstrates how to add an <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnFocusReceiver</a>, which listens for focus enter/exit, and furthermore define action code to perform when the event instances fire.</p>
+<p>実行時に動的にイベント レシーバーを追加するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>Interactable.AddReceiver&lt;T&gt;()</code></a> 関数を使用します。</p>
+<p>以下のサンプル コードは、フォーカスの開始/終了をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnFocusReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
 <pre><code class="lang-csharp">public static void AddFocusEvents(Interactable interactable)
 {
     var onFocusReceiver = interactable.AddReceiver&lt;InteractableOnFocusReceiver&gt;();
@@ -321,13 +321,13 @@ interactable.TriggerOnClick()
     onFocusReceiver.OnFocusOff.AddListener(() =&gt; Debug.Log(&quot;Focus off&quot;));
 }
 </code></pre>
-<p>The example code below demonstrates how to add an <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnToggleReceiver</a>, which listens for selected/deselected state transitions on toggle-able <em>Interactables</em>, and furthermore define action code to perform when the event instances fire.</p>
+<p>以下のサンプル コードは、トグル可能な <em>Interactables</em> の選択/選択解除のステート遷移をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnToggleReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
 <pre><code class="lang-csharp">public static void AddToggleEvents(Interactable interactable)
 {
     var toggleReceiver = interactable.AddReceiver&lt;InteractableOnToggleReceiver&gt;();
 
-    // Make the interactable have toggle capability, from code.
-    // In the gui editor it's much easier
+    // コードで interactable にトグル機能を持たせる
+    // GUI エディターでは、はるかに簡単
     interactable.Dimensions = 2;
     interactable.CanSelect = true;
     interactable.CanDeselect  = true;
@@ -336,13 +336,13 @@ interactable.TriggerOnClick()
     toggleReceiver.OnDeselect.AddListener(() =&gt; Debug.Log(&quot;Toggle un-selected&quot;));
 }
 </code></pre>
-<h2 id="see-also">See also</h2>
+<h2 id="関連項目">関連項目</h2>
 <ul>
-<li><a href="VisualThemes.html">Visual Themes</a></li>
-<li><a href="Input/InputActions.html">Input Actions</a></li>
-<li><a href="Input/Speech.html">Speech Commands</a></li>
-<li><a href="README_Button.html">Buttons</a></li>
-<li><a href="README_MRTKStandardShader.html">MRTK Standard Shader</a></li>
+<li><a href="VisualThemes.html">Visual Themes (ビジュアル テーマ)</a></li>
+<li><a href="Input/InputActions.html">Input Actions (入力 アクション)</a></li>
+<li><a href="Input/Speech.html">Speech Commands (音声 コマンド)</a></li>
+<li><a href="README_Button.html">Buttons (ボタン)</a></li>
+<li><a href="README_MRTKStandardShader.html">MRTK Standard Shader (MRTK スタンダード シェーダー)</a></li>
 </ul>
 </article>
           </div>
