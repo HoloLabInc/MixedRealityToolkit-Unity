@@ -303,7 +303,7 @@ interactable.Profiles = new List<InteractableProfileItem>()
 interactable.TriggerOnClick()
 ```
 
-### コードを使用した Interactable なイベント
+### コードを使用した Interactable イベント
 
 次の例のようなコードを使用して、ベース [`Interactable.OnClick`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.OnClick) イベントにアクションを追加できます。
 
