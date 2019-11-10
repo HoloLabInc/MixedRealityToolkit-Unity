@@ -178,7 +178,7 @@ public virtual void OnClick(InteractableStates state,
                             IMixedRealityPointer pointer = null)
 {
     base.OnClick(state, source);
-    // click called, perform some action
+    // クリックが呼ばれたので、何かアクションを実行する
 }
 ```
 
