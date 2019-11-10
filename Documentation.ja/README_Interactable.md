@@ -195,7 +195,7 @@ public Vector3 EffectOffset = Vector3.zero;
 
 ### シンプルなボタンを作成する
 
-入力イベントを受信するように構成された GameObject に *Interactable* コンポーネントを追加するだけで、簡単なボタンを作成することができます。入力を受け取ためのコライダがついていたり子供がいたりします。Unity UI ベースの GameObject で *Interactable* を使用する場合は、Canvas GameObject の下に配置する必要があります。
+入力イベントを受信するように構成された GameObject に *Interactable* コンポーネントを追加するだけで、簡単なボタンを作成することができます。入力を受け取るために自身または子要素にコライダーを持っていることがあります。Unity UI ベースの GameObject で *Interactable* を使用する場合は、Canvas GameObject の下に配置する必要があります。
 
 ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、*OnClick* イベントを使用して、何かを実行します。
 
