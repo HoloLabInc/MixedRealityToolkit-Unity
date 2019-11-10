@@ -206,7 +206,7 @@ public Vector3 EffectOffset = Vector3.zero;
 
 #### トグル ボタン
 
-ボタンをトグル可能にするには、[`Selection Mode`](xref:Microsoft.MixedReality.Toolkit.UI.SelectionModes) フィールドに `Toggle` と入力します。*Profiles* セクションでは、*Interactable* がオンになっている場合に使用されるプロファイルごとに、トグルされた新しいテーマが追加されます。
+ボタンをトグル可能にするには、[`Selection Mode`](xref:Microsoft.MixedReality.Toolkit.UI.SelectionModes) フィールドを `Toggle` タイプに変更します。*Profiles* セクションでは、それぞれのプロファイルに、*Interactable* がトグル オンになっている場合に使用される新しいトグル用のテーマが追加されます。
 
 While the [`SelectionMode`](xref:Microsoft.MixedReality.Toolkit.UI.SelectionModes) が `Toggle` に設定されている場合、*IsToggled* チェックボックスを使用して、実行時初期化時のコントロールのデフォルト値を設定できます。
 
