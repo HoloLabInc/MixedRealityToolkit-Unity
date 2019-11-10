@@ -78,7 +78,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 このプロパティは、実行時に [`Interactable.VoiceRequiresFocus`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.VoiceRequiresFocus) を使用してコードで設定できます。
 
- **Selection Mode (選択モード)**
+**Selection Mode (選択モード)**
 
 このプロパティは、選択ロジックを定義します。*Interactable* がクリックされると、次の *Dimension* レベルに反復されます。*Dimensions* はランクと似ており、入力 (フォーカス、押下など) の外側の状態を定義します。これらは、ボタンに関連付けられたトグル状態やその他のマルチランク状態を定義する場合に便利です。現在の Dimension レベルは、`Interactable.DimensionIndex` で取得できます。
 
