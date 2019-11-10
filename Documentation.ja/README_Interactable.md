@@ -350,6 +350,6 @@ public static void AddToggleEvents(Interactable interactable)
 
 * [Visual Themes (ビジュアル テーマ)](VisualThemes.md)
 * [Input Actions (入力 アクション)](./Input/InputActions.md)
-* [Speech (音声 コマンド)](./Input/Speech.md)
+* [Speech Commads (音声 コマンド)](./Input/Speech.md)
 * [Buttons (ボタン)](README_Button.md)
 * [MRTK Standard Shader (MRTK スタンダード シェーダー)](README_MRTKStandardShader.md)
