@@ -139,7 +139,7 @@ Event Receiver (イベント レシーバー) 定義の新しいタイプを追�
 
 カスタムイベントは、主に次の2つの方法で作成できます:
 
-1) [`ReceiverBase`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) クラスを拡張して、イベント タイプのドロップダウンリストに表示されるカスタム イベントを作成します。Unity イベントはデフォルトで提供されますが、追加の Unity イベントを追加したり、Unity イベントを非表示に設定したりすることができます。この機能を使用すると、設計者はプロジェクトのエンジニアと共同でカスタム イベントを作成し、エディタで設定できます。
+1) [`ReceiverBase`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) クラスを拡張して、イベント タイプのドロップダウン リストに表示されるカスタム イベントを作成します。Unity イベントはデフォルトで提供されますが、追加の Unity イベントを追加したり、Unity イベントを非表示に設定したりすることができます。この機能を使用すると、プロジェクトにおいてデザイナーはエンジニアと協力し、デザイナーがエディターで設定できるカスタム イベントを作成できます。
 
 1) [`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) クラスを拡張して、*Interactable* または別のオブジェクトに配置できる完全にカスタムなイベント コンポーネントを作成します。[`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) は、*Interactable* を参照してステートの変化を検出します。
 
