@@ -316,7 +316,7 @@ public static void AddOnClick(Interactable interactable)
 
 実行時に動的にイベント レシーバーを追加するには、[`Interactable.AddReceiver<T>()`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) 関数を使用します。
 
-以下のサンプル・コードは、フォーカスの開始/終了をリッスンする [InteractableOnFocusReceiver](xref:Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver) を追加する方法、さらにイベント インスタンスが起動したときに実行するアクション コードを定義する方法を示しています。
+以下のサンプル コードは、フォーカスの開始/終了をリッスンする [InteractableOnFocusReceiver](xref:Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver) を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。
 
 ```csharp
 public static void AddFocusEvents(Interactable interactable)
