@@ -144,7 +144,7 @@ Event Receiver (イベント レシーバー) 定義の新しいタイプを追�
 1) [`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) クラスを拡張して、*Interactable* または別のオブジェクトに配置できる完全にカスタムなイベント コンポーネントを作成します。[`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) は、*Interactable* を参照してステートの変化を検出します。
 
 #### `ReceiverBase` の拡張例
-`MixedRealityToolkit.Examples` 配下の [`CustomInteractablesReceiver`](xref:Microsoft.MixedReality.Toolkit.UI) クラスは、*Interactable* に関するステータス情報を表示し、カスタムイベントレシーバの作成例となります。
+`MixedRealityToolkit.Examples` 配下の [`CustomInteractablesReceiver`](xref:Microsoft.MixedReality.Toolkit.UI) クラスは、*Interactable* に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。
 
 ``` csharp
 public CustomInteractablesReceiver(UnityEvent ev) : base(ev, "CustomEvent")
