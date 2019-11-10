@@ -248,7 +248,7 @@ Multi-Dimension 選択モードは、連続したボタンや、速い(1倍)、�
 
 Dimensions が数値の場合、最大9つのテーマを追加して、それぞれの速度設定のボタンのテキスト ラベルまたはテクスチャを制御できます。各ステップには異なるテーマを使用します。
 
-すべてのクリックイベントは、実行時に `DimensionIndex` の値になるまで `Dimensions` の値を 1 づつ進め、その後、数値は 0 にリセットされ、また 1 づつ加算されるサイクルとなります。
+すべてのクリックイベントは実行時に `DimensionIndex` の値を 1 ずつ進め、`Dimensions` の値に到達すると、このサイクルは 0 にリセットされます。
 
 ![Multi-Dimensional profile example](../Documentation/Images/Interactable/Profile_multiDimensions.png)
 
