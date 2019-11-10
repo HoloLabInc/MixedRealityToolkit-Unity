@@ -16,7 +16,7 @@
 
 ![General Interactable Settings](../Documentation/Images/Interactable/InputFeatures_short.png)
 
-**States**
+**States (ステート)**
 
 *States* は [Interactable プロファイル](#interactable-プロファイル)と[ビジュアル テーマ](VisualThemes.md)で利用する、押された、見られている、といったインタラクションのフェーズを定義する [ScriptableObject](https://docs.unity3d.com/Manual/class-ScriptableObject.html) パラメータです。
 
