@@ -184,7 +184,7 @@ public virtual void OnClick(InteractableStates state,
 
 ##### Inspector にカスタム イベント レシーバー フィールドを表示
 
-*ReceiverBase* スクリプトは、 [`InspectorField`](xref:Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField) 属性を使用して Inspector (インスペクタ) にカスタムプロパティを公開します。次に、Vector3 のツールチップとラベル情報を持つカスタム プロパティの例を示します。このプロパティは、*Interactable* GameObject が選択され、関連付けられた *Event Receiver* タイプが追加されている場合に、インスペクタで設定可能として表示されます。
+*ReceiverBase* スクリプトは、 [`InspectorField`](xref:Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField) 属性を使用して Inspector (インスペクター) にカスタム プロパティを公開します。次に、Vector3 のツールチップとラベル情報を持つカスタム プロパティの例を示します。このプロパティは、*Interactable* GameObject が選択され、関連付けられた *Event Receiver* タイプが追加されている場合に、インスペクターで設定可能として表示されます。
 
 ```csharp
 [InspectorField(Label = "<Property label>",Tooltip = "<Insert tooltip info>",Type = InspectorField.FieldTypes.Vector3)]
