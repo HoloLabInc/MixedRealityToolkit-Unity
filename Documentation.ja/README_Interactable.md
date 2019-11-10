@@ -255,7 +255,7 @@ Dimensions が数値の場合、最大9つのテーマを追加して、それ�
 開発者は、[`DimensionIndex`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) を評価して、どのディメンションが現在アクティブかを判断できます。
 
 ```csharp
-// 選択モード = Multi-dimension 選択モードを使用する場合 (例 Dimensions >= 3)
+// SelectionMode = Multi-dimension (すなわち Dimensions >= 3) を使用する場合 
 
 // 現在の DimensionIndex にアクセスする
 int currentDimension = myInteractable.CurrentDimension;
