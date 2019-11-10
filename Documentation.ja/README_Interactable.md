@@ -305,7 +305,7 @@ interactable.TriggerOnClick()
 
 ### コードを使用した Interactable イベント
 
-次の例のようなコードを使用して、ベース [`Interactable.OnClick`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.OnClick) イベントにアクションを追加できます。
+次の例のようなコードを使用して、ベースとなる [`Interactable.OnClick`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.OnClick) イベントにアクションを追加できます。
 
 ```csharp
 public static void AddOnClick(Interactable interactable)
