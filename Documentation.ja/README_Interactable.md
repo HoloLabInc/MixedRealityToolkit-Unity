@@ -328,7 +328,7 @@ public static void AddFocusEvents(Interactable interactable)
 }
 ```
 
-以下のサンプル コードは、[InteractableOnToggleReceiver](xref:Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver) を追加する方法を示しています。これは、切り替え可能な *Interactables* 上の選択/選択解除された状態遷移をリッスンし、さらに、イベント インスタンスが発生したときに実行するアクション コードを定義します。
+以下のサンプル コードは、トグル可能な *Interactables* の選択/選択解除のステート遷移をリッスンする [InteractableOnToggleReceiver](xref:Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver) を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。
 
 ```csharp
 public static void AddToggleEvents(Interactable interactable)
