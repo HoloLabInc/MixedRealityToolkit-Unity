@@ -217,7 +217,7 @@ public Vector3 EffectOffset = Vector3.zero;
 開発者は、[`SetToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) および [`IsToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) インタフェースを使用して、コードを介して *Interactable* のトグル状態を取得/設定できます。
 
 ```csharp
-// 選択モード = トグルを使用する場合 (例 Dimensions == 2)
+// SelectionMode = Toggle (すなわち Dimensions == 2) を使用する場合
 
 // Interactable を選択して、トグルをオンにする
 myInteractable.IsToggled = true;
