@@ -269,7 +269,7 @@ myInteractable.IncreaseDimension();
 
 ### 実行時に Interactable を作成する
 
-*Interactable* は、実行時に任意のGameObjectに簡単に追加できます。以下に [ビジュアル テーマ](visualthemes.md) を使用してプロファイルを割り当てる例を示します。
+*Interactable* は、実行時に任意の GameObject に簡単に追加できます。以下に [ビジュアル テーマ](visualthemes.md) を使用してプロファイルを割り当てる例を示します。
 
 ```csharp
 var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
