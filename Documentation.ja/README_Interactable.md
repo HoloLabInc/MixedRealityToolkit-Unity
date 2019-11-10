@@ -149,7 +149,7 @@ Event Receiver (イベント レシーバー) 定義の新しいタイプを追�
 ``` csharp
 public CustomInteractablesReceiver(UnityEvent ev) : base(ev, "CustomEvent")
 {
-    HideUnityEvents = true; // 受信側の Unity イベントを非表示にします
+    HideUnityEvents = true; // レシーバーの Unity イベントを非表示にします。コードのみであると意味します。
 }
 ```
 
