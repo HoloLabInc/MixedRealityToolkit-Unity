@@ -48,7 +48,7 @@
 > * PhysicalTouch: タッチ入力が現在検出されています。[`NearInteractionTouchable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) を使用して有効にしてください。
 > * Grab: ハンドが現在オブジェクトの境界内でグラブしています。[`NearInteractionGrabbable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable) を使用して有効にしてください。
 
-**Enabled**
+**Enabled (有効)**
 
 Interactable が開始時に有効かどうかを切り替えます。これは、コードの [`Interactable.IsEnabled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsEnabled) に対応します。
 
