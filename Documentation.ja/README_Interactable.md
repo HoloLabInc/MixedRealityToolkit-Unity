@@ -210,7 +210,7 @@ public Vector3 EffectOffset = Vector3.zero;
 
 [`SelectionMode`](xref:Microsoft.MixedReality.Toolkit.UI.SelectionModes) が `Toggle` に設定されている場合、*IsToggled* チェック ボックスを使用して、実行時初期化時のコントロールのデフォルト値を設定できます。
 
-*CanSelect* は、*Interactable* が *off* から *on* になることを意味し、*CanDeselect* はその逆を意味します。
+*CanSelect* は、*Interactable* が *off* から *on* に遷移できることを意味し、*CanDeselect* はその逆を意味します。
 
 ![Profile Toggle Visual Themes Example](../Documentation/Images/Interactable/Profile_toggle.png)
 
