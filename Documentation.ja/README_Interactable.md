@@ -234,7 +234,7 @@ bool isSelected = myInteractable.IsToggled;
 
 カスタム ラジオ ボタン グループを作成するには:
 
-1) 複数の *Interactable* GameObjects/ボタンの作成
+1) 複数の *Interactable* GameObjects/ボタンを作成します。
 1) それぞれの *Interactable* を *SelectionMode* = Toggle、*CanSelect* = true、および、*CanDeselect* = false に設定します。
 1) すべての *Interactables* に対して、空の親 GameObject を作成し、*InteractableToggleCollection* コンポーネントを追加します。
 1) すべての *Interactables* を *InteractableToggleCollection* の *ToggleList* に追加します。
