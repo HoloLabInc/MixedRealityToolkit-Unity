@@ -54,7 +54,7 @@ Interactable が開始時に有効かどうかを切り替えます。これは�
 
 *Interactable* の enabled プロパティは、GameObject/Component で (SetActive などによって) 設定された enabled プロパティとは異なります。GameObject または *Interactable* MonoBehavior を無効にすると、入力、ビジュアル テーマ、イベントなど、クラス内のすべてのものの実行が無効になります。[`Interactable.IsEnabled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.IsEnabled) を介して無効にすると、ほとんどの入力処理が無効になり、関連する入力ステートがリセットされます。ただし、クラスはすべてのフレームで実行され、無視される入力イベントを受け取ります。これは、Interactable をビジュアル テーマを介して disabled ステートで表示する場合に便利です。この典型的な例は、すべての必須入力フィールドが完了するのを待つ送信ボタンです。
 
-**Input Actions**
+**Input Actions (入力アクション)**
 
 入力設定またはコントローラー マッピング プロファイルから、*Interactable* コンポーネントが反応する [input action](./Input/InputActions.md) を選択します。
 
