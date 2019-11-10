@@ -86,7 +86,7 @@ true の場合、音声コマンドは、ポインタからすでにフォーカ
 
 * **Button** - *Dimensions* = 1、シンプルなクリック可能な *Interactable*
 * **Toggle** - *Dimensions* = 2、*Interactable* は *on*/*off* 状態を交互に切り替えます
-* **Multi-dimension** - *Dimensions* >= 3 の場合、クリックするたびに現在の dimension level に 1 加算します。ボタンの状態をリストなどに定義する場合に便利です。
+* **Multi-dimension** - *Dimensions* >= 3、クリックするたびに現在の dimension level に 1 加算します。ボタンの状態をリストなどに定義する場合に便利です。
 
 *Interactable* では、*Dimension* ごとに複数のテーマを定義することもできます。たとえば、*SelectionMode=Toggle* の場合、あるテーマを *Interactable* が *deselected* のときに適用させ、別のテーマをコンポーネントが *selected* のときに適用させられます。
 
