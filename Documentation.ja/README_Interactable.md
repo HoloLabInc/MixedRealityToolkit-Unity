@@ -60,7 +60,7 @@ Interactable が開始時に有効かどうかを切り替えます。これは�
 
 このプロパティは、実行時に [`Interactable.InputAction`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable.InputAction) を使用してコードで設定できます。
 
-**IsGlobal**
+**IsGlobal (グローバルである)**
 
 true の場合、選択した [input action](./Input/InputActions.md) のグローバル入力リスナーとしてコンポーネントがマークされます。デフォルトの動作は false で、この *Interactable* collider/GameObject のみへの入力に制限されます。
 
