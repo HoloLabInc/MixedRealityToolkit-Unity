@@ -230,7 +230,7 @@ bool isSelected = myInteractable.IsToggled;
 
 トグル ボタンのリストを作り、一度にアクティブにできるのは1つだけにすることがよくあります。これはラジアル セットまたはラジオ ボタンなどとも呼ばれます。
 
-この機能を有効にするには、[`InteractableToggleCollection`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection) コンポーネントを使用します。このコントロールにより、常に1つの *Interactable* のみがオンになります。 [*RadialSet* prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab) も、初期状態から始めるのに適しています。
+この機能を有効にするには、[`InteractableToggleCollection`](xref:Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection) コンポーネントを使用します。このコントロールにより、常に1つの *Interactable* のみがオンになります。[*RadialSet* prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab) も、すぐに使える素晴らしい出発点です。
 
 カスタム ラジオ ボタン グループを作成するには:
 
