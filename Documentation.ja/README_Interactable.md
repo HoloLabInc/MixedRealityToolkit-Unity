@@ -278,7 +278,7 @@ var interactable = interactableObject.AddComponent<Interactable>();
 // テーマ エンジンの InteractableColorTheme の既定の構成を取得する
 var newThemeType = ThemeDefinition.GetDefaultThemeDefinition<InteractableColorTheme>().Value;
 
-// 既定の Interactable ステート カラーを定義する
+// デフォルトの Interactable ステートでのすべてのステートのカラーを定義する
 newThemeType.StateProperties[0].Values = new List<ThemePropertyValue>()
 {
     new ThemePropertyValue() { Color = Color.black},  // Default
