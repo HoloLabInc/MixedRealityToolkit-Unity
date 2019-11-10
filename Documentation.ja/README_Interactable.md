@@ -336,7 +336,7 @@ public static void AddToggleEvents(Interactable interactable)
     var toggleReceiver = interactable.AddReceiver<InteractableOnToggleReceiver>();
 
     // トグル機能を持つ interactable をコードで作成する
-    // GUI エディターよりもはるかに簡単
+    // GUI エディターでは、はるかに簡単
     interactable.Dimensions = 2;
     interactable.CanSelect = true;
     interactable.CanDeselect  = true;
