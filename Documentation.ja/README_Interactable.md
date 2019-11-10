@@ -275,7 +275,7 @@ myInteractable.IncreaseDimension();
 var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 var interactable = interactableObject.AddComponent<Interactable>();
 
-// テーマ エンジンの InteractableColorTheme の既定の構成を取得する
+// テーマ エンジン InteractableColorTheme のデフォルトの設定を取得する
 var newThemeType = ThemeDefinition.GetDefaultThemeDefinition<InteractableColorTheme>().Value;
 
 // デフォルトの Interactable ステートでのすべてのステートのカラーを定義する
