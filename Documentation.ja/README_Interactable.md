@@ -200,7 +200,7 @@ public Vector3 EffectOffset = Vector3.zero;
 ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、*OnClick* イベントを使用して、何かを実行します。
 
 > [!NOTE]
-> 押下可能な [Button (ボタン)](README_Button.md) を作成するには、コンポーネントが必要です。さらに、 `PhysicalPressEventRouter` コンポーネントは、押下イベントを *Interactable* コンポーネントに転送するために必要です。
+> 押下可能な [Button (ボタン)](README_Button.md) を作成するには、`PressableButton` コンポーネントが必要です。さらに、`PhysicalPressEventRouter` コンポーネントは、押下イベントを *Interactable* コンポーネントに転送するために必要です。
 
 ### Toggle Button (トグル ボタン) と Multi-Dimension ボタンの作成
 
