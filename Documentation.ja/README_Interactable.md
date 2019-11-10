@@ -153,7 +153,7 @@ public CustomInteractablesReceiver(UnityEvent ev) : base(ev, "CustomEvent")
 }
 ```
 
-次のメソッドは、カスタムイベントレシーバの作成時にオーバーライドまたは実装する場合に便利です。 [`ReceiverBase.OnUpdate()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) は、状態パターン/遷移の検出に使用できる抽象メソッドです。さらに、[`ReceiverBase.OnVoiceCommand()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) および [`ReceiverBase.OnClick()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) メソッドは、*Interactable* が選択されている場合にカスタム イベント ロジックを作成するのに便利です。
+次のメソッドは、カスタム イベント レシーバーの作成時にオーバーライドまたは実装する場合に便利です。 [`ReceiverBase.OnUpdate()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) は、ステートのパターン/遷移の検出に使用できる抽象メソッドです。さらに、[`ReceiverBase.OnVoiceCommand()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) および [`ReceiverBase.OnClick()`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) メソッドは、*Interactable* が選択されている場合にカスタム イベント ロジックを作成するのに便利です。
 
 ``` csharp
 public override void OnUpdate(InteractableStates state, Interactable source)
