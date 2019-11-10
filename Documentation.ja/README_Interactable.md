@@ -149,7 +149,7 @@ Event Receiver (イベント レシーバー) 定義の新しいタイプを追�
 ``` csharp
 public CustomInteractablesReceiver(UnityEvent ev) : base(ev, "CustomEvent")
 {
-    HideUnityEvents = true; // hides Unity events in the receiver - meant to be code only
+    HideUnityEvents = true; // 受信側の Unity イベントを非表示にします
 }
 ```
 
@@ -160,7 +160,7 @@ public override void OnUpdate(InteractableStates state, Interactable source)
 {
     if (state.CurrentState() != lastState)
     {
-        // the state has changed, do something new
+        // 状態が変わったので、何か新しいことをする
         lastState = state.CurrentState();
         ...
     }
@@ -217,12 +217,12 @@ public Vector3 EffectOffset = Vector3.zero;
 開発者は、[`SetToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) および [`IsToggled`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) インタフェースを使用して、コードを介して *Interactable* のトグル状態を取得/設定できます。
 
 ```csharp
-// If using SelectionMode = Toggle (i.e Dimensions == 2)
+// 選択モード = トグルを使用する場合 (例 Dimensions == 2)
 
-// Make the Interactable selected and toggled on
+// Interactable を選択して、トグルをオンにする
 myInteractable.IsToggled = true;
 
-// Get whether the Interactable is selected or not
+// Interactable が選択されているかを取得する
 bool isSelected = myInteractable.IsToggled;
 ```
 
@@ -255,15 +255,15 @@ Dimensions が数値の場合、最大9つのテーマを追加して、それ�
 開発者は、[`DimensionIndex`](xref:Microsoft.MixedReality.Toolkit.UI.Interactable) を評価して、どのディメンションが現在アクティブかを判断できます。
 
 ```csharp
-// If using SelectionMode = Multi-dimension (i.e Dimensions >= 3)
+// 選択モード = Multi-dimension 選択モードを使用する場合 (例 Dimensions >= 3)
 
-//Access the current DimensionIndex
+// 現在の DimensionIndex にアクセスする
 int currentDimension = myInteractable.CurrentDimension;
 
-//Set the current DimensionIndex to 2
+// 現在の DimensionIndex に 2 をセットする
 myInteractable.CurrentDimension = 2;
 
-// Promote Dimension to next level
+// Dimension を次のレベルに昇格する
 myInteractable.IncreaseDimension();
 ```
 
@@ -275,10 +275,10 @@ myInteractable.IncreaseDimension();
 var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 var interactable = interactableObject.AddComponent<Interactable>();
 
-// Get the default configuration for the Theme engine InteractableColorTheme
+// テーマ エンジンの InteractableColorTheme の既定の構成を取得する
 var newThemeType = ThemeDefinition.GetDefaultThemeDefinition<InteractableColorTheme>().Value;
 
-// Define a color for every state in our Default Interactable States
+// 既定の Interactable ステート カラーを定義する
 newThemeType.StateProperties[0].Values = new List<ThemePropertyValue>()
 {
     new ThemePropertyValue() { Color = Color.black},  // Default
@@ -299,7 +299,7 @@ interactable.Profiles = new List<InteractableProfileItem>()
     },
 };
 
-// Force the Interactable to be clicked
+// Interactable を強制的にクリックする
 interactable.TriggerOnClick()
 ```
 
@@ -335,8 +335,8 @@ public static void AddToggleEvents(Interactable interactable)
 {
     var toggleReceiver = interactable.AddReceiver<InteractableOnToggleReceiver>();
 
-    // Make the interactable have toggle capability, from code.
-    // In the gui editor it's much easier
+    // トグル機能を持つ interactable をコードで作成する
+    // GUI エディターよりもはるかに簡単
     interactable.Dimensions = 2;
     interactable.CanSelect = true;
     interactable.CanDeselect  = true;
@@ -350,6 +350,6 @@ public static void AddToggleEvents(Interactable interactable)
 
 * [Visual Themes (ビジュアル テーマ)](VisualThemes.md)
 * [Input Actions (入力 アクション)](./Input/InputActions.md)
-* [Speech Commads (音声 コマンド)](./Input/Speech.md)
+* [Speech Commands (音声 コマンド)](./Input/Speech.md)
 * [Buttons (ボタン)](README_Button.md)
 * [MRTK Standard Shader (MRTK スタンダード シェーダー)](README_MRTKStandardShader.md)
