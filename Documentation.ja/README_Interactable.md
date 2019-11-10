@@ -141,7 +141,7 @@ Event Receiver (イベント レシーバー) 定義の新しいタイプを追�
 
 1) [`ReceiverBase`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBase) クラスを拡張して、イベント タイプのドロップダウンリストに表示されるカスタム イベントを作成します。Unity イベントはデフォルトで提供されますが、追加の Unity イベントを追加したり、Unity イベントを非表示に設定したりすることができます。この機能を使用すると、設計者はプロジェクトのエンジニアと共同でカスタム イベントを作成し、エディタで設定できます。
 
-1) [`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) クラスを拡張して、*Interactable* または別のオブジェクトに配置できる完全にカスタムなイベントコンポーネントを作成します。[`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) は、*Interactable* を参照して状態の変化を検出します。
+1) [`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) クラスを拡張して、*Interactable* または別のオブジェクトに配置できる完全にカスタムなイベント コンポーネントを作成します。[`ReceiverBaseMonoBehavior`](xref:Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior) は、*Interactable* を参照してステートの変化を検出します。
 
 #### `ReceiverBase` の拡張例
 `MixedRealityToolkit.Examples` 配下の [`CustomInteractablesReceiver`](xref:Microsoft.MixedReality.Toolkit.UI) クラスは、*Interactable* に関するステータス情報を表示し、カスタムイベントレシーバの作成例となります。
