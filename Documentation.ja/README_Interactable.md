@@ -267,7 +267,7 @@ myInteractable.CurrentDimension = 2;
 myInteractable.IncreaseDimension();
 ```
 
-### 実行時に Interactable を作成
+### 実行時に Interactable を作成する
 
 *Interactable* は、実行時に任意のGameObjectに簡単に追加できます。以下に [ビジュアル テーマ](visualthemes.md) を使用してプロファイルを割り当てる例を示します。
 
