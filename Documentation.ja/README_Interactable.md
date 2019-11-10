@@ -170,7 +170,7 @@ public virtual void OnVoiceCommand(InteractableStates state, Interactable source
                                     string command, int index = 0, int length = 1)
 {
     base.OnVoiceCommand(state, source, command, index, length);
-    // voice command called, perform some action
+    // 音声コマンドが呼ばれたので、何かアクションを実行する
 }  
 
 public virtual void OnClick(InteractableStates state,
