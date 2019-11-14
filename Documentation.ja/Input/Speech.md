@@ -4,7 +4,7 @@
 
 - マップする **input action** を選択します。この方法では、たとえば、キーワード *Select* を使用して、同じアクションをマップすることにより、マウスの左クリックと同じ効果を得ることができます。
 - 押されたときに同じ音声イベントを生成する **key code** を指定します。
-- UWPアプリで使用される **localization key** を追加して、アプリのリソースからローカライズされたキーワードを取得します。
+- UWP アプリで使用される **localization key** を追加して、アプリのリソースからローカライズされたキーワードを取得します。
 
 <img src="../../Documentation/Images/Input/SpeechCommandsProfile.png" width="450px">
 
