@@ -22,6 +22,6 @@
 
 ## サンプルシーン
 
-`MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech` の **SpeechInputExample** シーンでは、音声を扱う方法を見ることができます。また、[`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) を実装することにより、自分のスクリプトでダイレクトに音声コマンドを聞き取ることができます（[event handlers](InputEvents.md) の表を参照）。
+`MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech` の **SpeechInputExample** シーンでは、音声を扱う方法を見ることができます。また、[`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) を実装することにより、自分のスクリプトで直接音声コマンドを聞き取ることができます([event handlers](InputEvents.md) の表を参照してください)。
 
 <img src="../../Documentation/Images/Input/SpeechExampleScene.png" width="750px">
