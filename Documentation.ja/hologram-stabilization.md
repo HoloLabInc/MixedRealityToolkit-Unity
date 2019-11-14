@@ -12,7 +12,7 @@
 
 Windows Mixed Reality プラットフォームは、プラットフォーム上でホログラムを安定させるための[参考資料](https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability)を提供しています。開発者がホログラムの視覚体験を改善するために利用できる主要なツールはいくつかあります。
 
-### Depth Buffer Sharing (深度バッファの共有)
+### Depth Buffer Sharing (デプス バッファーの共有)
 
 Unity の開発者はアプリケーションの Depth バッファをプラットフォームと共有することができます。これは、現在のフレームに対してホログラムが存在する場合に、プラットフォームが Late-Stage Reprojection として知られるハードウェアで支援されたプロセスを介してホログラムを安定化するために利用できる情報を提供します。
 
