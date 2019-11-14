@@ -14,7 +14,7 @@
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler1.png" width="450px">
 
-オプションの **SpeechConfirmationTooltip.prefab** を割り当てることによって、認識時にアニメーションする確認ツールチップラベルを表示することができます。 
+オプションの **SpeechConfirmationTooltip.prefab** を割り当てることによって、認識時にアニメーションする確認用ツールチップ ラベルを表示することができます。 
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler2.png">
 
