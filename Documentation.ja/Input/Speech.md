@@ -1,29 +1,27 @@
-# Speech
+# Speech (音声)
 
-Speech input providers, like *Windows Speech Input*, don't create any controllers but instead allow you to define keywords that will raise speech input events when recognized. The **Speech Commands Profile** in the *Input System Profile* is where you configure the keywords to recognize. For each command you can also:
+*Windows Speech Input* などの音声入力プロバイダーは、コントローラーを作成しませんが、代わりに認識時に音声入力イベントを発生させるキーワードを定義することができます。*Input System Profile* の **Speech Commands Profile** は、認識するキーワードを設定する場所です。各コマンドでは次のこともできます：
 
-- Select an **input action** to map it to. This way you can for example use the keyword *Select* to have the same effect as a left mouse click, by mapping both to the same action.
-- Specify a **key code** that will produce the same speech event when pressed.
-- Add a **localization key** that will be used in UWP apps to obtain the localized keyword from the app resources.
+- マップする **input action** を選択します。この方法では、たとえば、キーワード *Select* を使用して、マウスの左クリックと同じアクションにマップすることにより、左クリックと同じ効果を得ることができます。
+- 押されたときに同じ音声イベントを生成する **key code** を指定します。
+- UWP アプリで使用される **localization key** を追加して、アプリのリソースからローカライズされたキーワードを取得します。
 
 <img src="../../Documentation/Images/Input/SpeechCommandsProfile.png" width="450px">
 
-## Handling Speech Input
+## 音声入力のハンドリング
 
-The [**`Speech Input Handler`**](xref:Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler) script can be added to a GameObject to handle speech commands using [**UnityEvents**](https://docs.unity3d.com/Manual/UnityEvents.html). It automatically shows the list of the defined keywords from the **Speech Commands Profile**.
+[**`Speech Input Handler`**](xref:Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler) スクリプトは、[**UnityEvents**](https://docs.unity3d.com/Manual/UnityEvents.html) を使用して音声コマンドを扱うために、GameObject に追加することができます。**Speech Commands Profile** で定義されたキーワードのリストが自動的に表示されます。
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler1.png" width="450px">
 
-Assign optional **SpeechConfirmationTooltip.prefab** to display animated confirmation tooltip label on recognition.
+オプションの **SpeechConfirmationTooltip.prefab** を割り当てることによって、認識時にアニメーションする確認用ツールチップ ラベルを表示することができます。 
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler2.png">
 
-Alternatively, developers can implement the [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) interface in a custom script component to [handle speech input events](InputEvents.md#input-event-interface-example).
+別の方法として、開発者はカスタム スクリプト コンポーネントに [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) インターフェイスを実装することにより、[音声入力イベントを扱う](InputEvents.md#input-event-interface-example)ことができます。
 
+## サンプルシーン
 
-## Example Scene
-
-The **SpeechInputExample** scene, in `MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech`, shows how to use speech. You can also listen to speech command events directly in your own script by implementing [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) (see table of [event handlers](InputEvents.md)).
-
+`MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech` の **SpeechInputExample** シーンでは、音声を扱う方法を見ることができます。また、[`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) を実装することにより、自分のスクリプトで直接音声コマンドを聞き取ることができます([event handlers](InputEvents.md) の表を参照してください)。
 
 <img src="../../Documentation/Images/Input/SpeechExampleScene.png" width="750px">
