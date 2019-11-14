@@ -10,7 +10,7 @@
 
 ## 音声入力のハンドリング
 
-[**`Speech Input Handler`**](xref:Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler) スクリプトは、音声コマンドを扱うために、[**UnityEvents**](https://docs.unity3d.com/Manual/UnityEvents.html) を使用してGameObjectに追加することができます。**Speech Commands Profile** で定義されたキーワードのリストが自動的に表示されます。
+[**`Speech Input Handler`**](xref:Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler) スクリプトは、[**UnityEvents**](https://docs.unity3d.com/Manual/UnityEvents.html) を使用して音声コマンドを扱うために、GameObject に追加することができます。**Speech Commands Profile** で定義されたキーワードのリストが自動的に表示されます。
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler1.png" width="450px">
 
