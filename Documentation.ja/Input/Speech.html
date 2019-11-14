@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Speech | Mixed Reality Toolkit Documentation </title>
+    <title>Speech (&#38899;&#22768;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Speech | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Speech (&#38899;&#22768;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.47.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,23 +80,23 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="speech">Speech</h1>
+<h1 id="speech-音声">Speech (音声)</h1>
 
-<p>Speech input providers, like <em>Windows Speech Input</em>, don't create any controllers but instead allow you to define keywords that will raise speech input events when recognized. The <strong>Speech Commands Profile</strong> in the <em>Input System Profile</em> is where you configure the keywords to recognize. For each command you can also:</p>
+<p><em>Windows Speech Input</em> などの音声入力プロバイダーは、コントローラーを作成しませんが、代わりに認識時に音声入力イベントを発生させるキーワードを定義することができます。<em>Input System Profile</em> の <strong>Speech Commands Profile</strong> は、認識するキーワードを設定する場所です。各コマンドでは次のこともできます：</p>
 <ul>
-<li>Select an <strong>input action</strong> to map it to. This way you can for example use the keyword <em>Select</em> to have the same effect as a left mouse click, by mapping both to the same action.</li>
-<li>Specify a <strong>key code</strong> that will produce the same speech event when pressed.</li>
-<li>Add a <strong>localization key</strong> that will be used in UWP apps to obtain the localized keyword from the app resources.</li>
+<li>マップする <strong>input action</strong> を選択します。この方法では、たとえば、キーワード <em>Select</em> を使用して、マウスの左クリックと同じアクションにマップすることにより、左クリックと同じ効果を得ることができます。</li>
+<li>押されたときに同じ音声イベントを生成する <strong>key code</strong> を指定します。</li>
+<li>UWP アプリで使用される <strong>localization key</strong> を追加して、アプリのリソースからローカライズされたキーワードを取得します。</li>
 </ul>
 <img src="../../Documentation/Images/Input/SpeechCommandsProfile.png" width="450px">
-<h2 id="handling-speech-input">Handling Speech Input</h2>
-<p>The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler.html"><strong><code>Speech Input Handler</code></strong></a> script can be added to a GameObject to handle speech commands using <a href="https://docs.unity3d.com/Manual/UnityEvents.html"><strong>UnityEvents</strong></a>. It automatically shows the list of the defined keywords from the <strong>Speech Commands Profile</strong>.</p>
+<h2 id="音声入力のハンドリング">音声入力のハンドリング</h2>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.SpeechInputHandler.html"><strong><code>Speech Input Handler</code></strong></a> スクリプトは、<a href="https://docs.unity3d.com/Manual/UnityEvents.html"><strong>UnityEvents</strong></a> を使用して音声コマンドを扱うために、GameObject に追加することができます。<strong>Speech Commands Profile</strong> で定義されたキーワードのリストが自動的に表示されます。</p>
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler1.png" width="450px">
-<p>Assign optional <strong>SpeechConfirmationTooltip.prefab</strong> to display animated confirmation tooltip label on recognition.</p>
+<p>オプションの <strong>SpeechConfirmationTooltip.prefab</strong> を割り当てることによって、認識時にアニメーションする確認用ツールチップ ラベルを表示することができます。</p>
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler2.png">
-<p>Alternatively, developers can implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a> interface in a custom script component to <a href="InputEvents.html#input-event-interface-example">handle speech input events</a>.</p>
-<h2 id="example-scene">Example Scene</h2>
-<p>The <strong>SpeechInputExample</strong> scene, in <code>MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech</code>, shows how to use speech. You can also listen to speech command events directly in your own script by implementing <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a> (see table of <a href="InputEvents.html">event handlers</a>).</p>
+<p>別の方法として、開発者はカスタム スクリプト コンポーネントに <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a> インターフェイスを実装することにより、<a href="InputEvents.html#input-event-interface-example">音声入力イベントを扱う</a>ことができます。</p>
+<h2 id="サンプルシーン">サンプルシーン</h2>
+<p><code>MixedRealityToolkit.Examples\Demos\Input\Scenes\Speech</code> の <strong>SpeechInputExample</strong> シーンでは、音声を扱う方法を見ることができます。また、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html"><code>IMixedRealitySpeechHandler</code></a> を実装することにより、自分のスクリプトで直接音声コマンドを聞き取ることができます(<a href="InputEvents.html">event handlers</a> の表を参照してください)。</p>
 <img src="../../Documentation/Images/Input/SpeechExampleScene.png" width="750px">
 </article>
           </div>
