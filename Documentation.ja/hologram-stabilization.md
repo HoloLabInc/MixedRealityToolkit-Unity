@@ -10,7 +10,7 @@
 
 ## Windows Mixed Reality
 
-Windows Mixed Realityプラットフォームは、プラットフォーム上でホログラムを安定させるための [ホログラムの安定性](https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability) を提供します。開発者がホログラムの視覚体験を改善するために利用できる主要なツールはいくつかあります。
+Windows Mixed Reality プラットフォームは、プラットフォーム上でホログラムを安定させるための[参考資料](https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability)を提供しています。開発者がホログラムの視覚体験を改善するために利用できる主要なツールはいくつかあります。
 
 ### Depth Buffer Sharing (深度バッファの共有)
 
