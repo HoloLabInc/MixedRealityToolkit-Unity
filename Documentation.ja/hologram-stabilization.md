@@ -22,7 +22,7 @@ Unity の開発者はアプリケーションのデプス バッファーをプ�
 
 #### ピクセル単位 vs 安定化平面 LSR
 
-Windows Mixed Reality デバイス上で実行されるデバイスエンドポイントと OS のバージョンに応じて、Late-Stage Reprojection アルゴリズムはピクセル単位または [安定化平面]　(https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability#stabilization-plane) を介して実行されます。
+Windows Mixed Reality デバイス上で動作するデバイス エンドポイントと OS のバージョンに応じて、Late-Stage Reprojection アルゴリズムはピクセル単位または [安定化平面]　(https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability#stabilization-plane) を介して実行されます。
 
 ##### ピクセル単位の depth-based
 
