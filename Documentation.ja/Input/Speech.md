@@ -18,7 +18,7 @@
 
 <img src="../../Documentation/Images/Input/SpeechCommands_SpeechInputHandler2.png">
 
-別の方法として、開発者はカスタム スクリプト コンポーネントに [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) インターフェイスを実装することにより [音声入力イベントを扱う](InputEvents.md#input-event-interface-example) ことができます。
+別の方法として、開発者はカスタム スクリプト コンポーネントに [`IMixedRealitySpeechHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler) インターフェイスを実装することにより、[音声入力イベントを扱う](InputEvents.md#input-event-interface-example)ことができます。
 
 ## サンプルシーン
 
