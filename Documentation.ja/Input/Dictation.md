@@ -8,8 +8,10 @@
 これは、ディクテーションを扱うために、基礎として Windows speech APIs を利用します。
 このことは、この機能が Windows ベースのプラットフォームでのみ存在するということを意味することに注意してください。
 
-ディクテーション システムの利用には、[PlayerSettings の Capabilities セクション](https://docs.unity3d.com/Manual/class-PlayerSettingsWSA.html#Capabilities)にて、「Internet Client」と「Microphone」の機能が必要です。
-Unity での音声入力の詳細は、[Windows Mixed Reality Documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/voice-input-in-unity#dictation) をご覧ください。
+ディクテーション システムの利用には、[PlayerSettings の Capabilities セクション](https://docs.unity3d.com/Manual/class-PlayerSettingsWSA.html#Capabilities)にて、
+「Internet Client」と「Microphone」の機能が必要です。
+Unity での音声入力の詳細は、[Windows Mixed Reality Documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/voice-input-in-unity#dictation) 
+をご覧ください。
 
 ## 設定
 
@@ -26,7 +28,6 @@ Unity での音声入力の詳細は、[Windows Mixed Reality Documentation](htt
 
 ## サンプルシーン
 
-`MixedRealityToolkit.Examples\Demos\Input\Scenes\Dictation` 内の **Dictation** シーンは、`DictationHandler` スクリプトの使い方を示しています。
-より多くの制御が必要であれば、このスクリプトを拡張するか、または [`IMixedRealityDictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationHandler) の独自実装を作ってディクテーション イベントを直接受け取ってください。
+`MixedRealityToolkit.Examples\Demos\Input\Scenes\Dictation` 内の **Dictation** シーンは、`DictationHandler` スクリプトの使い方を示しています。より多くの制御が必要であれば、このスクリプトを拡張するか、または [`IMixedRealityDictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationHandler) の独自実装を作ってディクテーション イベントを直接受け取ってください。
 
 <img src="../../Documentation/Images/Input/DictationDemo.png" width="80%" class="center">
