@@ -1,33 +1,32 @@
-# Dictation
+# Dictation (ディクテーション)
 
-Dictation allows users to record audio clips and obtain a transcription. To use it make sure that a dictation system is registered in the *Input System Profile*. **Windows Dictation Input Provider** is the dictation system provided out of the box but alternative dictation systems can be created implementing [`IMixedRealityDictationSystem`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationSystem).
+ディクテーションにより、ユーザーが音声クリップを録音し、トランスクリプション(書き起こし)を得ることができます。利用するには、*Input System Profile* にディクテーション システムが登録されていることを確認してください。**Windows Dictation Input Provider** はすぐに利用できるディクテーション システムですが、代わりのディクテーション システムは [`IMixedRealityDictationSystem`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationSystem) を実装することで作成できます。
 
-## Requirements
+## 必要条件
 
-The dictation system uses Unity's [DictationRecognizer](https://docs.unity3d.com/ScriptReference/Windows.Speech.DictationRecognizer.html)
-which itself uses the underlying Windows speech APIs for handling dictation. Note that this
-implies that this feature is only present on Windows-based platforms.
+ディクテーション システムは、Unity の [DictationRecognizer](https://docs.unity3d.com/ScriptReference/Windows.Speech.DictationRecognizer.html) を使用します。
+これは、ディクテーションを扱うために、基礎として Windows speech APIs を利用します。
+このことは、この機能が Windows ベースのプラットフォームでのみ存在するということを意味することに注意してください。
 
-Usage of the Dictation system requires both the "Internet Client" and "Microphone" application
-capabilities in the [PlayerSettings - Capabilities section](https://docs.unity3d.com/Manual/class-PlayerSettingsWSA.html#Capabilities).
-See [Windows Mixed Reality Documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/voice-input-in-unity#dictation)
-for more details on voice input in Unity.
+ディクテーション システムの利用には、[PlayerSettings の Capabilities セクション](https://docs.unity3d.com/Manual/class-PlayerSettingsWSA.html#Capabilities)にて、「Internet Client」と「Microphone」の機能が必要です。
+Unity での音声入力の詳細は、[Windows Mixed Reality Documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/voice-input-in-unity#dictation) をご覧ください。
 
-## Configuration
+## 設定
 
 <img src="../../Documentation/Images/Input/DictationDataProvider.png" width="80%" class="center">
 
-Once you have a dictation service set up, you can use the [`DictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.DictationHandler) script to start and stop recording sessions and obtain the transcription results via UnityEvents.
+ディクテーション サービスのセットアップができたら、[`DictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.DictationHandler) スクリプトを使って録音セッションの開始と停止や、UnityEvents を通じた文字起こし結果の取得が可能です。
 
 <img src="../../Documentation/Images/Input/DictationHandler.png" width="80%" class="center">
 
-- **Dictation Hypothesis** is raised as the user speaks with early, rough transcriptions of the audio captured so far.
-- **Dictation Result** is raised at the end of each sentence (i.e. when the user pauses) with the final transcription of the audio captured so far.
-- **Dictation Complete** is raised at the end of the recording session with the full, final transcription of the audio.
-- **Dictation Error** is raised to inform of errors in the dictation service. The transcription in this case contains a description of the error.
+- **Dictation Hypothesis** は、ユーザーが話すにつれて、これまでキャプチャされた音声の初期の粗いトランスクリプションとともに発生されます。
+- **Dictation Result** は、各センテンスの終わり (すなわち、ユーザーが間を置いたとき) に、これまでキャプチャされた音声の最終トランスクリプションとともに発生されます。
+- **Dictation Complete** は、録音セッションの最後に、音声のすべての最終トランスクリプションとともに発生されます。
+- **Dictation Error** はディクテーション サービスでのエラーを通知するために発生されます。この場合のトランスクリプションには、エラーの説明が含まれています。
 
-## Example Scene
+## サンプルシーン
 
-**Dictation** scene in `MixedRealityToolkit.Examples\Demos\Input\Scenes\Dictation` shows the `DictationHandler` script in use. If you need more control, you can either extend this script or create your own implementing [`IMixedRealityDictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationHandler) to receive dictation events directly.
+`MixedRealityToolkit.Examples\Demos\Input\Scenes\Dictation` 内の **Dictation** シーンは、`DictationHandler` スクリプトの使い方を示しています。
+より多くの制御が必要であれば、このスクリプトを拡張するか、または [`IMixedRealityDictationHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationHandler) の独自実装を作ってディクテーション イベントを直接受け取ってください。
 
 <img src="../../Documentation/Images/Input/DictationDemo.png" width="80%" class="center">
