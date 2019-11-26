@@ -1,63 +1,64 @@
-# Gestures
+# ジェスチャ
 
-Gestures are input events based on human hands. There are two types of devices that raise gesture input events in MRTK:
+ジェスチャは人の手に基づいた入力イベントです。MRTK にはジェスチャ入力イベントを発生させる2種類のデバイスがあります。
 
-- Windows Mixed Reality devices such as HoloLens. This describes pinching motions ("Air Tap") and tap-and-hold gestures.
+- HoloLens のような Windows Mixed Reality デバイス。これは、ピンチ動作 (「エア タップ」) とタップ & ホールド ジェスチャを扱います。
+  HoloLens のジェスチャに関するより多くの情報は、[Windows Mixed Reality Gestures ドキュメント](https://docs.microsoft.com/ja-jp/windows/mixed-reality/gestures) をご覧ください。
 
-  For more information on HoloLens gestures see the [Windows Mixed Reality Gestures documentation](https://docs.microsoft.com/en-us/windows/mixed-reality/gestures).
+  [`WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager) は、HoloLens デバイスからの Unity のジェスチャ イベントを利用するために、[Unity XR.WSA.Input.GestureRecognizer](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.GestureRecognizer.html) をラップしています。
 
-  [`WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager) wraps the [Unity XR.WSA.Input.GestureRecognizer](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.GestureRecognizer.html) to consume Unity's gesture events from HoloLens devices.
+- タッチ スクリーン デバイス。
 
-- Touch screen devices.
+  [`UnityTouchController`](xref:Microsoft.MixedReality.Toolkit.Input.UnityInput) は、物理的なタッチ スクリーンをサポートする [Unity Touch class](https://docs.unity3d.com/ScriptReference/Touch.html) をラップしています。
 
-  [`UnityTouchController`](xref:Microsoft.MixedReality.Toolkit.Input.UnityInput) wraps the [Unity Touch class](https://docs.unity3d.com/ScriptReference/Touch.html) that supports physical touch screens.
-
-Both of these input sources use the _Gesture Settings_ profile to translate Unity's Touch and Gesture events respectively into MRTK's [Input Actions](InputActions.md). This profile can be found under the _Input System Settings_ profile.
+これらの入力ソースの両方で、Unity の Touch と Gesture イベントを MRTK の [Input Actions (入力アクション)](InputActions.md) にそれぞれ変換するため、 _Gesture Settings_ プロファイルを使用します。
 
 <img src="../../Documentation/Images/Input/GestureProfile.png" style="max-width:100%;">
 
-## Gesture Events
+## Gesture Events (ジェスチャ イベント)
 
-Gesture events are received by implementing one of the gesture handler interfaces: [`IMixedRealityGestureHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler) or [`IMixedRealityGestureHandler<TYPE>`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler`1) (see table of [event handlers](InputEvents.md)).
+ジェスチャ イベントは、以下のジェスチャ ハンドラー インターフェイスの1つを実装したものによって、受け取られます。
+[`IMixedRealityGestureHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler) または [`IMixedRealityGestureHandler<TYPE>`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler`1) ([イベント ハンドラー](InputEvents.md) の表をご覧ください).
 
-See [Example Scene](#example-scene) for an example implementation of a gesture event handler.
+ジェスチャ イベント ハンドラーの実装例については、[サンプル シーン](#サンプル-シーン) をご覧ください。
+
 
 When implementing the generic version, the *OnGestureCompleted* and *OnGestureUpdated* events can receive typed data of the following types:
 
-- `Vector2` - 2D position gesture. Produced by touch screens to inform of their [`deltaPosition`](https://docs.unity3d.com/ScriptReference/Touch-deltaPosition.html).
-- `Vector3` - 3D position gesture. Produced by HoloLens to inform of:
-  - [`cumulativeDelta`](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.ManipulationUpdatedEventArgs-cumulativeDelta.html) of a manipulation event
-  - [`normalizedOffset`](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.NavigationUpdatedEventArgs-normalizedOffset.html) of a navigation event
-- `Quaternion` - 3D rotation gesture. Available to custom input sources but not currently produced by any of the existing ones.
-- `MixedRealityPose` - Combined 3D position/rotation gesture. Available to custom input sources but not currently produced by any of the existing ones.
+- `Vector2` - 2D 位置のジェスチャ。タッチ スクリーンによって、[`deltaPosition`](https://docs.unity3d.com/ScriptReference/Touch-deltaPosition.html) を通知するために生成される。
+- `Vector3` - 3D 位置のジェスチャ。HoloLens によって、以下を通知するために生成される。
+  - マニピュレーション イベントの [`cumulativeDelta`](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.ManipulationUpdatedEventArgs-cumulativeDelta.html)
+  - ナビゲーション イベントの [`normalizedOffset`](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.NavigationUpdatedEventArgs-normalizedOffset.html)
+- `Quaternion` - 3D 回転のジェスチャ。カスタムの入力ソースで利用可能だが、現在は存在するどの入力ソースからも生成されていない。
+- `MixedRealityPose` - 3D 位置と回転が組み合わさったジェスチャ。カスタムの入力ソースで利用可能だが、現在は存在するどの入力ソースからも生成されていない。
 
-## Order of events
+## イベントの順序
 
 There are two principal chains of events, depending on user input:
 
 - "Hold":
     1. Hold tap:
-        * start _Manipulation_
+        * _Manipulation_ 開始
     1. Hold tap beyond [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration):
-        * start _Hold_
+        * _Hold_ 開始
     1. Release tap:
-        * complete _Hold_
-        * complete _Manipulation_
+        * _Hold_ 完了
+        * _Manipulation_ 完了
 
 - "Move":
     1. Hold tap:
-        * start _Manipulation_
+        * _Manipulation_ 開始
     1. Hold tap beyond [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration):
-        * start _Hold_
+        * _Hold_ 開始
     1. Move hand beyond [NavigationStartThreshold](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.NavigationStartThreshold):
-        * cancel _Hold_
-        * start _Navigation_
+        * _Hold_ キャンセル
+        * _Navigation_ 開始
     1. Release tap:
-        * complete _Manipulation_
-        * complete _Navigation_
+        * _Manipulation_ 完了
+        * _Navigation_ 完了
 
-## Example Scene
+## サンプル シーン
 
-The **HandInteractionGestureEventsExample** scene in `MixedRealityToolkit.Examples\Demos\HandTracking\Scenes` shows how to use the pointer Result to spawn an object at the hit location.
+`MixedRealityToolkit.Examples\Demos\HandTracking\Scenes` 内の **HandInteractionGestureEventsExample** シーンでは、ポインターの結果を使って、オブジェクトをヒットした位置に生成する方法を示しています。
 
-[Gesture Tester script](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Script/GestureTester.cs) is an example implementation to visualize gesture events via GameObjects. The handler functions change the color of indicator objects and display the last recorded event in text objects in the scene.
+[Gesture Tester script](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Script/GestureTester.cs) は、ジェスチャ イベントを GameObject を介して可視化する実装例です。このハンドラー 関数はインジケーター オブジェクトの色を変え、最後に記録されたイベントをシーンのテキスト オブジェクトに表示します。
