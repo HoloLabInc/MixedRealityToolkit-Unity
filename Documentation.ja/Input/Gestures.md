@@ -22,8 +22,7 @@
 
 ジェスチャ イベント ハンドラーの実装例については、[サンプル シーン](#サンプル-シーン) をご覧ください。
 
-
-When implementing the generic version, the *OnGestureCompleted* and *OnGestureUpdated* events can receive typed data of the following types:
+汎用のバージョンを実装する場合、*OnGestureCompleted* と *OnGestureUpdated* イベントは、以下の型のデータを受け取ることができます。
 
 - `Vector2` - 2D 位置のジェスチャ。タッチ スクリーンによって、[`deltaPosition`](https://docs.unity3d.com/ScriptReference/Touch-deltaPosition.html) を通知するために生成される。
 - `Vector3` - 3D 位置のジェスチャ。HoloLens によって、以下を通知するために生成される。
@@ -34,26 +33,26 @@ When implementing the generic version, the *OnGestureCompleted* and *OnGestureUp
 
 ## イベントの順序
 
-There are two principal chains of events, depending on user input:
+ユーザーの入力に応じて、2つの主なイベントのチェーンがあります。
 
-- "Hold":
-    1. Hold tap:
+- "Hold (ホールド)":
+    1. タップをホールド:
         * _Manipulation_ 開始
-    1. Hold tap beyond [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration):
+    1. [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration) を超えてタップをホールド:
         * _Hold_ 開始
-    1. Release tap:
+    1. タップをリリース:
         * _Hold_ 完了
         * _Manipulation_ 完了
 
-- "Move":
-    1. Hold tap:
+- "Move (動かす)":
+    1. タップをホールド:
         * _Manipulation_ 開始
-    1. Hold tap beyond [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration):
+    1. [HoldStartDuration](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.HoldStartDuration) を超えてタップをホールド:
         * _Hold_ 開始
-    1. Move hand beyond [NavigationStartThreshold](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.NavigationStartThreshold):
+    1. [NavigationStartThreshold](xref:Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.NavigationStartThreshold) を超えて手を動かす:
         * _Hold_ キャンセル
         * _Navigation_ 開始
-    1. Release tap:
+    1. タップをリリース:
         * _Manipulation_ 完了
         * _Navigation_ 完了
 
