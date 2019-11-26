@@ -3,6 +3,7 @@
 ジェスチャは人の手に基づいた入力イベントです。MRTK にはジェスチャ入力イベントを発生させる2種類のデバイスがあります。
 
 - HoloLens のような Windows Mixed Reality デバイス。これは、ピンチ動作 (「エア タップ」) とタップ & ホールド ジェスチャを扱います。
+
   HoloLens のジェスチャに関するより多くの情報は、[Windows Mixed Reality Gestures ドキュメント](https://docs.microsoft.com/ja-jp/windows/mixed-reality/gestures) をご覧ください。
 
   [`WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager) は、HoloLens デバイスからの Unity のジェスチャ イベントを利用するために、[Unity XR.WSA.Input.GestureRecognizer](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.GestureRecognizer.html) をラップしています。
@@ -17,8 +18,7 @@
 
 ## Gesture Events (ジェスチャ イベント)
 
-ジェスチャ イベントは、以下のジェスチャ ハンドラー インターフェイスの1つを実装したものによって、受け取られます。
-[`IMixedRealityGestureHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler) または [`IMixedRealityGestureHandler<TYPE>`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler`1) ([イベント ハンドラー](InputEvents.md) の表をご覧ください).
+ジェスチャ イベントは、以下のジェスチャ ハンドラー インターフェイスの1つを実装したものによって、受け取られます。[`IMixedRealityGestureHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler) または [`IMixedRealityGestureHandler<TYPE>`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler`1) ([イベント ハンドラー](InputEvents.md) の表をご覧ください).
 
 ジェスチャ イベント ハンドラーの実装例については、[サンプル シーン](#サンプル-シーン) をご覧ください。
 
