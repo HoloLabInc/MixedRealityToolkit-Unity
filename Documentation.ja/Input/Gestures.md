@@ -12,7 +12,7 @@
 
   [`UnityTouchController`](xref:Microsoft.MixedReality.Toolkit.Input.UnityInput) は、物理的なタッチ スクリーンをサポートする [Unity Touch class](https://docs.unity3d.com/ScriptReference/Touch.html) をラップしています。
 
-これらの入力ソースの両方で、Unity の Touch と Gesture イベントを MRTK の [Input Actions (入力アクション)](InputActions.md) にそれぞれ変換するため、 _Gesture Settings_ プロファイルを使用します。
+これらの入力ソースの両方で、Unity の Touch と Gesture イベントを MRTK の [Input Actions (入力アクション)](InputActions.md) にそれぞれ変換するため、 _Gesture Settings_ プロファイルを使用します。このプロファイルは、_Input System Settings_ プロファイルの下にあります。
 
 <img src="../../Documentation/Images/Input/GestureProfile.png" style="max-width:100%;">
 
