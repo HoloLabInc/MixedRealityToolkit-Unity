@@ -94,7 +94,7 @@ Shader "Custom/MyShader"
 HoloLens のようなデバイスは常に環境をスキャンし、学習しています。そのため、HoloLens が空間での動きと位置を追跡すると、予測値が更新され、 [Unity 座標系](https://docs.microsoft.com/en-us/windows/mixed-reality/coordinate-systems-in-unity) が更新されます。例えば、最初にカメラから 1 m 離れたところに GameObject を配置した場合、HoloLens は環境を追跡するため、GameObject が配置されている物理的なポイントが実際には 1.1 m 離れていることを認識する場合があります。これにより、ホログラムがドリフトします。GameObject にワールドアンカーを適用すると、アンカーがオブジェクトの変換を制御できるようになり、オブジェクトが正しい物理的位置 (例：実行時に 1 m ではなく 1.1 m に更新) に残るようになります。[WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) をアプリのセッション間で維持するために、開発者は [WorldAnchorStore](https://docs.unity3d.com/ScriptReference/XR.WSA.Persistence.WorldAnchorStore.html) から [Unity での永続化](https://docs.microsoft.com/ja-jp/windows/mixed-reality/persistence-in-unity) を使用できます。
 
 > [!NOTE]
-> いったん WorldAnchor コンポーネントが GameObject に追加されると、その GameObject のトランスフォーム (例： transform.position = x) を変更することはできません。変換を編集するには、WorldAnchor を削除する必要があります。
+> いったん WorldAnchor コンポーネントが GameObject に追加されると、その GameObject の Transform を変更する (すなわち、transform.position = x) ことはできません。Transform を編集するには、WorldAnchor を削除する必要があります。
 
 ```csharp
 WorldAnchor m_anchor;
