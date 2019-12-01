@@ -135,7 +135,7 @@ HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、
 
 <br>
 
-MRTK によるアイトラッキングのサンプル シーンを機能させる方法を理解したところで、次は目でホログラムを選択する方法について詳しく見ていきましょう: [Eye-supported target selection](EyeTracking_TargetSelection.md).
+MRTK によるアイ トラッキングのサンプル シーンを機能させる方法を理解したところで、次は目でホログラムを選択する方法について詳しく見ていきましょう: [Eye-supported target selection](EyeTracking_TargetSelection.md)。
 
 ---
 ["MixedRealityToolkit のアイ トラッキング" に戻る](EyeTracking_Main.md)
