@@ -64,7 +64,7 @@ Text Mesh Pro オブジェクトの場合は、TMP GameObject を選択してイ
 
 ![Text Mesh Pro Depth Buffer Fix](../Documentation/Images/Performance/TextMeshPro-DepthBuffer-Fix.PNG)
 
-##### カスタム シェーダ
+##### カスタム シェーダー
 
 カスタムシェーダを記述する場合は、[ZWrite flag](https://docs.unity3d.com/Manual/SL-CullAndDepth.html) を *Pass* ブロック定義の一番上に追加し、シェーダが depth バッファに書き込むように設定します。
 
