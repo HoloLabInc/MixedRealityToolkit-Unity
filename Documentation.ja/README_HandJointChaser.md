@@ -8,7 +8,7 @@
 
 ## ソルバ ハンドラ
  **Tracked Object To Reference** をクリックし、**Hand Joint Left** または **Hand Joint Right** を選択します。**Tracked Hand Joint** ドロップ ダウンが表示されます。ドロップ ダウン リストから、トラックする特定のジョイントを選択できます。
-この例のシーンでは、放射状 ビュー ソルバを使用して、オブジェクトをターゲット オブジェクトに追従させます。詳細については、[Solver](README_Solver.md) ページを参照してください。
+このサンプル シーンでは、Radial View Solver を使用して、オブジェクトをターゲット オブジェクトに追従させます。詳細については、[Solver](README_Solver.md) ページを参照してください。
 
 
 ![](../Documentation/Images/HandJointChaser/MRTK_Solver_HandJoint.jpg)
