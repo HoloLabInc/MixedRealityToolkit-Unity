@@ -36,7 +36,7 @@ Windows Mixed Reality デバイス上で動作するデバイス エンドポイ
 
 HoloLens を開発のターゲットとする場合は、24 ビットよりも 16 ビット デプス バッファー フォーマットを使用することを強くお勧めします。これにより、デプス値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補い [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) を回避するには、[far clip plane](https://docs.unity3d.com/Manual/class-Camera.html) の値を Unity で設定されているデフォルト値の 1000m から減らすことをお勧めします。 
 
-#### Unity での Depth Buffer Sharing
+#### Unity での Depth Buffer Sharing (デプス バッファー シェアリング)
 
 depth ベース LSR を利用するために、開発者が取る必要のある2つの重要なステップがあります。
 
