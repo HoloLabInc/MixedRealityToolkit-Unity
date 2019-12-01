@@ -1,6 +1,6 @@
 # Hand Joint Chaser Example
 ![](../Documentation/Images/HandJointChaser/MRTK_HandJointChaser_Main.jpg)
-このサンプルシーンでは、Solver (ソルバ) を使用して手のジョイントにオブジェクトをアタッチする方法を示します。
+このサンプルシーンでは、Solver (ソルバー) を使用して手のジョイントにオブジェクトをアタッチする方法を示します。
 
 ## サンプル シーン
 サンプル シーン **HandJointChaserExample** シーンは、次の場所にあります:
@@ -12,4 +12,3 @@
 
 
 ![](../Documentation/Images/HandJointChaser/MRTK_Solver_HandJoint.jpg)
-
