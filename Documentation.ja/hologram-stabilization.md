@@ -60,7 +60,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 ##### Text Mesh Pro
 
-Text Mesh Pro オブジェクトの場合は、TMP GameObject を選択してインスペクタに表示します。マテリアル コンポーネントの下で、割り当てられたマテリアルのシェーダを切り替えて MRTK TextMeshPro シェーダを使用します。
+Text Mesh Pro オブジェクトの場合は、TMP GameObject を選択してインスペクターに表示します。マテリアル コンポーネントの下で、割り当てられたマテリアルのシェーダーを MRTK TextMeshPro シェーダーを使用するように切り替えます。
 
 ![Text Mesh Pro Depth Buffer Fix](../Documentation/Images/Performance/TextMeshPro-DepthBuffer-Fix.PNG)
 
