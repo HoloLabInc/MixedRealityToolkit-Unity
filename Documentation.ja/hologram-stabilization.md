@@ -42,7 +42,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 1. **Edit** > **Project Settings** > **Player** > **XR Settings** > **Virtual Reality SDKs** 配下の **Depth Buffer Sharing** を有効にします。
     1. HoloLens をターゲットとする場合は、**16-bit depth format** も選択することをお勧めします。
-1. 画面上でカラーをレンダリングする場合は、レンダリング深度も同様にレンダリングします。
+1. 画面上でカラーをレンダリングする場合は、デプスも同様にレンダリングします。
 
 Unity の [Opaque GameObjects](https://docs.unity3d.com/Manual/StandardShaderMaterialParameterRenderingMode.html) は、depth を自動的に書き込みます。ただし、透明およびテキスト オブジェクトは、通常、規定では depth 方向に書き込まれません。MRTK 標準シェーダ、または、Text Mesh Pro を使用している場合は、簡単に修正できます。
 
