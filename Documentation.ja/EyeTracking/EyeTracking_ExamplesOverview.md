@@ -82,7 +82,7 @@ _MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) に�
 ![Example for the OnLoadStartScene script](../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg)
 
 
-### 2. ビルドメニューへのシーン追加
+### 2. ビルド メニューへのシーン追加
 追加のシーンを実行時にロードするには、最初にこれらのシーンを  _Build Settings -> Scenes in Build_ に追加する必要があります。
 ルートシーンをリストの最初のシーンとして表示することが重要です。
 
