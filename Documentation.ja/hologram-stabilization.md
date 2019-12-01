@@ -24,7 +24,7 @@ Unity の開発者はアプリケーションのデプス バッファーをプ�
 
 Windows Mixed Reality デバイス上で動作するデバイス エンドポイントと OS のバージョンに応じて、Late-Stage Reprojection アルゴリズムはピクセル単位または [安定化平面]　(https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability#stabilization-plane) を介して実行されます。
 
-##### ピクセル単位の depth-based
+##### ピクセルごとのデプス ベース
 
 画素毎の深さに基づく reprojection は、depth バッファを利用して画素毎の画像出力を修正し、従って様々な距離でホログラムを安定化することを含みます。例えば、1 m 離れた球が 10 m 離れた柱の前にあるとします。ユーザがヘッドにわずかなタイトルを付けた場合、球を表すピクセルは、柱を表す遠くのピクセルとは異なる変換を持ちます。ピクセル単位の再投影では、より正確な再投影のために、各ピクセルでのこの距離差が考慮されます。
 
