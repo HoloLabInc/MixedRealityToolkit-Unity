@@ -66,7 +66,7 @@ MRTK アイトラッキングのデモシーンは、[loaded additively](https:/
 
 デバイス上でアイ トラッキング サンプルを使用するには、HoloLens 2 と、パッケージの AppXManifest で "Gaze Input (視線入力)" の機能を有効にしてビルドしたサンプル アプリ パッケージが必要なことに注意してください。
 
-これらのアイトラッキング サンプルをデバイスで使用するには、Visual Studioでアプリをビルドする前に、 [次のステップ](EyeTracking_BasicSetup.md#testing-your-unity-app-on-a-hololens-2) の手順に従ってください。
+これらのアイ トラッキング サンプルをデバイスで使用するには、Visual Studio でアプリをビルドする前に、 [これらのステップ](EyeTracking_BasicSetup.md#testing-your-unity-app-on-a-hololens-2) に従ってください。
 
 ### 1. EyeTrackingDemo-00-RootScene.unity をロード
 *EyeTrackingDemo-00-RootScene* は、すべてのコア MRTK コンポーネントを含むベース (_root_) シーンです。
