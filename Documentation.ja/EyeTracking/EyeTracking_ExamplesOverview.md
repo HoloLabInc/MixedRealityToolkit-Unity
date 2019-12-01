@@ -10,7 +10,7 @@
 ![List of eye tracking scenes](../../Documentation/Images/EyeTracking/mrtk_et_list_et_scenes.jpg)
 
 まず、個々のアイ トラッキングのデモ シーンがどのようなものか、概要を簡単に説明します。
-MRTK アイトラッキングのデモシーンは、[loaded additively](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html) になるので、そのための設定方法を以下に説明します。
+MRTK アイ トラッキングのデモ シーンは、[追加でロードされる](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html)ので、そのセット アップ方法をその次に説明します。
 
 ## アイ トラッキング デモ サンプルの概要
 
