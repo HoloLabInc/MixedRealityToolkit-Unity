@@ -54,7 +54,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 ![Depth Buffer Before Fix MRTK Standard Shader](../Documentation/Images/Performance/DepthBufferFixNow_Before.png)
 
-変換後
+変更後
 
 ![Depth Buffer Fixed MRTK Standard Shader](../Documentation/Images/Performance/DepthBufferFixNow_After.png)
 
