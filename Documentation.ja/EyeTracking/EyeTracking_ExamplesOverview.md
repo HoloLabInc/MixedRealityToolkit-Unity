@@ -95,7 +95,7 @@ _MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) に�
 ![Example for the OnLoad_StartScene script](../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg)
 
 さあ、 _"Play"_ ボタンをクリックしましょう！
-複数の宝石が表示され、上部にシーンメニューが表示されます。
+複数の宝石が表示され、上部にシーン メニューが表示されます。
 
 ![Sample screenshot from the ET target select scene](../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png)
 
