@@ -99,7 +99,7 @@ _MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) に�
 
 ![Sample screenshot from the ET target select scene](../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png)
 
-ゲームビューの中央に小さな半透明の円が表示されます。 
+ゲーム ビューの中央に小さな半透明の円が表示されます。 
 これは、_視線をシミュレート_ したインジケータ (カーソル) として動作します。
 _マウスの右ボタン_ を押し、マウスを移動してその位置を変更するだけです。 
 カーソルを宝石の上に移動すると、現在見ている宝石の中心にスナップします。 
