@@ -30,7 +30,7 @@ Windows Mixed Reality デバイス上で動作するデバイス エンドポイ
 
 ##### 安定化平面
 
-プラットフォームと共有する正確な depth バッファを作成できない場合、別の形式の LSR は安定化平面を使用します。シーン内のすべてのホログラムにはある程度の安定化が適用されますが、目的の平面にあるホログラムには最大のハードウェア安定化が適用されます。平面の点と法線は、*HolographicSettings.SetFocusPointForFrame* [Unity のフォーカスポイント](https://docs.microsoft.com/ja-jp/windows/mixed-reality/focus-point-in-unity) を使用してプラットフォームに提供できます。
+プラットフォームと共有する正確なデプス バッファーを作成できない場合、別の形式の LSR は安定化平面を使用します。シーン内のすべてのホログラムにはある程度の安定化が適用されますが、目的の平面にあるホログラムには最大のハードウェア安定化が適用されます。平面の点と法線は、[Unity で提供される API の](https://docs.microsoft.com/ja-jp/windows/mixed-reality/focus-point-in-unity)  *HolographicSettings.SetFocusPointForFrame* を介してプラットフォームに提供されます。
 
 #### Depth バッファ フォーマット
 
