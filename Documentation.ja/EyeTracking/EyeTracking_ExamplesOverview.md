@@ -12,7 +12,7 @@
 まず、個々のアイトラッキングのデモシーンについて簡単に説明します。
 MRTK アイトラッキングのデモシーンは、[loaded additively](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html) になるので、そのための設定方法を以下に説明します。
 
-## アイトラッキング デモ サンプルの概要
+## アイ トラッキング デモ サンプルの概要
 
 ### [**目で操作できるターゲット選択**](EyeTracking_TargetSelection.md)
 
