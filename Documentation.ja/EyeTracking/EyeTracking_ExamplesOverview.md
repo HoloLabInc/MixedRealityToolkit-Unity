@@ -71,7 +71,7 @@ MRTK アイトラッキングのデモシーンは、[loaded additively](https:/
 ### 1. EyeTrackingDemo-00-RootScene.unity をロード
 *EyeTrackingDemo-00-RootScene* は、すべてのコア MRTK コンポーネントを含むベース (_root_) シーンです。
 これは最初にロードする必要があるシーンで、ここからアイ トラッキングのデモを実行します。 
-サンプルに同梱されているグラフィカルなシーンメニューを使用すると [loaded additively](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html) に対する、さまざまなアイトラッキング サンプルを簡単に切り替えることができます。
+グラフィカルなシーン メニューを使用すると、さまざまなアイ トラッキング サンプルを[追加でロード](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html)して簡単に切り替えることができます。
 
 ![Scene menu in eye tracking sample](../../Documentation/Images/EyeTracking/mrtk_et_scenemenu.jpg)
 
