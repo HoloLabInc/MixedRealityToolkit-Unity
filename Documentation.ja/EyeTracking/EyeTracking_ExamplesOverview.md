@@ -76,7 +76,7 @@ MRTK アイ トラッキングのデモ シーンは、[追加でロードされ
 ![Scene menu in eye tracking sample](../../Documentation/Images/EyeTracking/mrtk_et_scenemenu.jpg)
 
 ルート シーンには、MRTK の設定プロファイルやシーン カメラなど、追加でロードするシーン全体で存続するいくつかのコア コンポーネントが含まれています。 
-_MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) には、起動時にリファレンスシーンを自動的にロードするスクリプトが含まれています。 
+_MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) には、起動時に参照されたシーンを自動的にロードするスクリプトが含まれています。 
 デフォルトでは、_EyeTrackingDemo-02-TargetSelection_です。
 
 ![Example for the OnLoadStartScene script](../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg)
