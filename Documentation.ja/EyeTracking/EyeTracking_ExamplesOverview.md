@@ -123,7 +123,7 @@ HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、
 問題ありません！ 次のようにしてください。
 1. _root_ シーンをロードします。
 2. _root_ シーンで、 _'OnLoadStartScene'_ スクリプトを無効にします。 
-3. 以下に説明するアイトラッキング テスト シーンのいずれか（またはその他のシーン） を下のスクリーンショットに示すように _Hierarchy_ ビューに _ドラッグ＆ドロップ_ します。
+3. 以下に説明するアイ トラッキング テスト シーンのいずれか（またはその他のシーン） を下のスクリーンショットに示すように _Hierarchy_ ビューに _ドラッグ & ドロップ_ します。
 
 ![Example for additive scene](../../Documentation/Images/EyeTracking/mrtk_et_additivescene.jpg)
 
