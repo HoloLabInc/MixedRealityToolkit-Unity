@@ -34,7 +34,7 @@ Windows Mixed Reality デバイス上で動作するデバイス エンドポイ
 
 #### Depth バッファ フォーマット
 
-HoloLens を開発に使用する場合は、24 ビットよりも 16 ビット depth バッファ フォーマットを使用することを強くお勧めします。これにより、depth 値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補正して [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) を回避するには、Unity で設定されている 1000m のデフォルト値から [far clip plane](https://docs.unity3d.com/Manual/class-Camera.html) を減らすことをお勧めします。
+HoloLens を開発のターゲットとする場合は、24 ビットよりも 16 ビット デプス バッファー フォーマットを使用することを強くお勧めします。これにより、デプス値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補い [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) を回避するには、[far clip plane](https://docs.unity3d.com/Manual/class-Camera.html) の値を Unity で設定されているデフォルト値の 1000m から減らすことをお勧めします。 
 
 #### Unity での Depth Buffer Sharing
 
