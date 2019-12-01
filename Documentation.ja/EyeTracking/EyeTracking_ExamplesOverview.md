@@ -69,7 +69,7 @@ MRTK アイ トラッキングのデモ シーンは、[追加でロードされ
 これらのアイ トラッキング サンプルをデバイスで使用するには、Visual Studio でアプリをビルドする前に、 [これらのステップ](EyeTracking_BasicSetup.md#testing-your-unity-app-on-a-hololens-2) に従ってください。
 
 ### 1. EyeTrackingDemo-00-RootScene.unity をロード
-*EyeTrackingDemo-00-RootScene* は、すべてのコア MRTK コンポーネントを含むベース (_root_) シーンです。
+*EyeTrackingDemo-00-RootScene* は、すべてのコア MRTK コンポーネントを含むベース (_ルート_) シーンです。
 これは最初にロードする必要があるシーンで、ここからアイ トラッキングのデモを実行します。 
 グラフィカルなシーン メニューを使用すると、さまざまなアイ トラッキング サンプルを[追加でロード](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html)して簡単に切り替えることができます。
 
