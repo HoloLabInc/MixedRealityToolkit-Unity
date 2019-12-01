@@ -64,7 +64,7 @@ MRTK アイトラッキングのデモシーンは、[loaded additively](https:/
 
 ### 前提条件
 
-デバイス上でアイトラッキング サンプルを使用するには、HoloLens 2 が必要で、さらに、ビルドには、サンプルアプリの Package.appxmanifest で "視線入力"　の機能を使用できるように指定する必要があります。
+デバイス上でアイ トラッキング サンプルを使用するには、HoloLens 2 と、パッケージの AppXManifest で "Gaze Input (視線入力)" の機能を有効にしてビルドしたサンプル アプリ パッケージが必要なことに注意してください。
 
 これらのアイトラッキング サンプルをデバイスで使用するには、Visual Studioでアプリをビルドする前に、 [次のステップ](EyeTracking_BasicSetup.md#testing-your-unity-app-on-a-hololens-2) の手順に従ってください。
 
