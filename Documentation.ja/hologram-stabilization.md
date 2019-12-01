@@ -40,7 +40,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 depth ベース LSR を利用するために、開発者が取る必要のある2つの重要なステップがあります。
 
-1. **Edit** > **Project Settings** > **Player** > **XR Settings** > **Virtual Reality SDKs** > Enable **Depth Buffer Sharing** 配下
+1. **Edit** > **Project Settings** > **Player** > **XR Settings** > **Virtual Reality SDKs** 配下の **Depth Buffer Sharing** を有効にします。
     1. HoloLens ターゲットする場合は、**16-bit depth format** も選択することをお勧めします
 1. 画面上でカラーをレンダリングする場合は、レンダリング深度も同様にレンダリングします。
 
