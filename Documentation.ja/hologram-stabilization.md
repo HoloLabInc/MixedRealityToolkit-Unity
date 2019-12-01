@@ -32,7 +32,7 @@ Windows Mixed Reality デバイス上で動作するデバイス エンドポイ
 
 プラットフォームと共有する正確なデプス バッファーを作成できない場合、別の形式の LSR は安定化平面を使用します。シーン内のすべてのホログラムにはある程度の安定化が適用されますが、目的の平面にあるホログラムには最大のハードウェア安定化が適用されます。平面の点と法線は、[Unity で提供される API の](https://docs.microsoft.com/ja-jp/windows/mixed-reality/focus-point-in-unity)  *HolographicSettings.SetFocusPointForFrame* を介してプラットフォームに提供されます。
 
-#### Depth バッファ フォーマット
+#### デプス バッファー フォーマット
 
 HoloLens を開発のターゲットとする場合は、24 ビットよりも 16 ビット デプス バッファー フォーマットを使用することを強くお勧めします。これにより、デプス値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補い [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) を回避するには、[far clip plane](https://docs.unity3d.com/Manual/class-Camera.html) の値を Unity で設定されているデフォルト値の 1000m から減らすことをお勧めします。 
 
