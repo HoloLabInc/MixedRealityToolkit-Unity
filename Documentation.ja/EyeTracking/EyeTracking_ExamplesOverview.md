@@ -90,7 +90,7 @@ _MixedRealityBasicSceneSetup_ (以下のスクリーンショット参照) に�
 
 
 ### 3. Unity Editor でアイ トラッキング サンプルを再生
-[Build Settings] にアイトラッキング シーンを追加し、 _EyeTrackingDemo-00-RootScene_ をロードした後、最後に確認することがあります。_MixedRealityBasicSceneSetup_ ゲームオブジェクトにアタッチされている_'OnLoadStartScene'_ スクリプトは有効でしょうか？このスクリプトの有効化は、最初にロードするデモシーンをルートシーンに知らせるために必要です。
+[Build Settings] にアイ トラッキング シーンを追加し、 _EyeTrackingDemo-00-RootScene_ をロードした後、最後に確認することがあります。_MixedRealityBasicSceneSetup_ ゲームオブジェクトにアタッチされている _'OnLoadStartScene'_ スクリプトは有効でしょうか？ このスクリプトは、最初にロードするデモ シーンをルート シーンに知らせます。
 
 ![Example for the OnLoad_StartScene script](../../Documentation/Images/EyeTracking/mrtk_et_onloadstartscene.jpg)
 
