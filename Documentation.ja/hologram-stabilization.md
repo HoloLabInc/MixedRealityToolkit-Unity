@@ -89,7 +89,7 @@ Shader "Custom/MyShader"
 
 ### ワールドアンカー (HoloLens)
 
-視覚的な安定性を確保するために正しい構成を確実にするとともに、ホログラムが正しい物理的位置で安定していることを確実にすることが重要です。物理的なスペースの重要な場所についてプラットフォームに通知するために、開発者はGameObjectsの [WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) を活用することができます。[WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) は、GameObject に追加されるコンポーネントで、オブジェクトの変形を完全に制御します。
+視覚的な安定性を確保するための正しい設定がなされていることを確実にするとともに、ホログラムが正しい物理的位置で安定することを確実にすることが重要です。物理空間での重要な場所についてプラットフォームに通知するために、開発者はある場所に留まる必要がある GameObjects で  [WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) を活用することができます。[WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) は、GameObject に追加されるコンポーネントで、オブジェクトの Transform を完全に制御します。
 
 HoloLens のようなデバイスは常に環境をスキャンし、学習しています。そのため、HoloLens が空間での動きと位置を追跡すると、予測値が更新され、 [Unity 座標系](https://docs.microsoft.com/en-us/windows/mixed-reality/coordinate-systems-in-unity) が更新されます。例えば、最初にカメラから 1 m 離れたところに GameObject を配置した場合、HoloLens は環境を追跡するため、GameObject が配置されている物理的なポイントが実際には 1.1 m 離れていることを認識する場合があります。これにより、ホログラムがドリフトします。GameObject にワールドアンカーを適用すると、アンカーがオブジェクトの変換を制御できるようになり、オブジェクトが正しい物理的位置 (例：実行時に 1 m ではなく 1.1 m に更新) に残るようになります。[WorldAnchors](https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html) をアプリのセッション間で維持するために、開発者は [WorldAnchorStore](https://docs.unity3d.com/ScriptReference/XR.WSA.Persistence.WorldAnchorStore.html) から [Unity での永続化](https://docs.microsoft.com/ja-jp/windows/mixed-reality/persistence-in-unity) を使用できます。
 
