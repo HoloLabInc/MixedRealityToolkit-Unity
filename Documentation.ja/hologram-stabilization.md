@@ -48,7 +48,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 ##### Transparent MRTK 標準 シェーダ
 
-[MRTK Standard shader](README_MRTKStandardShader.md) を使用した透明なマテリアルの場合は、マテリアルを選択して *Inspector* ウィンドウに表示します。次に、*Fix Now* ボタンをクリックして、マテリアルを書き込み深さ (例： Z-Write On) に変換します。
+[MRTK Standard shader](README_MRTKStandardShader.md) を使用した透明なマテリアルの場合は、マテリアルを選択して *Inspector* ウィンドウに表示します。次に、*Fix Now* ボタンをクリックして、マテリアルをデプスに書き込むように (すなわち、Z-Write On) に変更します。
 
 変換前
 
