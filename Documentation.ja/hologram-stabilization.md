@@ -46,7 +46,7 @@ HoloLens を開発のターゲットとする場合は、24 ビットよりも 1
 
 一般に、Unity の [Opaque GameObjects](https://docs.unity3d.com/Manual/StandardShaderMaterialParameterRenderingMode.html) は、デプスに自動的に書き込みます。ただし、透明およびテキスト オブジェクトは、通常、デフォルトではデプスに書き込みません。MRTK Standard Shader、または、Text Mesh Pro を使用している場合は、簡単に修正できます。
 
-##### Transparent MRTK 標準 シェーダ
+##### Transparent MRTK Standard Shader
 
 [MRTK Standard shader](README_MRTKStandardShader.md) を使用した透明なマテリアルの場合は、マテリアルを選択して *Inspector* ウィンドウに表示します。次に、*Fix Now* ボタンをクリックして、マテリアルをデプスに書き込むように (すなわち、Z-Write On) に変更します。
 
