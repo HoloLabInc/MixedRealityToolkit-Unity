@@ -25,7 +25,7 @@ _Hand Tracking profile_ は _Input System profile_ 配下にあります。こ�
 
 ハンド メッシュの表示は、パフォーマンスに顕著な影響を与える場合があります。そのため、**Enable Hand Mesh Visualization** オプションをアンチェックすることで完全に無効にすることができます。
 
-## ハンドの可視化設定Hand visualization settings
+## ハンドの可視化設定
 
 ハンド メッシュとハンド ジョイントの可視化は、それぞれ *Hand Mesh Visualization Modes* と *Hand Joint Visualization Modes* の設定で消したり付けたりすることができます。
 これらの設定はアプリケーションモード固有です。
