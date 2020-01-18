@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hand Tracking | Mixed Reality Toolkit Documentation </title>
+    <title>&#12495;&#12531;&#12489; &#12488;&#12521;&#12483;&#12461;&#12531;&#12464; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Hand Tracking | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.47.0.0">
+    <meta name="title" content="&#12495;&#12531;&#12489; &#12488;&#12521;&#12483;&#12461;&#12531;&#12464; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -80,43 +80,40 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="hand-tracking">Hand Tracking</h1>
+<h1 id="ハンド-トラッキング">ハンド トラッキング</h1>
 
-<h2 id="hand-tracking-profile">Hand Tracking Profile</h2>
-<p>The <em>Hand Tracking profile</em> is found under the <em>Input System profile</em>. It contains settings for customizing hand representation.</p>
+<h2 id="hand-tracking-profile-ハンド-トラッキング-プロファイル">Hand Tracking Profile (ハンド トラッキング プロファイル)</h2>
+<p><em>Hand Tracking profile</em> は <em>Input System profile</em> 配下にあります。これは、手の表示をカスタマイズするための設定を含んでいます。</p>
 <img src="../../Documentation/Images/Input/HandTrackingProfile.png" width="650px" style="display:block;">
-<h2 id="joint-prefabs">Joint Prefabs</h2>
-<p>Joint prefabs are visualized using simple prefabs. The <em>Palm</em> and <em>Index Finger</em> joints are of special importance and have their own prefab, while all other joints share the same prefab.</p>
-<p>By default the hand joint prefabs are simple geometric primitives. These can be replaced if desired. If no prefab is specified at all, empty <a href="href:https://docs.unity3d.com/ScriptReference/GameObject.html">GameObjects</a> are created instead.</p>
+<h2 id="joint-prefabs-ジョイント-プレハブ">Joint Prefabs (ジョイント プレハブ)</h2>
+<p>ジョイント プレハブはシンプルなプレハブを使って可視化されます。<em>Palm</em> と <em>Index Finger</em> は特別重要で独自のプレハブを持っていますが、他のジョイントは同じプレハブを共有しています。</p>
+<p>デフォルトでは、ハンド ジョイントのプレハブは、シンプルな幾何プリミティブです。必要であれば、これらを置き換えることができます。もしプレハブが指定されなければ、空の <a href="href:https://docs.unity3d.com/ScriptReference/GameObject.html">GameObjects</a> が代わりに作成されます。</p>
 <div class="WARNING">
 <h5>Warning</h5>
-<p>Avoid using complex scripts or expensive rendering in joint prefabs, since joint objects are transformed on every frame and can have significant performance cost!</p>
+<p>ジョイント プレハブに複雑なスクリプトやレンダリングコストの高いものを使うことは避けてください。なぜなら、ジョイント オブジェクトは毎フレーム移動し、かなりのパフォーマンス コストがかかるためです！</p>
 </div>
 <img src="../../Documentation/Images/InputSimulation/MRTK_Core_Input_Hands_JointVisualizerPrefabs.png" width="350px" style="display:block;">
-<h2 id="hand-mesh-prefab">Hand Mesh Prefab</h2>
-<p>The hand mesh is used if fully defined mesh data is provided by the hand tracking device. The mesh renderable in the prefab is replaced by data from the device, so a dummy mesh such as a cube is sufficient. The material of the prefab is used for the hand mesh.</p>
+<h2 id="hand-mesh-prefab-ハンド-メッシュ-プレハブ">Hand Mesh Prefab (ハンド メッシュ プレハブ)</h2>
+<p>ハンド メッシュはハンド トラッキング デバイスから完全に定義されたメッシュ データが提供された場合に使われます。プレハブ内のレンダーできるメッシュはデバイスからのデータで置き換えられるので、立方体などのダミーのメッシュで十分です。プレハブのマテリアルは、ハンド メッシュに使われます。</p>
 <img src="../../Documentation/Images/InputSimulation/MRTK_Core_Input_Hands_ArticulatedHandMesh.png" width="350px" style="display:block;">
-<p>Hand mesh display can have a noticeable performance impact, for this reason it can be disabled entirely by unchecking <strong>Enable Hand Mesh Visualization</strong> option.</p>
-<h2 id="hand-visualization-settings">Hand visualization settings</h2>
-<p>The hand mesh and hand joint visualizations can be turned off or on via the <em>Hand Mesh Visualization Modes</em>
-setting and <em>Hand Joint Visualization Modes</em> respectively. These settings are application-mode specific,
-meaning it is possible to turn on some features while in editor (to see joints with in-editor simulation, for
-example) while having the same features turned off when deployed to device (in player builds).</p>
-<p>Note that it's generally recommended to have hand joint visualization turned on in editor (so that in-editor
-simulation will show where the hand joints are), and to have both hand joint visualization and hand mesh
-visualization turned off in player (because they incur a performance hit).</p>
-<h2 id="scripting">Scripting</h2>
-<p>Position and rotation can be requested from the input system for each individual hand joint as a <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.MixedRealityPose.html"><code>MixedRealityPose</code></a>.</p>
-<p>Alternatively the system allows access to <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObjects</a> that follow the joints. This can be useful if another GameObject should track a joint continuously.</p>
-<p>Available joints are listed in the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedHandJoint.html"><code>TrackedHandJoint</code></a> enum.</p>
+<p>ハンド メッシュの表示は、パフォーマンスに顕著な影響を与える場合があります。そのため、<strong>Enable Hand Mesh Visualization</strong> オプションをアンチェックすることで完全に無効にすることができます。</p>
+<h2 id="ハンドの可視化設定">ハンドの可視化設定</h2>
+<p>ハンド メッシュとハンド ジョイントの可視化は、それぞれ <em>Hand Mesh Visualization Modes</em> と <em>Hand Joint Visualization Modes</em> の設定で消したり付けたりすることができます。
+これらの設定はアプリケーションモード固有です。
+つまり、エディターではいくつかの機能を有効にし (例えば、エディターでのシミュレーションではジョイントを見る)、デバイスにデプロイする際 (プレイヤー ビルドでは) 同じ機能を無効にすることが可能です。</p>
+<p>エディターではハンド ジョイントの可視化をオンに (エディター内シミュレーションでハンドのジョイントがどこか見えるように)、プレイヤーではハンド ジョイントの可視化とハンド メッシュの可視化をオフに (パフォーマンスへの影響があるため) することが一般的に推奨されることにご注意ください。</p>
+<h2 id="スクリプト">スクリプト</h2>
+<p>ハンド ジョイントそれぞれの位置と姿勢は <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.MixedRealityPose.html"><code>MixedRealityPose</code></a> として、入力システムから要求することができます。</p>
+<p>別の方法として、入力システムはジョイントに追従する <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObjects</a> へのアクセスを許可しています。これは、別の GameObject が連続的にジョイントを追跡すべき場合には有用です。</p>
+<p>利用可能なジョイントは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedHandJoint.html"><code>TrackedHandJoint</code></a> 列挙型で一覧にされています。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Joint object are destroyed when hand tracking is lost! Make sure that any scripts using the joint object handle the <code>null</code> case gracefully to avoid errors!</p>
+<p>ジョイント オブジェクトは、ハンド トラッキングがロストした時に破棄されます! ジョイントオブジェクトを使うすべてのスクリプトは、エラーを避けるために <code>null</code> の場合を処理してください。</p>
 </div>
-<h3 id="accessing-a-given-hand-controller">Accessing a given Hand Controller</h3>
-<p>A specific hand controller is often available, e.g. when handling input events. In this case the joint data can be requested directly from the device, using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html"><code>IMixedRealityHand</code></a> interface.</p>
-<h4 id="polling-joint-pose-from-controller">Polling Joint Pose from Controller</h4>
-<p>The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityHand_TryGetJoint_"><code>TryGetJoint</code></a> function returns <code>false</code> if the requested joint is not available for some reason. In that case the resulting pose will be <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.MixedRealityPose.html#Microsoft_MixedReality_Toolkit_Utilities_MixedRealityPose_ZeroIdentity"><code>MixedRealityPose.ZeroIdentity</code></a>.</p>
+<h3 id="所定のハンド-コントローラーへのアクセス">所定のハンド コントローラーへのアクセス</h3>
+<p>特定のハンド コントローラーは時々 (例えば、入力イベントを扱う際に) 利用可能です。この場合、ジョイント データは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html"><code>IMixedRealityHand</code></a> インターフェイスを使ってデバイスに直接リクエストすることができます。</p>
+<h4 id="コントローラーからジョイント-ポーズを取り出す">コントローラーからジョイント ポーズを取り出す</h4>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityHand_TryGetJoint_"><code>TryGetJoint</code></a> 関数は、リクエストされたジョイントが何らかの理由で利用できない場合に <code>false</code> を返します。この場合、結果のポーズは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.MixedRealityPose.html#Microsoft_MixedReality_Toolkit_Utilities_MixedRealityPose_ZeroIdentity"><code>MixedRealityPose.ZeroIdentity</code></a> となります。</p>
 <pre><code class="lang-csharp">public void OnSourceDetected(SourceStateEventData eventData)
 {
   var hand = eventData.Controller as IMixedRealityHand;
@@ -129,8 +126,8 @@ visualization turned off in player (because they incur a performance hit).</p>
   }
 }
 </code></pre>
-<h4 id="joint-transform-from-hand-visualizer">Joint Transform from Hand Visualizer</h4>
-<p>Joint objects can be requested from the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityController.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityController_Visualizer">controller visualizer</a>.</p>
+<h4 id="hand-visualizer-ハンド-ビジュアライザー-からの-joint-transform-ジョイント-トランスフォーム">Hand Visualizer (ハンド ビジュアライザー) からの Joint Transform (ジョイント トランスフォーム)</h4>
+<p>ジョイント オブジェクトは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityController.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityController_Visualizer">コントローラー ビジュアライザー</a> からリクエストすることができます。</p>
 <pre><code class="lang-csharp">public void OnSourceDetected(SourceStateEventData eventData)
 {
   var handVisualizer = eventData.Controller.Visualizer as IMixedRealityHandVisualizer;
@@ -143,17 +140,17 @@ visualization turned off in player (because they incur a performance hit).</p>
   }
 }
 </code></pre>
-<h3 id="simplified-joint-data-access">Simplified joint data access</h3>
-<p>If no specific controller is given then utility classes are provided for convenient access to hand joint data. These functions request joint data from the first available hand device currently tracked.</p>
-<h4 id="polling-joint-pose-from-handjointutils">Polling Joint Pose from HandJointUtils</h4>
-<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html"><code>HandJointUtils</code></a> is a static class that queries the first active hand device.</p>
+<h3 id="シンプルなジョイント-データへのアクセス">シンプルなジョイント データへのアクセス</h3>
+<p>特定のコントローラーが与えられていない場合に、ハンド ジョイント データに便利にアクセスするためのユーティリティ クラスが提供されています。これらの関数は、現在トラッキングされている最初に利用可能なハンド デバイスのジョイント データをリクエストします。</p>
+<h4 id="handjointutils-からジョイント-ポーズを取り出す">HandJointUtils からジョイント ポーズを取り出す</h4>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html"><code>HandJointUtils</code></a> は最初にアクティブなハンド デバイスを問い合わせる静的クラスです。</p>
 <pre><code class="lang-csharp">  if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out MixedRealityPose pose))
   {
     // ...
   }
 </code></pre>
-<h4 id="joint-transform-from-hand-joint-service">Joint Transform from Hand Joint Service</h4>
-<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointService.html"><code>IMixedRealityHandJointService</code></a> keeps a persistent set of <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObjects</a> for tracking joints.</p>
+<h4 id="hand-joint-service-ハンド-ジョイント-サービス-からの-joint-transform-ジョイント-トランスフォーム">Hand Joint Service (ハンド ジョイント サービス) からの Joint Transform (ジョイント トランスフォーム)</h4>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointService.html"><code>IMixedRealityHandJointService</code></a> は、トラッキングしているジョイントの <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObject</a> の永続的なセットを保持します。</p>
 <pre><code class="lang-csharp">  var handJointService = MixedRealityToolkit.Instance.GetService&lt;IMixedRealityHandJointService&gt;();
   if (handJointService != null)
   {
@@ -162,10 +159,10 @@ visualization turned off in player (because they incur a performance hit).</p>
   }
 }
 </code></pre>
-<h3 id="hand-tracking-events">Hand Tracking Events</h3>
-<p>The input system provides events as well, if polling data from controllers directly is not desirable.</p>
-<h4 id="joint-events">Joint Events</h4>
-<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointHandler.html"><code>IMixedRealityHandJointHandler</code></a> handles updates of joint positions.</p>
+<h3 id="ハンド-トラッキング-イベント">ハンド トラッキング イベント</h3>
+<p>コントローラーから直接データを抜き出すのが望ましくない場合のために、入力システムはイベントも提供しています。</p>
+<h4 id="ジョイント-イベント">ジョイント イベント</h4>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointHandler.html"><code>IMixedRealityHandJointHandler</code></a> はジョイントの位置の更新を扱います。</p>
 <pre><code class="lang-csharp">public class MyHandJointEventHandler : IMixedRealityHandJointHandler
 {
   public Handedness myHandedness;
@@ -182,9 +179,9 @@ visualization turned off in player (because they incur a performance hit).</p>
   }
 }
 </code></pre>
-<h4 id="mesh-events">Mesh Events</h4>
-<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandMeshHandler.html"><code>IMixedRealityHandMeshHandler</code></a> handles changes of the articulated hand mesh.</p>
-<p>Note that hand meshes are not enabled by default.</p>
+<h4 id="メッシュ-イベント">メッシュ イベント</h4>
+<p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandMeshHandler.html"><code>IMixedRealityHandMeshHandler</code></a> は、多関節ハンド メッシュの変更を扱います。</p>
+<p>ハンド メッシュはデフォルトでは有効でないことにご注意ください。</p>
 <pre><code class="lang-csharp">public class MyHandMeshEventHandler : IMixedRealityHandMeshHandler
 {
   public Handedness myHandedness;
@@ -208,17 +205,17 @@ visualization turned off in player (because they incur a performance hit).</p>
   }
 }
 </code></pre>
-<h2 id="known-issues">Known Issues</h2>
+<h2 id="既知の問題">既知の問題</h2>
 <h3 id="net-native">.NET Native</h3>
-<p>There is currently a known issue with Master builds using the .NET backend. In .NET Native, <code>IInspectable</code> pointers cannot be marshaled from native to managed code using <code>Marshal.GetObjectForIUnknown</code>. The MRTK uses this to obtain the <code>SpatialCoordinateSystem</code> in order to receive hand and eye data from the platform.</p>
-<p>We've provided DLL source as a workaround for this issue, in <a href="https://github.com/microsoft/MixedRealityToolkit/tree/master/DotNetNativeWorkaround">the native Mixed Reality Toolkit repo</a>. Please follow the instructions in the README there and copy the resulting binaries into a Plugins folder in your Unity assets. After that, the WindowsMixedRealityUtilities script provided in the MRTK will resolve the workaround for you.</p>
-<p>If you want to create your own DLL or include this workaround in an existing one, the core of the workaround is:</p>
+<p>現在、.NET バックエンドを使った Master ビルドには既知の問題があります。.NET Native では<code>Marshal.GetObjectForIUnknown</code> を使って <code>IInspectable</code> ポインターをネイティブからマネージド コードにマーシャルすることができません。MRTK は、プラットフォームから手と目のデータを受け取るために、<code>SpatialCoordinateSystem</code> を取得するためにこれを使っています。</p>
+<p>この問題へのワークアラウンドとして、<a href="https://github.com/microsoft/MixedRealityToolkit/tree/master/DotNetNativeWorkaround">ネイティブ Mixed Reality Toolkit リポジトリ</a> にて DLL のソースを提供しています。README の指示に従い、結果のバイナリを Unity アセットの Plugins フォルダーにコピーしてください。そうすると、MRTK で提供されている WindowsMixedRealityUtilities スクリプトで、ワークアラウンドが適用されます。</p>
+<p>独自の DLL を作りたい場合や既存の DLL にこのワークアラウンドを含めたい場合は、ワークアラウンドのコアは以下です。</p>
 <pre><code class="lang-c++">extern &quot;C&quot; __declspec(dllexport) void __stdcall MarshalIInspectable(IUnknown* nativePtr, IUnknown** inspectable)
 {
     *inspectable = nativePtr;
 }
 </code></pre>
-<p>And its use in your C# Unity code:</p>
+<p>そして、C# Unity コードでの使い方は以下です。</p>
 <pre><code class="lang-c#">[DllImport(&quot;DotNetNativeWorkaround.dll&quot;, EntryPoint = &quot;MarshalIInspectable&quot;)]
 private static extern void GetSpatialCoordinateSystem(IntPtr nativePtr, out SpatialCoordinateSystem coordinateSystem);
 
