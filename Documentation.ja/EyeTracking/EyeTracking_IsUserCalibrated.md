@@ -1,6 +1,6 @@
 # Eye Calibration
 
-![Screenshot from eye calibration notification](../Images/EyeTracking/mrtk_et_calibration_notification_example.jpg)
+![Screenshot from eye calibration notification](../../Documentation/Images/EyeTracking/mrtk_et_calibration_notification_example.jpg)
 
 ## To be or not to be eye calibrated
 

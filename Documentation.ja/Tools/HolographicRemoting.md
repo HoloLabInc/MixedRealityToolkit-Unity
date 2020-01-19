@@ -16,7 +16,7 @@ configure the project using the following steps.
 1. Run the MRTK Configurator Utility (**Mixed Reality Toolkit > Utilities > Configure Unity Project**)
 1. Expand **Modify Configurations**
 
-    ![MRTK Configurator](../Images/Tools/Remoting/EnableMSBuildForUnity.png)
+    ![MRTK Configurator](../../Documentation/Images/Tools/Remoting/EnableMSBuildForUnity.png)
 
 1. Ensure that **Enable MSBuild for Unity** is selected
 1. Click **Apply**
@@ -29,19 +29,19 @@ Once the project has been configured, a connection can be established to the Hol
 1. On the HoloLens, launch the **Holographic Remoting** application.
 1. In Unity, select **Window > XR > Holographic Emulation**.
 
-    ![Start Holographic Emulation](../Images/Tools/Remoting/StartHolographicEmulation.png)
+    ![Start Holographic Emulation](../../Documentation/Images/Tools/Remoting/StartHolographicEmulation.png)
 
 1. Set **Emulation Mode** to **Remote to Device**.
 
-    ![Set Emulation Mode](../Images/Tools/Remoting/SelectEmulationMode.png)
+    ![Set Emulation Mode](../../Documentation/Images/Tools/Remoting/SelectEmulationMode.png)
 
 1. Select the **Device Version**.
 
-    ![Select Device Version](../Images/Tools/Remoting/SelectDeviceVersion.png)
+    ![Select Device Version](../../Documentation/Images/Tools/Remoting/SelectDeviceVersion.png)
 
 1. Using the IP Address displayed by the Holographic Remoting application, set the **Remote Machine** field.
 
-    ![Select Device Version](../Images/Tools/Remoting/SelectDeviceVersion.png)
+    ![Select Device Version](../../Documentation/Images/Tools/Remoting/SelectDeviceVersion.png)
 
 1. Click **Connect**.
 > [!Note]

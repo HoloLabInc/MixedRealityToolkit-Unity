@@ -10,25 +10,25 @@ The following steps presume use of the MixedRealityToolkit object. Steps require
 
 1. Select the MixedRealityToolkit object in the scene hierarchy.
 
-    ![MRTK Configured Scene Hierarchy](../Images/MRTK_ConfiguredHierarchy.png)
+    ![MRTK Configured Scene Hierarchy](../../Documentation/Images/MRTK_ConfiguredHierarchy.png)
 
 2. Navigate the Inspector panel to the camera system section and ensure that **Enable Camera System** is checked.
 
-    ![Enabling the camera system](../Images/CameraSystem/EnableCameraSystem.png)
+    ![Enabling the camera system](../../Documentation/Images/CameraSystem/EnableCameraSystem.png)
 
 3. Select the camera system implementation. The default class implementation provided by the MRTK is the `MixedRealityCameraSystem`.
 
-    ![Select camera system implementation](../Images/CameraSystem/SelectCameraSystemType.png)
+    ![Select camera system implementation](../../Documentation/Images/CameraSystem/SelectCameraSystemType.png)
 
 4. Select the desired configuration profile
 
-    ![Select camera system profile](../Images/CameraSystem/SelectCameraProfile.png)
+    ![Select camera system profile](../../Documentation/Images/CameraSystem/SelectCameraProfile.png)
 
 ## Configuring the camera system
 
 ### Settings providers
 
-![Camera Settings Providers](../Images/CameraSystem/CameraSettingsProviders.png)
+![Camera Settings Providers](../../Documentation/Images/CameraSystem/CameraSettingsProviders.png)
 
 Camera setting providers enable platform specific configuration of the camera. These settings may include custom configuration steps and/or components.
 
@@ -39,7 +39,7 @@ Providers can be added by clicking the **Add Camera Settings Provider** button. 
 
 ### Display settings
 
-![Camera Display Settings](../Images/CameraSystem/CameraDisplaySettings.png)
+![Camera Display Settings](../../Documentation/Images/CameraSystem/CameraDisplaySettings.png)
 
 Display settings are specified for both opaque (ex: Virtual Reality) and transparent (ex: Microsoft HoloLens) displays. The camera is configured, at run time, using these settings.
 
