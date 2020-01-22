@@ -82,43 +82,39 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="mrtk-におけるアイ-トラッキング-サンプル">MRTK におけるアイ トラッキング サンプル</h1>
 
-<p>このページでは、私たちが提供している <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/EyeTracking">MRTK eye tracking examples</a> を基に、MRTK で Eye Tracking (アイ トラッキング) を使用する方法を簡単に説明します。
-サンプルでは、新しいマジカルな入力機能の1つである <strong>アイ トラッキング</strong> を体験できます！
+<p>このトピックでは、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/EyeTracking">MRTK eye tracking examples</a> を基に、MRTK で Eye Tracking (アイ トラッキング) を素早く使用する方法を説明します。
+これらのサンプルでは、新しいマジカルな入力機能の1つである <strong>アイ トラッキング</strong> を体験できます！
 このデモには、視線による暗黙的なアクティブ化から、見ているものに関する情報を <strong>音声</strong> および <strong>ハンド</strong> 入力とシームレスに組み合わせる方法まで、さまざまな使用例が含まれています。
 これにより、ターゲットを見て <em>「選択」</em> と発話するか、ハンド ジェスチャを実行するだけで、ビュー内のホログラフィック コンテンツをすばやく簡単に選択して移動することができます。
 デモには、Slate (スレート) に表示されたテキストや画像に対して、視線によるスクロール、パン、ズームを行う例も含まれています。
 最後に、2D スレート上でユーザーの注視点を記録し可視化する例が提供されています。
-次に、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/EyeTracking">MRTK eye tracking example package</a> に含まれている各サンプルの詳細について説明します。</p>
+次のセクションでは、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/EyeTracking">MRTK eye tracking example package</a> に含まれている各サンプルの詳細がわかります。</p>
 <p><img src="../../Documentation/Images/EyeTracking/mrtk_et_list_et_scenes.jpg" alt="List of eye tracking scenes"></p>
-<p>まず、個々のアイ トラッキングのデモ シーンがどのようなものか、概要を簡単に説明します。
+<p>次のセクションは、個々のアイ トラッキングのデモ シーンがどのようなものかという簡単な概要です。
 MRTK アイ トラッキングのデモ シーンは、<a href="https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html">追加でロードされる</a>ので、そのセット アップ方法をその次に説明します。</p>
 <h2 id="アイ-トラッキング-デモ-サンプルの概要">アイ トラッキング デモ サンプルの概要</h2>
 <h3 id="目で支援するターゲット選択"><a href="EyeTracking_TargetSelection.html"><strong>目で支援するターゲット選択</strong></a></h3>
 <p>このチュートリアルでは、視線データに簡単にアクセスしてターゲットを選択できることを示します。
-これには、ターゲットがフォーカスされていることをユーザーに確信させるが、圧倒しないための、繊細かつ強力なフィードバックの例が含まれています。
+これには、ターゲットがフォーカスされていることを圧倒することなくユーザーに確信させるための、繊細かつ強力なフィードバックの例が含まれています。
 さらに、読んだ後に自動的に消えるスマートな通知の簡単な例もあります。</p>
 <p><strong>概要</strong>: 目、音声、ハンドの入力を組み合わせた、素早く簡単なターゲット選択。</p>
-<br>
 <h3 id="目で支援するナビゲーション"><a href="EyeTracking_Navigation.html"><strong>目で支援するナビゲーション</strong></a></h3>
 <p>離れた場所にあるディスプレイや電子書籍リーダーで情報を読んでいるときに、表示されているテキストの末尾に達すると、テキストが自動的にスクロール アップしてより多くのコンテンツが表示されることを想像してください。
 あるいは、見ていた方向に直接、魔法のようにズームできたらどうでしょうか？
 このチュートリアルでは、目で支援するナビゲーションの例をいくつか紹介します。
 さらに、現在のフォーカスに基づいて 3D ホログラムを自動的に回転させ、ハンズフリーで回転させる例もあります。</p>
 <p><strong>概要</strong>: 目、音声、ハンドの入力の組み合わせた、スクロール、パン、ズーム、3D 回転。</p>
-<br>
 <h3 id="目で支援する配置"><a href="EyeTracking_Positioning.html"><strong>目で支援する配置</strong></a></h3>
 <p>このチュートリアルでは、<a href="https://youtu.be/CbIn8p4_4CQ">Put-That-There</a> と呼ばれる入力シナリオを示します。これは、目、ハンド、および音声による入力を使用した、1980年代初頭に MIT メディア ラボで行われた研究に遡るものです。
 そのアイデアは単純で、目線を使ってターゲットの選択と配置を素早く行うことができます。
 単純に、ホログラムを見て <em>'put this'</em>、置きたい場所を見て <em>'there!'</em> と言ってください。
 ホログラムをより正確に配置するために、ハンド、音声、またはコントローラからの追加入力を使用できます。</p>
 <p><strong>概要</strong>: 目、音声、ハンド入力 (<em>ドラッグ＆ドロップ</em>) を使ったホログラムの配置。目 + ハンドを使用する目で支援するスライダー。</p>
-<br>
 <h3 id="注視点の可視化"><strong>注視点の可視化</strong></h3>
-<p>ユーザーがどこを見ているかに関する情報は、設計のユーザビリティを評価し、効率的な作業ストリームにおける問題を見極めるための非常に強力なツールです。
+<p>ユーザーが見ている場所に基づくデータは、設計のユーザビリティを評価し、効率的な作業ストリームにおける問題を見極めるための非常に強力なツールです。
 このチュートリアルでは、さまざまなアイ トラッキングの可視化と、それらがさまざまなニーズにどのように適合するかについて説明します。
 アイ トラッキング データの記録とロードのための基本的な例とそれらを可視化する方法の例を提供しています。</p>
 <p><strong>概要</strong>: スレート上の二次元注意マップ(ヒートマップ)。アイ トラッキング データの記録と再生。</p>
-<br>
 <h2 id="mrtk-アイ-トラッキング-サンプルのセット-アップ">MRTK アイ トラッキング サンプルのセット アップ</h2>
 <h3 id="前提条件">前提条件</h3>
 <p>デバイス上でアイ トラッキング サンプルを使用するには、HoloLens 2 と、パッケージの AppXManifest で &quot;Gaze Input (視線入力)&quot; の機能を有効にしてビルドしたサンプル アプリ パッケージが必要なことに注意してください。</p>
@@ -126,7 +122,7 @@ MRTK アイ トラッキングのデモ シーンは、<a href="https://docs.uni
 <h3 id="1-eyetrackingdemo-00-rootsceneunity-をロード">1. EyeTrackingDemo-00-RootScene.unity をロード</h3>
 <p><em>EyeTrackingDemo-00-RootScene</em> は、すべてのコア MRTK コンポーネントを含むベース (<em>ルート</em>) シーンです。
 これは最初にロードする必要があるシーンで、ここからアイ トラッキングのデモを実行します。
-グラフィカルなシーン メニューを使用すると、さまざまなアイ トラッキング サンプルを<a href="https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html">追加でロード</a>して簡単に切り替えることができます。</p>
+グラフィカルなシーン メニューがあり、さまざまなアイ トラッキング サンプルを<a href="https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.Additive.html">追加でロード</a>して簡単に切り替えることができます。</p>
 <p><img src="../../Documentation/Images/EyeTracking/mrtk_et_scenemenu.jpg" alt="Scene menu in eye tracking sample"></p>
 <p>ルート シーンには、MRTK の設定プロファイルやシーン カメラなど、追加でロードするシーン全体で存続するいくつかのコア コンポーネントが含まれています。
 <em>MixedRealityBasicSceneSetup</em> (以下のスクリーンショット参照) には、起動時に参照されたシーンを自動的にロードするスクリプトが含まれています。
@@ -142,13 +138,13 @@ MRTK アイ トラッキングのデモ シーンは、<a href="https://docs.uni
 <p>さあ、 <em>&quot;Play&quot;</em> ボタンをクリックしましょう！
 複数の宝石が表示され、上部にシーン メニューが表示されます。</p>
 <p><img src="../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png" alt="Sample screenshot from the ET target select scene"></p>
-<p>ゲーム ビューの中央に小さな半透明の円が表示されます。
+<p>また、ゲーム ビューの中央に小さな半透明の円が表示されます。
 これは、<em>シミュレートされた視線</em> のインジケーター (カーソル) として動作します。
 <em>マウスの右ボタン</em> を押し、マウスを移動してその位置を変更するだけです。
 カーソルを宝石の上に移動すると、現在見ている宝石の中心にスナップすることに気づくでしょう。
 これは、ターゲットを <em>&quot;見ている&quot;</em> ときに、期待した通りにイベントがトリガーされるかどうかをテストするのにとても良い方法です。
 注意してほしいのは、マウス操作による <em>シミュレートされた視線</em> は、我々の迅速で意図しない目の動きを補うにはかなり不十分であるということです。
-HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、基本的な機能をテストするのは素晴らしいことです。
+しかし、HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、基本的な機能をテストするのは素晴らしいことです。
 アイ トラッキングのサンプル シーンに話を戻します。宝石は見ている限り回転し、「見ながら」以下を行うことで破壊されます。</p>
 <ul>
 <li><em>Enter</em> キーを押す (&quot;select&quot; という発話をシミュレートしています)</li>
@@ -161,7 +157,7 @@ HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、
 このようにして、異なるアイ トラッキング サンプル シーンを切り替えることができます。</p>
 <h3 id="4-特定のサブ-シーンをテストする方法">4. 特定のサブ シーンをテストする方法</h3>
 <p>特定のシナリオで作業しているときに、毎回シーン メニューを経由したくない場合があります。
-代わりに、<em>Play</em> ボタンを押したときに、現在作業しているシーンから直接開始できるようにしたい場合があります。
+代わりに、<em>Play</em> ボタンを押したときに、現在作業しているシーンから直接開始したい場合があります。
 問題ありません！ 次のようにしてください。</p>
 <ol>
 <li><em>root</em> シーンをロードします。</li>
@@ -175,7 +171,7 @@ HoloLens 2 デバイスにデプロイしてデザインを繰り返す前に、
 <p>このようなサブ シーンのロードは永続的ではないことに注意してください。
 つまり、アプリを HoloLens 2 デバイスにデプロイすると、ルート シーンのみがロードされます (Build Settings の一番上にルート シーンが表示されているものとします)。
 また、プロジェクトを他のユーザと共有する場合、サブ シーンは自動的にはロードされません。</p>
-<br>
+<hr>
 <p>MRTK によるアイ トラッキングのサンプル シーンを機能させる方法を理解したところで、次は目でホログラムを選択する方法について詳しく見ていきましょう: <a href="EyeTracking_TargetSelection.html">Eye-supported target selection</a>。</p>
 <hr>
 <p><a href="EyeTracking_Main.html">&quot;MixedRealityToolkit のアイ トラッキング&quot; に戻る</a></p>

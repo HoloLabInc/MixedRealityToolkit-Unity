@@ -82,39 +82,32 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="診断システム-diagnostics-system-の構成">診断システム (Diagnostics System) の構成</h1>
 
-<p>診断システム プロファイルには、次の構成オプションが提供されます。</p>
-<ul>
-<li><a href="#general-settings-%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E8%A8%AD%E5%AE%9A">General Settings （一般的な設定）</a></li>
-<li><a href="#profiler-settings-%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%A9%E3%83%BC%E3%81%AE%E8%A8%AD%E5%AE%9A">Profiler Settings （プロファイラーの設定）</a></li>
-</ul>
 <h2 id="general-settings-一般的な設定">General Settings （一般的な設定）</h2>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png" alt="診断の一般的な設定"></p>
-<h3 id="show-diagnostics-診断の表示">Show Diagnostics （診断の表示）</h3>
+<p><strong>Show Diagnostics （診断の表示）</strong></p>
 <p>診断システムが設定された診断オプションを表示するかどうかを示します。</p>
 <p>無効にすると、設定されたすべての診断オプションが非表示になります。</p>
-<h4 id="プログラムによる診断システムの制御">プログラムによる診断システムの制御</h4>
-<p>また、実行時に診断システムとプロファイラーの可視性を切り替えることもできます。
-たとえば、次のコードでは、診断システムとプロファイラーを非表示にします。</p>
-<pre><code class="lang-C#">if (MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityDiagnosticsSystem&gt;(out var service))
-{
-    service.ShowDiagnostics = false;
-    service.ShowProfiler = false;
-}
-</code></pre>
 <h2 id="profiler-settings-プロファイラーの設定">Profiler Settings （プロファイラーの設定）</h2>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfilerSettings.png" alt="診断プロファイラーの設定"></p>
-<h3 id="show-profiler-プロファイラーの表示">Show Profiler （プロファイラーの表示）</h3>
+<p><strong>Show Profiler （プロファイラーの表示）</strong></p>
 <p>ビジュアル プロファイラー (Visual Profiler) を表示するかどうかを示します。</p>
-<h3 id="frame-sample-rate-フレーム-サンプル-レート">Frame Sample Rate （フレーム サンプル レート）</h3>
+<p><strong>Frame Sample Rate （フレーム サンプル レート）</strong></p>
 <p>フレームレート計算用にフレームを収集する時間 (秒単位) 。範囲は 0 ~ 5 秒です。</p>
-<h3 id="window-anchor-ウィンドウ-アンカー">Window Anchor （ウィンドウ アンカー）</h3>
+<p><strong>Window Anchor （ウィンドウ アンカー）</strong></p>
 <p>プロファイラー ウィンドウをビュー ポート (view port) のどの部分に固定するかを設定します。デフォルト値は下中央です。</p>
-<h3 id="window-offset-ウィンドウ-オフセット">Window Offset （ウィンドウ オフセット）</h3>
-<p>ビュー ポート (view port) の中心からビジュアル プロファイラーを配置するまでのオフセット。オフセットは <a href="#window-anchor-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6-%E3%82%A2%E3%83%B3%E3%82%AB%E3%83%BC">Window Anchor （ウィンドウ アンカー）</a>の方向です。</p>
-<h3 id="window-scale-ウィンドウ-スケール">Window Scale （ウィンドウ スケール）</h3>
+<p><strong>Window Offset （ウィンドウ オフセット）</strong></p>
+<p>ビュー ポート (view port) の中心からビジュアル プロファイラーを配置するまでのオフセット。オフセットは <strong>Window Anchor （ウィンドウ アンカー）</strong> プロパティの方向です。</p>
+<p><strong>Window Scale （ウィンドウ スケール）</strong></p>
 <p>プロファイラー ウィンドウ (profiler window) に適用されるサイズ乗数。たとえば、値を 2 に設定すると、ウィンドウのサイズが 2 倍になります。</p>
-<h3 id="window-follow-speed-ウィンドウ追従スピード">Window Follow Speed （ウィンドウ追従スピード）</h3>
+<p><strong>Window Follow Speed （ウィンドウ追従スピード）</strong></p>
 <p>ビュー ポート (view port) 内の可視性を維持するためにプロファイラー ウィンドウを移動する速度。</p>
+<h2 id="プログラムによる診断システムの制御">プログラムによる診断システムの制御</h2>
+<p>実行時に診断システムとプロファイラーの表示を切り替えることもできます。
+例えば、以下のコードでは、診断システムとプロファイラーを非表示にします。</p>
+<pre><code class="lang-C#">CoreServices.DiagnosticsSystem.ShowDiagnostics = false;
+
+CoreServices.DiagnosticsSystem.ShowProfiler = false;
+</code></pre>
 <h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="DiagnosticsSystemGettingStarted.html">診断システム (Diagnostic System)</a></li>

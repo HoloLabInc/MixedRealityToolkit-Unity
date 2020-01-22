@@ -83,45 +83,42 @@
 <h1 id="診断システム-diagnostic-system">診断システム (Diagnostic System)</h1>
 
 <p>Mixed Reality Toolkit 診断システムは、アプリケーションの問題の分析を可能にするツールです。</p>
-<p>診断システムの最初のリリースには、アプリケーションの使用中にパフォーマンスの問題を分析するためのビジュアル プロファイラー (Visual Profiler) が含まれています。</p>
+<p>診断システムの最初のリリースには、アプリケーションの使用中にパフォーマンスの問題を分析するための<a href="UsingVisualProfiler.html">ビジュアル プロファイラー (Visual Profiler)</a> が含まれています。</p>
 <h2 id="はじめに">はじめに</h2>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>診断システムは、製品開発サイクル全体を通じて有効にし、最終バージョンをビルドしてリリースする前の最後の変更として無効にすることを <strong><em>強く</em></strong> お勧めします。</p>
 </div>
+<p>診断システムを使い始めるには、2つのキー ステップがあります。</p>
 <ol>
 <li><a href="#%E8%A8%BA%E6%96%AD%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B">診断を有効にする</a></li>
 <li><a href="#%E8%A8%BA%E6%96%AD%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">診断のオプションを設定する</a></li>
-<li><a href="#%E3%83%93%E3%83%AB%E3%83%89%E3%81%A8%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">ビルドとデプロイ</a></li>
 </ol>
 <h3 id="診断を有効にする">診断を有効にする</h3>
 <p>診断システムは、MixedRealityToolkit オブジェクト (または別の<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">サービス登録 (service registar)</a>) コンポーネントによって管理されます。</p>
 <p>次の手順では、MixedRealityToolkit オブジェクトの使用を想定しています。他のサービス レジストラーに必要な手順は異なる場合があります。</p>
 <ol>
-<li>シーンの [Hierarchy](ヒエラルキー) ウィンドウで MixedRealityToolkit オブジェクトを選択します。</li>
-</ol>
+<li><p>シーンの [Hierarchy](ヒエラルキー) ウィンドウで MixedRealityToolkit オブジェクトを選択します。</p>
 <p><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" alt="シーン ヒエラルキーでMRTKの設定"></p>
-<ol start="2">
-<li>[Inspector](インスペクター) ウィンドウで「Diagnostics System」セクションに移動し、「Enable」にチェックを入れます。</li>
-</ol>
+</li>
+<li><p>[Inspector](インスペクター) ウィンドウで「Diagnostics System」セクションに移動し、「Enable」にチェックを入れます。</p>
 <p><img src="../../Documentation/Images/Diagnostics/MRTKConfig_Diagnostics.png" alt="診断を有効にする"></p>
-<ol start="3">
-<li>診断システムの実行を選択する</li>
-</ol>
+</li>
+<li><p>診断システムの実行を選択する</p>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsSelectSystemType.png" alt="診断システムの実装を選択する"></p>
+</li>
+</ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>デフォルトのプロファイル (DefaultMixedRealityToolkitConfigurationProfiel) を使うユーザーは、事前に設定された診断システム MixedRealityDiagnosticsSystem オブジェクトを使用します。</p>
+<p>デフォルトのプロファイル <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/DefaultMixedRealityToolkitConfigurationProfile.asset">DefaultMixedRealityToolkitConfigurationProfile</a> を使うユーザーは、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Diagnostics.MixedRealityDiagnosticsSystem.html"><code>MixedRealityDiagnosticsSystem</code></a> オブジェクトを使う事前に設定された診断システムを持ちます。</p>
 </div>
 <h3 id="診断のオプションを設定する">診断のオプションを設定する</h3>
 <p>診断システムは、設定プロファイルを使用して、表示するコンポーネントを指定し、それらの設定を行います。使用可能なコンポーネント設定の詳細については、<a href="../../Documentation/Diagnostics/ConfiguringDiagnostics.html">診断システムの設定</a>を参照してください。</p>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfile.png" alt="診断の設定オプション"></p>
-<h3 id="ビルドとデプロイ">ビルドとデプロイ</h3>
-<p>診断システムが望ましいオプションで設定されていれば、プロジェクトをターゲット プラットフォームにビルド、デプロイできます。</p>
-<div class="NOTE">
-<h5>Note</h5>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>アプリケーションを開発する際、ビルドとデプロイの手順が不要な Unity の Play モードを利用することも可能ですが、ターゲット ハードウェアとプラットフォーム上で実行されているコンパイル済みアプリケーションを使用して診断システムの結果を評価することが重要です。
-ビジュアル プロファイラー (Visual Profiler) などのパフォーマンス診断では、エディター内から実行されたときに実際のアプリケーション のパフォーマンスが正確に反映されない場合があります。</p>
+<a href="UsingVisualProfiler.html">ビジュアル プロファイラー (Visual Profiler)</a> などのパフォーマンス診断では、エディター内から実行されたときに実際のアプリケーション のパフォーマンスが正確に反映されない場合があります。</p>
 </div>
 <h2 id="関連項目">関連項目</h2>
 <ul>

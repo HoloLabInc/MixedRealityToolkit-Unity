@@ -85,7 +85,7 @@
 <h2 id="パフォーマンス">パフォーマンス</h2>
 <p>基礎となる Mixed Reality プラットフォームとデバイスが最良の結果を生み出すためには、フレーム レートを達成することが重要です。ターゲットのフレーム レート (例： 60FPS または 90FPS) は、プラットフォームやデバイスによって異なります。しかし、フレーム レートを満たす Mixed Reality アプリケーションは、安定したホログラムだけではなく、効率的なヘッド トラッキング、ハンド トラッキングなどを持つことになります。</p>
 <h2 id="環境トラッキング">環境トラッキング</h2>
-<p>安定したホログラフィック レンダリングは、プラットフォームとデバイスによるヘッドポーズ トラッキングに大きく依存します。Unity は、基礎となるプラットフォームによって推定および提供されるカメラ ポーズから、シーンをフレームごとにレンダリングします。このトラッキングが実際のヘッドの動きに正確に追従しない場合、ホログラムは視覚的に不正確に見えます。HoloLens のような AR デバイスでは、ユーザーがバーチャル ホログラムを現実世界に関連付けることができるため、これは特に明白で重要です。パフォーマンスは信頼性の高いヘッド トラッキングに重要ですが、<a href="https://docs.microsoft.com/ja-jp/hololens/hololens-environment-considerations">そのほかにも重要な特徴</a> があります。ユーザ エクスペリエンスに影響を与える環境要素のタイプは、対象となるプラットフォームの仕様によって異なります。</p>
+<p>安定したホログラフィック レンダリングは、プラットフォームとデバイスによるヘッドポーズ トラッキングに大きく依存します。Unity は、基礎となるプラットフォームによって推定および提供されるカメラ ポーズから、シーンをフレームごとにレンダリングします。このトラッキングが実際のヘッドの動きに正確に追従しない場合、ホログラムは視覚的に不正確に見えます。HoloLens のような AR デバイスでは、ユーザーがバーチャル ホログラムを現実世界に関連付けることができるため、これは特に明白で重要です。パフォーマンスは信頼性の高いヘッド トラッキングに重要ですが、<a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/environment-considerations-for-hololens">そのほかにも重要な特徴</a> があります。ユーザ エクスペリエンスに影響を与える環境要素のタイプは、対象となるプラットフォームの仕様によって異なります。</p>
 <h2 id="windows-mixed-reality">Windows Mixed Reality</h2>
 <p>Windows Mixed Reality プラットフォームは、プラットフォーム上でホログラムを安定させるための<a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/hologram-stability">参考資料</a>を提供しています。開発者がホログラムの視覚体験を改善するために利用できる主要なツールはいくつかあります。</p>
 <h3 id="depth-buffer-sharing-デプス-バッファーの共有">Depth Buffer Sharing (デプス バッファーの共有)</h3>
@@ -100,6 +100,10 @@
 <p>プラットフォームと共有する正確なデプス バッファーを作成できない場合、別の形式の LSR は安定化平面を使用します。シーン内のすべてのホログラムにはある程度の安定化が適用されますが、目的の平面にあるホログラムには最大のハードウェア安定化が適用されます。平面の点と法線は、<a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/focus-point-in-unity">Unity で提供される API の</a>  <em>HolographicSettings.SetFocusPointForFrame</em> を介してプラットフォームに提供されます。</p>
 <h4 id="デプス-バッファー-フォーマット">デプス バッファー フォーマット</h4>
 <p>HoloLens を開発のターゲットとする場合は、24 ビットよりも 16 ビット デプス バッファー フォーマットを使用することを強くお勧めします。これにより、デプス値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補い <a href="https://en.wikipedia.org/wiki/Z-fighting">z-fighting</a> を回避するには、<a href="https://docs.unity3d.com/Manual/class-Camera.html">far clip plane</a> の値を Unity で設定されているデフォルト値の 1000m から減らすことをお勧めします。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>もし <em>16-bit depth format</em> を使う場合、<a href="https://docs.unity3d.com/ScriptReference/RenderTexture-depth.html">Unity はステンシル バッファーを作成しない</a>ため、ステンシル バッファーが必要なエフェクトは動作しません。逆に、<em>24-bit depth format</em> を選択した場合、グラフィックのプラットフォームで適用できる場合は、一般的に <a href="https://docs.unity3d.com/Manual/SL-Stencil.html">8 ビットのステンシル バッファー</a>が作成されます。</p>
+</div>
 <h4 id="unity-での-depth-buffer-sharing-デプス-バッファー-シェアリング">Unity での Depth Buffer Sharing (デプス バッファー シェアリング)</h4>
 <p>デプス ベースの LSR を利用するために、開発者が取る必要のある2つの重要なステップがあります。</p>
 <ol>
@@ -111,6 +115,10 @@
 <li>画面上でカラーをレンダリングする場合は、デプスも同様にレンダリングします。</li>
 </ol>
 <p>一般に、Unity の <a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterRenderingMode.html">Opaque GameObjects</a> は、デプスに自動的に書き込みます。ただし、透明およびテキスト オブジェクトは、通常、デフォルトではデプスに書き込みません。MRTK Standard Shader、または、Text Mesh Pro を使用している場合は、簡単に修正できます。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>シーン内のどのオブジェクトがデプス バッファーに書き込まないのかを視覚的に素早く決定するには、MRTK Configuration プロファイルの <em>Editor Settings</em> 以下にある <a href="MixedRealityConfigurationGuide.html#editor-utilities"><em>Render Depth Buffer</em> ユーティリティ</a>を利用できます。</p>
+</div>
 <h5 id="transparent-mrtk-standard-shader">Transparent MRTK Standard Shader</h5>
 <p><a href="README_MRTKStandardShader.html">MRTK Standard shader</a> を使用した透明なマテリアルの場合は、マテリアルを選択して <em>Inspector</em> ウィンドウに表示します。次に、<em>Fix Now</em> ボタンをクリックして、マテリアルをデプスに書き込むように (すなわち、Z-Write On) に変更します。</p>
 <p>変更前</p>

@@ -92,48 +92,55 @@
 <li><p><a href="https://unity3d.com/get-unity/download/archive">Unity 2018.4.x, 2019.1.x または 2019.2.x</a></p>
 <p>MRTKは、 Unity 2018 で IL2CPP と .NET scripting backends の両方をサポートします。</p>
 </li>
-<li><p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases">最新の MRTK release</a></p>
-</li>
 <li><p><a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk">Windows SDK 18362+</a></p>
 <p>これは WMR、HoloLens 1、または HoloLens 2 向けの UWP アプリを構築する場合に必要です。OpenVR 向けに構築する場合は不要です。</p>
 </li>
 </ul>
-<h2 id="チュートリアルを始める">チュートリアルを始める</h2>
-<p>MRTK、または MR 開発が初めての場合は、MRTK v2 を使った <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base">チュートリアルを始める</a>をチェックすることをお勧めします。コアとなるビルディング ブロックについては、<a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101">MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)</a> をチェックしてください。</p>
 <h2 id="mrtk-を-unity-project-に追加する">MRTK を Unity Project に追加する</h2>
-<p>Mixed Reality Toolkit は、Nuget.org からダウンロードできます。詳細は <a href="MRTKNuGetPackage.html">MRTK NuGet Package</a> を参照してください。</p>
-<h3 id="最新の-mrtk-unity-パッケージを取得する">最新の MRTK Unity パッケージを取得する</h3>
+<p><strong>必須事項</strong></p>
 <ol>
-<li><p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases">MRTK のリリース ページ</a> を開きます。</p>
-</li>
-<li><p>Assets の下から以下をダウンロードします。</p>
+<li><a href="#get-the-latest-mrtk-unity-packages">最新の MRTK Unity package を取得する</a></li>
+<li><a href="#import-mrtk-packages-into-your-unity-project">MRTK のパッケージを Unity プロジェクトにインポートする</a></li>
+<li><a href="#switch-your-unity-project-to-the-target-platform">Unity プロジェクトをターゲット プラットフォームに切り替える</a></li>
+<li><a href="#add-mrtk-to-a-new-scene-or-new-project">MRTK を新しいシーン、または新しいプロジェクトに追加する</a></li>
+</ol>
+<p><strong>オプション</strong></p>
 <ul>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</code></li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</code></li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</code></li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</code></li>
+<li><a href="#getting-started-tutorials">チュートリアルを始める</a></li>
+<li><a href="#learn-about-the-core-building-blocks-of-mrtk">MRTK のコアとなるビルディング ブロックについて学ぶ</a></li>
+<li><a href="#run-the-handinteractionexamples-scene-in-the-unity-editor">HandInteractionExamples のシーンを Unity Editor で実行する</a></li>
+</ul>
+<p><a name="get-the-latest-mrtk-unity-packages"></a></p>
+<h3 id="最新の-mrtk-unity-package-を取得する">最新の MRTK Unity package を取得する</h3>
+<ol>
+<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">MRTK リリース ページ</a>を開きます。</li>
+<li>Assets の下から、以下をダウンロードします。
+<ul>
+<li><strong>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</strong></li>
+<li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</li>
+<li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</li>
+<li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</li>
+<li>(<strong><em>オプション</em></strong>, <strong><em>実験的</em></strong>) Microsoft.MixedRealityToolkit.Unity.Providers.UnityAR.unitypackage</li>
 </ul>
 </li>
 </ol>
-<p>より詳細な配布の仕組みは、<a href="DownloadingTheMRTK.html">MRTK をダウンロードする</a>を参照して下さい。</p>
-<h3 id="unity-プロジェクトをターゲット-プラットフォームに切り替える">Unity プロジェクトをターゲット プラットフォームに切り替える</h3>
-<p>次のステップ <strong>MRTK のパッケージ を Unity プロジェクトへインポート</strong> するでは、インポートした時点でプロジェクトで選択されているプラットフォームに応じた変更がプロジェクトに適用されます。</p>
-<p>次のステップへ進む前に、正しいプラットフォームを選択していることを確認してください。</p>
-<p>例えば、HoloLens アプリケーションを作成する場合は、Universal Windows Platform に切り替えます。</p>
-<ul>
-<li>File &gt; Build Settings からメニューを開きます。</li>
-<li><strong>Platform</strong> の一覧から、<strong>Universal Windows Platform</strong> を選択します。</li>
-<li><strong>Switch Platform</strong> ボタンを押します。</li>
-</ul>
+<p>パッケージの内容の情報については、<a href="MRTK_PackageContents.html">MRTK Package Contents</a> をご覧ください。</p>
+<p>Mixed Reality Toolkit は、Nuget.org からもダウンロードできます。詳細は <a href="MRTKNuGetPackage.html">MRTK NuGet Package</a> を参照してください。</p>
+<p><a name="import-mrtk-packages-into-your-unity-project"></a></p>
 <h3 id="mrtk-のパッケージを-unity-プロジェクトにインポートする">MRTK のパッケージを Unity プロジェクトにインポートする</h3>
 <ol>
 <li>新しい Unity プロジェクトを作成するか、既存のプロジェクトを開きます。新しいプロジェクトを作成する場合は、テンプレート タイプに 「3D」 が選択されていることを確認してください。</li>
-<li>ダウンロードした <code>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</code> をインポートします。「Asset -&gt; Import Package -&gt; Custom Package」から、 .unitypackage ファイルを選択し、 インポートする全ての項目がチェックされていることを確認してから、「Import」を選択します。</li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</code> も上記と同様の手順でインポートします。Examples のパッケージは、オプションであり、現在の MRTK の機能の有用なデモ シーンが含まれています。</li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</code> も Foundaiton パッケージと同様にインポートします。Tools のパッケージは、オプションであり、MRTK 開発者のエクスペリエンスを向上させる、ExtensionServiceCreator などの便利なツールが含まれています。</li>
-<li><code>Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</code> も Foundaiton パッケージと同様にインポートします。 Extensions パッケージは、オプションで、 MRTK の便利なオプション コンポーネントのセットを提供します。</li>
+<li>ダウンロードした <strong>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</strong> をインポートします。「Asset -&gt; Import Package -&gt; Custom Package」から、 .unitypackage ファイルを選択し、 インポートする全ての項目がチェックされていることを確認してから、「Import」を選択します。</li>
+<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</strong> を上記と同様の手順でインポートします。Examples のパッケージは、オプションであり、現在の MRTK の機能の有用なデモ シーンが含まれています。</li>
+<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</strong> を Foundation パッケージと同様にインポートします。Tools のパッケージは、オプションであり、MRTK 開発者のエクスペリエンスを向上させる、ExtensionServiceCreator などの便利なツールが含まれています。</li>
+<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</strong> を Foundation パッケージと同様にインポートします。 Extensions パッケージは、オプションで、 MRTK の便利なオプション コンポーネントのセットを提供します。</li>
+<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Providers.UnityAR.unitypackage</strong> を Foundation パッケージと同様にインポートします。このパッケージは、MRTK でのモバイル AR (電話、タブレット) デバイスのサポートを提供します。</li>
 </ol>
-<p>Foundation パッケージをインポートすると、次のようなセットアップ プロンプトが表示される場合があります。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Microsoft.MixedRealityToolkit.Unity.Providers.UnityAR.unitypackage をインポートすると、さらなるステップを実行する必要があります。<a href="CameraSystem/UnityArCameraSettings.html">UnityAR camera settings provider</a> の記事をご覧ください。</p>
+</div>
+<p>Foundation パッケージをインポートすると、次のようなプロンプトが表示される場合があります。</p>
 <p><img src="../Documentation/Images/MRTK_UnitySetupPrompt.png" alt="UnitySetupPrompt"></p>
 <p>MRTK は、以下を実行することで Mixed Reality ソリューションを構築するためのプロジェクトをセットアップします。</p>
 <ul>
@@ -143,9 +150,62 @@
 <p>これらのオプションを適用するかは選択的ですが、推奨されています。</p>
 <p>一部のプレハブ、及びアセットには、TextMesh Pro が必要です。つまり、TextMesh Pro のパッケージをインストールし、アセットがプロジェクト内にあることが必要です。(Window -&gt; TextMeshPro -&gt; Import TMP Essential Resources)
 <strong>TMP Essentials Resources をインポートした後、変更を確認するには Unity を再起動する必要があります</strong>。</p>
-<h3 id="handinteractionexamples-のシーンを-editor-で開いて実行する">HandInteractionExamples のシーンを Editor で開いて実行する</h3>
+<p><a name="switch-your-unity-project-to-the-target-platform"></a></p>
+<h3 id="unity-プロジェクトをターゲット-プラットフォームに切り替える">Unity プロジェクトをターゲット プラットフォームに切り替える</h3>
+<p>パッケージがインポートされたら、次のステップはアプリケーションの正しいプラットフォームを選択することです。</p>
+<p><strong>HoloLens アプリケーション</strong>を作成するには、Universal Windows Platform に切り替えます。</p>
+<ul>
+<li>File &gt; Build Settings からメニューを開きます。</li>
+<li><strong>Platform</strong> の一覧から、<strong>Universal Windows Platform</strong> を選択します。</li>
+<li><strong>Switch Platform</strong> ボタンを押します。</li>
+</ul>
+<p><img src="../Documentation/Images/getting_started/SwitchPlatform.png" alt="Switch Platform"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Mixed Reality Toolkit は、プラットフォームが選択された際にプロジェクトに推奨される変更を適用するためのプロンプトを表示します。プラットフォームが変更されたときはいつでも、必要であれば適切な設定がチェックされプロンプトに表示されます。</p>
+</div>
+<p><a name="add-mrtk-to-a-new-scene-or-new-project"></a></p>
+<h3 id="mrtk-を新しいシーンまたは新しいプロジェクトに追加する">MRTK を新しいシーン、または新しいプロジェクトに追加する</h3>
+<ol>
+<li><p>新規のプロジェクトを作成する、あるいは新しいシーンを現在のプロジェクトに作成します。</p>
+</li>
+<li><p>MRTK のパッケージが<a href="#mrtk-%E3%81%AE%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92-unity-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B">上記の手順</a> に従ってインポートされていることを確認します。(Examples は必須ではありませんが、 Foundation と Examles の両方をインポートすることを推奨します。 )</p>
+</li>
+<li><p>メニュー バーから、Mixed Reality Toolkit -&gt; Add to Scene and Configure を選択します。</p>
+</li>
+</ol>
+<p><img src="../Documentation/Images/MRTK_ConfigureScene.png" alt="Configure to scene"></p>
+<p>インスペクターには現在アクティブな MRTK の設定プロファイルとプロファイル選択のドロップダウンが表示され、デフォルトのプロファイルがあらかじめ選択されています。プロファイルは MRTK のコアコンポーネントの振る舞いを設定します。より詳しくは<a href="Profiles/Profiles.html">プロファイル</a>の記事に記載されています。</p>
+<blockquote>
+<p><strong>注意</strong>： HoloLens または HoloLens 2 で始める場合は、「DefaultHoloLens1ConfigurationProfile」または「DefaultHoloLens2ConfigurationProfile」をかわりに選択すべきです。
+DefaultMixedRealityToolkitConfigurationProfile と DefaultHoloLens2ConfigurationProfile の違いは、<a href="Profiles/Profiles.html#hololens-2-profile">プロファイル</a> を参照してください。</p>
+</blockquote>
+<p>シーンのヒエラルキーに以下が表示されます。</p>
+<p><img src="../Documentation/Images/MRTK_SceneSetup.png" alt="MRTK Scene Setup"></p>
+<p>ヒエラルキーには以下のものが含まれます。</p>
+<ul>
+<li><strong>Mixed Reality Toolkit</strong> - Toolkit それ自身であり、フレームワーク全体に対する中心的な設定のエントリ ポイントを提供します。</li>
+<li><strong>MixedRealityPlayspace</strong> - ヘッドセットの親オブジェクト。ヘッドセット / コントローラー及びその他の必要なシステムがシーンで正しく管理されるようにします。</li>
+<li>Main Camera は Playspace の子要素として移動されます。- これにより、プレイスペースが SDK と連動してカメラを管理できるようになります。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>: シーンで作業している間、シーンの原点 (0,0,0) から <strong>Main Camera</strong> (または <strong>MixedRealityPlayspace</strong>) を<strong>動かさないでください</strong> 。これは MRTK と アクティブな SDK によって制御されます。プレイヤーを初期位置から動かしたい場合は、<strong>カメラではなくシーンのコンテンツを移動してください</strong>！</p>
+</blockquote>
+<ol>
+<li>Play を押して再生し、Space キーを押してハンド シミュレーションでテストします。</li>
+</ol>
+<p>これで、デバイスにビルドしてデプロイする準備ができました！ <a href="BuildAndDeploy.html">MRTK のビルドとデプロイ</a> の手順に従ってください。</p>
+<p><a name="getting-started-tutorials"></a></p>
+<h3 id="チュートリアルを始める">チュートリアルを始める</h3>
+<p>MRTK、または MR 開発が初めての場合は、MRTK v2 を使った <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base">チュートリアルを始める</a> をチェックすることをお勧めします。</p>
+<p><a name="learn-about-the-core-building-blocks-of-mrtk"></a></p>
+<h3 id="mrtk-のコアとなるビルディング-ブロックについて学ぶ">MRTK のコアとなるビルディング ブロックについて学ぶ</h3>
+<p>コアとなるビルディング ブロックについて学ぶには、<a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/mrtk-101">MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)</a> をチェックしてください。</p>
+<p><a name="run-the-handinteractionexamples-scene-in-the-unity-editor"></a></p>
+<h3 id="handinteractionexamples-のシーンを-unity-editor-で実行する">HandInteractionExamples のシーンを Unity Editor で実行する</h3>
+<p><a href="README_HandInteractionExamples.html">Hand Interaction のサンプル シーン</a> の記事は、MRTK の UX コントロールとインタラクションについて学ぶには最適な場所です。</p>
 <p><a href="README_HandInteractionExamples.html"><img src="../Documentation/Images/MRTK_Examples.png" alt="HandInteractionExample scene"></a></p>
-<p><a href="README_HandInteractionExamples.html">Hand Interaction のサンプル シーン</a> は、MRTK の様々な UX コントロールとインタラクションを紹介しているため、MRTK を始めるには最適な場所です。</p>
+<p>ハンド インタラクション シーンを試すには、以下のステップを実行してください。</p>
 <ol>
 <li><p><code>Assets\MixedRealityToolkit.Examples\Demos\HandTracking\Scenes\HandInteractionExamples</code> の中の  <strong>HandInteractionExamples</strong> シーンを開きます。</p>
 </li>
@@ -177,42 +237,6 @@
 </ul>
 <p>シーンの探索を楽しんでください！ UI コントロールの詳細については、<a href="README_HandInteractionExamples.html">ハンド インタラクションのサンプル ガイド</a> で学ぶことができます。また、<a href="InputSimulation/InputSimulationService.html">入力シミュレーションのドキュメント</a>を読んで、MRTK の Editor 内の手の入力シミュレーションの詳細を確認してください。</p>
 <p>おめでとうございます、最初の MRTK のシーンを使うことができました。これであなた自身のエクスペリエンスを創りはじめることができます。</p>
-<h3 id="mrtk-を新しいシーンまたは新しいプロジェクトに追加する">MRTK を新しいシーン、または新しいプロジェクトに追加する</h3>
-<ol>
-<li><p>新規のプロジェクトを作成する、あるいは新しいシーンを現在のプロジェクトに作成します。</p>
-</li>
-<li><p>MRTK のパッケージが<a href="#mrtk-%E3%81%AE%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92-unity-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B">上記の手順</a> に従ってインポートされていることを確認します。(Examples は必須ではありませんが、 Foundation と Examles の両方をインポートすることを推奨します。 )</p>
-</li>
-<li><p>メニュー バーから、Mixed Reality Toolkit -&gt; Add to Scene and Configure を選択します。</p>
-<p><img src="../Documentation/Images/MRTK_ConfigureScene.png" alt="Configure to scene"></p>
-</li>
-<li><p>次のようなプロンプトが表示されます。</p>
-<p><img src="../Documentation/Images/MRTK_ConfigureDialog.png" alt="MRTK Configure Dialog"></p>
-<p>「OK」を押します。</p>
-</li>
-<li><p>その後、MRTK Configuration profile を選択するよう求められます。「DefaultMixedRealityToolkitConfigurationProfile」をダブルクリックします。</p>
-<p><img src="../Documentation/Images/MRTK_SelectConfigurationDialog.png" alt="MRTK Select Configure Dialog"></p>
-<blockquote>
-<p><strong>注意</strong>： HoloLens または HoloLens 2 で始める場合は、「DefaultHoloLens1ConfigurationProfile」または「DefaultHoloLens2ConfigurationProfile」を選択することを推奨します。
-DefaultMixedRealityToolkitConfigurationProfile と DefaultHoloLens2ConfigurationProfile の違いは、
-<a href="Profiles/Profiles.html#hololens-2-profile">プロファイル</a> を参照してください。</p>
-</blockquote>
-<p>シーンのヒエラルキーが以下のようになります。</p>
-<p><img src="../Documentation/Images/MRTK_SceneSetup.png" alt="MRTK Scene Setup"></p>
-<p>ヒエラルキーには以下のものが含まれます。</p>
-<ul>
-<li><strong>Mixed Reality Toolkit</strong> - フレームワーク全体に対する中心的な設定のエントリ ポイントを提供します。</li>
-<li><strong>MixedRealityPlayspace</strong> - ヘッドセットの親オブジェクト。ヘッドセット / コントローラー及びその他の必要なシステムがシーンで正しく管理されるようにします。</li>
-<li>Playspace の下に移動した Main Camera - プレイスペースが SDK と連動してカメラを管理できるようにします。</li>
-</ul>
-<blockquote>
-<p><strong>注意</strong>: シーンで作業している間、シーンの原点 (0,0,0) から <strong>Main Camera を動かさないでください</strong> (または playspace)。これは MRTK と アクティブな SDK によって制御されます。player を初期位置から動かしたい場合は、<strong>カメラではなくシーンのコンテンツを移動してください</strong>！</p>
-</blockquote>
-</li>
-<li><p>Play を押して再生し、Space キーを押して、ハンド シミュレーションでテストします。</p>
-</li>
-</ol>
-<p>これで、デバイスにビルドしてデプロイする準備ができました！ <a href="BuildAndDeploy.html">MRTK のビルドとデプロイ</a> の手順に従ってください。</p>
 <h2 id="次のステップ">次のステップ</h2>
 <p>お勧めの次のステップを紹介します。</p>
 <ul>

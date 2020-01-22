@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Extension services | Mixed Reality Toolkit Documentation </title>
+    <title>Windows Mixed Reality camera settings provider | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Extension services | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Windows Mixed Reality camera settings provider | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
@@ -80,46 +80,39 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="extension-services">Extension services</h1>
+<h1 id="windows-mixed-reality-camera-settings-provider">Windows Mixed Reality camera settings provider</h1>
 
-<p>Extension services are components that extend the functionality of the Mixed Reality Toolkit. These services may be provided
-by the MRTK or by other parties.</p>
-<h2 id="creating-an-extension-service">Creating an extension service</h2>
-<p>The most efficient way to create an extension service is to use the <a href="../Tools/ExtensionServiceCreationWizard.html">extension service creation wizard</a>.
-To start the extension service creation wizard, select <strong>Mixed Reality Toolkit &gt; Utilities &gt; Create Extension Service</strong>.</p>
-<p><img src="../../Documentation/Images/ExtensionWizard/ExtensionServiceCreationWizard.png" alt="Extension service creation wizard"></p>
-<p>The wizard automates the creation of the service components and ensures the proper interface inheritance.</p>
-<p><img src="../../Documentation/Images/ExtensionWizard/ExtensionServiceComponents.png" alt="Components created by the extension service creation wizard"></p>
+<p>The Windows Mixed Reality camera settings provider determines the type of device, upon which the application is running and applies the appropriate configuration settings based on the display (transparent or opaque).</p>
+<h2 id="enabling-the-windows-mixed-reality-camera-settings-provider">Enabling the Windows Mixed Reality camera settings provider</h2>
+<p>The following steps presume use of the MixedRealityToolkit object. Steps required for other service registrars may be different.</p>
+<ol>
+<li><p>Select the MixedRealityToolkit object in the scene hierarchy.</p>
+<p><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" alt="MRTK Configured Scene Hierarchy"></p>
+</li>
+<li><p>Navigate the Inspector panel to the camera system section and expand the <strong>Camera Settings Providers</strong> section.</p>
+<p><img src="../../Documentation/Images/CameraSystem/ExpandProviders.png" alt="Expand settings providers"></p>
+</li>
+<li><p>Click <strong>Add Camera Settings Provider</strong> and expand the newly added <strong>New camera settings</strong> entry.</p>
+<p><img src="../../Documentation/Images/CameraSystem/ExpandNewProvider.png" alt="Expand new settings provider"></p>
+</li>
+<li><p>Select the Windows Mixed Reality Camera Settings provider</p>
+<p><img src="../../Documentation/Images/CameraSystem/SelectWindowsMixedRealitySettings.png" alt="Select Windows Mixed Reality settings provider"></p>
+</li>
+</ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>In MRTK version 2.0.0, there is an issue in the extension service wizard where the service inspector
-and service profile are required to be generated. Please see issue <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/5654">5654</a> for more information.</p>
+<p>When using the Microsoft Mixed Reality Toolkit default profiles, the Windows Mixed Reality camera settings provider will already be enabled and configured.</p>
 </div>
-<p>When the wizard completes, the service functionality can be implemented.</p>
-<h2 id="registering-an-extension-service">Registering an extension service</h2>
-<p>To be accessible by an application, the new extension service needs to be registered with the Mixed Reality Toolkit.</p>
-<p>The extension service creation wizard can be used to register the service.</p>
-<p><img src="../../Documentation/Images/ExtensionWizard/ExtensionServiceWizardRegister.png" alt="Extension service creation wizard registration"></p>
-<p>The service can also be manually registered using the Mixed Reality Toolkit configuration inspector.</p>
-<p><img src="../../Documentation/Images/Profiles/RegisterExtensionService.png" alt="Manual extension service registration"></p>
-<p>If the extension service uses a profile, please ensure that it is specified in the inspector.</p>
-<p><img src="../../Documentation/Images/Profiles/ConfiguredExtensionService.png" alt="Configured extension service"></p>
-<p>The component name and priority can also be adjusted.</p>
-<h2 id="accessing-an-extension-service">Accessing an extension service</h2>
-<p>Extension services are accessed, in code, using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry.html"><code>MixedRealityServiceRegistry</code></a>
-as shown in the example below.</p>
-<pre><code class="lang-c#">INewService service = null;
-if (MixedRealityServiceRegistry.TryGetService&lt;INewService&gt;(out service))
-{
-    // Succeeded in getting the service,  perform any desired tasks.
-}
-</code></pre>
+<h2 id="configuring-the-windows-mixed-reality-camera-settings-provider">Configuring the Windows Mixed Reality camera settings provider</h2>
+<p>The Windows Mixed Reality Camera Settings also supports a profile. This profile provides the following options:</p>
+<p><img src="../../Documentation/Images/CameraSystem/WMRCameraSettingsProfile.png" alt="Windows Mixed Reality camera settings configuration"></p>
+<h3 id="render-mixed-reality-capture-from-the-photovideo-camera">Render Mixed Reality Capture from the photo/video camera</h3>
+<p>With this setting on HoloLens 2, you can enable hologram alignment in your mixed reality captures. If enabled, the platform will provide an additional HolographicCamera to the app when a mixed reality capture photo or video is taken. This HolographicCamera provides view matrices corresponding to the photo/video camera location, and it provides projection matrices using the photo/video camera field of view. This will ensure that holograms, such as hand meshes, remain visibly aligned in the video output.</p>
 <h2 id="see-also">See Also</h2>
 <ul>
-<li><a href="../Architecture/SystemsExtensionsProviders.html">Systems, extension services and data providers</a></li>
-<li><a href="../Tools/ExtensionServiceCreationWizard.html">Extension service creation wizard</a></li>
-<li><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService.html">IMixedRealityExtensionService</a></li>
-<li><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry.html">MixedRealityServiceRegistry</a></li>
+<li><a href="CameraSystemOverview.html">Camera System Overview</a></li>
+<li><a href="CreateSettingsProvider.html">Creating a Camera Settings Provider</a></li>
+<li><a href="https://docs.microsoft.com/windows/mixed-reality/mixed-reality-capture-for-developers#render-from-the-pv-camera-opt-in">Rendering Mixed Reality Capture from the PV camera</a></li>
 </ul>
 </article>
           </div>
@@ -129,7 +122,7 @@ if (MixedRealityServiceRegistry.TryGetService&lt;INewService&gt;(out service))
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Extensions/ExtensionServices.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/CameraSystem/WindowsMixedRealityCameraSettings.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

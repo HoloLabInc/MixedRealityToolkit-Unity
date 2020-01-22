@@ -88,6 +88,7 @@
 <p><code>MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs</code> フォルダ下のボタン プレハブのサンプル</p>
 <h3 id="unity-ui-の-画像グラフィック-ベースのボタン">Unity UI の 画像/グラフィック ベースのボタン</h3>
 <ul>
+<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/UnityUIInteractableButton.prefab"><code>UnityUIInteractableButton.prefab</code></a></li>
 <li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a></li>
 <li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a></li>
 <li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a></li>
@@ -143,11 +144,11 @@
 <p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab"><code>PressableButtonHoloLens2.prefab</code></a> は、HoloLens 2 のシェル スタイル ボタンで、ダイレクト ハンド トラッキングの入力用に精密な動きをサポートします。 <code>Interactable</code> のスクリプトと <code>PressableButton</code> のスクリプトを組合わせています。</p>
 <h2 id="pressable-button-押しボタン-の使い方">Pressable button (押しボタン) の使い方</h2>
 <h3 id="unity-ui-ベースのボタン">Unity UI ベースのボタン</h3>
-<p>以下の設定で Canvas を作成します。</p>
+<p>シーン上に Canvas を作成します (GameObject -&gt; UI -&gt; Canvas)。Canvas のインスペクター パネルにて以下を行います。</p>
 <ul>
-<li>Render Mode を World Space に設定</li>
-<li>スケールを 0.001 に</li>
-<li>CanvasUtility コンポーネントを追加</li>
+<li>&quot;Convert to MRTK Canvas&quot; をクリック</li>
+<li>&quot;Add NearInteractionTouchableUnityUI&quot; をクリック</li>
+<li>Rect Transform コンポーネントの X, Y, Z のスケールを 0.001 に設定</li>
 </ul>
 <p>その後、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a>、 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a>、または <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a> を Canvas にドラッグしてください。</p>
 <h3 id="コライダー-ベースのボタン">コライダー ベースのボタン</h3>
