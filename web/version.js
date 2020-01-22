@@ -9,8 +9,9 @@ function createDropdown()
 	var versionDropDiv = document.getElementById('versionDropdown');
 	var btn = document.createElement('button');
 	btn.className = "dropbtn";
-	var btnText = document.createTextNode("Version");
+	var btnText = document.createTextNode("releases/2.3.0");
 	btn.appendChild(btnText);
+
 	var innerDiv = document.createElement('div');
 	innerDiv.className = "version-dropdown-content";
 	versionDropDiv.appendChild(btn);
@@ -29,7 +30,9 @@ function createDropdown()
 	{
 		rootDir = scriptPath.substring(0, scriptPath.lastIndexOf('web/'));
 	}
-
+	
+	return;
+	
 	// create default
 	createEntry(innerDiv, defaultTitle, rootDir+"README.html");
 	
