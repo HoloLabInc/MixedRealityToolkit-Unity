@@ -101,11 +101,17 @@
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.BoundingBoxInspector.html">BoundingBoxInspector</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingBoxEditor.html">ClippingBoxEditor</a></h4>
-      <section></section>
+      <section><p>A custom editor for the ClippingBox to allow for specification of the framing bounds.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingPlaneEditor.html">ClippingPlaneEditor</a></h4>
-      <section></section>
+      <section><p>A custom editor for the ClippingPlaneEditor to allow for specification of the framing bounds.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingPrimitiveEditor.html">ClippingPrimitiveEditor</a></h4>
+      <section><p>An abstract editor component to improve the editor experience with ClippingPrimitives.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingSphereEditor.html">ClippingSphereEditor</a></h4>
-      <section></section>
+      <section><p>A custom editor for the ClippingSphere to allow for specification of the framing bounds.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ControllerPopupWindow.html">ControllerPopupWindow</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.EditorLayerExtensions.html">EditorLayerExtensions</a></h4>
@@ -192,6 +198,10 @@ when depth buffer sharing is enabled.</p>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.SceneInfoDrawer.html">SceneInfoDrawer</a></h4>
       <section><p>Draws the scene info struct and populates its hidden fields.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.SceneInfoUtils.html">SceneInfoUtils</a></h4>
+      <section><p>Class responsible for updating scene info structs to reflect changes made to scene assets.
+Extends AssetPostprocessor so it can respond to asset changes.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ScenePickPropertyDrawer.html">ScenePickPropertyDrawer</a></h4>
       <section><p>Creates a custom picker based on the list of scene in the build settings.</p>
 </section>
@@ -201,7 +211,7 @@ when depth buffer sharing is enabled.</p>
       <section><p>Extensions for <a href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a>s</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ScriptedImporterAssetReimporter.html">ScriptedImporterAssetReimporter</a></h4>
-      <section><p>Unity has a strange bug when it tries to import a DLL with a ScriptedImporter and an asset that importer is targetting.
+      <section><p>Unity has a strange bug when it tries to import a DLL with a ScriptedImporter and an asset that importer is targeting.
 The first time, it will not invoke the ScriptedImporter as it's just being imported itself; the second time the ScriptedImporter will be constructed but Unity thinks it fails.
 The third time, the import will succeed. This class will invoke the third time import for .gltf, .glb and .room extensions.</p>
 </section>

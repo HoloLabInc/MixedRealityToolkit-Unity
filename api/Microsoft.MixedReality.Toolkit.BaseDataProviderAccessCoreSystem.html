@@ -96,6 +96,7 @@
     <div class="level2"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseEventSystem.html">BaseEventSystem</a></div>
     <div class="level3"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseCoreSystem.html">BaseCoreSystem</a></div>
     <div class="level4"><span class="xref">BaseDataProviderAccessCoreSystem</span></div>
+      <div class="level5"><a class="xref" href="Microsoft.MixedReality.Toolkit.CameraSystem.MixedRealityCameraSystem.html">MixedRealityCameraSystem</a></div>
       <div class="level5"><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystem.html">MixedRealityInputSystem</a></div>
       <div class="level5"><a class="xref" href="Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem.html">MixedRealitySpatialAwarenessSystem</a></div>
   </div>
@@ -103,7 +104,7 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityEventSystem.html">IMixedRealityEventSystem</a></div>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><span class="xref">IDisposable</span></div>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess.html">IMixedRealityDataProviderAccess</a></div>
   </div>
   <div class="inheritedMembers">
@@ -198,12 +199,42 @@
   
   
   <a id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem__ctor_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.#ctor*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem__ctor_Microsoft_MixedReality_Toolkit_IMixedRealityServiceRegistrar_Microsoft_MixedReality_Toolkit_BaseMixedRealityProfile_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.#ctor(Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar,Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile)">BaseDataProviderAccessCoreSystem(IMixedRealityServiceRegistrar, BaseMixedRealityProfile)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem__ctor_Microsoft_MixedReality_Toolkit_BaseMixedRealityProfile_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.#ctor(Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile)">BaseDataProviderAccessCoreSystem(BaseMixedRealityProfile)</h4>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseDataProviderAccessCoreSystem(IMixedRealityServiceRegistrar registrar, BaseMixedRealityProfile profile = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected BaseDataProviderAccessCoreSystem(BaseMixedRealityProfile profile = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile.html">BaseMixedRealityProfile</a></td>
+        <td><span class="parametername">profile</span></td>
+        <td><p>The configuration profile for the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem__ctor_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.#ctor*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem__ctor_Microsoft_MixedReality_Toolkit_IMixedRealityServiceRegistrar_Microsoft_MixedReality_Toolkit_BaseMixedRealityProfile_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.#ctor(Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar,Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile)">BaseDataProviderAccessCoreSystem(IMixedRealityServiceRegistrar, BaseMixedRealityProfile)</h4>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BaseDataProviderAccessCoreSystem(IMixedRealityServiceRegistrar registrar, BaseMixedRealityProfile profile = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -218,12 +249,14 @@
       <tr>
         <td><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">IMixedRealityServiceRegistrar</a></td>
         <td><span class="parametername">registrar</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">IMixedRealityServiceRegistrar</a> instance that loaded the service.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile.html">BaseMixedRealityProfile</a></td>
         <td><span class="parametername">profile</span></td>
-        <td></td>
+        <td><p>The configuration profile for the service.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -503,7 +536,7 @@
   
   
   <a id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem_RegisterDataProvider_" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.RegisterDataProvider*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem_RegisterDataProvider__1_System_Type_SupportedPlatforms_System_Object___" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.RegisterDataProvider``1(System.Type,SupportedPlatforms,System.Object[])">RegisterDataProvider&lt;T&gt;(Type, SupportedPlatforms, Object[])</h4>
+  <h4 id="Microsoft_MixedReality_Toolkit_BaseDataProviderAccessCoreSystem_RegisterDataProvider__1_Type_SupportedPlatforms_System_Object___" data-uid="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.RegisterDataProvider``1(Type,SupportedPlatforms,System.Object[])">RegisterDataProvider&lt;T&gt;(Type, SupportedPlatforms, Object[])</h4>
   <div class="markdown level1 summary"><p>Registers a data provider of the specified type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -523,7 +556,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="xref">Type</span></td>
         <td><span class="parametername">concreteType</span></td>
         <td></td>
       </tr>
@@ -550,8 +583,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>True if the data provider was successfully registered, false otherwise.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -566,8 +598,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>The interface type of the data provider to be registered.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -730,7 +761,7 @@
       <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a>
   </div>
   <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+      <span class="xref">IDisposable</span>
   </div>
   <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess.html">IMixedRealityDataProviderAccess</a>

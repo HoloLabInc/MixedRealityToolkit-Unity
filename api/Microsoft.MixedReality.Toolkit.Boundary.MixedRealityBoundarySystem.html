@@ -102,7 +102,7 @@
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Boundary.IMixedRealityBoundarySystem.html">IMixedRealityBoundarySystem</a></div>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityEventSystem.html">IMixedRealityEventSystem</a></div>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><span class="xref">IDisposable</span></div>
     <div><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityEventSource.html">IMixedRealityEventSource</a></div>
     <div><span class="xref">IEqualityComparer</span></div>
   </div>
@@ -192,12 +192,49 @@
   
   
   <a id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem__ctor_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.#ctor*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem__ctor_Microsoft_MixedReality_Toolkit_IMixedRealityServiceRegistrar_Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundaryVisualizationProfile_ExperienceScale_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.#ctor(Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar,Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile,ExperienceScale)">MixedRealityBoundarySystem(IMixedRealityServiceRegistrar, MixedRealityBoundaryVisualizationProfile, ExperienceScale)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem__ctor_Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundaryVisualizationProfile_ExperienceScale_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.#ctor(Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile,ExperienceScale)">MixedRealityBoundarySystem(MixedRealityBoundaryVisualizationProfile, ExperienceScale)</h4>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MixedRealityBoundarySystem(IMixedRealityServiceRegistrar registrar, MixedRealityBoundaryVisualizationProfile profile, ExperienceScale scale)</code></pre>
+    <pre><code class="lang-csharp hljs">public MixedRealityBoundarySystem(MixedRealityBoundaryVisualizationProfile profile, ExperienceScale scale)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile.html">MixedRealityBoundaryVisualizationProfile</a></td>
+        <td><span class="parametername">profile</span></td>
+        <td><p>The configuration profile for the service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ExperienceScale</span></td>
+        <td><span class="parametername">scale</span></td>
+        <td><p>The application's configured <a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.ExperienceScale.html">ExperienceScale</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem__ctor_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.#ctor*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem__ctor_Microsoft_MixedReality_Toolkit_IMixedRealityServiceRegistrar_Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundaryVisualizationProfile_ExperienceScale_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.#ctor(Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar,Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile,ExperienceScale)">MixedRealityBoundarySystem(IMixedRealityServiceRegistrar, MixedRealityBoundaryVisualizationProfile, ExperienceScale)</h4>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This constructor is obsolete (registrar parameter is no longer required) and will be removed in a future version of the Microsoft Mixed Reality Toolkit.&quot;)]
+public MixedRealityBoundarySystem(IMixedRealityServiceRegistrar registrar, MixedRealityBoundaryVisualizationProfile profile, ExperienceScale scale)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -212,17 +249,20 @@
       <tr>
         <td><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">IMixedRealityServiceRegistrar</a></td>
         <td><span class="parametername">registrar</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">IMixedRealityServiceRegistrar</a> instance that loaded the service.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile.html">MixedRealityBoundaryVisualizationProfile</a></td>
         <td><span class="parametername">profile</span></td>
-        <td></td>
+        <td><p>The configuration profile for the service.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">ExperienceScale</span></td>
         <td><span class="parametername">scale</span></td>
-        <td></td>
+        <td><p>The application's configured <a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.ExperienceScale.html">ExperienceScale</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -717,13 +757,13 @@ on the floor.</p>
   
   
   <a id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem_Contains_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.Contains*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem_Contains_Vector3_UnityBoundary_Type_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.Contains(Vector3,UnityBoundary.Type)">Contains(Vector3, UnityBoundary.Type)</h4>
+  <h4 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem_Contains_Vector3_Microsoft_MixedReality_Toolkit_Boundary_BoundaryType_" data-uid="Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.Contains(Vector3,Microsoft.MixedReality.Toolkit.Boundary.BoundaryType)">Contains(Vector3, BoundaryType)</h4>
   <div class="markdown level1 summary"><p>Determines if a location is within the specified area of the boundary space.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Contains(Vector3 location, UnityBoundary.Type boundaryType = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(Vector3 location, BoundaryType boundaryType = BoundaryType.TrackedArea)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -742,7 +782,7 @@ on the floor.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">UnityBoundary.Type</span></td>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Boundary.BoundaryType.html">BoundaryType</a></td>
         <td><span class="parametername">boundaryType</span></td>
         <td><p>The type of boundary space being checked.</p>
 </td>
@@ -765,10 +805,10 @@ on the floor.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem_Contains_Vector3_UnityBoundary_Type__remarks">Remarks</h5>
+  <h5 id="Microsoft_MixedReality_Toolkit_Boundary_MixedRealityBoundarySystem_Contains_Vector3_Microsoft_MixedReality_Toolkit_Boundary_BoundaryType__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Use:
-Boundary.Type.PlayArea for the inscribed volume
-Boundary.Type.TrackedArea for the area defined by the boundary edges.</p>
+BoundaryType.PlayArea for the inscribed volume
+BoundaryType.TrackedArea for the area defined by the boundary edges.</p>
 </div>
   
   
@@ -1159,7 +1199,7 @@ This method is called once all services have been registered in the Mixed Realit
       <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a>
   </div>
   <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+      <span class="xref">IDisposable</span>
   </div>
   <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityEventSource.html">IMixedRealityEventSource</a>
