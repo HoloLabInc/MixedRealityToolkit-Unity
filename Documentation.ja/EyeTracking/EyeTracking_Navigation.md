@@ -1,4 +1,4 @@
-# Eye-Supported Navigation in MRTK
+# Eye-supported navigation in MRTK
 
 ![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_navigation.png)
 
@@ -10,7 +10,7 @@ scene.
 
 **Summary:** Auto scroll of text, eye-gaze-supported pan and zoom of a virtual map, hands-free gaze-directed 3D rotation.
 
-## Auto Scroll
+## Auto scroll
 
 Auto scroll enables the user to scroll through texts without lifting a finger.
 Simply continue reading and the text will automatically scroll up or down depending on where the user is looking.
@@ -44,7 +44,7 @@ Attaching the _EyeTrackingTarget_ component allows for flexibly handle eye-gaze-
 The scroll sample demonstrates scrolling text that starts when the user *looks* at the panel and stops when the user is *looking away* from it.
 ![Eye-supported scroll setup in Unity: EyeTrackingTarget](../../Documentation/Images/EyeTracking/mrtk_et_nav_scroll_ettarget.jpg)
 
-## Gaze-supported Pan and Zoom
+## Gaze-supported pan and zoom
 
 Who hasn't used a virtual map before to search for their home or to explore entirely new places? Eye tracking allows you to directly dive into exactly the parts that you're interested in and once zoomed in, you can smoothly follow the course of a street to explore your neighborhood!
 This is not only useful for exploring geographical maps, but also to checking out details in photographs, data visualizations or even live-streamed medical imagery. To use this capability in your app is easy! For content rendered to a [Texture]( https://docs.unity3d.com/ScriptReference/Texture.html) (e.g., a photo, streamed data), simply add the [PanZoomTexture](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.PanZoomTexture) script.
@@ -71,7 +71,7 @@ SkimProofUpdateSpeed | The lower the value, the slower the scrolling will speed 
 
 ![Eye-supported pan and zoom setup in Unity](../../Documentation/Images/EyeTracking/mrtk_et_nav_panzoom.jpg)
 
-## Attention-based 3D Rotation
+## Attention-based 3D rotation
 
 Imagine looking at a 3D object and the parts you want to see more closely magically turn toward you - as if the system would read your mind and know to turn the item toward you!
 That is the idea for attention-based 3D rotations which enable you to investigate all side of a hologram without lifting a finger.
@@ -98,11 +98,11 @@ MaxRotX | Maximum horizontal rotation angle. This is to limit the rotation in di
 MinRotY | Minimal vertical rotation angle to limit the rotation around the x axis.
 MaxRotY | Maximum vertical rotation angle to limit the rotation around the y axis.
 
-![Eye-supported 3D rotation setup in Unity](../../Documentation/Images/EyeTracking/mrtk_et_nav_rotate.jpg)
+![Eye-supported 3D rotation setup in Unity](../Images/EyeTracking/mrtk_et_nav_rotate.jpg)
 
 In summary, the above scripts should enable you to  get started to use eye gaze for various input navigation tasks such as scrolling texts, zooming and panning textures as well as rotating investigating 3D holograms.
 
-### Related Topics
+### See also
 
 - [Basic MRTK setup to use eye tracking](EyeTracking_BasicSetup.md)
 - [Eye-supported target selection](EyeTracking_TargetSelection.md)

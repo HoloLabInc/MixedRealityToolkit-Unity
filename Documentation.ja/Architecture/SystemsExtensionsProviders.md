@@ -1,4 +1,4 @@
-# Systems, Extension Services and Data Providers
+# Systems, extension services and data providers
 
 In the Mixed Reality Toolkit, many of the features are delivered in the form of services. Services are grouped into three
 primary categories: systems, extension services and data providers.
@@ -9,7 +9,7 @@ Systems are services that provide the core functionality of the Mixed Reality To
 [`IMixedRealityService`](xref:Microsoft.MixedReality.Toolkit.IMixedRealityService) interface.
 
 - [BoundarySystem](../Boundary/BoundarySystemGettingStarted.md)
-- CameraSystem
+- [CameraSystem](../CameraSystem/CameraSystemOverview.md)
 - [DiagnosticsSystem](../Diagnostics/DiagnosticsSystemGettingStarted.md)
 - [InputSystem](../Input/Overview.md)
 - [SceneSystem](../SceneSystem/SceneSystemGettingStarted.md)
@@ -28,9 +28,9 @@ For information on creating extension services, please reference the [Extension 
 To be accessible to the MRTK, extension services are registered and configured using the Extensions section of the MixedRealityToolkit
 component's configuration profile.
 
-![Configuring an extension service](../../Documentation/Images/Profiles/ConfiguredExtensionService.png)
+![Configuring an extension service](../Images/Profiles/ConfiguredExtensionService.png)
 
-## Data Providers
+## Data providers
 
 Data providers are components that, per their name, provide data to a Mixed Reality Toolkit service. All data providers must specify that
 they implement the [`IMixedRealityDataProvider`](xref:Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider) interface.
@@ -52,11 +52,11 @@ query the service instance for which they were registered (ex: input system).
 
 The MRTK input system utilizes only data providers that implement the [`IMixedRealityInputDeviceManager`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputDeviceManager).
 
-![Input system data providers](../../Documentation/Images/Input/RegisteredServiceProviders.PNG)
+![Input system data providers](../Images/Input/RegisteredServiceProviders.PNG)
 
 The following example demonstrates accessing the input simulation provider and toggle the SmoothEyeTracking property.
 
-``` c#
+```c#
 if (CoreServices.InputSystem != null)
 {
     IMixedRealityDataProviderAccess dataProviderAccess = CoreServices.InputSystem as IMixedRealityDataProviderAccess;
@@ -80,15 +80,15 @@ application is running.
 
 For information on writing a data provider for the MRTK input system, please see [creating an input system data provider](../Input/CreateDataProvider.md).
 
-### Spatial Awareness
+### Spatial awareness
 
 The MRTK spatial awareness system utilizes only data providers that implement the [`IMixedRealitySpatialAwarenessObserver`](xref:Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver) interface.
 
-![Spatial awareness system data providers](../../Documentation/Images/SpatialAwareness/SpatialAwarenessProfile.png)
+![Spatial awareness system data providers](../Images/SpatialAwareness/SpatialAwarenessProfile.png)
 
 The following example demonstrates accessing the registered spatial mesh data providers and changing the visibility of the meshes.
 
-``` c#
+```c#
 if (CoreServices.SpatialAwarenessSystem != null)
 {
     IMixedRealityDataProviderAccess dataProviderAccess =
@@ -113,7 +113,7 @@ if (CoreServices.SpatialAwarenessSystem != null)
 
 For information on writing a data provider for the MRTK spatial awareness system, please see [creating a spatial awareness system data provider](../SpatialAwareness/CreateDataProvider.md).
 
-## See Also
+## See also
 
 - [What makes a mixed reality feature](../MixedRealityServices.md)
 - [Extension services](../Extensions/ExtensionServices.md)
