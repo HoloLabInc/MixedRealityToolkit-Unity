@@ -8,7 +8,7 @@
     <title>MixedRealityServiceRegistry &#12392; IMixedRealityServiceRegistrar &#12392;&#12399;&#20309;&#12363;? | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="MixedRealityServiceRegistry &#12392; IMixedRealityServiceRegistrar &#12392;&#12399;&#20309;&#12363;? | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -95,7 +95,7 @@ MixedRealityServiceRegistry と IMixedRealityServiceRegistrar です。</p>
 <p>MixedRealityServiceRegistry は静的な C# クラスとして実装されており、
 アプリケーション コードでサービスのインスタンスを取得するのに使われる推奨パターンです。</p>
 <p>以下のスニペットは、IMixedRealityInputSystem のインスタンスを取得するデモです。</p>
-<pre><code>IMixedRealityInputSystem inputSystem = null;
+<pre><code class="lang-c#">IMixedRealityInputSystem inputSystem = null;
 
 if (!MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityInputSystem&gt;(out inputSystem))
 {

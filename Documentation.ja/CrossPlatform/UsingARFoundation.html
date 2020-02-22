@@ -8,7 +8,7 @@
     <title>How to configure MRTK for iOS and Android [Experimental] | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="How to configure MRTK for iOS and Android [Experimental] | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -82,17 +82,10 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="how-to-configure-mrtk-for-ios-and-android-experimental">How to configure MRTK for iOS and Android [Experimental]</h1>
 
-<h2 id="install-required-packages">Install Required Packages</h2>
+<h2 id="install-required-packages">Install required packages</h2>
 <ol>
-<li>Download and import the <strong>Microsoft.MixedReality.Toolkit.Providers.UnityAR</strong> package, from <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.2.0">GitHub</a> or <a href="../MRTKNuGetPackage.html">NuGet</a></li>
-</ol>
-<div class="NOTE">
-<h5>Note</h5>
-<p>After you import the the UnityAR package, you will see the following error:
-<em>Assembly has reference to non-existent assembly 'Unity.XR.ARFoundation' (Assets/MixedRealityToolkit.Staging/UnityAR/Microsoft.MixedReality.Toolkit.Providers.UnityAR.asmdef)</em>
-&quot;. To resolve, install the correct version of ARFoundation listed below.</p>
-</div>
-<ol start="2">
+<li><p>Download and import the <strong>Microsoft.MixedReality.Toolkit.Unity.Foundation</strong> package, from <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.3.0">GitHub</a> or <a href="../MRTKNuGetPackage.html">NuGet</a></p>
+</li>
 <li><p>In the Unity Package Manager (UPM), install the following packages:</p>
 <p><strong>Unity 2018.4.x</strong></p>
 <table>
@@ -116,7 +109,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Unity 2019.x</strong></p>
+<p><strong>Unity 2019.3.x</strong></p>
 <table>
 <thead>
 <tr>
@@ -135,13 +128,6 @@
 </tr>
 </tbody>
 </table>
-</li>
-<li><p>If using Unity 2019.x, the assembly definition file for the Unity AR provider needs to be modified to have the <strong>UnityEngine.SpatialTracking</strong> reference added.</p>
-<div class="NOTE">
-<h5>Note</h5>
-<p>MRTK will automatically update the assembly definition based on the version of Unity in which the project has been loaded. This information is presented here for reference.</p>
-</div>
-<p><img src="../../Documentation/Images/CrossPlatform/UnityArAssemblyReferences.png" alt="Unity AR assembly definition"></p>
 </li>
 </ol>
 <h2 id="enabling-the-unity-ar-camera-settings-provider">Enabling the Unity AR camera settings provider</h2>
@@ -167,31 +153,28 @@
 <p>For more information about configuring the Unity AR camera settings provider: <a href="../CameraSystem/UnityArCameraSettings.html">Unity AR camera settings provider</a>.</p>
 </li>
 </ol>
-<h2 id="building-a-scene-for-android-and-ios-devices">Building a Scene for Android and iOS devices</h2>
+<h2 id="building-a-scene-for-android-and-ios-devices">Building a scene for Android and iOS devices</h2>
 <ol>
 <li><p>Make sure you have added the UnityAR Camera Settings Provider to your scene.</p>
 </li>
 <li><p>Switch platform to either Android or iOS in the Unity Build Settings</p>
-</li>
-</ol>
 <p>When you switch the platform you should see the MRTK Project Configurator Window with settings for your chosen platform.  Click Apply to enable platform specific settings.</p>
 <p>iOS Project Configurator Settings</p>
 <p><img src="../../Documentation/Images/CameraSystem/MRTKProjectConfigurator.png" alt="iOS Project Configurator"></p>
-<ol start="3">
+</li>
 <li><p>There are no additional steps after switching the platform for Android.</p>
 </li>
 <li><p>If the platform is iOS, Edit &gt; Project Settings &gt; Player &gt; Other Settings, under the Optimization header, <strong>uncheck</strong> Strip Engine Code</p>
-</li>
-</ol>
 <p><img src="../../Documentation/Images/CameraSystem/UncheckStripEngineCodeiOS.png" alt="iOS Settings"></p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Unchecking Strip Engine Code is the short term solution to an error in Xcode <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6646">#6646</a>.  We are working on a long term solution for MRTK 2.3.0.</p>
+<p>Unchecking Strip Engine Code is the short term solution to an error in Xcode <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6646">#6646</a>.  We are working on a long term solution.</p>
 </div>
-<ol start="5">
-<li>Build and run the scene</li>
+</li>
+<li><p>Build and run the scene</p>
+</li>
 </ol>
-<h2 id="see-also">See Also</h2>
+<h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../CameraSystem/UnityArCameraSettings.html">Unity AR Camera Settings</a></li>
 </ul>

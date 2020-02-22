@@ -8,7 +8,7 @@
     <title>Teleport System&#65288;&#12486;&#12524;&#12509;&#12540;&#12488;&#12471;&#12473;&#12486;&#12512;&#65289; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Teleport System&#65288;&#12486;&#12524;&#12509;&#12540;&#12488;&#12471;&#12473;&#12486;&#12512;&#65289; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
 シーン内の MixedRealityToolkit オブジェクトを選択し、
 &quot;Teleport&quot; をクリックしてから &quot;Enable Teleport System&quot; のチェックボックスをトグルすることで設定できます。</p>
 <p>ランタイム (runtime) で実行することもできます。</p>
-<pre><code class="lang-csharp">void DisableTeleportSystem()
+<pre><code class="lang-c#">void DisableTeleportSystem()
 {
     CoreServices.TeleportSystem.Disable();
 }
@@ -105,7 +105,7 @@ void EnableTeleportSystem()
 <h2 id="使い方">使い方</h2>
 <h3 id="テレポーテーション-イベントの登録方法">テレポーテーション イベントの登録方法</h3>
 <p>次のコードは、テレポーテーションのイベントをリッスンする MonoBehaviour を作成する方法を示しています。このコードはテレポート システムが有効になっていることを前提とします。</p>
-<pre><code class="lang-csharp">using Microsoft.MixedReality.Toolkit;
+<pre><code class="lang-c#">using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Teleport;
 using UnityEngine;
 

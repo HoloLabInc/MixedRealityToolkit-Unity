@@ -8,7 +8,7 @@
     <title>&#12495;&#12531;&#12489; &#12488;&#12521;&#12483;&#12461;&#12531;&#12464; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#12495;&#12531;&#12489; &#12488;&#12521;&#12483;&#12461;&#12531;&#12464; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -114,7 +114,7 @@
 <p>特定のハンド コントローラーは時々 (例えば、入力イベントを扱う際に) 利用可能です。この場合、ジョイント データは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html"><code>IMixedRealityHand</code></a> インターフェイスを使ってデバイスに直接リクエストすることができます。</p>
 <h4 id="コントローラーからジョイント-ポーズを取り出す">コントローラーからジョイント ポーズを取り出す</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityHand_TryGetJoint_"><code>TryGetJoint</code></a> 関数は、リクエストされたジョイントが何らかの理由で利用できない場合に <code>false</code> を返します。この場合、結果のポーズは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Utilities.MixedRealityPose.html#Microsoft_MixedReality_Toolkit_Utilities_MixedRealityPose_ZeroIdentity"><code>MixedRealityPose.ZeroIdentity</code></a> となります。</p>
-<pre><code class="lang-csharp">public void OnSourceDetected(SourceStateEventData eventData)
+<pre><code class="lang-c#">public void OnSourceDetected(SourceStateEventData eventData)
 {
   var hand = eventData.Controller as IMixedRealityHand;
   if (hand != null)
@@ -128,7 +128,7 @@
 </code></pre>
 <h4 id="hand-visualizer-ハンド-ビジュアライザー-からの-joint-transform-ジョイント-トランスフォーム">Hand Visualizer (ハンド ビジュアライザー) からの Joint Transform (ジョイント トランスフォーム)</h4>
 <p>ジョイント オブジェクトは <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityController.html#Microsoft_MixedReality_Toolkit_Input_IMixedRealityController_Visualizer">コントローラー ビジュアライザー</a> からリクエストすることができます。</p>
-<pre><code class="lang-csharp">public void OnSourceDetected(SourceStateEventData eventData)
+<pre><code class="lang-c#">public void OnSourceDetected(SourceStateEventData eventData)
 {
   var handVisualizer = eventData.Controller.Visualizer as IMixedRealityHandVisualizer;
   if (handVisualizer != null)
@@ -144,65 +144,73 @@
 <p>特定のコントローラーが与えられていない場合に、ハンド ジョイント データに便利にアクセスするためのユーティリティ クラスが提供されています。これらの関数は、現在トラッキングされている最初に利用可能なハンド デバイスのジョイント データをリクエストします。</p>
 <h4 id="handjointutils-からジョイント-ポーズを取り出す">HandJointUtils からジョイント ポーズを取り出す</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html"><code>HandJointUtils</code></a> は最初にアクティブなハンド デバイスを問い合わせる静的クラスです。</p>
-<pre><code class="lang-csharp">  if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out MixedRealityPose pose))
-  {
+<pre><code class="lang-c#">if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Right, out MixedRealityPose pose))
+{
     // ...
-  }
+}
 </code></pre>
 <h4 id="hand-joint-service-ハンド-ジョイント-サービス-からの-joint-transform-ジョイント-トランスフォーム">Hand Joint Service (ハンド ジョイント サービス) からの Joint Transform (ジョイント トランスフォーム)</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointService.html"><code>IMixedRealityHandJointService</code></a> は、トラッキングしているジョイントの <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObject</a> の永続的なセットを保持します。</p>
-<pre><code class="lang-csharp">  var handJointService = MixedRealityToolkit.Instance.GetService&lt;IMixedRealityHandJointService&gt;();
-  if (handJointService != null)
-  {
+<pre><code class="lang-c#">IMixedRealityHandJointService handJointService = null;
+if (CoreServices.InputSystem != null)
+{
+    var dataProviderAccess = CoreServices.InputSystem as IMixedRealityDataProviderAccess;
+    if (dataProviderAccess != null)
+    {
+        handJointService = dataProviderAccess.GetDataProvider&lt;IMixedRealityHandJointService&gt;();
+    }
+}
+
+if (handJointService != null)
+{
     Transform jointTransform = handJointService.RequestJointTransform(TrackedHandJoint.IndexTip, Handedness.Right);
     // ...
-  }
 }
 </code></pre>
 <h3 id="ハンド-トラッキング-イベント">ハンド トラッキング イベント</h3>
 <p>コントローラーから直接データを抜き出すのが望ましくない場合のために、入力システムはイベントも提供しています。</p>
 <h4 id="ジョイント-イベント">ジョイント イベント</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointHandler.html"><code>IMixedRealityHandJointHandler</code></a> はジョイントの位置の更新を扱います。</p>
-<pre><code class="lang-csharp">public class MyHandJointEventHandler : IMixedRealityHandJointHandler
+<pre><code class="lang-c#">public class MyHandJointEventHandler : IMixedRealityHandJointHandler
 {
-  public Handedness myHandedness;
+    public Handedness myHandedness;
 
-  void IMixedRealityHandJointHandler.OnHandJointsUpdated(InputEventData&lt;IDictionary&lt;TrackedHandJoint, MixedRealityPose&gt;&gt; eventData)
-  {
-    if (eventData.Handedness == myHandedness)
+    void IMixedRealityHandJointHandler.OnHandJointsUpdated(InputEventData&lt;IDictionary&lt;TrackedHandJoint, MixedRealityPose&gt;&gt; eventData)
     {
-      if (eventData.InputData.TryGetValue(TrackedHandJoint.IndexTip, out MixedRealityPose pose))
-      {
-        // ...
-      }
+        if (eventData.Handedness == myHandedness)
+        {
+            if (eventData.InputData.TryGetValue(TrackedHandJoint.IndexTip, out MixedRealityPose pose))
+            {
+                // ...
+            }
+        }
     }
-  }
 }
 </code></pre>
 <h4 id="メッシュ-イベント">メッシュ イベント</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandMeshHandler.html"><code>IMixedRealityHandMeshHandler</code></a> は、多関節ハンド メッシュの変更を扱います。</p>
 <p>ハンド メッシュはデフォルトでは有効でないことにご注意ください。</p>
-<pre><code class="lang-csharp">public class MyHandMeshEventHandler : IMixedRealityHandMeshHandler
+<pre><code class="lang-c#">public class MyHandMeshEventHandler : IMixedRealityHandMeshHandler
 {
-  public Handedness myHandedness;
-  public Mesh myMesh;
+    public Handedness myHandedness;
+    public Mesh myMesh;
 
-  public void OnHandMeshUpdated(InputEventData&lt;HandMeshInfo&gt; eventData)
-  {
-    if (eventData.Handedness == myHandedness)
+    public void OnHandMeshUpdated(InputEventData&lt;HandMeshInfo&gt; eventData)
     {
-      myMesh.vertices = eventData.InputData.vertices;
-      myMesh.normals = eventData.InputData.normals;
-      myMesh.triangles = eventData.InputData.triangles;
+        if (eventData.Handedness == myHandedness)
+        {
+            myMesh.vertices = eventData.InputData.vertices;
+            myMesh.normals = eventData.InputData.normals;
+            myMesh.triangles = eventData.InputData.triangles;
 
-      if (eventData.InputData.uvs != null &amp;&amp; eventData.InputData.uvs.Length &gt; 0)
-      {
-          myMesh.uv = eventData.InputData.uvs;
-      }
+            if (eventData.InputData.uvs != null &amp;&amp; eventData.InputData.uvs.Length &gt; 0)
+            {
+                myMesh.uv = eventData.InputData.uvs;
+            }
 
-      // ...
+            // ...
+        }
     }
-  }
 }
 </code></pre>
 <h2 id="既知の問題">既知の問題</h2>

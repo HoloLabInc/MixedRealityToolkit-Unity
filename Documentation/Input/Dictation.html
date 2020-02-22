@@ -8,7 +8,7 @@
     <title>Dictation | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Dictation | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -89,7 +89,7 @@ which itself uses the underlying Windows speech APIs for handling dictation. Not
 implies that this feature is only present on Windows-based platforms.</p>
 <p>Usage of the Dictation system requires both the &quot;Internet Client&quot; and &quot;Microphone&quot; application
 capabilities in the <a href="https://docs.unity3d.com/Manual/class-PlayerSettingsWSA.html#Capabilities">PlayerSettings - Capabilities section</a>.
-See <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/voice-input-in-unity#dictation">Windows Mixed Reality Documentation</a>
+See <a href="https://docs.microsoft.com/windows/mixed-reality/voice-input-in-unity#dictation">Windows Mixed Reality Documentation</a>
 for more details on voice input in Unity.</p>
 <h2 id="configuration">Configuration</h2>
 <img src="../Images/Input/DictationDataProvider.png" width="80%" class="center">
@@ -101,7 +101,7 @@ for more details on voice input in Unity.</p>
 <li><strong>Dictation Complete</strong> is raised at the end of the recording session with the full, final transcription of the audio.</li>
 <li><strong>Dictation Error</strong> is raised to inform of errors in the dictation service. The transcription in this case contains a description of the error.</li>
 </ul>
-<h2 id="example-scene">Example Scene</h2>
+<h2 id="example-scene">Example scene</h2>
 <p><strong>Dictation</strong> scene in <code>MixedRealityToolkit.Examples\Demos\Input\Scenes\Dictation</code> shows the <code>DictationHandler</code> script in use. If you need more control, you can either extend this script or create your own implementing <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityDictationHandler.html"><code>IMixedRealityDictationHandler</code></a> to receive dictation events directly.</p>
 <img src="../Images/Input/DictationDemo.png" width="80%" class="center">
 </article>

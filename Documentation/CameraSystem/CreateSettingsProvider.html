@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Creating a Camera Settings Provider | Mixed Reality Toolkit Documentation </title>
+    <title>Creating a camera settings provider | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Creating a Camera Settings Provider | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="title" content="Creating a camera settings provider | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -80,7 +80,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="creating-a-camera-settings-provider">Creating a Camera Settings Provider</h1>
+<h1 id="creating-a-camera-settings-provider">Creating a camera settings provider</h1>
 
 <p>The Camera system is an extensible system for providing support for platform specific camera configurations. To add support for a new camera configuration, a custom settings provider may be required.</p>
 <div class="NOTE">
@@ -94,7 +94,7 @@
 <li>Part of the Microsoft Mixed Reality Toolkit</li>
 </ol>
 <p>The approval process for submissions of new data providers to the MRTK will vary on a case-by-case basis and will be communicated at the time of the initial proposal. Proposals can be submitted by creating a new <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues"><em>Feature Request</em> type issue</a>.</p>
-<h3 id="third-party-add-on">Third Party add-on</h3>
+<h3 id="third-party-add-ons">Third party add-ons</h3>
 <p><strong>Namespace</strong></p>
 <p>Data providers are required to have a namespace to mitigate potential name collisions. It is recommended that the namespace includes the following components.</p>
 <ul>
@@ -144,7 +144,7 @@ attribute to the class. This step enables setting the default profile and platfo
 <p>Once the class has been defined, the next step is to provide the implementation of the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html"><code>IMixedRealityDataProvider</code></a> interface.</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.BaseDataProvider.html"><code>BaseDataProvider</code></a> class, via the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.BaseService.html"><code>BaseService</code></a> class, provides empty implementations for <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html"><code>IMixedRealityDataProvider</code></a> methods. The details of these methods are generally data provider specific.</p>
+<p>The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html"><code>BaseDataProvider</code></a> class, via the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.BaseService.html"><code>BaseService</code></a> class, provides empty implementations for <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html"><code>IMixedRealityDataProvider</code></a> methods. The details of these methods are generally data provider specific.</p>
 </div>
 <p>The methods that should be implemented by the data provider are:</p>
 <ul>
@@ -165,7 +165,7 @@ attribute to the class. This step enables setting the default profile and platfo
 <p>In the Mixed Reality Toolkit, data providers are configured using <a href="../Profiles/Profiles.html">profiles</a>.</p>
 <h3 id="define-the-profile">Define the profile</h3>
 <p>Profile contents should mirror the developer selectable configuration options. Any user configurable properties defined in each interface should also be contained with the profile.</p>
-<pre><code class="lang-csharp">using UnityEngine.SpatialTracking;
+<pre><code class="lang-c#">using UnityEngine.SpatialTracking;
 
 namespace namespace Microsoft.MixedReality.Toolkit.Experimental.UnityAR
 {
@@ -208,7 +208,7 @@ namespace namespace Microsoft.MixedReality.Toolkit.Experimental.UnityAR
 <h3 id="implement-the-inspector">Implement the inspector</h3>
 <p>Profile inspectors are the user interface for configuring and viewing profile contents. Each profile inspector should extend the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Editor.BaseMixedRealityToolkitConfigurationProfileInspector.html"><code>BaseMixedRealityToolkitConfigurationProfileInspector</code></a> class.</p>
 <p>The <code>CustomEditor</code> attribute informs Unity the type of asset to which the inspector applies.</p>
-<pre><code class="lang-csharp">namespace namespace Microsoft.MixedReality.Toolkit.Experimental.UnityAR
+<pre><code class="lang-c#">namespace namespace Microsoft.MixedReality.Toolkit.Experimental.UnityAR
 {
     [CustomEditor(typeof(UnityARCameraSettingsProfile))]
     public class UnityARCameraSettingsProfileInspector : BaseMixedRealityToolkitConfigurationProfileInspector

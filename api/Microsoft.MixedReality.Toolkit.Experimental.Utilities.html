@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Microsoft.MixedReality.Toolkit.Experimental.Utilities
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -95,6 +95,15 @@
 From the point of reference of the SolverHandler Tracked Target, this indicator will orient towards the DirectionalTarget supplied.
 If the Directional Target is deemed within view of our frame of reference, then all renderers under this Solver will be disabled. They will be enabled otherwise</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.Follow.html">Follow</a></h4>
+      <section><p>Follow solver positions an element in front of the of the tracked target (relative to its local forward axis).
+The element can be loosely constrained (a.k.a. tag-along) so that it doesn't follow until the tracked target moves
+beyond user defined bounds.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.ObjectManipulatorMigrationHandler.html">ObjectManipulatorMigrationHandler</a></h4>
+      <section><p>Interface defining a migration handler, which is used to migrate assets as they
+upgrade to new versions of MRTK.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.StabilizationPlaneModifier.html">StabilizationPlaneModifier</a></h4>
       <section><p>StabilizationPlaneModifier handles the setting of the stabilization plane in several different modes.
 It does this via handling the platform call to HolographicPlatformSettings::SetFocusPointForFrame
@@ -108,6 +117,12 @@ StabilizationPlaneModifier is recommended for HoloLens 1, can be used for HoloLe
   </h3>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.StabilizationPlaneOverride.html">StabilizationPlaneOverride</a></h4>
       <section></section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.IMigrationHandler.html">IMigrationHandler</a></h4>
+      <section><p>Interface defining a migration handler, which is used to migrate assets as they
+upgrade to new versions of MRTK.</p>
+</section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Experimental.Utilities.StabilizationPlaneModifier.StabilizationPlaneMode.html">StabilizationPlaneModifier.StabilizationPlaneMode</a></h4>

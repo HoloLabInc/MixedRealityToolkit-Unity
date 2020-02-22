@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mixed Reality Toolkit Profile configuration guide | Mixed Reality Toolkit Documentation </title>
+    <title>Mixed Reality Toolkit profile configuration guide | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Mixed Reality Toolkit Profile configuration guide | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="title" content="Mixed Reality Toolkit profile configuration guide | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -80,18 +80,20 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="mixed-reality-toolkit-profile-configuration-guide">Mixed Reality Toolkit Profile configuration guide</h1>
+<h1 id="mixed-reality-toolkit-profile-configuration-guide">Mixed Reality Toolkit profile configuration guide</h1>
 
-<p><img src="Images/MRTK_Logo_Rev.png" alt=""></p>
+<p><img src="Images/MRTK_Logo_Rev.png" alt="MRTK logo"></p>
 <p>The Mixed Reality Toolkit centralizes as much of the configuration required to manage the toolkit as possible (except for true runtime &quot;things&quot;).</p>
+<blockquote>
 <p><strong>This guide is a simple walkthrough for each of the configuration profile screens currently available for the toolkit</strong></p>
+</blockquote>
 <h2 id="the-main-mixed-reality-toolkit-configuration-profile">The main Mixed Reality Toolkit configuration profile</h2>
 <p>The main configuration profile, which is attached to the <em>MixedRealityToolkit</em> GameObject in your Scene, provides the main entry point for the Toolkit in your project.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>The Mixed Reality Toolkit &quot;locks&quot; the default configuration screens to ensure you always have a common start point for your project and it is encouraged to start defining your own settings as your project evolves. The MRTK configuration is not editable during playmode.</p>
 </div>
-<p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ActiveConfiguration.png" alt=""></p>
+<p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ActiveConfiguration.png" alt="MRTK configuration profile"></p>
 <p>All the &quot;default&quot; profiles for the Mixed Reality Toolkit can be found in the SDK project in the folder Assets\MixedRealityToolkit.SDK\Profiles</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
@@ -191,8 +193,8 @@ or later programmatically as well as setting the extents for the field of view.<
 <p><a name="services"></a></p>
 <h2 id="additional-services-settings">Additional services settings</h2>
 <p>One of the more advanced areas of the Mixed Reality Toolkit is its <a href="https://en.wikipedia.org/wiki/Service_locator_pattern">service locator pattern</a> implementation which allows the registering of any &quot;Service&quot; with the framework. This allows the framework to be both extended with new features / systems easily but also allows for projects to take advantage of these capabilities to register their own runtime components.</p>
-<p>Any registered service still gets the full advantage of all of the Unity events, without the overhead and cost of implementing a MonoBehaviour or clunky singleton patterns. This allows for pure C# components with no scene overhead for running both foreground and background processes, e.g. spawning systems, runtime gamelogic, or practically anything else.</p>
-<img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_RegisteredServiceProfidersProfile.png" width="650px" style="display:block;">
+<p>Any registered service still gets the full advantage of all of the Unity events, without the overhead and cost of implementing a MonoBehaviour or clunky singleton patterns. This allows for pure C# components with no scene overhead for running both foreground and background processes, e.g. spawning systems, runtime game logic, or practically anything else.</p>
+<img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_RegisteredServiceProvidersProfile.png" width="650px" style="display:block;">
 <hr>
 <p><a name="inputactions"></a></p>
 <h2 id="input-actions-settings">Input actions settings</h2>
@@ -271,7 +273,7 @@ or later programmatically as well as setting the extents for the field of view.<
 <p>For example, converting the single dual axis input event from a DPad in to the 4 corresponding &quot;Dpad Up&quot; / &quot;DPad Down&quot; / &quot;Dpad Left&quot; / &quot;Dpad Right&quot; actions (as shown in the image below).</p>
 <p>This could also be done in your own code. However, seeing as this was a very common pattern, the framework provides a mechanism to do this &quot;out of the box&quot;</p>
 <p>Input action Rules can be configured for any of the available input axis. However, input actions from one axis type can be translated to another input action of the same axis type. You can map a dual axis action to another dual axis action, but not to a digital or none action.</p>
-<p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionRulesProfile.png" alt=""></p>
+<p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionRulesProfile.png" alt="Input action rules profile"></p>
 <hr>
 <p><a name="pointer"></a></p>
 <h2 id="pointer-configuration">Pointer configuration</h2>
@@ -297,10 +299,10 @@ or later programmatically as well as setting the extents for the field of view.<
 <img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_GesturesProfile.png" width="650px" style="display:block;">
 <hr>
 <p><a name="speech"></a></p>
-<h2 id="speech-commands">Speech Commands</h2>
+<h2 id="speech-commands">Speech commands</h2>
 <p>Like gestures, some runtime platforms also provide intelligent &quot;Speech to Text&quot; functionality with the ability to generate commands that can be received by a Unity project. This configuration profile allows you to configure the following:</p>
 <ol>
-<li>General Settings - &quot;Start Behavior&quot; set to Auto Start or Manual Start determines whether to initialize KeywordRecognizer at input system startuo or let the project decide when to initialize the KeywordRecognizer. &quot;Recognition Confidence Level&quot; is used to initialize Unity's <a href="https://docs.unity3d.com/ScriptReference/Windows.Speech.KeywordRecognizer-ctor.html">KeywordRecognizer API</a></li>
+<li>General Settings - &quot;Start Behavior&quot; set to Auto Start or Manual Start determines whether to initialize KeywordRecognizer at input system startup or let the project decide when to initialize the KeywordRecognizer. &quot;Recognition Confidence Level&quot; is used to initialize Unity's <a href="https://docs.unity3d.com/ScriptReference/Windows.Speech.KeywordRecognizer-ctor.html">KeywordRecognizer API</a></li>
 <li>Speech Commands - Registers &quot;words&quot; and translates them in to input actions that can be received by your project. They can also be attached to keyboard actions if required.</li>
 </ol>
 <div class="IMPORTANT">
@@ -334,28 +336,25 @@ or later programmatically as well as setting the extents for the field of view.<
 <h2 id="controller-visualization-settings">Controller visualization settings</h2>
 <p>In addition to the controller mapping, a separate configuration profile is provided to customize how your controllers are presented within your scenes.</p>
 <p>This can be configured at a &quot;Global&quot; (all instances of a controller for a specific hand) or specific to an individual controller type / hand.</p>
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>The MRTK does not currently support native SDK's controller models as Unity does not yet provide the capability to load / render gLTF models, which is the default type of models provided by most SDKs. This will be enhanced when this is available.</p>
-</div>
+<p>The MRTK also supports native SDK controller models for Windows Mixed Reality and OpenVR. These are loaded as GameObjects in your scene and positioned using the platform's controller tracking.</p>
 <p>If your controller representation in the scene needs to be offset from the physical controller position, then simply set that offset against the controller model's prefab (e.g. setting the transform position of the controller prefab with an offset position).</p>
 <img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ControllerVisualizationProfile.png" width="650px" style="display:block;">
 <p><a name="editor-utilities"></a></p>
-<h2 id="editor-utilities">Editor Utilities</h2>
+<h2 id="editor-utilities">Editor utilities</h2>
 <p>The following utilities work only in the editor and are useful to improve development productivity.</p>
 <p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_EditorConfiguration.png" alt="MRTK Editor Configuration Utilities"></p>
-<h3 id="service-inspectors">Service Inspectors</h3>
+<h3 id="service-inspectors">Service inspectors</h3>
 <p>Service Inspectors are an editor-only feature that generates in-scene objects representing active services. Selecting these objects displays inspectors which offer documentation links, control over editor visualizations and insight into the state of the service.</p>
 <img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ServiceInspectors.PNG" width="350px" style="display:block;">
 <p>You can enable service inspectors by checking <em>Use Service Inspectors</em> under <em>Editor Settings</em> in the Configuration Profile.</p>
-<h3 id="depth-buffer-renderer">Depth Buffer Renderer</h3>
+<h3 id="depth-buffer-renderer">Depth buffer renderer</h3>
 <p>Sharing the depth buffer with some mixed reality platforms can improve <a href="hologram-stabilization.html">hologram stabilization</a>. For example, the Windows Mixed Reality platform can modify the rendered scene per-pixel to account for subtle head movements during the time it took to render a frame. However, these techniques require depth buffers with accurate data to know where and how far geometry is from the user.</p>
 <p>To ensure a scene renders all necessary data to the depth buffer, developers can toggle the <em>Render Depth Buffer</em> feature under <em>Editor Settings</em> in the Configuration Profile. This will take the current depth buffer and render it as color to the scene view by applying a post-processing effect, <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Rendering.DepthBufferRenderer.html"><code>DepthBufferRenderer</code></a>, to the main camera.</p>
 <p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DepthBufferExample.gif" alt="Render Depth Buffer Utility">
 <sup>The blue cylinder in the scene has a material with ZWrite off so no depth data is written</sup></p>
-<h2 id="see-also">See Also</h2>
+<h2 id="see-also">See also</h2>
 <ul>
-<li><a href="hologram-stabilization.html">Hologram Stabilization</a>.</li>
+<li><a href="hologram-stabilization.html">Hologram Stabilization</a></li>
 </ul>
 </article>
           </div>

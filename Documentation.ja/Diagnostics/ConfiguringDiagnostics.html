@@ -8,7 +8,7 @@
     <title>&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -84,27 +84,27 @@
 
 <h2 id="general-settings-一般的な設定">General Settings （一般的な設定）</h2>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png" alt="診断の一般的な設定"></p>
-<p><strong>Show Diagnostics （診断の表示）</strong></p>
+<h3 id="show-diagnostics-診断の表示">Show Diagnostics （診断の表示）</h3>
 <p>診断システムが設定された診断オプションを表示するかどうかを示します。</p>
 <p>無効にすると、設定されたすべての診断オプションが非表示になります。</p>
 <h2 id="profiler-settings-プロファイラーの設定">Profiler Settings （プロファイラーの設定）</h2>
 <p><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfilerSettings.png" alt="診断プロファイラーの設定"></p>
-<p><strong>Show Profiler （プロファイラーの表示）</strong></p>
+<h3 id="show-profiler-プロファイラーの表示">Show Profiler （プロファイラーの表示）</h3>
 <p>ビジュアル プロファイラー (Visual Profiler) を表示するかどうかを示します。</p>
-<p><strong>Frame Sample Rate （フレーム サンプル レート）</strong></p>
+<h3 id="frame-sample-rate-フレーム-サンプル-レート">Frame Sample Rate （フレーム サンプル レート）</h3>
 <p>フレームレート計算用にフレームを収集する時間 (秒単位) 。範囲は 0 ~ 5 秒です。</p>
-<p><strong>Window Anchor （ウィンドウ アンカー）</strong></p>
+<h3 id="window-anchor-ウィンドウ-アンカー">Window Anchor （ウィンドウ アンカー）</h3>
 <p>プロファイラー ウィンドウをビュー ポート (view port) のどの部分に固定するかを設定します。デフォルト値は下中央です。</p>
-<p><strong>Window Offset （ウィンドウ オフセット）</strong></p>
+<h3 id="window-offset-ウィンドウ-オフセット">Window Offset （ウィンドウ オフセット）</h3>
 <p>ビュー ポート (view port) の中心からビジュアル プロファイラーを配置するまでのオフセット。オフセットは <strong>Window Anchor （ウィンドウ アンカー）</strong> プロパティの方向です。</p>
-<p><strong>Window Scale （ウィンドウ スケール）</strong></p>
+<h3 id="window-scale-ウィンドウ-スケール">Window Scale （ウィンドウ スケール）</h3>
 <p>プロファイラー ウィンドウ (profiler window) に適用されるサイズ乗数。たとえば、値を 2 に設定すると、ウィンドウのサイズが 2 倍になります。</p>
-<p><strong>Window Follow Speed （ウィンドウ追従スピード）</strong></p>
+<h3 id="window-follow-speed-ウィンドウ追従スピード">Window Follow Speed （ウィンドウ追従スピード）</h3>
 <p>ビュー ポート (view port) 内の可視性を維持するためにプロファイラー ウィンドウを移動する速度。</p>
 <h2 id="プログラムによる診断システムの制御">プログラムによる診断システムの制御</h2>
 <p>実行時に診断システムとプロファイラーの表示を切り替えることもできます。
 例えば、以下のコードでは、診断システムとプロファイラーを非表示にします。</p>
-<pre><code class="lang-C#">CoreServices.DiagnosticsSystem.ShowDiagnostics = false;
+<pre><code class="lang-c#">CoreServices.DiagnosticsSystem.ShowDiagnostics = false;
 
 CoreServices.DiagnosticsSystem.ShowProfiler = false;
 </code></pre>

@@ -8,7 +8,7 @@
     <title>Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -82,7 +82,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="gaze-ゲイズ">Gaze (ゲイズ)</h1>
 
-<p><a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/gaze">Gaze</a> は、ユーザーがどこを見ているかに基づいて世界とインタラクションする入力方式です。ゲイズには、異なる2つの種類があります。</p>
+<p><a href="https://docs.microsoft.com/windows/mixed-reality/gaze">Gaze</a> は、ユーザーがどこを見ているかに基づいて世界とインタラクションする入力方式です。ゲイズには、異なる2つの種類があります。</p>
 <h2 id="ヘッド-ゲイズ">ヘッド ゲイズ</h2>
 <p>このタイプのゲイズは、頭/カメラが向いている方向に基づきます。ヘッド ゲイズは、アイ ゲイズをサポートしていないシステムや、ハードウェアはアイ ゲイズをサポートしている可能性があるが <a href="../EyeTracking/EyeTracking_BasicSetup.html#eye-tracking-requirements-checklist">アクセス許可とセットアップ</a> が正しく実行されていない場合において、アクティブになります。</p>
 <p>ヘッド ゲイズは、通常、HoloLens 1 スタイルのインタラクションに関連しています。
@@ -99,7 +99,7 @@ GazeProvider の再実装は簡単ではないので、通常は標準の GazePr
 <h2 id="使用方法">使用方法</h2>
 <h3 id="現在の-gaze-target-ゲイズ-ターゲット-を取得する方法">現在の gaze target (ゲイズ ターゲット) を取得する方法</h3>
 <p>このサンプルは、ユーザーのゲイズのターゲットとなっている現在のゲームオブジェクトを取得する方法を示します。</p>
-<pre><code class="lang-csharp">void LogCurrentGazeTarget()
+<pre><code class="lang-c#">void LogCurrentGazeTarget()
 {
     if (CoreServices.InputSystem.GazeProvider.GazeTarget)
     {
@@ -110,7 +110,7 @@ GazeProvider の再実装は簡単ではないので、通常は標準の GazePr
 </code></pre>
 <h3 id="現在のゲイズの方向と原点を取得する方法">現在のゲイズの方向と原点を取得する方法</h3>
 <p>このサンプルは、ユーザのゲイズの方向と原点 (ゲイズの方向がどの点から出ているか) を表す Vector3 を取得する方法を示します。</p>
-<pre><code class="lang-csharp">void LogGazeDirectionOrigin()
+<pre><code class="lang-c#">void LogGazeDirectionOrigin()
 {
     Debug.Log(&quot;Gaze is looking in direction: &quot;
         + CoreServices.InputSystem.GazeProvider.GazeDirection);

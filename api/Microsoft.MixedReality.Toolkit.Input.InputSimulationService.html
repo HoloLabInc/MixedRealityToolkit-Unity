@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class InputSimulationService
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,13 +86,14 @@
   
   <h1 id="Microsoft_MixedReality_Toolkit_Input_InputSimulationService" data-uid="Microsoft.MixedReality.Toolkit.Input.InputSimulationService" class="text-break">Class InputSimulationService
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Service that provides simulated mixed reality input information based on mouse and keyboard input in editor</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html">BaseService</a></div>
-    <div class="level2"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html">BaseDataProvider</a></div>
+    <div class="level2"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html">BaseDataProvider</a>&lt;<a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem.html">IMixedRealityInputSystem</a>&gt;</div>
     <div class="level3"><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html">BaseInputDeviceManager</a></div>
     <div class="level4"><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputSimulationService.html">BaseInputSimulationService</a></div>
     <div class="level5"><span class="xref">InputSimulationService</span></div>
@@ -128,7 +129,7 @@
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputSimulationService.html#Microsoft_MixedReality_Toolkit_Input_BaseInputSimulationService_RemoveAllHandDevices">BaseInputSimulationService.RemoveAllHandDevices()</a>
     </div>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_InputSystem">BaseInputDeviceManager.InputSystem</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_EnablePointerCache">BaseInputDeviceManager.EnablePointerCache</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_InputSystemProfile">BaseInputDeviceManager.InputSystemProfile</a>
@@ -137,10 +138,13 @@
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_RequestPointers_Microsoft_MixedReality_Toolkit_Input_SupportedControllerType_Handedness_">BaseInputDeviceManager.RequestPointers(SupportedControllerType, Handedness)</a>
     </div>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_Registrar">BaseDataProvider.Registrar</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_RecyclePointers_Microsoft_MixedReality_Toolkit_Input_IMixedRealityInputSource_">BaseInputDeviceManager.RecyclePointers(IMixedRealityInputSource)</a>
     </div>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_Service">BaseDataProvider.Service</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_1_Registrar">BaseDataProvider&lt;IMixedRealityInputSystem&gt;.Registrar</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_1_Service">BaseDataProvider&lt;IMixedRealityInputSystem&gt;.Service</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_DefaultPriority">BaseService.DefaultPriority</a>
@@ -697,7 +701,7 @@ on the current platform.</p>
     <pre><code class="lang-csharp hljs">public override void Destroy()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Destroy">BaseService.Destroy()</a></div>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Destroy">BaseInputDeviceManager.Destroy()</a></div>
   
   
   <a id="Microsoft_MixedReality_Toolkit_Input_InputSimulationService_Disable_" data-uid="Microsoft.MixedReality.Toolkit.Input.InputSimulationService.Disable*"></a>
@@ -737,7 +741,7 @@ This method is called once all services have been registered in the Mixed Realit
     <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Initialize">BaseService.Initialize()</a></div>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html#Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Initialize">BaseInputDeviceManager.Initialize()</a></div>
   
   
   <a id="Microsoft_MixedReality_Toolkit_Input_InputSimulationService_LateUpdate_" data-uid="Microsoft.MixedReality.Toolkit.Input.InputSimulationService.LateUpdate*"></a>

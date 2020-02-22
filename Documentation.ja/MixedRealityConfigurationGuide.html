@@ -8,7 +8,7 @@
     <title>Mixed Reality Toolkit &#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#35373;&#23450;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Mixed Reality Toolkit &#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#35373;&#23450;&#12460;&#12452;&#12489; | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -82,16 +82,18 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="mixed-reality-toolkit-プロファイル設定ガイド">Mixed Reality Toolkit プロファイル設定ガイド</h1>
 
-<p><img src="../Documentation/Images/MRTK_Logo_Rev.png" alt=""></p>
+<p><img src="../Documentation/Images/MRTK_Logo_Rev.png" alt="MRTK logo"></p>
 <p>Mixed Reality Toolkit は、ツールキットを管理するために必要な設定を可能な限り集中化しています (ランタイムの「モノ」は除く)。</p>
+<blockquote>
 <p><strong>このガイドは、ツールキットで現在使用できる、設定プロファイル画面の簡単なチュートリアルです。</strong></p>
+</blockquote>
 <h2 id="mixed-reality-toolkit-の主な設定プロファイル-congifuration-profile">Mixed Reality Toolkit の主な設定プロファイル (Congifuration Profile)</h2>
 <p>シーンの <em>MixedRealityToolkit</em> GameObject にアタッチされている主な設定プロファイル (Congifuration Profile) は、ツールキットの最初のエントリーポイントです。</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Mixed Reality Toolkit は、プロジェクトの共通のスタートポイントを常に持たせるように、デフォルトの設定画面を「ロック」しています。そして、プロジェクトの進捗に合わせて独自の設定を定義することをお勧めします。MRTK の設定はプレイモード中は編集できません。</p>
 </div>
-<p><img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ActiveConfiguration.png" alt=""></p>
+<p><img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ActiveConfiguration.png" alt="MRTK configuration profile"></p>
 <p>Mixed Reality Toolkit のすべての「デフォルト」プロファイルは、Assets\MixedRealityToolkit.SDK\Profiles フォルダ内の SDK プロジェクトにあります。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
@@ -269,7 +271,7 @@
 <p>たとえば、1 つの十字キーの 2 軸入力イベントを、4 つの対応する &quot;DPad Up&quot; / &quot;DPad Down&quot; / &quot;Dpad Left&quot; / &quot;Dpad Right&quot; アクションに変換します (下の図に示すように)。</p>
 <p>これは、独自のコードで行うこともできます。しかし、これは非常に一般的なパターンであったので、フレームワークはこれをすぐに使えるようにするメカニズムを提供しています。</p>
 <p>Input Action Rules は、使用可能な入力軸のすべてに対して設定できます。ただし、1つの軸タイプからの入力アクションは、同じ軸タイプの別の入力アクションに変換できます。2 軸アクションを別の 2 軸アクションにマップできますが、デジタルアクションまたは None アクションにはマップできません。</p>
-<p><img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionRulesProfile.png" alt=""></p>
+<p><img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_InputActionRulesProfile.png" alt="Input action rules profile"></p>
 <hr>
 <p><a name="pointer"></a></p>
 <h2 id="pointer-configurationポインターの設定">Pointer configuration（ポインターの設定）</h2>
@@ -332,10 +334,7 @@
 <h2 id="controller-visualization-settingsコントローラーの可視化の設定">Controller visualization settings（コントローラーの可視化の設定）</h2>
 <p>コントローラーのマッピングに加えて、シーン内でのコントローラーの表示方法をカスタマイズするための個別の設定プロファイルが用意されています。</p>
 <p>これは、「Global」(特定のハンド用コントローラーのすべてのインスタンス) または個々のコントローラー タイプ/ハンドに対して個別に設定が可能です。</p>
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>Unity が gLTF モデル（多くの SDK で提供されているでデフォルトの形式）をロード、レンダリングする機能を提供していないため、MRTK は現在ネイティブ SDK のコントローラー モデルをサポートしていません。これは、利用可能になった際に、拡張する予定です。</p>
-</div>
+<p>MRTK はまた、 Windows Mixed Reality と OpenVR に関してネイティブ SDK のコントローラー モデルをサポートしています。これらはシーン内で GameObjects としてロードされ、プラットフォームのコントローラー トラッキングを使って配置されます。</p>
 <p>シーン内のコントローラーの表示を物理コントローラーの位置からオフセットする必要がある場合は、コントローラー モデルのプレハブに対してオフセットを設定するだけです (例えば、コントローラー プレハブの transform position をオフセット位置に設定します)。</p>
 <img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_ControllerVisualizationProfile.png" width="650px" style="display:block;">
 <p><a name="editor-utilities"></a></p>
@@ -349,7 +348,7 @@
 <h3 id="depth-buffer-renderer-デプス-バッファー-レンダラー">Depth Buffer Renderer (デプス バッファー レンダラー)</h3>
 <p>いくつかの mixed reality プラットフォームではデプス バッファーを共有することで[ホログラムの安定性]を向上させることができます。例えば、Windows Mixed Reality プラットフォームでは、フレームを描画するのにかかる時間でのわずかな頭の動きを考慮して、ピクセルごとに描画したシーンを修正できます。しかしながらこれらの技術は、オブジェクトの形状がユーザーからどこにどれくらい離れているのかを知るために、正確なデータをもったデプス バッファーが必要です。</p>
 <p>シーンが必要なデータすべてをデプス バッファーに描画していることを確かめるため、開発者は Configuration Profile の <em>Editor Settings</em> 以下の <em>Render Depth Buffer</em> 機能をトグルしてください。これは、現在のデプス バッファーを使い、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Rendering.DepthBufferRenderer.html"><code>DepthBufferRenderer</code></a> というポストプロセッシング エフェクトを適用することでメイン カメラのシーン ビューに色をつけて描画します。</p>
-<p><img src="Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DepthBufferExample.gif" alt="Render Depth Buffer Utility">
+<p><img src="../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DepthBufferExample.gif" alt="Render Depth Buffer Utility">
 <sup>シーン内の青い円柱は ZWrite off のマテリアルを持っているため、デプス データは書き込まれません</sup></p>
 <h2 id="関連項目">関連項目</h2>
 <ul>

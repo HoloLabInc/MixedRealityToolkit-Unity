@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Accessing Input State in MRTK | Mixed Reality Toolkit Documentation </title>
+    <title>Accessing input state in MRTK | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Accessing Input State in MRTK | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="title" content="Accessing input state in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -80,13 +80,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="accessing-input-state-in-mrtk">Accessing Input State in MRTK</h1>
+<h1 id="accessing-input-state-in-mrtk">Accessing input state in MRTK</h1>
 
 <p>It's possible to directly query the state of all inputs in MRTK by iterating over the controllers attached to the input sources. MRTK also provides convenience methods for accessing the position and rotation of the eyes, hands, head, and motion controller.</p>
-<p>See the InputDataExample scene for an example of querying input both via iterating over controllers, and by using the <a href="cref:Microsoft.MixedReality.Toolkit.Input.InputRayUtils"><code>InputRayUtils</code></a> class.</p>
+<p>See the InputDataExample scene for an example of querying input both via iterating over controllers, and by using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.InputRayUtils.html"><code>InputRayUtils</code></a> class.</p>
 <h2 id="example-access-position-rotation-of-head-hands-eyes-in-mrtk">Example: Access position, rotation of head, hands, eyes in MRTK</h2>
-<p>MRTK's <a href="cref:Microsoft.MixedReality.Toolkit.Input.InputRayUtils"><code>InputRayUtils</code></a> class provides convenience methods for accessing the hand ray, head ray, eye gaze ray, and motion controller rays.</p>
-<pre><code class="lang-csharp">// Get the head ray
+<p>MRTK's <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.InputRayUtils.html"><code>InputRayUtils</code></a> class provides convenience methods for accessing the hand ray, head ray, eye gaze ray, and motion controller rays.</p>
+<pre><code class="lang-c#">// Get the head ray
 var headRay = InputRayUtils.GetHeadGazeRay();
 
 // Get the right hand ray
@@ -101,7 +101,7 @@ else
 }
 </code></pre>
 <h2 id="example-access-position-rotation-of-all-6dof-controllers-active-in-scene">Example: Access position, rotation of all 6DOF controllers active in scene</h2>
-<pre><code class="lang-csharp">foreach(var controller in CoreServices.InputSystem.DetectedControllers)
+<pre><code class="lang-c#">foreach(var controller in CoreServices.InputSystem.DetectedControllers)
 {
     // Interactions for a controller is the list of inputs that this controller exposes
     foreach(MixedRealityInteractionMapping inputMapping in controller.Interactions)
@@ -122,7 +122,7 @@ else
     }
 }
 </code></pre>
-<h2 id="see-also">See Also</h2>
+<h2 id="see-also">See also</h2>
 <ul>
 <li><a href="InputEvents.html">InputEvents</a></li>
 <li><a href="Pointers.html">Pointers</a></li>

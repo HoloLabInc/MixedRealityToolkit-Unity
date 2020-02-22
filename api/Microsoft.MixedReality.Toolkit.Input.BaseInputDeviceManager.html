@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseInputDeviceManager
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -93,7 +93,7 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html">BaseService</a></div>
-    <div class="level2"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html">BaseDataProvider</a></div>
+    <div class="level2"><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html">BaseDataProvider</a>&lt;<a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem.html">IMixedRealityInputSystem</a>&gt;</div>
     <div class="level3"><span class="xref">BaseInputDeviceManager</span></div>
       <div class="level4"><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputSimulationService.html">BaseInputSimulationService</a></div>
       <div class="level4"><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.HandJointService.html">HandJointService</a></div>
@@ -112,10 +112,10 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_Registrar">BaseDataProvider.Registrar</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_1_Registrar">BaseDataProvider&lt;IMixedRealityInputSystem&gt;.Registrar</a>
     </div>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_Service">BaseDataProvider.Service</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html#Microsoft_MixedReality_Toolkit_BaseDataProvider_1_Service">BaseDataProvider&lt;IMixedRealityInputSystem&gt;.Service</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_DefaultPriority">BaseService.DefaultPriority</a>
@@ -128,9 +128,6 @@
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_ConfigurationProfile">BaseService.ConfigurationProfile</a>
-    </div>
-    <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Initialize">BaseService.Initialize()</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Reset">BaseService.Reset()</a>
@@ -146,9 +143,6 @@
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Disable">BaseService.Disable()</a>
-    </div>
-    <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Destroy">BaseService.Destroy()</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_disposed">BaseService.disposed</a>
@@ -185,7 +179,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseInputDeviceManager : BaseDataProvider, IMixedRealityInputDeviceManager, IMixedRealityDataProvider, IMixedRealityService, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BaseInputDeviceManager : BaseDataProvider&lt;IMixedRealityInputSystem&gt;, IMixedRealityInputDeviceManager, IMixedRealityDataProvider, IMixedRealityService, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -294,14 +288,14 @@ protected BaseInputDeviceManager(IMixedRealityServiceRegistrar registrar, IMixed
   </h3>
   
   
-  <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_InputSystem_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.InputSystem*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_InputSystem" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.InputSystem">InputSystem</h4>
-  <div class="markdown level1 summary"><p>The active instance of the input system.</p>
+  <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_EnablePointerCache_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.EnablePointerCache*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_EnablePointerCache" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.EnablePointerCache">EnablePointerCache</h4>
+  <div class="markdown level1 summary"><p>Control mechanism to enable/disable use of Pointer Cache in request/recycling of pointers by Input System</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IMixedRealityInputSystem InputSystem { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool EnablePointerCache { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -313,7 +307,7 @@ protected BaseInputDeviceManager(IMixedRealityServiceRegistrar registrar, IMixed
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSystem.html">IMixedRealityInputSystem</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -348,6 +342,19 @@ protected BaseInputDeviceManager(IMixedRealityServiceRegistrar registrar, IMixed
   </h3>
   
   
+  <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Destroy_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.Destroy*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Destroy" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.Destroy">Destroy()</h4>
+  <div class="markdown level1 summary"><p>Optional Destroy function to perform cleanup of the service before the Mixed Reality Toolkit is destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Destroy()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Destroy">BaseService.Destroy()</a></div>
+  
+  
   <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_GetActiveControllers_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.GetActiveControllers*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_GetActiveControllers" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.GetActiveControllers">GetActiveControllers()</h4>
   <div class="markdown level1 summary"><p>Retrieve all controllers currently registered with this device at runtime (if direct access is required)</p>
@@ -368,6 +375,49 @@ protected BaseInputDeviceManager(IMixedRealityServiceRegistrar registrar, IMixed
     <tbody>
       <tr>
         <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityController.html">IMixedRealityController</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Initialize_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.Initialize*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_Initialize" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"><p>The initialize function is used to setup the service once created.
+This method is called once all services have been registered in the Mixed Reality Toolkit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html#Microsoft_MixedReality_Toolkit_BaseService_Initialize">BaseService.Initialize()</a></div>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_RecyclePointers_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.RecyclePointers*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_BaseInputDeviceManager_RecyclePointers_Microsoft_MixedReality_Toolkit_Input_IMixedRealityInputSource_" data-uid="Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.RecyclePointers(Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource)">RecyclePointers(IMixedRealityInputSource)</h4>
+  <div class="markdown level1 summary"><p>Recycle all pointers associated with the provided <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource.html">IMixedRealityInputSource</a>.
+This involves reseting the pointer, disabling the pointer GameObject, and possibly caching it for re-use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void RecyclePointers(IMixedRealityInputSource inputSource)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputSource.html">IMixedRealityInputSource</a></td>
+        <td><span class="parametername">inputSource</span></td>
         <td></td>
       </tr>
     </tbody>

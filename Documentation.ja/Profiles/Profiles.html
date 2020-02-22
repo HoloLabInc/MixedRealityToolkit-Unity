@@ -8,7 +8,7 @@
     <title>Profiles | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Profiles | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -85,8 +85,8 @@
 <p>MRTK を設定する主な方法の一つは、foundation パッケージに含まれる多数の Profile を使用することです。
 シーン内のメインとなる <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.MixedRealityToolkit.html"><code>MixedRealityToolkit</code></a> オブジェクトはアクティブな Profile を持っており、これは実装としては ScriptableObject です。トップ レベルの MRTK Configuration Profile は主要なコア システムのそれぞれに対しサブプロファイル データを含んでおり、それらは対応するサブ システムの振る舞いを設定するようデザインされています。さらに、これらのサブプロファイルも ScriptableObject であり、一階層下の他のプロファイルへの参照を含むことができます。本質的に、MRTK のサブシステムと機能をどう初期化するかの設定情報を作り上げる、結合されたプロファイルのツリーがあります。</p>
 <p>例えば入力機能の振る舞いは <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.SDK/Profiles/DefaultMixedRealityInputSystemProfile.asset">input system プロファイル オブジェクト</a>で管理されています。Profile の ScriptableObject を編集するにはエディターの [Inspector](インスペクター) ウィンドウを常に使用することを強くお勧めします。</p>
-<p><img src="../../Documentation/Images/Profiles/input_profile.png" width="650px" style="display:block;"><br>
-<sup>Profile Inspector</sup></p>
+<img src="../../Documentation/Images/Profiles/input_profile.png" width="650px" style="display:block;">
+<sup>Profile Inspector</sup>
 <div class="NOTE">
 <h5>Note</h5>
 <p>今後、実行時に Profile が変更可能になる予定ですが、<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/4289">現状は対応していません</a>。</p>

@@ -8,7 +8,7 @@
     <title>Sliders | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Sliders | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -82,12 +82,12 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="sliders">Sliders</h1>
 
-<p><img src="Images/Slider/MRTK_UX_Slider_Main.jpg" alt=""></p>
+<p><img src="Images/Slider/MRTK_UX_Slider_Main.jpg" alt="Slider example"></p>
 <p>Sliders are UI components that allow you to continuously change a value by moving a slider on a track. Currently the Pinch Slider can be moved by directly grabbing the slider, either directly or at a distance. Sliders work on AR and VR, using motion controllers, hands, or Gesture + Voice.</p>
 <h2 id="example-scene">Example scene</h2>
 <p>You can find examples in the <strong>SliderExample</strong> scene under:
 <a href="/Assets/MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes">MixedRealityToolkit.Examples/Demos/UX/Slider/Scenes/</a></p>
-<h2 id="how-to-use-sliders">How to use Sliders</h2>
+<h2 id="how-to-use-sliders">How to use sliders</h2>
 <p>Drag and drop the <strong>PinchSlider</strong> prefab into the scene hierarchy. If you want to modify or create your own slider, remember to do the following:</p>
 <ul>
 <li>Make sure your that your thumb object has a collider on it. In the PinchSlider prefab, the collider is on <code>SliderThumb/Button_AnimationContainer/Slider_Button</code></li>
@@ -103,7 +103,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="slider-events">Slider Events</h2>
+<h2 id="slider-events">Slider events</h2>
 <p>Sliders expose the following events:</p>
 <ul>
 <li>OnValueUpdated - Called whenever the slider value changes</li>
@@ -112,11 +112,24 @@
 <li>OnHoverEntered - Called when the user's hand / controller hovers over the slider, using either near or far interaction.</li>
 <li>OnHoverExited - Called when the user's hand / controller is no longer near the slider.</li>
 </ul>
-<h2 id="configuring-slider-bound-and-axis">Configuring Slider Bound and Axis</h2>
+<h2 id="configuring-slider-bound-and-axis">Configuring slider bound and axis</h2>
 <p>You can directly move the starting and end points of the slider by moving the handles in the Scene:</p>
 <p><img src="Images/Sliders/MRTK_Sliders_Setup.png" alt="Sliders Config"></p>
 <p>You can also specify the axis (in local space) of the slider via the <em>Slider Axis</em> field</p>
 <p>If you cannot use the handles, you can instead specify the start and end points of the slider via the <em>Slider Start Distance</em> and <em>Slider End Distance</em> fields. These specify start / end position of slider as a distance from the slider's center, in local coordinates. This means that once you set the slider start and end distances as you want them, you can scale the slider to be smaller or larger without needing to update the start and end distances.</p>
+<h2 id="inspector-properties">Inspector properties</h2>
+<p><strong>Thumb Root</strong> The gameobject that contains the slider thumb.</p>
+<p><strong>Slider Value</strong> The value of the slider.</p>
+<p><strong>Track Visuals</strong> The gameobject that contains the desired track visuals that goes along the slider.</p>
+<p><strong>Tick Marks</strong> The gameobject that contains the desired tick marks that goes along the slider.</p>
+<p><strong>Thumb Visuals</strong> The gameobject that contains the desired thumb visual that goes along the slider.</p>
+<p><strong>Slider Axis</strong> The axis the slider moves along.</p>
+<p><strong>Slider Start Distance</strong> Where the slider track starts, as distance from center along slider axis, in local space units.</p>
+<p><strong>Slider End Distance</strong> Where the slider track ends, as distance from center along slider axis, in local space units.</p>
+<p>When user updates the slider axis value in editor then if Track Visuals or Tick Visuals are specified then their transform is updated.
+Specifically, their local position is reset and their local rotation is set to match the Slider Axis orientation.
+Their scale isn't modified.
+If Tick Marks have a Grid Object Collection component then the Layout and CellWidth or CellHeight is updated accordingly to match the Slider Axis.</p>
 </article>
           </div>
           

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Controllers, Pointers, and Focus | Mixed Reality Toolkit Documentation </title>
+    <title>Controllers, pointers, and focus | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Controllers, Pointers, and Focus | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="title" content="Controllers, pointers, and focus | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
@@ -80,12 +80,12 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="controllers-pointers-and-focus">Controllers, Pointers, and Focus</h1>
+<h1 id="controllers-pointers-and-focus">Controllers, pointers, and focus</h1>
 
 <p>Controllers, pointers, and focus are higher-level concepts that build upon the foundation established by the core input system. Together, they provide a large portion of the mechanism for interacting with objects in the scene.</p>
 <h2 id="controllers">Controllers</h2>
 <p>Controllers are representations of a physical controller (6-degrees of freedom, articulated hand, etc). They are created by device managers and are responsible for communicating with the corresponding underlying system and translating that data into MRTK-shaped data and events.</p>
-<p>For example, on the Windows Mixed Reality platform, the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityArticulatedHand.html"><code>WindowsMixedRealityArticulatedHand</code></a> is a controller that is responsible for interfacing with the underlying Windows <a href="https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate">hand tracking APIs</a> to get information about the joints, pose, and other properties of the hand. It is responsible for turning this data into relevant MRTK events (for example, by calling RaisePoseInputChanged or RaiseHandJointsUpdated) and by updating its own internal state so that queries for <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html#Microsoft_MixedReality_Toolkit_Input_HandJointUtils_TryGetJointPose_TrackedHandJoint_Handedness_MixedRealityPose__"><code>TryGetJointPose</code></a> will return correct data.</p>
+<p>For example, on the Windows Mixed Reality platform, the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityArticulatedHand.html"><code>WindowsMixedRealityArticulatedHand</code></a> is a controller that is responsible for interfacing with the underlying Windows <a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate">hand tracking APIs</a> to get information about the joints, pose, and other properties of the hand. It is responsible for turning this data into relevant MRTK events (for example, by calling RaisePoseInputChanged or RaiseHandJointsUpdated) and by updating its own internal state so that queries for <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html#Microsoft_MixedReality_Toolkit_Input_HandJointUtils_TryGetJointPose_TrackedHandJoint_Handedness_MixedRealityPose__"><code>TryGetJointPose</code></a> will return correct data.</p>
 <p>Generally, a controller's lifecycle will involve:</p>
 <ol>
 <li><p>A controller gets created by a device manager upon detection of a new source (for example, the detects and starts tracking a hand).</p>
@@ -110,7 +110,7 @@
 <p>These types of pointers plug into the teleportation system to handle moving the user to the location targeted by the pointer.</p>
 </li>
 </ul>
-<h2 id="pointer-mediation">Pointer Mediation</h2>
+<h2 id="pointer-mediation">Pointer mediation</h2>
 <p>Because a single controller can have multiple pointers (for example, the articulated hand can have both near and far interaction pointers), there exists a component that is responsible for mediating which pointer should be active.</p>
 <p>For example, as the user’s hand approaches a pressable button, the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.html"><code>ShellHandRayPointer</code></a> should stop showing, and the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.PokePointer.html"><code>PokePointer</code></a> should be engaged.</p>
 <p>This is handled by the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.DefaultPointerMediator.html"><code>DefaultPointerMediator</code></a>,
@@ -120,17 +120,17 @@ which is responsible for determining which pointers are active, based on the sta
 <p>Because the pointer mediator runs every frame, it ends up controlling the active / inactive state of all pointers. Therefore, if you set a pointer's IsInteractionEnabled property in code, it will get overwritten by the pointer mediator every frame. Instead, you can specify the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.PointerBehavior.html"><code>PointerBehavior</code></a> to control whether pointers should be on or off yourself. Note that this will only work if you are using the default <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.FocusProvider.html"><code>FocusProvider</code></a> and <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.DefaultPointerMediator.html"><code>DefaultPointerMediator</code></a> in MRTK.</p>
 <h4 id="example-disable-hand-rays-in-mrtk">Example: Disable hand rays in MRTK</h4>
 <p>The following code will turn off the hand rays in MRTK:</p>
-<pre><code class="lang-csharp">// Turn off all hand rays
+<pre><code class="lang-c#">// Turn off all hand rays
 PointerUtils.SetHandRayPointerBehavior(PointerBehavior.AlwaysOff);
 
 // Turn off hand rays for the right hand only
 PointerUtils.SetHandRayPointerBehavior(PointerBehavior.AlwaysOff, Handedness.Right);
 </code></pre>
 <p>The following code will return hand rays to their default behavior in MRTK:</p>
-<pre><code class="lang-csharp">PointerUtils.SetHandRayPointerBehavior(PointerBehavior.Default);
+<pre><code class="lang-c#">PointerUtils.SetHandRayPointerBehavior(PointerBehavior.Default);
 </code></pre>
 <p>The following code will force hand rays to be on, regardless if near a grabbable:</p>
-<pre><code class="lang-csharp">// Turn off all hand rays
+<pre><code class="lang-c#">// Turn off all hand rays
 PointerUtils.SetHandRayPointerBehavior(PointerBehavior.AlwaysOn);
 </code></pre>
 <p>See <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.PointerUtils.html"><code>PointerUtils</code></a> and <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.DisablePointersExample.html"><code>TurnPointersOnOff</code></a> for more examples.</p>

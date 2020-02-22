@@ -8,7 +8,7 @@
     <title>Sliders (&#12473;&#12521;&#12452;&#12480;&#12540;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Sliders (&#12473;&#12521;&#12452;&#12480;&#12540;) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -82,7 +82,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="sliders-スライダー">Sliders (スライダー)</h1>
 
-<p><img src="../Documentation/Images/Slider/MRTK_UX_Slider_Main.jpg" alt=""></p>
+<p><img src="../Documentation/Images/Slider/MRTK_UX_Slider_Main.jpg" alt="Slider example"></p>
 <p>スライダーは、トラック上でスライダーを動かして、値を連続的に変更できる UI コンポーネントです。現在のところ、Pinch Slider (ピッチ スライダー) は、直接または少し離れた位置でスライダーをつかんで移動できます。スライダーは、モーション コントローラー、ハンド、または、ジェスチャ+音声を使用して、AR および VR で動作します。</p>
 <h2 id="サンプルシーン">サンプルシーン</h2>
 <p>以下の場所の <strong>SliderExample</strong> シーンにサンプルがあります:
@@ -117,6 +117,19 @@
 <p><img src="../Documentation/Images/Sliders/MRTK_Sliders_Setup.png" alt="Sliders Config"></p>
 <p><em>Slider Axis</em> フィールドを使用してスライダの軸 (ローカル空間における) を指定することもできます。</p>
 <p>ハンドルを使用できない場合は、代わりに <em>Slider Start Distance</em> フィールドと <em>Slider End Distance</em> フィールドを使用して、スライダーの開始点と終了点を指定できます。スライダの開始 / 終了位置を、スライダの中心からの距離としてローカル座標で指定します。つまり、スライダーの開始距離と終了距離を必要に応じて設定すると、開始距離と終了距離を更新しなくても、スライダーを縮小または拡大できます。</p>
+<h2 id="インスペクターのプロパティ">インスペクターのプロパティ</h2>
+<p><strong>Thumb Root</strong> スライダーの Thumb (つまみ) を含んでいるゲームオブジェクト</p>
+<p><strong>Slider Value</strong> スライダーの値</p>
+<p><strong>Track Visuals</strong> スライダーに付随する、視覚的な跡を含むゲームオブジェクト</p>
+<p><strong>Tick Marks</strong> スライダーに付随する、目盛りを含むゲームオブジェクト</p>
+<p><strong>Thumb Visuals</strong> スライダーに付随する、つまみの見た目を含むゲームオブジェクト</p>
+<p><strong>Slider Axis</strong> スライダーが動く軸</p>
+<p><strong>Slider Start Distance</strong> スライダーが移動し始める、ローカル スペースでのスライダーの軸中心からの距離</p>
+<p><strong>Slider End Distance</strong> スライダーの移動が終わる、ローカル スペースでのスライダーの軸中心からの距離</p>
+<p>ユーザーがスライダー軸の値をエディターで更新した際、Track Visuals か Tick Visuals が指定されていればそれらのトランスフォームは更新されます。
+特に、それらのローカル ポジションはリセットされ、ローカル ローテーションは Slider Axis の姿勢に合うようにセットされます。
+それらのスケールは変更されません。
+もし、Tick Marks が Grid Object Collection コンポーネントを持っていれば、Layout と CellWidth または CellHeight が Slider Axis に合うように更新されます。</p>
 </article>
           </div>
           

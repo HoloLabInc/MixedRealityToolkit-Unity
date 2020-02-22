@@ -8,7 +8,7 @@
     <title>Manipulation handler | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Manipulation handler | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,7 +86,7 @@
 <p><em>ManipulationHandler</em> スクリプトを使用することで、オブジェクトを片手か両手を使って、移動、スケール調整、および回転を可能にすることができます。特定の種類の移動のみを許可することにより、操作を制限できます。このスクリプトは、HoloLens 2 多関節ハンド入力、手の Ray 、HoloLens (第 1 世代) ジェスチャ入力、没入型ヘッドセット モーション コントローラー入力など、さまざまな種類の入力で動作します。</p>
 <h2 id="manipulation-handler-の使用方法">Manipulation handler の使用方法</h2>
 <p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/Input/Handlers/ManipulationHandler.cs"><code>ManipulationHandler.cs</code></a> コンポーネントをゲームオブジェクトに追加します。</p>
-<p>また、オブジェクトに衝突可能 (Collidable) なバウンドを合わせて追加してください。オブジェクトが近くにある多関節ハンドに反応するには、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Services/InputSystem/NearInteractionGrabbable.cs">NearInteractionGrabbable.cs</a> スクリプトも追加します。</p>
+<p>また、オブジェクトのつかめる範囲に合わせてコライダーを追加してください。オブジェクトが近くにある多関節ハンドに反応するには、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.Services/InputSystem/NearInteractionGrabbable.cs">NearInteractionGrabbable.cs</a> スクリプトも追加します。</p>
 <p>オブジェクトのスケールの最小値または最大値を設定する場合は、<a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/Input/Handlers/TransformScaleHandler.cs">TransformScaleHandler</a> スクリプトも追加してください。</p>
 <p><img src="../Documentation/Images/ManipulationHandler/MRTK_ManipulationHandler_Howto.png" alt="Manipulation Handler"></p>
 <h2 id="inspectorインスペクターのプロパティ">[Inspector](インスペクター)のプロパティ</h2>

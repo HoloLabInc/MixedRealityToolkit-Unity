@@ -8,7 +8,7 @@
     <title>Detecting platform capabilities | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Detecting platform capabilities | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@ provides a way to identify specific capabilities at runtime, (e.g. if the curren
 <h2 id="capabilities">Capabilities</h2>
 <p>The Mixed Reality Toolkit provides the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCapability.html"><code>MixedRealityCapability</code></a>
 enumeration, which defines a set of capabilities for which an application can query at runtime.</p>
-<h3 id="input-system-capabilities">Input System capabilities</h3>
+<h3 id="input-system-capabilities">Input system capabilities</h3>
 <p>The default MRTK Input System supports querying the following capabilities:</p>
 <table>
 <thead>
@@ -125,7 +125,7 @@ enumeration, which defines a set of capabilities for which an application can qu
 </tbody>
 </table>
 <p>The example code below checks to see if the input system has loaded a data provider with support for articulated hands.</p>
-<pre><code class="lang-C#">bool supportsArticulatedHands = false;
+<pre><code class="lang-c#">bool supportsArticulatedHands = false;
 
 IMixedRealityCapabilityCheck capabilityCheck = CoreServices.InputSystem as IMixedRealityCapabilityCheck;
 if (capabilityCheck != null)
@@ -133,7 +133,7 @@ if (capabilityCheck != null)
     supportsArticulatedHands = capabilityCheck.CheckCapability(MixedRealityCapability.ArticulatedHand);
 }
 </code></pre>
-<h3 id="spatial-awareness-capabilities">Spatial Awareness capabilities</h3>
+<h3 id="spatial-awareness-capabilities">Spatial awareness capabilities</h3>
 <p>The default MRTK Spatial Awareness system supports querying the following capabilities:</p>
 <table>
 <thead>
@@ -158,7 +158,7 @@ if (capabilityCheck != null)
 </tbody>
 </table>
 <p>This example checks to see if the spatial awareness system has loaded a data provider with support for spatial meshes.</p>
-<pre><code class="lang-C#">bool supportsSpatialMesh = false;
+<pre><code class="lang-c#">bool supportsSpatialMesh = false;
 
 IMixedRealityCapabilityCheck capabilityCheck = CoreServices.SpatialAwarenessSystem as IMixedRealityCapabilityCheck;
 if (capabilityCheck != null)
@@ -166,7 +166,7 @@ if (capabilityCheck != null)
     supportsSpatialMesh = capabilityCheck.CheckCapability(MixedRealityCapability.SpatialAwarenessMesh);
 }
 </code></pre>
-<h2 id="see-also">See Also</h2>
+<h2 id="see-also">See also</h2>
 <ul>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.IMixedRealityCapabilityCheck.html">IMixedRealityCapabilityCheck API documentation</a></li>
 <li><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCapability.html">MixedRealityCapability enum documentation</a></li>

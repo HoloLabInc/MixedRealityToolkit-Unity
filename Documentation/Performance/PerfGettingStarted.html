@@ -8,7 +8,7 @@
     <title>Performance | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Performance | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,16 +83,16 @@
 <h1 id="performance">Performance</h1>
 
 <h2 id="getting-started">Getting started</h2>
-<p>The easiest way to rationalize performance is via framerate or how many times your application can render an image per second. It is important to meet the target framerate, as outlined by the platform being targeted (i.e <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality">Windows Mixed Reality</a>, <a href="https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/">Oculus</a>, etc). For example, on HoloLens, the target framerate is 60 FPS. Low framerate applications can result in deteriorated user experiences such as worsened <a href="../hologram-stabilization.html">hologram stabilization</a>, world tracking, hand tracking, and more. To help developers track and achieve quality framerate, the Mixed Reality Toolkit provides a variety of tools and scripts.</p>
-<h3 id="visual-profiler">Visual Profiler</h3>
+<p>The easiest way to rationalize performance is via framerate or how many times your application can render an image per second. It is important to meet the target framerate, as outlined by the platform being targeted (i.e <a href="https://docs.microsoft.com/windows/mixed-reality/understanding-performance-for-mixed-reality">Windows Mixed Reality</a>, <a href="https://developer.oculus.com/documentation/pcsdk/latest/concepts/dg-performance-guidelines/">Oculus</a>, etc). For example, on HoloLens, the target framerate is 60 FPS. Low framerate applications can result in deteriorated user experiences such as worsened <a href="../hologram-stabilization.html">hologram stabilization</a>, world tracking, hand tracking, and more. To help developers track and achieve quality framerate, the Mixed Reality Toolkit provides a variety of tools and scripts.</p>
+<h3 id="visual-profiler">Visual profiler</h3>
 <p>To continuously track performance over the lifetime of development, it is highly recommended to always show a framerate visual while running &amp; debugging an application. The Mixed Reality Toolkit provides the <a href="../Diagnostics/UsingVisualProfiler.html">Visual Profiler</a> diagnostic tool which gives real-time information about the current FPS and memory usage in application view. The Visual Profiler can be configured via the <a href="../Diagnostics/DiagnosticsSystemGettingStarted.html">Diagnostics System Settings</a> under the <a href="../MixedRealityConfigurationGuide.html">MRTK Profiles Inspector</a>.</p>
-<p>Furthermore, it is particularly important to utilize the Visual Profiler to track framerate when running on the device as opposed to running in Unity editor or an emulator. The most accurate performance results will be depicted when running on the device with <a href="https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019">Release configuration builds</a>.</p>
+<p>Furthermore, it is particularly important to utilize the Visual Profiler to track framerate when running on the device as opposed to running in Unity editor or an emulator. The most accurate performance results will be depicted when running on the device with <a href="https://docs.microsoft.com/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019">Release configuration builds</a>.</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>If building for Windows Mixed Reality, deploy with <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/exporting-and-building-a-unity-visual-studio-solution#building_and_deploying_a_unity_visual_studio_solution">MASTER configuration builds</a></p>
+<p>If building for Windows Mixed Reality, deploy with <a href="https://docs.microsoft.com/windows/mixed-reality/exporting-and-building-a-unity-visual-studio-solution#building_and_deploying_a_unity_visual_studio_solution">MASTER configuration builds</a></p>
 </div>
 <p><img src="../Images/Diagnostics/VisualProfiler.png" alt="Visual Profiler Interface"></p>
-<h3 id="optimize-window">Optimize Window</h3>
+<h3 id="optimize-window">Optimize window</h3>
 <p>The <a href="../Tools/OptimizeWindow.html">MRTK Optimize Window</a> offers information and automation tools to help mixed reality developers set up their environment for the best performing results and identify potential bottlenecks in their scene &amp; assets. Certain key configurations in Unity can help deliver substantially more optimized results for mixed reality projects.</p>
 <p>Generally, these settings involve rendering configurations that are ideal for mixed reality. Mixed reality applications are unique compared to traditional 3D graphics development in that there are two screens (i.e two eyes) to render for the entire scene.</p>
 <p>The recommended settings referenced below can be auto-configured in a Unity project by leveraging the MRTK Optimize Window.</p>
@@ -135,9 +135,9 @@ v2f vert (appdata v)
 </code></pre>
 <h3 id="quality-settings">Quality settings</h3>
 <p>Unity provides <a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">presets to control quality</a> of rendering for each platform endpoint. These presets control what graphical features can be enabled such as shadows, anti-aliasing, global illumination, and more. It is recommended to lower these settings and optimize the number of calculations performed during rendering.</p>
-<p><em>Step 1:</em> Update mixed reality Unity projects to use the <em>Low Quality</em> level setting <br>
+<p><em>Step 1:</em> Update mixed reality Unity projects to use the <em>Low Quality</em> level setting<br>
 <strong>Edit</strong> &gt; <strong>Project Settings</strong>, then select the <strong>Quality</strong> category &gt;  Select <em>Low Quality</em> for the UWP Platform</p>
-<p><em>Step 2:</em> For every Unity scene file, disable <a href="https://docs.unity3d.com/Manual/LightMode-Realtime.html">real-time Global Illumination</a> <br>
+<p><em>Step 2:</em> For every Unity scene file, disable <a href="https://docs.unity3d.com/Manual/LightMode-Realtime.html">real-time Global Illumination</a><br>
 <strong>Window</strong> &gt; <strong>Rendering</strong> &gt; <strong>Lighting Settings</strong> &gt; <a href="https://docs.unity3d.com/Manual/GlobalIllumination.html">Uncheck <em>Real-time Global Illumination</em></a></p>
 <h3 id="depth-buffer-sharing-hololens">Depth buffer sharing (HoloLens)</h3>
 <p>If developing for the Windows Mixed Reality platform and in particular HoloLens, enabling <em>Depth Buffer Sharing</em> under <em>XR Settings</em> can help with <a href="../hologram-stabilization.html">hologram stabilization</a>. However, processing of the depth buffer can incur a performance cost, particularly if using <a href="https://docs.unity3d.com/ScriptReference/PlayerSettings.VRWindowsMixedReality-depthBufferFormat.html">24-bit depth format</a>. Thus, it is <em>highly recommended</em> to configure the depth buffer to 16-bit precision.</p>
@@ -151,7 +151,7 @@ v2f vert (appdata v)
 <h5>Note</h5>
 <p>To quickly determine which objects in a scene do not write to the depth buffer visually, one can use the <a href="../MixedRealityConfigurationGuide.html#editor-utilities"><em>Render Depth Buffer</em> utility</a> under the <em>Editor Settings</em> in the MRTK Configuration profile.</p>
 </div>
-<h2 id="general-recommendations">General Recommendations</h2>
+<h2 id="general-recommendations">General recommendations</h2>
 <p>Performance can be an ambiguous and constantly changing challenge for mixed reality developers and the spectrum of knowledge to rationalize performance is vast. There are some general recommendations for understanding how to approach performance for an application though.</p>
 <p>It is useful to simplify the execution of an application into the pieces that run on the <em>CPU</em> or the <em>GPU</em> and thus identify whether an app is bounded by either component.  There can be bottlenecks that span both processing units and some unique scenarios that have to be carefully investigated. However, for getting started, it is good to grasp where an application is executing for the most amount of time.</p>
 <h3 id="gpu-bounded">GPU bounded</h3>
@@ -200,9 +200,9 @@ v2f vert (appdata v)
 </table>
 <h3 id="draw-call-instancing">Draw call instancing</h3>
 <p>One of the most common mistakes in Unity that reduces performance is cloning materials at runtime. If GameObjects share the same material and/or are the same mesh, they can be optimized into single draw calls via techniques such as <em><a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">static batching</a></em>, <em><a href="https://docs.unity3d.com/Manual/DrawCallBatching.html">dynamic batching</a></em>, and <em><a href="https://docs.unity3d.com/Manual/GPUInstancing.html">GPU Instancing</a></em>. However, if developer's modify properties of a <a href="https://docs.unity3d.com/ScriptReference/Renderer-material.html">Renderer's material</a> at runtime, Unity will create a clone copy of the assigned material.</p>
-<p>For example, if there are a 100 cubes in a scene, a developer may want to assign a unique color to each at runtime. The access of <a href="https://docs.unity3d.com/ScriptReference/Material-color.html"><em>renderer.material.color</em></a> in C# will make Unity create a new material in memory for this particular renderer/GameObject. Each of the 100 cubes will have it's own material and thus they cannot be merged together into one draw call, but instead will become 100 draw call requests from the CPU to the GPU.</p>
+<p>For example, if there are a 100 cubes in a scene, a developer may want to assign a unique color to each at runtime. The access of <a href="https://docs.unity3d.com/ScriptReference/Material-color.html"><em>renderer.material.color</em></a> in C# will make Unity create a new material in memory for this particular renderer/GameObject. Each of the 100 cubes will have its own material and thus they cannot be merged together into one draw call, but instead will become 100 draw call requests from the CPU to the GPU.</p>
 <p>To overcome this obstacle and still assign a unique color per cube, developers should leverage <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlock</a>.</p>
-<pre><code class="lang-csharp">private PropertyBlock m_PropertyBlock ;
+<pre><code class="lang-c#">private PropertyBlock m_PropertyBlock ;
 private Renderer myRenderer;
 
 private void Start()
@@ -245,9 +245,9 @@ private void ChangeColor()
 </ul>
 <h3 id="windows-mixed-reality">Windows Mixed Reality</h3>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/recommended-settings-for-unity">Recommended Settings for Unity</a></li>
-<li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/understanding-performance-for-mixed-reality">Understanding Performance for Mixed Reality</a></li>
-<li><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/performance-recommendations-for-unity">Performance recommendations for Unity</a></li>
+<li><a href="https://docs.microsoft.com/windows/mixed-reality/recommended-settings-for-unity">Recommended Settings for Unity</a></li>
+<li><a href="https://docs.microsoft.com/windows/mixed-reality/understanding-performance-for-mixed-reality">Understanding Performance for Mixed Reality</a></li>
+<li><a href="https://docs.microsoft.com/windows/mixed-reality/performance-recommendations-for-unity">Performance recommendations for Unity</a></li>
 <li><a href="https://docs.unity3d.com/uploads/ExpertGuides/Analyzing_your_game_performance_using_Event_Tracing_for_Windows.pdf">Event Tracing for Windows Unity Guide</a></li>
 </ul>
 <h3 id="oculus">Oculus</h3>

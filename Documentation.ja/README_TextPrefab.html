@@ -8,7 +8,7 @@
     <title>Text Prefab (&#12486;&#12461;&#12473;&#12488; &#12503;&#12524;&#12495;&#12502;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Text Prefab (&#12486;&#12461;&#12473;&#12488; &#12503;&#12524;&#12495;&#12502;) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -82,34 +82,37 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="text-prefab-テキスト-プレハブ">Text Prefab (テキスト プレハブ)</h1>
 
-<p>これらのプレハブは、Windows Mixed Reality のレンダリング品質向けに最適化されています。詳細については、Microsoft Windows Dev Center のガイドライン <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/text-in-unity">Text in Unity</a> を参照してください。</p>
-<h4 id="3dtextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">3DTextPrefab.prefab</a></h4>
+<p>これらのプレハブは、Windows Mixed Reality のレンダリング品質向けに最適化されています。詳細については、Microsoft Windows Dev Center のガイドライン <a href="https://docs.microsoft.com/windows/mixed-reality/text-in-unity">Text in Unity</a> を参照してください。</p>
+<h2 id="prefab-プレハブ">Prefab (プレハブ)</h2>
+<h3 id="3dtextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">3DTextPrefab.prefab</a></h3>
 <p>2 メートルの距離で最適化されたスケーリング係数を持つ 3D Text Mesh プレハブ (以下の手順をお読みください)。</p>
-<h4 id="uitextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">UITextPrefab.prefab</a></h4>
+<h3 id="uitextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">UITextPrefab.prefab</a></h3>
 <p>2 メートルの距離で最適化されたスケーリング係数を持つ UI Text Mesh プレハブ (以下の手順をお読みください)。</p>
-<h4 id="fonts"><a href="/Assets/MixedRealityToolkit/StandardAssets/Fonts">Fonts</a></h4>
+<h3 id="fonts"><a href="/Assets/MixedRealityToolkit/StandardAssets/Fonts">Fonts</a></h3>
 <p>Mixed Reality Toolkit に含まれるオープンソースフォント。</p>
-<p><strong>重要: テキスト プレハブはオープン ソース フォント 'Selawik' を使用しています。別のフォントでテキスト プレハブを使用するには、フォント ファイルをインポートして、以下の手順に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。</strong></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>テキスト プレハブはオープン ソース フォント 'Selawik' を使用しています。別のフォントでテキスト プレハブを使用するには、フォント ファイルをインポートして、以下の手順に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。</p>
+</div>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions01.png" alt="Importing Segoe UI font file"></p>
 <ol>
-<li>フォント テクスチャを 3DTextSegoeUI.mat マテリアルに割り当てます。</li>
-</ol>
+<li><p>フォント テクスチャを 3DTextSegoeUI.mat マテリアルに割り当てます。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions02.png" alt="Assigning font texture"></p>
-<ol start="2">
-<li>3DTextSegoeUI.mat マテリアルで、Custom/3DTextShader.shader シェーダーを選択します。</li>
-</ol>
+</li>
+<li><p>3DTextSegoeUI.mat マテリアルで、Custom/3DTextShader.shader シェーダーを選択します。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions03.png" alt="Assigning shader"></p>
-<ol start="3">
-<li>Segoe UI フォントと 3DTextSegoeUI マテリアルをプレハブのテキスト コンポーネントに割り当てます。</li>
-</ol>
+</li>
+<li><p>Segoe UI フォントと 3DTextSegoeUI マテリアルをプレハブのテキスト コンポーネントに割り当てます。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions04.png" alt="Assigning font file and material"></p>
-<p><strong>Unity でフォントを扱う</strong></p>
+</li>
+</ol>
+<h3 id="unity-でフォントを扱う">Unity でフォントを扱う</h3>
 <p>Unity のシーンに新しい 3D TextMesh を追加するとき、視覚的に明らかな 2 つの問題があります。 1 つ目は、フォントが非常に大きく表示され、2 つ目は、フォントが非常にぼやけて表示されます。また、インスペクターでデフォルトのフォント サイズの値がゼロに設定されていることにも注目してください。このゼロ値を 13 に置き換えても、実際には 13 がデフォルト値であるため、サイズに違いはありません。</p>
 <p>Unity は、シーンに追加されるすべての新しい要素のサイズが 1 Unity 単位、または 100% の Transform スケール (これは HoloLens で約 1 メートルに変換される) だと仮定します。フォントの場合、3D TextMesh のバウンディング ボックスが、デフォルトで高さが約 1 メートルとなります。</p>
-<p><strong>フォント スケールとフォント サイズ</strong></p>
+<h3 id="フォント-スケールとフォント-サイズ">フォント スケールとフォント サイズ</h3>
 <p>ほとんどのビジュアル デザイナー、そしてデザイン プログラムは、Points を使用して現実世界のフォント サイズを定義します。1 メートルは約 2835 (2,834.645666399962) ポイントになります。ポイント システムの 1 メートルへの変換と Unity のデフォルトの TextMesh フォント サイズ 13 に基づいて、13 を 2835 で割った単純計算の 0.0046 (正確には 0.004586111116) という値は、初めの標準スケールとして良い値となります。ただし、0.005 に丸めたい人もいるかもしれません。</p>
 <p>いずれにしても、Text オブジェクトまたはコンテナーをこれらの値にスケールすると、デザイン プログラムからフォント サイズの 1：1 変換が可能になるだけでなく、アプリケーションまたはゲーム全体で一貫性を維持するための標準も提供されます。</p>
-<p><strong>UI Text</strong></p>
+<h3 id="ui-text">UI Text</h3>
 <p>UI またはキャンバス ベースの Text 要素をシーンに追加すると、サイズの不均衡はさらに大きくなります。 2つのサイズの違いは約1000％で、UI ベースのテキスト コンポーネントのスケール係数は 0.00046 (正確には 0.0004586111116) または丸められた値の場合は 0.0005 になります。</p>
 <p><strong>免責事項</strong>: 任意のフォントのデフォルト値は、そのフォントのテクスチャ サイズまたはフォントが Unity にインポートされた方法によって影響を受ける場合があります。これらのテストは、Unity のデフォルトの Arial フォントと、インポートされた他の 1 つのフォントに基づいて実行されました。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions07.png" alt="Font size with scaling factors"></p>

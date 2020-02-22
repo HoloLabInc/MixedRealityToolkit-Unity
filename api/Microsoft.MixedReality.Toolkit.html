@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Microsoft.MixedReality.Toolkit
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -101,6 +101,8 @@
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseCoreSystem.html">BaseCoreSystem</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider.html">BaseDataProvider</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProvider-1.html">BaseDataProvider&lt;T&gt;</a></h4>
       <section><p>The base data provider implements <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html">IMixedRealityDataProvider</a> and provides default properties for all data providers.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseDataProviderAccessCoreSystem.html">BaseDataProviderAccessCoreSystem</a></h4>
@@ -113,7 +115,9 @@
       <section><p>The base extension service implements <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService.html">IMixedRealityExtensionService</a> and provides default properties for all extension services.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseMixedRealityProfile.html">BaseMixedRealityProfile</a></h4>
-      <section></section>
+      <section><p>Base abstract class for all Mixed Reality profile configurations.
+Extends ScriptableObject and used as a property container to initialize MRTK services.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.BaseService.html">BaseService</a></h4>
       <section><p>The base service implements <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a> and provides default properties for all services.</p>
 </section>
@@ -124,6 +128,10 @@
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.CameraExtensions.html">CameraExtensions</a></h4>
       <section><p>Extension methods for the Unity's Camera class</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.CameraFOVChecker.html">CameraFOVChecker</a></h4>
+      <section><p>Camera extension methods to test if colliders are within camera's FOV. Uses
+caching to improve performance and ensure values are only computed once per frame</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.CanvasExtensions.html">CanvasExtensions</a></h4>
       <section><p>Extensions for the Canvas class.</p>
@@ -275,6 +283,8 @@ numeric entry field.</p>
       <section><p>This is a helper class to allow you to call OnSubmit() on a UnityEngine.UI.Button or other control derived from UnityEngine.EventSystems.ISubmitHandler on this gameObject.
 It exposes a public function that can be bound in the Editor to a Unity Event.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.SystemNumericsExtensions.html">SystemNumericsExtensions</a></h4>
+      <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.SystemTypeAttribute.html">SystemTypeAttribute</a></h4>
       <section><p>Base class for class selection constraints that can be applied when selecting
 a <a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.SystemType.html">SystemType</a> with the Unity inspector.</p>
@@ -333,7 +343,8 @@ that supply services with required information (ex: input controller state).</p>
       <section><p>Generic interface for all Mixed Reality Services</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceConfiguration.html">IMixedRealityServiceConfiguration</a></h4>
-      <section><p>Defines a system, feature, or manager to be registered with as a <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService.html">IMixedRealityExtensionService</a> on startup.</p>
+      <section><p>Defines configuration data for to be registered for a <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityService.html">IMixedRealityService</a> on startup.
+Generally, used for configuring the extended interface, <a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html">IMixedRealityDataProvider</a></p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html">IMixedRealityServiceRegistrar</a></h4>
       <section><p>Interface for Mixed Reality Toolkit service registration.</p>

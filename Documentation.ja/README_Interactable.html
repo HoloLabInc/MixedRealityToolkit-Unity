@@ -8,7 +8,7 @@
     <title>Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -184,13 +184,13 @@
 </ol>
 <h4 id="receiverbase-の拡張例"><code>ReceiverBase</code> の拡張例</h4>
 <p><code>MixedRealityToolkit.Examples</code> 配下の <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html"><code>CustomInteractablesReceiver</code></a> クラスは、<em>Interactable</em> に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。</p>
-<pre><code class="lang-csharp">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
+<pre><code class="lang-c#">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
 {
     HideUnityEvents = true; // レシーバーの Unity イベントを非表示にします。コードのみであると意味します。
 }
 </code></pre>
 <p>次のメソッドは、カスタム イベント レシーバーの作成時にオーバーライドまたは実装する場合に便利です。 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnUpdate()</code></a> は、ステートのパターン/遷移の検出に使用できる抽象メソッドです。さらに、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnVoiceCommand()</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html"><code>ReceiverBase.OnClick()</code></a> メソッドは、<em>Interactable</em> が選択されている場合にカスタム イベント ロジックを作成するのに便利です。</p>
-<pre><code class="lang-csharp">public override void OnUpdate(InteractableStates state, Interactable source)
+<pre><code class="lang-c#">public override void OnUpdate(InteractableStates state, Interactable source)
 {
     if (state.CurrentState() != lastState)
     {
@@ -217,12 +217,12 @@ public virtual void OnClick(InteractableStates state,
 </code></pre>
 <h5 id="inspector-にカスタム-イベント-レシーバー-フィールドを表示">Inspector にカスタム イベント レシーバー フィールドを表示</h5>
 <p><em>ReceiverBase</em> スクリプトは、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField.html"><code>InspectorField</code></a> 属性を使用して Inspector (インスペクター) にカスタム プロパティを公開します。次に、Vector3 のツールチップとラベル情報を持つカスタム プロパティの例を示します。このプロパティは、<em>Interactable</em> GameObject が選択され、関連付けられた <em>Event Receiver</em> タイプが追加されている場合に、インスペクターで設定可能として表示されます。</p>
-<pre><code class="lang-csharp">[InspectorField(Label = &quot;&lt;Property label&gt;&quot;,Tooltip = &quot;&lt;Insert tooltip info&gt;&quot;,Type = InspectorField.FieldTypes.Vector3)]
+<pre><code class="lang-c#">[InspectorField(Label = &quot;&lt;Property label&gt;&quot;,Tooltip = &quot;&lt;Insert tooltip info&gt;&quot;,Type = InspectorField.FieldTypes.Vector3)]
 public Vector3 EffectOffset = Vector3.zero;
 </code></pre>
 <h2 id="interactable-の使用方法">Interactable の使用方法</h2>
 <h3 id="シンプルなボタンを作成する">シンプルなボタンを作成する</h3>
-<p>入力イベントを受信するように構成された GameObject に <em>Interactable</em> コンポーネントを追加するだけで、簡単なボタンを作成することができます。入力を受け取るために自身または子要素にコライダーを持っていることがあります。Unity UI ベースの GameObject で <em>Interactable</em> を使用する場合は、Canvas GameObject の下に配置する必要があります。</p>
+<p>入力イベントを受信するように構成された GameObject に <em>Interactable</em> コンポーネントを追加することで、簡単なボタンを作成することができます。入力を受け取るために自身または子要素にコライダーを持っていることがあります。Unity UI ベースの GameObject で <em>Interactable</em> を使用する場合は、Canvas GameObject の下に配置する必要があります。</p>
 <p>ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、<em>OnClick</em> イベントを使用して、何かを実行します。</p>
 <div class="NOTE">
 <h5>Note</h5>
@@ -235,7 +235,7 @@ public Vector3 EffectOffset = Vector3.zero;
 <p><em>CanSelect</em> は、<em>Interactable</em> が <em>off</em> から <em>on</em> に遷移できることを意味し、<em>CanDeselect</em> はその逆を意味します。</p>
 <p><img src="../Documentation/Images/Interactable/Profile_toggle.png" alt="Profile Toggle Visual Themes Example"></p>
 <p>開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>SetToggled</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>IsToggled</code></a> インタフェースを使用して、コードを介して <em>Interactable</em> のトグル状態を取得/設定できます。</p>
-<pre><code class="lang-csharp">// SelectionMode = Toggle (すなわち Dimensions == 2) を使用する場合
+<pre><code class="lang-c#">// SelectionMode = Toggle (すなわち Dimensions == 2) を使用する場合
 
 // Interactable を選択して、トグルをオンにする
 myInteractable.IsToggled = true;
@@ -261,7 +261,7 @@ bool isSelected = myInteractable.IsToggled;
 <p>すべてのクリックイベントは実行時に <code>DimensionIndex</code> の値を 1 ずつ進め、<code>Dimensions</code> の値に到達すると、このサイクルは 0 にリセットされます。</p>
 <p><img src="../Documentation/Images/Interactable/Profile_multiDimensions.png" alt="Multi-Dimensional profile example"></p>
 <p>開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>DimensionIndex</code></a> を評価して、どのディメンションが現在アクティブかを判断できます。</p>
-<pre><code class="lang-csharp">// SelectionMode = Multi-dimension (すなわち Dimensions &gt;= 3) を使用する場合 
+<pre><code class="lang-c#">// SelectionMode = Multi-dimension (すなわち Dimensions &gt;= 3) を使用する場合 
 
 // 現在の DimensionIndex にアクセスする
 int currentDimension = myInteractable.CurrentDimension;
@@ -274,7 +274,7 @@ myInteractable.IncreaseDimension();
 </code></pre>
 <h3 id="実行時に-interactable-を作成する">実行時に Interactable を作成する</h3>
 <p><em>Interactable</em> は、実行時に任意の GameObject に簡単に追加できます。以下に <a href="VisualThemes.html">ビジュアル テーマ</a> を使用してプロファイルを割り当てる例を示します。</p>
-<pre><code class="lang-csharp">var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+<pre><code class="lang-c#">var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 var interactable = interactableObject.AddComponent&lt;Interactable&gt;();
 
 // テーマ エンジン InteractableColorTheme のデフォルトの設定を取得する
@@ -306,14 +306,14 @@ interactable.TriggerOnClick()
 </code></pre>
 <h3 id="コードを使用した-interactable-イベント">コードを使用した Interactable イベント</h3>
 <p>次の例のようなコードを使用して、ベースとなる <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_OnClick"><code>Interactable.OnClick</code></a> イベントにアクションを追加できます。</p>
-<pre><code class="lang-csharp">public static void AddOnClick(Interactable interactable)
+<pre><code class="lang-c#">public static void AddOnClick(Interactable interactable)
 {
     interactable.OnClick.AddListener(() =&gt; Debug.Log(&quot;Interactable clicked&quot;));
 }
 </code></pre>
 <p>実行時に動的にイベント レシーバーを追加するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html"><code>Interactable.AddReceiver&lt;T&gt;()</code></a> 関数を使用します。</p>
 <p>以下のサンプル コードは、フォーカスの開始/終了をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnFocusReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
-<pre><code class="lang-csharp">public static void AddFocusEvents(Interactable interactable)
+<pre><code class="lang-c#">public static void AddFocusEvents(Interactable interactable)
 {
     var onFocusReceiver = interactable.AddReceiver&lt;InteractableOnFocusReceiver&gt;();
 
@@ -322,7 +322,7 @@ interactable.TriggerOnClick()
 }
 </code></pre>
 <p>以下のサンプル コードは、トグル可能な <em>Interactables</em> の選択/選択解除のステート遷移をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html">InteractableOnToggleReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
-<pre><code class="lang-csharp">public static void AddToggleEvents(Interactable interactable)
+<pre><code class="lang-c#">public static void AddToggleEvents(Interactable interactable)
 {
     var toggleReceiver = interactable.AddReceiver&lt;InteractableOnToggleReceiver&gt;();
 

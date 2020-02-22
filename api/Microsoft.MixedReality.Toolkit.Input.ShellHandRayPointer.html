@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ShellHandRayPointer
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,7 +86,8 @@
   
   <h1 id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer" class="text-break">Class ShellHandRayPointer
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Implementation for default hand ray pointers shipped with MRTK. Primariliy used with hands and motion controllers</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -116,9 +117,6 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_LineCastResolution">LinePointer.LineCastResolution</a>
-    </div>
-    <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_LineColorSelected">LinePointer.LineColorSelected</a>
     </div>
     <div>
@@ -140,13 +138,22 @@
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_LineRenderers">LinePointer.LineRenderers</a>
     </div>
     <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_IsInteractionEnabled">LinePointer.IsInteractionEnabled</a>
+    </div>
+    <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_OnDisable">LinePointer.OnDisable()</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_OnPreSceneQuery">LinePointer.OnPreSceneQuery()</a>
     </div>
     <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_IsInteractionEnabled">LinePointer.IsInteractionEnabled</a>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_PostUpdateLineRenderers">LinePointer.PostUpdateLineRenderers()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_UpdateRays">LinePointer.UpdateRays()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_SetLinePoints_Vector3_Vector3_">LinePointer.SetLinePoints(Vector3, Vector3)</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_DisableCursorOnStart">BaseControllerPointer.DisableCursorOnStart</a>
@@ -168,9 +175,6 @@
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_SetCursor_GameObject_">BaseControllerPointer.SetCursor(GameObject)</a>
-    </div>
-    <div>
-      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_Start">BaseControllerPointer.Start()</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_Controller">BaseControllerPointer.Controller</a>
@@ -234,6 +238,9 @@
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_OnPreCurrentPointerTargetChange">BaseControllerPointer.OnPreCurrentPointerTargetChange()</a>
+    </div>
+    <div>
+      <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_Reset">BaseControllerPointer.Reset()</a>
     </div>
     <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_Equals_System_Object_">BaseControllerPointer.Equals(Object)</a>
@@ -346,43 +353,28 @@
   <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_OnPostSceneQuery">LinePointer.OnPostSceneQuery()</a></div>
   
   
-  <a id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_SetLinePoints_" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.SetLinePoints*"></a>
-  <h4 id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_SetLinePoints_Vector3_Vector3_System_Single_" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.SetLinePoints(Vector3,Vector3,System.Single)">SetLinePoints(Vector3, Vector3, Single)</h4>
+  <a id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_PreUpdateLineRenderers_" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.PreUpdateLineRenderers*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_PreUpdateLineRenderers" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.PreUpdateLineRenderers">PreUpdateLineRenderers()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void SetLinePoints(Vector3 startPoint, Vector3 endPoint, float distance)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void PreUpdateLineRenderers()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">startPoint</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">endPoint</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">distance</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_SetLinePoints_Vector3_Vector3_System_Single_">LinePointer.SetLinePoints(Vector3, Vector3, Single)</a></div>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html#Microsoft_MixedReality_Toolkit_Input_LinePointer_PreUpdateLineRenderers">LinePointer.PreUpdateLineRenderers()</a></div>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_Start_" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.Start*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Input_ShellHandRayPointer_Start" data-uid="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.Start">Start()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Start()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseControllerPointer.html#Microsoft_MixedReality_Toolkit_Input_BaseControllerPointer_Start">BaseControllerPointer.Start()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityControllerPoseSynchronizer.html">IMixedRealityControllerPoseSynchronizer</a>

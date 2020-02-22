@@ -8,7 +8,7 @@
     <title>System keyboard (&#12471;&#12473;&#12486;&#12512; &#12461;&#12540;&#12508;&#12540;&#12489;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="System keyboard (&#12471;&#12473;&#12486;&#12512; &#12461;&#12540;&#12508;&#12540;&#12489;) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -83,31 +83,30 @@
 <h1 id="system-keyboard-システム-キーボード">System keyboard (システム キーボード)</h1>
 
 <p><img src="../Documentation/Images/SystemKeyboard/MRTK_SystemKeyboard_Main.png" alt="System keyboard"></p>
-<p>Unity アプリケーションならば、いつでもシステム キーボードを呼び出すことができます。システム キーボードはターゲット プラットフォームの機能に応じて動作し、たとえば HoloLens 2 のキーボードはダイレクト ハンド インタラクションをサポートしますが、HoloLens (第 1 世代) のキーボードは GGV<sup><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/gaze">1</a></sup> をサポートすることに注意してください。</p>
+<p>Unity アプリケーションならば、いつでもシステム キーボードを呼び出すことができます。システム キーボードはターゲット プラットフォームの機能に応じて動作し、たとえば HoloLens 2 のキーボードはダイレクト ハンド インタラクションをサポートしますが、HoloLens (第 1 世代) のキーボードは GGV<sup><a href="https://docs.microsoft.com/windows/mixed-reality/gaze">1</a></sup> をサポートすることに注意してください。</p>
 <h2 id="system-keyboard-システム-キーボード-の呼び出し方">System keyboard (システム キーボード) の呼び出し方</h2>
-<pre><code class="lang-csharp">    public TouchScreenKeyboard keyboard;
+<pre><code class="lang-c#">public TouchScreenKeyboard keyboard;
 
-    ...
+...
 
-    public void OpenSystemKeyboard()
-    {
-        keyboard = TouchScreenKeyboard.Open(&quot;&quot;, TouchScreenKeyboardType.Default, false, false, false, false);
-    }
+public void OpenSystemKeyboard()
+{
+    keyboard = TouchScreenKeyboard.Open(&quot;&quot;, TouchScreenKeyboardType.Default, false, false, false, false);
+}
 </code></pre>
 <h2 id="入力の読み込み方">入力の読み込み方</h2>
-<pre><code class="lang-csharp">
-    public TouchScreenKeyboard keyboard;
+<pre><code class="lang-c#">public TouchScreenKeyboard keyboard;
 
-    ...
+...
 
-    private void Update()
+private void Update()
+{
+    if (keyboard != null)
     {
-        if (keyboard != null)
-        {
-            keyboardText = keyboard.text;
-            // Do stuff with keyboardText
-        }
+        keyboardText = keyboard.text;
+        // Do stuff with keyboardText
     }
+}
 </code></pre>
 <h2 id="system-keyboard-システム-キーボード-のサンプル">System keyboard (システム キーボード) のサンプル</h2>
 <p>システム キーボードを表示する簡単な例は、<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Experimental/Features/UX/MixedRealityKeyboard.cs"><code>MixedRealityKeyboard.cs</code></a> にて見ることができます。</p>

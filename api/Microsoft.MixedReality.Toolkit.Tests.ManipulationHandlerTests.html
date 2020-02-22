@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ManipulationHandlerTests
    | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -154,6 +154,87 @@ deactivated, that manipulation no longer moves that object.</p>
   </table>
   
   
+  <a id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsBothHands_" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsBothHands*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsBothHands" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsBothHands">ManipulationHandlerEventsBothHands()</h4>
+  <div class="markdown level1 summary"><p>Test that OnManipulationStarted and OnManipulationEnded events call as expected
+for One Handed and Two Handed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator ManipulationHandlerEventsBothHands()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsOneHandedOnly_" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsOneHandedOnly*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsOneHandedOnly" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsOneHandedOnly">ManipulationHandlerEventsOneHandedOnly()</h4>
+  <div class="markdown level1 summary"><p>Test that OnManipulationStarted and OnManipulationEnded events call as expected
+for various One Handed Only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator ManipulationHandlerEventsOneHandedOnly()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsTwoHandedOnly_" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsTwoHandedOnly*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerEventsTwoHandedOnly" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerEventsTwoHandedOnly">ManipulationHandlerEventsTwoHandedOnly()</h4>
+  <div class="markdown level1 summary"><p>Test that OnManipulationStarted and OnManipulationEnded events call as expected
+for Two Handed Only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator ManipulationHandlerEventsTwoHandedOnly()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerForceRelease_" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerForceRelease*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerForceRelease" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerForceRelease">ManipulationHandlerForceRelease()</h4>
   <div class="markdown level1 summary"><p>Test creates an object with manipulationhandler verifies translation with articulated hand
@@ -266,8 +347,8 @@ maximum and minimum scales are not exceeded.</p>
   
   <a id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerMoveYAxisGGV_" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerMoveYAxisGGV*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_Tests_ManipulationHandlerTests_ManipulationHandlerMoveYAxisGGV" data-uid="Microsoft.MixedReality.Toolkit.Tests.ManipulationHandlerTests.ManipulationHandlerMoveYAxisGGV">ManipulationHandlerMoveYAxisGGV()</h4>
-  <div class="markdown level1 summary"><p>This test first moves the hand a set amount along the x-axis, records its x position, then moves
-it the same amount along the y-axis and records its y position. Given no constraints on manipulation,
+  <div class="markdown level1 summary"><p>This test first moves the hand a set amount along the x-axis, records its x distance from the hand, then moves
+it the same amount along the y-axis and records its y distance from the hand. Given no constraints on manipulation,
 we expect these values to be the same.
 This test was added as a change to pointer behaviour made GGV manipulation along the y-axis sluggish.</p>
 </div>

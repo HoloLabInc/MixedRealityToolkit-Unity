@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Breaking Changes | Mixed Reality Toolkit Documentation </title>
+    <title>Breaking changes | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Breaking Changes | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="title" content="Breaking changes | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -80,7 +80,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="breaking-changes">Breaking Changes</h1>
+<h1 id="breaking-changes">Breaking changes</h1>
 
 <p>Consumers of the MRTK depend on having a stable release-to-release API surface, so that they can take updates to the MRTK without having large breaking changes each time.</p>
 <p>This page describes our current policy regarding breaking changes in the MRTK, along with some longer term goals around how we can better manage the tradeoff between keeping breaking changes low and being able to make the right long term technical changes to the code.</p>
@@ -137,7 +137,7 @@ details, allowing for easier refactoring and sharing of code between multiple cl
 <p>One thing we've already done is introduce the concept of an &quot;experimental&quot; feature (it belongs in the experimental namespace, it may not have tests/documentation, and is publicly proclaimed to exist but may be removed and updated without warning). This has given has freedom to add new features sooner to get earlier feedback, but not be immediately tied to its API surface (because we may not have fully thought out the API surface).</p>
 <h3 id="other-examples-of-things-that-could-help-in-the-future">Other examples of things that could help in the future</h3>
 <ul>
-<li>Usage of the <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/internal">internal keyword</a>.
+<li>Usage of the <a href="https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/internal">internal keyword</a>.
 This would allow for us to have shared code within our own assemblies (for reducing code duplication) without making things public to external consumers.</li>
 <li>Creation of an &quot;internal&quot; namespace (i.e. Microsoft.MixedReality.Toolkit.Internal.Utilities),
 where we publicly document that anything contained within that internal namespace is subject to change at anytime and could be removed, etc. This is similar to how C++ header libraries will make use of ::internal namespaces to hide their implementation details.</li>

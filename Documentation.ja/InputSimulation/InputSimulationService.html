@@ -8,7 +8,7 @@
     <title>&#20837;&#21147;&#12471;&#12511;&#12517;&#12524;&#12540;&#12471;&#12519;&#12531; &#12469;&#12540;&#12499;&#12473; (Input Simulation Service) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#20837;&#21147;&#12471;&#12511;&#12517;&#12524;&#12540;&#12471;&#12519;&#12531; &#12469;&#12540;&#12499;&#12473; (Input Simulation Service) | Mixed Reality Toolkit Documentation ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -89,7 +89,7 @@
 <li>HoloLens 2 の多関節ハンド トラッキング</li>
 <li>HoloLens 2 のアイ トラッキング</li>
 </ul>
-<p>ユーザーは、従来のキーボードやマウスの組み合わせで実行時に操作をシミュレーションすることができます。それにより、デバイスにデプロイする前に Unity Editor 上でインタラクションをテストすることができます。</p>
+<p>ユーザーは、従来のキーボードやマウスの組み合わせで実行時に操作をシミュレーションすることができます。このアプローチにより、デバイスにデプロイする前に Unity Editor 上でインタラクションをテストすることができます。</p>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>これは、Unity の XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot; では動作しません。Unity Editor 内でのシミュレーションは、MRTK の入力シミュレーションの制御を奪い取ります。MRTK の入力シミュレーション サービスを使用するには、XR Holographic Emulation を、Emulation Mode = <em>&quot;None&quot;</em> にセットする必要があります。</p>
@@ -103,8 +103,12 @@
 </ul>
 <h2 id="入力シミュレーション-ツール-ウィンドウ">入力シミュレーション ツール ウィンドウ</h2>
 <p><em>Mixed Reality Toolkit &gt; Utilities &gt; Input Simulation</em> メニューから、入力シミュレーション ツール ウィンドウを有効化します。このウィンドウは、プレイモードの間、入力シミュレーションの状態へのアクセスを提供します。</p>
-<h2 id="ビューポートボタン">ビューポートボタン</h2>
+<h2 id="ビューポート-ボタン">ビューポート ボタン</h2>
 <p>基本的なハンドの配置をコントロールするエディタ内ボタンのプレファブは、入力シミュレーションサービスの <strong>Indicators Prefab</strong> 配下の入力シミュレーション プロファイルで指定することができます。これは、オプションのユーティリティで、同じ機能には <a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a> からアクセスすることができます。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>ビューポート インジケーターは、現在 Unity UI インタラクションと時々干渉しうるため、デフォルトで無効になっています。イシュー <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6106">#6106</a> をご覧ください。有効にするには、InputSimulationIndicators プレハブを <strong>Indicators Prefab</strong> に追加してください。</p>
+</div>
 <p>ハンドアイコンは、シミュレーションされたハンドの状態を表します。</p>
 <ul>
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Untracked.png" alt="Untracked hand icon" title="Untracked hand icon"> ハンドは追跡されていません。クリックでハンドを有効化します。</li>
@@ -138,7 +142,7 @@
 <p>このモードでは、ハンドの正確な位置やタッチに基づいたインタラクションをシミュレートできます</p>
 </li>
 <li><p><em>Gestures</em>: Air Tap や基本的なジェスチャを持ったシンプルなハンドをシミュレートします</p>
-<p><a href="https://docs.microsoft.com/en-us/windows/mixed-reality/gestures">HoloLens interaction model</a> をエミュレートします。</p>
+<p><a href="https://docs.microsoft.com/windows/mixed-reality/gestures">HoloLens interaction model</a> をエミュレートします。</p>
 <p>フォーカスは視線ポインターを使ってコントロールします。<em>Air Tap</em> ジェスチャでボタンと対話します</p>
 </li>
 </ul>
@@ -152,7 +156,7 @@
 <ul>
 <li><strong>Hand Depth Multiplier</strong> は、マウス スクロール ホイールの深さの動きの感度を制御します。数値を大きくすると、ハンドのズームが速くなります。</li>
 <li><strong>Default Hand Distance</strong> は、カメラからのハンドの初期距離です。 <strong>Reset</strong> ボタンのハンドをクリックすると、ハンドもこの距離に配置されます。</li>
-<li><strong>Hand Jitter Amount</strong> は、ランダムな動きをハンドに追加します。これを使用して、デバイス上の不正確なハンドの追跡をシミュレートし、ノイズの多い入力でインタラクションが適切に機能することを確認できます。</li>
+<li><strong>Hand Jitter Amount</strong> は、ランダムな動きをハンドに追加します。この機能を使用して、デバイス上の不正確なハンドの追跡をシミュレートし、ノイズの多い入力でインタラクションが適切に機能することを確認できます。</li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uRYfwuqsjBQ" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 <h3 id="ハンド-ジェスチャ">ハンド ジェスチャ</h3>
