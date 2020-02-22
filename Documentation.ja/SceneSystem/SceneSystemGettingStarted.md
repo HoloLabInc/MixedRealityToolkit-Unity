@@ -29,4 +29,4 @@ By default, the Scene System enforces several behaviors in the Unity editor. If 
 
 - `Editor Enforce Lighting Scene Types:` If true, the service will ensure that only the lighting-related components defined in `PermittedLightingSceneComponentTypes` are allowed in lighting scenes. Disable if you want total control over the content of lighting scenes.
 
-![Scene system editor settings](../Images/SceneSystem/MRTK_SceneSystemProfileEditorSettings.PNG)
+![Scene system editor settings](../../Documentation/Images/SceneSystem/MRTK_SceneSystemProfileEditorSettings.PNG)

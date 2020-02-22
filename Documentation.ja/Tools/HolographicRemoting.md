@@ -18,7 +18,7 @@ configure the project using the following steps.
 1. Run the MRTK Configurator Utility (**Mixed Reality Toolkit > Utilities > Configure Unity Project**)
 1. Expand **Modify Configurations**
 
-    ![MRTK Configurator](../Images/Tools/Remoting/EnableMSBuildForUnity.png)
+    ![MRTK Configurator](../../Documentation/Images/Tools/Remoting/EnableMSBuildForUnity.png)
 
 1. Ensure that **Enable MSBuild for Unity** is selected
 1. Click **Apply**
@@ -31,13 +31,13 @@ If HoloLens 2 hand joints and eye tracking aren't working over remoting, there a
 
 The best way to check is to open Window -> Package Manager and make sure MSBuild for Unity shows up in the packages list. If it's there, assume this step succeeded. If it's not there, try running Mixed Reality Toolkit -> Utilities -> Configure Unity and repeat the steps above for running the MRTK Configurator.
 
-![MSB4U Package Manager](../Images/Tools/Remoting/MSB4UPackageManager.png)
+![MSB4U Package Manager](../../Documentation/Images/Tools/Remoting/MSB4UPackageManager.png)
 
 #### DotNetWinRT NuGet package resolution
 
 The best way to check is to search the Assets folder for DotNetWinRT.dll. If this doesn't exist, navigate to the Assets folder in the Project view and select `[ProjectName].Dependencies.msb4u.csproj`. Assuming part 1 did succeed, there should be a custom inspector with Build, Rebuild, and Clean buttons. Try clicking Build or Rebuild, and then re-search for DotNetWinRT.dll. If that DLL now exists, this step succeeded.
 
-![DotNetAdapter Inspector](../Images/Tools/Remoting/DotNetAdapterInspector.png)
+![DotNetAdapter Inspector](../../Documentation/Images/Tools/Remoting/DotNetAdapterInspector.png)
 
 #### DotNetAdapter.csproj missing
 
@@ -47,7 +47,7 @@ If the previous step didn't succeed, it's good to double check that the appropri
 
 Navigate to the Unity Player Settings. From there, under the UWP tab, check under Other Settings for the Scripting Define Symbols. Make sure DOTNETWINRT_PRESENT is properly written in that list. If that's there, this step succeeded.
 
-![DotNetWinRT Present](../Images/Tools/Remoting/DotNetWinRTPresent.png)
+![DotNetWinRT Present](../../Documentation/Images/Tools/Remoting/DotNetWinRTPresent.png)
 
 #### Failure to find dotnet.exe
 
@@ -82,19 +82,19 @@ Once the project has been configured, a connection can be established to the Hol
 1. On the HoloLens, launch the **Holographic Remoting** application.
 1. In Unity, select **Window > XR > Holographic Emulation**.
 
-    ![Start Holographic Emulation](../Images/Tools/Remoting/StartHolographicEmulation.png)
+    ![Start Holographic Emulation](../../Documentation/Images/Tools/Remoting/StartHolographicEmulation.png)
 
 1. Set **Emulation Mode** to **Remote to Device**.
 
-    ![Set Emulation Mode](../Images/Tools/Remoting/SelectEmulationMode.png)
+    ![Set Emulation Mode](../../Documentation/Images/Tools/Remoting/SelectEmulationMode.png)
 
 1. Select the **Device Version**.
 
-    ![Select Device Version](../Images/Tools/Remoting/SelectDeviceVersion.png)
+    ![Select Device Version](../../Documentation/Images/Tools/Remoting/SelectDeviceVersion.png)
 
 1. Using the IP Address displayed by the Holographic Remoting application, set the **Remote Machine** field.
 
-    ![Enter IP Address](../Images/Tools/Remoting/EnterIPAddress.png)
+    ![Enter IP Address](../../Documentation/Images/Tools/Remoting/EnterIPAddress.png)
 
 1. Click **Connect**.
 

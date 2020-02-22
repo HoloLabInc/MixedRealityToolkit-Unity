@@ -1,6 +1,6 @@
 # Eye-supported target selection
 
-![MRTK](../Images/EyeTracking/mrtk_et_targetselect.png)
+![MRTK](../../Documentation/Images/EyeTracking/mrtk_et_targetselect.png)
 
 This page discusses different options for accessing eye gaze data and eye gaze specific events to select targets in MRTK. Eye tracking allows for fast and effortless target selections using a combination of information about what a user is looking at with additional inputs such as _hand tracking_ and _voice commands_:
 
@@ -248,7 +248,7 @@ Similar to Example #1, we can easily create a hover feedback for our holographic
 
 1. Add the [`EyeTrackingTarget`](xref:Microsoft.MixedReality.Toolkit.Input.EyeTrackingTarget) script to your target GameObject and reference the _RotateTarget()_ function in the UnityEvent trigger as shown the screenshot below:
 
-    ![EyeTrackingTarget sample](../Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg)
+    ![EyeTrackingTarget sample](../../Documentation/Images/EyeTracking/mrtk_et_EyeTrackingTargetSample.jpg)
 
 ### Example #3: Pop those gems aka _multi-modal eye-gaze-supported target selection_
 
@@ -271,7 +271,7 @@ This means that the user can simply raise their hand and pinch their thumb and i
             - Associate the action you just created
             - Assign a _KeyCode_ to allow for triggering the action via a button press
 
-![Voice commands EyeTrackingTarget sample](../Images/EyeTracking/mrtk_et_voicecmdsample.jpg)
+![Voice commands EyeTrackingTarget sample](../../Documentation/Images/EyeTracking/mrtk_et_voicecmdsample.jpg)
 
 When a gem is selected it will explode, making a sound and disappear. This is handled by the [`HitBehaviorDestroyOnSelect`](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.HitBehaviorDestroyOnSelect) script. You have two options:
 

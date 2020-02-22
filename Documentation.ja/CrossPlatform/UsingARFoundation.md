@@ -26,27 +26,27 @@ The following steps presume use of the MixedRealityToolkit object. Steps require
 
 1. Select the MixedRealityToolkit object in the scene hierarchy.
 
-    ![MRTK Configured Scene Hierarchy](../Images/MRTK_ConfiguredHierarchy.png)
+    ![MRTK Configured Scene Hierarchy](../../Documentation/Images/MRTK_ConfiguredHierarchy.png)
 
 1. Select **Copy and Customize** to Clone the MRTK Profile to enable custom configuration.
 
-    ![Clone MRTK Profile](../Images/CameraSystem/CloneProfileARFoundation.png)
+    ![Clone MRTK Profile](../../Documentation/Images/CameraSystem/CloneProfileARFoundation.png)
 
 1. Select **Clone** next to the Camera Profile.
 
-    ![Clone MRTK Camera Profile](../Images/CameraSystem/CloneCameraProfileARFoundation.png)
+    ![Clone MRTK Camera Profile](../../Documentation/Images/CameraSystem/CloneCameraProfileARFoundation.png)
 
 1. Navigate the Inspector panel to the camera system section and expand the **Camera Settings Providers** section.
 
-    ![Expand settings providers](../Images/CameraSystem/ExpandProviders.png)
+    ![Expand settings providers](../../Documentation/Images/CameraSystem/ExpandProviders.png)
 
 1. Click **Add Camera Settings Provider** and expand the newly added **New camera settings** entry.
 
-    ![Expand new settings provider](../Images/CameraSystem/ExpandNewProvider.png)
+    ![Expand new settings provider](../../Documentation/Images/CameraSystem/ExpandNewProvider.png)
 
 1. Select the Unity AR Camera Settings provider
 
-    ![Select Unity AR settings provider](../Images/CameraSystem/SelectUnityArSettings.png)
+    ![Select Unity AR settings provider](../../Documentation/Images/CameraSystem/SelectUnityArSettings.png)
 
     For more information about configuring the Unity AR camera settings provider: [Unity AR camera settings provider](../CameraSystem/UnityArCameraSettings.md).
 
@@ -60,13 +60,13 @@ The following steps presume use of the MixedRealityToolkit object. Steps require
 
     iOS Project Configurator Settings
 
-    ![iOS Project Configurator](../Images/CameraSystem/MRTKProjectConfigurator.png)
+    ![iOS Project Configurator](../../Documentation/Images/CameraSystem/MRTKProjectConfigurator.png)
 
 1. There are no additional steps after switching the platform for Android.
 
 1. If the platform is iOS, Edit > Project Settings > Player > Other Settings, under the Optimization header, **uncheck** Strip Engine Code
 
-    ![iOS Settings](../Images/CameraSystem/UncheckStripEngineCodeiOS.png)
+    ![iOS Settings](../../Documentation/Images/CameraSystem/UncheckStripEngineCodeiOS.png)
 
     > [!NOTE]
     > Unchecking Strip Engine Code is the short term solution to an error in Xcode [#6646](https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6646).  We are working on a long term solution.

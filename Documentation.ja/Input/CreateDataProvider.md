@@ -31,7 +31,7 @@ For example, an input data provider created by the Contoso company may be "Conto
 
 It is recommended that the source code for data providers be layed out in a folder hierarchy as shown in the following image.
 
-![Example folder structure](../Images/Input/ExampleProviderFolderStructure.png)
+![Example folder structure](../../Documentation/Images/Input/ExampleProviderFolderStructure.png)
 
 Where ContosoInput contains the implementation of the data provider, the Editor folder contains the inspector (and any other Unity editor specific code), the Textures folder
 contains images of the supported controllers, and Profiles contains one or more pre-made profiles.
@@ -232,7 +232,7 @@ the file will be located in the ContosoInput\Editor folder. This assembly defini
 
 Once created, the data provider can be registered with the input system and be used in the application.
 
-![Registered input system data providers](../Images/Input/RegisteredServiceProviders.png)
+![Registered input system data providers](../../Documentation/Images/Input/RegisteredServiceProviders.png)
 
 ## Packaging and distribution
 

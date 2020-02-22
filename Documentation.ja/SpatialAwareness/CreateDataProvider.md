@@ -31,7 +31,7 @@ For example, a Spatial Awareness data provider created and shipped by the Contos
 
 It is recommended that the source code for data providers be layed out in a folder hierarchy as shown in the following image.
 
-![Example folder structure](../Images/SpatialAwareness/ExampleProviderFolderStructure.png)
+![Example folder structure](../../Documentation/Images/SpatialAwareness/ExampleProviderFolderStructure.png)
 
 Where the *ContosoSpatialAwareness* folder contains the implementation of the data provider, the *Editor* folder contains the inspector (and any other Unity editor specific code), and the *Profiles* folder contains one or more pre-made profile scriptable objects.
 
@@ -239,7 +239,7 @@ The ContosoInputEditor assembly definition will specify the profile inspector an
 
 Once created, the data provider can be registered with the Spatial Awareness system to be used in the application.
 
-![Selecting the spatial object mesh observer](../Images/SpatialAwareness/SelectObjectObserver.png)
+![Selecting the spatial object mesh observer](../../Documentation/Images/SpatialAwareness/SelectObjectObserver.png)
 
 ## Packaging and distribution
 

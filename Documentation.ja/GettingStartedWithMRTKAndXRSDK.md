@@ -22,7 +22,7 @@ For MRTK 2.3, Windows Mixed Reality is supported on XR SDK.
 1. Ensure that Initialize on Startup is checked.
 1. (**_Optional_**) Click on the Windows Mixed Reality tab under XR Plugin Management and create a custom settings profile to change the defaults.
 
-![Plugin management](Images/XRSDK/PluginManagement.png)
+![Plugin management](../Documentation/Images/XRSDK/PluginManagement.png)
 
 ### Required in MRTK
 

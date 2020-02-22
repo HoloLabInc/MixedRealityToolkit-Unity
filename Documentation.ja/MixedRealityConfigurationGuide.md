@@ -319,7 +319,7 @@ Configuration Profile の *Editor Settings* の *Use Service Inspectors* をチ�
 
 シーンが必要なデータすべてをデプス バッファーに描画していることを確かめるため、開発者は Configuration Profile の *Editor Settings* 以下の *Render Depth Buffer* 機能をトグルしてください。これは、現在のデプス バッファーを使い、[`DepthBufferRenderer`](xref:Microsoft.MixedReality.Toolkit.Rendering.DepthBufferRenderer) というポストプロセッシング エフェクトを適用することでメイン カメラのシーン ビューに色をつけて描画します。
 
-![Render Depth Buffer Utility](Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DepthBufferExample.gif)
+![Render Depth Buffer Utility](../Documentation/Images/MixedRealityToolkitConfigurationProfileScreens/MRTK_DepthBufferExample.gif)
 <sup>シーン内の青い円柱は ZWrite off のマテリアルを持っているため、デプス データは書き込まれません</sup>
 
 ## 関連項目
