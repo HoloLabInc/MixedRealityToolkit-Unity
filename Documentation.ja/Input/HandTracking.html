@@ -151,16 +151,7 @@
 </code></pre>
 <h4 id="hand-joint-service-ハンド-ジョイント-サービス-からの-joint-transform-ジョイント-トランスフォーム">Hand Joint Service (ハンド ジョイント サービス) からの Joint Transform (ジョイント トランスフォーム)</h4>
 <p><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHandJointService.html"><code>IMixedRealityHandJointService</code></a> は、トラッキングしているジョイントの <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObject</a> の永続的なセットを保持します。</p>
-<pre><code class="lang-c#">IMixedRealityHandJointService handJointService = null;
-if (CoreServices.InputSystem != null)
-{
-    var dataProviderAccess = CoreServices.InputSystem as IMixedRealityDataProviderAccess;
-    if (dataProviderAccess != null)
-    {
-        handJointService = dataProviderAccess.GetDataProvider&lt;IMixedRealityHandJointService&gt;();
-    }
-}
-
+<pre><code class="lang-c#">var handJointService = CoreServices.GetInputSystemDataProvider&lt;IMixedRealityHandJointService&gt;();
 if (handJointService != null)
 {
     Transform jointTransform = handJointService.RequestJointTransform(TrackedHandJoint.IndexTip, Handedness.Right);

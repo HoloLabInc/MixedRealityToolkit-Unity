@@ -95,7 +95,7 @@
 <p><img src="../Documentation/Images/Interactable/InputFeatures_short.png" alt="General Interactable Settings"></p>
 <p><strong>States (ステート)</strong></p>
 <p><em>States</em> は <a href="#interactable-%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">Interactable プロファイル</a>と<a href="VisualThemes.html">ビジュアル テーマ</a>で利用する、押された、見られている、といったインタラクションのフェーズを定義する <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html">ScriptableObject</a> パラメータです。</p>
-<p><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> は MRTK にそのまま含まれている、<em>Interactable</em> コンポーネントのデフォルトのパラメーターです。</p>
+<p><strong>DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) は MRTK にそのまま含まれている、<em>Interactable</em> コンポーネントのデフォルトのパラメーターです。</p>
 <p><img src="../Documentation/Images/Interactable/DefaultInteractableStates.png" alt="States ScriptableObject example in inspector"></p>
 <p><em>DefaultInteractableStates</em> アセットには4つのステートが含まれており、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStates.html"><code>InteractableStates</code></a> ステート モデルの実装を利用します。</p>
 <ul>
@@ -111,7 +111,7 @@
 <p>リスト内の順序に応じて、ビット値 (#) がステートに割り当てられます。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>一般に、<em>Interactable</em> コンポーネントを作成する場合は、 <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset"><strong>DefaultInteractableStates</strong></a> を使用することをお勧めします。</p>
+<p>一般に、<em>Interactable</em> コンポーネントを作成する場合は、<strong>DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) を使用することをお勧めします。</p>
 <p>ただし、テーマの駆動に使用できる Interactable のステートは17ありますが、一部は他のコンポーネントによって駆動されるように設計されています。以下は、そのようなステートで、機能が組み込まれているもののリストです。</p>
 <ul>
 <li>Visited: Interactable がクリックされました。</li>
@@ -150,7 +150,9 @@
 <h3 id="interactable-プロファイル">Interactable プロファイル</h3>
 <p><em>Profiles</em> は、GameObject と <a href="VisualThemes.html">ビジュアル テーマ</a> の間の関係を作成するアイテムです。プロファイルは、<a href="#general-%E5%85%A5%E5%8A%9B%E8%A8%AD%E5%AE%9A">ステートの変更が起こる</a> 時にテーマによって操作されるコンテンツを定義します。</p>
 <p>テーマはマテリアルのような働きをします。これらは、現在の状態に基づいてオブジェクトに割り当てられるプロパティのリストを含むスクリプタブル オブジェクトです。テーマも再利用可能で、複数の <em>Interactable</em> UX オブジェクトに割り当てることができます。</p>
-<p><img src="../Documentation/Images/Interactable/Profiles_Themes.png" alt="Interactable Profiles"></p>
+<p><strong>Reset On Destroy</strong></p>
+<p>ビジュアル テーマはターゲットとなる GameObject のさまざまなプロパティを、そのクラスと選択されたテーマ エンジンに応じて変更します。もし Interactable コンポーネントが破棄される時に <em>Reset On Destroy</em> が true の場合、コンポーネントはすべての変更されたプロパティをアクティブなテーマから元の値へとリセットします。そうでなければ、破棄されるときに Interactable コンポーネントはすべての変更されたプロパティをそのままにします。後者の場合、値の最後の状態は他の外部のコンポーネントによって変更されない限り持続します。デフォルトは false です。</p>
+<img src="../Documentation/Images/Interactable/Profiles_Themes.png" width="450">
 <h2 id="events">Events</h2>
 <p>すべての <em>Interactable</em> コンポーネントには、コンポーネントが単純に選択されたときに発火する <em>OnClick</em> イベントがあります。ただし、<em>Interactable</em> は、<em>OnClick</em> 以外の入力イベントの検出にも使用できます。</p>
 <p>Event Receiver (イベント レシーバー) 定義の新しいタイプを追加するには、[<em>Add Event</em>] ボタンをクリックします。追加したら、目的のイベントのタイプを選択します。</p>
@@ -183,7 +185,7 @@
 </li>
 </ol>
 <h4 id="receiverbase-の拡張例"><code>ReceiverBase</code> の拡張例</h4>
-<p><code>MixedRealityToolkit.Examples</code> 配下の <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html"><code>CustomInteractablesReceiver</code></a> クラスは、<em>Interactable</em> に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html"><code>CustomInteractablesReceiver</code></a> クラスは、<em>Interactable</em> に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。</p>
 <pre><code class="lang-c#">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
 {
     HideUnityEvents = true; // レシーバーの Unity イベントを非表示にします。コードのみであると意味します。
@@ -226,7 +228,7 @@ public Vector3 EffectOffset = Vector3.zero;
 <p>ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、<em>OnClick</em> イベントを使用して、何かを実行します。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>押下可能な <a href="README_Button.html">Button (ボタン)</a> を作成するには、<code>PressableButton</code> コンポーネントが必要です。さらに、<code>PhysicalPressEventRouter</code> コンポーネントは、押下イベントを <em>Interactable</em> コンポーネントに転送するために必要です。</p>
+<p>押下可能な <a href="README_Button.html">Button (ボタン)</a> を作成するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.PressableButton.html"><code>PressableButton</code></a> コンポーネントが必要です。さらに、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.PhysicalPressEventRouter.html"><code>PhysicalPressEventRouter</code></a> コンポーネントは、押下イベントを <em>Interactable</em> コンポーネントに転送するために必要です。</p>
 </div>
 <h3 id="toggle-button-トグル-ボタン-と-multi-dimension-ボタンの作成">Toggle Button (トグル ボタン) と Multi-Dimension ボタンの作成</h3>
 <h4 id="トグル-ボタン">トグル ボタン</h4>
@@ -245,7 +247,7 @@ bool isSelected = myInteractable.IsToggled;
 </code></pre>
 <h5 id="トグル-ボタン-コレクション">トグル ボタン コレクション</h5>
 <p>トグル ボタンのリストを作り、一度にアクティブにできるのは1つだけにすることがよくあります。これはラジアル セットまたはラジオ ボタンなどとも呼ばれます。</p>
-<p>この機能を有効にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html"><code>InteractableToggleCollection</code></a> コンポーネントを使用します。このコントロールにより、常に1つの <em>Interactable</em> のみがオンになります。<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab"><em>RadialSet</em> prefab</a> も、すぐに使える素晴らしい出発点です。</p>
+<p>この機能を有効にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html"><code>InteractableToggleCollection</code></a> コンポーネントを使用します。このコントロールにより、常に1つの <em>Interactable</em> のみがオンになります。<em>RadialSet</em> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab) も、すぐに使える素晴らしい出発点です。</p>
 <p>カスタム ラジオ ボタン グループを作成するには:</p>
 <ol>
 <li>複数の <em>Interactable</em> GameObjects/ボタンを作成します。</li>

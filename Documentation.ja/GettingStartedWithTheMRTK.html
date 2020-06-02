@@ -119,8 +119,8 @@
 <ul>
 <li><strong>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</strong></li>
 <li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</li>
-<li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</li>
 <li>(<strong><em>オプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</li>
+<li>(<strong><em>バージョンのアップグレードに必要、そうでなければオプション</em></strong>) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</li>
 </ul>
 </li>
 </ol>
@@ -131,9 +131,9 @@
 <ol>
 <li>新しい Unity プロジェクトを作成するか、既存のプロジェクトを開きます。新しいプロジェクトを作成する場合は、テンプレート タイプに 「3D」 が選択されていることを確認してください。</li>
 <li>ダウンロードした <strong>Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage</strong> をインポートします。「Asset -&gt; Import Package -&gt; Custom Package」から、 .unitypackage ファイルを選択し、 インポートする全ての項目がチェックされていることを確認してから、「Import」を選択します。</li>
-<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</strong> を上記と同様の手順でインポートします。Examples のパッケージは、オプションであり、現在の MRTK の機能の有用なデモ シーンが含まれています。</li>
-<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</strong> を Foundation パッケージと同様にインポートします。Tools のパッケージは、オプションであり、MRTK 開発者のエクスペリエンスを向上させる、ExtensionServiceCreator などの便利なツールが含まれています。</li>
 <li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage</strong> を Foundation パッケージと同様にインポートします。 Extensions パッケージは、オプションで、 MRTK の便利なオプション コンポーネントのセットを提供します。</li>
+<li>(<strong><em>オプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage</strong> を上記と同様の手順でインポートします。Examples のパッケージは、オプションであり、現在の MRTK の機能の有用なデモ シーンが含まれています。<strong>Examples パッケージは Extensions パッケージが必要であることにご注意ください</strong></li>
+<li>(<strong><em>バージョンのアップグレードに必要、そうでなければオプション</em></strong>) <strong>Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage</strong> を Foundation パッケージと同様にインポートします。Tools のパッケージは、オプションであり、MRTK 開発者のエクスペリエンスを向上させる、ExtensionServiceCreator などの便利なツールが含まれています。</li>
 </ol>
 <div class="NOTE">
 <h5>Note</h5>
@@ -210,13 +210,16 @@ Foundation パッケージをインポートすると、次のようなプロン
 <p><a href="README_HandInteractionExamples.html"><img src="../Documentation/Images/MRTK_Examples.png" alt="HandInteractionExample scene"></a></p>
 <p>ハンド インタラクション シーンを試すには、以下のステップを実行してください。</p>
 <ol>
-<li><p><code>Assets\MixedRealityToolkit.Examples\Demos\HandTracking\Scenes\HandInteractionExamples</code> の中の  <strong>HandInteractionExamples</strong> シーンを開きます。</p>
+<li><p><code>Assets/MRTK/Examples/Demos/HandTracking/Scenes/HandInteractionExamples</code> の中の  <strong>HandInteractionExamples</strong> シーンを開きます。</p>
 </li>
 <li><p>「TMP Essentials」をインポートするかを尋ねるプロンプトが表示されます。</p>
 <p><img src="../Documentation/Images/getting_started/MRTK_GettingStarted_TMPro.png" alt="TMP Essentials"></p>
 <p>このようなプロンプトが表示された場合は、「Import TMP essentials」 ボタンを選択します。「TMP Essentials」とは、Text Mesh プラグインを指し、MRTK のサンプルの一部はテキスト レンダリングを改善するために使用しています。(詳細については、<a href="https://docs.microsoft.com/windows/mixed-reality/text-in-unity">Unity のテキスト</a>を参照してください。)</p>
 </li>
 <li><p>TMP ダイアログを閉じます。この後、シーンをリロードする必要があります。これを行うには、プロジェクト タブでシーンをダブルクリックします。</p>
+</li>
+<li><p>シーンの乱雑さを抑えるため、Scene ビューの Gizmos タブの 3d Icons のチェックを外すかサイズを小さくします。</p>
+<p><img src="https://user-images.githubusercontent.com/13754172/80819866-a8aed800-8b8a-11ea-8d7b-a3822fdfc907.png" alt="Gizmos"></p>
 </li>
 <li><p>Play ボタンを押します。</p>
 </li>
@@ -244,7 +247,7 @@ Foundation パッケージをインポートすると、次のようなプロン
 <p>お勧めの次のステップを紹介します。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-101">MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions</a> で、グラブ、移動、スケール、回転などの一般的な空間的インタラクションの実現方法について学ぶ。</li>
-<li><a href="../README.html#ui-and-interaction-building-blocks">UI とインタラクションのビルディング ブロック</a> で UX コントロール について学ぶ。</li>
+<li><a href="../README.html#ux-building-blocks">UI とインタラクションのビルディング ブロック</a> で UX コントロール について学ぶ。</li>
 <li><a href="README_ExampleHub.html">MRTK Examples Hub</a> を試す(事前にビルドされたアプリケーション パッケージはリリース ページに含まれています)。</li>
 <li><a href="MixedRealityConfigurationGuide.html">Mixed Reality Toolkit プロファイル設定ガイド</a> で MRTK Configuration profile の使い方を学ぶ。</li>
 <li><a href="Architecture/Overview.html">MRTK のアーキテクチャ</a> を、学ぶ。</li>

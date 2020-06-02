@@ -84,12 +84,12 @@
 
 <p>これらのプレハブは、Windows Mixed Reality のレンダリング品質向けに最適化されています。詳細については、Microsoft Windows Dev Center のガイドライン <a href="https://docs.microsoft.com/windows/mixed-reality/text-in-unity">Text in Unity</a> を参照してください。</p>
 <h2 id="prefab-プレハブ">Prefab (プレハブ)</h2>
-<h3 id="3dtextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">3DTextPrefab.prefab</a></h3>
-<p>2 メートルの距離で最適化されたスケーリング係数を持つ 3D Text Mesh プレハブ (以下の手順をお読みください)。</p>
-<h3 id="uitextprefabprefab"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text">UITextPrefab.prefab</a></h3>
-<p>2 メートルの距離で最適化されたスケーリング係数を持つ UI Text Mesh プレハブ (以下の手順をお読みください)。</p>
-<h3 id="fonts"><a href="/Assets/MixedRealityToolkit/StandardAssets/Fonts">Fonts</a></h3>
-<p>Mixed Reality Toolkit に含まれるオープンソースフォント。</p>
+<h3 id="3dtextprefab">3DTextPrefab</h3>
+<p>2 メートルの距離で最適化されたスケーリング係数を持つ 3D Text Mesh プレハブ (Assets/MRTK/SDK/StandardAssets/Prefabs/Text) (以下の手順をお読みください)。</p>
+<h3 id="uitextprefab">UITextPrefab</h3>
+<p>2 メートルの距離で最適化されたスケーリング係数を持つ UI Text Mesh プレハブ (Assets/MRTK/SDK/StandardAssets/Prefabs/Text) (以下の手順をお読みください)。</p>
+<h3 id="fonts">Fonts</h3>
+<p>Mixed Reality Toolkit に含まれるオープンソース フォント (Assets/MRTK/Core/StandardAssets/Fonts)。</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>テキスト プレハブはオープン ソース フォント 'Selawik' を使用しています。別のフォントでテキスト プレハブを使用するには、フォント ファイルをインポートして、以下の手順に従ってください。以下の例は、Text Prefab で 'Segoe UI' フォントを使用する方法を示しています。</p>
@@ -116,10 +116,10 @@
 <p>UI またはキャンバス ベースの Text 要素をシーンに追加すると、サイズの不均衡はさらに大きくなります。 2つのサイズの違いは約1000％で、UI ベースのテキスト コンポーネントのスケール係数は 0.00046 (正確には 0.0004586111116) または丸められた値の場合は 0.0005 になります。</p>
 <p><strong>免責事項</strong>: 任意のフォントのデフォルト値は、そのフォントのテクスチャ サイズまたはフォントが Unity にインポートされた方法によって影響を受ける場合があります。これらのテストは、Unity のデフォルトの Arial フォントと、インポートされた他の 1 つのフォントに基づいて実行されました。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions07.png" alt="Font size with scaling factors"></p>
-<h3 id="text3dselawikmat"><a href="/Assets/MixedRealityToolkit/StandardAssets/Materials/">Text3DSelawik.mat</a></h3>
+<h3 id="text3dselawikmat"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/Core/StandardAssets/Materials">Text3DSelawik.mat</a></h3>
 <p>オクルージョンをサポートする 3DTextPrefab のマテリアル。3DTextShader.shader が必要です。</p>
 <p><img src="../Documentation/Images/TextPrefab/TextPrefabInstructions06.png" alt="Default Font material vs 3DTextSegoeUI material"></p>
-<h3 id="text3dshadershader"><a href="/Assets/MixedRealityToolkit/StandardAssets/Shaders/">Text3DShader.shader</a></h3>
+<h3 id="text3dshadershader"><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/Core/StandardAssets/Shaders">Text3DShader.shader</a></h3>
 <p>オクルージョンをサポートする 3DTextPrefab 用シェーダー。</p>
 </article>
           </div>

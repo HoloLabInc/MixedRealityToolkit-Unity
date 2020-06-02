@@ -95,14 +95,20 @@
 <p>これは、Unity の XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot; では動作しません。Unity Editor 内でのシミュレーションは、MRTK の入力シミュレーションの制御を奪い取ります。MRTK の入力シミュレーション サービスを使用するには、XR Holographic Emulation を、Emulation Mode = <em>&quot;None&quot;</em> にセットする必要があります。</p>
 </div>
 <h2 id="入力シミュレーション-サービスの有効化">入力シミュレーション サービスの有効化</h2>
-<p>MRTK では、入力シミュレーションはデフォルトで有効化されています。</p>
-<p>入力シミュレーション サービスは、<a href="../MixedRealityServices.html">Mixed Reality service</a> のオプションです。データ プロバイダーとして、<a href="../Input/InputProviders.html">Input System profile</a> に追加することができます。</p>
+<p>入力シミュレーションは MRTK に同梱されているプロファイルではデフォルトで有効化されています。</p>
+<p>入力シミュレーションは、オプションの <a href="../MixedRealityServices.html">Mixed Reality サービス</a> であり、<a href="../Input/InputProviders.html">Input System プロファイル</a> のデータ プロバイダーから取り除くこともできます。</p>
+<p>Input System データ プロバイダー設定で、入力シミュレーション サービスは以下の設定が可能です。</p>
 <ul>
-<li><strong>Type</strong> は、<em>Microsoft.MixedReality.Toolkit.Input &gt; InputSimulationService</em> である必要があります</li>
-<li><strong>Platform(s)</strong> は、デフォルトで全ての <em>Editor</em> プラットフォームを含みます。これは、サービスがキーボードとマウスの入力を使用するためです。</li>
+<li><strong>Type</strong> は、<em>Microsoft.MixedReality.Toolkit.Input &gt; InputSimulationService</em> である必要があります。</li>
+<li><strong>Supported Platform(s)</strong> は、デフォルトで全ての <em>Editor</em> プラットフォームを含みます。これは、サービスがキーボードとマウスの入力を使用するためです。</li>
 </ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>入力シミュレーション サービスは、<strong>Supported Platform(s)</strong> プロパティを望みのターゲットを含むように変更することでスタンドアローンのような他のプラットフォームで使うこともできます。
+<img src="../../Documentation/Images/InputSimulation/InputSimulationSupportedPlatforms.gif" alt="Input Simulation Supported Platforms"></p>
+</div>
 <h2 id="入力シミュレーション-ツール-ウィンドウ">入力シミュレーション ツール ウィンドウ</h2>
-<p><em>Mixed Reality Toolkit &gt; Utilities &gt; Input Simulation</em> メニューから、入力シミュレーション ツール ウィンドウを有効化します。このウィンドウは、プレイモードの間、入力シミュレーションの状態へのアクセスを提供します。</p>
+<p><strong>Mixed Reality Toolkit</strong> &gt; <strong>Utilities</strong> &gt; <strong>Input Simulation</strong> メニューから、入力シミュレーション ツール ウィンドウを有効化します。このウィンドウは、プレイモードの間、入力シミュレーションの状態へのアクセスを提供します。</p>
 <h2 id="ビューポート-ボタン">ビューポート ボタン</h2>
 <p>基本的なハンドの配置をコントロールするエディタ内ボタンのプレファブは、入力シミュレーションサービスの <strong>Indicators Prefab</strong> 配下の入力シミュレーション プロファイルで指定することができます。これは、オプションのユーティリティで、同じ機能には <a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a> からアクセスすることができます。</p>
 <div class="NOTE">
@@ -111,7 +117,7 @@
 </div>
 <p>ハンドアイコンは、シミュレーションされたハンドの状態を表します。</p>
 <ul>
-<li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Untracked.png" alt="Untracked hand icon" title="Untracked hand icon"> ハンドは追跡されていません。クリックでハンドを有効化します。</li>
+<li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Untracked.png" alt="Untracked hand icon"> ハンドは追跡されていません。クリックでハンドを有効化します。</li>
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Tracked.png" alt="Tracked hand icon" title="Tracked hand icon"> ハンドは追跡されています。しかし、ユーザーにコントロールされていません。クリックでハンドを非表示にします。</li>
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Controlled.png" alt="Controlled hand icon" title="Controlled hand icon"> ハンドは追跡されており、ユーザーにコントロールされています。クリックでハンドを非表示にします。</li>
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Reset.png" alt="Reset hand icon" title="Reset hand icon"> クリックしてハンドをデフォルトの位置にリセットします。</li>
@@ -120,7 +126,8 @@
 <p>頭の動きは入力シミュレーション サービスでエミュレートされます。</p>
 <h3 id="カメラの回転">カメラの回転</h3>
 <ol>
-<li>Editor ウィンドウにカーソルを合わせます。<em>ボタンを押しても動作しない場合は、フォーカスを得るためにウィンドウをクリックする必要があります。</em></li>
+<li>Editor ウィンドウにカーソルを合わせます。
+<em>ボタンを押しても動作しない場合は、フォーカスを得るためにウィンドウをクリックする必要があります。</em></li>
 <li><strong>Mouse Look Button</strong> (デフォルト: 右マウスボタン)を押したままにします</li>
 <li>マウスをウィンドウ内で動かしてカメラを回転させます</li>
 <li>スクロールホイールを使ってカメラを視線方向を軸として回転させます</li>
@@ -185,29 +192,42 @@
 <h3 id="両手での操作">両手での操作</h3>
 <p>オブジェクトを両手で操作するには、ハンドを永続化するモードが推奨されます</p>
 <ol>
-<li>Toggle キー（T/Y）を押すことで両手の表示を切り替えることができます</li>
+<li>Toggle キー（<em>T/Y</em>）を押すことで両手の表示を切り替えることができます</li>
 <li>１回に１つのハンドを操作します
 <ol>
-<li><em>Space</em> を押し続けて右ハンドを操作します</li>
+<li><strong>Space</strong> を押し続けて右ハンドを操作します</li>
 <li>グラブしたいオブジェクトにハンドを動かします</li>
-<li>マウスのボタンを押して <em>Pinch</em> ジェスチャを有効にします。永続化モードではマウスのボタンを離すまでジェスチャが有効になります</li>
+<li><strong>マウスの左クリック</strong>を押して <em>Pinch</em> ジェスチャを有効にします。永続化モードではマウスのボタンを離すまでジェスチャが有効になります</li>
 </ol>
 </li>
 <li>同じ手順をもう片方のハンドで繰り返します。同じオブジェクトの別のポイントをグラブします</li>
 <li>これで両手で同じオブジェクトをグラブした状態になるので、どちらかのハンドを動かして両手での操作を行います</li>
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Qol5OFNfN14" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<h3 id="ggv-インタラクション">GGV インタラクション</h3>
+<h3 id="ggv-gaze-gesture-and-voice-インタラクション">GGV (Gaze, Gesture, and Voice) インタラクション</h3>
+<p>デフォルトで、GGV インタラクションはエディター内でシーンに多関節ハンドがない間有効になります。</p>
 <ol>
-<li><a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E6%9C%89%E5%8A%B9%E5%8C%96">Input Simulation Profile</a> で、<strong>Hand Simulation Mode</strong> を <em>Gestures</em> にすることにより、GGV のシミュレーションに切り替えることができます</li>
 <li>カメラを回転させて、視線カーソルをインタラクション可能なオブジェクトにポイントします（マウスの右クリックを使用）</li>
-<li><em>Space</em> を押し続けて、右ハンドを操作します</li>
-<li><em>left mouse button</em> を押し続けてインタラクションします</li>
+<li><strong>マウスの左クリック</strong> を押し続けてインタラクションします</li>
 <li>再度カメラを回転させてオブジェクトを操作します</li>
+</ol>
+<p>Input Simulation Profile の中の <em>Is Hand Free Input Enabled</em> オプションを切り替えることで、無効にすることもできます。</p>
+<p>さらに、GGV インタラクションでシミュレーション ハンドを使うこともできます。</p>
+<ol>
+<li><a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E6%9C%89%E5%8A%B9%E5%8C%96">Input Simulation Profile</a> で、<strong>Hand Simulation Mode</strong> を <em>Gestures</em> にすることにより、GGV のシミュレーションを有効にします</li>
+<li>カメラを回転させて、視線カーソルをインタラクション可能なオブジェクトにポイントします（マウスの右クリックを使用）</li>
+<li><strong>Space</strong> を押し続けて、右ハンドを操作します</li>
+<li><strong>マウスの左クリック</strong> を押し続けてインタラクションします</li>
+<li>マウスを使ってオブジェクトを移動させます</li>
+<li>マウスのクリックを放し、インタラクションを停止します</li>
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6841rRMdqWw" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 <h3 id="アイ-トラッキング">アイ トラッキング</h3>
 <p><a href="../EyeTracking/EyeTracking_BasicSetup.html#simulating-eye-tracking-in-the-unity-editor">Eye tracking simulation</a> は、<a href="#enabling-the-input-simulation-service">Input Simulation Profile</a> の <strong>Simulate Eye Position</strong> オプションをチェックすることで有効になります。これは GGV スタイルのインタラクションでは使用すべきではありません（ですので、 <strong>Hand Simulation Mode</strong> が <em>Articulated</em> にセットされていることを確認してください）</p>
+<h2 id="関連項目">関連項目</h2>
+<ul>
+<li><a href="../Input/InputProviders.html">Input System プロファイル</a></li>
+</ul>
 </article>
           </div>
           

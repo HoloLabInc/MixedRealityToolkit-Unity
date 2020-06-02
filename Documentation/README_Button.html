@@ -85,13 +85,13 @@
 <p><img src="Images/Button/MRTK_Button_Main.png" alt="Button"></p>
 <p>A button gives the user a way to trigger an immediate action. It is one of the most foundational components in mixed reality. MRTK provides various types of button prefabs.</p>
 <h2 id="button-prefabs-in-mrtk">Button prefabs in MRTK</h2>
-<p>Examples of the button prefabs under <code>MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs</code> folder</p>
+<p>Examples of the button prefabs under <code>MRTK/SDK/Features/UX/Interactable/Prefabs</code> folder</p>
 <h3 id="unity-ui-imagegraphic-based-buttons">Unity UI Image/Graphic based buttons</h3>
 <ul>
-<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/UnityUIInteractableButton.prefab"><code>UnityUIInteractableButton.prefab</code></a></li>
-<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a></li>
-<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a></li>
-<li><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a></li>
+<li><code>UnityUIInteractableButton.prefab</code></li>
+<li><code>PressableButtonUnityUI.prefab</code></li>
+<li><code>PressableButtonUnityUICircular.prefab</code></li>
+<li><code>PressableButtonHoloLens2UnityUI.prefab</code></li>
 </ul>
 <h3 id="collider-based-buttons">Collider based buttons</h3>
 <table>
@@ -119,6 +119,26 @@
 <td style="text-align: left;">Vertical HoloLens 2 button bar with shared backplate</td>
 </tr>
 <tr>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Checkbox.png" alt="PressableButtonHoloLens2ToggleCheckBox_32x32"> <strong>PressableButtonHoloLens2ToggleCheckBox_32x32</strong></td>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Switch.png" alt="PressableButtonHoloLens2ToggleSwitch_32x32"> <strong>PressableButtonHoloLens2ToggleSwitch_32x32</strong></td>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Radio.png" alt="PressableButtonHoloLens2ToggleRadio_32x32"> <strong>PressableButtonHoloLens2ToggleRadio_32x32</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">HoloLens 2's shell-style checkbox 32x32mm</td>
+<td style="text-align: left;">HoloLens 2's shell-style switch 32x32mm</td>
+<td style="text-align: left;">HoloLens 2's shell-style radio 32x32mm</td>
+</tr>
+<tr>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Checkbox_32x96.png" alt="PressableButtonHoloLens2ToggleCheckBox_32x96"> <strong>PressableButtonHoloLens2ToggleCheckBox_32x96</strong></td>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Switch_32x96.png" alt="PressableButtonHoloLens2ToggleSwitch_32x96"> <strong>PressableButtonHoloLens2ToggleSwitch_32x96</strong></td>
+<td style="text-align: left;"><img src="Images/Button/MRTK_Button_Prefabs_HoloLens2_Radio_32x96.png" alt="PressableButtonHoloLens2ToggleRadio_32x96"> <strong>PressableButtonHoloLens2ToggleRadio_32x96</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">HoloLens 2's shell-style checkbox 32x96mm</td>
+<td style="text-align: left;">HoloLens 2's shell-style switch 32x96mm</td>
+<td style="text-align: left;">HoloLens 2's shell-style radio 32x96mm</td>
+</tr>
+<tr>
 <td style="text-align: left;"><img src="Images/Button/MRTK_Button_Radial.png" alt="Radial"> <strong>Radial</strong></td>
 <td style="text-align: left;"><img src="Images/Button/MRTK_Button_Checkbox.png" alt="Checkbox"> <strong>Checkbox</strong></td>
 <td style="text-align: left;"><img src="Images/Button/MRTK_Button_ToggleSwitch.png" alt="ToggleSwitch"> <strong>ToggleSwitch</strong></td>
@@ -140,8 +160,15 @@
 </tr>
 </tbody>
 </table>
-<p>The <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/Button.prefab"><code>Button.prefab</code></a> is based on the <a href="README_Interactable.html">Interactable</a> concept to provide easy UI controls for buttons or other types of interactive surfaces. The baseline button supports all available input methods, including articulated hand input for the near interactions as well as gaze + air-tap for the far interactions. You can also use voice command to trigger the button.</p>
-<p><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab"><code>PressableButtonHoloLens2.prefab</code></a> is HoloLens 2's shell style button that supports the precise movement of the button for the direct hand tracking input. It combines <code>Interactable</code> script with <code>PressableButton</code> script.</p>
+<p>The <code>Button</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/Button.prefab) is based on the <a href="README_Interactable.html">Interactable</a> concept to provide easy UI controls for buttons or other types of interactive surfaces. The baseline button supports all available input methods, including articulated hand input for the near interactions as well as gaze + air-tap for the far interactions. You can also use voice command to trigger the button.</p>
+<p><code>PressableButtonHoloLens2</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab) is HoloLens 2's shell style button that supports the precise movement of the button for the direct hand tracking input. It combines <code>Interactable</code> script with <code>PressableButton</code> script.</p>
+<p>For HoloLens 2, it is recommended to use buttons with an opaque backplate. Transparent buttons are not recommended because of these usability and stability issues:</p>
+<ul>
+<li>Icon and text are difficult to read with the physical environment</li>
+<li>It is hard to understand when the event triggers</li>
+<li>Holograms that are displayed through a transparent plane can be unstable with HoloLens 2's Depth LSR stabilization</li>
+</ul>
+<p><img src="Images/Button/MRTK_Button_UsePlated.png" alt="Button"></p>
 <h2 id="how-to-use-pressable-buttons">How to use pressable buttons</h2>
 <h3 id="unity-ui-based-buttons">Unity UI based buttons</h3>
 <p>Create a Canvas in your scene (GameObject -&gt; UI -&gt; Canvas). In the Inspector panel for your Canvas:</p>
@@ -150,18 +177,36 @@
 <li>Click &quot;Add NearInteractionTouchableUnityUI&quot;</li>
 <li>Set the Rect Transform component's X, Y, and Z scale to 0.001</li>
 </ul>
-<p>Then, drag <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab"><code>PressableButtonUnityUI.prefab</code></a>, <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab"><code>PressableButtonUnityUICircular.prefab</code></a>, or <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab"><code>PressableButtonHoloLens2UnityUI.prefab</code></a> onto the Canvas.</p>
+<p>Then, drag <code>PressableButtonUnityUI</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUI.prefab), <code>PressableButtonUnityUICircular</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonUnityUICircular.prefab), or <code>PressableButtonHoloLens2UnityUI</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2UnityUI.prefab) onto the Canvas.</p>
 <h3 id="collider-based-buttons-1">Collider based buttons</h3>
-<p>Simply drag <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab"><code>PressableButtonHoloLens2.prefab</code></a> or <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2Unplated.prefab"><code>PressableButtonHoloLens2Unplated.prefab</code></a> into the scene. These button prefabs are already configured to have audio-visual feedback for the various types of inputs, including articulated hand input and gaze.</p>
+<p>Simply drag <code>PressableButtonHoloLens2</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2.prefab) or <code>PressableButtonHoloLens2Unplated</code> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/PressableButtonHoloLens2Unplated.prefab) into the scene. These button prefabs are already configured to have audio-visual feedback for the various types of inputs, including articulated hand input and gaze.</p>
 <p>The events exposed in the prefab itself as well as the <a href="README_Interactable.html">Interactable</a> component can be used to trigger additional actions. The pressable buttons in the <a href="README_HandInteractionExamples.html">HandInteractionExample scene</a> use Interactable's <em>OnClick</em> event to trigger a change in the color of a cube. This event gets triggered for different types of input methods such as gaze, air-tap, hand-ray, as well as physical button presses through the pressable button script.</p>
 <img src="Images/Button/MRTK_Button_HowToUse_Interactable.png" width="450">
 <p>You can configure when the pressable button fires the <em>OnClick</em> event via the <code>PhysicalPressEventRouter</code> on the button. For example, you can set <em>OnClick</em> to fire when the button is first pressed, as opposed to being pressed and released, by setting <em>Interactable On Click</em> to <em>Event On Press</em>.</p>
 <img src="Images/Button/MRTK_Button_HowTo_Events.png" width="450">
-<p>To leverage specific articulated hand input state information, you can use pressable buttons events - <em>Touch Begin</em>, <em>Touch End</em>, <em>Button Pressed</em>, <em>Button Released</em>. These events will not fire in response to air-tap, hand-ray, or eye inputs, however.</p>
+<p>To leverage specific articulated hand input state information, you can use pressable buttons events - <em>Touch Begin</em>, <em>Touch End</em>, <em>Button Pressed</em>, <em>Button Released</em>. These events will not fire in response to air-tap, hand-ray, or eye inputs, however. <strong>To support both near and far interactions, it is recommended to use Interactable's <em>OnClick</em> event.</strong></p>
 <img src="Images/Button/MRTK_Button_HowTo_PressableButton.png" width="450">
 <h2 id="interaction-states">Interaction states</h2>
 <p>In the idle state, the button's front plate is not visible. As a finger approaches or a cursor from gaze input targets the surface, the front plate's glowing border becomes visible. There is additional highlighting of the fingertip position on the front plate surface. When pushed with a finger, the front plate moves with the fingertip. When the fingertip touches the surface of the front plate, it shows a subtle pulse effect to give visual feedback of the touch point.</p>
-<img src="Images/Button/MRTK_Button_InteractionStates.png" width="600">
+<p>In HoloLens 2 shell-style button, there are many visual cues and affordances to increase the user's confidence on interaction.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><img src="Images/Button/ux_button_affordance_proximitylight.jpg" alt="Proximity light"></th>
+<th style="text-align: left;"><img src="Images/Button/ux_button_affordance_focushighlight.jpg" alt="Focus highlight"></th>
+<th style="text-align: left;"><img src="Images/Button/ux_button_affordance_compression.jpg" alt="Compressing cage"></th>
+<th style="text-align: left;"><img src="Images/Button/ux_button_affordance_pulse.jpg" alt="Pulse on trigger"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Proximity light</td>
+<td style="text-align: left;">Focus highlight</td>
+<td style="text-align: left;">Compressing cage</td>
+<td style="text-align: left;">Pulse on trigger</td>
+</tr>
+</tbody>
+</table>
 <p>The subtle pulse effect is triggered by the pressable button, which looks for <em>ProximityLight(s)</em> that live on the currently interacting pointer. If any proximity lights are found, the <code>ProximityLight.Pulse</code> method is called, which automatically animates shader parameters to display a pulse.</p>
 <h2 id="inspector-properties">Inspector properties</h2>
 <p><img src="Images/Button/MRTK_Button_Structure.png" alt="Button"></p>
@@ -181,15 +226,57 @@ Required to make any object touchable with articulated hand input.</p>
 <p>The <em>ButtonContent</em> object contains front plate, text label and icon. The <em>FrontPlate</em> responds to the proximity of the index fingertip using the <em>Button_Box</em> shader. It shows glowing borders, proximity light, and a pulse effect on touch. The text label is made with TextMesh Pro. <em>SeeItSayItLabel</em>'s visibility is controlled by <a href="README_Interactable.html">Interactable</a>'s theme.</p>
 <p><img src="Images/Button/MRTK_Button_Layout.png" alt="Button"></p>
 <h2 id="how-to-change-the-icon-and-text">How to change the icon and text</h2>
-<p>To change the text of the button, update the <em>Text</em> component of the <em>TextMeshPro</em> object under <em>IconAndText</em>. Changing the icon can be done by replacing the material that is assigned to <em>UIButtonSquareIcon</em> object. By default, <em>HolographicButtonIconFontMaterial</em> is assigned.</p>
-<img src="Images/Button/MRTK_Button_IconUpdate1.png">
-<p>To create a new icon material, duplicate one of the existing icon materials. These can be found under <code>MixedRealityToolkit.SDK/Features/UX/Interactable/Materials</code> folder.</p>
-<img src="Images/Button/MRTK_Button_IconUpdate2.png" width="350">
-<p>Create a new PNG texture and import into Unity. Use existing icon PNG file examples as reference. <code>MixedRealityToolkit.SDK/Features/UX/Interactable/Textures</code></p>
-<p>Drag and drop newly created PNG texture onto the <em>Albedo</em> property in the material.</p>
-<img src="Images/Button/MRTK_Button_IconUpdate3.png">
-<p>Assign the material to the <em>UIButtonSquareIcon</em> object.</p>
-<img src="Images/Button/MRTK_Button_IconUpdate4.png">
+<p>MRTK buttons use a <code>ButtonConfigHelper</code> component to assist you in changing the button's icon, text and label. (Note that some fields may be absent if elements are not present on the selected button.)</p>
+<p><img src="Images/Button/MRTK_Button_Config_Helper.png" alt="Button"></p>
+<h3 id="creating-and-modifying-icon-sets">Creating and Modifying Icon Sets</h3>
+<p>An <strong>Icon Set</strong> is a shared set of icon assets used by the <code>ButtonConfigHelper</code> component. Three icon <em>styles</em> are supported.</p>
+<ul>
+<li><strong>Quad</strong> icons are rendered on a quad using a <code>MeshRenderer</code>. This is the default icon style.</li>
+<li><strong>Sprite</strong> icons are rendered using a <code>SpriteRenderer</code>. This is useful if you prefer to import your icons as a sprite sheet, or if you want your icon assets to be shared with Unity UI components. To use this style you will need to install the Sprite Editor package <strong>(Windows -&gt; Package Manager -&gt; 2D Sprite)</strong></li>
+<li><strong>Char</strong> icons are rendered using a <code>TextMeshPro</code> component. This is useful if you prefer to use an icon font. To use the HoloLens icon font you will need to create a <code>TextMeshPro</code> font asset.</li>
+</ul>
+<p>To change which style your button uses, expand the <em>Icons</em> dropdown in the ButtonConfigHelper and select from the <em>Icon Style</em> dropdown.</p>
+<p>You can create a new button icon set with the asset menu: <strong>Create &gt; Mixed Reality Toolkit &gt; Icon Set.</strong> To add quad and sprite icons, simply drag them into their respective arrays. To add Char icons, you must first create and assign a font asset.</p>
+<p>In MRTK 2.4 and beyond, we recommend custom icon textures be moved into an IconSet.
+To upgrade the assets on all buttons in a project to the new recommended format, use the ButtonConfigHelperMigrationHandler.
+(Mixed Reality Toolkit -&gt; Utilities -&gt; Migration Window -&gt; Migration Handler Selection -&gt; Microsoft.MixedReality.Toolkit.Utilities.ButtonConfigHelperMigrationHandler)</p>
+<p>Importing the Microsoft.MixedRealityToolkit.Unity.Tools package required to upgrade the buttons.</p>
+<p><img src="https://user-images.githubusercontent.com/39840334/82096923-bd28bf80-96b6-11ea-93a9-ceafcb822242.png" alt="Upgrade window dialogue"></p>
+<p>If an icon is not found in the default icon set during migration, a custom icon set will be created in MixedRealityToolkit.Generated/CustomIconSets. A dialog will indicate that this has taken place.</p>
+<p><img src="https://user-images.githubusercontent.com/9789716/82093856-c57dfc00-96b0-11ea-83ab-4df57446d661.PNG" alt="Custom icon notification"></p>
+<h3 id="creating-a-hololens-icon-font-asset">Creating a HoloLens Icon Font Asset</h3>
+<p>First, import the icon font into Unity. On Windows machines you can find the default HoloLens font in <em>Windows/Fonts/holomdl2.ttf.</em> Copy and paste this file into your Assets folder.</p>
+<p>Next, open the TextMeshPro Font Asset Creator via <strong>Window &gt; TextMeshPro &gt; Font Asset Creator.</strong> Here are the recommended settings for generating a HoloLens font atlas. To include all icons, paste the following Unicode range into the <em>Character Sequence</em> field:</p>
+<pre><code class="lang-c#">E700-E702,E706,E70D-E70E,E710-E714,E718,E71A,E71D-E71E,E720,E722,E728,E72A-E72E,E736,E738,E73F,E74A-E74B,E74D,E74F-E752,E760-E761,E765,E767-E769,E76B-E76C,E770,E772,E774,E777,E779-E77B,E782-E783,E785-E786,E799,E7A9-E7AB,E7AF-E7B1,E7B4,E7C8,E7E8-E7E9,E7FC,E80F,E821,E83F,E850-E859,E872-E874,E894-E895,E8A7,E8B2,E8B7,E8B9,E8D5,E8EC,E8FB,E909,E91B,E92C,E942,E95B,E992-E995,E9E9-E9EA,EA37,EA40,EA4A,EA55,EA96,EB51-EB52,EB65,EB9D-EBB5,EBCB-EBCC,EBCF-EBD3,EC03,EC19,EC3F,EC7A,EC8E-EC98,ECA2,ECD8-ECDA,ECE0,ECE7-ECEB,ED17,EE93,EFA9,F114-F120,F132,F181,F183-F186
+</code></pre>
+<p><img src="Images/Button/MRTK_Font_Asset_Creation_1.png" alt="Button"></p>
+<p>Once the font asset is generated, save it to your project and assign it to your Icon Set's <em>Char Icon Font</em> field. The <em>Available Icons</em> dropdown will now be populated. To make an icon available for use by a button, click it. It will be added to the <em>Selected Icons</em> dropdown and will now show up in the <code>ButtonConfigHelper.</code> You can optionally give the icon a tag. This enables setting the icon at runtime.</p>
+<p><img src="Images/Button/MRTK_Font_Asset_Creation_3.png" alt="Button"></p>
+<p><img src="Images/Button/MRTK_Font_Asset_Creation_2.png" alt="Button"></p>
+<pre><code class="lang-c#">public void SetButtonToAdjust()
+{
+    ButtonConfigHelper buttonConfigHelper = gameObject.GetComponent&lt;ButtonConfigHelper&gt;();
+    buttonConfigHelper.SetCharIconByName(&quot;AppBarAdjust&quot;);
+}
+</code></pre>
+<p>To use your Icon Set select a button, expand the Icons dropdown in the <code>ButtonConfigHelper</code> and assign it to the <em>Icon Set</em> field.</p>
+<p><img src="Images/Button/MRTK_Button_Icon_Set_Assign.png" alt="Button"></p>
+<h2 id="how-to-change-the-size-of-a-button">How to change the size of a button</h2>
+<p>HoloLens 2's shell-style button's size is 32x32mm. To customize the dimension, change the size of these objects in the button prefab:</p>
+<ol>
+<li><strong>FrontPlate</strong></li>
+<li><strong>Quad</strong> under BackPlate</li>
+<li><strong>Box Collider</strong> on the root</li>
+</ol>
+<p>Then, click <strong>Fix Bounds</strong> button in the NearInteractionTouchable script which is in the root of the button.</p>
+<p>Update the size of the FrontPlate
+<img src="Images/Button/MRTK_Button_SizeCustomization1.png" alt="Button"></p>
+<p>Update the size of the Quad
+<img src="Images/Button/MRTK_Button_SizeCustomization2.png" alt="Button"></p>
+<p>Update the size of the Box Collider
+<img src="Images/Button/MRTK_Button_SizeCustomization3.png" alt="Button"></p>
+<p>Click 'Fix Bounds'
+<img src="Images/Button/MRTK_Button_SizeCustomization4.png" alt="Button"></p>
 <h2 id="voice-command-see-it-say-it">Voice command ('see-it, say-it')</h2>
 <p><strong>Speech Input Handler</strong>
 The <a href="README_Interactable.html">Interactable</a> script in Pressable Button already implements <code>IMixedRealitySpeechHandler</code>. A voice command keyword can be set here.</p>

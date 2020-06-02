@@ -131,6 +131,14 @@
 </div>
 <p><img src="../Documentation/Images/Solver/TrackedObjectType-Example.gif" alt="Solver"><br>
 <em>TrackedTargetType に関連するさまざまなプロパティの例</em></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>多くのソルバーは <code>SolverHandler</code> によって提供される tracked transform target (追跡するトランスフォーム ターゲット) の forward vector を使用します。<em>Hand Joint</em> のターゲット追跡タイプを使うとき、手のひらのジョイントの forward vector は手のひらをつき抜ける方向ではなく、指の方向を向くかもしれません。これは、プラットフォームが提供する手のジョイント データによります。入力シミュレーションと Windows Mixed Reality では、<em>up vector</em> が手のひらをつき抜ける向き (緑色の vectorが up, 青色の vector が forward) です。</p>
+<p><img src="../Documentation/Images/Solver/HandJoint_ForwardUpVectors.png" alt="Solver"></p>
+<p>これを解決するため、<code>SolverHandler</code> の <em>Additional Rotation</em> プロパティを <strong>&lt;90, 0, 0&gt;</strong> に更新します。これにより、ソルバーに提供される forward ベクターが手のひらをつき抜けて手の外側へと向くようになります。</p>
+<p><img src="../Documentation/Images/Solver/SolverHandler_AdditionalRotation.png" alt="Solver"></p>
+<p>あるいは、<em>Controller Ray</em> のターゲット追跡タイプを使うことで、似たようなふるまいをさせることもできます。</p>
+</div>
 <h2 id="solver-ソルバー-を連鎖させる方法">Solver (ソルバー) を連鎖させる方法</h2>
 <p>複数の <code>Solver</code> コンポーネントを同じゲームオブジェクトに追加し、アルゴリズムを連鎖させることが可能です。<code>SolverHandler</code> コンポーネントは、同じゲームオブジェクト上のすべてのソルバーの更新を取り扱います。デフォルトでは <code>SolverHandler</code> は Start で <code>GetComponents&lt;Solver&gt;()</code> を呼び出し、これはインスペクターで表示される順序でソルバーを返します。
 さらに、<em>Updated Linked Transform</em> プロパティを true に設定すると、<code>Solver</code> は計算した位置、姿勢、スケールをすべてのソルバー(すなわち、 <code>GoalPosition</code>)からアクセスできる仲介変数に保存します。false の場合は、<code>Solver</code> はゲームオブジェクトのトランスフォームを直接更新します。トランスフォームのプロパティを仲介の場所に保存すると、他のソルバーがその仲介変数から計算を始めることができます。この理由は、Unity は gameObject.transform を同じフレーム内にスタックして更新することを許容していないからです。</p>
@@ -206,23 +214,8 @@ public class InFront : Solver
 <p>Finally, surfaces farther than the <code>MaxRaycastDistance</code> property setting will be ignored by the <code>SurfaceMagnetism</code> raycasts.</p>
 <h3 id="hand-menu-with-handconstraint-and-handconstraintpalmup">Hand Menu with HandConstraint and HandConstraintPalmUp</h3>
 <p><img src="../Documentation/Images/Solver/MRTK_UX_HandMenu.png" alt="Hand Menu UX Example"></p>
-<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> behavior provides a solver that constrains the tracked object to a region safe for hand constrained content (such as hand UI, menus, etc). Safe regions are considered areas that don't intersect with the hand. A derived class of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> called <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraintPalmUp.html"><code>HandConstraintPalmUp</code></a> is also included to demonstrate a common behavior of activating the solver tracked object when the palm is facing the user. For example use of this behavior please see the HandBasedMenuExample scene under: <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Scenes">MixedRealityToolkit.Examples/Demos/HandTracking/Scenes/</a></p>
-<p>Please see the tool tips available for each <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> property for additional documentation. A few properties are defined in more detail below.</p>
-<img src="Images/Solver/MRTK_Solver_HandConstraintPalmUp.png" width="450">
-<ul>
-<li><strong>Safe Zone</strong>: The safe zone specifies where on the hand to constrain content. It is recommended that content be placed on the Ulnar Side to avoid overlap with the hand and improved interaction quality. Safe zones are calculated by taking the hands orientation projected into a plane orthogonal to the camera's view and raycasting against a bounding box around the hands. Safe zones are defined to work with <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html"><code>IMixedRealityHand</code></a> but also works with other controller types. It is recommended to explore what each safe zone represents on different controller types.</li>
-</ul>
-<img src="Images/Solver/MRTK_Solver_HandConstraintSafeZones.png" width="450">
-<ul>
-<li><p><strong>Activation Events</strong>: Currently the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> triggers four activation events. These events can be used in many different combinations to create unique <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> behaviors, please see the HandBasedMenuExample scene under: <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/HandTracking/Scenes">MixedRealityToolkit.Examples/Demos/HandTracking/Scenes/</a> for examples of these behaviors.</p>
-<ul>
-<li><em>OnHandActivate</em>: triggers when a hand satisfies the IsHandActive method</li>
-<li><em>OnHandDeactivate</em>: triggers when the IsHandActive method is no longer satisfied.</li>
-<li><em>OnFirstHandDetected</em>: occurs when the hand tracking state changes from no hands in view, to the first hand in view.</li>
-<li><em>OnLastHandLost</em>: occurs when the hand tracking state changes from at least one hand in view, to no hands in view.</li>
-</ul>
-</li>
-</ul>
+<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> behavior provides a solver that constrains the tracked object to a region safe for hand constrained content (such as hand UI, menus, etc). Safe regions are considered areas that don't intersect with the hand. A derived class of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> called <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraintPalmUp.html"><code>HandConstraintPalmUp</code></a> is also included to demonstrate a common behavior of activating the solver tracked object when the palm is facing the user.</p>
+<p><a href="README_HandMenu.html">Please see Hand Menu page</a> for the examples of using Hand Constraint solver to create hand menus.</p>
 <h2 id="experimental-solvers">Experimental Solvers</h2>
 <p>These solvers are available in MRTK but are currently experimental. Their APIs and functionality are subject to change. Furthermore, their robustness and quality may be lower than standard features.</p>
 <h3 id="directional-indicator">Directional Indicator</h3>
@@ -237,7 +230,7 @@ public class InFront : Solver
 <p><img src="../Documentation/Images/Solver/DirectionalIndicatorExample.png" alt="Directional Indicator properties"><br>
 <em>Directional Indicator properties</em></p>
 <p><img src="../Documentation/Images/Solver/DirectionalIndicatorExampleScene.gif" alt="Directional Indicator example scene"></p>
-<p><em><a href="https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MixedRealityToolkit.Examples/Experimental/Solvers/DirectionalIndicatorExample.unity">Directional Indicator Example Scene</a></em></p>
+<p><em>Directional Indicator Example Scene (Assets/MRTK/Examples/Experimental/Solvers/DirectionalIndicatorExample.unity)</em></p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="Input/HandTracking.html">Hand Tracking</a></li>

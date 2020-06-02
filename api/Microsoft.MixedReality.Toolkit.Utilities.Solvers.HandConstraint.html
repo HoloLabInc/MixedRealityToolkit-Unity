@@ -270,6 +270,32 @@ This solver is intended to work with <a class="xref" href="Microsoft.MixedRealit
   </table>
   
   
+  <a id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_OffsetBehavior_" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.OffsetBehavior*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_OffsetBehavior" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.OffsetBehavior">OffsetBehavior</h4>
+  <div class="markdown level1 summary"><p>Specifies how the solver's offset relative to the hand will be computed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HandConstraint.SolverOffsetBehavior OffsetBehavior { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.SolverOffsetBehavior.html">HandConstraint.SolverOffsetBehavior</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_OnFirstHandDetected_" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.OnFirstHandDetected*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_OnFirstHandDetected" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.OnFirstHandDetected">OnFirstHandDetected</h4>
   <div class="markdown level1 summary"><p>Event which is triggered when zero hands to one hand is tracked.</p>
@@ -529,6 +555,51 @@ The &quot;safe zone&quot; is calculated as if projected into the horizontal and 
       <tr>
         <td><span class="xref">Quaternion</span></td>
         <td><p>The new goal rotation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_GetController_" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.GetController*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_Utilities_Solvers_HandConstraint_GetController_Microsoft_MixedReality_Toolkit_Utilities_Handedness_" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.GetController(Microsoft.MixedReality.Toolkit.Utilities.Handedness)">GetController(Handedness)</h4>
+  <div class="markdown level1 summary"><p>Returns the first detected controller in the input system that matches the passed-in handedness</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static IMixedRealityController GetController(Handedness handedness)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Handedness.html">Handedness</a></td>
+        <td><span class="parametername">handedness</span></td>
+        <td><p>The handedness of the returned controller</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IMixedRealityController</span></td>
+        <td><p>The IMixedRealityController for the desired handedness, or null if none are present.</p>
 </td>
       </tr>
     </tbody>

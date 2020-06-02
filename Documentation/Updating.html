@@ -83,15 +83,192 @@
 <h1 id="updating-the-microsoft-mixed-reality-toolkit">Updating the Microsoft Mixed Reality Toolkit</h1>
 
 <ul>
+<li><a href="#upgrading-to-a-new-version-of-mrtk">Upgrading to a new version of MRTK</a></li>
+<li><a href="#updating-230-to-240">2.3.0 to 2.4.0</a></li>
 <li><a href="#updating-220-to-230">2.2.0 to 2.3.0</a></li>
 <li><a href="#updating-210-to-220">2.1.0 to 2.2.0</a></li>
 <li><a href="#updating-200-to-210">2.0.0 to 2.1.0</a></li>
 <li><a href="#updating-rc2-to-200">RC2 to 2.0.0</a></li>
 </ul>
+<h2 id="upgrading-to-a-new-version-of-mrtk">Upgrading to a new version of MRTK</h2>
+<p>The 2.4.0 release has some changes that may impact application projects. Breaking change details, including mitigation guidance, can be found in the <a href="Updating.html#updating-230-to-240"><strong>Updating 2.3.0 to 2.4.0</strong></a> article.</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Instructions to properly migrate to the latest version of the Mixed Reality Toolkit are documented in the <a href="ReleaseNotes.html">release notes</a> for each version.</p>
+<p>At this time, it is not supported to switch between using .unitypackage files and NuGet.</p>
 </div>
+<p><em>Starting with 2.4.0, it is strongly recommended to run the <a href="Tools/MigrationWindow.html">migration tool</a>
+after getting the MRTK update</em>* to auto-fix and upgrade from deprecated components and adjust to
+breaking changes. The migration tool is part of the <strong>Tools</strong> package.</p>
+<h3 id="unity-asset-unitypackage-files">Unity asset (.unitypackage) files</h3>
+<p>For the smoothest upgrade path, please use the following steps.</p>
+<ol>
+<li>Save a copy of your current project, in case you hit any snags at any point in the upgrade steps.</li>
+<li>Close Unity</li>
+<li>Inside the <em>Assets</em> folder, delete most of the <strong>MixedRealityToolkit</strong> folders, along with their .meta files (the project may not have all listed folders)
+<ul>
+<li>MixedRealityToolkit</li>
+<li>MixedRealityToolkit.Examples</li>
+<li>MixedRealityToolkit.Extensions</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If additional extensions have been installed, please make a backup prior to deleting these folders.</p>
+</div>
+<ul>
+<li>MixedRealityToolkit.Providers</li>
+<li>MixedRealityToolkit.SDK</li>
+<li>MixedRealityToolkit.Services</li>
+<li>MixedRealityToolkit.Staging</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The contents of the MixedRealityToolkit.Staging folder have been moved into the MixedRealityToolkit.Providers folder in MRTK 2.3.0.</p>
+</div>
+<ul>
+<li>MixedRealityToolkit.Tools</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Do NOT delete the <strong>MixedRealityToolkit.Generated</strong> folder, or its .meta file.</p>
+</div>
+</li>
+<li>Delete the <strong>Library</strong> folder</li>
+<li>Re-open the project in Unity</li>
+<li>Import the new unity packages
+<ul>
+<li>Foundation - <em>Import this package first</em></li>
+<li>Tools</li>
+<li>(Optional) Extensions</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If additional extensions had been installed, they may need to be re-imported.</p>
+</div>
+<ul>
+<li>(Optional) Examples</li>
+</ul>
+</li>
+<li>Close Unity and delete the <strong>Library</strong> folder. This step is necessary to force Unity to refresh its
+asset database and reconcile existing custom profiles.</li>
+<li>Launch Unity, and for each scene in the project
+<ul>
+<li>Delete <strong>MixedRealityToolkit</strong> and <strong>MixedRealityPlayspace</strong>, if present, from the hierarchy. This will delete the main camera, but it will be re-created in the next step. If any properties of the main camera have been manually changed, these will have to be re-applied manually once the new camera is created.</li>
+<li>Select <strong>MixedRealityToolkit -&gt; Add to Scene and Configure</strong></li>
+<li>Select <strong>MixedRealityToolkit -&gt; Utilities -&gt; Update -&gt; Controller Mapping Profiles</strong> (only needs to be done once)
+- This will update any custom controller mapping profiles with updated axes and data, while leaving your custom-assigned input actions intact</li>
+</ul>
+</li>
+<li>Run the <a href="Tools/MigrationWindow.html">migration tool</a> and run the tool on the <em>Full Project</em> to ensure that all of your code is updated to the latest.</li>
+</ol>
+<h3 id="nuget-packages">NuGet packages</h3>
+<p>If your project was created using the <a href="MRTKNuGetPackage.html">Mixed Reality Toolkit NuGet packages</a>, please use the following steps.</p>
+<ol>
+<li>Select <strong>NuGet &gt; Manage NuGet Packages</strong></li>
+<li>Select the <strong>Online</strong> tab and click <strong>Refresh</strong></li>
+<li>Select the <strong>Installed</strong> tab</li>
+<li>Click the <strong>Update</strong> button for each installed package
+<ul>
+<li>Microsoft.MixedReality.Toolkit.Foundation</li>
+<li>Microsoft.MixedReality.Toolkit.Tools</li>
+<li>Microsoft.MixedReality.Toolkit.Extensions</li>
+<li>Microsoft.MixedReality.Toolkit.Examples</li>
+</ul>
+</li>
+<li>Close and re-open the project in Unity</li>
+</ol>
+<h2 id="updating-230-to-240">Updating 2.3.0 to 2.4.0</h2>
+<p><a href="#folder-renames-in-240">Folder renames</a>
+<a href="#api-changes-in-240">API changes</a></p>
+<h3 id="folder-renames-in-240">Folder renames in 2.4.0</h3>
+<p>The MixedRealityToolkit folders have been renamed and moved into a common hierarchy in version 2.4. If an application
+uses hard coded paths to MRTK resources, they will need to be updated per the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Previous Folder</th>
+<th>New Folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MixedRealityToolkit</td>
+<td>MRTK/Core</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Examples</td>
+<td>MRTK/Examples</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Extensions</td>
+<td>MRTK/Extensions</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Providers</td>
+<td>MRTK/Providers</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.SDK</td>
+<td>MRTK/SDK</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Services</td>
+<td>MRTK/Services</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Tests</td>
+<td>MRTK/Tests</td>
+</tr>
+<tr>
+<td>MixedRealityToolkit.Tools</td>
+<td>MRTK/Tools</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <code>MixedRealityToolkit.Generated</code> contains customer generated files and remains unchanged.</p>
+</div>
+<h3 id="eye-gaze-setup-in-240">Eye gaze setup in 2.4.0</h3>
+<p>This version of MRTK modifies the steps required for eye gaze setup. The <em>'IsEyeTrackingEnabled'</em> checkbox can be found in the gaze settings of the input pointer profile. Checking this box will enable eye based gaze, rather then the default head based gaze.</p>
+<p>For more information on these changes and complete instructions for eye tracking setup, please see the <a href="EyeTracking/EyeTracking_BasicSetup.html">eye tracking</a> article.</p>
+<h3 id="api-changes-in-240">API changes in 2.4.0</h3>
+<p><strong>Custom controller classes</strong></p>
+<p>Custom controller classes previously had to define <code>SetupDefaultInteractions(Handedness)</code>. This method has been made obsolete in 2.4, as the handedness parameter was redundant with the controller class' own handedness. The new method has no parameters. Additionally, many controller classes defined this the same way (<code>AssignControllerMappings(DefaultInteractions);</code>), so the full call has been refactored down into <code>BaseController</code> and made an optional override instead of required.</p>
+<p><strong>Eye Gaze properties</strong></p>
+<p>The <code>UseEyeTracking</code> property from <code>GazeProvider</code> implementation of <code>IMixedRealityEyeGazeProvider</code> was renamed to <code>IsEyeTrackingEnabled</code>.</p>
+<p>If you did this previously...</p>
+<pre><code class="lang-csharp">if (CoreServices.InputSystem.GazeProvider is GazeProvider gazeProvider)
+{
+    gazeProvider.UseEyeTracking = true;
+}
+</code></pre>
+<p>Do this now...</p>
+<pre><code class="lang-csharp">if (CoreServices.InputSystem.GazeProvider is GazeProvider gazeProvider)
+{
+    gazeProvider.IsEyeTrackingEnabled = true;
+}
+</code></pre>
+<p><strong>WindowsApiChecker properties</strong></p>
+<p>The following WindowsApiChecker properties have been marked as obsolete. Please use <code>IsMethodAvailable</code>, <code>IsPropertyAvailable</code> or <code>IsTypeAvailable</code>.</p>
+<ul>
+<li>UniversalApiContractV8_IsAvailable</li>
+<li>UniversalApiContractV7_IsAvailable</li>
+<li>UniversalApiContractV6_IsAvailable</li>
+<li>UniversalApiContractV5_IsAvailable</li>
+<li>UniversalApiContractV4_IsAvailable</li>
+<li>UniversalApiContractV3_IsAvailable</li>
+</ul>
+<p>There are no plans to add properties to WindowsApiChecker for future API contract versions.</p>
+<p><strong>GltfMeshPrimitiveAttributes read-only</strong></p>
+<p>The gltf mesh primitive attributes used to be settable, they are now read-only. Their values
+will be set once when deserialized.</p>
+<h3 id="custom-button-icon-migration">Custom Button Icon Migration</h3>
+<p>Previously custom button icons required assigning a new material to the button's quad renderer. This is no longer necessary and we recommend moving custom icon textures into an IconSet. Existing custom materials and icons are preserved. However they will be less optimal until upgraded.
+To upgrade the assets on all buttons in the project to the new recommended format, use the ButtonConfigHelperMigrationHandler.
+(Mixed Reality Toolkit -&gt; Utilities -&gt; Migration Window -&gt; Migration Handler Selection -&gt; Microsoft.MixedReality.Toolkit.Utilities.ButtonConfigHelperMigrationHandler)</p>
+<p><img src="https://user-images.githubusercontent.com/39840334/82096923-bd28bf80-96b6-11ea-93a9-ceafcb822242.png" alt="Upgrade window dialogue"></p>
+<p>If an icon is not found in the default icon set during migration, a custom icon set will be created in MixedRealityToolkit.Generated/CustomIconSets. A dialog will indicate that this has taken place.</p>
+<p><img src="https://user-images.githubusercontent.com/9789716/82093856-c57dfc00-96b0-11ea-83ab-4df57446d661.PNG" alt="Custom icon notification"></p>
 <h2 id="updating-220-to-230">Updating 2.2.0 to 2.3.0</h2>
 <ul>
 <li><a href="#api-changes-in-230">API changes</a></li>
@@ -106,10 +283,10 @@ manifest, the configuration dialog will appear, with the Enable MSBuild for Unit
 <p><strong>ScriptingUtilities</strong></p>
 <p>The ScriptingUtilities class has been marked as obsolete and has been replaced by ScriptUtilities, in the Microsoft.MixedReality.Toolkit.Editor.Utilities assembly. The new class refines previous behavior and adds support for removing scripting definitions.</p>
 <p>While existing code will continue to function in version 2.3.0, it is recommended to update to the new class.</p>
-<p><strong>ShellHandRayPouinter</strong></p>
+<p><strong>ShellHandRayPointer</strong></p>
 <p>The lineRendererSelected and lineRendererNoTarget members of the ShellHandRayPointer class have been replaced by lineMaterialSelected and lineMaterialNoTarget, respectively (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6863">#6863</a>).</p>
 <p>Please replace lineRendererSelected with lineMaterialSelected and/or lineRendererNoTarget with lineMaterialNoTarget to resolve compile errors.</p>
-<p><strong>Spatial observer StarupBehavior</strong></p>
+<p><strong>Spatial observer StartupBehavior</strong></p>
 <p>Spatial observers built upon the <code>BaseSpatialObserver</code> class now honor the value of StartupBehavior when re-enabled (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6919">#6919</a>).</p>
 <p>No changes are required to take advantage of this fix.</p>
 <p><strong>UX control prefabs updated to use PressableButton</strong></p>

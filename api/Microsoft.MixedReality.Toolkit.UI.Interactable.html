@@ -1480,9 +1480,35 @@ public bool RequiresFocus { get; set; }</code></pre>
   </table>
   
   
+  <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_ResetOnDestroy_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.ResetOnDestroy*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_UI_Interactable_ResetOnDestroy" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.ResetOnDestroy">ResetOnDestroy</h4>
+  <div class="markdown level1 summary"><p>If true, when this component is destroyed, active themes will reset their modified properties to original values on the targeted GameObjects. If false, GameObject properties will remain as-is.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ResetOnDestroy { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_StateManager_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.StateManager*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_UI_Interactable_StateManager" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.StateManager">StateManager</h4>
-  <div class="markdown level1 summary"><p>The state logic for comparing state</p>
+  <div class="markdown level1 summary"><p>The state logic class for storing and comparing states which determines the current value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2046,6 +2072,16 @@ public State[] GetStates()</code></pre>
   </div>
   
   
+  <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_Initialize_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.Initialize*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_UI_Interactable_Initialize" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Initialize()</code></pre>
+  </div>
+  
+  
   <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_InputDownTimer_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.InputDownTimer*"></a>
   <h4 id="Microsoft_MixedReality_Toolkit_UI_Interactable_InputDownTimer_System_Single_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.InputDownTimer(System.Single)">InputDownTimer(Single)</h4>
   <div class="markdown level1 summary"><p>A timer for the MixedRealityInputHandlers, clicks should occur within a certain time.</p>
@@ -2114,6 +2150,16 @@ public State[] GetStates()</code></pre>
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_OnDestroy_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.OnDestroy*"></a>
+  <h4 id="Microsoft_MixedReality_Toolkit_UI_Interactable_OnDestroy" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.OnDestroy">OnDestroy()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDestroy()</code></pre>
+  </div>
   
   
   <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_OnDisable_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.OnDisable*"></a>
@@ -2497,6 +2543,9 @@ public State[] GetStates()</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RefreshSetup()</code></pre>
   </div>
+  <h5 id="Microsoft_MixedReality_Toolkit_UI_Interactable_RefreshSetup_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This recreates the state machine inside Interactable and thus wipes any pre-existing state values held</p>
+</div>
   
   
   <a id="Microsoft_MixedReality_Toolkit_UI_Interactable_RemoveHandler_" data-uid="Microsoft.MixedReality.Toolkit.UI.Interactable.RemoveHandler*"></a>

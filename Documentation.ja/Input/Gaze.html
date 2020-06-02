@@ -96,6 +96,8 @@
 GazeProvider の場合、ポインターは <code>InternalGazePointer</code> によって実装され、プロファイルによって設定されていません。</p>
 <p><em>Gaze Provider Type</em> を <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html">IMixedRealityGazeProvider</a> と <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider.html">IMixedRealityEyeGazeProvider</a> を実装する別のクラスを参照するように変更することで、標準の GazeProvider を別の実装に置き換えることができます。
 GazeProvider の再実装は簡単ではないので、通常は標準の GazeProvider を使う (バグを発見した場合は問題を報告する) ことをお勧めします。</p>
+<h3 id="プラットフォームが提供する代替のゲイズ姿勢">プラットフォームが提供する代替のゲイズ姿勢</h3>
+<p>デフォルトでは、MRTK GazeProvider はカメラのフレームの中心をゲイズの原点として使います。HoloLens 2 上の Windows Mixed Reality のようないくつかのプラットフォームは、代わりとして定義されたゲイズの姿勢を提供します。これはゲイズの設定の  <code>Use Head Gaze Override</code> 設定によって管理されます。これが有効な場合、代わりのゲイズが使われます。無効な場合、デフォルトであるフレーム中心の原点が使用されます。特に、HoloLens 2 では、頭を使って狙いをつけるのに快適になるよう、ゲイズの角度は数度上を向けられています。</p>
 <h2 id="使用方法">使用方法</h2>
 <h3 id="現在の-gaze-target-ゲイズ-ターゲット-を取得する方法">現在の gaze target (ゲイズ ターゲット) を取得する方法</h3>
 <p>このサンプルは、ユーザーのゲイズのターゲットとなっている現在のゲームオブジェクトを取得する方法を示します。</p>

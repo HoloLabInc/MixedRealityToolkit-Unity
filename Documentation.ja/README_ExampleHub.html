@@ -86,9 +86,9 @@
 <p>MRTK Examples Hub は、複数の scene (シーン)を簡単に体験できる Unity シーンです。シーンのロードとアンロードには MRTK のシーン システムを使用します。</p>
 <p><strong>MRTKExamplesHub.unity</strong> は、<code>MixedRealityToolkit</code> や <code>MixedRealityPlayspace</code>などのコンポーネントを共有するコンテナ シーンです。<strong>MRTKExamplesHubMainMenu.unity</strong> は、立方体ボタンがあります。</p>
 <h2 id="前提条件">前提条件</h2>
-<p>MRTK Examples Hub は、<a href="Extensions/SceneTransitionService/SceneTransitionServiceOverview.html">Scene Transition Service</a> および関連スクリプトを使用します。Unity パッケージを介して、MRTK を使用している場合は、 <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases">release packages</a> の一部である <strong>Microsoft.MixedReality.Toolkit.Unity.Extensions.x.x.x.unitypackage</strong> をインポートしてください。リポジトリをクローンして MRTK を使っている場合は、すでに <strong>MixedRealityToolkit.Extensions</strong> フォルダがプロジェクタ内にあるはずです。</p>
+<p>MRTK Examples Hub は、<a href="Extensions/SceneTransitionService/SceneTransitionServiceOverview.html">Scene Transition Service</a> および関連スクリプトを使用します。Unity パッケージを介して、MRTK を使用している場合は、 <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases">release packages</a> の一部である <strong>Microsoft.MixedReality.Toolkit.Unity.Extensions.x.x.x.unitypackage</strong> をインポートしてください。リポジトリをクローンして MRTK を使っている場合は、すでに <strong>MRTK/Extensions</strong> フォルダがプロジェクタ内にあるはずです。</p>
 <h2 id="mrtkexampleshub-シーンとシーン-システム">MRTKExamplesHub シーンとシーン システム</h2>
-<p><code>MixedRealityToolkit.Examples/Experimental/Demos/ExamplesHub/Scenes/</code> にある <strong>MRTKExamplesHub.unity</strong> を開きます。これは、MixedRealityToolkit、MixedRealityPlayspace および LoadHubOnStartup を含む空のシーンです。このシーンは、MRTK のシーン システムを使うように設定されています。MixedRealityToolkit 配下の <code>MixedRealitySceneSystem</code> をクリックします。Inspector (インスペクター) パネルにシーン システムの情報が表示されます。</p>
+<p><code>MRTK/Examples/Experimental/Demos/ExamplesHub/Scenes/</code> にある <strong>MRTKExamplesHub.unity</strong> を開きます。これは、MixedRealityToolkit、MixedRealityPlayspace および LoadHubOnStartup を含む空のシーンです。このシーンは、MRTK のシーン システムを使うように設定されています。MixedRealityToolkit 配下の <code>MixedRealitySceneSystem</code> をクリックします。Inspector (インスペクター) パネルにシーン システムの情報が表示されます。</p>
 <p><br><br><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Hierarchy.png" width="300">
 <br><br><img src="../Documentation/Images/ExamplesHub/MRTK_ExamplesHub_Inspector1.png" width="450"></p>
 <p>インスペクターの下部に、 Scene System Profile で定義されているシーンのリストが表示されます。シーン名をクリックすると、ロード/アンロードできます。

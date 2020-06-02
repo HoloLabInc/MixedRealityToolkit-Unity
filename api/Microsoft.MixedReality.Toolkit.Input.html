@@ -102,6 +102,9 @@ This defines a modification to an Unity animation parameter, based on cursor sta
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.AnimatedCursorStateData.html">AnimatedCursorStateData</a></h4>
       <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.ArticulatedHandDefinition.html">ArticulatedHandDefinition</a></h4>
+      <section><p>Defines the interactions and data that an articulated hand can provide.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseController.html">BaseController</a></h4>
       <section><p>Base Controller class to inherit from for all controllers.</p>
 </section>
@@ -128,7 +131,7 @@ This defines a modification to an Unity animation parameter, based on cursor sta
       <section><p>Class providing a base implementation of the <a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputDeviceManager.html">IMixedRealityInputDeviceManager</a> interface.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputEventData.html">BaseInputEventData</a></h4>
-      <section><p>Base class of all Input Events.</p>
+      <section><p>Base class of all input events.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.BaseInputHandler.html">BaseInputHandler</a></h4>
       <section><p>Base class for the Mixed Reality Toolkit's SDK input handlers.</p>
@@ -227,7 +230,8 @@ for focus with hand and gesture-based input and interaction across it.</p>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.HandJointUtils.html">HandJointUtils</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.HandMeshInfo.html">HandMeshInfo</a></h4>
-      <section></section>
+      <section><p>Stores pointers and transform information for Hand Mesh data provided by current platform. This is the data container for the IMixedRealityHandMeshHandler input system event interface.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.HandRay.html">HandRay</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.HandTrackingInputEventData.html">HandTrackingInputEventData</a></h4>
@@ -292,19 +296,20 @@ This shows a simple dropdown list for selecting a binding, as well as a button f
 Pressing a key or mouse button will define the binding and then immediately close the popup.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.KeyInputSystem.html">KeyInputSystem</a></h4>
-      <section><p>Utility class to poll input for key bindings.</p>
+      <section><p>Utility class to poll input for key bindings and to simulate key presses
+Need to add mechanisms to poll and simulate input axis: <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/7659">https://github.com/microsoft/MixedRealityToolkit-Unity/issues/7659</a></p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.LinePointer.html">LinePointer</a></h4>
       <section><p>A simple line pointer for drawing lines from the input source origin to the current pointer position.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.ManualCameraControl.html">ManualCameraControl</a></h4>
-      <section><p>Class for manually controlling the camera in the Unity editor. Attach to the MainCamera object.</p>
+      <section><p>Class for manually controlling the camera in the Unity editor. Used by the Input Simulation Service.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MeshCursor.html">MeshCursor</a></h4>
       <section><p>Object that represents a cursor in 3D space controlled by gaze.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MixedRealityCanvasInspector.html">MixedRealityCanvasInspector</a></h4>
-      <section><p>Editor class used to edit UI Canvases.</p>
+      <section><p>Helper class to get CanvasUtility onto Canvas objects.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerAttribute.html">MixedRealityControllerAttribute</a></h4>
       <section><p>Attach to a controller device class to make it show up in the controller mapping profile.</p>
@@ -318,7 +323,8 @@ It also keeps track of the animation Transforms in order to properly animate acc
 the controller class.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerVisualizationProfile.html">MixedRealityControllerVisualizationProfile</a></h4>
-      <section></section>
+      <section><p>Profile that determines relevant overrides and properties for controller visualization</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerVisualizer.html">MixedRealityControllerVisualizer</a></h4>
       <section><p>The Mixed Reality Visualization component is primarily responsible for synchronizing the user's current input with controller models.</p>
 </section>
@@ -431,10 +437,14 @@ i.e. a primary mouse button click, motion controller selection press, or hand ta
 It's movement is bound to screenspace.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer.html">ShellHandRayPointer</a></h4>
-      <section><p>Implementation for default hand ray pointers shipped with MRTK. Primariliy used with hands and motion controllers</p>
+      <section><p>Implementation for default hand ray pointers shipped with MRTK. Primarily used with hands and motion controllers</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.SimulatedArticulatedHand.html">SimulatedArticulatedHand</a></h4>
       <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.SimulatedArticulatedHandPoses.html">SimulatedArticulatedHandPoses</a></h4>
+      <section><p>This stores the joint pose JSON data that defines various articulated hand gestures for input simulation.
+The JSON data that defines each joint position and orientation is stored in strings to avoid file loading/targeting during runtime</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.SimulatedGestureHand.html">SimulatedGestureHand</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.SimulatedHand.html">SimulatedHand</a></h4>
@@ -546,6 +556,10 @@ It's movement is bound to screenspace.</p>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.ICursorModifier.html">ICursorModifier</a></h4>
       <section><p>Interface for cursor modifiers that can modify a <a href="https://docs.unity3d.com/ScriptReference/GameObject.html">GameObject</a>'s properties.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IHandRay.html">IHandRay</a></h4>
+      <section><p>Interface defining a hand ray, which is used by far pointers to direct interactions.
+Implementations of this class are managed and updated by a BaseHand implementation.</p>
+</section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IInputActionRule-1.html">IInputActionRule&lt;T&gt;</a></h4>
       <section><p>Interface for defining Input Action Rules</p>
 </section>
@@ -592,6 +606,9 @@ to send an event to all input handling interfaces.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html">IMixedRealityGazeProvider</a></h4>
       <section><p>Implements the Gaze Provider for an Input Source.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProviderHeadOverride.html">IMixedRealityGazeProviderHeadOverride</a></h4>
+      <section><p>Adds ability to override head gaze on a gaze provider.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler.html">IMixedRealityGestureHandler</a></h4>
       <section><p>Interface to implement for generic gesture input.</p>
