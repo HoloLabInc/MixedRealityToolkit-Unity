@@ -41,7 +41,7 @@ HoloLens 2 では、不透明な背面をもつボタンを使うことが推奨
 - いつイベントがトリガーされるか理解しづらい
 - 透明な平面を通して表示されたホログラムは HoloLens 2 の Depth LSR 安定化で不安定になりうる
 
-![Button](Images/Button/MRTK_Button_UsePlated.png)
+![Button](../Documentation/Images/Button/MRTK_Button_UsePlated.png)
 
 ## Pressable button (押しボタン) の使い方
 
@@ -181,16 +181,16 @@ HoloLens 2 のシェルスタイル ボタンのサイズは 32x32mm です。�
 そして、ボタンのルートにある NearInteractionTouchable スクリプトの **Fix Bounds** ボタンをクリックしてください。
 
 FrontPlate のサイズを更新
-![Button](Images/Button/MRTK_Button_SizeCustomization1.png)
+![Button](../Documentation/Images/Button/MRTK_Button_SizeCustomization1.png)
 
 Quad のサイズを更新
-![Button](Images/Button/MRTK_Button_SizeCustomization2.png)
+![Button](../Documentation/Images/Button/MRTK_Button_SizeCustomization2.png)
 
 Box Collider のサイズを更新
-![Button](Images/Button/MRTK_Button_SizeCustomization3.png)
+![Button](../Documentation/Images/Button/MRTK_Button_SizeCustomization3.png)
 
 'Fix Bounds' をクリック
-![Button](Images/Button/MRTK_Button_SizeCustomization4.png)
+![Button](../Documentation/Images/Button/MRTK_Button_SizeCustomization4.png)
 
 ## 音声コマンド ('See-it, Say-it')
 

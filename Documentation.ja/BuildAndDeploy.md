@@ -55,16 +55,16 @@ The Windows Mixed Reality (WMR) headset can be used for Universal Windows Platfo
     - Make sure SteamVR is closed before launching the WMR Plugin. Launching the WMR plugin also launches SteamVR.
     - Make sure the WMR headset is plugged in.
 
-    ![WMR Plugin Search](Images/BuildDeploy/WMR/SteamSearchWMRPlugin.png)
+    ![WMR Plugin Search](../Documentation/Images/BuildDeploy/WMR/SteamSearchWMRPlugin.png)
 
 1. Select **Launch** for the Windows Mixed Reality for SteamVR Plugin.
 
-    ![WMR Plugin](Images/BuildDeploy/WMR/WMRPlugin.png)
+    ![WMR Plugin](../Documentation/Images/BuildDeploy/WMR/WMRPlugin.png)
 
     - SteamVR and the WMR plugin will launch and a new tracking status window for the WMR headset will appear.
     - For more information visit the [Windows Mixed Reality Steam Documentation](https://support.microsoft.com/help/4053622/windows-10-play-steamvr-games-in-windows-mixed-reality)
 
-        ![WMR Launch Appearance](Images/BuildDeploy/WMR/WMRPluginActive.png)
+        ![WMR Launch Appearance](../Documentation/Images/BuildDeploy/WMR/WMRPluginActive.png)
 
 1. In Unity, with your MRTK scene open, navigate to **File > Build Settings**
 
@@ -74,11 +74,11 @@ The Windows Mixed Reality (WMR) headset can be used for Universal Windows Platfo
     - Select **Build**
     - Choose the location for the new build in File Explorer
 
-    ![Build Settings for Standalone](Images/BuildDeploy/WMR/BuildSettingsStandaloneUnity.png)
+    ![Build Settings for Standalone](../Documentation/Images/BuildDeploy/WMR/BuildSettingsStandaloneUnity.png)
 
 1. A new Unity executable will be created, to launch your app select the Unity executable in File Explorer.
 
-    ![File Explorer Unity](Images/BuildDeploy/WMR/FileExplorerUnityExe.png)
+    ![File Explorer Unity](../Documentation/Images/BuildDeploy/WMR/FileExplorerUnityExe.png)
 
 ## See also
 

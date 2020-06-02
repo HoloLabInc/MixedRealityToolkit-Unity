@@ -25,7 +25,7 @@ Input System データ プロバイダー設定で、入力シミュレーショ
 
 > [!NOTE]
 > 入力シミュレーション サービスは、**Supported Platform(s)** プロパティを望みのターゲットを含むように変更することでスタンドアローンのような他のプラットフォームで使うこともできます。
-> ![Input Simulation Supported Platforms](../Images/InputSimulation/InputSimulationSupportedPlatforms.gif)
+> ![Input Simulation Supported Platforms](../../Documentation/Images/InputSimulation/InputSimulationSupportedPlatforms.gif)
 
 
 ## 入力シミュレーション ツール ウィンドウ

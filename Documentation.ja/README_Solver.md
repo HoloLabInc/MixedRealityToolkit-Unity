@@ -52,11 +52,11 @@ Solvers(ソルバー) は、事前に定義されたアルゴリズムにした�
 > [!IMPORTANT]
 > 多くのソルバーは `SolverHandler` によって提供される tracked transform target (追跡するトランスフォーム ターゲット) の forward vector を使用します。*Hand Joint* のターゲット追跡タイプを使うとき、手のひらのジョイントの forward vector は手のひらをつき抜ける方向ではなく、指の方向を向くかもしれません。これは、プラットフォームが提供する手のジョイント データによります。入力シミュレーションと Windows Mixed Reality では、*up vector* が手のひらをつき抜ける向き (緑色の vectorが up, 青色の vector が forward) です。
 >
-> ![Solver](Images/Solver/HandJoint_ForwardUpVectors.png)
+> ![Solver](../Documentation/Images/Solver/HandJoint_ForwardUpVectors.png)
 >
 > これを解決するため、`SolverHandler` の *Additional Rotation* プロパティを **<90, 0, 0>** に更新します。これにより、ソルバーに提供される forward ベクターが手のひらをつき抜けて手の外側へと向くようになります。
 >
-> ![Solver](Images/Solver/SolverHandler_AdditionalRotation.png)
+> ![Solver](../Documentation/Images/Solver/SolverHandler_AdditionalRotation.png)
 >
 > あるいは、*Controller Ray* のターゲット追跡タイプを使うことで、似たようなふるまいをさせることもできます。
 
