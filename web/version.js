@@ -35,7 +35,7 @@ function createDropdown()
 	var versionDropDiv = document.getElementById('versionDropdown');
 	var btn = document.createElement('button');
 	btn.className = "dropbtn";
-	var btnText = document.createTextNode("releases/2.3.0");
+	var btnText = document.createTextNode("releases/2.4.0");
 	btn.appendChild(btnText);
 
 	var innerDiv = document.createElement('div');
