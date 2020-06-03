@@ -44,6 +44,7 @@ steps:
 
 - powershell: |
     $env:GIT_REDIRECT_STDERR = '2>&1'
+    git config core.ignorecase false
     Remove-Item -Recurse -Force docfx.console.*
     git checkout gh-pages
     Write-Host "remove old files"
