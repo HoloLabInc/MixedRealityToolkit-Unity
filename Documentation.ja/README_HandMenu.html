@@ -86,32 +86,32 @@
 <p>Hand menus allow users to quickly bring up hand-attached UI for frequently used functions. To prevent false activation while interacting with other objects, hand menu provides options such as 'Require Flat Hand' and 'Use Gaze Activation'. It is recommended to use these options to prevent unwanted activation.</p>
 <h2 id="hand-menu-examples">Hand menu examples</h2>
 <p><strong>HandMenuExamples.unity</strong> scene is under <code>MRTK/Examples/Demos/HandTracking/Scenes</code> folder. When it is running, the scene will only activate currently selected menu type.
-<br><img src="Images/HandMenu/MRTK_HandMenu_ExampleScene.png" width="600px"></p>
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_ExampleScene.png" width="600px"></p>
 <p>You can find these hand menu prefabs under <code>MRTK/Examples/Demos/HandTracking/Prefabs</code> folder.</p>
 <h3 id="handmenu_small_hideonhanddrop-and-handmenu_medium_hideonhanddrop">HandMenu_Small_HideOnHandDrop and HandMenu_Medium_HideOnHandDrop</h3>
 <p>These two examples simply activate and deactivate the MenuContent object to show and hide menu on <strong>OnFirstHandDetected()</strong> and <strong>OnLastHandLost()</strong> event.
-<br><img src="Images/HandMenu/MRTK_HandMenu_Example1.png" width="600">
-<br><img src="Images/HandMenu/MRTK_HandMenu_Example2.png" width="600"></p>
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_Example1.png" width="600">
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_Example2.png" width="600"></p>
 <h3 id="handmenu_large_worldlock_on_grabandpull">HandMenu_Large_WorldLock_On_GrabAndPull</h3>
 <p>For more complex menus that require longer interaction time, it is recommended to world-lock the menu. In this example, the user can grab and pull to world-lock the menu, in addition to activating and deactivating the MenuContent on <strong>OnFirstHandDetected()</strong> and <strong>OnLastHandLost()</strong> events.
-<br><img src="Images/HandMenu/MRTK_HandMenu_Example3.png" width="600"></p>
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_Example3.png" width="600"></p>
 <p>Backplate's <code>ManipulationHandler</code> makes it grabbable and movable. <strong>On Manipulation Started</strong> event, <strong>SolverHandler.UpdateSolvers</strong> is deactivated to world-lock the menu. Additionally, it shows the <strong>Close button</strong> to allow the user to close the menu when the task is finished. <strong>On Manipulation Ended</strong> event, it calls <strong>HandConstraintPalmUp.StartWorldLockReattachCheckCoroutine</strong> to allow the user bring the menu back to hand by raising and looking at the palm.
-<br><img src="Images/HandMenu/MRTK_HandMenu_Example4.png" width="600"></p>
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_Example4.png" width="600"></p>
 <p><strong>Close</strong> button reactivates <strong>SolverHandler.UpdateSolvers</strong> and hide the <strong>MenuContent</strong>.
-<br><img src="Images/HandMenu/MRTK_HandMenu_Example5.png"></p>
+<br><img src="../Documentation/Images/HandMenu/MRTK_HandMenu_Example5.png"></p>
 <h3 id="handmenu_large_autoworldlock_on_handdrop">HandMenu_Large_AutoWorldLock_On_HandDrop</h3>
 <p>This example is similar to HandMenu_Large_WorldLock_On_GrabAndPull. The only difference is that the menu will be automatically world-locked on hand drop. This is done by simply not hiding the MenuContent on <strong>OnLastHandLost()</strong> event. Grab &amp; pull behavior is same as HandMenu_Large_WorldLock_On_GrabAndPull example.</p>
 <h2 id="scripts">Scripts</h2>
 <p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> behavior provides a solver that constrains the tracked object to a region safe for hand constrained content (such as hand UI, menus, etc). Safe regions are considered areas that don't intersect with the hand. A derived class of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> called <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraintPalmUp.html"><code>HandConstraintPalmUp</code></a> is also included to demonstrate a common behavior of activating the solver tracked object when the palm is facing the user.</p>
 <p>Please see the tool tips available for each <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> property for additional documentation. A few properties are defined in more detail below.</p>
-<img src="Images/Solver/MRTK_Solver_HandConstraintPalmUp.png" width="450">
+<img src="../Documentation/Images/Solver/MRTK_Solver_HandConstraintPalmUp.png" width="450">
 <ul>
 <li><p><strong>Safe Zone</strong>: The safe zone specifies where on the hand to constrain content. It is recommended that content be placed on the Ulnar Side to avoid overlap with the hand and improved interaction quality. Safe zones are calculated by taking the hands orientation projected into a plane orthogonal to the camera's view and raycasting against a bounding box around the hands. Safe zones are defined to work with <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html"><code>IMixedRealityHand</code></a> but also works with other controller types. It is recommended to explore what each safe zone represents on different controller types.</p>
 </li>
 <li><p><strong>Follow Hand Until Facing Camera</strong> With this active, solver will follow hand rotation until the menu is sufficiently aligned with the gaze, at which point it faces the camera. This works by changing the SolverRotationBehavior in the HandConstraintSolver, from LookAtTrackedObject to LookAtMainCamera as the GazeAlignment angle with the solver varies.</p>
 </li>
 </ul>
-<img src="Images/Solver/MRTK_Solver_HandConstraintSafeZones.png" width="450">
+<img src="../Documentation/Images/Solver/MRTK_Solver_HandConstraintSafeZones.png" width="450">
 <ul>
 <li><p><strong>Activation Events</strong>: Currently the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> triggers four activation events. These events can be used in many different combinations to create unique <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html"><code>HandConstraint</code></a> behaviors, please see the HandBasedMenuExample scene under <code>MRTK/Examples/Demos/HandTracking/Scenes/</code> for examples of these behaviors.</p>
 <ul>

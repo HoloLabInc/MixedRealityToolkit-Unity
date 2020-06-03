@@ -1456,15 +1456,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/README_HandMenu.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/README_HandMenu.html",
-          "hash": "8rVbfreUOXpLRmhrAMb03w=="
+          "hash": "qu8NUzCQ6xmQREuP+ewNcg=="
         }
       },
       "is_incremental": false,
@@ -1555,15 +1552,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/README_ProgressIndicator.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/README_ProgressIndicator.html",
-          "hash": "rikLXhA9C7kdTBRsdEpmJQ=="
+          "hash": "FEvq/B+OJ+0qOpkJSFqfaw=="
         }
       },
       "is_incremental": false,
@@ -1669,15 +1663,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "Documentation.ja/ReleaseNotes.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/ReleaseNotes.html",
-          "hash": "dHb/GzGBzO2OSfjBi8kHkg=="
+          "hash": "0dDQ49zbRvuf56Rd+X7nSw=="
         }
       },
       "is_incremental": false,
@@ -29369,10 +29360,11 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 1611,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -29381,16 +29373,15 @@
           "total_file_count": 289,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1611,
+          "skipped_file_count": 0
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
