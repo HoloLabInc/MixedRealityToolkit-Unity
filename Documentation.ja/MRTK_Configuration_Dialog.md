@@ -2,7 +2,7 @@
 
 The MRTK configuration dialog is displayed when Unity loads a project and it is determined that one or more configuration options needs the attention of the developer.
 
-![Apply Later Ignore](../Documentation/Images/ConfigurationDialog/ConfigurationDialogHeader.png)
+![Apply Later Ignore](Images/ConfigurationDialog/ConfigurationDialogHeader.png)
 
 To apply the changes, click the **Apply** button. The **Later** button will defer the changes until the project is reloaded at a future time.
 
@@ -13,7 +13,7 @@ To apply the changes, click the **Apply** button. The **Later** button will defe
 
 All build targets share a collection of common options.
 
-![Common Settings](../Documentation/Images/ConfigurationDialog/ConfigurationDialogCommonSettings.png)
+![Common Settings](Images/ConfigurationDialog/ConfigurationDialogCommonSettings.png)
 
 ### Force text asset serialization and Enable visible meta files
 
@@ -62,7 +62,7 @@ More information can be found on the [Resonance Audio documentation](https://res
 
 ## Universal Windows Platform settings
 
-![UWP Settings](../Documentation/Images/ConfigurationDialog/ConfigurationDialogUWPSettings.png)
+![UWP Settings](Images/ConfigurationDialog/ConfigurationDialogUWPSettings.png)
 
 ### Enable MSBuild for Unity
 
@@ -92,11 +92,20 @@ Enables specific application capabilities for Universal Windows Platform applica
 
   Enables support for tracking the user's eye gaze.
 
+### Avoid Unity 'PlayerSettings.graphicsJob' crash
+
+**Unity 2019.3 and newer**
+
+In the latest version of Unity 2019, when "Graphics Jobs" is enabled, the app will crash when deployed to a HoloLens 2.
+This setting is enabled by default in Unity - while this bug exists (see [Unity bug]
+(https://issuetracker.unity3d.com/issues/enabling-graphics-jobs-in-2019-dot-3-x-results-in-a-crash-or-nothing-rendering-on-hololens-2)),
+the configurator will default to setting Graphics Jobs to 'false' (thus allowing apps deployed to HoloLens 2 not to crash).
+
 ## Android settings
 
 Configuration settings to support AR applications on Android powered devices.
 
-![Android Settings](../Documentation/Images/ConfigurationDialog/ConfigurationDialogAndroidSettings.png)
+![Android Settings](Images/ConfigurationDialog/ConfigurationDialogAndroidSettings.png)
 
 ### Disable Multi-Threaded Rendering
 
@@ -110,7 +119,7 @@ Sets the value of **Player Settings** > **Other Settings** > **Minimum API Level
 
 Configuration settings to support AR applications on iOS powered devices.
 
-![iOS Settings](../Documentation/Images/ConfigurationDialog/ConfigurationDialogiOSSettings.png)
+![iOS Settings](Images/ConfigurationDialog/ConfigurationDialogiOSSettings.png)
 
 ### Set Required OS Version
 

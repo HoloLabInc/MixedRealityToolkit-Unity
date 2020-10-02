@@ -8,19 +8,19 @@ The following steps presume use of the MixedRealityToolkit object. Steps require
 
 1. Select the MixedRealityToolkit object in the scene hierarchy.
 
-    ![MRTK Configured Scene Hierarchy](../../Documentation/Images/MRTK_ConfiguredHierarchy.png)
+    ![MRTK Configured Scene Hierarchy](../Images/MRTK_ConfiguredHierarchy.png)
 
 2. Navigate the Inspector panel to the camera system section and expand the **Camera Settings Providers** section.
 
-    ![Expand settings providers](../../Documentation/Images/CameraSystem/ExpandProviders.png)
+    ![Expand settings providers](../Images/CameraSystem/ExpandProviders.png)
 
 3. Click **Add Camera Settings Provider** and expand the newly added **New camera settings** entry.
 
-    ![Expand new settings provider](../../Documentation/Images/CameraSystem/ExpandNewProvider.png)
+    ![Expand new settings provider](../Images/CameraSystem/ExpandNewProvider.png)
 
 4. Select the Windows Mixed Reality Camera Settings provider
 
-    ![Select Windows Mixed Reality settings provider](../../Documentation/Images/CameraSystem/SelectWindowsMixedRealitySettings.png)
+    ![Select Windows Mixed Reality settings provider](../Images/CameraSystem/SelectWindowsMixedRealitySettings.png)
 
 > [!NOTE]
 > When using the Microsoft Mixed Reality Toolkit default profiles, the Windows Mixed Reality camera settings provider will already be enabled and configured.
@@ -29,7 +29,7 @@ The following steps presume use of the MixedRealityToolkit object. Steps require
 
 The Windows Mixed Reality Camera Settings also supports a profile. This profile provides the following options:
 
-![Windows Mixed Reality camera settings configuration](../../Documentation/Images/CameraSystem/WMRCameraSettingsProfile.png)
+![Windows Mixed Reality camera settings configuration](../Images/CameraSystem/WMRCameraSettingsProfile.png)
 
 ### Render mixed reality capture from the photo/video camera
 
@@ -37,7 +37,7 @@ With this setting on HoloLens 2, you can enable hologram alignment in your mixed
 
 ### HoloLens 2 reprojection method
 
-Sets the initial method for HoloLens 2 reprojection. The default recommendation is to use depth reprojection, as all parts of the scene will be independently stabilized based on their distance from the user. If holograms still appear unstable, try ensuring all objects are properly submitted their depth to the depth buffer. This is sometimes a shader setting. If depth appears to be properly submitted and instability is still present, try autoplanar stabilization, which uses the depth buffer to calculate a stabilization plane. If an app is unable to submit enough depth data for either of those options to be usable, planar reprojection is provided as a fallback. This method will be based on an app's provided focus point data via [SetFocusPointForFrame](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.SetFocusPointForFrame.html).
+Sets the initial method for HoloLens 2 reprojection. The default recommendation is to use depth reprojection, as all parts of the scene will be independently stabilized based on their distance from the user. If holograms still appear unstable, try ensuring all objects have properly submitted their depth to the depth buffer. This is sometimes a shader setting. If depth appears to be properly submitted and instability is still present, try autoplanar stabilization, which uses the depth buffer to calculate a stabilization plane. If an app is unable to submit enough depth data for either of those options to be usable, planar reprojection is provided as a fallback. This method will be based on an app's provided focus point data via [SetFocusPointForFrame](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.SetFocusPointForFrame.html).
 
 To update the reprojection method at runtime, access the `WindowsMixedRealityReprojectionUpdater` like so:
 

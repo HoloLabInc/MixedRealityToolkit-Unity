@@ -14,7 +14,11 @@ Three key steps are required to listen for touch and/or grab input events on a p
 
     The default MRTK profile and the default HoloLens 2 profile already contain a *SpherePointer*. One can confirm a SpherePointer will be created by selecting the MRTK Configuration Profile and navigating to **Input** > **Pointers** > **Pointer Options**. The default `GrabPointer` prefab (Assets/MRTK/SDK/Features/UX/Prefabs/Pointers) should be listed with a *Controller Type* of *Articulated Hand*. A custom prefab can be utilized as long as it implements the [`SpherePointer`](xref:Microsoft.MixedReality.Toolkit.Input.SpherePointer) class.
 
-    ![Grab Pointer Profile Example](../../Documentation/Images/Input/Pointers/GrabPointer_MRTKProfile.png)
+    ![Grab Pointer Profile Example](../Images/Input/Pointers/GrabPointer_MRTKProfile.png)
+
+    The default grab pointer queries for nearby objects in a cone around the grab point to match the default Hololens 2 interface.
+
+    ![Conical Grab Pointer](https://user-images.githubusercontent.com/39840334/82500569-72d58300-9aa8-11ea-8102-ec9a62832d4e.png)
 
 1. On the GameObject that should be grabbable, add a [`NearInteractionGrabbable`](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable), as well as a collider.
 
@@ -55,7 +59,7 @@ For **both** types of UX elements though, ensure a [PokePointer](Pointers.md#pok
 
 The default MRTK profile and the default HoloLens 2 profile already contain a *PokePointer*. One can confirm a PokePointer will be created by selecting the MRTK Configuration Profile and navigate to **Input** > **Pointers** > **Pointer Options**. The default `PokePointer` (Assets/MRTK/SDK/Features/UX/Prefabs/Pointers) prefab should be listed with a *Controller Type* of *Articulated Hand*. A custom prefab can be utilized as long as it implements the [`PokePointer`](xref:Microsoft.MixedReality.Toolkit.Input.PokePointer) class.
 
-![Poke Pointer Profile Example](../../Documentation/Images/Input/Pointers/PokePointer_MRTKProfile.png)
+![Poke Pointer Profile Example](../Images/Input/Pointers/PokePointer_MRTKProfile.png)
 
 ### 3D GameObjects
 
@@ -81,7 +85,7 @@ Bounds should be set to a non-zero-zero value).
 
     1. Click **Fix bounds** and **Fix center**
 
-    ![NearInteractionTouchable Gizmos Example](../../Documentation/Images/Input/Pointers/NearInteractionTouchableSetup.gif)
+    ![NearInteractionTouchable Gizmos Example](../Images/Input/Pointers/NearInteractionTouchableSetup.gif)
 
 1. On that object or one of its ancestors, add a script component that implements the
    [`IMixedRealityTouchHandler`](xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler)
@@ -91,7 +95,7 @@ Bounds should be set to a non-zero-zero value).
 
 > [!NOTE]
 > In the editor scene view with the *NearInteractionTouchable* GameObject selected, notice a white outline square and arrow. The arrow points to the "front" of the touchable. The collidable will only be touchable from that direction. To make a collider touchable from all directions, see the section on [arbitrary collider touch](#arbitrary-collider-touch).
-> ![NearInteractionTouchable Gizmos Example](../../Documentation/Images/Input/Pointers/NearInteractionTouchableGizmos.png)
+> ![NearInteractionTouchable Gizmos Example](../Images/Input/Pointers/NearInteractionTouchableGizmos.png)
 
 ### Arbitrary collider touch
 

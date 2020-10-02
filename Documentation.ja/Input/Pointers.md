@@ -13,13 +13,13 @@ Pointers are configured as part of the Input System in MRTK via a [`MixedReality
 - *Pointing Extent* - Defines the max distance for which a Pointer can interact with a GameObject.
 
 - *Pointing Raycast Layer Masks* - This is a prioritized array of LayerMasks to determine which possible GameObjects any given Pointer can interact with and the order of interaction to attempt. This may be useful to ensure Pointers interact with UI elements first before other scene objects.
-![Pointer Profile Example](../../Documentation/Images/Input/Pointers/PointerProfile.PNG)
+![Pointer Profile Example](../Images/Input/Pointers/PointerProfile.PNG)
 
 ### Pointer options configuration
 
 The default MRTK Pointer Profile configuration includes the following pointer classes and associated prefabs out-of-box. The list of pointers available to the system at runtime is defined under *Pointer Options* in the Pointer profile. Developers can utilize this list to reconfigure existing Pointers, add new Pointers, or delete one.
 
-![Pointer Options Profile Example](../../Documentation/Images/Input/Pointers/PointerOptionsProfile.PNG)
+![Pointer Options Profile Example](../Images/Input/Pointers/PointerOptionsProfile.PNG)
 
 Each Pointer entry is defined by the following set of data:
 
@@ -43,7 +43,7 @@ the articulated hand controller is associated with the *PokePointer*, *GrabPoint
 
 The following classes are the out-of-box MRTK pointers available and defined in the default *MRTK Pointer Profile* outlined above. Each pointer prefab provided under *Assets/MRTK/SDK/Features/UX/Prefabs/Pointers* contains one of the pointer components attached.
 
-![MRTK Default Pointers](../../Documentation/Images/Input/Pointers/MRTK_Pointers.png)
+![MRTK Default Pointers](../Images/Input/Pointers/MRTK_Pointers.png)
 
 #### Far pointers
 
@@ -106,6 +106,12 @@ The *[SpherePointer](xref:Microsoft.MixedReality.Toolkit.Input.SpherePointer)* u
 Useful Sphere Pointer properties:
 
 - *Sphere Cast Radius*: The radius for the sphere used to query for grabbable objects.
+- *Near Object Margin*: The distance on top of the Sphere Cast Radius to query for detecting if an object is near the pointer. Total Near Object detection radius is Sphere Cast Radius + Near Object Margin
+- *Near Object Sector Angle*: The angle around the forward axis of the pointer for querying for nearby objects. Makes the `IsNearObject` query function like a cone. This is set to 66 degrees by default to match Hololens 2 behavior
+
+![Sphere pointer modified to only query for objects in the forward direction](https://user-images.githubusercontent.com/39840334/82500569-72d58300-9aa8-11ea-8102-ec9a62832d4e.png)
+
+- *Near Object Smoothing Factor*: Smoothing factor for Near Object detection. If an object is detected in the Near Object Radius, the queried radius then becomes Near Object Radius * (1 + Near Object Smoothing Factor) to reduce the sensitivity and make it harder for an object to leave the detection range.
 - *Grab Layer Masks* - A prioritized array of LayerMasks to determine which possible GameObjects the pointer can interact with and the order of interaction to attempt. Note that a GameObject must also have a `NearInteractionGrabbable` to interact with a SpherePointer.
     > [!NOTE]
     > The Spatial Awareness layer is disabled in the default GrabPointer prefab provided by MRTK. This is done to reduce performance impact of doing a sphere overlap query with the spatial mesh. You can enable this by modifying the GrabPointer prefab.
@@ -114,6 +120,8 @@ This can prevent accidental grabs, and will allow hand rays to turn on when you 
 a grabbable but cannot see it. The *Visual FOV* is defined via a cone instead of the the typical frustum for performance reasons. This cone is centered and oriented the same as the camera's frustum with a radius equal to half display height(or vertical FOV).
 
 <img src="../../Documentation/Images/Input/Pointers/SpherePointer_VisualFOV.png" width="200">
+
+
 
 #### Teleport pointers
 
