@@ -1,6 +1,6 @@
 ---
-title: Installation Guide
-description: Guide for installing MRTK-Unity in a new project.
+title: インストール ガイド
+description: 新しいプロジェクトに MRTK-Unity をインストールするガイド
 author: hferrone
 ms.author: v-hferrone
 ms.date: 09/9/2020
@@ -8,219 +8,232 @@ ms.localizationpriority: high
 keywords: Unity,HoloLens, HoloLens 2, Mixed Reality, development, MRTK,
 ---
 
-# Installation guide
+# インストール ガイド
 
 > [!CAUTION]
-> If you're new to MRTK or Mixed Reality development in Unity, we recommend you start at the beginning of our [Unity development journey](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2). The Unity development journey is the **recommended starting point for MRTK**, specifically created to walk you through the installation, core concepts, and usage of MRTK in Unity.
+> MRTK や Unity での Mixed Reality 開発が初めての場合は、[Unity 開発ジャーニー](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2) のはじめから始めることをおすすめします。Unity 開発ジャーニーは **MRTK の開始点としておすすめです**。特に、インストール、コア コンセプト、Unity での MRTK の使用法について説明するために作られました。
 
 ## Prerequisites
 
 To get started with the Mixed Reality Toolkit, you will need:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-* [Unity 2018.4 or Unity 2019.4](https://unity3d.com/get-unity/download/archive)
-
-  MRTK supports both IL2CPP and .NET scripting backends on Unity 2018.  
-  Starting from MRTK 2.5 **Unity 2018.4.13f1 or later is strongly recommended** for customers using Unity 2018. Earlier versions of Unity 2018.4 are still supported but now require extra steps to set up and to upgrade to Unity 2019.
+* [Unity 2018.4 または Unity 2019.4](https://unity3d.com/get-unity/download/archive)
+  MRTKは、 Unity 2018 で IL2CPP と .NET scripting backends の両方をサポートします。  
+  MRTK 2.5 から始める場合、Unity 2018 を使う方には **Unity 2018.4.13f1 以降が強く推奨されます**。Unity 2018.4 の以前のバージョンもサポートはされますが、セットアップや Unity 2019 へのアップグレードに追加のステップが必要となります。
 
 * [Windows SDK 18362+](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
-  This is necessary if you are building a UWP app for WMR, HoloLens 1, or HoloLens 2. This is not necessary
-  when building for OpenVR.
 
-## Add MRTK to your Unity project
+  これは WMR、HoloLens 1、または HoloLens 2 向けの UWP アプリを構築する場合に必要です。OpenVR 向けに構築する場合は不要です。
+
+## MRTK を Unity Project に追加する
 
 > [!Note]
-> Users of Unity 2019.4 and newer, can use the Unity Package Manager to import MRTK. Please see [Using the Unity Package Manager](usingupm.md) for more information.
+> Unity 2019.4 以降のユーザーは、Unity Package Manager を使って MRTK をインポートできます。詳細は [Unity Package Manager の利用](usingupm.md) をご覧ください。
 
-### Required
+### 必須事項
 
-1. [Get the latest MRTK Unity packages](#get-the-latest-mrtk-unity-packages)
-1. [Import MRTK packages into your Unity project](#import-mrtk-packages-into-your-unity-project)
-1. [Switch your Unity project to the target platform](#switch-your-unity-project-to-the-target-platform)
-1. [Add MRTK to a new scene or new project](#add-mrtk-to-a-new-scene-or-new-project)
+1. [最新の MRTK Unity package を取得する](#get-the-latest-mrtk-unity-packages)
+1. [MRTK のパッケージを Unity プロジェクトにインポートする](#import-mrtk-packages-into-your-unity-project)
+1. [Unity プロジェクトをターゲット プラットフォームに切り替える](#switch-your-unity-project-to-the-target-platform)
+1. [MRTK を新しいシーン、または新しいプロジェクトに追加する](#add-mrtk-to-a-new-scene-or-new-project)
 
-### Optional
+### オプション
 
-* [Getting started tutorials](#getting-started-tutorials)
-* [XR SDK getting started guide (Unity 2019.3 or later)](GettingStartedWithMRTKAndXRSDK.md).
-* [Learn about the core building blocks of MRTK](#learn-about-the-core-building-blocks-of-mrtk)
-* [Run the HandInteractionExamples scene in the Unity Editor](#run-the-handinteractionexamples-scene-in-the-unity-editor)
+* [チュートリアルを始める](#getting-started-tutorials)
+* [XR SDK getting started guide (Unity 2019.3 or later)](GettingStartedWithMRTKAndXRSDK.md)
+* [MRTK のコアとなるビルディング ブロックについて学ぶ](#learn-about-the-core-building-blocks-of-mrtk)
+* [HandInteractionExamples のシーンを Unity Editor で実行する](#run-the-handinteractionexamples-scene-in-the-unity-editor)
 
-### Get the latest MRTK Unity packages
+<a name="get-the-latest-mrtk-unity-packages"></a>
 
-1. Go to the <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">MRTK release page</a>.
-1. Under Assets, download:
+### 最新の MRTK Unity package を取得する
+
+1. <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">MRTK リリース ページ</a>を開きます。
+1. Assets の下から、以下をダウンロードします。
     * **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage**
-    * (**_Optional_**) Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage
-    * (**_Optional_**) Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
-    * (**_Optional_**) Microsoft.MixedRealityToolkit.Unity.TestUtilities.unitypackage
-    * (**_Required for version-to-version upgrades, Optional otherwise_**) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
+    * (**_オプション_**) Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage
+    * (**_オプション_**) Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage
+    * (**_オプション_**) Microsoft.MixedRealityToolkit.Unity.TestUtilities.unitypackage
+    * (**_バージョンのアップグレードに必要、そうでなければオプション_**) Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage
 
-For details on the packages and their contents, please see [MRTK Packages](Packaging/MRTK_Packages.md).
+パッケージと内容の詳細については、[MRTK Packages](Packaging/MRTK_Packages.md) をご覧ください。
 
-### Import MRTK packages into your Unity project
+<a name="import-mrtk-packages-into-your-unity-project"></a>
 
-1. Create a new Unity project, or open an existing project. When creating a project, make sure to select "3D" as the template type.
-1. Import the **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage** you downloaded by going into "Asset -> Import Package -> Custom Package", select the .unitypackage file, ensure all items to import are checked, and then select "Import".
-1. (**_Optional_**) Import the **Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage** following the same steps as the foundation package. The extensions package provides a set of useful optional components for the MRTK.
-1. (**_Optional_**) Import the **Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage** following the same steps as above. The examples package is optional and contains useful demonstration scenes for current MRTK features. **Note that the Examples package requires the Extensions package.**
-1. (**_Required for version-to-version upgrades, Optional otherwise_**) Import the **Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage** following the same steps as the foundation package. The tools package is optional and contains useful tools, such as the ExtensionServiceCreator, that enhance the MRTK developer experience.
+### MRTK のパッケージを Unity プロジェクトにインポートする
+
+1. 新しい Unity プロジェクトを作成するか、既存のプロジェクトを開きます。新しいプロジェクトを作成する場合は、テンプレート タイプに 「3D」 が選択されていることを確認してください。
+1. ダウンロードした **Microsoft.MixedRealityToolkit.Unity.Foundation.unitypackage** をインポートします。「Asset -> Import Package -> Custom Package」から、 .unitypackage ファイルを選択し、 インポートする全ての項目がチェックされていることを確認してから、「Import」を選択します。
+1. (**_オプション_**) **Microsoft.MixedRealityToolkit.Unity.Extensions.unitypackage** を Foundation パッケージと同様にインポートします。 Extensions パッケージは、オプションで、 MRTK の便利なオプション コンポーネントのセットを提供します。
+1. (**_オプション_**) **Microsoft.MixedRealityToolkit.Unity.Examples.unitypackage** を上記と同様の手順でインポートします。Examples のパッケージは、オプションであり、現在の MRTK の機能の有用なデモ シーンが含まれています。**Examples パッケージは Extensions パッケージが必要であることにご注意ください**
+1. (**_バージョンのアップグレードに必要、そうでなければオプション_**) **Microsoft.MixedRealityToolkit.Unity.Tools.unitypackage** を Foundation パッケージと同様にインポートします。Tools のパッケージは、オプションであり、MRTK 開発者のエクスペリエンスを向上させる、ExtensionServiceCreator などの便利なツールが含まれています。
 
 > [!Note]
-> If you are using Unity 2018.4.12f1 or earlier, note you will experience compilation errors shown in the console. Go to `Assets\MRTK\Providers\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.asmdef` in the project window and remove the missing reference in the inspector. Repeat those steps with `Assets\MRTK\Providers\Oculus\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.Oculus.asmdef` and `Assets\MRTK\Providers\WindowsMixedReality\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.WMR.asmdef`. Note you must revert the changes by replacing those three asmdef files with original (i.e. unmodified) ones when upgrading to Unity 2019.  
+> Unity 2018.4.12f1 以前を使っている場合は、コンソールにコンパイル エラーが表示されることにご注意ください。プロジェクト ウィンドウで `Assets\MRTK\Providers\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.asmdef` を開き、インスペクターで missing reference を削除してください。このステップを `Assets\MRTK\Providers\Oculus\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.Oculus.asmdef` と `Assets\MRTK\Providers\WindowsMixedReality\XRSDK\Microsoft.MixedReality.Toolkit.Providers.XRSDK.WMR.asmdef` でも行ってください。Unity 2019 にアップグレードする際にはこれら 3 つの asmdef ファイルをもとの修正されていないもので置き換えて変更を元に戻さなければならないことにご注意ください。  
 
 > [!Note]
-> Android and iOS development require additional package installations. For more information, see [How to configure MRTK for iOS and Android](CrossPlatform/UsingARFoundation.md).
-After importing the Foundation package, you may see a prompt similar to the following:
+> Android と iOS の開発には、追加のパッケージ インストールが必要です。より多くの情報については、[MRTK を iOS と Android 向けに設定する方法](CrossPlatform/UsingARFoundation.md)をご覧ください。
+Foundation パッケージをインポートすると、次のようなプロンプトが表示される場合があります。
 
 ![UnitySetupPrompt](../Documentation/Images/MRTK_UnitySetupPrompt.png)
 
-MRTK is attempting to set up your project for building Mixed Reality solutions by doing the following:
+MRTK は、以下を実行することで Mixed Reality ソリューションを構築するためのプロジェクトをセットアップします。
 
-* Enable XR Settings for your current platform (enabling the XR checkbox).
-* Force Text Serialization / Visible Meta files (recommended for Unity projects using source control).
+* 現在のプラットフォームで XR Settings を有効にします (XR チェックボックスを有効にします)。
+* テキストのシリアライズを強制 / メタ ファイルの可視化をします （ソース管理をする Unity プロジェクトに推奨）。
 
-Accepting these options is completely optional, but recommended.
+これらのオプションを適用するかは選択的ですが、推奨されています。
 
-Some prefabs and assets require TextMesh Pro, meaning you need the TextMesh Pro package installed and the assets in your project (Window -> TextMeshPro -> Import TMP Essential Resources). **After you import TMP Essentials Resources, you need to restart Unity to see changes**.
+一部のプレハブ、及びアセットには、TextMesh Pro が必要です。つまり、TextMesh Pro のパッケージをインストールし、アセットがプロジェクト内にあることが必要です。(Window -> TextMeshPro -> Import TMP Essential Resources)
+ **TMP Essentials Resources をインポートした後、変更を確認するには Unity を再起動する必要があります**。
 
-### Switch your Unity project to the target platform
+<a name="switch-your-unity-project-to-the-target-platform"></a>
 
-With the packages imported, the next step is to select the correct platform for the application.
+### Unity プロジェクトをターゲット プラットフォームに切り替える
 
-To create a **HoloLens application**, switch to the Universal Windows Platform:
+パッケージがインポートされたら、次のステップはアプリケーションの正しいプラットフォームを選択することです。
 
-1. Open menu : File > Build Settings
-1. Select **Universal Windows Platform** in the **Platform** list
-1. Click the **Switch Platform** button
+**HoloLens アプリケーション**を作成するには、Universal Windows Platform に切り替えます。
+
+* File > Build Settings からメニューを開きます。
+* **Platform** の一覧から、**Universal Windows Platform** を選択します。
+* **Switch Platform** ボタンを押します。
 
 ![Switch Platform](../Documentation/Images/getting_started/SwitchPlatform.png)
 
 >[!NOTE]
-> The Mixed Reality Toolkit will prompt to apply recommended changes to the project when the platform is selected. Whenever the platform is switched, the appropriate settings will be checked and prompted, if necessary.
+> Mixed Reality Toolkit は、プラットフォームが選択された際にプロジェクトに推奨される変更を適用するためのプロンプトを表示します。プラットフォームが変更されたときはいつでも、必要であれば適切な設定がチェックされプロンプトに表示されます。
 
-### Add MRTK to a new scene or new project
+<a name="add-mrtk-to-a-new-scene-or-new-project"></a>
 
-1. Create a new Unity project, or start a new scene in your current project.
+### MRTK を新しいシーン、または新しいプロジェクトに追加する
 
-1. Make sure you have imported the MRTK packages (we recommend both Foundation and Examples, though Examples is not required) following [the steps above](#import-mrtk-packages-into-your-unity-project).
+1. 新規のプロジェクトを作成する、あるいは新しいシーンを現在のプロジェクトに作成します。
 
-1. From the menu bar, select Mixed Reality Toolkit -> Add to Scene and Configure
+1. MRTK のパッケージが[上記の手順](#mrtk-のパッケージを-unity-プロジェクトにインポートする) に従ってインポートされていることを確認します。(Examples は必須ではありませんが、 Foundation と Examles の両方をインポートすることを推奨します。 )
+
+1. メニュー バーから、Mixed Reality Toolkit -> Add to Scene and Configure を選択します。
 
     ![Configure to scene](../Documentation/Images/MRTK_ConfigureScene.png)
 
-    The inspector will now show the currently active MRTK configuration profile and the profile selection dropdown, where the default profile is already preselected.
-    Profiles configure the behavior of MRTK core components and are described in more detail in the [profiles](Profiles/Profiles.md) article.
+    インスペクターには現在アクティブな MRTK の設定プロファイルとプロファイル選択のドロップダウンが表示され、デフォルトのプロファイルがあらかじめ選択されています。プロファイルは MRTK のコアコンポーネントの振る舞いを設定します。より詳しくは[プロファイル](Profiles/Profiles.md)の記事に記載されています。
 
     > [!NOTE]
     >
-    > * If you're using Unity's XR SDK in Unity 2019.3 or later, you should choose the "DefaultXRSDKConfigurationProfile". This profile is set up with MRTK's XR SDK systems and providers, where needed.  
-    > * If you're getting started on the HoloLens or HoloLens 2, you should choose the "DefaultHoloLens1ConfigurationProfile" or DefaultHoloLens2ConfigurationProfile" instead.  
-    > * See the [profiles](Profiles/Profiles.md#hololens-2-profile) for more information on the differences between DefaultMixedRealityToolkitConfigurationProfile and DefaultHoloLens2ConfigurationProfile.
+    > * もし Unity 2019.3 またはそれ以降で Unity の XR SDK を使っている場合、「DefaultXRSDKConfigurationProfile」 を選ぶべきです。このプロファイルは、MRTK の XR SDK のシステムとプロバイダーを必要な箇所に設定しています。  
+    > * HoloLens または HoloLens 2 で始める場合は、「DefaultHoloLens1ConfigurationProfile」または「DefaultHoloLens2ConfigurationProfile」をかわりに選択すべきです。  
+    > * DefaultMixedRealityToolkitConfigurationProfile と DefaultHoloLens2ConfigurationProfile の違いは、[プロファイル](Profiles/Profiles.md#hololens-2-profile) を参照してください。
 
-    You will then see the following in your Scene hierarchy:
+    シーンのヒエラルキーに以下が表示されます。
 
     ![MRTK Scene Setup](../Documentation/Images/MRTK_SceneSetup.png)
 
-    Which contains the following:
+    ヒエラルキーには以下のものが含まれます。
 
-    * **Mixed Reality Toolkit** - The toolkit itself, providing the central configuration entry point for the entire framework.
-    * **MixedRealityPlayspace** - The parent object for the headset, which ensures the headset / controllers and other required systems are managed correctly in the scene.
-    * The Main Camera is moved as a child to the Playspace - Which allows the playspace to manage the camera in conjunction with the SDKs.
+    * **Mixed Reality Toolkit** - Toolkit それ自身であり、フレームワーク全体に対する中心的な設定のエントリ ポイントを提供します。
+    * **MixedRealityPlayspace** - ヘッドセットの親オブジェクト。ヘッドセット / コントローラー及びその他の必要なシステムがシーンで正しく管理されるようにします。
+    * Main Camera は Playspace の子要素として移動されます。- これにより、プレイスペースが SDK と連動してカメラを管理できるようになります。
 
     >[!NOTE]
-    > While working in your scene, **DO NOT move the Main Camera** or the **MixedRealityPlayspace**. These are controlled by the active SDK and the MRTK respectively. Any settings you make to the Main Camera or MixedRealityPlayspace transforms will at best be overwritten, and at worst result in undefined behavior. 
+    > シーンで作業している間、**Main Camera** や **MixedRealityPlayspace** を**動かさないでください** 。これらはそれぞれ、アクティブな SDK と MRTK によって制御されます。Main Camera や MixedRealityPlayspace の transform に行った設定は良くても上書きされ、最悪の場合定義されていない振る舞いにつながります。
     >
-    > The entire rig, Camera and Playspace, can be moved by adding another GameObject to the scene, and making it the parent of the MixedRealityPlayspace. When that object is moved, the Playspace and Camera will follow loosely behind, subject to the additional local transform changes made by the active SDK and the MRTK.
+    > Camera と Playspace という全体のリグは、別の GameObject をシーンに追加し、それを MixedRealityPlayspace の親にすることで動かすことができます。このオブジェクトが移動した場合、Playspace と Camera は アクティブな SDK と MRTK による追加のローカル トランスフォームの変更の影響を受け、緩やかに追従します。
     >
-    > Another option is to move the scene contents relative to the camera, although this can become problematic in advanced scenarios incorporating content such as Nav Meshes, terrains, or particle systems.
+    > 別の方法は、シーンのコンテンツをカメラから相対的に動かすことです。しかし、Nav Mesh、テライン、パーティクル システムといったコンテンツを組み込んだ高度なシナリオでは問題になることがあります。
     >
-    > Further discussion of AR/VR camera rigs can be found in [Unity's documentation](https://docs.unity3d.com/Packages/com.unity.xr.legacyinputhelpers@2.1/manual/index.html#xr-rig-explanation) and elsewhere.
+    > AR/VR のカメラ リグに関するさらなる議論は [Unity のドキュメント](https://docs.unity3d.com/Packages/com.unity.xr.legacyinputhelpers@2.1/manual/index.html#xr-rig-explanation) などで見ることができます。
 
-1. Press Play and test out hand simulation by pressing the **spacebar**.
+1. Play を押して再生し、Space キーを押してハンド シミュレーションでテストします。
 
-You are now ready to build and deploy to device! Follow the steps instructions at [Build and Deploy MRTK](BuildAndDeploy.md).
+これで、デバイスにビルドしてデプロイする準備ができました！ [MRTK のビルドとデプロイ](BuildAndDeploy.md) の手順に従ってください。
 
-### Getting started tutorials
+<a name="getting-started-tutorials"></a>
 
-If you are new to MRTK, or MR development, we recommend you check out the [Getting started tutorials](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base) which uses MRTK v2.
+### チュートリアルを始める
 
-### Learn about the core building blocks of MRTK
+MRTK、または MR 開発が初めての場合は、MRTK v2 を使った [チュートリアルを始める](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base) をチェックすることをお勧めします。
 
-Check out [MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)](https://docs.microsoft.com/windows/mixed-reality/mrtk-101) to learn about core building blocks.
+<a name="learn-about-the-core-building-blocks-of-mrtk"></a>
 
-### Run the HandInteractionExamples scene in the Unity Editor
+### MRTK のコアとなるビルディング ブロックについて学ぶ
 
-The [hand interaction examples scene](README_HandInteractionExamples.md) article is a great place to learn more about the UX controls and interactions in MRTK.
+コアとなるビルディング ブロックについて学ぶには、[MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions (HoloLens 2, HoloLens, Windows Mixed Reality, Open VR)](https://docs.microsoft.com/windows/mixed-reality/mrtk-101) をチェックしてください。
+
+<a name="run-the-handinteractionexamples-scene-in-the-unity-editor"></a>
+
+### HandInteractionExamples のシーンを Unity Editor で実行する
+
+[Hand Interaction のサンプル シーン](README_HandInteractionExamples.md) の記事は、MRTK の UX コントロールとインタラクションについて学ぶには最適な場所です。
 
 [![HandInteractionExample scene](../Documentation/Images/MRTK_Examples.png)](README_HandInteractionExamples.md)
 
-To try the hand interaction scene, do the following steps.
+ハンド インタラクション シーンを試すには、以下のステップを実行してください。
 
-1. Open the **HandInteractionExamples** scene under `Assets/MRTK/Examples/Demos/HandTracking/Scenes/HandInteractionExamples`
+1. `Assets/MRTK/Examples/Demos/HandTracking/Scenes/HandInteractionExamples` の中の  **HandInteractionExamples** シーンを開きます。
 
-1. You may get a prompt asking you to import "TMP Essentials".
+1. 「TMP Essentials」をインポートするかを尋ねるプロンプトが表示されます。
 
     ![TMP Essentials](../Documentation/Images/getting_started/MRTK_GettingStarted_TMPro.png)
 
-    If you get such a prompt, select the "Import TMP essentials" button. "TMP Essentials" refers to Text Mesh Pro plugin, which some of the MRTK examples use for improved text rendering. (See [Text in Unity](https://docs.microsoft.com/windows/mixed-reality/text-in-unity) for more detailed information)
+    このようなプロンプトが表示された場合は、「Import TMP essentials」 ボタンを選択します。「TMP Essentials」とは、Text Mesh プラグインを指し、MRTK のサンプルの一部はテキスト レンダリングを改善するために使用しています。(詳細については、[Unity のテキスト](https://docs.microsoft.com/windows/mixed-reality/text-in-unity)を参照してください。)
 
-1. Close the TMP dialog. After this you need to reload the scene. You can do this by double-clicking the scene in the Project tab.
+1. TMP ダイアログを閉じます。この後、シーンをリロードする必要があります。これを行うには、プロジェクト タブでシーンをダブルクリックします。
 
-1. Uncheck or shrink the size of the 3d icons under the Gizmos tab in the Scene view to reduce scene clutter
+1. シーンの乱雑さを抑えるため、Scene ビューの Gizmos タブの 3d Icons のチェックを外すかサイズを小さくします。
 
      ![Gizmos](https://user-images.githubusercontent.com/13754172/80819866-a8aed800-8b8a-11ea-8d7b-a3822fdfc907.png)
 
-1. Press the Play button.
+1. Play ボタンを押します。
 
-## Using the in-editor hand input simulation to test a scene
+## Editor 内ハンド入力シミュレーションを使ってシーンをテストする
 
-The in-editor input simulation allows you to test virtual object behavior given a specific type of input such as [controllers (i.e. hands, motion controllers)](InputSimulation/InputSimulationService.md#controller-simulation) or [eyes](EyeTracking/EyeTracking_BasicSetup.md#simulating-eye-tracking-in-the-unity-editor).
+Editor 内の入力シミュレーション を使って、[コントローラー (ハンド、モーション コントローラー)](InputSimulation/InputSimulationService.md#コントローラー-シミュレーション)や[目](EyeTracking/EyeTracking_BasicSetup.md#simulating-eye-tracking-in-the-unity-editor)などの特定のタイプの入力に対し、バーチャルなオブジェクトの動作をテストすることができます。
 
-How to move around in the scene:
+シーン内を移動する方法:
 
-* Use **W/A/S/D** keys to move the camera forward/left/back/right.
-* Use **Q/E** to move the camera vertically.
-* Press and hold the **right mouse button** to rotate the camera.
+* **W/A/S/D** キーを使用して、カメラを前後/左右に移動します。
+* **Q/E** キーを使用して、カメラを上下に動かします。
+* **マウスの右ボタン**を押したままにして、カメラを回転させます。
 
-How to simulate hand input:
+手の入力をシミュレートする方法:
 
-* Press and hold the **spacebar** to enable the right hand.
-* While holding the space bar, move your mouse to move the hand.
-* Use the mouse **scroll wheel** to adjust the depth of the hand.
-* Click the **left mouse button** to simulate pinch gesture.
-* Use **T/Y** keys to make the hand persistent in the view.
-* Hold **CTRL** key and move the mouse to rotate the hand.
+* **Space キー**を押し続けて、右手を有効にします。
+* Space キーを押しながら、マウスを動かして手を動かします。
+* **マウスのスクロールホイール**を使用して、手の奥行を調整します。
+* **マウスの左ボタン**をクリックして、ピンチ ジェスチャをシミュレートします。
+* **T/Y** キーで、ハンドをビューに固定します。
+* **CTRL** キーを押しながら、マウスを動かして手を回転させます。
 
-Have fun exploring the scene! You can learn more about the UI controls [in the hand interaction examples guide](README_HandInteractionExamples.md). Also, read through [input simulation docs](InputSimulation/InputSimulationService.md) to learn more about in-editor hand input simulation in MRTK.
+シーンの探索を楽しんでください！ UI コントロールの詳細については、[ハンド インタラクションのサンプル ガイド](README_HandInteractionExamples.md) で学ぶことができます。また、[入力シミュレーションのドキュメント](InputSimulation/InputSimulationService.md)を読んで、MRTK の Editor 内の手の入力シミュレーションの詳細を確認してください。
 
-Congratulations, you just used your first MRTK scene. Now onto creating your own experiences...
+おめでとうございます、最初の MRTK のシーンを使うことができました。これであなた自身のエクスペリエンスを創りはじめることができます。
 
-## Next steps
+## 次のステップ
 
-Here are some suggested next steps:
+お勧めの次のステップを紹介します。
 
-* Check out [MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions](https://docs.microsoft.com/windows/mixed-reality/mrtk-101) to learn about how to achieve common spatial interactions such as grab, move, scale, and rotate.
-* Learn about the UX controls available in MRTK in [UI and interaction building blocks](../README.md#ux-building-blocks).
-* Try [MRTK Examples Hub](README_ExampleHub.md) (pre-built app packages are included in the release page for your convenience)
-* Learn how to work with the MRTK Configuration profile in the [mixed reality configuration guide](MixedRealityConfigurationGuide.md).
-* Learn about the [MRTK's Architecture](../Documentation/Architecture/Overview.md)
-* Learn about the [MRTK's Input System](../Documentation/Input/Overview.md)
-* Learn about the [MRTK's Tools](../README.md#tools) that will empower your mixed reality design and development.
-* Read through [input simulation guide](InputSimulation/InputSimulationService.md) to learn how to simulate hand input in editor.
+* [MRTK 101: How to use Mixed Reality Toolkit Unity for Basic Interactions](https://docs.microsoft.com/windows/mixed-reality/mrtk-101) で、グラブ、移動、スケール、回転などの一般的な空間的インタラクションの実現方法について学ぶ。
+* [UI とインタラクションのビルディング ブロック](../README.md#ux-building-blocks) で UX コントロール について学ぶ。
+* [MRTK Examples Hub](README_ExampleHub.md) を試す(事前にビルドされたアプリケーション パッケージはリリース ページに含まれています)。
+* [Mixed Reality Toolkit プロファイル設定ガイド](MixedRealityConfigurationGuide.md) で MRTK Configuration profile の使い方を学ぶ。
+* [MRTK のアーキテクチャ](./Architecture/Overview.md) を、学ぶ。
+* [MRTK のインプット システム](./Input/Overview.md) を、学ぶ。
+* 複合現実感の設計と開発を強化する [MRTK のツール](../README.md#tools) について学ぶ。
+* [インプット シミュレーション ガイド](InputSimulation/InputSimulationService.md) を読み、エディターでハンド入力をシミュレートする方法を学ぶ。
 
-## Getting help
+## 助けを得る
 
-If you run into issues caused by MRTK or otherwise have questions about how to do something, there are a few resources that can help:
+もし MRTK によって引き起こされた問題にぶつかったり、何かをすることについて質問がある場合は、助けとなるリソースがいくつかあります。
 
-* For bug reports, please [file an issue](https://github.com/microsoft/MixedRealityToolkit-Unity/issues/new/choose) on the GitHub repo.
-* For questions, please reach out on either [StackOverflow](https://stackoverflow.com/questions/tagged/mrtk) or the [mixed-reality-toolkit channel](https://holodevelopers.slack.com/messages/C2H4HT858) on Slack. You can join the Slack community via the [automatic invitation sender](https://holodevelopersslack.azurewebsites.net/).
+* バグ レポートについては、GitHub リポジトリにて [Issue](https://github.com/microsoft/MixedRealityToolkit-Unity/issues/new/choose) を送ってください。
+* 質問については、[StackOverflow](https://stackoverflow.com/questions/tagged/mrtk) または Slack の [mixed-reality-toolkit チャンネル](https://holodevelopers.slack.com/messages/C2H4HT858) を利用してください。 Slack コミュニティには[自動招待リンク](https://holodevelopersslack.azurewebsites.net/)から参加できます。
 
-## Upgrading from the HoloToolkit (HTK/MRTK v1)
+## HoloToolkit (HTK/MRTK v1) からアップグレードする
 
-There is not a direct upgrade path from the HoloToolkit to Mixed Reality Toolkit v2 due to the rebuilt framework. However, it is possible to import the MRTK into your HoloToolkit project and migrate your implementation. For more information, see the [HoloToolkit to Mixed Reality Toolkit Porting Guide](HTKToMRTKPortingGuide.md)
+フレームワークが再構築されたため、HoloToolkit から Mixed Reality Toolkit v2 への直接的なアップグレード パスはありません。ただし、MRTK を HoloToolkit プロジェクトにインポートし、実装を移行することは可能です。詳細については、 [HTK2017 から MRTK v2 への移植ガイド](HTKToMRTKPortingGuide.md) を参照してください。
 
-## Getting started with Unity's XR SDK
+## Unity の XR SDK を始める
 
-Complete instructions and information can be found in our [XR SDK getting started guide](GettingStartedWithMRTKAndXRSDK.md).
+完全な操作手順と情報は、[XR SDK getting started guide](GettingStartedWithMRTKAndXRSDK.md) をご覧ください。
