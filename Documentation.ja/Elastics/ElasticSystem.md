@@ -1,6 +1,6 @@
 # Elastic system (experimental)
 
-![Elastic System](../Images/Elastics/Elastics_Main1.gif)
+![Elastic System](../../Documentation/Images/Elastics/Elastics_Main1.gif)
 
 MRTK comes with an elastic simulation system that includes a wide variety of extensible and flexible subclasses, offering bindings for 4-dimensional quaternion springs, 3-dimensional volume springs and simple linear spring systems.
 
@@ -10,7 +10,7 @@ Currently the following MRTK components supporting the [elastics manager](xref:M
 - [Object manipulator](../README_ObjectManipulator.md)
 
 ## Elastics manager
-![Elastic System2](../Images/Elastics/Elastics_Main.gif)
+![Elastic System2](../../Documentation/Images/Elastics/Elastics_Main.gif)
 
 The elastics manager processes passed transforms and feeds them into the elastics system. 
 
@@ -50,7 +50,7 @@ Elastics extents settings vary depending on the type of manipulation. Translatio
 #### Volume elastic extent
 Volume extents define a three dimensional space in which the damped harmonic oscillator is free to move.
 
-![Elastic Volume Stretch Bounds](../Images/Elastics/Elastics_Volume_Bounds.gif)
+![Elastic Volume Stretch Bounds](../../Documentation/Images/Elastics/Elastics_Volume_Bounds.gif)
 
 - **StretchBounds**: represents the lower bounds of the elastic space.
 - **UseBounds**: whether the stretch bounds should be respected by the system. If true, when the current iteration of the target position is outside the stretch bounds, the end force will be applied.
@@ -58,12 +58,12 @@ Volume extents define a three dimensional space in which the damped harmonic osc
 - **RepeatSnapPoints**: repeats the snap points to infinity. Existing snap points will serve as a modulo where the actual snap points are mapped to the closest integer multiples of every snap point.
 - **SnapRadius**: distance at which snap points begin forcing the spring.
 
-![Elastic Volume Snap Grid](../Images/Elastics/Elastics_Volume_Snap.gif)
+![Elastic Volume Snap Grid](../../Documentation/Images/Elastics/Elastics_Volume_Snap.gif)
 
 #### Quaternion elastic extent
 Quaternion extents define a four dimensional rotation space in which the damped harmonic oscillator is free to rotate.
 
-![Elastic Rotation Example](../Images/Elastics/Elastics_Rotation.gif)
+![Elastic Rotation Example](../../Documentation/Images/Elastics/Elastics_Rotation.gif)
 
 - **SnapPoints**: euler angles to which the system will snap.
 - **RepeatSnapPoints**: repeats the snap points. Existing snap points will serve as a modulo where the actual snap points are mapped to the closest integer multiples of every snap point.
@@ -73,4 +73,4 @@ Quaternion extents define a four dimensional rotation space in which the damped 
 
 You can find examples of elastics configurations in the `ElasticSystemExample` scene.
 
-![Elastics Example Scene](../Images/Elastics/Elastics_Example_Scene.png)
+![Elastics Example Scene](../../Documentation/Images/Elastics/Elastics_Example_Scene.png)

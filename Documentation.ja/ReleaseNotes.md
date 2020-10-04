@@ -11,7 +11,7 @@
 
 The Mixed Reality Toolkit can now be managed using the Unity Package Manager.
 
-![MRTK Foundation UPM Package](Images/Packaging/MRTK_FoundationUPM.png)
+![MRTK Foundation UPM Package](../Documentation/Images/Packaging/MRTK_FoundationUPM.png)
 
 > [!Note]
 > There are some manual steps required to import the MRTK UPM packages. Please review [Mixed Reality Toolkit and Unity Package Manager](usingupm.md) for more information. 
@@ -159,7 +159,7 @@ Updated pulse shader example for the spatial mesh to match HoloLens 2's shell be
 ![Pulse on air-tap](https://user-images.githubusercontent.com/13754172/90310153-d0536180-df29-11ea-939a-e9572d4f5670.gif)
 
 ### Elastic system - Experimental
-![Elastic System2](Images/Elastics/Elastics_Main.gif)
+![Elastic System2](../Documentation/Images/Elastics/Elastics_Main.gif)
 
 MRTK now comes with an [elastic simulation system](Elastics/ElasticSystem.md) that includes a wide variety of extensible and flexible subclasses, offering bindings for 4-dimensional quaternion springs, 3-dimensional volume springs and simple linear spring systems.
 
@@ -272,7 +272,7 @@ To resolve, please ensure that:
 - **Window** > **Package Manager** has one or more XR packages installed
 - **Mixed Reality Toolkit** > **Utilities** > **Configure Unity Project** and make a selection for **Audio Spatializer**
 
-  ![Select Audio Apatializer](Images/ReleaseNotes/SpatializerSelection.png)
+  ![Select Audio Apatializer](../Documentation/Images/ReleaseNotes/SpatializerSelection.png)
 
 
 ### NullReferenceException: Object reference not set to an instance of an object (SceneTransitionService.Initialize)
@@ -286,7 +286,7 @@ This error is due to the Scene Transition Service's configuration profile being 
 - If not expanded, expand `Scene Transition Service`
 - Set the value of `Configuration Profile` to **MRTKExamplesHubSceneTransitionServiceProfile**
 
-<img src="Images/ReleaseNotes/FixSceneTransitionProfile.png" width="500px">
+<img src="../Documentation/Images/ReleaseNotes/FixSceneTransitionProfile.png" width="500px">
 
 
 ### Oculus Quest

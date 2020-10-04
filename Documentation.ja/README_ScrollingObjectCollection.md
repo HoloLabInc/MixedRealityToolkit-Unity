@@ -1,5 +1,5 @@
 # Scrolling object collection
-![Scrolling object collection](Images/ScrollingCollection/ScrollingCollection_Main.jpg)
+![Scrolling object collection](../Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg)
 
 The MRTK scrolling object collection is an UX component that enables scrolling of 3D content through a contained viewable area. The scrolling movement can be triggered by near or far input interaction and by discrete pagination. It supports both interactive and non-interactive objects.
 
@@ -21,7 +21,7 @@ The MRTK scrolling object collection is an UX component that enables scrolling o
     * `Container` - All scrolling content objects must be children of the container game object.
     * `Clipping bounds` - If scrolling content masking is enabled, the clipping bounds element ensures that only the scrollable content inside its boundaries is visible. The clipping bounds game object has two components: a disabled box collider and a [clipping box](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox).
 
-![Scrolling object collection elements](Images/ScrollingCollection/ScrollingObjectCollection.png) 
+![Scrolling object collection elements](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection.png) 
 
 ### Adding content to the scrolling object
 
@@ -37,7 +37,7 @@ The scrolling object collection can be combined with a [grid object collection](
 1. Add the content objects as children of the grid object.
 1. Press **update collection**.
 
-![Grid layout](Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png)
+![Grid layout](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png)
 
 > [!IMPORTANT]
 > Any scrolling content object material must use the [MRTK standard shader](README_MRTKStandardShader.md) in order for the clipping effect on the viewable area to work properly.
@@ -54,7 +54,7 @@ The scrolling object collection can be combined with a [grid object collection](
 
 Notice how the content objects lying outside the scrolling viewable area are now disabled, while objects intersecting the scroll wireframe might be partially masked by the clipping primitive.
 
-![Viewable area](Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png)
+![Viewable area](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png)
  
 ### Testing the scrolling object collection in the editor
 
@@ -129,13 +129,13 @@ public class ScrollablePagination : MonoBehaviour
 
 **ScrollingObjectCollection.unity** example scene consists of 3 scrollable examples, each one with a different velocity falloff configuration. The example scene contains walls to show the surface placement behavior that are disabled by default in the hierarchy. The example scene can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Scenes`` folder.
 
-![Scrolling object collection example scene](Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png)
+![Scrolling object collection example scene](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png)
 
 ## Scrolling example prefabs
 
 For convenience, two scrolling object collection prefabs are available to use. The example prefabs can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs`` folder.
 
-![Scrolling object collection prefabs](Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png)
+![Scrolling object collection prefabs](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png)
 
 ## See also
 

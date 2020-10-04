@@ -4,7 +4,7 @@ A [Leap Motion Controller](https://www.ultraleap.com/product/leap-motion-control
 
 The Leap Motion Data Provider enables articulated hand tracking for VR and could be useful for rapid prototyping in the editor.  The data provider can be configured to use the Leap Motion Controller mounted on a headset or placed on a desk face up.
 
-![LeapMotionIntroGif](../Images/CrossPlatform/LeapMotion/LeapHandsGif3.gif)
+![LeapMotionIntroGif](../../Documentation/Images/CrossPlatform/LeapMotion/LeapHandsGif3.gif)
 
 This provider can be used in editor and on device while on the Standalone platform.  It can also be used in editor while on the UWP platform but NOT in a UWP build.
 
@@ -26,30 +26,30 @@ This provider can be used in editor and on device while on the Standalone platfo
     > [!NOTE]
     > Integrating the Unity Modules to MRTK adds 10 assembly definitions to the project and adds references to the **Microsoft.MixedReality.Toolkit.Providers.LeapMotion** assembly definition. Make sure Visual Studio is closed.
 
-     ![LeapMotionIntegration](../Images/CrossPlatform/LeapMotion/LeapMotionIntegrateMenu.png)
+     ![LeapMotionIntegration](../../Documentation/Images/CrossPlatform/LeapMotion/LeapMotionIntegrateMenu.png)
 
 1. Adding the Leap Motion Data Provider
     - Create a new Unity scene
     - Add MRTK to the scene by navigating to **Mixed Reality Toolkit** > **Add to Scene and Configure**
     - Select the MixedRealityToolkit game object in the hierarchy and select **Copy and Customize** to clone the default mixed reality profile.
 
-    ![LeapMotionProfileClone](../Images/CrossPlatform/CloneProfile.png)
+    ![LeapMotionProfileClone](../../Documentation/Images/CrossPlatform/CloneProfile.png)
 
     - Select the **Input** Configuration Profile
 
-    ![InputConfigurationProfile](../Images/CrossPlatform/InputConfigurationProfile.png)
+    ![InputConfigurationProfile](../../Documentation/Images/CrossPlatform/InputConfigurationProfile.png)
 
     - Select **Clone** in the input system profile to enable modification.
 
-    ![LeapMotionInputProfileClone](../Images/CrossPlatform/CloneInputSystemProfile.png)
+    ![LeapMotionInputProfileClone](../../Documentation/Images/CrossPlatform/CloneInputSystemProfile.png)
 
     - Open the **Input Data Providers** section, select **Add Data Provider** at the top, a new data provider will be added at the end of the list.  Open the new data provider and set the **Type** to **Microsoft.MixedReality.Toolkit.LeapMotion.Input > LeapMotionDeviceManager**
 
-    ![LeapAddDataProvider](../Images/CrossPlatform/LeapMotion/LeapAddDataProvider.png)
+    ![LeapAddDataProvider](../../Documentation/Images/CrossPlatform/LeapMotion/LeapAddDataProvider.png)
 
     - Select **Clone** to change the default Leap Motion settings.
 
-    ![LeapDataProviderPreClone](../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerProfile.png)
+    ![LeapDataProviderPreClone](../../Documentation/Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerProfile.png)
 
     - The Leap Motion Data Provider contains the `LeapControllerOrientation` property which is the location of the Leap Motion Controller. `LeapControllerOrientation.Headset` indicates the controller is mounted on a headset. `LeapControllerOrientation.Desk` indicates the controller is placed flat on desk. The default value is set to `LeapControllerOrientation.Headset`.
     - Each controller orientation contains offset properties: 
@@ -67,8 +67,8 @@ This provider can be used in editor and on device while on the Standalone platfo
 
     `LeapControllerOrientation`: Headset (Default) |  `LeapControllerOrientation`: Desk
     :-------------------------:|:-------------------------:
-    ![LeapHeadsetGif](../Images/CrossPlatform/LeapMotion/LeapHeadsetOrientationExampleMetacarpals.gif)  |  ![LeapDeskGif](../Images/CrossPlatform/LeapMotion/LeapDeskOrientationExampleMetacarpals.gif)
-    ![LeapHeadsetInspector](../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerHeadset.png) |     ![LeapDeskInspector](../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerDesk.png)
+    ![LeapHeadsetGif](../../Documentation/Images/CrossPlatform/LeapMotion/LeapHeadsetOrientationExampleMetacarpals.gif)  |  ![LeapDeskGif](../../Documentation/Images/CrossPlatform/LeapMotion/LeapDeskOrientationExampleMetacarpals.gif)
+    ![LeapHeadsetInspector](../../Documentation/Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerHeadset.png) |     ![LeapDeskInspector](../../Documentation/Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerDesk.png)
 
 1. Testing the Leap Motion Data Provider
     - After Leap Motion Data Provider has been added to the input system profile, press play, move your hand in front of the Leap Motion Controller and you should see the joint representation of the hand.

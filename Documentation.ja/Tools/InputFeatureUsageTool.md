@@ -7,7 +7,7 @@ The InputFeatureUsage tool is a runtime (on device or in the editor) tool that e
 
 This tool is very useful when developing support for a new hardware controller. It can also help to confirm a suspected control mapping issue in the support class for an existing controller.
 
-![InputFeatureUsage tool](../Images/ControllerMappingTool/InputFeatureUsages.png)
+![InputFeatureUsage tool](../../Documentation/Images/ControllerMappingTool/InputFeatureUsages.png)
 
 ## Using the InputFeatureUsage tool
 

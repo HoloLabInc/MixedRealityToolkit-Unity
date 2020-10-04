@@ -128,7 +128,7 @@ MRTK Foundation パッケージは以下を含んでいます。
 
 Examples パッケージには、Foundation パッケージの機能を使用するデモ、サンプル スクリプト、およびサンプル シーンが含まれています。このパッケージには、さまざまなタイプのハンド インプット (多関節および非多関節) に反応するサンプル オブジェクトが含まれる [HandInteractionExample シーン](../README_HandInteractionExamples.md) (下図) が含まれています。
 
-![HandInteractionExample scene](../Images/MRTK_Examples.png)
+![HandInteractionExample scene](../../Documentation/Images/MRTK_Examples.png)
 
 このパッケージには、アイ トラッキング デモも含まれています。詳細は[こちら](../EyeTracking/EyeTracking_ExamplesOverview.md)に記載されています。
 
