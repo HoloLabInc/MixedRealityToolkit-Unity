@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Optimize window | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Optimize window | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="optimize-window" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="1">Optimize window</h1>
+
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="3">The MRTK Optimize Window is a utility to help automate and inform in the process of configuring a mixed reality project for best <a href="../Performance/PerfGettingStarted.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="3">performance</a> in Unity. This tool generally focuses on rendering configurations that when set to the correct preset can save milliseconds of processing.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="5">The <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="5">Active Build Target</em> is the <a href="https://docs.unity3d.com/Manual/BuildSettings.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="5">build platform currently targeted</a> by the project for compiling.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="7">The <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="7">Performance Target</em> instructs the optimize tool on what kind of device endpoints to target.</p>
+<ul sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="9">
+<li sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="9"><em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="9">AR Headsets</em> are mobile-class devices, such as HoloLens</li>
+<li sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="10"><em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="10">VR Standalone</em> are mobile-class devices, such as the Oculus Go or Quest</li>
+<li sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="11"><em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="11">VR Tethered</em> are PC-powered devices, such as the Samsung Odyssey, Oculus Rift or HTC Vive etc.</li>
+</ul>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="13"><img src="../Images/Performance/OptimizeWindowPerformanceTarget.jpg" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="13" alt="MRTK Optimize Window Performance Target"></p>
+<h2 id="setting-optimizations" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="15">Setting optimizations</h2>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="17">The settings optimization tab covers some of the important rendering configurations for a Unity project. This section can help automate and inform you of which settings should be changed for the best performing results.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="19">A green check icon means that an optimal value has been configured in the project/scene for this particular setting. A yellow warning icon indicates the current configuration can be improved. Clicking the associated button in a given section will auto-configure that setting in the Unity project/scene to a more optimal value.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="21"><img src="../Images/Performance/OptimizeWindow_Settings.png" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="21" alt="MRTK Optimize Window Settings"></p>
+<h3 id="single-pass-instanced-rendering" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="23">Single Pass Instanced rendering</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="25"><a href="https://docs.unity3d.com/Manual/SinglePassInstancing.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="25">Single Pass instanced rendering</a> is the most efficient rendering path for mixed reality applications. This configuration ensures the render pipeline is executed only once for both eyes and that draw calls are instanced across both eyes.</p>
+<h3 id="depth-buffer-sharing" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="27">Depth buffer sharing</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="29">To improve <a href="../hologram-stabilization.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="29">hologram stabilization</a>, developers can share the application's depth buffer which gives the platform information on where and what holograms to stabilize in the rendered scene.</p>
+<h3 id="depth-buffer-format" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="31">Depth buffer format</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="33">Furthermore, for <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="33">AR Headsets</em>, it is recommended to utilize a 16-bit depth format when enabling depth buffer sharing compared to 24-bit. This means lower precision but saves on performance. If <a href="https://en.wikipedia.org/wiki/Z-fighting" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="33">z-fighting</a> occurs because there is less precision in calculating depth for pixels, then it is recommended to move the <a href="https://docs.unity3d.com/Manual/class-Camera.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="33">far clip plane</a> closer to the camera (ex: 50m instead of 1000m).</p>
+<div class="NOTE" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="35">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="36">If using <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="36">16-bit depth format</em>, stencil buffer required effects will not work because <a href="https://docs.unity3d.com/ScriptReference/RenderTexture-depth.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="36">Unity does not create a stencil buffer</a> in this setting. Selecting <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="36">24-bit depth format</em> conversely will generally create an <a href="https://docs.unity3d.com/Manual/SL-Stencil.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="36">8-bit stencil buffer</a>, if applicable on the endpoint graphics platform.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="38">If using a <a href="https://docs.unity3d.com/Manual/script-Mask.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="38">Mask component</a> which requires the stencil buffer, consider using <a href="https://docs.unity3d.com/Manual/script-RectMask2D.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="38">RectMask2D</a> instead, which does not require the stencil buffer and thus can be used in conjunction with a <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="38">16-bit depth format</em>.</p>
+</div>
+<h3 id="real-time-global-illumination" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="40">Real-time Global Illumination</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="42"><a href="https://docs.unity3d.com/Manual/GIIntro.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="42">Real-time Global illumination</a> in Unity can provide fantastic aesthetic results but at a very high cost. Global illumination lighting is very expensive in mixed reality and thus it is recommended to disable this feature in development.</p>
+<div class="NOTE" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="44">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="45">Global illumination settings in Unity are set per-scene and not once across the entire project.</p>
+</div>
+<h2 id="scene-analysis" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="47">Scene analysis</h2>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="49">The <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="49">Scene Analysis</em> tab is designed to inform developers on which elements currently in the scene will likely have the most impact on performance.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="51"><img src="../Images/Performance/OptimizeWindow_SceneAnalysis.png" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="51" alt="MRTK Optimize Window Settings"></p>
+<h3 id="lighting-analysis" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="53">Lighting analysis</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="55">This section will examine the number of lights currently in the scene, as well as any lights that should disable shadows. Shadow casting is a very expensive operation.</p>
+<h3 id="polygon-count-analysis" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="57">Polygon count analysis</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="59">The tool also provides polygon count statistics. It can be very helpful to quickly identify which GameObjects have the highest polygon complexity in a given scene to target for optimizations.</p>
+<h3 id="unity-ui-raycast-analysis" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="61">Unity UI raycast analysis</h3>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="63">Graphics raycast operations are performed per pointer in MRTK to determine if any Unity UI elements are in focus. These raycasts can be quite expensive and to help improve performance, UI elements that do not need to be returned in the results should be disabled as raycast targets. Every <a href="https://docs.unity3d.com/2018.4/Documentation/ScriptReference/UI.Graphic.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="63">Graphic</a> element has a <a href="https://docs.unity3d.com/2018.4/Documentation/ScriptReference/UI.Graphic-raycastTarget.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="63"><code sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="63">Graphic.raycastTarget</code></a> property. This tool will search for text UI elements that have this property enabled and thus are likely candidates to be disabled.</p>
+<h2 id="shader-analysis" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="65">Shader analysis</h2>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="67">The <a href="https://docs.unity3d.com/Manual/shader-StandardShader.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="67">Unity Standard shader</a> can produce very high quality visual results for games but is not generally best suited for the performance needs of mixed reality applications, especially since such applications are generally GPU bounded. Thus, it is recommended to developers to utilize the <a href="../README_MRTKStandardShader.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="67">MRTK Standard shader</a> to balance aesthetics &amp; graphical features with performance.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="69">The <em sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="69">Shader Analysis</em> tab scans the current project's Asset folder for materials using the Unity Standard shader or if desired, all materials not using Mixed Reality Toolkit provided shaders. Once discovered, developers can convert all materials or convert individually using the appropriate buttons.</p>
+<p sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="71"><img src="../Images/Performance/OptimizeWindow_ShaderAnalysis.png" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="71" alt="MRTK Optimize Window Settings"></p>
+<h2 id="see-also" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="73">See also</h2>
+<ul sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="75">
+<li sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="75"><a href="../Performance/PerfGettingStarted.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="75">Performance</a></li>
+<li sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="76"><a href="../hologram-stabilization.html" sourcefile="../../Documentation/Tools/OptimizeWindow.md" sourcestartlinenumber="76">Hologram Stabilization</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Tools/OptimizeWindow.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

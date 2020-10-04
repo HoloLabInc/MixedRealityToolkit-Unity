@@ -10,7 +10,7 @@
     <meta name="title" content="Getting started with MRTK and XR SDK | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -19,6 +19,15 @@
     
     <meta property="docfx:rel" content="../">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -35,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -84,10 +93,11 @@
 
 <p>XR SDK is Unity's <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/">new XR pipeline in Unity 2019.3 and beyond</a>. In Unity 2019, it provides an alternative to the existing XR pipeline. In Unity 2020, it will become the only XR pipeline in Unity.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>To get started with the Mixed Reality Toolkit, follow <a href="GettingStartedWithTheMRTK.html">the provided steps</a> to add MRTK to a project.</p>
+<p>To get started with the Mixed Reality Toolkit, follow <a href="WelcomeToMRTK.html">the provided steps</a> to add MRTK to a project.</p>
 <h2 id="add-xr-sdk-to-a-unity-project">Add XR SDK to a Unity project</h2>
-<p>For MRTK 2.3, Windows Mixed Reality is supported on XR SDK.</p>
+<p>Windows Mixed Reality and Oculus are supported on XR SDK.</p>
 <h3 id="required-in-unity">Required in Unity</h3>
+<h4 id="windows-mixed-reality">Windows Mixed Reality</h4>
 <ol>
 <li>Go into Unity's Package Manager and install the Windows XR Plugin package, which adds support for Windows Mixed Reality on XR SDK. This will pull down a few dependency packages as well. Ensure the following all successfully installed:
 <ol>
@@ -100,6 +110,7 @@
 <li>Click on the XR Plug-in Management tab in the Project Settings window.</li>
 <li>Go to the Universal Windows Platform settings and ensure Windows Mixed Reality is checked under Plug-in Providers.</li>
 <li>Ensure that Initialize XR on Startup is checked.</li>
+<li>(<strong><em>Required for in-editor HoloLens Remoting, otherwise optional</em></strong>) Go to the Standalone settings and ensure Windows Mixed Reality is checked under Plug-in Providers. Also ensure that Initialize XR on Startup is checked.</li>
 <li>(<strong><em>Optional</em></strong>) Click on the Windows Mixed Reality tab under XR Plug-in Management and create a custom settings profile to change the defaults. If the list of settings are already there, no profile needs to be created.</li>
 </ol>
 <p><img src="Images/XRSDK/PluginManagement.png" alt="Plugin management"></p>

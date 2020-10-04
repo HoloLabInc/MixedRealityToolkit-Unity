@@ -10,7 +10,7 @@
     <meta name="title" content="Getting started with eye tracking in MRTK | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../../styles/docfx.css">
     <link rel="stylesheet" href="../../styles/main.css">
@@ -19,6 +19,15 @@
     
     <meta property="docfx:rel" content="../../">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -35,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -105,7 +114,7 @@ you need to make sure that the 'Gaze Input Capability' is checked on the 'Appx B
 <p>Prior to Unity 2019, when using Unity's build window, the capability will need to be manually added after the Unity build, as follows:</p>
 <ol>
 <li>Open your compiled Visual Studio project and then open the <em>'Package.appxmanifest'</em> in your solution.</li>
-<li>Make sure to tick the <em>'GazeInput'</em> checkbox under <em>Capabilities</em>. If you don't see a <em>'GazeInput'</em> capability, check that your system meets the <a href="../GettingStartedWithTheMRTK.html#prerequisites">prerequisites for using MRTK</a> (in particular the Windows SDK version).</li>
+<li>Make sure to tick the <em>'GazeInput'</em> checkbox under <em>Capabilities</em>. If you don't see a <em>'GazeInput'</em> capability, check that your system meets the <a href="../Installation.html#prerequisites">prerequisites for using MRTK</a> (in particular the Windows SDK version).</li>
 </ol>
 <p><em>Please note:</em>
 You only have to do this if you build into a new build folder.

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>What is the Mixed Reality Toolkit | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="What is the Mixed Reality Toolkit | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="./Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="./Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p sourcefile="../../README.md" sourcestartlinenumber="1"><img src="Documentation/Images/Logo_MRTK_Unity_Banner.png" sourcefile="../../README.md" sourcestartlinenumber="1" alt="Mixed Reality Toolkit"></p>
+<h1 id="what-is-the-mixed-reality-toolkit" sourcefile="../../README.md" sourcestartlinenumber="3">What is the Mixed Reality Toolkit</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="5">MRTK-Unity is a Microsoft-driven project that provides a set of components and features, used to accelerate cross-platform MR app development in Unity. Here are some of its functions:</p>
+<ul sourcefile="../../README.md" sourcestartlinenumber="7">
+<li sourcefile="../../README.md" sourcestartlinenumber="7">Provides the <strong sourcefile="../../README.md" sourcestartlinenumber="7">cross-platform input system and building blocks for spatial interactions and UI</strong>.</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="8">Enables <strong sourcefile="../../README.md" sourcestartlinenumber="8">rapid prototyping</strong> via in-editor simulation that allows you to see changes immediately.</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="9">Operates as an <strong sourcefile="../../README.md" sourcestartlinenumber="9">extensible framework</strong> that provides developers the ability to swap out core components.</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="10"><strong sourcefile="../../README.md" sourcestartlinenumber="10">Supports a wide range of platforms</strong>, including
+<ul sourcefile="../../README.md" sourcestartlinenumber="11">
+<li sourcefile="../../README.md" sourcestartlinenumber="11">Microsoft HoloLens</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="12">Microsoft HoloLens 2</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="13">Windows Mixed Reality headsets</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="14">OpenVR headsets (HTC Vive / Oculus Rift)</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="15">Ultraleap Hand Tracking</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="16">Mobile devices such as iOS and Android</li>
+</ul>
+</li>
+</ul>
+<h1 id="getting-started-with-mrtk" sourcefile="../../README.md" sourcestartlinenumber="18">Getting started with MRTK</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="20">If you're new to MRTK or Mixed Reality development in Unity, <strong sourcefile="../../README.md" sourcestartlinenumber="20">we recommend you start at the beginning of our</strong> <a href="https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2" sourcefile="../../README.md" sourcestartlinenumber="20">Unity development journey</a> in the Microsoft Docs. The Unity development journey is specifically tailored to walk new developers through the installation, core concepts, and usage of MRTK.</p>
+<table sourcefile="../../README.md" sourcestartlinenumber="22">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="22">
+<th sourcefile="../../README.md" sourcestartlinenumber="22">IMPORTANT: The Unity development journey currently uses <strong sourcefile="../../README.md" sourcestartlinenumber="22">MRTK version 2.4.0</strong> and <strong sourcefile="../../README.md" sourcestartlinenumber="22">Unity 2019.4</strong>.</th>
+</tr>
+</thead>
+</table>
+<p sourcefile="../../README.md" sourcestartlinenumber="25">If you're an experienced Mixed Reality or MRTK developer, check the links in the next section for the newest packages and release notes.</p>
+<h1 id="documentation" sourcefile="../../README.md" sourcestartlinenumber="27">Documentation</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="29">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="29">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="29"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/ReleaseNotes.html" sourcefile="../../README.md" sourcestartlinenumber="29"><img src="Documentation/Images/MRTK_Icon_ReleaseNotes.png" sourcefile="../../README.md" sourcestartlinenumber="29" alt="Release notes"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/ReleaseNotes.html" sourcefile="../../README.md" sourcestartlinenumber="29">Release Notes</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="29"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html" sourcefile="../../README.md" sourcestartlinenumber="29"><img src="Documentation/Images/MRTK_Icon_ArchitectureOverview.png" sourcefile="../../README.md" sourcestartlinenumber="29" alt="MRTK Overview"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html" sourcefile="../../README.md" sourcestartlinenumber="29">MRTK Overview</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="29"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html" sourcefile="../../README.md" sourcestartlinenumber="29"><img src="Documentation/Images/MRTK_Icon_FeatureGuides.png" sourcefile="../../README.md" sourcestartlinenumber="29" alt="Feature Guides"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html" sourcefile="../../README.md" sourcestartlinenumber="29">Feature Guides</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="29"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/api/Microsoft.MixedReality.Toolkit.html" sourcefile="../../README.md" sourcestartlinenumber="29"><img src="Documentation/Images/MRTK_Icon_APIReference.png" sourcefile="../../README.md" sourcestartlinenumber="29" alt="API Reference"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/api/Microsoft.MixedReality.Toolkit.html" sourcefile="../../README.md" sourcestartlinenumber="29">API Reference</a></th>
+</tr>
+</thead>
+</table>
+<h1 id="build-status" sourcefile="../../README.md" sourcestartlinenumber="32">Build status</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="34">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="34">
+<th sourcefile="../../README.md" sourcestartlinenumber="34">Branch</th>
+<th sourcefile="../../README.md" sourcestartlinenumber="34">CI Status</th>
+<th sourcefile="../../README.md" sourcestartlinenumber="34">Docs Status</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="36">
+<td sourcefile="../../README.md" sourcestartlinenumber="36"><code sourcefile="../../README.md" sourcestartlinenumber="36">mrtk_development</code></td>
+<td sourcefile="../../README.md" sourcestartlinenumber="36"><a href="https://dev.azure.com/aipmr/MixedRealityToolkit-Unity-CI/_build/latest?definitionId=15" sourcefile="../../README.md" sourcestartlinenumber="36"><img src="https://dev.azure.com/aipmr/MixedRealityToolkit-Unity-CI/_apis/build/status/public/mrtk_CI?branchName=mrtk_development" sourcefile="../../README.md" sourcestartlinenumber="36" alt="CI Status"></a></td>
+<td sourcefile="../../README.md" sourcestartlinenumber="36"><a href="https://dev.azure.com/aipmr/MixedRealityToolkit-Unity-CI/_build/latest?definitionId=7" sourcefile="../../README.md" sourcestartlinenumber="36"><img src="https://dev.azure.com/aipmr/MixedRealityToolkit-Unity-CI/_apis/build/status/public/mrtk_docs?branchName=mrtk_development" sourcefile="../../README.md" sourcestartlinenumber="36" alt="Docs Status"></a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="required-software" sourcefile="../../README.md" sourcestartlinenumber="38">Required software</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="40">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="40">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="40"><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk" sourcefile="../../README.md" sourcestartlinenumber="40"><img src="Documentation/Images/MRTK170802_Short_17.png" sourcefile="../../README.md" sourcestartlinenumber="40" alt="Windows SDK 18362+"></a> <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk" sourcefile="../../README.md" sourcestartlinenumber="40">Windows SDK 18362+</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="40"><a href="https://unity3d.com/get-unity/download/archive" sourcefile="../../README.md" sourcestartlinenumber="40"><img src="Documentation/Images/MRTK170802_Short_18.png" sourcefile="../../README.md" sourcestartlinenumber="40" alt="Unity"></a> <a href="https://unity3d.com/get-unity/download/archive" sourcefile="../../README.md" sourcestartlinenumber="40">Unity 2018.4.x</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="40"><a href="http://dev.windows.com/downloads" sourcefile="../../README.md" sourcestartlinenumber="40"><img src="Documentation/Images/MRTK170802_Short_19.png" sourcefile="../../README.md" sourcestartlinenumber="40" alt="Visual Studio 2019"></a> <a href="http://dev.windows.com/downloads" sourcefile="../../README.md" sourcestartlinenumber="40">Visual Studio 2019</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="40"><a href="https://docs.microsoft.com/windows/mixed-reality/using-the-hololens-emulator" sourcefile="../../README.md" sourcestartlinenumber="40"><img src="Documentation/Images/MRTK170802_Short_20.png" sourcefile="../../README.md" sourcestartlinenumber="40" alt="Emulators (optional)"></a> <a href="https://docs.microsoft.com/windows/mixed-reality/using-the-hololens-emulator" sourcefile="../../README.md" sourcestartlinenumber="40">Emulators (optional)</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="42">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="42">To build apps with MRTK v2, you need the Windows 10 May 2019 Update SDK. <br> To run apps for immersive headsets, you need the Windows 10 Fall Creators Update.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="42">The Unity 3D engine provides support for building mixed reality projects in Windows 10</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="42">Visual Studio is used for code editing, deploying and building UWP app packages</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="42">The Emulators allow you to test your app without the device in a simulated environment</td>
+</tr>
+</tbody>
+</table>
+<h1 id="feature-areas" sourcefile="../../README.md" sourcestartlinenumber="44">Feature areas</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="46">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="46">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="46"><img src="Documentation/Images/MRTK_Icon_InputSystem.png" sourcefile="../../README.md" sourcestartlinenumber="46" alt="Input System"> <a href="Documentation/Input/Overview.html" sourcefile="../../README.md" sourcestartlinenumber="46">Input System</a><br> </th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="46"><img src="Documentation/Images/MRTK_Icon_HandTracking.png" sourcefile="../../README.md" sourcestartlinenumber="46" alt="Hand Tracking (HoloLens 2)"> <a href="Documentation/Input/HandTracking.html" sourcefile="../../README.md" sourcestartlinenumber="46">Hand Tracking<br> (HoloLens 2)</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="46"><img src="Documentation/Images/MRTK_Icon_EyeTracking.png" sourcefile="../../README.md" sourcestartlinenumber="46" alt="Eye Tracking (HoloLens 2)"> <a href="Documentation/EyeTracking/EyeTracking_Main.html" sourcefile="../../README.md" sourcestartlinenumber="46">Eye Tracking<br> (HoloLens 2)</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="46"><img src="Documentation/Images/MRTK_Icon_Profiles.png" sourcefile="../../README.md" sourcestartlinenumber="46" alt="Profiles"> <a href="Documentation/MixedRealityConfigurationGuide.html" sourcefile="../../README.md" sourcestartlinenumber="46">Profiles</a><br> </th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="46"><img src="Documentation/Images/MRTK_Icon_HandTracking.png" sourcefile="../../README.md" sourcestartlinenumber="46" alt="Hand Tracking (Ultraleap)"> <a href="Documentation/CrossPlatform/LeapMotionMRTK.html" sourcefile="../../README.md" sourcestartlinenumber="46">Hand Tracking (Ultraleap)</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="48">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="48"><img src="Documentation/Images/MRTK_Icon_UIControls.png" sourcefile="../../README.md" sourcestartlinenumber="48" alt="UI Controls"> <a href="README.html#ux-building-blocks" sourcefile="../../README.md" sourcestartlinenumber="48">UI Controls</a><br> </td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="48"><img src="Documentation/Images/MRTK_Icon_Solver.png" sourcefile="../../README.md" sourcestartlinenumber="48" alt="Solvers"> <a href="Documentation/README_Solver.html" sourcefile="../../README.md" sourcestartlinenumber="48">Solvers</a><br> </td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="48"><img src="Documentation/Images/MRTK_Icon_SceneSystem.png" sourcefile="../../README.md" sourcestartlinenumber="48" alt="Multi-Scene Manager"> <a href="Documentation/SceneSystem/SceneSystemGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="48">Multi-Scene<br> Manager</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="48"><img src="Documentation/Images/MRTK_Icon_SpatialUnderstanding.png" sourcefile="../../README.md" sourcestartlinenumber="48" alt="Spatial Awareness"> <a href="Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="48">Spatial<br> Awareness</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="48"><img src="Documentation/Images/MRTK_Icon_Diagnostics.png" sourcefile="../../README.md" sourcestartlinenumber="48" alt="Diagnostic Tool"> <a href="Documentation/Diagnostics/DiagnosticsSystemGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="48">Diagnostic<br> Tool</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="49">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="49"><img src="Documentation/Images/MRTK_Icon_StandardShader.png" sourcefile="../../README.md" sourcestartlinenumber="49" alt="MRTK Standard Shader"> <a href="Documentation/README_MRTKStandardShader.html?q=shader" sourcefile="../../README.md" sourcestartlinenumber="49">MRTK Standard Shader</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="49"><img src="Documentation/Images/MRTK_Icon_VoiceCommand.png" sourcefile="../../README.md" sourcestartlinenumber="49" alt="Speech &amp; Dictation"> <a href="Documentation/Input/Speech.html" sourcefile="../../README.md" sourcestartlinenumber="49">Speech</a><br> &amp; <a href="Documentation/Input/Dictation.html" sourcefile="../../README.md" sourcestartlinenumber="49">Dictation</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="49"><img src="Documentation/Images/MRTK_Icon_Boundary.png" sourcefile="../../README.md" sourcestartlinenumber="49" alt="BoundarySystem"> <a href="Documentation/Boundary/BoundarySystemGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="49">Boundary<br>System</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="49"><img src="Documentation/Images/MRTK_Icon_InputSystem.png" sourcefile="../../README.md" sourcestartlinenumber="49" alt="In-EditorSimulation"> <a href="Documentation/InputSimulation/InputSimulationService.html" sourcefile="../../README.md" sourcestartlinenumber="49">In-Editor<br>Simulation</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="49"><img src="Documentation/Images/MRTK_Icon_Experimental.png" sourcefile="../../README.md" sourcestartlinenumber="49" alt="ExperimentalFeatures"> <a href="Documentation/Contributing/ExperimentalFeatures.html" sourcefile="../../README.md" sourcestartlinenumber="49">Experimental<br>Features</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="ux-building-blocks" sourcefile="../../README.md" sourcestartlinenumber="51">UX building blocks</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="53">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="53">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="53"><a href="Documentation/README_Button.html" sourcefile="../../README.md" sourcestartlinenumber="53"><img src="Documentation/Images/Button/MRTK_Button_Main.png" sourcefile="../../README.md" sourcestartlinenumber="53" alt="Button"></a> <a href="Documentation/README_Button.html" sourcefile="../../README.md" sourcestartlinenumber="53">Button</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="53"><a href="Documentation/README_BoundsControl.html" sourcefile="../../README.md" sourcestartlinenumber="53"><img src="Documentation/Images/BoundsControl/MRTK_BoundsControl_Main.png" sourcefile="../../README.md" sourcestartlinenumber="53" alt="Bounds Control"></a> <a href="Documentation/README_BoundsControl.html" sourcefile="../../README.md" sourcestartlinenumber="53">Bounds Control</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="53"><a href="Documentation/README_ObjectManipulator.html" sourcefile="../../README.md" sourcestartlinenumber="53"><img src="Documentation/Images/ManipulationHandler/MRTK_Manipulation_Main.png" sourcefile="../../README.md" sourcestartlinenumber="53" alt="Object Manipulator"></a> <a href="Documentation/README_ObjectManipulator.html" sourcefile="../../README.md" sourcestartlinenumber="53">Object Manipulator</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="55">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="55">A button control which supports various input methods, including HoloLens 2's articulated hand</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="55">Standard UI for manipulating objects in 3D space</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="55">Script for manipulating objects with one or two hands</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="56">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="56"><a href="Documentation/README_Slate.html" sourcefile="../../README.md" sourcestartlinenumber="56"><img src="Documentation/Images/Slate/MRTK_Slate_Main.png" sourcefile="../../README.md" sourcestartlinenumber="56" alt="Slate"></a> <a href="Documentation/README_Slate.html" sourcefile="../../README.md" sourcestartlinenumber="56">Slate</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="56"><a href="Documentation/README_SystemKeyboard.html" sourcefile="../../README.md" sourcestartlinenumber="56"><img src="Documentation/Images/SystemKeyboard/MRTK_SystemKeyboard_Main.png" sourcefile="../../README.md" sourcestartlinenumber="56" alt="System Keyboard"></a> <a href="Documentation/README_SystemKeyboard.html" sourcefile="../../README.md" sourcestartlinenumber="56">System Keyboard</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="56"><a href="Documentation/README_Interactable.html" sourcefile="../../README.md" sourcestartlinenumber="56"><img src="Documentation/Images/Interactable/InteractableExamples.png" sourcefile="../../README.md" sourcestartlinenumber="56" alt="Interactable"></a> <a href="Documentation/README_Interactable.html" sourcefile="../../README.md" sourcestartlinenumber="56">Interactable</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="57">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="57">2D style plane which supports scrolling with articulated hand input</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="57">Example script of using the system keyboard in Unity</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="57">A script for making objects interactable with visual states and theme support</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="58">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="58"><a href="Documentation/README_Solver.html" sourcefile="../../README.md" sourcestartlinenumber="58"><img src="Documentation/Images/Solver/MRTK_Solver_Main.png" sourcefile="../../README.md" sourcestartlinenumber="58" alt="Solver"></a> <a href="Documentation/README_Solver.html" sourcefile="../../README.md" sourcestartlinenumber="58">Solver</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="58"><a href="Documentation/README_ObjectCollection.html" sourcefile="../../README.md" sourcestartlinenumber="58"><img src="Documentation/Images/ObjectCollection/MRTK_ObjectCollection_Main.jpg" sourcefile="../../README.md" sourcestartlinenumber="58" alt="Object Collection"></a> <a href="Documentation/README_ObjectCollection.html" sourcefile="../../README.md" sourcestartlinenumber="58">Object Collection</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="58"><a href="Documentation/README_Tooltip.html" sourcefile="../../README.md" sourcestartlinenumber="58"><img src="Documentation/Images/Tooltip/MRTK_Tooltip_Main.png" sourcefile="../../README.md" sourcestartlinenumber="58" alt="Tooltip"></a> <a href="Documentation/README_Tooltip.html" sourcefile="../../README.md" sourcestartlinenumber="58">Tooltip</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="59">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="59">Various object positioning behaviors such as tag-along, body-lock, constant view size and surface magnetism</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="59">Script for laying out an array of objects in a three-dimensional shape</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="59">Annotation UI with a flexible anchor/pivot system, which can be used for labeling motion controllers and objects</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="60">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="60"><a href="Documentation/README_Sliders.html" sourcefile="../../README.md" sourcestartlinenumber="60"><img src="Documentation/Images/Slider/MRTK_UX_Slider_Main.jpg" sourcefile="../../README.md" sourcestartlinenumber="60" alt="Slider"></a> <a href="Documentation/README_Sliders.html" sourcefile="../../README.md" sourcestartlinenumber="60">Slider</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="60"><a href="Documentation/README_MRTKStandardShader.html" sourcefile="../../README.md" sourcestartlinenumber="60"><img src="Documentation/Images/MRTKStandardShader/MRTK_StandardShader.jpg" sourcefile="../../README.md" sourcestartlinenumber="60" alt="MRTK Standard Shader"></a> <a href="Documentation/README_MRTKStandardShader.html" sourcefile="../../README.md" sourcestartlinenumber="60">MRTK Standard Shader</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="60"><a href="Documentation/README_HandMenu.html" sourcefile="../../README.md" sourcestartlinenumber="60"><img src="Documentation/Images/Solver/MRTK_UX_HandMenu.png" sourcefile="../../README.md" sourcestartlinenumber="60" alt="Hand Menu"></a> <a href="Documentation/README_HandMenu.html" sourcefile="../../README.md" sourcestartlinenumber="60">Hand Menu</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="61">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="61">Slider UI for adjusting values supporting direct hand tracking interaction</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="61">MRTK's Standard shader supports various Fluent design elements with performance</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="61">Hand-locked UI for quick access, using the Hand Constraint Solver</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="62">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="62"><a href="Documentation/README_AppBar.html" sourcefile="../../README.md" sourcestartlinenumber="62"><img src="Documentation/Images/AppBar/MRTK_AppBar_Main.png" sourcefile="../../README.md" sourcestartlinenumber="62" alt="App Bar"></a> <a href="Documentation/README_AppBar.html" sourcefile="../../README.md" sourcestartlinenumber="62">App Bar</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="62"><a href="Documentation/Input/Pointers.html" sourcefile="../../README.md" sourcestartlinenumber="62"><img src="Documentation/Images/Pointers/MRTK_Pointer_Main.png" sourcefile="../../README.md" sourcestartlinenumber="62" alt="Pointers"></a> <a href="Documentation/Input/Pointers.html" sourcefile="../../README.md" sourcestartlinenumber="62">Pointers</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="62"><a href="Documentation/README_FingertipVisualization.html" sourcefile="../../README.md" sourcestartlinenumber="62"><img src="Documentation/Images/Fingertip/MRTK_FingertipVisualization_Main.png" sourcefile="../../README.md" sourcestartlinenumber="62" alt="Fingertip Visualization"></a> <a href="Documentation/README_FingertipVisualization.html" sourcefile="../../README.md" sourcestartlinenumber="62">Fingertip Visualization</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="63">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="63">UI for Bounds Control's manual activation</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="63">Learn about various types of pointers</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="63">Visual affordance on the fingertip which improves the confidence for the direct interaction</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="64">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="64"><a href="Documentation/README_NearMenu.html" sourcefile="../../README.md" sourcestartlinenumber="64"><img src="Documentation/Images/NearMenu/MRTK_UX_NearMenu.png" sourcefile="../../README.md" sourcestartlinenumber="64" alt="Near Menu"></a> <a href="Documentation/README_NearMenu.html" sourcefile="../../README.md" sourcestartlinenumber="64">Near Menu</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="64"><a href="Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="64"><img src="Documentation/Images/SpatialAwareness/MRTK_SpatialAwareness_Main.png" sourcefile="../../README.md" sourcestartlinenumber="64" alt="Spatial Awareness"></a> <a href="Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../README.md" sourcestartlinenumber="64">Spatial Awareness</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="64"><a href="Documentation/Input/Speech.html" sourcefile="../../README.md" sourcestartlinenumber="64"><img src="Documentation/Images/Input/MRTK_Input_Speech.png" sourcefile="../../README.md" sourcestartlinenumber="64" alt="Voice Command"></a> <a href="Documentation/Input/Speech.html" sourcefile="../../README.md" sourcestartlinenumber="64">Voice Command</a> / <a href="Documentation/Input/Dictation.html" sourcefile="../../README.md" sourcestartlinenumber="64">Dictation</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="65">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="65">Floating menu UI for the near interactions</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="65">Make your holographic objects interact with the physical environments</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="65">Scripts and examples for integrating speech input</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="66">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="66"><a href="Documentation/README_ProgressIndicator.html" sourcefile="../../README.md" sourcestartlinenumber="66"><img src="Documentation/Images/ProgressIndicator/MRTK_ProgressIndicator_Main.png" sourcefile="../../README.md" sourcestartlinenumber="66" alt="Progress Indicator"></a> <a href="Documentation/README_ProgressIndicator.html" sourcefile="../../README.md" sourcestartlinenumber="66">Progress Indicator</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="66"><a href="Assets/MRTK/SDK/Experimental/Dialog/README_Dialog.html" sourcefile="../../README.md" sourcestartlinenumber="66"><img src="Documentation/Images/Dialog/MRTK_UX_Dialog_Main.png" sourcefile="../../README.md" sourcestartlinenumber="66" alt="Dialog"></a> <a href="Assets/MRTK/SDK/Experimental/Dialog/README_Dialog.html" sourcefile="../../README.md" sourcestartlinenumber="66">Dialog [Experimental]</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="66"><a href="Assets/MRTK/SDK/Experimental/HandCoach/README_HandCoach.html" sourcefile="../../README.md" sourcestartlinenumber="66"><img src="Documentation/Images/HandCoach/MRTK_UX_HandCoach_Main.jpg" sourcefile="../../README.md" sourcestartlinenumber="66" alt="Hand Coach"></a> <a href="Assets/MRTK/SDK/Experimental/HandCoach/README_HandCoach.html" sourcefile="../../README.md" sourcestartlinenumber="66">Hand Coach [Experimental]</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="67">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="67">Visual indicator for communicating data process or operation</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="67">UI for asking for user's confirmation or acknowledgement</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="67">Component that helps guide the user when the gesture has not been taught</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="68">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="68"><a href="Assets/MRTK/Extensions/HandPhysicsService/README.html" sourcefile="../../README.md" sourcestartlinenumber="68"><img src="Documentation/Images/HandPhysics/MRTK_UX_HandPhysics_Main.jpg" sourcefile="../../README.md" sourcestartlinenumber="68" alt="Hand Physics Service"></a> <a href="Assets/MRTK/Extensions/HandPhysicsService/README.html" sourcefile="../../README.md" sourcestartlinenumber="68">Hand Physics Service [Experimental]</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="68"><a href="Documentation/README_ScrollingObjectCollection.html" sourcefile="../../README.md" sourcestartlinenumber="68"><img src="Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg" sourcefile="../../README.md" sourcestartlinenumber="68" alt="Scrolling Collection"></a> <a href="Documentation/README_ScrollingObjectCollection.html" sourcefile="../../README.md" sourcestartlinenumber="68">Scrolling Collection</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="68"><a href="Assets/MRTK/SDK/Experimental/Dock/README_Dock.html" sourcefile="../../README.md" sourcestartlinenumber="68"><img src="Documentation/Images/Dock/MRTK_UX_Dock_Main.png" sourcefile="../../README.md" sourcestartlinenumber="68" alt="Dock"></a> <a href="Assets/MRTK/SDK/Experimental/Dock/README_Dock.html" sourcefile="../../README.md" sourcestartlinenumber="68">Dock [Experimental]</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="69">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="69">The hand physics service enables rigid body collision events and interactions with articulated hands</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="69">An Object Collection that natively scrolls 3D objects</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="69">The Dock allows objects to be moved in and out of predetermined positions</td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="70">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="70"><a href="Documentation/EyeTracking/EyeTracking_TargetSelection.html" sourcefile="../../README.md" sourcestartlinenumber="70"><img src="Documentation/Images/EyeTracking/mrtk_et_targetselect.png" sourcefile="../../README.md" sourcestartlinenumber="70" alt="Eye Tracking: Target Selection"></a> <a href="Documentation/EyeTracking/EyeTracking_TargetSelection.html" sourcefile="../../README.md" sourcestartlinenumber="70">Eye Tracking: Target Selection</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="70"><a href="Documentation/EyeTracking/EyeTracking_Navigation.html" sourcefile="../../README.md" sourcestartlinenumber="70"><img src="Documentation/Images/EyeTracking/mrtk_et_navigation.png" sourcefile="../../README.md" sourcestartlinenumber="70" alt="Eye Tracking: Navigation"></a> <a href="Documentation/EyeTracking/EyeTracking_Navigation.html" sourcefile="../../README.md" sourcestartlinenumber="70">Eye Tracking: Navigation</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="70"><a href="Documentation/EyeTracking/EyeTracking_ExamplesOverview.html#visualization-of-visual-attention" sourcefile="../../README.md" sourcestartlinenumber="70"><img src="Documentation/Images/EyeTracking/mrtk_et_heatmaps.png" sourcefile="../../README.md" sourcestartlinenumber="70" alt="Eye Tracking: Heat Map"></a> <a href="Documentation/EyeTracking/EyeTracking_ExamplesOverview.html#visualization-of-visual-attention" sourcefile="../../README.md" sourcestartlinenumber="70">Eye Tracking: Heat Map</a></td>
+</tr>
+<tr sourcefile="../../README.md" sourcestartlinenumber="71">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="71">Combine eyes, voice and hand input to quickly and effortlessly select holograms across your scene</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="71">Learn how to auto-scroll text or fluently zoom into focused content based on what you are looking at</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="71">Examples for logging, loading and visualizing what users have been looking at in your app</td>
+</tr>
+</tbody>
+</table>
+<h1 id="tools" sourcefile="../../README.md" sourcestartlinenumber="73">Tools</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="75">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="75">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="75"><a href="Documentation/Tools/OptimizeWindow.html" sourcefile="../../README.md" sourcestartlinenumber="75"><img src="Documentation/Images/MRTK_Icon_OptimizeWindow.png" sourcefile="../../README.md" sourcestartlinenumber="75" alt="Optimize Window"></a> <a href="Documentation/Tools/OptimizeWindow.html" sourcefile="../../README.md" sourcestartlinenumber="75">Optimize Window</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="75"><a href="Documentation/Tools/DependencyWindow.html" sourcefile="../../README.md" sourcestartlinenumber="75"><img src="Documentation/Images/MRTK_Icon_DependencyWindow.png" sourcefile="../../README.md" sourcestartlinenumber="75" alt="Dependency Window"></a> <a href="Documentation/Tools/DependencyWindow.html" sourcefile="../../README.md" sourcestartlinenumber="75">Dependency Window</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="75"><img src="Documentation/Images/MRTK_Icon_BuildWindow.png" sourcefile="../../README.md" sourcestartlinenumber="75" alt="Build Window"> Build Window</th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="75"><a href="Documentation/InputSimulation/InputAnimationRecording.html" sourcefile="../../README.md" sourcestartlinenumber="75"><img src="Documentation/Images/MRTK_Icon_InputRecording.png" sourcefile="../../README.md" sourcestartlinenumber="75" alt="Input recording"></a> <a href="Documentation/InputSimulation/InputAnimationRecording.html" sourcefile="../../README.md" sourcestartlinenumber="75">Input recording</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="77">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="77">Automate configuration of Mixed Reality projects for performance optimizations</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="77">Analyze dependencies between assets and identify unused assets</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="77">Configure and execute an end-to-end build process for Mixed Reality applications</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="77">Record and playback head movement and hand tracking data in editor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="example-scenes" sourcefile="../../README.md" sourcestartlinenumber="79">Example scenes</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="81">Explore MRTK's various types of interactions and UI controls in <a href="Documentation/README_HandInteractionExamples.html" sourcefile="../../README.md" sourcestartlinenumber="81">this example scene</a>.</p>
+<p sourcefile="../../README.md" sourcestartlinenumber="83">You can find  other example scenes under <a href="/Assets/MixedRealityToolkit.Examples/Demos" sourcefile="../../README.md" sourcestartlinenumber="83"><strong sourcefile="../../README.md" sourcestartlinenumber="83">Assets/MixedRealityToolkit.Examples/Demos</strong></a> folder.</p>
+<p sourcefile="../../README.md" sourcestartlinenumber="85"><a href="Documentation/README_HandInteractionExamples.html" sourcefile="../../README.md" sourcestartlinenumber="85"><img src="Documentation/Images/MRTK_Examples.png" sourcefile="../../README.md" sourcestartlinenumber="85" alt="Example Scene"></a></p>
+<h1 id="mrtk-examples-hub" sourcefile="../../README.md" sourcestartlinenumber="87">MRTK examples hub</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="89">With the MRTK Examples Hub, you can try various example scenes in MRTK.
+You can find pre-built app packages for HoloLens(x86), HoloLens 2(ARM), and Windows Mixed Reality immersive headsets(x64) under <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.4.0" sourcefile="../../README.md" sourcestartlinenumber="90"><strong sourcefile="../../README.md" sourcestartlinenumber="90">Release Assets</strong></a> folder. <a href="https://docs.microsoft.com/hololens/hololens-install-apps#use-the-windows-device-portal-to-install-apps-on-hololens" sourcefile="../../README.md" sourcestartlinenumber="90">Use the Windows Device Portal to install apps on HoloLens</a>. On HoloLens 2, you can download and install <a href="https://www.microsoft.com/en-us/p/mrtk-examples-hub/9mv8c39l2sj4" sourcefile="../../README.md" sourcestartlinenumber="90">MRTK Examples Hub through the Microsoft Store app</a>.</p>
+<p sourcefile="../../README.md" sourcestartlinenumber="92">See <a href="Documentation/README_ExampleHub.html" sourcefile="../../README.md" sourcestartlinenumber="92">Examples Hub README page</a> to learn about the details on creating a multi-scene hub with MRTK's scene system and scene transition service.</p>
+<p sourcefile="../../README.md" sourcestartlinenumber="94"><a href="Documentation/README_HandInteractionExamples.html" sourcefile="../../README.md" sourcestartlinenumber="94"><img src="Documentation/Images/MRTK_ExamplesHub.png" sourcefile="../../README.md" sourcestartlinenumber="94" alt="Example Scene"></a></p>
+<h1 id="sample-apps-made-with-mrtk" sourcefile="../../README.md" sourcestartlinenumber="96">Sample apps made with MRTK</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="98">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="98">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="98"><a href="https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158" sourcefile="../../README.md" sourcestartlinenumber="98"><img src="Documentation/Images/MRDL_PeriodicTable.jpg" sourcefile="../../README.md" sourcestartlinenumber="98" alt="Periodic Table of the Elements"></a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="98"><a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update" sourcefile="../../README.md" sourcestartlinenumber="98"><img src="Documentation/Images/MRTK_GalaxyExplorer.jpg" sourcefile="../../README.md" sourcestartlinenumber="98" alt="Galaxy Explorer"></a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="98"><a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update" sourcefile="../../README.md" sourcestartlinenumber="98"><img src="Documentation/Images/MRDL_Surfaces.jpg" sourcefile="../../README.md" sourcestartlinenumber="98" alt="Galaxy Explorer"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="100">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="100"><a href="https://github.com/Microsoft/MRDL_Unity_PeriodicTable" sourcefile="../../README.md" sourcestartlinenumber="100">Periodic Table of the Elements</a> is an open-source sample app which demonstrates how to use MRTK's input system and building blocks to create an app experience for HoloLens and Immersive headsets. Read the porting story: <a href="https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158" sourcefile="../../README.md" sourcestartlinenumber="100">Bringing the Periodic Table of the Elements app to HoloLens 2 with MRTK v2</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="100"><a href="https://github.com/Microsoft/GalaxyExplorer" sourcefile="../../README.md" sourcestartlinenumber="100">Galaxy Explorer</a> is an open-source sample app that was originally developed in March 2016 as part of the HoloLens 'Share Your Idea' campaign. Galaxy Explorer has been updated with new features for HoloLens 2, using MRTK v2. Read the story: <a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update" sourcefile="../../README.md" sourcestartlinenumber="100">The Making of Galaxy Explorer for HoloLens 2</a></td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="100"><a href="https://github.com/Microsoft/GalaxyExplorer" sourcefile="../../README.md" sourcestartlinenumber="100">Surfaces</a> is an open-source sample app for HoloLens 2 which explores how we can create a tactile sensation with visual, audio, and fully articulated hand-tracking. Check out Microsoft MR Dev Days session <a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Learnings-from-the-MR-Surfaces-App" sourcefile="../../README.md" sourcestartlinenumber="100">Learnings from the Surfaces app</a> for the detailed design and development story.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="session-videos-from-mixed-reality-dev-days-2020" sourcefile="../../README.md" sourcestartlinenumber="102">Session videos from Mixed Reality Dev Days 2020</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="104">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="104">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="104"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Intro-to-MRTK-Unity" sourcefile="../../README.md" sourcestartlinenumber="104"><img src="Documentation/Images/MRDevDays_Session1.png" sourcefile="../../README.md" sourcestartlinenumber="104" alt="MRDevDays"></a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="104"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/MRTKs-UX-Building-Blocks" sourcefile="../../README.md" sourcestartlinenumber="104"><img src="Documentation/Images/MRDevDays_Session2.png" sourcefile="../../README.md" sourcestartlinenumber="104" alt="MRDevDays"></a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="104"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/MRTK-Performance-and-Shaders" sourcefile="../../README.md" sourcestartlinenumber="104"><img src="Documentation/Images/MRDevDays_Session3.png" sourcefile="../../README.md" sourcestartlinenumber="104" alt="MRDevDays"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="106">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="106">Tutorial on how to create a simple MRTK app from start to finish. Learn about interaction concepts and MRTK’s multi-platform capabilities.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="106">Deep dive on the MRTK’s UX building blocks that help you build beautiful mixed reality experiences.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="106">An introduction to performance tools, both in MRTK and external, as well as an overview of the MRTK Standard Shader.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../README.md" sourcestartlinenumber="108">See <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days-sessions" sourcefile="../../README.md" sourcestartlinenumber="108">Mixed Reality Dev Days</a> to explore more session videos.</p>
+<h1 id="engage-with-the-community" sourcefile="../../README.md" sourcestartlinenumber="110">Engage with the community</h1>
+<ul sourcefile="../../README.md" sourcestartlinenumber="112">
+<li sourcefile="../../README.md" sourcestartlinenumber="112"><p sourcefile="../../README.md" sourcestartlinenumber="112">Join the conversation around MRTK on <a href="https://holodevelopers.slack.com/" sourcefile="../../README.md" sourcestartlinenumber="112">Slack</a>. You can join the Slack community via the <a href="https://holodevelopersslack.azurewebsites.net/" sourcefile="../../README.md" sourcestartlinenumber="112">automatic invitation sender</a>.</p>
+</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="114"><p sourcefile="../../README.md" sourcestartlinenumber="114">Ask questions about using MRTK on <a href="https://stackoverflow.com/questions/tagged/mrtk" sourcefile="../../README.md" sourcestartlinenumber="114">Stack Overflow</a> using the <strong sourcefile="../../README.md" sourcestartlinenumber="114">MRTK</strong> tag.</p>
+</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="116"><p sourcefile="../../README.md" sourcestartlinenumber="116">Search for <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/issues" sourcefile="../../README.md" sourcestartlinenumber="116">known issues</a> or file a <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/issues" sourcefile="../../README.md" sourcestartlinenumber="116">new issue</a> if you find something broken in MRTK code.</p>
+</li>
+<li sourcefile="../../README.md" sourcestartlinenumber="118"><p sourcefile="../../README.md" sourcestartlinenumber="118">For questions about contributing to MRTK, go to the <a href="https://holodevelopers.slack.com/messages/C2H4HT858" sourcefile="../../README.md" sourcestartlinenumber="118">mixed-reality-toolkit</a> channel on slack.</p>
+</li>
+</ul>
+<p sourcefile="../../README.md" sourcestartlinenumber="120">This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/" sourcefile="../../README.md" sourcestartlinenumber="120">Microsoft Open Source Code of Conduct</a>.
+For more information, see the <a href="https://opensource.microsoft.com/codeofconduct/faq/" sourcefile="../../README.md" sourcestartlinenumber="121">Code of Conduct FAQ</a> or contact <a href="mailto:opencode@microsoft.com" sourcefile="../../README.md" sourcestartlinenumber="121">opencode@microsoft.com</a> with any additional questions or comments.</p>
+<h1 id="useful-resources-on-the-mixed-reality-dev-center" sourcefile="../../README.md" sourcestartlinenumber="123">Useful resources on the Mixed Reality Dev Center</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="125">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="125">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="125"><img src="Documentation/Images/mrdevcenter/icon-discover.png" sourcefile="../../README.md" sourcestartlinenumber="125" alt="Discover"> <a href="https://docs.microsoft.com/windows/mixed-reality/" sourcefile="../../README.md" sourcestartlinenumber="125">Discover</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="125"><img src="Documentation/Images/mrdevcenter/icon-design.png" sourcefile="../../README.md" sourcestartlinenumber="125" alt="Design"> <a href="https://docs.microsoft.com/windows/mixed-reality/design" sourcefile="../../README.md" sourcestartlinenumber="125">Design</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="125"><img src="Documentation/Images/mrdevcenter/icon-develop.png" sourcefile="../../README.md" sourcestartlinenumber="125" alt="Develop"> <a href="https://docs.microsoft.com/windows/mixed-reality/development" sourcefile="../../README.md" sourcestartlinenumber="125">Develop</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="125"><img src="Documentation/Images/mrdevcenter/icon-distribute.png" sourcefile="../../README.md" sourcestartlinenumber="125" alt="Distribute)"> <a href="https://docs.microsoft.com/windows/mixed-reality/implementing-3d-app-launchers" sourcefile="../../README.md" sourcestartlinenumber="125">Distribute</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="127">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="127">Learn to build mixed reality experiences for HoloLens and immersive headsets (VR).</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="127">Get design guides. Build user interface. Learn interactions and input.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="127">Get development guides. Learn the technology. Understand the science.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="127">Get your app ready for others and consider creating a 3D launcher.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="useful-resources-on-azure" sourcefile="../../README.md" sourcestartlinenumber="129">Useful resources on Azure</h1>
+<table sourcefile="../../README.md" sourcestartlinenumber="131">
+<thead>
+<tr sourcefile="../../README.md" sourcestartlinenumber="131">
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="131"><img src="Documentation/Images/mrdevcenter/icon-azurespatialanchors.png" sourcefile="../../README.md" sourcestartlinenumber="131" alt="Spatial Anchors"><br> <a href="https://docs.microsoft.com/azure/spatial-anchors/" sourcefile="../../README.md" sourcestartlinenumber="131">Spatial Anchors</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="131"><img src="Documentation/Images/mrdevcenter/icon-azurespeechservices.png" sourcefile="../../README.md" sourcestartlinenumber="131" alt="Speech Services"> <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/" sourcefile="../../README.md" sourcestartlinenumber="131">Speech Services</a></th>
+<th style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="131"><img src="Documentation/Images/mrdevcenter/icon-azurevisionservices.png" sourcefile="../../README.md" sourcestartlinenumber="131" alt="Vision Services"> <a href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/" sourcefile="../../README.md" sourcestartlinenumber="131">Vision Services</a></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../README.md" sourcestartlinenumber="133">
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="133">Spatial Anchors is a cross-platform service that allows you to create Mixed Reality experiences using objects that persist their location across devices over time.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="133">Discover and integrate Azure powered speech capabilities like speech to text, speaker recognition or speech translation into your application.</td>
+<td style="text-align: left;" sourcefile="../../README.md" sourcestartlinenumber="133">Identify and analyze your image or video content using Vision Services like computer vision, face detection, emotion recognition or video indexer.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="learn-more-about-the-mrtk-project" sourcefile="../../README.md" sourcestartlinenumber="135">Learn more about the MRTK project</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="137">You can find our planning material on <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki" sourcefile="../../README.md" sourcestartlinenumber="137">our wiki</a> under the Project Management Section. You can always see the items the team is actively working on in the Iteration Plan issue.</p>
+<h1 id="how-to-contribute" sourcefile="../../README.md" sourcestartlinenumber="139">How to contribute</h1>
+<p sourcefile="../../README.md" sourcestartlinenumber="141">Learn how you can contribute to MRTK at <a href="Documentation/Contributing/CONTRIBUTING.html" sourcefile="../../README.md" sourcestartlinenumber="141">Contributing</a>.</p>
+<p sourcefile="../../README.md" sourcestartlinenumber="143"><strong sourcefile="../../README.md" sourcestartlinenumber="143">For details on the different branches used in the Mixed Reality Toolkit repositories, check this <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/wiki/Branch-Guide" sourcefile="../../README.md" sourcestartlinenumber="143">Branch Guide here</a>.</strong></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

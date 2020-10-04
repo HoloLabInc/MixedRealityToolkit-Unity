@@ -10,7 +10,7 @@
     <meta name="title" content="What is the Mixed Reality Toolkit | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href="./Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
     <link rel="stylesheet" href="styles/docfx.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -19,6 +19,15 @@
     
     <meta property="docfx:rel" content="">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -35,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src="./Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -74,11 +83,11 @@
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 
-<p><img src="Documentation/Images/MRTK_Logo_Rev.png" alt="Mixed Reality Toolkit"></p>
+<p><img src="Documentation/Images/Logo_MRTK_Unity_Banner.png" alt="Mixed Reality Toolkit"></p>
 <h1 id="what-is-the-mixed-reality-toolkit">What is the Mixed Reality Toolkit</h1>
 <p>MRTK-Unity is a Microsoft-driven project that provides a set of components and features, used to accelerate cross-platform MR app development in Unity. Here are some of its functions:</p>
 <ul>
-<li>Provides the <strong>basic building blocks for Unity development on HoloLens, Windows Mixed Reality, and OpenVR</strong>.</li>
+<li>Provides the <strong>cross-platform input system and building blocks for spatial interactions and UI</strong>.</li>
 <li>Enables <strong>rapid prototyping</strong> via in-editor simulation that allows you to see changes immediately.</li>
 <li>Operates as an <strong>extensible framework</strong> that provides developers the ability to swap out core components.</li>
 <li><strong>Supports a wide range of platforms</strong>, including
@@ -88,15 +97,26 @@
 <li>Windows Mixed Reality headsets</li>
 <li>OpenVR headsets (HTC Vive / Oculus Rift)</li>
 <li>Ultraleap Hand Tracking</li>
+<li>Mobile devices such as iOS and Android</li>
 </ul>
 </li>
 </ul>
 <h1 id="getting-started-with-mrtk">Getting started with MRTK</h1>
+<p>If you're new to MRTK or Mixed Reality development in Unity, <strong>we recommend you start at the beginning of our</strong> <a href="https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2">Unity development journey</a> in the Microsoft Docs. The Unity development journey is specifically tailored to walk new developers through the installation, core concepts, and usage of MRTK.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html"><img src="Documentation/Images/MRTK_Icon_GettingStarted.png" alt="Getting Started and Documentation"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html">Getting Started</a></th>
-<th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html"><img src="Documentation/Images/MRTK_Icon_ArchitectureOverview.png" alt="Getting Started"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html">MRTK Overview</a></th>
+<th>IMPORTANT: The Unity development journey currently uses <strong>MRTK version 2.4.0</strong> and <strong>Unity 2019.4</strong>.</th>
+</tr>
+</thead>
+</table>
+<p>If you're an experienced Mixed Reality or MRTK developer, check the links in the next section for the newest packages and release notes.</p>
+<h1 id="documentation">Documentation</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/ReleaseNotes.html"><img src="Documentation/Images/MRTK_Icon_ReleaseNotes.png" alt="Release notes"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/ReleaseNotes.html">Release Notes</a></th>
+<th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html"><img src="Documentation/Images/MRTK_Icon_ArchitectureOverview.png" alt="MRTK Overview"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/Overview.html">MRTK Overview</a></th>
 <th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html"><img src="Documentation/Images/MRTK_Icon_FeatureGuides.png" alt="Feature Guides"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html">Feature Guides</a></th>
 <th style="text-align: left;"><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/api/Microsoft.MixedReality.Toolkit.html"><img src="Documentation/Images/MRTK_Icon_APIReference.png" alt="API Reference"></a><br><a href="https://microsoft.github.io/MixedRealityToolkit-Unity/api/Microsoft.MixedReality.Toolkit.html">API Reference</a></th>
 </tr>
@@ -171,7 +191,7 @@
 <thead>
 <tr>
 <th style="text-align: left;"><a href="Documentation/README_Button.html"><img src="Documentation/Images/Button/MRTK_Button_Main.png" alt="Button"></a> <a href="Documentation/README_Button.html">Button</a></th>
-<th style="text-align: left;"><a href="Documentation/README_BoundingBox.html"><img src="Documentation/Images/BoundingBox/MRTK_BoundingBox_Main.png" alt="Bounding Box"></a> <a href="Documentation/README_BoundingBox.html">Bounding Box</a></th>
+<th style="text-align: left;"><a href="Documentation/README_BoundsControl.html"><img src="Documentation/Images/BoundsControl/MRTK_BoundsControl_Main.png" alt="Bounds Control"></a> <a href="Documentation/README_BoundsControl.html">Bounds Control</a></th>
 <th style="text-align: left;"><a href="Documentation/README_ObjectManipulator.html"><img src="Documentation/Images/ManipulationHandler/MRTK_Manipulation_Main.png" alt="Object Manipulator"></a> <a href="Documentation/README_ObjectManipulator.html">Object Manipulator</a></th>
 </tr>
 </thead>
@@ -217,7 +237,7 @@
 <td style="text-align: left;"><a href="Documentation/README_FingertipVisualization.html"><img src="Documentation/Images/Fingertip/MRTK_FingertipVisualization_Main.png" alt="Fingertip Visualization"></a> <a href="Documentation/README_FingertipVisualization.html">Fingertip Visualization</a></td>
 </tr>
 <tr>
-<td style="text-align: left;">UI for Bounding Box's manual activation</td>
+<td style="text-align: left;">UI for Bounds Control's manual activation</td>
 <td style="text-align: left;">Learn about various types of pointers</td>
 <td style="text-align: left;">Visual affordance on the fingertip which improves the confidence for the direct interaction</td>
 </tr>
@@ -243,7 +263,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><a href="Assets/MRTK/Extensions/HandPhysicsService/README.html"><img src="Documentation/Images/HandPhysics/MRTK_UX_HandPhysics_Main.jpg" alt="Hand Physics Service"></a> <a href="Assets/MRTK/Extensions/HandPhysicsService/README.html">Hand Physics Service [Experimental]</a></td>
-<td style="text-align: left;"><a href="Assets/MRTK/SDK/Experimental/ScrollingObjectCollection/README.html"><img src="Documentation/Images/ScrollingCollection/MRTK_UX_ScrollingCollection_Main.jpg" alt="Scrolling Collection"></a> <a href="Assets/MRTK/SDK/Experimental/ScrollingObjectCollection/README.html">Scrolling Collection [Experimental]</a></td>
+<td style="text-align: left;"><a href="Documentation/README_ScrollingObjectCollection.html"><img src="Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg" alt="Scrolling Collection"></a> <a href="Documentation/README_ScrollingObjectCollection.html">Scrolling Collection</a></td>
 <td style="text-align: left;"><a href="Assets/MRTK/SDK/Experimental/Dock/README_Dock.html"><img src="Documentation/Images/Dock/MRTK_UX_Dock_Main.png" alt="Dock"></a> <a href="Assets/MRTK/SDK/Experimental/Dock/README_Dock.html">Dock [Experimental]</a></td>
 </tr>
 <tr>
@@ -288,7 +308,7 @@
 <p><a href="Documentation/README_HandInteractionExamples.html"><img src="Documentation/Images/MRTK_Examples.png" alt="Example Scene"></a></p>
 <h1 id="mrtk-examples-hub">MRTK examples hub</h1>
 <p>With the MRTK Examples Hub, you can try various example scenes in MRTK.
-You can find pre-built app packages for HoloLens(x86), HoloLens 2(ARM), and Windows Mixed Reality immersive headsets(x64) under <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.0.0"><strong>Release Assets</strong></a> folder. <a href="https://docs.microsoft.com/hololens/hololens-install-apps#use-the-windows-device-portal-to-install-apps-on-hololens">Use the Windows Device Portal to install apps on HoloLens</a>.</p>
+You can find pre-built app packages for HoloLens(x86), HoloLens 2(ARM), and Windows Mixed Reality immersive headsets(x64) under <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.4.0"><strong>Release Assets</strong></a> folder. <a href="https://docs.microsoft.com/hololens/hololens-install-apps#use-the-windows-device-portal-to-install-apps-on-hololens">Use the Windows Device Portal to install apps on HoloLens</a>. On HoloLens 2, you can download and install <a href="https://www.microsoft.com/en-us/p/mrtk-examples-hub/9mv8c39l2sj4">MRTK Examples Hub through the Microsoft Store app</a>.</p>
 <p>See <a href="Documentation/README_ExampleHub.html">Examples Hub README page</a> to learn about the details on creating a multi-scene hub with MRTK's scene system and scene transition service.</p>
 <p><a href="Documentation/README_HandInteractionExamples.html"><img src="Documentation/Images/MRTK_ExamplesHub.png" alt="Example Scene"></a></p>
 <h1 id="sample-apps-made-with-mrtk">Sample apps made with MRTK</h1>
@@ -297,15 +317,35 @@ You can find pre-built app packages for HoloLens(x86), HoloLens 2(ARM), and Wind
 <tr>
 <th style="text-align: left;"><a href="https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158"><img src="Documentation/Images/MRDL_PeriodicTable.jpg" alt="Periodic Table of the Elements"></a></th>
 <th style="text-align: left;"><a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update"><img src="Documentation/Images/MRTK_GalaxyExplorer.jpg" alt="Galaxy Explorer"></a></th>
+<th style="text-align: left;"><a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update"><img src="Documentation/Images/MRDL_Surfaces.jpg" alt="Galaxy Explorer"></a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/Microsoft/MRDL_Unity_PeriodicTable">Periodic Table of the Elements</a> is an open-source sample app which demonstrates how to use MRTK's input system and building blocks to create an app experience for HoloLens and Immersive headsets. Read the porting story: <a href="https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158">Bringing the Periodic Table of the Elements app to HoloLens 2 with MRTK v2</a></td>
 <td style="text-align: left;"><a href="https://github.com/Microsoft/GalaxyExplorer">Galaxy Explorer</a> is an open-source sample app that was originally developed in March 2016 as part of the HoloLens 'Share Your Idea' campaign. Galaxy Explorer has been updated with new features for HoloLens 2, using MRTK v2. Read the story: <a href="https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer-update">The Making of Galaxy Explorer for HoloLens 2</a></td>
+<td style="text-align: left;"><a href="https://github.com/Microsoft/GalaxyExplorer">Surfaces</a> is an open-source sample app for HoloLens 2 which explores how we can create a tactile sensation with visual, audio, and fully articulated hand-tracking. Check out Microsoft MR Dev Days session <a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Learnings-from-the-MR-Surfaces-App">Learnings from the Surfaces app</a> for the detailed design and development story.</td>
 </tr>
 </tbody>
 </table>
+<h1 id="session-videos-from-mixed-reality-dev-days-2020">Session videos from Mixed Reality Dev Days 2020</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Intro-to-MRTK-Unity"><img src="Documentation/Images/MRDevDays_Session1.png" alt="MRDevDays"></a></th>
+<th style="text-align: left;"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/MRTKs-UX-Building-Blocks"><img src="Documentation/Images/MRDevDays_Session2.png" alt="MRDevDays"></a></th>
+<th style="text-align: left;"><a href="https://channel9.msdn.com/Shows/Docs-Mixed-Reality/MRTK-Performance-and-Shaders"><img src="Documentation/Images/MRDevDays_Session3.png" alt="MRDevDays"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tutorial on how to create a simple MRTK app from start to finish. Learn about interaction concepts and MRTK’s multi-platform capabilities.</td>
+<td style="text-align: left;">Deep dive on the MRTK’s UX building blocks that help you build beautiful mixed reality experiences.</td>
+<td style="text-align: left;">An introduction to performance tools, both in MRTK and external, as well as an overview of the MRTK Standard Shader.</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days-sessions">Mixed Reality Dev Days</a> to explore more session videos.</p>
 <h1 id="engage-with-the-community">Engage with the community</h1>
 <ul>
 <li><p>Join the conversation around MRTK on <a href="https://holodevelopers.slack.com/">Slack</a>. You can join the Slack community via the <a href="https://holodevelopersslack.azurewebsites.net/">automatic invitation sender</a>.</p>

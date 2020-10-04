@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hologram stabilization (&#12507;&#12525;&#12464;&#12521;&#12512;&#12398;&#23433;&#23450;&#21270;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hologram stabilization (&#12507;&#12525;&#12464;&#12521;&#12512;&#12398;&#23433;&#23450;&#21270;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hologram-stabilization-ホログラムの安定化" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="1">Hologram stabilization (ホログラムの安定化)</h1>
+
+<h2 id="パフォーマンス" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="3">パフォーマンス</h2>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="5">基礎となる Mixed Reality プラットフォームとデバイスが最良の結果を生み出すためには、フレーム レートを達成することが重要です。ターゲットのフレーム レート (例： 60FPS または 90FPS) は、プラットフォームやデバイスによって異なります。しかし、フレーム レートを満たす Mixed Reality アプリケーションは、安定したホログラムだけではなく、効率的なヘッド トラッキング、ハンド トラッキングなどを持つことになります。</p>
+<h2 id="環境トラッキング" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="7">環境トラッキング</h2>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="9">安定したホログラフィック レンダリングは、プラットフォームとデバイスによるヘッドポーズ トラッキングに大きく依存します。Unity は、基礎となるプラットフォームによって推定および提供されるカメラ ポーズから、シーンをフレームごとにレンダリングします。このトラッキングが実際のヘッドの動きに正確に追従しない場合、ホログラムは視覚的に不正確に見えます。HoloLens のような AR デバイスでは、ユーザーがバーチャル ホログラムを現実世界に関連付けることができるため、これは特に明白で重要です。パフォーマンスは信頼性の高いヘッド トラッキングに重要ですが、<a href="https://docs.microsoft.com/windows/mixed-reality/environment-considerations-for-hololens" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="9">そのほかにも重要な特徴</a> があります。ユーザ エクスペリエンスに影響を与える環境要素のタイプは、対象となるプラットフォームの仕様によって異なります。</p>
+<h2 id="windows-mixed-reality" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="11">Windows Mixed Reality</h2>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="13">Windows Mixed Reality プラットフォームは、プラットフォーム上でホログラムを安定させるための<a href="https://docs.microsoft.com/windows/mixed-reality/hologram-stability" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="13">参考資料</a>を提供しています。開発者がホログラムの視覚体験を改善するために利用できる主要なツールはいくつかあります。</p>
+<h3 id="depth-buffer-sharing-デプス-バッファーの共有" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="15">Depth Buffer Sharing (デプス バッファーの共有)</h3>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="17">Unity の開発者はアプリケーションのデプス バッファーをプラットフォームと共有することができます。これは、現在のフレームに対してホログラムが存在する場合に、プラットフォームが Late-Stage Reprojection として知られるハードウェアで支援されたプロセスを介してホログラムを安定化するために利用できる情報を提供します。</p>
+<h4 id="late-stage-reprojection" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="19">Late-Stage Reprojection</h4>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="21">フレームのレンダリングが終了すると、Windows Mixed Reality プラットフォームは、アプリケーションによって生成されたカラーとデプスのレンダー ターゲットを使用し、最後のヘッド ポーズ予測以降のわずかなヘッドの動きを考慮するために最終的な画面出力を変換します。アプリケーションのゲーム ループの実行には時間がかかります。たとえば、60 FPS の場合、これはアプリケーションがフレームをレンダリングするのに 16.667 ms 以下の時間がかかることを意味します。これは非常に短い時間のように思えるかもしれませんが、ユーザーの頭の位置と向きが変わり、結果的にレンダリング時のカメラのプロジェクション マトリックスが新しくなります。Late-Stage Reprojection では、この新しいパースペクティブを考慮して最終的な画像のピクセルを変換します。</p>
+<h4 id="ピクセル単位-vs-安定化平面-lsr" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="23">ピクセル単位 vs 安定化平面 LSR</h4>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="25">Windows Mixed Reality デバイス上で動作するデバイス エンドポイントと OS のバージョンに応じて、Late-Stage Reprojection アルゴリズムはピクセル単位または [安定化平面]　(<a href="https://docs.microsoft.com/windows/mixed-reality/hologram-stability#stabilization-plane" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="25">https://docs.microsoft.com/windows/mixed-reality/hologram-stability#stabilization-plane</a>) を介して実行されます。</p>
+<h5 id="ピクセルごとのデプス-ベース" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="27">ピクセルごとのデプス ベース</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="29">ピクセルごとのデプスに基づいた Reprojection (再投影) は、デプス バッファーを利用してピクセルごとの画像出力を修正し、従って様々な距離でホログラムを安定化することに関与します。例えば、1 m 離れた球が 10 m 離れた柱の前にあるとします。ユーザーが頭を少し傾けた場合、球を表すピクセルは、柱を表す遠くのピクセルとは異なる変換を持ちます。ピクセルごとの再投影では、より正確な再投影のために、各ピクセルでのこの距離差が考慮されます。</p>
+<h5 id="安定化平面" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="31">安定化平面</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="33">プラットフォームと共有する正確なデプス バッファーを作成できない場合、別の形式の LSR は安定化平面を使用します。シーン内のすべてのホログラムにはある程度の安定化が適用されますが、目的の平面にあるホログラムには最大のハードウェア安定化が適用されます。平面の点と法線は、<a href="https://docs.microsoft.com/windows/mixed-reality/focus-point-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="33">Unity で提供される API の</a>  <em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="33">HolographicSettings.SetFocusPointForFrame</em> を介してプラットフォームに提供されます。</p>
+<h4 id="デプス-バッファー-フォーマット" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="35">デプス バッファー フォーマット</h4>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="37">HoloLens を開発のターゲットとする場合は、24 ビットよりも 16 ビット デプス バッファー フォーマットを使用することを強くお勧めします。これにより、デプス値の精度は低くなりますが、パフォーマンスが大幅に向上します。精度の低さを補い <a href="https://en.wikipedia.org/wiki/Z-fighting" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="37">z-fighting</a> を回避するには、<a href="https://docs.unity3d.com/Manual/class-Camera.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="37">far clip plane</a> の値を Unity で設定されているデフォルト値の 1000m から減らすことをお勧めします。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="39">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="40">もし <em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="40">16-bit depth format</em> を使う場合、<a href="https://docs.unity3d.com/ScriptReference/RenderTexture-depth.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="40">Unity はステンシル バッファーを作成しない</a>ため、ステンシル バッファーが必要なエフェクトは動作しません。逆に、<em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="40">24-bit depth format</em> を選択した場合、グラフィックのプラットフォームで適用できる場合は、一般的に <a href="https://docs.unity3d.com/Manual/SL-Stencil.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="40">8 ビットのステンシル バッファー</a>が作成されます。</p>
+</div>
+<h4 id="unity-での-depth-buffer-sharing-デプス-バッファー-シェアリング" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="42">Unity での Depth Buffer Sharing (デプス バッファー シェアリング)</h4>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="44">デプス ベースの LSR を利用するために、開発者が取る必要のある2つの重要なステップがあります。</p>
+<ol sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46"><strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">Edit</strong> &gt; <strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">Project Settings</strong> &gt; <strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">Player</strong> &gt; <strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">XR Settings</strong> &gt; <strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">Virtual Reality SDKs</strong> 配下の <strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="46">Depth Buffer Sharing</strong> を有効にします。
+<ol sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="47">
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="47">HoloLens をターゲットとする場合は、<strong sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="47">16-bit depth format</strong> も選択することをお勧めします。</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="48">画面上でカラーをレンダリングする場合は、デプスも同様にレンダリングします。</li>
+</ol>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="50">一般に、Unity の <a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterRenderingMode.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="50">Opaque GameObjects</a> は、デプスに自動的に書き込みます。ただし、透明およびテキスト オブジェクトは、通常、デフォルトではデプスに書き込みません。MRTK Standard Shader、または、Text Mesh Pro を使用している場合は、簡単に修正できます。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="52">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="53">シーン内のどのオブジェクトがデプス バッファーに書き込まないのかを視覚的に素早く決定するには、MRTK Configuration プロファイルの <em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="53">Editor Settings</em> 以下にある <a href="MixedRealityConfigurationGuide.html#editor-utilities" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="53"><em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="53">Render Depth Buffer</em> ユーティリティ</a>を利用できます。</p>
+</div>
+<h5 id="transparent-mrtk-standard-shader" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="55">Transparent MRTK Standard Shader</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="57"><a href="README_MRTKStandardShader.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="57">MRTK Standard shader</a> を使用した透明なマテリアルの場合は、マテリアルを選択して <em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="57">Inspector</em> ウィンドウに表示します。次に、<em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="57">Fix Now</em> ボタンをクリックして、マテリアルをデプスに書き込むように (すなわち、Z-Write On) に変更します。</p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="59">変更前</p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="61"><img src="../Documentation/Images/Performance/DepthBufferFixNow_Before.PNG" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="61" alt="Depth Buffer Before Fix MRTK Standard Shader"></p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="63">変更後</p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="65"><img src="../Documentation/Images/Performance/DepthBufferFixNow_After.PNG" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="65" alt="Depth Buffer Fixed MRTK Standard Shader"></p>
+<h5 id="text-mesh-pro" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="67">Text Mesh Pro</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="69">Text Mesh Pro オブジェクトの場合は、TMP GameObject を選択してインスペクターに表示します。マテリアル コンポーネントの下で、割り当てられたマテリアルのシェーダーを MRTK TextMeshPro シェーダーを使用するように切り替えます。</p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="71"><img src="../Documentation/Images/Performance/TextMeshPro-DepthBuffer-Fix.PNG" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="71" alt="Text Mesh Pro Depth Buffer Fix"></p>
+<h5 id="カスタム-シェーダー" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="73">カスタム シェーダー</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="75">カスタムシェーダーを記述する場合は、<a href="https://docs.unity3d.com/Manual/SL-CullAndDepth.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="75">ZWrite flag</a> を <em sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="75">Pass</em> ブロック定義の一番上に追加し、シェーダーがデプス バッファーに書き込むように設定します。</p>
+<pre><code sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="77">Shader &quot;Custom/MyShader&quot;
+{
+    SubShader
+    {
+        Pass
+        {
+            ...
+            ZWrite On
+            ...
+        }
+    }
+}
+</code></pre>
+<h5 id="opaque-backings-不透明な背面" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="92">Opaque backings (不透明な背面)</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="94">上記のメソッドが特定のシナリオ（すなわち、Unity UI 使用時）で機能しない場合、別のオブジェクトにデプス バッファーに書き込ませることができます。一般的な例として、シーン内のフローティング パネルで Unity UI テキストを使用する場合があります。パネルを不透明にするか、少なくともデプスに書き込むことによって、テキストとパネルの両方の Z 値が互いに非常に近くなるため、プラットフォームによってそれらが安定化されます。</p>
+<h3 id="ワールドアンカー-hololens" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="96">ワールドアンカー (HoloLens)</h3>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="98">視覚的な安定性を確保するための正しい設定がなされていることを確実にするとともに、ホログラムが正しい物理的位置で安定することを確実にすることが重要です。物理空間での重要な場所についてプラットフォームに通知するために、開発者はある場所に留まる必要がある GameObjects で  <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="98">WorldAnchors</a> を活用することができます。<a href="https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="98">WorldAnchors</a> は、GameObject に追加されるコンポーネントで、オブジェクトの Transform を完全に制御します。</p>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="100">HoloLens のようなデバイスは常に環境をスキャンし、学習しています。そのため、HoloLens が空間での動きと位置を追跡するにつれて、その予測値は更新され、<a href="https://docs.microsoft.com/windows/mixed-reality/coordinate-systems-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="100">Unity 座標系は調整されます</a>。例えば、最初にカメラから 1 m 離れたところに GameObject を配置した場合、HoloLens が環境を追跡するにつれて、GameObject が配置されている物理的な位置が実際には 1.1 m 離れていることに気づくかもしれません。これにより、ホログラムがドリフトします。GameObject にワールドアンカーを適用すると、アンカーがオブジェクトの Transform を制御できるようになり、オブジェクトが正しい物理的位置に留まります (すなわち、実行時に 1 m ではなく 1.1 m 先へと更新されます)。<a href="https://docs.unity3d.com/ScriptReference/XR.WSA.WorldAnchor.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="100">WorldAnchors</a> をアプリのセッション間で維持するために、開発者は <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Persistence.WorldAnchorStore.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="100">WorldAnchorStore</a> を使って <a href="https://docs.microsoft.com/ja-jp/windows/mixed-reality/persistence-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="100">WorldAnchors の保存とロード</a> を行えます。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="102">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="103">いったん WorldAnchor コンポーネントが GameObject に追加されると、その GameObject の Transform を変更する (すなわち、transform.position = x) ことはできません。Transform を編集するには、WorldAnchor を削除する必要があります。</p>
+</div>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="105">WorldAnchor m_anchor;
+
+public void AddAnchor()
+{
+    this.m_anchor = this.gameObject.AddComponent&lt;WorldAnchor&gt;();
+}
+
+public void RemoveAnchor()
+{
+    DestroyImmediate(m_anchor);
+}
+</code></pre>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="119">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="121">
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="121"><a href="Performance/PerfGettingStarted.html" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="121">Performance</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="122"><a href="https://docs.microsoft.com/windows/mixed-reality/environment-considerations-for-hololens" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="122">HoloLens の環境に関する考慮事項</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="123"><a href="https://docs.microsoft.com/windows/mixed-reality/hologram-stability" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="123">Windows Mixed Reality におけるホログラムの安定性</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="124"><a href="https://docs.microsoft.com/windows/mixed-reality/focus-point-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="124">Unity のフォーカス ポイント</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="125"><a href="https://docs.microsoft.com/windows/mixed-reality/coordinate-systems-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="125">Unity での座標系</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="126"><a href="https://docs.microsoft.com/windows/mixed-reality/persistence-in-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="126">Unity での永続化</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="127"><a href="https://docs.microsoft.com/windows/mixed-reality/understanding-performance-for-mixed-reality" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="127">Mixed Reality のパフォーマンスについて</a></li>
+<li sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="128"><a href="https://docs.microsoft.com/windows/mixed-reality/performance-recommendations-for-unity" sourcefile="../../Documentation.ja/hologram-stabilization.md" sourcestartlinenumber="128">Unity のパフォーマンスに関する推奨事項</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/hologram-stabilization.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

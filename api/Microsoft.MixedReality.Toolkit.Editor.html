@@ -12,7 +12,7 @@
    | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="../Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -21,6 +21,15 @@
     
     <meta property="docfx:rel" content="../">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -37,7 +46,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -108,6 +117,8 @@ These profile ScriptableObject classes should contain an array of IMixedRealityS
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.BoundingBoxInspector.html">BoundingBoxInspector</a></h4>
       <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.BoundsControlInspector.html">BoundsControlInspector</a></h4>
+      <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingBoxEditor.html">ClippingBoxEditor</a></h4>
       <section><p>A custom editor for the ClippingBox to allow for specification of the framing bounds.</p>
 </section>
@@ -119,6 +130,15 @@ These profile ScriptableObject classes should contain an array of IMixedRealityS
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ClippingSphereEditor.html">ClippingSphereEditor</a></h4>
       <section><p>A custom editor for the ClippingSphere to allow for specification of the framing bounds.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ConstraintManagerInspector.html">ConstraintManagerInspector</a></h4>
+      <section><p>Custom inspector for constraint manager.
+Offers two modes depending on if auto constraint selection is active or not.
+In auto constraint selection mode, all constraints attached to the current game object
+will be displayed with respective goto buttons as well as an add button that allows adding
+new constraint components to the game object.
+In manual constraint selection mode, a list of user configured constraints is shown with options
+to modify the list, goto buttons as well as adding new constraints to the game object.</p>
 </section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ControllerPopupWindow.html">ControllerPopupWindow</a></h4>
       <section></section>
@@ -230,6 +250,8 @@ Extends AssetPostprocessor so it can respond to asset changes.</p>
 The first time, it will not invoke the ScriptedImporter as it's just being imported itself; the second time the ScriptedImporter will be constructed but Unity thinks it fails.
 The third time, the import will succeed. This class will invoke the third time import for .gltf, .glb and .room extensions.</p>
 </section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.ScrollingObjectCollectionInspector.html">ScrollingObjectCollectionInspector</a></h4>
+      <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.SelectRepairedTypeWindow.html">SelectRepairedTypeWindow</a></h4>
       <section></section>
       <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Editor.SpatialAwarenessSystemInspector.html">SpatialAwarenessSystemInspector</a></h4>

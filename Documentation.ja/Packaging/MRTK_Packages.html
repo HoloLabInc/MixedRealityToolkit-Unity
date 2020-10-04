@@ -10,7 +10,7 @@
     <meta name="title" content="Mixed Reality Toolkit &#12497;&#12483;&#12465;&#12540;&#12472; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../../styles/docfx.css">
     <link rel="stylesheet" href="../../styles/main.css">
@@ -19,6 +19,15 @@
     
     <meta property="docfx:rel" content="../../">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -35,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -83,71 +92,772 @@
 <h1 id="mixed-reality-toolkit-パッケージ">Mixed Reality Toolkit パッケージ</h1>
 
 <p>Mixed Reality Toolkit (MRTK) は、Mixed Reality ハードウェアとプラットフォームをサポートすることにより、クロスプラットフォーム Mixed Reality アプリケーション開発を可能にするパッケージのコレクションです。</p>
-<p>MRTK は、次の Unity パッケージを介してリリースしています。</p>
+<p>MRTK は <a href="#asset-package">アセット</a> (.unitypackage) パッケージとして、そして <a href="#unity-package-manager">Unity Package Manager</a> を通して利用可能です。</p>
+<p><a name="asset-package"></a></p>
+<h2 id="アセット-パッケージ">アセット パッケージ</h2>
+<p>MRTK のアセット (.unitypackage) は、<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases">GitHub</a> からダウンロードできます。</p>
+<p>アセット パッケージを使う利点としては以下があります。</p>
+<ul>
+<li>Unity 2018.4 以降で利用可能</li>
+<li>MRTK への変更が簡単
+<ul>
+<li>MRTK は Assets フォルダ内にある</li>
+</ul>
+</li>
+</ul>
+<p>課題としては以下があります。</p>
+<ul>
+<li>MRTK がプロジェクトのアセット フォルダの一部になるため、
+<ul>
+<li>プロジェクトが大きくなる</li>
+<li>コンパイル時間が遅くなる</li>
+</ul>
+</li>
+<li>依存管理がない
+<ul>
+<li>パッケージの依存関係を手動で解決する必要がある</li>
+</ul>
+</li>
+<li>手動でのアップデート プロセス
+<ul>
+<li>複数のステップ</li>
+<li>巨大な (3000 以上のファイルの) ソース コントロールの更新</li>
+<li>MRTK への変更を失ってしまうリスク</li>
+</ul>
+</li>
+<li>Examples パッケージをインポートするということは全ての Examples を含むことを意味する</li>
+</ul>
+<p>利用可能なパッケージは以下のものです。</p>
 <ul>
 <li><a href="#foundation-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Foundation</a></li>
 <li><a href="#extensions-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Extensions</a></li>
-<li><a href="#examples-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Examples</a></li>
 <li><a href="#tools-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Tools</a></li>
+<li><a href="#test-utilities-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Test utilities</a></li>
+<li><a href="#examples-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Examples</a></li>
 </ul>
 <p>これらのパッケージは、GitHub の <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release">mrtk_release</a> ブランチのソース コードから、Microsoft によってリリース、サポートされています。</p>
-<h2 id="foundation-パッケージ">Foundation パッケージ</h2>
+<h3 id="foundation-パッケージ">Foundation パッケージ</h3>
 <p>Mixed Reality Toolkit Foundation は、アプリケーションが Mixed Reality プラットフォーム間で共通の機能を活用できるようにするコードのセットです。</p>
 <img src="../../Documentation/Images/Input/MRTK_Package_Foundation.png" width="350px" style="display:block;">  
 <sup>MRTK Foundation パッケージ</sup>
-<p>MRTK Foundation は以下から構成されています。</p>
-<ul>
-<li><strong>Core Package</strong></li>
-</ul>
-<p>Core Package には他のすべてのコンポーネントで使用される共通のインターフェイス、クラス、データ型のすべての定義が含まれています。プラットフォーム間で最高レベルの互換性を実現するために、定義されたインターフェイスのみを介して MRTK コンポーネントにアクセスすることを強くお勧めします。</p>
-<ul>
-<li><strong>Platform Providers</strong></li>
-</ul>
-<p>MRTK Platform Provider パッケージは、Mixed Reality Toolkit が Mixed Reality ハードウェアおよびプラットフォーム機能を対象とすることを可能にするコンポーネントです。</p>
-<p>サポートされているプラットフォームは次のとおりです。</p>
-<ul>
-<li>Windows Mixed Reality</li>
-<li>OpenVR</li>
-<li>Windows Voice</li>
-</ul>
-<ul>
-<li><strong>System Services</strong></li>
-</ul>
-<p>Core サービスは、Core Package で定義されているシステム サービス インターフェイスのデフォルト実装を提供しています。</p>
-<p>MRTK foundation には、以下のシステム サービスが含まれています。</p>
-<ul>
-<li><a href="../Boundary/BoundarySystemGettingStarted.html">Boundary System</a></li>
-<li><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html">Diagnostic System</a></li>
-<li><a href="../Input/Overview.html">Input System</a></li>
-<li><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html">Spatial Awareness System</a></li>
-<li><a href="../TeleportSystem/Overview.html">Teleport System</a></li>
-</ul>
-<ul>
-<li><strong>Feature Assets</strong></li>
-</ul>
-<p>Feature Assets は、Unity アセットとスクリプトとして提供される関連機能のコレクションです。ユーザー インターフェイス コントロールやスタンダード アセットなどが含まれます。</p>
-<h2 id="extensions-パッケージ">Extensions パッケージ</h2>
-<p>Extensions パッケージには、Foundation パッケージの機能を拡張する追加のサービスとコンポーネントが含まれています。</p>
-<ul>
-<li><a href="../Extensions/SceneTransitionService/SceneTransitionServiceOverview.html">シーン遷移サービス</a></li>
-</ul>
-<h2 id="examples-パッケージ">Examples パッケージ</h2>
+<p>MRTK Foundation パッケージは以下を含んでいます。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Core</td>
+<td></td>
+<td>Interface and type definitions, base classes, standard shader.</td>
+</tr>
+<tr>
+<td>MRTK/Core/Providers</td>
+<td></td>
+<td>Platform agnostic data providers</td>
+</tr>
+<tr>
+<td></td>
+<td>Hands</td>
+<td>Base class support and services for hand tracking.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../InputSimulation/InputAnimationRecording.html">InputAnimation</a></td>
+<td>Support for recording head movement and hand tracking data.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../InputSimulation/InputSimulationService.html">InputSimulation</a></td>
+<td>Support for in-editor simulation of hand and eye input.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SpatialAwareness/SpatialObjectMeshObserver.html">ObjectMeshObserver</a></td>
+<td>Spatial awareness observer using a 3D model as the data.</td>
+</tr>
+<tr>
+<td></td>
+<td>UnityInput</td>
+<td>Common input devices (joystick, mouse, etc.) implemented via Unity's input API.</td>
+</tr>
+<tr>
+<td>MRTK/Providers</td>
+<td></td>
+<td>Platform specific data providers</td>
+</tr>
+<tr>
+<td></td>
+<td>LeapMotion</td>
+<td>Support for the UltraLeap Leap Motion controller.</td>
+</tr>
+<tr>
+<td></td>
+<td>OpenVR</td>
+<td>Support for OpenVR devices.</td>
+</tr>
+<tr>
+<td></td>
+<td>Oculus</td>
+<td>Support for Oculus devices, such as the Quest.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../CameraSystem/UnityArCameraSettings.html">UnityAR</a></td>
+<td>(Experimental) Camera settings provider enabling MRTK use with mobile AR devices.</td>
+</tr>
+<tr>
+<td></td>
+<td>WindowsMixedReality</td>
+<td>Support for Windows Mixed Reality devices, including Microsoft HoloLens and immersive headsets.</td>
+</tr>
+<tr>
+<td></td>
+<td>Windows</td>
+<td>Support for Microsoft Windows specific APIs, for example speech and dictation.</td>
+</tr>
+<tr>
+<td></td>
+<td>XR SDK</td>
+<td>(Experimental) Support for <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/">Unity's new XR framework</a> in Unity 2019.3 and newer.</td>
+</tr>
+<tr>
+<td>MRTK/SDK</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Experimental</td>
+<td>Experimental features, including shaders, user interface controls and individual system managers.</td>
+</tr>
+<tr>
+<td></td>
+<td>Features</td>
+<td>Functionality that builds upon the Foundation package.</td>
+</tr>
+<tr>
+<td></td>
+<td>Profiles</td>
+<td>Default profiles for the Microsoft Mixed Reality Toolkit systems and services.</td>
+</tr>
+<tr>
+<td></td>
+<td>StandardAssets</td>
+<td>Common assets; models, textures, materials, etc.</td>
+</tr>
+<tr>
+<td>MRTK/Services</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Boundary/BoundarySystemGettingStarted.html">BoundarySystem</a></td>
+<td>System implementing VR boundary support.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../CameraSystem/CameraSystemOverview.html">CameraSystem</a></td>
+<td>System implementing camera configuration and management.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html">DiagnosticsSystem</a></td>
+<td>System implementing in application diagnostics, for example a visual profiler.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Input/Overview.html">InputSystem</a></td>
+<td>System providing support for accessing and handling user input.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SceneSystem/SceneSystemGettingStarted.html">SceneSystem</a></td>
+<td>System providing multi-scene application support.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html">SpatialAwarenessSystem</a></td>
+<td>System providing support for awareness of the user's environment.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../TeleportSystem/Overview.html">TeleportSystem</a></td>
+<td>System providing support for teleporting (moving about the experience in jumps).</td>
+</tr>
+<tr>
+<td>MRTK/StandardAssets</td>
+<td></td>
+<td>MRTK Standard shader, basic materials and other standard assets for mixed reality experiences</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extensions-パッケージ">Extensions パッケージ</h3>
+<p>オプションの Microsoft.MixedRealityToolkit.Unity.Extensions パッケージには、MRTK の機能を拡張する追加サービスが含まれています。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Extensions パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Extensions</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Extensions/HandPhysicsService/HandPhysicsServiceOverview.html">HandPhysicsService</a></td>
+<td>Service that adds physics support to articulated hands.</td>
+</tr>
+<tr>
+<td></td>
+<td>LostTrackingService</td>
+<td>Service that simplifies handling of tracking loss on Microsoft HoloLens devices.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Extensions/SceneTransitionService/SceneTransitionServiceOverview.html">SceneTransitionService</a></td>
+<td>Service that simplifies adding smooth scene transitions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-パッケージ">Tools パッケージ</h3>
+<p>オプションの  Microsoft.MixedRealityToolkit.Unity.Tools パッケージには、MRTK を使った Mixed Reality 開発エクスペリエンスを強化する役に立つツールが含まれています。
+これらのツールは Unity Editor の <strong>Mixed Reality Toolkit &gt; Utilities</strong> メニューにあります。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Tools パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Tools</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BuildWindow</td>
+<td>Tool that helps simplify the process of building and deploying UWP applications.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/DependencyWindow.html">DependencyWindow</a></td>
+<td>Tool that creates a dependency graph of assets in a project.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/ExtensionServiceCreationWizard.html">ExtensionServiceCreator</a></td>
+<td>Wizard to assist in creating extension services.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/MigrationWindow.html">MigrationWindow</a></td>
+<td>Tool that assists in updating code that uses deprecated MRTK components.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/OptimizeWindow.html">OptimizeWindow</a></td>
+<td>Utility to help automate configuring a mixed reality project for the best performance in Unity.</td>
+</tr>
+<tr>
+<td></td>
+<td>ReserializeAssetsUtility</td>
+<td>Provides support for reserializing specific Unity files.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/ControllerMappingTool.html">RuntimeTools/Tools/ControllerMappingTool</a></td>
+<td>Utility enabling developers to quickly determine Unity mappings for hardware controllers.</td>
+</tr>
+<tr>
+<td></td>
+<td>ScreenshotUtility</td>
+<td>Enables capturing application images in the Unity editor.</td>
+</tr>
+<tr>
+<td></td>
+<td>TextureCombinerWindow</td>
+<td>Utility to combine graphics textures.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../README_Toolbox.html">Toolbox</a></td>
+<td>UI that makes it easy to discover and use MRTK UX components.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-utilities-パッケージ">Test utilities パッケージ</h3>
+<p>オプションの Microsoft.MixedRealityToolkit.TestUtilities パッケージは開発者が簡単に<a href="../Contributing/UnitTests.html#play-mode-tests">PlayMode テストを作る</a>ためのヘルパー スクリプトのコレクションです。これらのユーティリティは MRTK のコンポーネントを作る開発者に特に有用です。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Tests</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TestUtilities</td>
+<td>Methods to simplify creation of play mode tests, including hand simulation utilities.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples-パッケージ">Examples パッケージ</h3>
 <p>Examples パッケージには、Foundation パッケージの機能を使用するデモ、サンプル スクリプト、およびサンプル シーンが含まれています。このパッケージには、さまざまなタイプのハンド インプット (多関節および非多関節) に反応するサンプル オブジェクトが含まれる <a href="../README_HandInteractionExamples.html">HandInteractionExample シーン</a> (下図) が含まれています。</p>
-<p><img src="../../Documentation/Images/MRTK_Examples.png" alt="HandInteractionExample シーン"></p>
+<p><img src="../../Documentation/Images/MRTK_Examples.png" alt="HandInteractionExample scene"></p>
 <p>このパッケージには、アイ トラッキング デモも含まれています。詳細は<a href="../EyeTracking/EyeTracking_ExamplesOverview.html">こちら</a>に記載されています。</p>
 <p>より一般的には、MRTK のすべての新機能について、同じフォルダ構造と場所にほぼ従って、対応するサンプルが Examples パッケージに含まれているべきです。</p>
-<h2 id="tools-パッケージ">Tools パッケージ</h2>
-<p>Tools パッケージには、Mixed Reality エクスペリエンスを作成するのに役立つツールが含まれています。これらのコードは、最終的にアプリケーションの一部としてリリースされることはありません。</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Examples パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Examples</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Demos</td>
+<td>Simple scenes illustrating one or two related features.</td>
+</tr>
+<tr>
+<td></td>
+<td>Experimental</td>
+<td>Demo scenes illustrating experimental features.</td>
+</tr>
+<tr>
+<td></td>
+<td>StandardAssets</td>
+<td>Common assets shared by multiple demo scenes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unity-package-manager">Unity Package Manager</h2>
+<p>Unity 2019.4 以降では、MRTK は <a href="https://docs.unity3d.com/Manual/Packages.html">Unity Package Manager</a> を通じて利用可能です。</p>
+<p>アセット パッケージを使う利点としては以下があります。</p>
 <ul>
-<li><a href="../Tools/DependencyWindow.html">Dependency Window</a></li>
-<li><a href="../Tools/ExtensionServiceCreationWizard.html">Extension Service Creation Wizard</a></li>
-<li><a href="../Tools/OptimizeWindow.html">Optimize Window</a></li>
-<li><a href="../Tools/ScreenshotUtility.html">Screenshot Utility</a></li>
+<li>プロジェクトが小さくなる
+<ul>
+<li>Visual Studio のソリューションがきれいになる</li>
+<li>管理ファイルが少なくなる（MRTK は <code>Packages/manifest.json</code> ファイルのシンプルな参照)</li>
+</ul>
+</li>
+<li>コンパイルの高速化
+<ul>
+<li>Unity がビルド時に MRTK を再コンパイルする必要がない</li>
+</ul>
+</li>
+<li>依存関係の解決
+<ul>
+<li>依存先としてパッケージを指定した時に必要な MRTK のパッケージが自動でインストールされる</li>
+</ul>
+</li>
+<li>新しい MRTK のバージョンへの簡単なアップデート
+<ul>
+<li><code>Packages/manifest.json</code> ファイルのバージョンを変更する</li>
+</ul>
+</li>
+</ul>
+<p>課題としては以下があります。</p>
+<ul>
+<li>MRTK は変更不可能になる
+<ul>
+<li>パッケージの解決から取り除かないと変更することができない</li>
+</ul>
+</li>
+<li>Unity 2018.4 では MRTK は UPM パッケージをサポートしない</li>
+</ul>
+<h3 id="foundation-パッケージ-1">Foundation パッケージ</h3>
+<p>Foundation パッケージ (<code>com.microsoft.mixedreality.toolkit.foundation</code>)は、Mixed Reality Toolkit の基礎を形作ります。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Core</td>
+<td></td>
+<td>Interface and type definitions, base classes, standard shader.</td>
+</tr>
+<tr>
+<td>MRTK/Core/Providers</td>
+<td></td>
+<td>Platform agnostic data providers</td>
+</tr>
+<tr>
+<td></td>
+<td>Hands</td>
+<td>Base class support and services for hand tracking.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../InputSimulation/InputAnimationRecording.html">InputAnimation</a></td>
+<td>Support for recording head movement and hand tracking data.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../InputSimulation/InputSimulationService.html">InputSimulation</a></td>
+<td>Support for in-editor simulation of hand and eye input.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SpatialAwareness/SpatialObjectMeshObserver.html">ObjectMeshObserver</a></td>
+<td>Spatial awareness observer using a 3D model as the data.</td>
+</tr>
+<tr>
+<td></td>
+<td>UnityInput</td>
+<td>Common input devices (joystick, mouse, etc.) implemented via Unity's input API.</td>
+</tr>
+<tr>
+<td>MRTK/Providers</td>
+<td></td>
+<td>Platform specific data providers</td>
+</tr>
+<tr>
+<td></td>
+<td>LeapMotion</td>
+<td>Support for the UltraLeap Leap Motion controller.</td>
+</tr>
+<tr>
+<td></td>
+<td>OpenVR</td>
+<td>Support for OpenVR devices.</td>
+</tr>
+<tr>
+<td></td>
+<td>Oculus</td>
+<td>Support for Oculus devices, such as the Quest.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../CameraSystem/UnityArCameraSettings.html">UnityAR</a></td>
+<td>(Experimental) Camera settings provider enabling MRTK use with mobile AR devices.</td>
+</tr>
+<tr>
+<td></td>
+<td>WindowsMixedReality</td>
+<td>Support for Windows Mixed Reality devices, including Microsoft HoloLens and immersive headsets.</td>
+</tr>
+<tr>
+<td></td>
+<td>Windows</td>
+<td>Support for Microsoft Windows specific APIs, for example speech and dictation.</td>
+</tr>
+<tr>
+<td></td>
+<td>XR SDK</td>
+<td>(Experimental) Support for <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/">Unity's new XR framework</a> in Unity 2019.3 and newer.</td>
+</tr>
+<tr>
+<td>MRTK/SDK</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Experimental</td>
+<td>Experimental features, including shaders, user interface controls and individual system managers.</td>
+</tr>
+<tr>
+<td></td>
+<td>Features</td>
+<td>Functionality that builds upon the Foundation package.</td>
+</tr>
+<tr>
+<td></td>
+<td>Profiles</td>
+<td>Default profiles for the Microsoft Mixed Reality Toolkit systems and services.</td>
+</tr>
+<tr>
+<td></td>
+<td>StandardAssets</td>
+<td>Common assets; models, textures, materials, etc.</td>
+</tr>
+<tr>
+<td>MRTK/Services</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Boundary/BoundarySystemGettingStarted.html">BoundarySystem</a></td>
+<td>System implementing VR boundary support.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../CameraSystem/CameraSystemOverview.html">CameraSystem</a></td>
+<td>System implementing camera configuration and management.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html">DiagnosticsSystem</a></td>
+<td>System implementing in application diagnostics, for example a visual profiler.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Input/Overview.html">InputSystem</a></td>
+<td>System providing support for accessing and handling user input.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SceneSystem/SceneSystemGettingStarted.html">SceneSystem</a></td>
+<td>System providing multi-scene application support.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html">SpatialAwarenessSystem</a></td>
+<td>System providing support for awareness of the user's environment.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../TeleportSystem/Overview.html">TeleportSystem</a></td>
+<td>System providing support for teleporting (moving about the experience in jumps).</td>
+</tr>
+</tbody>
+</table>
+<p>依存パッケージ:</p>
+<ul>
+<li>Standard Assets (<code>com.microsoft.mixedreality.toolkit.standardassets</code>)</li>
+</ul>
+<h3 id="standard-assets">Standard Assets</h3>
+<p>Standard Assets パッケージ (<code>com.microsoft.mixedreality.toolkit.standardassets)</code> は全ての Mixed Reality エクスペリエンスに推奨されるコンポーネントのコレクションで、以下が含まれています。</p>
+<ul>
+<li>MRTK Standard シェーダー</li>
+<li>MRTK Standard シェーダーを使った基本的なマテリアル</li>
+<li>Audio ファイル</li>
+<li>Fonts</li>
+<li>Textures</li>
+<li>Icons</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Assembly Definitions の破壊的変更を防ぐため、MRTK Standard シェーダーのいくつかの機能をコントロールするのに使われているスクリプトは Standard Assets パッケージに含まれていません。これらのスクリプトは Foundation パッケージの <code>MRTK/Core/Utilities/StandardShader</code> フォルダにあります。</p>
+</div>
+<p>依存パッケージ: なし</p>
+<h3 id="extension-パッケージ">Extension パッケージ</h3>
+<p>オプションの Extensions パッケージ (<code>com.microsoft.mixedreality.toolkit.extensions)</code> には MRTK の機能を拡張する追加のコンポーネントが含まれています。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Extensions</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Extensions/HandPhysicsService/HandPhysicsServiceOverview.html">HandPhysicsService</a></td>
+<td>Service that adds physics support to articulated hands.</td>
+</tr>
+<tr>
+<td></td>
+<td>LostTrackingService</td>
+<td>Service that simplifies handing of tracking loss on Microsoft HoloLens devices.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Extensions/SceneTransitionService/SceneTransitionServiceOverview.html">SceneTransitionService</a></td>
+<td>Service that simplifies adding smooth scene transitions.</td>
+</tr>
+<tr>
+<td></td>
+<td>Samples~</td>
+<td>A hidden (in the Unity Editor) folder that contains the sample scenes and assets.</td>
+</tr>
+</tbody>
+</table>
+<p>サンプル プロジェクトを含むパッケージの利用手順の詳細は、<a href="../usingupm.html#using-mixed-reality-toolkit-examples">Mixed Reality Toolkit と Unity Package Manager</a> をご覧ください。</p>
+<p>依存パッケージ:</p>
+<ul>
+<li>Foundation (<code>com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="tools-パッケージ-1">Tools パッケージ</h3>
+<p>オプションの Tools パッケージ (<code>com.microsoft.mixedreality.toolkit.tools)</code> には Mixed Reality 体験を作るのに便利なツールが含まれています。おおむねこれらのツールは Editor コンポーネントで、コードはアプリケーションの一部としてはリリースされません。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Tools</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BuildWindow</td>
+<td>Tool that helps simplify the process of building and deploying UWP applications.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/DependencyWindow.html">DependencyWindow</a></td>
+<td>Tool that creates a dependency graph of assets in a project.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/ExtensionServiceCreationWizard.html">ExtensionServiceCreator</a></td>
+<td>Wizard to assist in creating extension services.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/MigrationWindow.html">MigrationWindow</a></td>
+<td>Tool that assists in updating code that uses deprecated MRTK components.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/OptimizeWindow.html">OptimizeWindow</a></td>
+<td>Utility to help automate configuring a mixed reality project for the best performance in Unity.</td>
+</tr>
+<tr>
+<td></td>
+<td>ReserializeAssetsUtility</td>
+<td>Provides support for reserializing specific Unity files.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../Tools/ControllerMappingTool.html">RuntimeTools/Tools/ControllerMappingTool</a></td>
+<td>Utility enabling developers to quickly determine Unity mappings for hardware controllers.</td>
+</tr>
+<tr>
+<td></td>
+<td>ScreenshotUtility</td>
+<td>Enables capturing application images in the Unity editor.</td>
+</tr>
+<tr>
+<td></td>
+<td>TextureCombinerWindow</td>
+<td>Utility to combine graphics textures.</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="../README_Toolbox.html">Toolbox</a></td>
+<td>UI that makes it easy to discover and use MRTK UX components.</td>
+</tr>
+</tbody>
+</table>
+<p>依存パッケージ:</p>
+<ul>
+<li>Foundation (<code>com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="test-utilities-パッケージ-1">Test utilities パッケージ</h3>
+<p>オプションの Test utilities パッケージ (<code>com.microsoft.mixedreality.toolkit.testutilities</code>) には、開発者が簡単に PlayMode テストを作れるようにするヘルパー スクリプトのコレクションが含まれています。これらのユーティリティは MRTK のコンポーネントを作る開発者に特に有用です。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Tests</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TestUtilities</td>
+<td>Methods to simplify creation of play mode tests, including hand simulation utilities.</td>
+</tr>
+</tbody>
+</table>
+<p>依存パッケージ:</p>
+<ul>
+<li>Foundation (<code>com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="examples-パッケージ-1">Examples パッケージ</h3>
+<p>Examples パッケージ (<code>com.microsoft.mixedreality.toolkit.examples</code>) は開発者が興味のあるサンプルのみをインポートできるように構成されています。</p>
+<p>サンプルプロジェクトを含むパッケージを使う手順の詳細は、<a href="../usingupm.html#using-mixed-reality-toolkit-examples">Mixed Reality Toolkit と Unity Package Manager</a> のページをご覧ください。</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRTK/Examples</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Samples~</td>
+<td>A hidden (in the Unity Editor) folder that contains the sample scenes and assets.</td>
+</tr>
+<tr>
+<td></td>
+<td>StandardAssets</td>
+<td>Common assets shared by multiple demo scenes.</td>
+</tr>
+</tbody>
+</table>
+<p>依存パッケージ:</p>
+<ul>
+<li>Foundation (<code>com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+<li>Extensions (<code>com.microsoft.mixedreality.toolkit.extensions</code>)</li>
 </ul>
 <h2 id="関連項目">関連項目</h2>
 <ul>
-<li><a href="../Architecture/Overview.html">アーキテクチャ 概要</a></li>
-<li><a href="../Architecture/SystemsExtensionsProviders.html">Systems, Extension Services and Data Providers</a></li>
+<li><a href="../Architecture/Overview.html">アーキテクチャ概要</a></li>
+<li><a href="../Architecture/SystemsExtensionsProviders.html">Systems, Extension Services と Data Providers</a></li>
+<li><a href="../usingupm.html">Mixed Reality Toolkit と Unity Package Manager</a></li>
 </ul>
 </article>
           </div>

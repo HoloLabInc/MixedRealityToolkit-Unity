@@ -10,7 +10,7 @@
     <meta name="title" content="&#20837;&#21147;&#12471;&#12511;&#12517;&#12524;&#12540;&#12471;&#12519;&#12531; &#12469;&#12540;&#12499;&#12473; (Input Simulation Service) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
-    <link rel="shortcut icon" href="../../Documentation/Images/favicon.ico">
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../../styles/docfx.css">
     <link rel="stylesheet" href="../../styles/main.css">
@@ -19,6 +19,15 @@
     
     <meta property="docfx:rel" content="../../">
     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -35,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../Documentation/Images/mrt_logo_icon.png" alt="">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
               </a>
             </div>
           
@@ -88,12 +97,14 @@
 <li>HoloLens のハンド ジェスチャ</li>
 <li>HoloLens 2 の多関節ハンド トラッキング</li>
 <li>HoloLens 2 のアイ トラッキング</li>
+<li>VR デバイスのコントローラー</li>
 </ul>
 <p>ユーザーは、従来のキーボードやマウスの組み合わせで実行時に操作をシミュレーションすることができます。このアプローチにより、デバイスにデプロイする前に Unity Editor 上でインタラクションをテストすることができます。</p>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>これは、Unity の XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot; では動作しません。Unity Editor 内でのシミュレーションは、MRTK の入力シミュレーションの制御を奪い取ります。MRTK の入力シミュレーション サービスを使用するには、XR Holographic Emulation を、Emulation Mode = <em>&quot;None&quot;</em> にセットする必要があります。</p>
 </div>
+<p><a name="enabling-the-input-simulation-service"></a></p>
 <h2 id="入力シミュレーション-サービスの有効化">入力シミュレーション サービスの有効化</h2>
 <p>入力シミュレーションは MRTK に同梱されているプロファイルではデフォルトで有効化されています。</p>
 <p>入力シミュレーションは、オプションの <a href="../MixedRealityServices.html">Mixed Reality サービス</a> であり、<a href="../Input/InputProviders.html">Input System プロファイル</a> のデータ プロバイダーから取り除くこともできます。</p>
@@ -122,6 +133,9 @@
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Controlled.png" alt="Controlled hand icon" title="Controlled hand icon"> ハンドは追跡されており、ユーザーにコントロールされています。クリックでハンドを非表示にします。</li>
 <li><img src="../../Documentation/Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Reset.png" alt="Reset hand icon" title="Reset hand icon"> クリックしてハンドをデフォルトの位置にリセットします。</li>
 </ul>
+<h2 id="editor-内の入力シミュレーション-チート-シート">Editor 内の入力シミュレーション チート シート</h2>
+<p>HandInteractionExamples シーンで 左 Ctrl + H を押すと、入力シミュレーション操作のチート シートが表示されます。</p>
+<p><img src="https://user-images.githubusercontent.com/39840334/86066480-13637f00-ba27-11ea-8814-d222d548f684.gif" alt="Input Simulation Cheat Sheet"></p>
 <h2 id="カメラ-コントロール">カメラ コントロール</h2>
 <p>頭の動きは入力シミュレーション サービスでエミュレートされます。</p>
 <h3 id="カメラの回転">カメラの回転</h3>
@@ -138,39 +152,42 @@
 <p><strong>Move Horizontal</strong>/<strong>Move Vertical</strong> 軸を使用してカメラを移動させます（規定:WASDキーまたはゲームコントローラーの左スティック）</p>
 <p>カメラの位置と回転角度は、ツール ウィンドウで明示的にセットすることもできます。<strong>Reset</strong>　ボタンでカメラをデフォルトの状態にリセットすることができます。</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z7L4I1ET7GU" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<h2 id="ハンド-シミュレーション">ハンド シミュレーション</h2>
-<p>入力シミュレーション サービスは、ハンド デバイスをサポートします。バーチャル ハンドは、ボタンやグラブ可能オブジェクトなどの、通常のハンド デバイスをサポートしたオブジェクトとインタラクションできます。</p>
-<h3 id="ハンド-シミュレーション-モード">ハンド シミュレーション モード</h3>
-<p><a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a> 内で、 <strong>Hand Simulation Mode</strong> は、２つの異なる入力モデルの切り替えを行います。
+<h2 id="コントローラー-シミュレーション">コントローラー シミュレーション</h2>
+<p>入力シミュレーションは、エミュレートされたコントローラー デバイス（モーション コントローラーとハンド）をサポートします。これらのバーチャル コントローラーは、ボタンやグラブ可能オブジェクトなどの、通常のコントローラーをサポートしたオブジェクトとインタラクションできます。</p>
+<h3 id="コントローラー-シミュレーション-モード">コントローラー シミュレーション モード</h3>
+<p><a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a> 内で、 <strong>Default Controller Simulation Mode</strong> 設定は、3つの異なる入力モデルの切り替えを行います。
 デフォルトのモードは入力シミュレーション プロファイルでもセットできます。</p>
 <ul>
-<li><p><em>Articulated Hands</em>: 関節の位置のデータを持った多関節ハンドをシミュレートします</p>
-<p>HoloLens 2 のインタラクション モデルをエミュレートします</p>
-<p>このモードでは、ハンドの正確な位置やタッチに基づいたインタラクションをシミュレートできます</p>
+<li><p><em>Articulated Hands</em>: 関節の位置のデータを持った多関節ハンドをシミュレートします。</p>
+<p>HoloLens 2 のインタラクション モデルをエミュレートします。</p>
+<p>このモードでは、ハンドの正確な位置やタッチに基づいたインタラクションをシミュレートできます。</p>
 </li>
-<li><p><em>Gestures</em>: Air Tap や基本的なジェスチャを持ったシンプルなハンドをシミュレートします</p>
+<li><p><em>Hand Gestures</em>: Air Tap や基本的なジェスチャを持ったシンプルなハンドをシミュレートします。</p>
 <p><a href="https://docs.microsoft.com/windows/mixed-reality/gestures">HoloLens interaction model</a> をエミュレートします。</p>
-<p>フォーカスは視線ポインターを使ってコントロールします。<em>Air Tap</em> ジェスチャでボタンと対話します</p>
+<p>フォーカスは視線ポインターを使ってコントロールします。<em>Air Tap</em> ジェスチャでボタンと対話します。</p>
+</li>
+<li><p><em>Motion Controller</em>: VR ヘッドセットとともに使われるモーション コントローラーをシミュレートします。これは多関節ハンドのファー インタラクションと同様の動作をします。</p>
+<p>VR ヘッドセットとコントローラーのインタラクション モデルをエミュレートします。</p>
+<p>トリガー、グラブ、メニュー キーはキーボードとマウス入力でシミュレーションされます。</p>
 </li>
 </ul>
-<h3 id="ハンドの動きのコントロール">ハンドの動きのコントロール</h3>
-<p><strong>Left/Right Hand Control Key</strong> （デフォルト: <em>左 Shift</em> が左ハンド、<em>Space</em> が右ハンド）を押し続けてそれぞれのハンドをコントロールします。操作キーを押し続けている間、ハンドが表示されます。操作キーが押されなくなると、短い <strong>Hand Hide Timeout</strong> の後にハンドは表示されなくなります。</p>
-<p>ハンドは<a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a>内、または <strong>Toggle Left/Right Hand Key</strong> （デフォルト: <em>T</em> が左ハンド、<em>Y</em> が右ハンド）を押すことで、永続的に表示を切り替えられます。Toggle キーを再度押すと、再度ハンドの表示を消すことができます。</p>
-<p>マウスの動きは、ビュー内でハンドの動きとなります。ハンドは、<strong>mouse wheel</strong> を使ってカメラから遠ざけたり近づけたりすることができます。</p>
-<p>マウスを使用してハンドを回転させるには、<strong>Left / Right Hand Control Key</strong>（<em>左 Shift</em> か <em>Space</em>）<em>と</em> <strong>Hand Rotate Button</strong>（デフォルト: <em>ctrl</em> ボタン）の両方を押し、マウスを動かしてハンドを回転させます。入力シミュレーション プロファイルの <strong>Mouse Hand Rotation Speed</strong> 設定を変更することにより、ハンドの回転速度を設定できます。</p>
+<h3 id="コントローラーの動作のシミュレーション">コントローラーの動作のシミュレーション</h3>
+<p><strong>Left/Right Controller Manipulation Key (左右のコントローラー操作キー)</strong> （デフォルト: <em>左 Shift</em> が左コントローラー、<em>Space</em> が右コントローラー）を押し続けてそれぞれのコントローラーの制御を得ます。操作キーを押し続けている間、コントローラーが表示されます。操作キーが押されなくなると、短い <strong>Controller Hide Timeout</strong> の後にハンドは表示されなくなります。</p>
+<p><a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a>内、または <strong>Toggle Left/Right Controller Key</strong> （デフォルト: <em>T</em> が左、<em>Y</em> が右）を押すことで、コントローラーを表示してカメラに対する相対位置を固定できます。Toggle キーを再度押すと、再度コントローラーの表示を消すことができます。コントローラーを操作するには、<strong>Left/Right Controller Manipulation Key</strong> を押し続ける必要があります。<strong>Left/Right Controller Manipulation Key</strong> をダブル タップすることでもコントローラーのオン オフを切り替えられます。</p>
+<p>マウスの動きによって、ビュー平面内でコントローラーが動きます。コントローラーは、<strong>マウス ホイール</strong> を使ってカメラから遠ざけたり近づけたりすることができます。</p>
+<p>マウスを使用してコントローラーを回転させるには、<strong>Left / Right Controller Manipulation Key</strong>（<em>左 Shift</em> か <em>Space</em>）<em>と</em> <strong>Controller Rotate Button (コントローラー回転ボタン)</strong>（デフォルト: <em>左 Ctrl</em> ボタン）の両方を押し、マウスを動かしてコントローラーを回転させます。入力シミュレーション プロファイルの <strong>Mouse Controller Rotation Speed</strong> 設定を変更することにより、コントローラーの回転速度を設定できます。</p>
 <p>全てのハンドの配置（ハンドをデフォルトの状態にリセットすることも含む）は<a href="#%E5%85%A5%E5%8A%9B%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6">入力シミュレーション ツール ウィンドウ</a>でも変更することができます。</p>
 <h3 id="追加のプロファイル設定">追加のプロファイル設定</h3>
 <ul>
-<li><strong>Hand Depth Multiplier</strong> は、マウス スクロール ホイールの深さの動きの感度を制御します。数値を大きくすると、ハンドのズームが速くなります。</li>
-<li><strong>Default Hand Distance</strong> は、カメラからのハンドの初期距離です。 <strong>Reset</strong> ボタンのハンドをクリックすると、ハンドもこの距離に配置されます。</li>
-<li><strong>Hand Jitter Amount</strong> は、ランダムな動きをハンドに追加します。この機能を使用して、デバイス上の不正確なハンドの追跡をシミュレートし、ノイズの多い入力でインタラクションが適切に機能することを確認できます。</li>
+<li><strong>Controller Depth Multiplier</strong> は、マウス スクロール ホイールによるデプス方向の動きの感度を制御します。数値を大きくすると、コントローラーのズームが速くなります。</li>
+<li><strong>Default Controller Distance</strong> は、カメラからのコントローラーの初期距離です。 <strong>Reset</strong> ボタンのコントローラーをクリックすると、コントローラーもこの距離に配置されます。</li>
+<li><strong>Controller Jitter Amount</strong> は、ランダムな動きをコントローラーに追加します。この機能を使用して、デバイス上の不正確なコントローラーの追跡をシミュレートし、ノイズの多い入力でインタラクションが適切に機能することを確認できます。</li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uRYfwuqsjBQ" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 <h3 id="ハンド-ジェスチャ">ハンド ジェスチャ</h3>
 <p>ピンチ、グラブ、指差しなどのハンド ジェスチャをシミュレートできます。</p>
 <ol>
-<li><p>最初に、 <strong>Left/Right Hand Control Key</strong> (<em>左 Shift</em> か <em>Space</em>) を使ってハンドを有効にしてください。</p>
-<p>別の方法としては、Toggle キー (<em>T</em> か <em>Y</em>) を使ってハンドの on/off を切り替えることもできます。</p>
+<li><p><strong>Left/Right Controller Manipulation Key</strong> (<em>左 Shift</em> か <em>Space</em>) を使ってハンドを有効にしてください。</p>
 </li>
 <li><p>操作の間、マウスのボタンを押し続けることによってハンド ジェスチャを実行することができます。</p>
 </li>
@@ -182,7 +199,7 @@
 </div>
 <h3 id="片手での操作">片手での操作</h3>
 <ol>
-<li><strong>Left/Right Hand Control Key</strong> (<em>左 Shift</em> か <em>Space</em>) を押し続けてください</li>
+<li><strong>Left/Right Controller Manipulation Key</strong> (<em>左 Shift</em> か <em>Space</em>) を押し続けてください</li>
 <li>オブジェクトをポイントしてください</li>
 <li>マウスのボタンを押し続けるとピンチ操作となります</li>
 <li>マウスでオブジェクトを動かしてください</li>
@@ -190,18 +207,19 @@
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rM0xaHam6wM" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 <h3 id="両手での操作">両手での操作</h3>
-<p>オブジェクトを両手で操作するには、ハンドを永続化するモードが推奨されます</p>
+<p>オブジェクトを両手で操作するには、ハンドを永続化するモードが推奨されます。</p>
 <ol>
-<li>Toggle キー（<em>T/Y</em>）を押すことで両手の表示を切り替えることができます</li>
-<li>１回に１つのハンドを操作します
+<li>Toggle キー（<em>T/Y</em>）を押すことで両手の表示を切り替えることができます。</li>
+<li>１回に１つのハンドを操作します。
 <ol>
-<li><strong>Space</strong> を押し続けて右ハンドを操作します</li>
-<li>グラブしたいオブジェクトにハンドを動かします</li>
-<li><strong>マウスの左クリック</strong>を押して <em>Pinch</em> ジェスチャを有効にします。永続化モードではマウスのボタンを離すまでジェスチャが有効になります</li>
+<li><strong>Space</strong> を押し続けて右ハンドを操作します。</li>
+<li>グラブしたいオブジェクトにハンドを動かします。</li>
+<li><strong>マウスの左クリック</strong>を押して <em>Pinch</em> ジェスチャを有効にします。</li>
+<li><strong>Space</strong> を放して、右ハンドの操作を止めます。ハンドは操作されなくなるので、その場に <em>Pinch</em> ジェスチャで固定されます。</li>
 </ol>
 </li>
-<li>同じ手順をもう片方のハンドで繰り返します。同じオブジェクトの別のポイントをグラブします</li>
-<li>これで両手で同じオブジェクトをグラブした状態になるので、どちらかのハンドを動かして両手での操作を行います</li>
+<li>同じ手順をもう片方のハンドで繰り返します。同じオブジェクトの別のポイントをグラブします。</li>
+<li>これで両手で同じオブジェクトをグラブした状態になるので、どちらかのハンドを動かして両手での操作を行います。</li>
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Qol5OFNfN14" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 <h3 id="ggv-gaze-gesture-and-voice-インタラクション">GGV (Gaze, Gesture, and Voice) インタラクション</h3>
@@ -222,8 +240,10 @@
 <li>マウスのクリックを放し、インタラクションを停止します</li>
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6841rRMdqWw" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h3 id="モーション-コントローラーの操作">モーション コントローラーの操作</h3>
+<p>シミュレーションのモーション コントローラーは、多関節ハンドと同じ方法で操作できます。操作モデルは多関節ハンドのファー インタラクションに似ていますが、トリガー、グラブ、メニュー キーはそれぞれ<em>マウスの左クリック</em>, <em>G</em>, <em>M</em> に割り当てられています。</p>
 <h3 id="アイ-トラッキング">アイ トラッキング</h3>
-<p><a href="../EyeTracking/EyeTracking_BasicSetup.html#simulating-eye-tracking-in-the-unity-editor">Eye tracking simulation</a> は、<a href="#enabling-the-input-simulation-service">Input Simulation Profile</a> の <strong>Simulate Eye Position</strong> オプションをチェックすることで有効になります。これは GGV スタイルのインタラクションでは使用すべきではありません（ですので、 <strong>Hand Simulation Mode</strong> が <em>Articulated</em> にセットされていることを確認してください）</p>
+<p><a href="../EyeTracking/EyeTracking_BasicSetup.html#simulating-eye-tracking-in-the-unity-editor">Eye tracking simulation</a> は、<a href="#enabling-the-input-simulation-service">Input Simulation Profile</a> の <strong>Simulate Eye Position</strong> オプションをチェックすることで有効になります。これは GGV やモーション コントローラー操作では使用すべきではありません（ですので、 <strong>Default Controller Simulation Mode</strong> が <em>Articulated Hand</em> に設定されていることを確認してください）。</p>
 <h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="../Input/InputProviders.html">Input System プロファイル</a></li>
