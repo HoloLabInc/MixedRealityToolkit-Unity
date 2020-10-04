@@ -13,17 +13,17 @@ keywords: Unity,HoloLens, HoloLens 2, Mixed Reality, development, MRTK,
 > [!CAUTION]
 > MRTK や Unity での Mixed Reality 開発が初めての場合は、[Unity 開発ジャーニー](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2) のはじめから始めることをおすすめします。Unity 開発ジャーニーは **MRTK の開始点としておすすめです**。特に、インストール、コア コンセプト、Unity での MRTK の使用法について説明するために作られました。
 
-## Prerequisites
+## 前提条件
 
-To get started with the Mixed Reality Toolkit, you will need:
+Mixed Reality Toolkit を始めるには、次のものが必要です。
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 * [Unity 2018.4 または Unity 2019.4](https://unity3d.com/get-unity/download/archive)
+
   MRTKは、 Unity 2018 で IL2CPP と .NET scripting backends の両方をサポートします。  
   MRTK 2.5 から始める場合、Unity 2018 を使う方には **Unity 2018.4.13f1 以降が強く推奨されます**。Unity 2018.4 の以前のバージョンもサポートはされますが、セットアップや Unity 2019 へのアップグレードに追加のステップが必要となります。
 
-* [Windows SDK 18362+](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
-
+* [Windows SDK 18362+](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
   これは WMR、HoloLens 1、または HoloLens 2 向けの UWP アプリを構築する場合に必要です。OpenVR 向けに構築する場合は不要です。
 

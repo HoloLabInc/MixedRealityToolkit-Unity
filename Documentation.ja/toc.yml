@@ -11,7 +11,7 @@
       href: MRTK_Configuration_Dialog.md
     - name: Getting started with MRTK and XR SDK
       href: GettingStartedWithMRTKAndXRSDK.md
-  - name: Updates and Deployment
+  - name: アップデートとデプロイ
     items: 
     - name: Updating from earlier versions
       href: Updating.md
@@ -23,7 +23,7 @@
     items: 
     - name: Release Notes
       href: ReleaseNotes.md
-    - name: MRTK Packages
+    - name: MRTK パッケージ
       href: Packaging/MRTK_Packages.md
   - name: パフォーマンスとベスト プラクティス
     items: 

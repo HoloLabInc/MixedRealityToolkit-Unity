@@ -1,6 +1,6 @@
 ---
-title: Welcome to MRTK
-description: Landing page for the MRTK-Unity documentation site.
+title: MRTK へようこそ
+description: MRTK-Unity ドキュメント サイト のランディング ページ
 author: hferrone
 ms.author: v-hferrone
 ms.date: 09/9/2020
@@ -8,28 +8,31 @@ ms.localizationpriority: high
 keywords: Unity,HoloLens, HoloLens 2, Mixed Reality, development, MRTK,
 ---
 
-# Welcome to MRTK
+# MRTK へようこそ
 
 ![MRTK Logo](../Documentation/Images/MRTK_Logo_Rev.png)
 
-The Mixed Reality Toolkit (MRTK) is a cross-platform toolkit for building Mixed Reality experiences for Virtual Reality (VR) and Augmented Reality (AR). 
+Mixed Reality Toolkit (MRTK) は Virtual Reality (VR) と Augmented Reality (AR) のための Mixed Reality エクスペリエンスを構築するためのクロスプラットフォームのツールキットです。 
 
-## Development 
+## 開発 
 
-If you're new to MRTK or Mixed Reality development in Unity, we recommend you start at the beginning of our [Unity development journey](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2). The Unity development journey is the **recommended starting point for MRTK**, specifically created to walk you through the installation, core concepts, and usage of MRTK in Unity. 
+MRTK や Unity での Mixed Reality 開発が初めての場合は、[Unity 開発ジャーニー](https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2) のはじめから始めることをおすすめします。Unity 開発ジャーニーは **MRTK の開始点としておすすめです**。特に、インストール、コア コンセプト、Unity での MRTK の使用法について説明するために作られました。 
 
 > [!CAUTION]
-> The Unity development journey currently uses **MRTK version 2.5.0** and **Unity 2019.4**. If you're working with other configurations it's still recommended that you start there, but you can also refer to the [installation instructions](Installation.md).
+> Unity 開発ジャーニーは、現在 **MRTK version 2.5.0** と **Unity 2019.4** を利用しています。他の構成の場合にも、Unity 開発ジャーニーから始めることをおすすめしますが、[インストール手順](Installation.md) もご参照ください。
 
-## Documentation versioning
+## ドキュメントのバージョン
 
-We have complete documentation for all release versions. The **mrtk_development** branch is the latest and greatest but is still in active development. We recommend using the highest numbered release branch for stability. Versions can be selected from the dropdown at the top-right of the screen:
+> [!WARNING]
+> 訳注: 日本語翻訳ページでは最新のリリース バージョンのみをサポートしており、バージョンの切り替えはできません。
+
+全てのリリース バージョンの完全なドキュメントがあります。**mrtk_development** ブランチは最も新しく最も素晴らしいですが、アクティブな開発状態にあります。安定性のために、最も大きい番号のリリース ブランチを使うことをおすすめします。バージョンは画面右上のドロップダウンから選択できます。
 
 ![MRTK version reference](../Documentation/Images/MRTK-Doc-Versions.png)
 
-## Getting help
+## 助けを得る
 
-If you run into issues caused by MRTK or otherwise have questions about how to do something, there are a few resources that can help:
+MRTK による問題に直面した場合や、何かを行うことについての質問がある場合、助けになるリソースがいくつかあります。
 
-* For bug reports, please [file an issue](https://github.com/microsoft/MixedRealityToolkit-Unity/issues/new/choose) on the GitHub repo.
-* For questions, please reach out on either [StackOverflow](https://stackoverflow.com/questions/tagged/mrtk) or the [mixed-reality-toolkit channel](https://holodevelopers.slack.com/messages/C2H4HT858) on Slack. You can join the Slack community via the [automatic invitation sender](https://holodevelopersslack.azurewebsites.net/).
+* バグ レポートの場合は、GitHub のリポジトリに [issue を報告](https://github.com/microsoft/MixedRealityToolkit-Unity/issues/new/choose) してください。
+* 質問の場合は、[StackOverflow](https://stackoverflow.com/questions/tagged/mrtk) または Slack の [mixed-reality-toolkit channel](https://holodevelopers.slack.com/messages/C2H4HT858) を利用してください。Slack コミュニティには [自動招待リンク](https://holodevelopersslack.azurewebsites.net/) から参加できます。
