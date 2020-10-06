@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mixed Reality Toolkit and Unity Package Manager | Mixed Reality Toolkit Documentation </title>
+    <title>Mixed Reality Toolkit &#12392; Unity Package Manager | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Mixed Reality Toolkit and Unity Package Manager | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Mixed Reality Toolkit &#12392; Unity Package Manager | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
@@ -89,21 +89,21 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="mixed-reality-toolkit-and-unity-package-manager">Mixed Reality Toolkit and Unity Package Manager</h1>
+<h1 id="mixed-reality-toolkit-と-unity-package-manager">Mixed Reality Toolkit と Unity Package Manager</h1>
 
-<p>Starting with version 2.5.0, the Microsoft Mixed Reality Toolkit is available using the Unity Package Manager (UPM), on Unity 2019.4 and newer.</p>
-<h2 id="installing-mixed-reality-features-using-the-unity-package-manager">Installing Mixed Reality features using the Unity Package Manager</h2>
-<p>The Unity Package Manager uses a <a href="https://docs.unity3d.com/Manual/upm-manifestPkg.html">manifest file</a> (manifest.json) to determine which packages to install and the registries (servers) from which they can be installed.</p>
+<p>バージョン 2.5.0 から、Unity 2019.4 以降において Microsoft Mixed Reality Toolkit は Unity Package Manager (UPM) を使って利用可能です。</p>
+<h2 id="unity-package-manager-を使った-mixed-reality-機能のインストール">Unity Package Manager を使った Mixed Reality 機能のインストール</h2>
+<p>Unity Package Manager は <a href="https://docs.unity3d.com/Manual/upm-manifestPkg.html">マニフェスト ファイル</a> (manifest.json) を利用して、どのパッケージをインストールしてどのレジストリ（サーバー）からインストールされうるかを決定します。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>As of version 2.5.0 of the MRTK, initial registration of the server and packages is a per-project, manual procedure, please read the following sections for detailed instructions.</p>
-<p>This process is required due to UPM's use of legacy npm search functionality (/-/all) that is not supported by Azure DevOps.</p>
+<p>MRTK バージョン 2.5.0 現在、サーバーとパッケージの初期登録はプロジェクトごとの手動手順です。詳細な手順は以下のセクションをご覧ください。</p>
+<p>UPM が Azure DevOps でサポートされていないレガシーの npm 検索機能 (/-/all) を使用しているため、このプロセスが必要です。</p>
 </div>
-<h3 id="registering-the-mixed-reality-component-server">Registering the Mixed Reality component server</h3>
-<p>For each project that will be using the Microsoft Mixed Reality Toolkit, the <code>manifest.json</code> file (in the Packages folder) will need to have the Mixed Reality scoped registry added. The following illustrate how to properly modify <code>manifest.json</code> to support Mixed Reality.</p>
+<h3 id="mixed-reality-コンポーネント-サーバーの登録">Mixed Reality コンポーネント サーバーの登録</h3>
+<p>Microsoft Mixed Reality Toolkit を使用する各プロジェクトでは、(Packages フォルダ内の) <code>manifest.json</code> ファイルに Mixed Reality の Scoped Registry を追加する必要があります。以下は、Mixed Reality をサポートするために <code>manifest.json</code> を適切に変更する方法を説明しています。</p>
 <ol>
-<li>Open <code>&lt;projectRoot&gt;/Packages/manifest.json</code> in a text editor, such as <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
-<li>At the top of the manifest file, add the Mixed Reality server to the scoped registry section and save the file.</li>
+<li><code>&lt;projectRoot&gt;/Packages/manifest.json</code> を <a href="https://code.visualstudio.com/">Visual Studio Code</a> のようなテキスト エディターで開きます。</li>
+<li>マニフェスト ファイルの先頭で Scoped Registry のセクションに Mixed Reality サーバーを追加し、ファイルを保存します。</li>
 </ol>
 <pre><code>{
   &quot;scopedRegistries&quot;: [
@@ -117,40 +117,41 @@
     }
   ],
 </code></pre>
-<h3 id="adding-mrtk-packages">Adding MRTK packages</h3>
-<p>Once the Microsoft Mixed Reality scoped registry has been added to the manifest, the MRTK packages can be specified.</p>
-<p>The <a href="Packaging/MRTK_Packages.html#unity-package-manager">Unity Package Manager</a> section of the <a href="Packaging/MRTK_Packages.html">Mixed Reality Toolkit package</a> article describes the available MRTK packages, their contents and the scenarios for their use.</p>
-<p>To add an MRTK package, modify the dependencies section of the <code>Packages/manifest.json</code> file. The following example illustrates adding the foundation, tools and examples packages, the standard assets package will be added automatically as a dependency of the foundation.</p>
+<p><a name="adding-mrtk-packages"></a></p>
+<h3 id="mrtk-パッケージの追加">MRTK パッケージの追加</h3>
+<p>Microsoft Mixed Reality の scoped registry がマニフェストに追加されると、MRTK のパッケージを指定できるようになります。</p>
+<p><a href="Packaging/MRTK_Packages.html">Mixed Reality Toolkit package</a> ページの <a href="Packaging/MRTK_Packages.html#unity-package-manager">Unity Package Manager</a> セクションには、利用可能な MRTK パッケージ、内容、利用シナリオが書かれています。</p>
+<p>MRTK パッケージを追加するには、<code>Packages/manifest.json</code> ファイルの dependencies セクションを変更します。以下の例は Foundation, Tools, Examples パッケージの追加方法を示しています。Standard Assets パッケージは Foundation の依存先として自動的に追加されます。</p>
 <pre><code>  &quot;dependencies&quot;: {
     &quot;com.microsoft.mixedreality.toolkit.foundation&quot;: &quot;2.5.0&quot;,
     &quot;com.microsoft.mixedreality.toolkit.tools&quot;: &quot;2.5.0&quot;,
     &quot;com.microsoft.mixedreality.toolkit.examples&quot;: &quot;2.5.0&quot;,
 </code></pre>
-<h2 id="managing-mixed-reality-features-with-the-unity-package-manager">Managing Mixed Reality features with the Unity Package Manager</h2>
-<p>Once a Mixed Reality Toolkit package has been added to the package manifest, it can be managed using the Unity Package Manager user interface.</p>
+<h2 id="mixed-reality-機能を-unity-package-manager-で管理する">Mixed Reality 機能を Unity Package Manager で管理する</h2>
+<p>Mixed Reality Toolkit パッケージがパッケージ マニフェストに追加されると、Unity Package Manager のユーザー インターフェイスを使って管理することができます。</p>
 <p><img src="../Documentation/Images/Packaging/MRTK_FoundationUPM.png" alt="MRTK Foundation UPM Package"></p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>If a Mixed Reality Toolkit package is removed using the Unity Package Manager, it will have to be re-added using the <a href="#adding-mrtk-packages">previously described steps</a>.</p>
+<p>もし Unity Package Manager を使用して Mixed Reality Toolkit パッケージを削除した場合、<a href="#adding-mrtk-packages">前述の手順</a> を使用して再度追加する必要があります。</p>
 </div>
-<h3 id="using-mixed-reality-toolkit-examples">Using Mixed Reality Toolkit examples</h3>
-<p>Unlike when using asset package (.unitypackage) files, <code>com.microsoft.mixedreality.toolkit.examples</code> and <code>com.microsoft.mixedreality.toolkit.handphysicsservice</code> do not automatically import the example scenes and assets.</p>
-<p>To utilize one or more of the examples, please use the following steps:</p>
+<h3 id="mixed-reality-toolkit-のサンプルを使う">Mixed Reality Toolkit のサンプルを使う</h3>
+<p>アセット パッケージ (.unitypackage) ファイルを使用する場合とは異なり、<code>com.microsoft.mixedreality.toolkit.examples</code> や <code>com.microsoft.mixedreality.toolkit.handphysicsservice</code> はサンプル シーンやアセットを自動的にインポートしません。</p>
+<p>1つ以上のサンプルを利用するには、以下の手順を行ってください。</p>
 <ol>
-<li>In the Unity Editor, navigate to <code>Window</code> &gt; <code>Package Manager</code></li>
-<li>In the list of packages, select <code>Mixed Reality Toolkit Examples</code></li>
-<li>Locate the desired sample(s) in the <code>Samples</code> list</li>
-<li>Click <code>Import into Project</code></li>
+<li>Unity Editor で <code>Window</code> &gt; <code>Package Manager</code> を開く</li>
+<li>パッケージのリストで <code>Mixed Reality Toolkit Examples</code> を選択する</li>
+<li><code>Samples</code> リストから目的のサンプルを探す</li>
+<li><code>Import into Project</code> をクリックする</li>
 </ol>
 <p><img src="../Documentation/Images/Packaging/MRTK_ExamplesUpm.png" alt="Importing samples"></p>
-<p>When an example package is updated, Unity provides the option to update imported samples.</p>
+<p>サンプル パッケージが更新されると、Unity はインポートされたサンプルを更新するオプションを提供します。</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Updating an imported sample will overwrite any changes that have been made to that sample and the associated assets.</p>
+<p>インポートしたサンプルを更新すると、そのサンプルと関連するアセットに加えられた変更はすべて上書きされます。</p>
 </div>
-<h2 id="see-also">See Also</h2>
+<h2 id="関連項目">関連項目</h2>
 <ul>
-<li><a href="Packaging/MRTK_Packages.html">Mixed Reality Toolkit packages</a></li>
+<li><a href="Packaging/MRTK_Packages.html">Mixed Reality Toolkit パッケージ</a></li>
 </ul>
 </article>
           </div>

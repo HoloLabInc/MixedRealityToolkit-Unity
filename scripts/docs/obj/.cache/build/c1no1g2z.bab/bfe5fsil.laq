@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Writing and running tests in MRTK | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Writing and running tests in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="writing-and-running-tests-in-mrtk" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="1">Writing and running tests in MRTK</h1>
+
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="3">To ensure MRTK is reliable, MRTK has a set of tests to ensure that changes to the code does not regress existing behavior. Having good test coverage in a big codebase like MRTK is crucial for stability and having confidence when making changes.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="5">MRTK uses the <a href="https://docs.unity3d.com/Manual/testing-editortestsrunner.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="5">Unity Test Runner</a> which uses a Unity
+integration of <a href="https://nunit.org/" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="6">NUnit</a>. This guide will provide a starting point on how to add tests to MRTK. It will not explain the
+<a href="https://docs.unity3d.com/Manual/testing-editortestsrunner.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="7">Unity Test Runner</a> and
+<a href="https://nunit.org/" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="8">NUnit</a> which can be looked up in the links provided.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="10">Before submitting a pull request, make sure to:</p>
+<ol sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="12">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="12"><p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="12">Run the tests locally so your changes don't regress existing behavior (completing PRs won't be allowed if any tests fail).</p>
+</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="14"><p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="14">If fixing a bug, write a test to test the fix and ensure that future code modifications won't break it again.</p>
+</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="16"><p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="16">If writing a feature, write new tests to prevent upcoming code changes breaking this feature.</p>
+</li>
+</ol>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="18">Currently playmode tests are meant to be run in Unity 2018.4 and may fail in other versions of Unity</p>
+<h2 id="running-tests" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="20">Running tests</h2>
+<h3 id="unity-editor" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="22">Unity editor</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="24">The <a href="https://docs.unity3d.com/Manual/testing-editortestsrunner.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="24">Unity Test Runner</a> can be found under <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="24">Window</strong> &gt; <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="24">General</strong> &gt; <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="24">Test Runner</strong> and will show all available MRTK play and edit mode tests.</p>
+<h3 id="command-line" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="26">Command line</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="28">Tests can also be run by a <a href="https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-6" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="28">powershell</a> script located at <code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="28">Scripts\test\run_playmode_tests.ps1</code>. This will run the playmode tests exactly as they are executed on github / CI (see below), and print results. Here are some examples of how to run the script</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="30">Run the tests on the project located at H:\mrtk.dev, with Unity 2018.4 (for example Unity 2018.4.26f1)</p>
+<pre><code class="lang-ps" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="32">.\run_playmode_tests.ps1 H:\mrtk.dev -unityExePath = &quot;C:\Program Files\Unity\Hub\Editor\2018.4.26f1\Editor\Unity.exe&quot;
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="36">Run the tests on the project located at H:\mrtk.dev, with Unity 2018.4, output results to C:\playmode_test_out</p>
+<pre><code class="lang-ps" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="38">.\run_playmode_tests.ps1 H:\mrtk.dev -unityExePath = &quot;C:\Program Files\Unity\Hub\Editor\2018.4.26f1\Editor\Unity.exe&quot; -outFolder &quot;C:\playmode_test_out\&quot;
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="42">It's also possible to run the playmode tests multiple times via the <code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="42">run_repeat_tests.ps1</code> script. All parameters used in <code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="42">run_playmode_tests.ps1</code> may be used.</p>
+<pre><code class="lang-ps" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="44">.\run_repeat_tests.ps1 -Times 5
+</code></pre>
+<h3 id="pull-request-validation" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="48">Pull request validation</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="50">MRTK's CI will build MRTK in all configurations and run all edit and play mode tests. CI can be triggered by posting a comment on the github PR <code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="50">/azp run mrtk_pr</code> if the user has sufficient rights. CI runs can be seen in the 'checks' tab of the PR.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="52">Only after all of the tests have passed successfully can the PR be merged into mrtk_development.</p>
+<h3 id="stress-tests--bulk-tests" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="54">Stress tests / bulk tests</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="56">Sometimes tests will only fail occasionally which can be frustrating to debug.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="58">To have multiple test runs locally, modify the according test scripts. The following python script should make this scenario more convenient.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="60">Prerequisite for running the python script is having <a href="https://www.python.org/downloads/" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="60">Python 3.X installed</a>.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="62">For a single test that needs to be executed multiple times:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="64">[UnityTest]
+public IEnumerator MyTest() {...}
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="69">Run the following from a command line (<a href="https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="69">PowerShell</a> is recommended)</p>
+<pre><code class="lang-powershell" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="71">cd scripts\tests
+# Repeat the test 5 times. Default is 100
+python .\generate_repeat_tests.py -n 5 -t MyTest
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="77">Copy and paste the output into your test file. The following script is for running multiple tests in sequence:</p>
+<pre><code class="lang-powershell" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="79">cd scripts\tests
+# Repeat the test 5 times. Default is 100
+python .\generate_repeat_tests.py -n 5 -t MyTest MySecondTest
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="85">The new test file should now contain</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="87">[UnityTest]
+public IEnumerator A1MyTest0(){ yield return MyTest();}
+[UnityTest]
+public IEnumerator A2MyTest0(){ yield return MyTest();}
+[UnityTest]
+public IEnumerator A3MyTest0(){ yield return MyTest();}
+[UnityTest]
+public IEnumerator A4MyTest0(){ yield return MyTest();}
+[UnityTest]
+public IEnumerator MyTest() {...}
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="100">Open the test runner and observe the new tests that can now be called repeatedly.</p>
+<h2 id="writing-tests" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="102">Writing tests</h2>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="104">There are two types of tests that can be added for new code</p>
+<ul sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="106">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="106">Play mode tests</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="107">Edit mode tests</li>
+</ul>
+<h3 id="play-mode-tests" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="109">Play mode tests</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="111">MRTK play mode tests have the ability to test how your new feature responds to different input sources such as hands or eyes.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="113">New play mode tests can inherit <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Tests.BasePlayModeTests.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="113">BasePlayModeTests</a> or the skeleton below can be used.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="115">To create a new play mode test:</p>
+<ul sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="117">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="117">Navigate to Assets &gt; MRTK &gt; Tests &gt; PlayModeTests</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="118">Right click, Create &gt; Testing &gt; C# Test Script</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="119">Replace the default template with the skeleton below</li>
+</ul>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="121">#if !WINDOWS_UWP
+// When the .NET scripting backend is enabled and C# projects are built
+// The assembly that this file is part of is still built for the player,
+// even though the assembly itself is marked as a test assembly (this is not
+// expected because test assemblies should not be included in player builds).
+// Because the .NET backend is deprecated in 2018 and removed in 2019 and this
+// issue will likely persist for 2018, this issue is worked around by wrapping all
+// play mode tests in this check.
+
+using Microsoft.MixedReality.Toolkit.Input;
+using Microsoft.MixedReality.Toolkit.Utilities;
+using NUnit.Framework;
+using System;
+using System.Collections;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.TestTools;
+
+namespace Microsoft.MixedReality.Toolkit.Tests
+{
+    class ExamplePlayModeTests
+    {
+        // This method is called once before we enter play mode and execute any of the tests
+        // do any kind of setup here that can't be done in playmode
+        public void Setup()
+        {
+            // eg installing unity packages is only possible in edit mode
+            // so if a test requires TextMeshPro we will need to check for the package before entering play mode
+            PlayModeTestUtilities.InstallTextMeshProEssentials();
+        }
+
+        // Do common setup for each of your tests here - this will be called for each individual test after entering playmode
+        // Note that this uses UnitySetUp instead of [SetUp] because the init function needs to await a frame passing
+        // to ensure that the MRTK system has had the chance to fully set up before the test runs.
+        [UnitySetUp]
+        public IEnumerator Init()
+        {
+            // in most play mode test cases you would want to at least create an MRTK GameObject using the default profile
+            TestUtilities.InitializeMixedRealityToolkit(true);
+            yield return null;
+        }
+
+        // Destroy the scene - this method is called after each test listed below has completed
+        // Note that this uses UnityTearDown instead of [TearDown] because the init function needs to await a frame passing
+        // to ensure that the MRTK system has fully torn down before the next test setup-&gt;run cycle starts.
+        [UnityTearDown]
+        public IEnumerator TearDown()
+        {
+            PlayModeTestUtilities.TearDown();
+            yield return null;
+        }
+
+        #region Tests
+
+        /// &lt;summary&gt;
+        /// Skeleton for a new MRTK play mode test.
+        /// &lt;/summary&gt;
+        [UnityTest]
+        public IEnumerator TestMyFeature()
+        {
+            // ----------------------------------------------------------
+            // EXAMPLE PLAY MODE TEST METHODS
+            // ----------------------------------------------------------
+            // Getting the input system
+            // var inputSystem = PlayModeTestUtilities.GetInputSystem();
+
+            // Creating a new test hand for input
+            // var rightHand = new TestHand(Handedness.Right);
+            // yield return rightHand.Show(new Vector3(0, 0, 0.5f));
+
+            // Moving the new test hand
+            // We are doing a yield return here because moving the hand to a new position
+            // requires multiple frames to complete the action.
+            // yield return rightHand.MoveTo(new Vector3(0, 0, 2.0f));
+
+            // Getting a specific pointer from the hand
+            // var linePointer = PointerUtils.GetPointer&lt;LinePointer&gt;(Handedness.Right);
+            // Assert.IsNotNull(linePointer);
+            // ---------------------------------------------------------
+
+            // Your new test here
+            yield return null;
+        }
+        #endregion
+    }
+}
+#endif
+</code></pre>
+<h3 id="edit-mode-tests" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="211">Edit mode tests</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="213">Edit mode tests are executed in Unity's edit mode and can be added under the <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="213">MRTK</strong> &gt; <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="213">Tests</strong> &gt; <strong sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="213">EditModeTests</strong> folder in the Mixed Reality Toolkit repo.
+To create a new test the following template can be used:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="216">// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+using NUnit.Framework;
+
+namespace Microsoft.MixedReality.Toolkit.Tests
+{
+    class EditModeExampleTest
+    {
+        [Test]
+        /// the name of this method will be used as test name in the unity test runner
+        public void TestEditModeExampleFeature()
+        {
+
+        }
+    }
+}
+</code></pre>
+<h3 id="test-naming-conventions" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="236">Test naming conventions</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="238">Tests should generally be named based on the class they are testing, or the scenario that they are testing.
+For example, given a to-be-tested class:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="241">namespace Microsoft.MixedReality.Toolkit.Input
+{
+    class InterestingInputClass
+    {
+    }
+}
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="250">Consider naming the test</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="252">namespace Microsoft.MixedReality.Toolkit.Tests.Input
+{
+    class InterestingInputClassTest
+    {
+    }
+}
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="261">Consider placing the test in a folder hierarchy that is similar to its corresponding non-test file.
+For example:</p>
+<pre><code class="lang-md" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="264">Non-Test: Assets/MRTK/Core/Utilities/InterestingUtilityClass.cs
+Test: Assets/MRTK/Tests/EditModeTests/Core/Utilities/InterestingUtilityClassTest.cs
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="269">This is to ensure that there's a clear an obvious way of finding each class's corresponding test class,
+if such a test class exists.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="272">Placement of scenario based tests is less defined - if the test exercises the overall input system,
+for example, consider putting it into an &quot;InputSystem&quot; folder in the corresponding edit mode
+or play mode test folder.</p>
+<h3 id="test-script-icons" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="276">Test script icons</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="278">When adding a new test, please modify the script to have the correct MRTK icon. There's an easy MRTK tool to do so:</p>
+<ol sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="280">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="280">Go go the Mixed Reality Toolkit menu item</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="281">Click on Utilities, then Update, then Icons</li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="282">Click on Tests, and the updater will run automatically, updating any test scripts missing their icons</li>
+</ol>
+<h3 id="mrtk-utility-methods" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="284">MRTK Utility methods</h3>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="286">This section shows some of the commonly used code snippets / methods when writing tests for MRTK.</p>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="288">There are two Utility classes that help with setting up MRTK and testing interactions with components in MRTK</p>
+<ul sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="290">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="290"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Tests.TestUtilities.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="290"><code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="290">TestUtilities</code></a></li>
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="291"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Tests.PlayModeTestUtilities.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="291"><code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="291">PlayModeTestUtilities</code></a></li>
+</ul>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="293">TestUtilities provide the following methods to set up your MRTK scene and GameObjects:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="295">/// creates the mrtk GameObject and sets the default profile if passed param is true
+TestUtilities.InitializeMixedRealityToolkit()
+
+/// creates an empty scene prior to adding the mrtk GameObject to it
+TestUtilities.InitializeMixedRealityToolkitAndCreateScenes();
+
+/// sets the initial playspace transform and camera position
+TestUtilities.InitializePlayspace();
+
+/// destroys previously created mrtk GameObject and playspace
+TestUtilities.ShutdownMixedRealityToolkit();
+</code></pre>
+<p sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="309">Please refer to the API docs of <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Tests.TestUtilities.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="309"><code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="309">TestUtilities</code></a> and
+<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Tests.PlayModeTestUtilities.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="310"><code sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="310">PlayModeTestUtilities</code></a> for further methods
+of these util classes as they're extended on a regular basis while new tests get added to MRTK.</p>
+<h2 id="see-also" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="313">See also</h2>
+<ul sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="315">
+<li sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="315"><a href="DevDocGuide.html" sourcefile="../../Documentation/Contributing/UnitTests.md" sourcestartlinenumber="315">Documentation portal generation guide</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Contributing/UnitTests.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

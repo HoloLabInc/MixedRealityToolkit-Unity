@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tooltip&#65288;&#12484;&#12540;&#12523;&#12481;&#12483;&#12503;&#65289; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tooltip&#65288;&#12484;&#12540;&#12523;&#12481;&#12483;&#12503;&#65289; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tooltipツールチップ" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="1">Tooltip（ツールチップ）</h1>
+
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="3"><img src="../Documentation/Images/Tooltip/MRTK_Tooltip_Main.png" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="3" alt="Tooltip"></p>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="5">Tooltip は通常、オブジェクトを詳しく調べるときのヒントや追加情報を伝えるために使用されます。Tooltip を使用して、物理環境内のオブジェクトにアノテーションを付けることができます。</p>
+<h2 id="tooltip-の使い方" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="7">Tooltip の使い方</h2>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="9">Tooltip は、<a href="%E3%83%92%E3%82%A8%E3%83%A9%E3%83%AB%E3%82%AD%E3%83%BC" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="9">Hierarchy</a> に直接追加し、オブジェクトをターゲットとすることができます。</p>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">この方法を使用するには、単にゲーム オブジェクトと Tooltip プレハブ (Assets/MRTK/SDK/Features/UX/Prefabs/Tooltips) をシーンの <a href="%E3%83%92%E3%82%A8%E3%83%A9%E3%83%AB%E3%82%AD%E3%83%BC" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">Hierarchy</a> に追加するだけです。プレハブのインスペクタ パネルで、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ToolTip.html" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11"><code sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">ToolTip</code></a> スクリプトを展開します。Tip State を選択し、Tooltip の設定を行います。Tooltip のテキスト フィールドにそれぞれのテキストを入力します。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ToolTipConnector.html" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11"><code sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">ToolTipConnector</code></a> スクリプトを展開し、Tooltip を持たせるオブジェクトを <a href="%E3%83%92%E3%82%A8%E3%83%A9%E3%83%AB%E3%82%AD%E3%83%BC" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">Hierarchy</a> から <em sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="11">Target</em> というフィールドにドラッグします。これにより、Tooltip がオブジェクトにアタッチされます。
+<img src="../Documentation/Images/Tooltip/MRTK_Tooltip_Connector.png" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="12" alt="Tooltip"></p>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="14">この使用方法は、Tooltip が常に表示される場合や、Tooltip コンポーネントの Tooltip State プロパティをスクリプトで変更して表示/非表示を切り替える場合を想定しています。</p>
+<h2 id="動的に-tooltip-を作成する" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="16">動的に Tooltip を作成する</h2>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="18">Tooltip は、事前に設定しておいてタップやフォーカスによって表示と非表示を行うだけでなく、実行時にオブジェクトに動的に追加することもできます。 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ToolTipSpawner.html" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="18"><code sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="18">ToolTipSpawner</code></a> スクリプトを任意のゲーム オブジェクトに追加するだけです。スクリプトのインスペクターにて、設定された期間が過ぎると Tooltip が消えるように生存期間を設定したり、現れたり消えたりする際の遅延時間を設定したりできます。Tooltip は背景の見た目のようなスタイルのプロパティも備えており、ToolTipSpawner スクリプトで設定できます。デフォルトでは、Tooltip は ToolTipSpawner スクリプトを持つオブジェクトに固定されます。これは、アンカー フィールドに GameObject を割り当てることで変更できます。</p>
+<h2 id="サンプル-シーン" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="20">サンプル シーン</h2>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="22">サンプル シーン (Assets/MRTK/Examples/Demos/UX/Tooltips/Scenes) では、Tooltip のさまざまな例を見つけることができます。</p>
+<p sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="24"><img src="../Documentation/Images/Tooltip/MRTK_Tooltip_Examples.png" sourcefile="../../Documentation.ja/README_Tooltip.md" sourcestartlinenumber="24" alt="Tooltip"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_Tooltip.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
