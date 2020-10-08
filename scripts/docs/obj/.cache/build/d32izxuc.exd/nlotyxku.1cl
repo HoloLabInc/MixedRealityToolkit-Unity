@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema
+   | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema
+   | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema">
+  
+  <h1 id="Microsoft_MixedReality_Toolkit_Utilities_Gltf_Schema" data-uid="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema" class="text-break">Namespace Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessor.html">GltfAccessor</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessor.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessor.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparse.html">GltfAccessorSparse</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparse.yml" sourcestartlinenumber="2">Sparse storage of attributes that deviate from their initialization value.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparse.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseIndices.html">GltfAccessorSparseIndices</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseIndices.yml" sourcestartlinenumber="2">Indices of those attributes that deviate from their initialization value.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.indices.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseIndices.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.indices.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseValues.html">GltfAccessorSparseValues</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseValues.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.values.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorSparseValues.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.sparse.values.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimation.html">GltfAnimation</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimation.yml" sourcestartlinenumber="2">A keyframe animation.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimation.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannel.html">GltfAnimationChannel</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannel.yml" sourcestartlinenumber="2">Targets an animation's sampler at a node's property.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannel.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelTarget.html">GltfAnimationChannelTarget</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelTarget.yml" sourcestartlinenumber="2">The index of the node and TRS property that an animation channel targets.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.target.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelTarget.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.target.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationSampler.html">GltfAnimationSampler</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationSampler.yml" sourcestartlinenumber="2">Combines input and output accessors with an interpolation algorithm to define a keyframe graph (but not its target).
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationSampler.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.sampler.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAssetInfo.html">GltfAssetInfo</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAssetInfo.yml" sourcestartlinenumber="2">Metadata about the glTF asset.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/asset.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAssetInfo.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/asset.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBuffer.html">GltfBuffer</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBuffer.yml" sourcestartlinenumber="2">A buffer points to binary geometry, animation, or skins.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/buffer.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBuffer.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/buffer.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferView.html">GltfBufferView</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferView.yml" sourcestartlinenumber="2">A view into a buffer generally representing a subset of the buffer.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/bufferView.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferView.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/bufferView.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCamera.html">GltfCamera</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCamera.yml" sourcestartlinenumber="2">A camera's projection.  A node can reference a camera to apply a transform
+to place the camera in the scene
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCamera.yml" sourcestartlinenumber="4">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraOrthographic.html">GltfCameraOrthographic</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraOrthographic.yml" sourcestartlinenumber="2">An orthographic camera containing properties to create an orthographic
+projection matrix.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.orthographic.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraOrthographic.yml" sourcestartlinenumber="4">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.orthographic.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraPerspective.html">GltfCameraPerspective</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraPerspective.yml" sourcestartlinenumber="2">A perspective camera containing properties to create a perspective projection
+matrix.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.perspective.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraPerspective.yml" sourcestartlinenumber="4">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.perspective.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfChildOfRootProperty.html">GltfChildOfRootProperty</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfChildOfRootProperty.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/glTFChildOfRootProperty.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfChildOfRootProperty.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/glTFChildOfRootProperty.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfImage.html">GltfImage</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfImage.yml" sourcestartlinenumber="2">Image data used to create a texture. Image can be referenced by URI or
+<code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfImage.yml" sourcestartlinenumber="3">bufferView</code> index. <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfImage.yml" sourcestartlinenumber="3">mimeType</code> is required in the latter case.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/image.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfImage.yml" sourcestartlinenumber="4">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/image.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMaterial.html">GltfMaterial</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMaterial.yml" sourcestartlinenumber="2">The material appearance of a primitive.
+<a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0/schema" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMaterial.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/tree/master/specification/2.0/schema</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMaterialCommonConstant.html">GltfMaterialCommonConstant</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMesh.html">GltfMesh</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMesh.yml" sourcestartlinenumber="2">A set of primitives to be rendered. A node can contain one or more meshes.
+A node's transform places the mesh in the scene.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMesh.yml" sourcestartlinenumber="4">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitive.html">GltfMeshPrimitive</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitive.yml" sourcestartlinenumber="2">Geometry to be rendered with the given material.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitive.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitiveAttributes.html">GltfMeshPrimitiveAttributes</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitiveAttributes.yml" sourcestartlinenumber="2">Common mesh primitive attributes.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMeshPrimitiveAttributes.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.html">GltfNode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="2">A node in the node hierarchy.
+When the node contains <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="3">skin</code>, all <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="3">mesh.primitives</code> must contain <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="3">JOINT</code>
+and <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="4">WEIGHT</code> attributes.  A node can have either a <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="4">matrix</code> or any combination
+of <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="5">translation</code>/<code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="5">rotation</code>/<code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="5">scale</code> (TRS) properties.
+TRS properties are converted to matrices and postmultiplied in
+the <code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="7">T * R * S</code> order to compose the transformation matrix;
+first the scale is applied to the vertices, then the rotation, and then
+the translation. If none are provided, the transform is the Identity.
+When a node is targeted for animation
+(referenced by an animation.channel.target), only TRS properties may be present;
+<code sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="12">matrix</code> will not be present.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/node.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNode.yml" sourcestartlinenumber="13">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/node.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNormalTextureInfo.html">GltfNormalTextureInfo</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNormalTextureInfo.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.normalTextureInfo.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfNormalTextureInfo.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.normalTextureInfo.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfObject.html">GltfObject</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfOcclusionTextureInfo.html">GltfOcclusionTextureInfo</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfOcclusionTextureInfo.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.occlusionTextureInfo.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfOcclusionTextureInfo.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.occlusionTextureInfo.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfPbrMetallicRoughness.html">GltfPbrMetallicRoughness</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfPbrMetallicRoughness.yml" sourcestartlinenumber="2">A set of parameter values that are used to define the metallic-roughness material model from Physically-Based Rendering (PBR) methodology.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfPbrMetallicRoughness.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.pbrMetallicRoughness.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfProperty.html">GltfProperty</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSampler.html">GltfSampler</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSampler.yml" sourcestartlinenumber="2">Texture sampler properties for filtering and wrapping modes.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSampler.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfScene.html">GltfScene</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfScene.yml" sourcestartlinenumber="2">The indices of each root node.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/scene.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfScene.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/scene.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSkin.html">GltfSkin</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSkin.yml" sourcestartlinenumber="2">Joints and matrices defining a skin.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/skin.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfSkin.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/skin.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTexture.html">GltfTexture</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTexture.yml" sourcestartlinenumber="2">A texture and its sampler.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/texture.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTexture.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/texture.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTextureInfo.html">GltfTextureInfo</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTextureInfo.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/textureInfo.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfTextureInfo.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/textureInfo.schema.json</a></p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorAttributeType.html">GltfAccessorAttributeType</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorAttributeType.yml" sourcestartlinenumber="2">Specifies if the attribute is a scalar, vector, or matrix.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAccessorAttributeType.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAlphaMode.html">GltfAlphaMode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAlphaMode.yml" sourcestartlinenumber="2">The alpha rendering mode of the material.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAlphaMode.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/material.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelPath.html">GltfAnimationChannelPath</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelPath.yml" sourcestartlinenumber="2">The name of the node's TRS property to modify, or the weights of the Morph Target it instantiates.
+For the translation property, the values that are provided by the sampler are the translation along the x, y, and z axes.
+For the rotation property, the values are a quaternion in the order (x, y, z, w), where w is the scalar.
+For the scale property, the values are the scaling factors along the x, y, and z axes.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.target.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfAnimationChannelPath.yml" sourcestartlinenumber="6">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.channel.target.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferViewTarget.html">GltfBufferViewTarget</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferViewTarget.yml" sourcestartlinenumber="2">The target that the GPU buffer should be bound to.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/bufferView.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfBufferViewTarget.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/bufferView.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraType.html">GltfCameraType</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraType.yml" sourcestartlinenumber="2">Specifies if the camera uses a perspective or orthographic projection.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfCameraType.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/camera.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfComponentType.html">GltfComponentType</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfComponentType.yml" sourcestartlinenumber="2"><a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json:componentType" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfComponentType.yml" sourcestartlinenumber="2">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/accessor.schema.json:componentType</a> <p>
+The datatype of components in the attribute.  All valid values correspond to WebGL enums.
+The corresponding typed arrays are 'Int8Array', 'Uint8Array', 'Int16Array', 'Uint16Array', 'Uint32Array', and 'Float32Array', respectively.
+5125 (UNSIGNED_INT) is only allowed when the accessor contains indices, i.e., the accessor is only referenced by 'primitive.indices'.</p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfDrawMode.html">GltfDrawMode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfDrawMode.yml" sourcestartlinenumber="2">The type of primitives to render.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfDrawMode.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/mesh.primitive.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfInterpolationType.html">GltfInterpolationType</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfInterpolationType.yml" sourcestartlinenumber="2">Interpolation algorithm.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfInterpolationType.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/animation.sampler.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMagnificationFilterMode.html">GltfMagnificationFilterMode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMagnificationFilterMode.yml" sourcestartlinenumber="2">Magnification filter mode.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMagnificationFilterMode.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMinFilterMode.html">GltfMinFilterMode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMinFilterMode.yml" sourcestartlinenumber="2">Minification filter mode.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfMinFilterMode.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json</a></p>
+</section>
+      <h4><a class="xref" href="Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfWrapMode.html">GltfWrapMode</a></h4>
+      <section><p sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfWrapMode.yml" sourcestartlinenumber="2">Texture wrap mode.
+<a href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json" sourcefile="../../obj/api/Microsoft.MixedReality.Toolkit.Utilities.Gltf.Schema.GltfWrapMode.yml" sourcestartlinenumber="3">https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/schema/sampler.schema.json</a></p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
