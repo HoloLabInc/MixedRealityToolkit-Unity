@@ -224,7 +224,7 @@
         href: Tools/InputFeatureUsageTool.md 
   - name: UX ビルディング ブロック
     items:
-    - name: Toolbox Window
+    - name: Toolbox ウィンドウ
       href: README_Toolbox.md
     - name: Button (ボタン)
       href: README_Button.md
