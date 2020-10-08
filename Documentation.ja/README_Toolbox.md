@@ -1,24 +1,24 @@
 # Toolbox UI
 
-The MRTK Toolbox is a Unity editor window utility that makes it easy to discover and spawn MRTK UX prefab components into the current scene. Items can be filtered in view by using the search bar at the top of the window. The toolbox window is designed to spawn MRTK out-of-box prefabs into the current scene. There are additional "UX" components that can be added as script components such as the [bounds control](README_BoundsControl.md) or [object manipulator](README_ObjectManipulator.md) controls.
+MRTK Toolbox は Unity Editor のウィンドウ ユーティリティで、MRTK UX プレハブ コンポーネントを簡単に発見し、現在のシーンにスポーンすることができます。ウィンドウ上部の検索バーを使用して、表示中のアイテムをフィルタリングすることができます。Toolbox ウィンドウは MRTK の デフォルトの UX プレハブを現在のシーンにスポーンするように設計されています。また、[Bounds Control](README_BoundsControl.md) や [Object Manipulator](README_ObjectManipulator.md) など、スクリプト コンポーネントとして追加できる "UX" コンポーネントもあります。
 
 ![MRTK Toolbox](../Documentation/Images/Tools/MRTKToolboxWindow.png)
 
-## Installing the toolbox
+## Toolbox のインストール
 
-The toolbox is distributed via the MRTK's Tools package.
+Toolbox は MRTK の Tools パッケージで配布されます。
 
-## Using the toolbox window
+## Toolbox ウィンドウを使う
 
-1. Open the Toolbox window via the **Mixed Reality Toolkit** tab > **Toolbox**.
+1. **Mixed Reality Toolkit** タブ > **Toolbox** から、Toolbox ウィンドウを開きます。
 
     ![Open the Toolbox](https://user-images.githubusercontent.com/25975362/73321589-ccfbc100-41f7-11ea-8f1a-89c4f68e12f7.gif)
 
-1. Click on any UX component to add it to the current scene.
+1. UX コンポーネントをクリックし、現在のシーンに追加します。
 
     ![Add a component to the scene](https://user-images.githubusercontent.com/25975362/73321582-c9683a00-41f7-11ea-8bac-bf8efdb2fbe3.gif)
 
-## See also
+## 関連項目
 
 - [Button](README_Button.md)
 - [Interactable](README_Interactable.md)
