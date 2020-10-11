@@ -1,71 +1,71 @@
-# Scrolling object collection
+# Scrolling Object Collection (スクローリング オブジェクト コレクション)
 ![Scrolling object collection](../Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg)
 
-The MRTK scrolling object collection is an UX component that enables scrolling of 3D content through a contained viewable area. The scrolling movement can be triggered by near or far input interaction and by discrete pagination. It supports both interactive and non-interactive objects.
+MRTK Scrolling Object Collection は、表示エリアを通して 3D コンテンツのスクロールを可能にする UX コンポーネントです。スクロールの動きは、ニア インプットやファー インプットの入力インタラクションや不連続のページネーションによってトリガーすることができます。インタラクティブなオブジェクトと非インタラクティブなオブジェクトの両方をサポートしています。
 
-## Getting started with the scrolling object collection
+## Scrolling Object Collection を始める
 
-### Setting up the scene
+### シーンのセットアップ
 
-1. Create a new unity scene.
-1. Add MRTK to the scene by navigating to the **Mixed Reality Toolkit** > **Add to Scene and Configure**.
+1. 新しい Unity シーンを作成します。
+1. **Mixed Reality Toolkit** > **Add to Scene and Configure** からシーンに MRTK を追加します。
 
-### Setting up the scrolling object
+### Scrolling Object (スクローリング オブジェクト) のセットアップ
 
-1. Create an empty game object in the scene and change its position to (0, 0, 1).
-1. Add a [scrolling object collection](xref:Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection) component to the game object.
+1. シーンに空の GameObject を作成し、位置を (0, 0, 1) に変更します。
+1. GameObject に [Scrolling Object Collection](xref:Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection) コンポーネントを追加します。
 
-    When the scrolling object collection is added, a box collider and a [near interaction touchable](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) component will be automatically attached to the root game object. These components allow the scroll object to listen to near and far interaction input events, like a pointer touch or click.  
+    Scrolling Object Collection が追加されると、ボックス コライダーと [Near Interaction Touchable](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) コンポーネントがルートのゲーム オブジェクトに自動的にアタッチされます。これらのコンポーネントにより、スクローリング オブジェクトはポインターのタッチやクリックのようなニア・ファー インタラクションの入力イベントをリッスンすることができます。  
 
-    The MRTK scrolling object collection has two important elements that are created as child game objects under the root scrolling object hierarchy:
-    * `Container` - All scrolling content objects must be children of the container game object.
-    * `Clipping bounds` - If scrolling content masking is enabled, the clipping bounds element ensures that only the scrollable content inside its boundaries is visible. The clipping bounds game object has two components: a disabled box collider and a [clipping box](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox).
+    MRTK の Scrolling Object Collection には2つの重要な要素があり、それらはルートのスクローリング オブジェクト階層の下に子ゲーム オブジェクトとして作成されます。
+    * `Container` - すべてのスクローリング コンテンツ オブジェクトは Container ゲーム オブジェクトの子オブジェクトでなければなりません。
+    * `Clipping bounds` - スクローリング コンテンツのマスキングが有効になっている場合、Clipping bounds は、その境界内のスクロール可能なコンテンツのみを表示するようにします。Clipping bounds のゲーム オブジェクトは、無効化されたボックス コライダーと [Clipping Box](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox) の2つのコンポーネントを持っています。
 
 ![Scrolling object collection elements](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection.png) 
 
-### Adding content to the scrolling object
+### Scrolling Object にコンテンツを追加する
 
-The scrolling object collection can be combined with a [grid object collection](xref:Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection) to layout content in a grid of aligned elements that have uniform size and spacing.
+Scrolling Object Collection は、[Grid Object Collection](xref:Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection) と組み合わせて、サイズと間隔が一定の要素を並べたグリッドにコンテンツをレイアウトすることができます。
 
-1. Create an empty game object as a child of the scroll container.
-1. Add a grid object collection component to the game object.
-1. For a vertical single column scroll, in the inspector tab, configure the grid object collection as follow: 
-    - **Num columns**: 1
+1. 空の GameObject を Scroll Container の子要素として作成します。
+1. 作成した GameObject に Grid Object Collection コンポーネントを追加します。
+1. 縦方向の1列スクロールの場合は、インスペクター タブで以下のように Grid Object Collection を設定します。 
+    - **Num Columns**: 1
     - **Layout**: column then row
     - **Anchor**: upper left
-1. Change the **cell width** and **height** according to the dimensions of the content objects.
-1. Add the content objects as children of the grid object.
-1. Press **update collection**.
+1. **Cell Width** と **Height** をコンテンツ オブジェクトに合わせて変更します。
+1. Grid Object の子要素としてコンテンツ オブジェクトを追加します。
+1. **Update Collection** を押します。
 
 ![Grid layout](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png)
 
 > [!IMPORTANT]
-> Any scrolling content object material must use the [MRTK standard shader](README_MRTKStandardShader.md) in order for the clipping effect on the viewable area to work properly.
+> スクローリング コンテンツ のオブジェクトのマテリアルには、表示領域のクリッピング効果を正常に動作させるために、[MRTK Standard Shader](README_MRTKStandardShader.md) を使用しなければなりません。
    
 > [!NOTE]
-> If scrolling content masking is enabled, the scrolling object collection will add a [material instance](Rendering/MaterialInstance.md) component to any content objects that have a renderer attached. This component is used to manage instanced materials lifetime and improve memory performance.
+> スクローリング コンテンツのマスキングが有効な場合、Scrolling Object Collection は Renderer がアタッチされている全てのコンテンツ オブジェクトに [Material Instance](Rendering/MaterialInstance.md) コンポーネントを追加します。このコンポーネントはインスタンス化されたマテリアルのライフタイムを管理し、メモリ性能を向上させるために使用されます。
 
-### Configuring the scrolling viewable area
+### スクローリング表示エリアの設定
 
-1. For vertical scrolling through a single column of objects, in the inspector tab, configure the scrolling object collection as follow:
-    - **Cells per tier**: 1
-    - Choose the number of **tiers per page** according to the desired number of visible rows
-1. Change the **page cell width**, **height** and **depth** according to the dimensions of the content objects.
+1. 1列のオブジェクトを縦方向にスクロールする場合は、インスペクター タブで以下のように Scrolling Object Collection を設定します。
+    - **Cells Per Tier**: 1
+    - 表示したい行の数応じて、**Tiers Per Page** の数値を選択します。
+1. **Page Cell Width**, **Height**, **Depth** をコンテンツ オブジェクトのサイズに合わせて変更します。
 
-Notice how the content objects lying outside the scrolling viewable area are now disabled, while objects intersecting the scroll wireframe might be partially masked by the clipping primitive.
+スクローリング表示領域の外側にあるコンテンツ オブジェクトが無効化され、スクロール ワイヤフレームと交差するオブジェクトはクリッピング プリミティブによって部分的にマスクされている可能性があることに注目してください。
 
 ![Viewable area](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png)
  
-### Testing the scrolling object collection in the editor
+### Editor での Scrolling Object Collection のテスト
 
-1. Press play and hold the space bar to show an input simulation hand.
-1. Move the hand until the scrolling collider or any scrolling interactive content is in focus and trigger the scrolling movement by clicking and dragging up and down with the left mouse.
+1. Play を押し、スペース バーを押し続けて入力シミュレーション ハンドを表示します。
+1. スクローリング コライダーまたはスクロールするインタラクティブ コンテンツにフォーカスが当たるまでハンドを動かし、マウスの左クリックを押して上下にドラッグすることでスクロールの動きをトリガーします。
 
-## Controlling the scrolling object from code
+## スクローリング オブジェクトをコードで制御する
 
-The MRTK scrolling object collection exposes a few public methods that allow moving the scrolling container by snapping its position according to the `pagination` properties configuration.
+MRTK Scrolling Object Collection は、`pagination` プロパティの設定にしたがってスクローリング コンテナの位置をスナップして移動させることができるいくつかのパブリック メソッドを公開しています。
 
-An example of how to access the scrolling object collection pagination interface is available to use under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Scripts`` folder. The [scrollable pagination](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination) example script can be linked to any existing scrolling object collection in the scene. The script can then be referenced by scene components exposing Unity events (e.g, [MRTK button](README_Button.md)).
+Scrolling Object Collection のページネーション インターフェイスへのアクセス方法の例は、``MRTK/Examples/Demos/ScrollingObjectCollection/Scripts`` フォルダ以下にあります。[Scrollable Pagination](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination) のサンプル スクリプトは、シーン内の既存の Scrolling Object Collection にリンクすることができます。このスクリプトは、Unity イベントを公開するシーンコンポーネント (例: [MRTK button](README_Button.md)) から参照することができます。
 
 ```c#
 public class ScrollablePagination : MonoBehaviour
@@ -80,7 +80,7 @@ public class ScrollablePagination : MonoBehaviour
 }
 ```
 
-## Scrolling object collection properties:
+## Scrolling Object Collection のプロパティ
 
 | General                      |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
