@@ -82,62 +82,62 @@ public class ScrollablePagination : MonoBehaviour
 
 ## Scrolling Object Collection のプロパティ
 
-| General                      |                                                                                                                                                                                                     |
+| General<br>(全般)                     |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Scroll direction             | The direction in which content should scroll.|
+| Scroll Direction<br>(スクロールの方向)            | コンテンツがスクロールする方向 |
 
-| Pagination                   |                                                                                                                                                                                                     |
+| Pagination<br>(ページネーション)                  |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cells per tier               | Number of cells in a row on up-down scroll view or number of cells in a column on left-right scroll view.                                                                                                         |
-| Tiers per page               | Number of visible tiers in the scrolling area.                                                                                                                                                                         |
-| Page cell                    | Dimensions of the pagination cell.                  |
+| Cells Per Tier<br>(列ごとのセル数)               | 上下スクロール ビューでは横列のセル数、左右スクロール ビューでは縦列のセル数                                                                                                         |
+| Tiers Per Page<br>(ページごとの列数)              | スクローリング エリアに表示される列数                                                                                                                                                                         |
+| Page Cell<br>(ページ セル)                   | ページネーション セルのサイズ                  |
 
-| Advanced settings            |                                                                                                                                                                                                     |
+| Advanced settings<br>(詳細設定)           |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mask edit mode               | Edit modes for defining the clipping box masking boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the clipping box object.|
-| Collider edit mode           | Edit modes for defining the scroll interaction collider boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the collider.|
-| Can scroll                   | Enables/disables scrolling with near/far interaction.                  |
-| Use on pre render            | Toggles whether the scrollingObjectCollection will use the Camera OnPreRender event to manage content visibility.                  |
-| Pagination curve             | Animation curve for pagination.                  |
-| Animation length             | The amount of time (in seconds) the PaginationCurve will take to evaluate.                  |
-| Hand delta scroll threshold  | The distance, in meters, the current pointer can travel along the scroll direction before triggering a scroll drag.                  |
-| Front touch distance         | Distance, in meters, to position a local xy plane used to verify if a touch interaction started in the front of the scroll view.                  |
-| Release threshold            | Withdraw amount, in meters, from the scroll boundaries needed to transition from touch engaged to released.                  |
+| Mask Edit Mode<br>(マスクの編集モード)              | クリッピング ボックスのマスキング境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとクリッピング ボックス オブジェクトを直接操作することができます。|
+| Collider Edit Mode<br>(コライダーの編集モード)          | スクロール インタラクションのコライダー境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとコライダーを直接操作することができます。|
+| Can Scroll<br>(スクロール可否)                  | ニア/ファー インタラクションでのスクロール可否                  |
+| Use On Pre Render<br>(OnPreRender の利用)           | ScrollingObjectCollection が Camera の OnPreRender イベントを使用してコンテンツの可視性を管理するかどうかを切り替えます。     |
+| Pagination Curve<br>(ページネーション カーブ)            | ページネーションのアニメーション カーブ                  |
+| Animation Length<br>(アニメーションの長さ)            | PaginationCurve が評価されるのにかかる時間（秒）                  |
+| Hand Delta Scroll Threshold<br>(ハンドのスクロールしきい値) | 現在のポインターがスクロール ドラッグをトリガーする前にスクロール方向に沿って移動できる距離 (m)       |
+| Front touch distance<br>(前面のタッチ距離)  | スクロール ビューの前面でタッチ インタラクションが開始されたかどうかを確認するために使用されるローカルの xy 平面を配置する距離 (m) |
+| Release threshold<br>(リリースのしきい値)            | タッチしている状態から解放されるまでに必要な、スクロール境界から引っこめる移動量 (m)       |
 
-| Velocity |                                                                                                                                                                                    |
+| Velocity<br>(速度) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Type of velocity       | The desired type of velocity falloff for the scroller.                                                                                        |
-| Velocity multiplier     | Amount of (extra) velocity to be applied to scroller.                                                                                                                                                        |
-| Velocity dampen     | Amount of falloff applied to the velocity. |
+| Type Of Velocity<br>(速度のタイプ)      | スクローラーの速度減衰のタイプ                                                                                        |
+| Velocity Multiplier     | Amount of (extra) velocity to be applied to scroller.                                                                                                                                                        |
+| Velocity Dampen<br>(速度減衰)     | 速度に適用される減衰量 |
 | Bounce multiplier     | Multiplier to add more bounce to the overscroll of a list when using falloff per frame or falloff per item. |
 
-| Debug options |                                                                                                                                                                                    |
+| Debug options<br>(デバッグ オプション) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Mask enabled       | Visibility mode of scroll content. Default value will mask all objects outside of the scroll viewable area.                                                                                        |
 | Show threshold planes     | If true, the editor will render the touch release threshold planes around the scroll boundaries.                                                                                                                                                        |
 | Debug pagination     | Use this section to debug the scroll pagination during runtime. |
 
-| Events|                                                                                                                                                                                    |
+| Events<br>(イベント) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| On click       | Event triggered when the scroll background collider or any of its interactive content receives a click.                                                                                        |
-| On touch started     | Event triggered when the scroll background collider or any of its interactive content receives a near interaction touch.                                                                                                                                                        |
-| On touch ended     | Event triggered when an active touch interaction is terminated by having the near interaction pointer crossing one of the release threshold planes. |
-| On momentum started     | Event triggered when the scroll container starts moving by interaction, velocity fallofff or pagination. |
-| On momentum ended     | Event triggered when the scroll container stops moving by interaction, velocity fallofff or pagination. |
+| On Click<br>(クリック時)      | スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがクリックを受け取ったときにトリガーされるイベント    |
+| On Touch Started<br>(タッチ開始時)     | スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがニア インタラクション タッチを受け取ったときにトリガーされるイベント   |
+| On Touch Ended<br>(タッチ終了時)     | ニア インタラクション ポインターがリリースしきい値平面の1つを超えたことでアクティブなタッチ インタラクションが終了したときにトリガーされるイベント |
+| On Momentum Started<br>(移動開始時)     | インタラクション、速度減衰やページネーションによってスクロール コンテナーが動き出したときにトリガーされるイベント |
+| On Momentum Ended<br>(移動終了時)     | インタラクション、速度減衰やページネーションによってスクロール コンテナーの動きが停止したときにトリガーされるイベント |
 
-## Scrolling example scene
+## スクロールのサンプル シーン
 
-**ScrollingObjectCollection.unity** example scene consists of 3 scrollable examples, each one with a different velocity falloff configuration. The example scene contains walls to show the surface placement behavior that are disabled by default in the hierarchy. The example scene can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Scenes`` folder.
+**ScrollingObjectCollection.unity** サンプル シーンは、3つのスクロール可能なサンプルで構成されています。3つのサンプルはそれぞれ異なる速度減衰が設定されています。サンプルシーンは ``MRTK/Examples/Demos/ScrollingObjectCollection/Scenes`` フォルダ以下にあります。
 
 ![Scrolling object collection example scene](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png)
 
-## Scrolling example prefabs
+## スクロールのサンプル プレファブ
 
-For convenience, two scrolling object collection prefabs are available to use. The example prefabs can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs`` folder.
+便利なように、2つの Scrolling Object Collection のプレハブが用意されています。サンプルのプレハブは ``MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs`` フォルダにあります。
 
 ![Scrolling object collection prefabs](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png)
 
-## See also
+## 関連項目
 
 * [Clipping Primitive](Rendering/ClippingPrimitive.md)
 * [Material Instance](Rendering/MaterialInstance.md)
