@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Core system | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Core system | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="core-system" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="1">Core system</h1>
+
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="3">At the heart of the input system is the <a href="../../Input/Overview.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="3">InputSystem</a>, which is a service that is responsible for initializing and operating all of the input related functionality associated with the MRTK.</p>
+<div class="NOTE" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="5">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="6">It is assumed that readers have already read and have a basic understanding of the
+<a href="Terminology.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="7">terminology</a> section.</p>
+</div>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="9">This service is responsible for:</p>
+<ul sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="11">
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="11">Reading the <a href="../../MixedRealityConfigurationGuide.html#input-system-settings" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="11">input system profile</a></li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="12">Starting the configured <a href="../../Input/InputProviders.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="12">data providers</a> (for example, <code sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="12">Windows Mixed Reality Device Manager</code> and <code sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="12">OpenVR Device Manager</code>).</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="13">Instantiation of the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="13">GazeProvider</a>, which is a component that is responsible for providing HoloLens (1st generation) style head gaze information
+in addition to HoloLens 2 style eye gaze information.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="15">Instantiation of the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityFocusProvider.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="15">FocusProvider</a>, which is a component that is responsible for determining objects that have focus. This
+is described in more depth in the <a href="ControllersPointersAndFocus.html#pointers-and-focus" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="16">pointers and focus</a> section of the
+documentation.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="18">Providing registration points for all input events (as <a href="#global-listeners" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="18">global listeners</a>).</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="19">Providing event dispatch capabilities for those input events.</li>
+</ul>
+<h2 id="input-events" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="21">Input events</h2>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="23">Input events are generally fired on two different channels:</p>
+<h3 id="objects-in-focus" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="25">Objects in focus</h3>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="27">Events can be sent directly to a GameObject that has focus. For example, an object might
+have a script that implements <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="28"><code sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="28">IMixedRealityTouchHandler</code></a>.
+This object would get touch events when focused by a hand that is near it. These types of
+events go &quot;up&quot; the GameObject hierarchy until it finds a GameObject that is capable of handling
+the event.</p>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="33">This is done by using <a href="https://docs.unity3d.com/ScriptReference/EventSystems.ExecuteEvents.ExecuteHierarchy.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="33">ExecuteHierarchy</a> from within the default input system implementation.</p>
+<h3 id="global-listeners" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="35">Global listeners</h3>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="37">Events can be sent to global listeners. It's possible to register for all input events by using
+the input system's <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.IMixedRealityEventSystem.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="38">IMixedRealityEventSystem</code></a>
+interface. It's recommended to use the <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.IMixedRealityEventSystem.html#Microsoft_MixedReality_Toolkit_IMixedRealityEventSystem_RegisterHandler__1_IEventSystemHandler_" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="39">RegisterHandler</a>
+method for registering for global events - the deprecated <code sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="40">Register</code> function will cause listeners
+to get notified of ALL input events, rather than just input events of a particular type
+(where type is defined by the event interface).</p>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="44">Note that <a class="xref" href="../../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystem.html#Microsoft_MixedReality_Toolkit_Input_MixedRealityInputSystem_PushFallbackInputHandler_GameObject_" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="44">fallback listeners</a>
+are another type of global listeners which are also discouraged because they will receive
+every single input event that hasn't been handled elsewhere in the scene.</p>
+<h3 id="order-of-event-dispatch" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="48">Order of event dispatch</h3>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="50">Generally, events are sent to listeners in the following way. Note that if any of the steps below mark
+the event as <a href="https://docs.unity3d.com/ScriptReference/EventSystems.AbstractEventData-used.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="51">handled</a>,
+the event dispatch process stops.</p>
+<ol sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="54">
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="54">Event is sent to global listeners.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="55">Event is sent to modal dialogs of the focused object.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="56">Event is sent to the focused object.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="57">Event is sent to fallback listeners.</li>
+</ol>
+<h2 id="device-managers-and-data-providers" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="59">Device managers and data providers</h2>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="61">These entities are responsible for interfacing with lower-level APIs (such as Windows Mixed Reality APIs,
+or OpenVR APIs) and translating data from those systems into ones that fit the MRTK's higher
+level input abstractions. They are responsible for detecting, creating, and managing the lifetime of
+<a href="ControllersPointersAndFocus.html#controllers" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="64">controllers</a>.</p>
+<p sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="66">The basic flow of a device manager involves:</p>
+<ol sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="68">
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="68">The device manager is instantiated by the input system service.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="69">The device manager registers with its underlying system (for example, the Windows Mixed Reality
+device manager will register for <a href="../../Input/InputEvents.html" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="70">input</a> and <a href="../../Input/Gestures.html#gesture-events" sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="70">gesture</a> events.</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="71">It creates controllers that it discovers from the underlying system (for example
+the provider could detect the presence of articulated hands)</li>
+<li sourcefile="../../Documentation/Architecture/InputSystem/CoreSystem.md" sourcestartlinenumber="73">In its Update() loop, call UpdateController() to poll for the new state of the underlying system
+and update its controller representation.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Architecture/InputSystem/CoreSystem.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

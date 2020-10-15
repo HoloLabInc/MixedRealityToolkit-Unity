@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Scrolling object collection | Mixed Reality Toolkit Documentation </title>
+    <title>Scrolling Object Collection (&#12473;&#12463;&#12525;&#12540;&#12522;&#12531;&#12464; &#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Scrolling object collection | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Scrolling Object Collection (&#12473;&#12463;&#12525;&#12540;&#12522;&#12531;&#12464; &#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
@@ -89,75 +89,75 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="scrolling-object-collection">Scrolling object collection</h1>
+<h1 id="scrolling-object-collection-スクローリング-オブジェクト-コレクション">Scrolling Object Collection (スクローリング オブジェクト コレクション)</h1>
 
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg" alt="Scrolling object collection"></p>
-<p>The MRTK scrolling object collection is an UX component that enables scrolling of 3D content through a contained viewable area. The scrolling movement can be triggered by near or far input interaction and by discrete pagination. It supports both interactive and non-interactive objects.</p>
-<h2 id="getting-started-with-the-scrolling-object-collection">Getting started with the scrolling object collection</h2>
-<h3 id="setting-up-the-scene">Setting up the scene</h3>
+<p>MRTK Scrolling Object Collection は、表示エリアを通して 3D コンテンツのスクロールを可能にする UX コンポーネントです。スクロールの動きは、ニア インプットやファー インプットの入力インタラクションや不連続のページネーションによってトリガーすることができます。インタラクティブなオブジェクトと非インタラクティブなオブジェクトの両方をサポートしています。</p>
+<h2 id="scrolling-object-collection-を始める">Scrolling Object Collection を始める</h2>
+<h3 id="シーンのセットアップ">シーンのセットアップ</h3>
 <ol>
-<li>Create a new unity scene.</li>
-<li>Add MRTK to the scene by navigating to the <strong>Mixed Reality Toolkit</strong> &gt; <strong>Add to Scene and Configure</strong>.</li>
+<li>新しい Unity シーンを作成します。</li>
+<li><strong>Mixed Reality Toolkit</strong> &gt; <strong>Add to Scene and Configure</strong> からシーンに MRTK を追加します。</li>
 </ol>
-<h3 id="setting-up-the-scrolling-object">Setting up the scrolling object</h3>
+<h3 id="scrolling-object-スクローリング-オブジェクト-のセットアップ">Scrolling Object (スクローリング オブジェクト) のセットアップ</h3>
 <ol>
-<li><p>Create an empty game object in the scene and change its position to (0, 0, 1).</p>
+<li><p>シーンに空の GameObject を作成し、位置を (0, 0, 1) に変更します。</p>
 </li>
-<li><p>Add a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection.html">scrolling object collection</a> component to the game object.</p>
-<p>When the scrolling object collection is added, a box collider and a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html">near interaction touchable</a> component will be automatically attached to the root game object. These components allow the scroll object to listen to near and far interaction input events, like a pointer touch or click.</p>
-<p>The MRTK scrolling object collection has two important elements that are created as child game objects under the root scrolling object hierarchy:</p>
+<li><p>GameObject に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection.html">Scrolling Object Collection</a> コンポーネントを追加します。</p>
+<p>Scrolling Object Collection が追加されると、ボックス コライダーと <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html">Near Interaction Touchable</a> コンポーネントがルートのゲーム オブジェクトに自動的にアタッチされます。これらのコンポーネントにより、スクローリング オブジェクトはポインターのタッチやクリックのようなニア・ファー インタラクションの入力イベントをリッスンすることができます。</p>
+<p>MRTK の Scrolling Object Collection には2つの重要な要素があり、それらはルートのスクローリング オブジェクト階層の下に子ゲーム オブジェクトとして作成されます。</p>
 <ul>
-<li><code>Container</code> - All scrolling content objects must be children of the container game object.</li>
-<li><code>Clipping bounds</code> - If scrolling content masking is enabled, the clipping bounds element ensures that only the scrollable content inside its boundaries is visible. The clipping bounds game object has two components: a disabled box collider and a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.ClippingBox.html">clipping box</a>.</li>
+<li><code>Container</code> - すべてのスクローリング コンテンツ オブジェクトは Container ゲーム オブジェクトの子オブジェクトでなければなりません。</li>
+<li><code>Clipping bounds</code> - スクローリング コンテンツのマスキングが有効になっている場合、Clipping bounds は、その境界内のスクロール可能なコンテンツのみを表示するようにします。Clipping bounds のゲーム オブジェクトは、無効化されたボックス コライダーと <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.ClippingBox.html">Clipping Box</a> の2つのコンポーネントを持っています。</li>
 </ul>
 </li>
 </ol>
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection.png" alt="Scrolling object collection elements"></p>
-<h3 id="adding-content-to-the-scrolling-object">Adding content to the scrolling object</h3>
-<p>The scrolling object collection can be combined with a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html">grid object collection</a> to layout content in a grid of aligned elements that have uniform size and spacing.</p>
+<h3 id="scrolling-object-にコンテンツを追加する">Scrolling Object にコンテンツを追加する</h3>
+<p>Scrolling Object Collection は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html">Grid Object Collection</a> と組み合わせて、サイズと間隔が一定の要素を並べたグリッドにコンテンツをレイアウトすることができます。</p>
 <ol>
-<li>Create an empty game object as a child of the scroll container.</li>
-<li>Add a grid object collection component to the game object.</li>
-<li>For a vertical single column scroll, in the inspector tab, configure the grid object collection as follow:
+<li>空の GameObject を Scroll Container の子要素として作成します。</li>
+<li>作成した GameObject に Grid Object Collection コンポーネントを追加します。</li>
+<li>縦方向の1列スクロールの場合は、インスペクター タブで以下のように Grid Object Collection を設定します。
 <ul>
-<li><strong>Num columns</strong>: 1</li>
+<li><strong>Num Columns</strong>: 1</li>
 <li><strong>Layout</strong>: column then row</li>
 <li><strong>Anchor</strong>: upper left</li>
 </ul>
 </li>
-<li>Change the <strong>cell width</strong> and <strong>height</strong> according to the dimensions of the content objects.</li>
-<li>Add the content objects as children of the grid object.</li>
-<li>Press <strong>update collection</strong>.</li>
+<li><strong>Cell Width</strong> と <strong>Height</strong> をコンテンツ オブジェクトに合わせて変更します。</li>
+<li>Grid Object の子要素としてコンテンツ オブジェクトを追加します。</li>
+<li><strong>Update Collection</strong> を押します。</li>
 </ol>
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png" alt="Grid layout"></p>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>Any scrolling content object material must use the <a href="README_MRTKStandardShader.html">MRTK standard shader</a> in order for the clipping effect on the viewable area to work properly.</p>
+<p>スクローリング コンテンツ のオブジェクトのマテリアルには、表示領域のクリッピング効果を正常に動作させるために、<a href="README_MRTKStandardShader.html">MRTK Standard Shader</a> を使用しなければなりません。</p>
 </div>
 <div class="NOTE">
 <h5>Note</h5>
-<p>If scrolling content masking is enabled, the scrolling object collection will add a <a href="Rendering/MaterialInstance.html">material instance</a> component to any content objects that have a renderer attached. This component is used to manage instanced materials lifetime and improve memory performance.</p>
+<p>スクローリング コンテンツのマスキングが有効な場合、Scrolling Object Collection は Renderer がアタッチされている全てのコンテンツ オブジェクトに <a href="Rendering/MaterialInstance.html">Material Instance</a> コンポーネントを追加します。このコンポーネントはインスタンス化されたマテリアルのライフタイムを管理し、メモリ性能を向上させるために使用されます。</p>
 </div>
-<h3 id="configuring-the-scrolling-viewable-area">Configuring the scrolling viewable area</h3>
+<h3 id="スクローリング表示エリアの設定">スクローリング表示エリアの設定</h3>
 <ol>
-<li>For vertical scrolling through a single column of objects, in the inspector tab, configure the scrolling object collection as follow:
+<li>1列のオブジェクトを縦方向にスクロールする場合は、インスペクター タブで以下のように Scrolling Object Collection を設定します。
 <ul>
-<li><strong>Cells per tier</strong>: 1</li>
-<li>Choose the number of <strong>tiers per page</strong> according to the desired number of visible rows</li>
+<li><strong>Cells Per Tier</strong>: 1</li>
+<li>表示したい行の数応じて、<strong>Tiers Per Page</strong> の数値を選択します。</li>
 </ul>
 </li>
-<li>Change the <strong>page cell width</strong>, <strong>height</strong> and <strong>depth</strong> according to the dimensions of the content objects.</li>
+<li><strong>Page Cell Width</strong>, <strong>Height</strong>, <strong>Depth</strong> をコンテンツ オブジェクトのサイズに合わせて変更します。</li>
 </ol>
-<p>Notice how the content objects lying outside the scrolling viewable area are now disabled, while objects intersecting the scroll wireframe might be partially masked by the clipping primitive.</p>
+<p>スクローリング表示領域の外側にあるコンテンツ オブジェクトが無効化され、スクロール ワイヤフレームと交差するオブジェクトはクリッピング プリミティブによって部分的にマスクされている可能性があることに注目してください。</p>
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png" alt="Viewable area"></p>
-<h3 id="testing-the-scrolling-object-collection-in-the-editor">Testing the scrolling object collection in the editor</h3>
+<h3 id="editor-での-scrolling-object-collection-のテスト">Editor での Scrolling Object Collection のテスト</h3>
 <ol>
-<li>Press play and hold the space bar to show an input simulation hand.</li>
-<li>Move the hand until the scrolling collider or any scrolling interactive content is in focus and trigger the scrolling movement by clicking and dragging up and down with the left mouse.</li>
+<li>Play を押し、スペース バーを押し続けて入力シミュレーション ハンドを表示します。</li>
+<li>スクローリング コライダーまたはスクロールするインタラクティブ コンテンツにフォーカスが当たるまでハンドを動かし、マウスの左クリックを押して上下にドラッグすることでスクロールの動きをトリガーします。</li>
 </ol>
-<h2 id="controlling-the-scrolling-object-from-code">Controlling the scrolling object from code</h2>
-<p>The MRTK scrolling object collection exposes a few public methods that allow moving the scrolling container by snapping its position according to the <code>pagination</code> properties configuration.</p>
-<p>An example of how to access the scrolling object collection pagination interface is available to use under the <code>MRTK/Examples/Demos/ScrollingObjectCollection/Scripts</code> folder. The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination.html">scrollable pagination</a> example script can be linked to any existing scrolling object collection in the scene. The script can then be referenced by scene components exposing Unity events (e.g, <a href="README_Button.html">MRTK button</a>).</p>
+<h2 id="スクローリング-オブジェクトをコードで制御する">スクローリング オブジェクトをコードで制御する</h2>
+<p>MRTK Scrolling Object Collection は、<code>pagination</code> プロパティの設定にしたがってスクローリング コンテナの位置をスナップして移動させることができるいくつかのパブリック メソッドを公開しています。</p>
+<p>Scrolling Object Collection のページネーション インターフェイスへのアクセス方法の例は、<code>MRTK/Examples/Demos/ScrollingObjectCollection/Scripts</code> フォルダ以下にあります。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination.html">Scrollable Pagination</a> のサンプル スクリプトは、シーン内の既存の Scrolling Object Collection にリンクすることができます。このスクリプトは、Unity イベントを公開するシーンコンポーネント (例: <a href="README_Button.html">MRTK button</a>) から参照することができます。</p>
 <pre><code class="lang-c#">public class ScrollablePagination : MonoBehaviour
 {
     [SerializeField]
@@ -169,174 +169,174 @@
     }       
 }
 </code></pre>
-<h2 id="scrolling-object-collection-properties">Scrolling object collection properties:</h2>
+<h2 id="scrolling-object-collection-のプロパティ">Scrolling Object Collection のプロパティ</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">General</th>
+<th style="text-align: left;">General<br>(全般)</th>
 <th style="text-align: left;"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Scroll direction</td>
-<td style="text-align: left;">The direction in which content should scroll.</td>
+<td style="text-align: left;">Scroll Direction<br>(スクロールの方向)</td>
+<td style="text-align: left;">コンテンツがスクロールする方向</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Pagination</th>
+<th style="text-align: left;">Pagination<br>(ページネーション)</th>
 <th style="text-align: left;"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Cells per tier</td>
-<td style="text-align: left;">Number of cells in a row on up-down scroll view or number of cells in a column on left-right scroll view.</td>
+<td style="text-align: left;">Cells Per Tier<br>(列ごとのセル数)</td>
+<td style="text-align: left;">上下スクロール ビューでは横列のセル数、左右スクロール ビューでは縦列のセル数</td>
 </tr>
 <tr>
-<td style="text-align: left;">Tiers per page</td>
-<td style="text-align: left;">Number of visible tiers in the scrolling area.</td>
+<td style="text-align: left;">Tiers Per Page<br>(ページごとの列数)</td>
+<td style="text-align: left;">スクローリング エリアに表示される列数</td>
 </tr>
 <tr>
-<td style="text-align: left;">Page cell</td>
-<td style="text-align: left;">Dimensions of the pagination cell.</td>
+<td style="text-align: left;">Page Cell<br>(ページ セル)</td>
+<td style="text-align: left;">ページネーション セルのサイズ</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Advanced settings</th>
+<th style="text-align: left;">Advanced settings<br>(詳細設定)</th>
 <th style="text-align: left;"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Mask edit mode</td>
-<td style="text-align: left;">Edit modes for defining the clipping box masking boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the clipping box object.</td>
+<td style="text-align: left;">Mask Edit Mode<br>(マスクの編集モード)</td>
+<td style="text-align: left;">クリッピング ボックスのマスキング境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとクリッピング ボックス オブジェクトを直接操作することができます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">Collider edit mode</td>
-<td style="text-align: left;">Edit modes for defining the scroll interaction collider boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the collider.</td>
+<td style="text-align: left;">Collider Edit Mode<br>(コライダーの編集モード)</td>
+<td style="text-align: left;">スクロール インタラクションのコライダー境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとコライダーを直接操作することができます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">Can scroll</td>
-<td style="text-align: left;">Enables/disables scrolling with near/far interaction.</td>
+<td style="text-align: left;">Can Scroll<br>(スクロール可否)</td>
+<td style="text-align: left;">ニア/ファー インタラクションでのスクロール可否</td>
 </tr>
 <tr>
-<td style="text-align: left;">Use on pre render</td>
-<td style="text-align: left;">Toggles whether the scrollingObjectCollection will use the Camera OnPreRender event to manage content visibility.</td>
+<td style="text-align: left;">Use On Pre Render<br>(OnPreRender の利用)</td>
+<td style="text-align: left;">ScrollingObjectCollection が Camera の OnPreRender イベントを使用してコンテンツの可視性を管理するかどうかを切り替えます。</td>
 </tr>
 <tr>
-<td style="text-align: left;">Pagination curve</td>
-<td style="text-align: left;">Animation curve for pagination.</td>
+<td style="text-align: left;">Pagination Curve<br>(ページネーション カーブ)</td>
+<td style="text-align: left;">ページネーションのアニメーション カーブ</td>
 </tr>
 <tr>
-<td style="text-align: left;">Animation length</td>
-<td style="text-align: left;">The amount of time (in seconds) the PaginationCurve will take to evaluate.</td>
+<td style="text-align: left;">Animation Length<br>(アニメーションの長さ)</td>
+<td style="text-align: left;">PaginationCurve が評価されるのにかかる時間（秒）</td>
 </tr>
 <tr>
-<td style="text-align: left;">Hand delta scroll threshold</td>
-<td style="text-align: left;">The distance, in meters, the current pointer can travel along the scroll direction before triggering a scroll drag.</td>
+<td style="text-align: left;">Hand Delta Scroll Threshold<br>(ハンドのスクロールしきい値)</td>
+<td style="text-align: left;">現在のポインターがスクロール ドラッグをトリガーする前にスクロール方向に沿って移動できる距離 (m)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Front touch distance</td>
-<td style="text-align: left;">Distance, in meters, to position a local xy plane used to verify if a touch interaction started in the front of the scroll view.</td>
+<td style="text-align: left;">Front touch distance<br>(前面のタッチ距離)</td>
+<td style="text-align: left;">スクロール ビューの前面でタッチ インタラクションが開始されたかどうかを確認するために使用されるローカルの xy 平面を配置する距離 (m)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Release threshold</td>
-<td style="text-align: left;">Withdraw amount, in meters, from the scroll boundaries needed to transition from touch engaged to released.</td>
+<td style="text-align: left;">Release threshold<br>(リリースのしきい値)</td>
+<td style="text-align: left;">タッチしている状態から解放されるまでに必要な、スクロール境界から引っこめる移動量 (m)</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>Velocity</th>
+<th>Velocity<br>(速度)</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Type of velocity</td>
-<td>The desired type of velocity falloff for the scroller.</td>
+<td>Type Of Velocity<br>(速度のタイプ)</td>
+<td>スクローラーの速度減衰のタイプ</td>
 </tr>
 <tr>
-<td>Velocity multiplier</td>
-<td>Amount of (extra) velocity to be applied to scroller.</td>
+<td>Velocity Multiplier<br>(速度倍率)</td>
+<td>スクローラーに適用される（追加の）速度量</td>
 </tr>
 <tr>
-<td>Velocity dampen</td>
-<td>Amount of falloff applied to the velocity.</td>
+<td>Velocity Dampen<br>(速度減衰)</td>
+<td>速度に適用される減衰量</td>
 </tr>
 <tr>
-<td>Bounce multiplier</td>
-<td>Multiplier to add more bounce to the overscroll of a list when using falloff per frame or falloff per item.</td>
+<td>Bounce Multiplier<br>(はずみ倍率)</td>
+<td>Falloff Per Frame や Falloff Per Item を使用するとき、リストのオーバースクロールに対してより大きいはずみ量を追加するための倍率</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>Debug options</th>
+<th>Debug options<br>(デバッグ オプション)</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mask enabled</td>
-<td>Visibility mode of scroll content. Default value will mask all objects outside of the scroll viewable area.</td>
+<td>Mask Enabled<br>(マスクの有効化)</td>
+<td>スクロール コンテンツの可視性。デフォルト値はスクロール表示エリアの外側にある全てのオブジェクトをマスクします。</td>
 </tr>
 <tr>
-<td>Show threshold planes</td>
-<td>If true, the editor will render the touch release threshold planes around the scroll boundaries.</td>
+<td>Show Threshold Planes<br>(しきい値平面の表示)</td>
+<td>tru の場合、Editor でスクロール境界の周りのタッチ リリースしきい値平面が描画されます。</td>
 </tr>
 <tr>
-<td>Debug pagination</td>
-<td>Use this section to debug the scroll pagination during runtime.</td>
+<td>Debug pagination<br>(デバッグ ページネーション)</td>
+<td>このセクションを使うことで実行時にスクロールのページネーションをデバッグできます。</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>Events</th>
+<th>Events<br>(イベント)</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>On click</td>
-<td>Event triggered when the scroll background collider or any of its interactive content receives a click.</td>
+<td>On Click<br>(クリック時)</td>
+<td>スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがクリックを受け取ったときにトリガーされるイベント</td>
 </tr>
 <tr>
-<td>On touch started</td>
-<td>Event triggered when the scroll background collider or any of its interactive content receives a near interaction touch.</td>
+<td>On Touch Started<br>(タッチ開始時)</td>
+<td>スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがニア インタラクション タッチを受け取ったときにトリガーされるイベント</td>
 </tr>
 <tr>
-<td>On touch ended</td>
-<td>Event triggered when an active touch interaction is terminated by having the near interaction pointer crossing one of the release threshold planes.</td>
+<td>On Touch Ended<br>(タッチ終了時)</td>
+<td>ニア インタラクション ポインターがリリースしきい値平面の1つを超えたことでアクティブなタッチ インタラクションが終了したときにトリガーされるイベント</td>
 </tr>
 <tr>
-<td>On momentum started</td>
-<td>Event triggered when the scroll container starts moving by interaction, velocity fallofff or pagination.</td>
+<td>On Momentum Started<br>(移動開始時)</td>
+<td>インタラクション、速度減衰やページネーションによってスクロール コンテナーが動き出したときにトリガーされるイベント</td>
 </tr>
 <tr>
-<td>On momentum ended</td>
-<td>Event triggered when the scroll container stops moving by interaction, velocity fallofff or pagination.</td>
+<td>On Momentum Ended<br>(移動終了時)</td>
+<td>インタラクション、速度減衰やページネーションによってスクロール コンテナーの動きが停止したときにトリガーされるイベント</td>
 </tr>
 </tbody>
 </table>
-<h2 id="scrolling-example-scene">Scrolling example scene</h2>
-<p><strong>ScrollingObjectCollection.unity</strong> example scene consists of 3 scrollable examples, each one with a different velocity falloff configuration. The example scene contains walls to show the surface placement behavior that are disabled by default in the hierarchy. The example scene can be found under the <code>MRTK/Examples/Demos/ScrollingObjectCollection/Scenes</code> folder.</p>
+<h2 id="スクロールのサンプル-シーン">スクロールのサンプル シーン</h2>
+<p><strong>ScrollingObjectCollection.unity</strong> サンプル シーンは、3つのスクロール可能なサンプルで構成されています。3つのサンプルはそれぞれ異なる速度減衰が設定されています。サンプルシーンは <code>MRTK/Examples/Demos/ScrollingObjectCollection/Scenes</code> フォルダ以下にあります。</p>
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png" alt="Scrolling object collection example scene"></p>
-<h2 id="scrolling-example-prefabs">Scrolling example prefabs</h2>
-<p>For convenience, two scrolling object collection prefabs are available to use. The example prefabs can be found under the <code>MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs</code> folder.</p>
+<h2 id="スクロールのサンプル-プレファブ">スクロールのサンプル プレファブ</h2>
+<p>便利なように、2つの Scrolling Object Collection のプレハブが用意されています。サンプルのプレハブは <code>MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs</code> フォルダにあります。</p>
 <p><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png" alt="Scrolling object collection prefabs"></p>
-<h2 id="see-also">See also</h2>
+<h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="Rendering/ClippingPrimitive.html">Clipping Primitive</a></li>
 <li><a href="Rendering/MaterialInstance.html">Material Instance</a></li>
