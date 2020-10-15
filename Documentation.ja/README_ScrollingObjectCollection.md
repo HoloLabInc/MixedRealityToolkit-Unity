@@ -107,15 +107,15 @@ public class ScrollablePagination : MonoBehaviour
 | Velocity<br>(速度) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Type Of Velocity<br>(速度のタイプ)      | スクローラーの速度減衰のタイプ                                                                                        |
-| Velocity Multiplier     | Amount of (extra) velocity to be applied to scroller.                                                                                                                                                        |
+| Velocity Multiplier<br>(速度倍率)     | スクローラーに適用される（追加の）速度量                                    |
 | Velocity Dampen<br>(速度減衰)     | 速度に適用される減衰量 |
-| Bounce multiplier     | Multiplier to add more bounce to the overscroll of a list when using falloff per frame or falloff per item. |
+| Bounce Multiplier<br>(はずみ倍率)     | Falloff Per Frame や Falloff Per Item を使用するとき、リストのオーバースクロールに対してより大きいはずみ量を追加するための倍率 |
 
 | Debug options<br>(デバッグ オプション) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mask enabled       | Visibility mode of scroll content. Default value will mask all objects outside of the scroll viewable area.                                                                                        |
-| Show threshold planes     | If true, the editor will render the touch release threshold planes around the scroll boundaries.                                                                                                                                                        |
-| Debug pagination     | Use this section to debug the scroll pagination during runtime. |
+| Mask Enabled<br>(マスクの有効化)       | スクロール コンテンツの可視性。デフォルト値はスクロール表示エリアの外側にある全てのオブジェクトをマスクします。    |
+| Show Threshold Planes<br>(しきい値平面の表示)    | tru の場合、Editor でスクロール境界の周りのタッチ リリースしきい値平面が描画されます。      |
+| Debug pagination<br>(デバッグ ページネーション)     | このセクションを使うことで実行時にスクロールのページネーションをデバッグできます。 |
 
 | Events<br>(イベント) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
