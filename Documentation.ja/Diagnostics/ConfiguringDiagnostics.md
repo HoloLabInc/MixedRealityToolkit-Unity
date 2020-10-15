@@ -4,6 +4,8 @@
 
 ![診断の一般的な設定](../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png)
 
+<a name="enable-verbose-logging"></a>
+
 ### Enable verbose logging （詳細ログの有効化）
 
 MRTK の詳細ログを有効にするかどうかを示します。デフォルトでは false ですが、
