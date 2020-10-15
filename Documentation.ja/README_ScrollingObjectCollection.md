@@ -1,71 +1,71 @@
-# Scrolling object collection
+# Scrolling Object Collection (スクローリング オブジェクト コレクション)
 ![Scrolling object collection](../Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg)
 
-The MRTK scrolling object collection is an UX component that enables scrolling of 3D content through a contained viewable area. The scrolling movement can be triggered by near or far input interaction and by discrete pagination. It supports both interactive and non-interactive objects.
+MRTK Scrolling Object Collection は、表示エリアを通して 3D コンテンツのスクロールを可能にする UX コンポーネントです。スクロールの動きは、ニア インプットやファー インプットの入力インタラクションや不連続のページネーションによってトリガーすることができます。インタラクティブなオブジェクトと非インタラクティブなオブジェクトの両方をサポートしています。
 
-## Getting started with the scrolling object collection
+## Scrolling Object Collection を始める
 
-### Setting up the scene
+### シーンのセットアップ
 
-1. Create a new unity scene.
-1. Add MRTK to the scene by navigating to the **Mixed Reality Toolkit** > **Add to Scene and Configure**.
+1. 新しい Unity シーンを作成します。
+1. **Mixed Reality Toolkit** > **Add to Scene and Configure** からシーンに MRTK を追加します。
 
-### Setting up the scrolling object
+### Scrolling Object (スクローリング オブジェクト) のセットアップ
 
-1. Create an empty game object in the scene and change its position to (0, 0, 1).
-1. Add a [scrolling object collection](xref:Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection) component to the game object.
+1. シーンに空の GameObject を作成し、位置を (0, 0, 1) に変更します。
+1. GameObject に [Scrolling Object Collection](xref:Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection) コンポーネントを追加します。
 
-    When the scrolling object collection is added, a box collider and a [near interaction touchable](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) component will be automatically attached to the root game object. These components allow the scroll object to listen to near and far interaction input events, like a pointer touch or click.  
+    Scrolling Object Collection が追加されると、ボックス コライダーと [Near Interaction Touchable](xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) コンポーネントがルートのゲーム オブジェクトに自動的にアタッチされます。これらのコンポーネントにより、スクローリング オブジェクトはポインターのタッチやクリックのようなニア・ファー インタラクションの入力イベントをリッスンすることができます。  
 
-    The MRTK scrolling object collection has two important elements that are created as child game objects under the root scrolling object hierarchy:
-    * `Container` - All scrolling content objects must be children of the container game object.
-    * `Clipping bounds` - If scrolling content masking is enabled, the clipping bounds element ensures that only the scrollable content inside its boundaries is visible. The clipping bounds game object has two components: a disabled box collider and a [clipping box](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox).
+    MRTK の Scrolling Object Collection には2つの重要な要素があり、それらはルートのスクローリング オブジェクト階層の下に子ゲーム オブジェクトとして作成されます。
+    * `Container` - すべてのスクローリング コンテンツ オブジェクトは Container ゲーム オブジェクトの子オブジェクトでなければなりません。
+    * `Clipping bounds` - スクローリング コンテンツのマスキングが有効になっている場合、Clipping bounds は、その境界内のスクロール可能なコンテンツのみを表示するようにします。Clipping bounds のゲーム オブジェクトは、無効化されたボックス コライダーと [Clipping Box](xref:Microsoft.MixedReality.Toolkit.Utilities.ClippingBox) の2つのコンポーネントを持っています。
 
 ![Scrolling object collection elements](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection.png) 
 
-### Adding content to the scrolling object
+### Scrolling Object にコンテンツを追加する
 
-The scrolling object collection can be combined with a [grid object collection](xref:Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection) to layout content in a grid of aligned elements that have uniform size and spacing.
+Scrolling Object Collection は、[Grid Object Collection](xref:Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection) と組み合わせて、サイズと間隔が一定の要素を並べたグリッドにコンテンツをレイアウトすることができます。
 
-1. Create an empty game object as a child of the scroll container.
-1. Add a grid object collection component to the game object.
-1. For a vertical single column scroll, in the inspector tab, configure the grid object collection as follow: 
-    - **Num columns**: 1
+1. 空の GameObject を Scroll Container の子要素として作成します。
+1. 作成した GameObject に Grid Object Collection コンポーネントを追加します。
+1. 縦方向の1列スクロールの場合は、インスペクター タブで以下のように Grid Object Collection を設定します。 
+    - **Num Columns**: 1
     - **Layout**: column then row
     - **Anchor**: upper left
-1. Change the **cell width** and **height** according to the dimensions of the content objects.
-1. Add the content objects as children of the grid object.
-1. Press **update collection**.
+1. **Cell Width** と **Height** をコンテンツ オブジェクトに合わせて変更します。
+1. Grid Object の子要素としてコンテンツ オブジェクトを追加します。
+1. **Update Collection** を押します。
 
 ![Grid layout](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png)
 
 > [!IMPORTANT]
-> Any scrolling content object material must use the [MRTK standard shader](README_MRTKStandardShader.md) in order for the clipping effect on the viewable area to work properly.
+> スクローリング コンテンツ のオブジェクトのマテリアルには、表示領域のクリッピング効果を正常に動作させるために、[MRTK Standard Shader](README_MRTKStandardShader.md) を使用しなければなりません。
    
 > [!NOTE]
-> If scrolling content masking is enabled, the scrolling object collection will add a [material instance](Rendering/MaterialInstance.md) component to any content objects that have a renderer attached. This component is used to manage instanced materials lifetime and improve memory performance.
+> スクローリング コンテンツのマスキングが有効な場合、Scrolling Object Collection は Renderer がアタッチされている全てのコンテンツ オブジェクトに [Material Instance](Rendering/MaterialInstance.md) コンポーネントを追加します。このコンポーネントはインスタンス化されたマテリアルのライフタイムを管理し、メモリ性能を向上させるために使用されます。
 
-### Configuring the scrolling viewable area
+### スクローリング表示エリアの設定
 
-1. For vertical scrolling through a single column of objects, in the inspector tab, configure the scrolling object collection as follow:
-    - **Cells per tier**: 1
-    - Choose the number of **tiers per page** according to the desired number of visible rows
-1. Change the **page cell width**, **height** and **depth** according to the dimensions of the content objects.
+1. 1列のオブジェクトを縦方向にスクロールする場合は、インスペクター タブで以下のように Scrolling Object Collection を設定します。
+    - **Cells Per Tier**: 1
+    - 表示したい行の数応じて、**Tiers Per Page** の数値を選択します。
+1. **Page Cell Width**, **Height**, **Depth** をコンテンツ オブジェクトのサイズに合わせて変更します。
 
-Notice how the content objects lying outside the scrolling viewable area are now disabled, while objects intersecting the scroll wireframe might be partially masked by the clipping primitive.
+スクローリング表示領域の外側にあるコンテンツ オブジェクトが無効化され、スクロール ワイヤフレームと交差するオブジェクトはクリッピング プリミティブによって部分的にマスクされている可能性があることに注目してください。
 
 ![Viewable area](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png)
  
-### Testing the scrolling object collection in the editor
+### Editor での Scrolling Object Collection のテスト
 
-1. Press play and hold the space bar to show an input simulation hand.
-1. Move the hand until the scrolling collider or any scrolling interactive content is in focus and trigger the scrolling movement by clicking and dragging up and down with the left mouse.
+1. Play を押し、スペース バーを押し続けて入力シミュレーション ハンドを表示します。
+1. スクローリング コライダーまたはスクロールするインタラクティブ コンテンツにフォーカスが当たるまでハンドを動かし、マウスの左クリックを押して上下にドラッグすることでスクロールの動きをトリガーします。
 
-## Controlling the scrolling object from code
+## スクローリング オブジェクトをコードで制御する
 
-The MRTK scrolling object collection exposes a few public methods that allow moving the scrolling container by snapping its position according to the `pagination` properties configuration.
+MRTK Scrolling Object Collection は、`pagination` プロパティの設定にしたがってスクローリング コンテナの位置をスナップして移動させることができるいくつかのパブリック メソッドを公開しています。
 
-An example of how to access the scrolling object collection pagination interface is available to use under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Scripts`` folder. The [scrollable pagination](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination) example script can be linked to any existing scrolling object collection in the scene. The script can then be referenced by scene components exposing Unity events (e.g, [MRTK button](README_Button.md)).
+Scrolling Object Collection のページネーション インターフェイスへのアクセス方法の例は、``MRTK/Examples/Demos/ScrollingObjectCollection/Scripts`` フォルダ以下にあります。[Scrollable Pagination](xref:Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination) のサンプル スクリプトは、シーン内の既存の Scrolling Object Collection にリンクすることができます。このスクリプトは、Unity イベントを公開するシーンコンポーネント (例: [MRTK button](README_Button.md)) から参照することができます。
 
 ```c#
 public class ScrollablePagination : MonoBehaviour
@@ -80,64 +80,64 @@ public class ScrollablePagination : MonoBehaviour
 }
 ```
 
-## Scrolling object collection properties:
+## Scrolling Object Collection のプロパティ
 
-| General                      |                                                                                                                                                                                                     |
+| General<br>(全般)                     |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Scroll direction             | The direction in which content should scroll.|
+| Scroll Direction<br>(スクロールの方向)            | コンテンツがスクロールする方向 |
 
-| Pagination                   |                                                                                                                                                                                                     |
+| Pagination<br>(ページネーション)                  |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cells per tier               | Number of cells in a row on up-down scroll view or number of cells in a column on left-right scroll view.                                                                                                         |
-| Tiers per page               | Number of visible tiers in the scrolling area.                                                                                                                                                                         |
-| Page cell                    | Dimensions of the pagination cell.                  |
+| Cells Per Tier<br>(列ごとのセル数)               | 上下スクロール ビューでは横列のセル数、左右スクロール ビューでは縦列のセル数                                                                                                         |
+| Tiers Per Page<br>(ページごとの列数)              | スクローリング エリアに表示される列数                                                                                                                                                                         |
+| Page Cell<br>(ページ セル)                   | ページネーション セルのサイズ                  |
 
-| Advanced settings            |                                                                                                                                                                                                     |
+| Advanced settings<br>(詳細設定)           |                                                                                                                                                                                                     |
 |:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mask edit mode               | Edit modes for defining the clipping box masking boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the clipping box object.|
-| Collider edit mode           | Edit modes for defining the scroll interaction collider boundaries. Choose 'Auto' to automatically use pagination values. Choose 'Manual' for enabling direct manipulation of the collider.|
-| Can scroll                   | Enables/disables scrolling with near/far interaction.                  |
-| Use on pre render            | Toggles whether the scrollingObjectCollection will use the Camera OnPreRender event to manage content visibility.                  |
-| Pagination curve             | Animation curve for pagination.                  |
-| Animation length             | The amount of time (in seconds) the PaginationCurve will take to evaluate.                  |
-| Hand delta scroll threshold  | The distance, in meters, the current pointer can travel along the scroll direction before triggering a scroll drag.                  |
-| Front touch distance         | Distance, in meters, to position a local xy plane used to verify if a touch interaction started in the front of the scroll view.                  |
-| Release threshold            | Withdraw amount, in meters, from the scroll boundaries needed to transition from touch engaged to released.                  |
+| Mask Edit Mode<br>(マスクの編集モード)              | クリッピング ボックスのマスキング境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとクリッピング ボックス オブジェクトを直接操作することができます。|
+| Collider Edit Mode<br>(コライダーの編集モード)          | スクロール インタラクションのコライダー境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとコライダーを直接操作することができます。|
+| Can Scroll<br>(スクロール可否)                  | ニア/ファー インタラクションでのスクロール可否                  |
+| Use On Pre Render<br>(OnPreRender の利用)           | ScrollingObjectCollection が Camera の OnPreRender イベントを使用してコンテンツの可視性を管理するかどうかを切り替えます。     |
+| Pagination Curve<br>(ページネーション カーブ)            | ページネーションのアニメーション カーブ                  |
+| Animation Length<br>(アニメーションの長さ)            | PaginationCurve が評価されるのにかかる時間（秒）                  |
+| Hand Delta Scroll Threshold<br>(ハンドのスクロールしきい値) | 現在のポインターがスクロール ドラッグをトリガーする前にスクロール方向に沿って移動できる距離 (m)       |
+| Front touch distance<br>(前面のタッチ距離)  | スクロール ビューの前面でタッチ インタラクションが開始されたかどうかを確認するために使用されるローカルの xy 平面を配置する距離 (m) |
+| Release threshold<br>(リリースのしきい値)            | タッチしている状態から解放されるまでに必要な、スクロール境界から引っこめる移動量 (m)       |
 
-| Velocity |                                                                                                                                                                                    |
+| Velocity<br>(速度) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Type of velocity       | The desired type of velocity falloff for the scroller.                                                                                        |
-| Velocity multiplier     | Amount of (extra) velocity to be applied to scroller.                                                                                                                                                        |
-| Velocity dampen     | Amount of falloff applied to the velocity. |
-| Bounce multiplier     | Multiplier to add more bounce to the overscroll of a list when using falloff per frame or falloff per item. |
+| Type Of Velocity<br>(速度のタイプ)      | スクローラーの速度減衰のタイプ                                                                                        |
+| Velocity Multiplier<br>(速度倍率)     | スクローラーに適用される（追加の）速度量                                    |
+| Velocity Dampen<br>(速度減衰)     | 速度に適用される減衰量 |
+| Bounce Multiplier<br>(はずみ倍率)     | Falloff Per Frame や Falloff Per Item を使用するとき、リストのオーバースクロールに対してより大きいはずみ量を追加するための倍率 |
 
-| Debug options |                                                                                                                                                                                    |
+| Debug options<br>(デバッグ オプション) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mask enabled       | Visibility mode of scroll content. Default value will mask all objects outside of the scroll viewable area.                                                                                        |
-| Show threshold planes     | If true, the editor will render the touch release threshold planes around the scroll boundaries.                                                                                                                                                        |
-| Debug pagination     | Use this section to debug the scroll pagination during runtime. |
+| Mask Enabled<br>(マスクの有効化)       | スクロール コンテンツの可視性。デフォルト値はスクロール表示エリアの外側にある全てのオブジェクトをマスクします。    |
+| Show Threshold Planes<br>(しきい値平面の表示)    | tru の場合、Editor でスクロール境界の周りのタッチ リリースしきい値平面が描画されます。      |
+| Debug pagination<br>(デバッグ ページネーション)     | このセクションを使うことで実行時にスクロールのページネーションをデバッグできます。 |
 
-| Events|                                                                                                                                                                                    |
+| Events<br>(イベント) |                                                                                                                                                                                    |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| On click       | Event triggered when the scroll background collider or any of its interactive content receives a click.                                                                                        |
-| On touch started     | Event triggered when the scroll background collider or any of its interactive content receives a near interaction touch.                                                                                                                                                        |
-| On touch ended     | Event triggered when an active touch interaction is terminated by having the near interaction pointer crossing one of the release threshold planes. |
-| On momentum started     | Event triggered when the scroll container starts moving by interaction, velocity fallofff or pagination. |
-| On momentum ended     | Event triggered when the scroll container stops moving by interaction, velocity fallofff or pagination. |
+| On Click<br>(クリック時)      | スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがクリックを受け取ったときにトリガーされるイベント    |
+| On Touch Started<br>(タッチ開始時)     | スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがニア インタラクション タッチを受け取ったときにトリガーされるイベント   |
+| On Touch Ended<br>(タッチ終了時)     | ニア インタラクション ポインターがリリースしきい値平面の1つを超えたことでアクティブなタッチ インタラクションが終了したときにトリガーされるイベント |
+| On Momentum Started<br>(移動開始時)     | インタラクション、速度減衰やページネーションによってスクロール コンテナーが動き出したときにトリガーされるイベント |
+| On Momentum Ended<br>(移動終了時)     | インタラクション、速度減衰やページネーションによってスクロール コンテナーの動きが停止したときにトリガーされるイベント |
 
-## Scrolling example scene
+## スクロールのサンプル シーン
 
-**ScrollingObjectCollection.unity** example scene consists of 3 scrollable examples, each one with a different velocity falloff configuration. The example scene contains walls to show the surface placement behavior that are disabled by default in the hierarchy. The example scene can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Scenes`` folder.
+**ScrollingObjectCollection.unity** サンプル シーンは、3つのスクロール可能なサンプルで構成されています。3つのサンプルはそれぞれ異なる速度減衰が設定されています。サンプルシーンは ``MRTK/Examples/Demos/ScrollingObjectCollection/Scenes`` フォルダ以下にあります。
 
 ![Scrolling object collection example scene](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png)
 
-## Scrolling example prefabs
+## スクロールのサンプル プレファブ
 
-For convenience, two scrolling object collection prefabs are available to use. The example prefabs can be found under the ``MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs`` folder.
+便利なように、2つの Scrolling Object Collection のプレハブが用意されています。サンプルのプレハブは ``MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs`` フォルダにあります。
 
 ![Scrolling object collection prefabs](../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png)
 
-## See also
+## 関連項目
 
 * [Clipping Primitive](Rendering/ClippingPrimitive.md)
 * [Material Instance](Rendering/MaterialInstance.md)
