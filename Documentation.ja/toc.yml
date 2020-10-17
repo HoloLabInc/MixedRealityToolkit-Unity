@@ -247,7 +247,7 @@
         href: README_TapToPlace.md
     - name: Object Collection (オブジェクト コレクション)
       href: README_ObjectCollection.md
-    - name: Scrolling Object Collection
+    - name: Scrolling Object Collection (スクローリング オブジェクト コレクション)
       href: README_ScrollingObjectCollection.md
     - name: Tooltips (ツールチップ)
       href: README_Tooltip.md
@@ -255,7 +255,7 @@
       href: README_Sliders.md
     - name: Hand Menu
       href: README_HandMenu.md
-    - name: Near Menu
+    - name: Near Menu (ニア メニュー)
       href: README_NearMenu.md
     - name: App Bar
       href: README_AppBar.md

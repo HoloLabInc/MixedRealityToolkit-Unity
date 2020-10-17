@@ -1,20 +1,20 @@
-# Near menu
+# Near Menu (ニア メニュー)
 
 ![Near Menu](../Documentation/Images/NearMenu/MRTK_UX_NearMenu.png)
 
-Near Menu is a UX control which provides a collection of buttons or other UI components. It is floating around the user's body and easily accessible anytime. Since it is loosely coupled with the user, it does not disturb the user's interaction with the target content. The user can use the 'Pin' button to world-lock/unlock the menu. The menu can be grabbed and placed at a specific position.
+Near Menu は、ボタンなどの UI コンポーネントの集まりを提供する UX コントロールです。ユーザーの体の周りに浮かんでいて、いつでも簡単にアクセスできます。ユーザーと疎結合しているので、ターゲット コンテンツとユーザーとのインタラクションを妨げることはありません。ユーザーは「Pin」ボタンを使ってメニューをワールドロック/アンロックすることができます。メニューは掴んで特定の位置に配置することができます。
 
-## Interaction behavior
+## インタラクションの動作
 
-- **Tag-along**: The menu follows you and stays within 30-60cm range from the user for the near interactions.
-- **Pin**: Using the 'Pin' button, the menu can be world-locked and released.
-- **Grab and move**: The menu is always grabbable and movable. Regardless of the previous state, the menu will be pinned(world-locked) when grabbed and released. There are visual cues for the grabbable area. They are revealed on hand proximity.
+- **タグアロング**: メニューはニア インタラクションのために、あなたについてきてユーザーから 30〜60cm の範囲内にとどまります。
+- **ピン**: 「Pin」ボタンを使うと、メニューをワールドロックにしたりロックを解除したりできます。
+- **グラブと移動**: メニューはいつでも掴んで動かすことができます。前の状態に関わらず、メニューを掴んで離すと固定 (ワールドロック) されます。把持可能な領域には視覚的な手がかりがあります。手を近づけると表示されます。
 
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Grab.png">
 
-## Prefabs
+## プレハブ
 
-Near Menu prefabs are designed to demonstrate how to use MRTK's various components to build menus for near interactions.
+Near Menu のプレハブは MRTK の様々なコンポーネントを使用してニア インタラクションのためのメニューを構築する方法をデモンストレーションするために設計されています。
 
 - **NearMenu2x4.prefab**
 - **NearMenu3x1.prefab**
@@ -23,46 +23,46 @@ Near Menu prefabs are designed to demonstrate how to use MRTK's various componen
 - **NearMenu4x1.prefab**
 - **NearMenu4x2.prefab**
 
-## Example scene
+## サンプル シーン
 
-You can find examples of Near Menu prefabs in the `NearMenuExamples` scene.
+Near Menu プレハブのサンプルは、`NearMenuExamples` シーンで見ることができます。
 
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Examples.png">
 
-## Structure
+## 構造
 
-Near Menu prefabs are made with following MRTK components.
+Near Menu プレハブは以下の MRTK コンポーネントで出来ています。
 
-- [**PressableButtonHoloLens2**](README_Button.md) prefab
-- [**Grid Object Collection**](README_ObjectCollection.md): Multiple button layout in grid
-- [**Manipulation Handler**](README_ManipulationHandler.md): Grab and move the menu
-- [**RadialView Solver**](README_Solver.md): Follow Me(tag-along) behavior
+- [**PressableButtonHoloLens2**](README_Button.md) プレハブ
+- [**Grid Object Collection**](README_ObjectCollection.md): グリッド状の複数ボタンのレイアウト
+- [**Manipulation Handler**](README_ManipulationHandler.md): メニューの把持と移動
+- [**RadialView Solver**](README_Solver.md): Follow Me (タグアロング) の動作
 
 ![Near Menu Prefab](../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Structure.png)
 
-## How to customize
+## カスタマイズ方法
 
-**1. Add/Remove Buttons**
+**1. Button の追加/削除**
 
-Under `ButtonCollection` object, add or remove buttons.  
+`ButtonCollection` オブジェクト以下で、ボタンを追加または削除します。  
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Custom0.png" width="450">
 
-**2. Update the Grid Object Collection**
+**2. Grid Object Collection の更新**
 
-Click `Update Collection` button in the Inspector of the `ButtonCollection` object. It will update the grid layout.  
+インスペクターで `ButtonCollection` オブジェクトの `Update Collection` ボタンをクリックします。グリッド レイアウトが更新されます。  
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Custom1.png">
 
-You can configure the number of rows using `Rows` property of the Grid Object Collection.  
+Grid Object Collection の `Rows` プロパティを使って行の数を設定できます。
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Custom2.png">
 
-**3. Adjust the backplate size**
+**3. バックプレートのサイズ調整**
 
-Adjust the size of the `Quad` under `Backplate` object. The width and height of the backplate should be `0.032 * [Number of the buttons + 1]`. For example, if you have 3 x 2 buttons, the width of the backplate is `0.032 * 4` and the height is `0.032 * 3`. You can directly put this expression into the Unity's field.  
+`Backplate` オブジェクトの下の `Quad` のサイズを調整します。バックプレートの幅と高さは `0.032 * [ボタンの数 + 1]` とします。例えば、ボタンが 3 × 2 個ある場合、バックプレートの幅は `0.032 * 4`、高さは `0.032 * 3` となります。この式は Unity のフィールドに直接入力することができます。  
 <img src="../Documentation/Images/NearMenu/MRTK_UX_NearMenu_Custom3.png" width="450">
 
-- Default size of the HoloLens 2 button is 3.2x3.2 cm (0.032m)
+- HoloLens 2 ボタンのデフォルト サイズは 3.2x3.2 cm (0.032m) です。
 
-## See also
+## 関連項目
 
 - [**Buttons**](README_Button.md)
 - [**Bounds Control**](README_BoundsControl.md)
