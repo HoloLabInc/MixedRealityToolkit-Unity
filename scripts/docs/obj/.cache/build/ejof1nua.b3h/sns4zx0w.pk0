@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MRTK &#12408;&#12424;&#12358;&#12371;&#12381; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MRTK &#12408;&#12424;&#12358;&#12371;&#12381; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mrtk-へようこそ" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="11">MRTK へようこそ</h1>
+
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="13"><img src="../Documentation/Images/MRTK_Logo_Rev.png" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="13" alt="MRTK Logo"></p>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="15">Mixed Reality Toolkit (MRTK) は Virtual Reality (VR) と Augmented Reality (AR) のための Mixed Reality エクスペリエンスを構築するためのクロスプラットフォームのツールキットです。</p>
+<h2 id="開発" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="17">開発</h2>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="19">MRTK や Unity での Mixed Reality 開発が初めての場合は、<a href="https://docs.microsoft.com/windows/mixed-reality/unity-development-overview?tabs=mrtk%2Chl2" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="19">Unity 開発ジャーニー</a> のはじめから始めることをおすすめします。Unity 開発ジャーニーは <strong sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="19">MRTK の開始点としておすすめです</strong>。特に、インストール、コア コンセプト、Unity での MRTK の使用法について説明するために作られました。</p>
+<div class="CAUTION" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="21">
+<h5>Caution</h5>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="22">Unity 開発ジャーニーは、現在 <strong sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="22">MRTK version 2.5.0</strong> と <strong sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="22">Unity 2019.4</strong> を利用しています。他の構成の場合にも、Unity 開発ジャーニーから始めることをおすすめしますが、<a href="Installation.html" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="22">インストール手順</a> もご参照ください。</p>
+</div>
+<h2 id="ドキュメントのバージョン" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="24">ドキュメントのバージョン</h2>
+<div class="WARNING" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="26">
+<h5>Warning</h5>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="27">訳注: 日本語翻訳ページでは最新のリリース バージョンのみをサポートしており、バージョンの切り替えはできません。</p>
+</div>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="29">全てのリリース バージョンの完全なドキュメントがあります。<strong sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="29">mrtk_development</strong> ブランチは最も新しく最も素晴らしいですが、アクティブな開発状態にあります。安定性のために、最も大きい番号のリリース ブランチを使うことをおすすめします。バージョンは画面右上のドロップダウンから選択できます。</p>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="31"><img src="../Documentation/Images/MRTK-Doc-Versions.png" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="31" alt="MRTK version reference"></p>
+<h2 id="助けを得る" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="33">助けを得る</h2>
+<p sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="35">MRTK による問題に直面した場合や、何かを行うことについての質問がある場合、助けになるリソースがいくつかあります。</p>
+<ul sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="37">
+<li sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="37">バグ レポートの場合は、GitHub のリポジトリに <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/new/choose" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="37">issue を報告</a> してください。</li>
+<li sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="38">質問の場合は、<a href="https://stackoverflow.com/questions/tagged/mrtk" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="38">StackOverflow</a> または Slack の <a href="https://holodevelopers.slack.com/messages/C2H4HT858" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="38">mixed-reality-toolkit channel</a> を利用してください。Slack コミュニティには <a href="https://holodevelopersslack.azurewebsites.net/" sourcefile="../../Documentation.ja/WelcomeToMRTK.md" sourcestartlinenumber="38">自動招待リンク</a> から参加できます。</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/WelcomeToMRTK.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

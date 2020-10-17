@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interactable (&#12452;&#12531;&#12479;&#12521;&#12463;&#12479;&#12502;&#12523;&#12289;&#12452;&#12531;&#12479;&#12521;&#12463;&#12471;&#12519;&#12531;&#21487;&#33021;&#12394;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="interactable-インタラクタブルインタラクション可能な" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="1">Interactable (インタラクタブル、インタラクション可能な)</h1>
+
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="3"><img src="../Documentation/Images/Interactable/InteractableExamples.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="3" alt="Interactable"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5">Interactable</code></a> コンポーネントは、あらゆるオブジェクトを容易に <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5">interactable(インタラクション可能)</em> にし、入力に応答させるオールインワン コンテナです。Interactable は、タッチ、ハンド レイ、音声などを含むすべてのタイプの入力のためのキャッチオールとして機能し、これらのインタラクションを <a href="#events" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5">イベント</a> および <a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="5">Visual Themes (ビジュアル テーマ)</a> の応答に流し込みます。このコンポーネントを使用すると、ボタンの作成やフォーカスによるオブジェクトの色の変更などを簡単に行うことができます。</p>
+<h2 id="interactable-の設定方法" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="7">Interactable の設定方法</h2>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="9">このコンポーネントには、3つの主要な構成セクションがあります:</p>
+<ol sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="11">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="11"><a href="#general-%E5%85%A5%E5%8A%9B%E8%A8%AD%E5%AE%9A" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="11">General 入力設定</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="12">複数の GameObject を対象とした <a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="12">ビジュアル テーマ</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="13"><a href="#events" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="13">イベント ハンドラ</a></li>
+</ol>
+<h3 id="general-入力設定" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="15">General 入力設定</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="17"><img src="../Documentation/Images/Interactable/InputFeatures_short.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="17" alt="General Interactable Settings"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="19"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="19">States (ステート)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="21"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="21">States</em> は <a href="#interactable-%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="21">Interactable プロファイル</a>と<a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="21">ビジュアル テーマ</a>で利用する、押された、見られている、といったインタラクションのフェーズを定義する <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="21">ScriptableObject</a> パラメータです。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="23"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="23">DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) は MRTK にそのまま含まれている、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="23">Interactable</em> コンポーネントのデフォルトのパラメーターです。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="25"><img src="../Documentation/Images/Interactable/DefaultInteractableStates.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="25" alt="States ScriptableObject example in inspector"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="27"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="27">DefaultInteractableStates</em> アセットには4つのステートが含まれており、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStates.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="27">InteractableStates</code></a> ステート モデルの実装を利用します。</p>
+<ul sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="29">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="29"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="29"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="29">Default</strong>: 何も起こっていません。これは最も独立したベース ステートです。</p>
+</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="31"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="31"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="31">Focus</strong>: オブジェクトがポイントされています。これは単一のステートで、他のステートは現在設定されていませんが、Default より優先されます。</p>
+</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="33"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="33"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="33">Press</strong>: オブジェクトがポイントされており、ボタンまたはハンドが押しています。Press ステートは Default と Focus よりも優先されます。このステートは、Physical Press (物理的な押下) に対するフォールバックとしても設定されます。</p>
+</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="35"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="35"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="35">Disabled</strong>: このボタンはインタラクティブであってはなりません。また、何らかの理由でこのボタンが現在使用できないことが視覚的なフィードバックによってユーザーに通知されます。理論的には、Disabled ステートには他のすべての状態を含めることができますが、Enabled がオフの場合は、Disabled ステートが他のすべてのステートより優先されます。</p>
+</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="37">リスト内の順序に応じて、ビット値 (#) がステートに割り当てられます。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="39">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="40">一般に、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="40">Interactable</em> コンポーネントを作成する場合は、<strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="40">DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) を使用することをお勧めします。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="42">ただし、テーマの駆動に使用できる Interactable のステートは17ありますが、一部は他のコンポーネントによって駆動されるように設計されています。以下は、そのようなステートで、機能が組み込まれているもののリストです。</p>
+<ul sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="44">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="44">Visited: Interactable がクリックされました。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="45">Toggled: ボタンがトグル状態になっているか、Dimension index が奇数です。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="46">Gesture: ハンドまたはコントローラーが押され、元の位置から移動しました。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="47">VoiceCommand: Interactable をトリガーするのに音声コマンドが使われました。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="48">PhysicalTouch: タッチ入力が現在検出されています。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="48">NearInteractionTouchable</code></a> を使用して有効にしてください。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="49">Grab: ハンドが現在オブジェクトの境界内でグラブしています。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="49"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="49">NearInteractionGrabbable</code></a> を使用して有効にしてください。</li>
+</ul>
+</div>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="51"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="51">Enabled (有効)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="53">Interactable が開始時に有効かどうかを切り替えます。これは、コードの <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="53"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="53">Interactable.IsEnabled</code></a> に対応します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="55"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="55">Interactable</em> の enabled プロパティは、GameObject/Component で (SetActive などによって) 設定された enabled プロパティとは異なります。GameObject または <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="55">Interactable</em> MonoBehavior を無効にすると、入力、ビジュアル テーマ、イベントなど、クラス内のすべてのものの実行が無効になります。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="55"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="55">Interactable.IsEnabled</code></a> を介して無効にすると、ほとんどの入力処理が無効になり、関連する入力ステートがリセットされます。ただし、クラスはすべてのフレームで実行され、無視される入力イベントを受け取ります。これは、Interactable をビジュアル テーマを介して disabled ステートで表示する場合に便利です。この典型的な例は、すべての必須入力フィールドが完了するのを待つ送信ボタンです。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="57"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="57">Input Actions (入力アクション)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="59">入力設定またはコントローラー マッピング プロファイルから、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="59">Interactable</em> コンポーネントが反応する <a href="Input/InputActions.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="59">input action</a> を選択します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="61">このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_InputAction" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="61"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="61">Interactable.InputAction</code></a> を使用してコードで設定できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="63"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="63">IsGlobal (グローバルである)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="65">true の場合、選択した <a href="Input/InputActions.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="65">input action</a> のグローバル入力リスナーとしてコンポーネントがマークされます。デフォルトの動作は false で、この <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="65">Interactable</em> collider/GameObject のみへの入力に制限されます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="67">このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsGlobal" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="67"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="67">Interactable.IsGlobal</code></a> を使用してコードで設定できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="69"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="69">Speech Command (音声コマンド)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="71">音声対話で OnClick イベントをトリガーするための、MRTK Speech Commands Profile で設定された <a href="Input/Speech.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="71">Speech command (音声コマンド)</a> です。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="73">このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceCommand" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="73"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="73">Interactable.VoiceCommand</code></a> を使用してコードで設定できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="75"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="75">Requires Focus (フォーカスが必要)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="77">true の場合、音声コマンドは、ポインタからすでにフォーカスがある場合にのみ、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="77">Interactable</em> を作動させます。false の場合、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="77">Interactable</em> は選択した音声コマンドのグローバル リスナーとして機能します。複数のグローバル スピーチ リスナーをシーン内で整理するのは困難な場合があるため、デフォルトの動作は true です。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="79">このプロパティは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceRequiresFocus" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="79"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="79">Interactable.VoiceRequiresFocus</code></a> を使用してコードで設定できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="81"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="81">Selection Mode (選択モード)</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="83">このプロパティは、選択ロジックを定義します。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="83">Interactable</em> がクリックされると、次の <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="83">Dimension</em> レベルに反復されます。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="83">Dimensions</em> はランクと似ており、入力 (フォーカス、押下など) の外側の状態を定義します。これらは、ボタンに関連付けられたトグル状態やその他のマルチランク状態を定義する場合に便利です。現在の Dimension レベルは、<code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="83">Interactable.DimensionIndex</code> で取得できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="85">使用可能な選択モードは次のとおりです:</p>
+<ul sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="87">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="87"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="87">Button</strong> - <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="87">Dimensions</em> = 1、シンプルなクリック可能な <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="87">Interactable</em></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88">Toggle</strong> - <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88">Dimensions</em> = 2、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88">Interactable</em> は <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88">on</em>/<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="88">off</em> 状態を交互に切り替えます</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="89"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="89">Multi-dimension</strong> - <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="89">Dimensions</em> &gt;= 3、クリックするたびに現在の dimension level に 1 加算します。ボタンの状態をリストなどに定義する場合に便利です。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">Interactable</em> では、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">Dimension</em> ごとに複数のテーマを定義することもできます。たとえば、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">SelectionMode=Toggle</em> の場合、あるテーマを <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">Interactable</em> が <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">deselected</em> のときに適用させ、別のテーマをコンポーネントが <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="91">selected</em> のときに適用させられます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">現在の選択モードは、実行時に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_ButtonMode" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">Interactable.ButtonMode</code></a> を使用して照会できます。実行時にモードを更新するには、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_Dimensions" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">Interactable.Dimensions</code></a> プロパティを使用して、目的の機能に一致させます。さらに、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">Toggle</em> および <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">Multi-Dimension</em> モードで役立つ、現在の Dimension には、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_CurrentDimension" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="93">Interactable.CurrentDimension</code></a> からアクセスできます。</p>
+<h3 id="interactable-プロファイル" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="95">Interactable プロファイル</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="97"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="97">Profiles</em> は、GameObject と <a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="97">ビジュアル テーマ</a> の間の関係を作成するアイテムです。プロファイルは、<a href="#general-%E5%85%A5%E5%8A%9B%E8%A8%AD%E5%AE%9A" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="97">ステートの変更が起こる</a> 時にテーマによって操作されるコンテンツを定義します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="99">テーマはマテリアルのような働きをします。これらは、現在の状態に基づいてオブジェクトに割り当てられるプロパティのリストを含むスクリプタブル オブジェクトです。テーマも再利用可能で、複数の <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="99">Interactable</em> UX オブジェクトに割り当てることができます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="101"><strong sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="101">Reset On Destroy</strong></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="103">ビジュアル テーマはターゲットとなる GameObject のさまざまなプロパティを、そのクラスと選択されたテーマ エンジンに応じて変更します。もし Interactable コンポーネントが破棄される時に <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="103">Reset On Destroy</em> が true の場合、コンポーネントはすべての変更されたプロパティをアクティブなテーマから元の値へとリセットします。そうでなければ、破棄されるときに Interactable コンポーネントはすべての変更されたプロパティをそのままにします。後者の場合、値の最後の状態は他の外部のコンポーネントによって変更されない限り持続します。デフォルトは false です。</p>
+<img src="../Documentation/Images/Interactable/Profiles_Themes.png" width="450">
+<h2 id="events" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="107">Events</h2>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="109">すべての <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="109">Interactable</em> コンポーネントには、コンポーネントが単純に選択されたときに発火する <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="109">OnClick</em> イベントがあります。ただし、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="109">Interactable</em> は、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="109">OnClick</em> 以外の入力イベントの検出にも使用できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="111">Event Receiver (イベント レシーバー) 定義の新しいタイプを追加するには、[<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="111">Add Event</em>] ボタンをクリックします。追加したら、目的のイベントのタイプを選択します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="113"><img src="../Documentation/Images/Interactable/Events.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="113" alt="Events example">)</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="115">さまざまなタイプの入力に応答する、さまざまなタイプのイベント レシーバーがあります。MRTK には、次のレシーバーが同梱されています。</p>
+<ul sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="117">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="117"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableAudioReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="117"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="117">InteractableAudioReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="118"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnClickReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="118"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="118">InteractableOnClickReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="119"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="119"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="119">InteractableOnFocusReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="120"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="120"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="120">InteractableOnGrabReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="121"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnHoldReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="121"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="121">InteractableOnHoldReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="122"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnPressReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="122"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="122">InteractableOnPressReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="123"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnToggleReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="123"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="123">InteractableOnToggleReceiver</code></a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="124"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnTouchReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="124"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="124">InteractableOnTouchReceiver</code></a></li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="126">カスタム レシーバーを作成するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="126"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="126">ReceiverBase</code></a> を拡張する新しいクラスを作成します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="128"><img src="../Documentation/Images/Interactable/Event_toggle.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="128" alt="Event Toggle Receiver Example"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="130"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="130">Toggle Event Receiver の例</em></p>
+<h3 id="interactable-receivers" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="132">Interactable Receivers</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</code></a> コンポーネントを使用すると、元となる <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">Interactable</em> コンポーネントの外部でイベントを定義できます。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</em> は、別の <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">Interactable</em> によって発火されるフィルターされたイベント タイプをリッスンします。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">Interactable</em> プロパティが直接割り当てられていない場合、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">Search Scope</em> プロパティは、自身、親、または、子 GameObject のどの方向で <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</em> がイベントをリッスンするかを定義します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="136"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="136">InteractableReceiverList</code></a> も同じように動作しますが、マッチするイベントがリストとなっています。</p>
+<img src="../Documentation/Images/Interactable/InteractableReceiver.png" width="450">
+<h3 id="カスタム-イベントを作成" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="140">カスタム イベントを作成</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="142"><a href="VisualThemes.html#custom-theme-engines" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="142">Visual Themes</a> と同様に、イベントを拡張して任意の状態パターンを検出したり、機能を公開したりすることができます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="144">カスタムイベントは、主に次の2つの方法で作成できます:</p>
+<ol sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="146">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="146"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="146"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="146"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="146">ReceiverBase</code></a> クラスを拡張して、イベント タイプのドロップダウン リストに表示されるカスタム イベントを作成します。Unity イベントはデフォルトで提供されますが、追加の Unity イベントを追加したり、Unity イベントを非表示に設定したりすることができます。この機能を使用すると、プロジェクトにおいてデザイナーはエンジニアと協力し、デザイナーがエディターで設定できるカスタム イベントを作成できます。</p>
+</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148"><p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148">ReceiverBaseMonoBehavior</code></a> クラスを拡張して、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148">Interactable</em> または別のオブジェクトに配置できる完全にカスタムなイベント コンポーネントを作成します。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148">ReceiverBaseMonoBehavior</code></a> は、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="148">Interactable</em> を参照してステートの変化を検出します。</p>
+</li>
+</ol>
+<h4 id="receiverbase-の拡張例" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="150"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="150">ReceiverBase</code> の拡張例</h4>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="151"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="151"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="151">CustomInteractablesReceiver</code></a> クラスは、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="151">Interactable</em> に関するステータス情報を表示し、カスタム イベント レシーバの作成例となります。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="153">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
+{
+    HideUnityEvents = true; // レシーバーの Unity イベントを非表示にします。コードのみであると意味します。
+}
+</code></pre>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160">次のメソッドは、カスタム イベント レシーバーの作成時にオーバーライドまたは実装する場合に便利です。 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160">ReceiverBase.OnUpdate()</code></a> は、ステートのパターン/遷移の検出に使用できる抽象メソッドです。さらに、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160">ReceiverBase.OnVoiceCommand()</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160">ReceiverBase.OnClick()</code></a> メソッドは、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="160">Interactable</em> が選択されている場合にカスタム イベント ロジックを作成するのに便利です。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="162">public override void OnUpdate(InteractableStates state, Interactable source)
+{
+    if (state.CurrentState() != lastState)
+    {
+        // 状態が変わったので、何か新しいことをする
+        lastState = state.CurrentState();
+        ...
+    }
+}
+
+public virtual void OnVoiceCommand(InteractableStates state, Interactable source,
+                                    string command, int index = 0, int length = 1)
+{
+    base.OnVoiceCommand(state, source, command, index, length);
+    // 音声コマンドが呼ばれたので、何かアクションを実行する
+}  
+
+public virtual void OnClick(InteractableStates state,
+                            Interactable source,
+                            IMixedRealityPointer pointer = null)
+{
+    base.OnClick(state, source);
+    // クリックが呼ばれたので、何かアクションを実行する
+}
+</code></pre>
+<h5 id="inspector-にカスタム-イベント-レシーバー-フィールドを表示" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="189">Inspector にカスタム イベント レシーバー フィールドを表示</h5>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191">ReceiverBase</em> スクリプトは、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191">InspectorField</code></a> 属性を使用して Inspector (インスペクター) にカスタム プロパティを公開します。次に、Vector3 のツールチップとラベル情報を持つカスタム プロパティの例を示します。このプロパティは、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191">Interactable</em> GameObject が選択され、関連付けられた <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="191">Event Receiver</em> タイプが追加されている場合に、インスペクターで設定可能として表示されます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="193">[InspectorField(Label = &quot;&lt;Property label&gt;&quot;,Tooltip = &quot;&lt;Insert tooltip info&gt;&quot;,Type = InspectorField.FieldTypes.Vector3)]
+public Vector3 EffectOffset = Vector3.zero;
+</code></pre>
+<h2 id="interactable-の使用方法" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="198">Interactable の使用方法</h2>
+<h3 id="シンプルなボタンを作成する" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="200">シンプルなボタンを作成する</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="202">入力イベントを受信するように構成された GameObject に <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="202">Interactable</em> コンポーネントを追加することで、簡単なボタンを作成することができます。入力を受け取るために自身または子要素にコライダーを持っていることがあります。Unity UI ベースの GameObject で <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="202">Interactable</em> を使用する場合は、Canvas GameObject の下に配置する必要があります。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="204">ボタンをさらに一歩進めて、新しいプロファイルを作成し、GameObject 自体を割り当て、新しいテーマを作成します。さらに、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="204">OnClick</em> イベントを使用して、何かを実行します。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="206">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207">押下可能な <a href="README_Button.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207">Button (ボタン)</a> を作成するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.PressableButton.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207">PressableButton</code></a> コンポーネントが必要です。さらに、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.PhysicalPressEventRouter.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207">PhysicalPressEventRouter</code></a> コンポーネントは、押下イベントを <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="207">Interactable</em> コンポーネントに転送するために必要です。</p>
+</div>
+<h3 id="toggle-button-トグル-ボタン-と-multi-dimension-ボタンの作成" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="209">Toggle Button (トグル ボタン) と Multi-Dimension ボタンの作成</h3>
+<h4 id="トグル-ボタン" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="211">トグル ボタン</h4>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213">ボタンをトグル可能にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213">Selection Mode</code></a> フィールドを <code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213">Toggle</code> タイプに変更します。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213">Profiles</em> セクションでは、それぞれのプロファイルに、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="213">Interactable</em> がトグル オンになっている場合に使用される新しいトグル用のテーマが追加されます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="215"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="215"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="215">SelectionMode</code></a> が <code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="215">Toggle</code> に設定されている場合、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="215">IsToggled</em> チェック ボックスを使用して、実行時初期化時のコントロールのデフォルト値を設定できます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217">CanSelect</em> は、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217">Interactable</em> が <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217">off</em> から <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217">on</em> に遷移できることを意味し、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="217">CanDeselect</em> はその逆を意味します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="219"><img src="../Documentation/Images/Interactable/Profile_toggle.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="219" alt="Profile Toggle Visual Themes Example"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221">開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221">SetToggled</code></a> および <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221">IsToggled</code></a> インタフェースを使用して、コードを介して <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="221">Interactable</em> のトグル状態を取得/設定できます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="223">// SelectionMode = Toggle (すなわち Dimensions == 2) を使用する場合
+
+// Interactable を選択して、トグルをオンにする
+myInteractable.IsToggled = true;
+
+// Interactable が選択されているかを取得する
+bool isSelected = myInteractable.IsToggled;
+</code></pre>
+<h5 id="トグル-ボタン-コレクション" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="233">トグル ボタン コレクション</h5>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="235">トグル ボタンのリストを作り、一度にアクティブにできるのは1つだけにすることがよくあります。これはラジアル セットまたはラジオ ボタンなどとも呼ばれます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="237">この機能を有効にするには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="237"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="237">InteractableToggleCollection</code></a> コンポーネントを使用します。このコントロールにより、常に1つの <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="237">Interactable</em> のみがオンになります。<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="237">RadialSet</em> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab) も、すぐに使える素晴らしい出発点です。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="239">カスタム ラジオ ボタン グループを作成するには:</p>
+<ol sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="241">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="241">複数の <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="241">Interactable</em> GameObjects/ボタンを作成します。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="242">それぞれの <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="242">Interactable</em> を <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="242">SelectionMode</em> = Toggle、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="242">CanSelect</em> = true、および、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="242">CanDeselect</em> = false に設定します。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="243">すべての <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="243">Interactables</em> に対して、空の親 GameObject を作成し、<em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="243">InteractableToggleCollection</em> コンポーネントを追加します。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="244">すべての <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="244">Interactables</em> を <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="244">InteractableToggleCollection</em> の <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="244">ToggleList</em> に追加します。</li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="245"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="245">InteractableToggleCollection.CurrentIndex</em> プロパティを設定して、起動時にデフォルトで選択されるボタンを決定します。</li>
+</ol>
+<img src="../Documentation/Images/Interactable/InteractableToggleCollection.png" width="450">
+<h4 id="multi-dimension-ボタン" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="249">Multi-Dimension ボタン</h4>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="251">Multi-Dimension 選択モードは、連続的なボタンや、速い(1倍)、やや速い(2倍)、最も速い(3倍) という3つの値で速度をコントロールするといったような、3つ以上のステップを持つボタンを作成するために使用します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="253">Dimensions が数値の場合、最大9つのテーマを追加して、それぞれの速度設定のボタンのテキスト ラベルまたはテクスチャを制御できます。各ステップには異なるテーマを使用します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="255">すべてのクリックイベントは実行時に <code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="255">DimensionIndex</code> の値を 1 ずつ進め、<code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="255">Dimensions</code> の値に到達すると、このサイクルは 0 にリセットされます。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="257"><img src="../Documentation/Images/Interactable/Profile_multiDimensions.png" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="257" alt="Multi-Dimensional profile example"></p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="259">開発者は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="259"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="259">DimensionIndex</code></a> を評価して、どのディメンションが現在アクティブかを判断できます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="261">// SelectionMode = Multi-dimension (すなわち Dimensions &gt;= 3) を使用する場合 
+
+// 現在の DimensionIndex にアクセスする
+int currentDimension = myInteractable.CurrentDimension;
+
+// 現在の DimensionIndex に 2 をセットする
+myInteractable.CurrentDimension = 2;
+
+// Dimension を次のレベルに昇格する
+myInteractable.IncreaseDimension();
+</code></pre>
+<h3 id="実行時に-interactable-を作成する" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="274">実行時に Interactable を作成する</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="276"><em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="276">Interactable</em> は、実行時に任意の GameObject に簡単に追加できます。以下に <a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="276">ビジュアル テーマ</a> を使用してプロファイルを割り当てる例を示します。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="278">var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+var interactable = interactableObject.AddComponent&lt;Interactable&gt;();
+
+// テーマ エンジン InteractableColorTheme のデフォルトの設定を取得する
+var newThemeType = ThemeDefinition.GetDefaultThemeDefinition&lt;InteractableColorTheme&gt;().Value;
+
+// デフォルトの Interactable ステートでのすべてのステートのカラーを定義する
+newThemeType.StateProperties[0].Values = new List&lt;ThemePropertyValue&gt;()
+{
+    new ThemePropertyValue() { Color = Color.black},  // Default
+    new ThemePropertyValue() { Color = Color.black}, // Focus
+    new ThemePropertyValue() { Color = Random.ColorHSV()},   // Pressed
+    new ThemePropertyValue() { Color = Color.black},   // Disabled
+};
+
+interactable.Profiles = new List&lt;InteractableProfileItem&gt;()
+{
+    new InteractableProfileItem()
+    {
+        Themes = new List&lt;Theme&gt;()
+        {
+            Interactable.GetDefaultThemeAsset(new List&lt;ThemeDefinition&gt;() { newThemeType })
+        },
+        Target = interactableObject,
+    },
+};
+
+// Interactable を強制的にクリックする
+interactable.TriggerOnClick()
+</code></pre>
+<h3 id="コードを使用した-interactable-イベント" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="310">コードを使用した Interactable イベント</h3>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="312">次の例のようなコードを使用して、ベースとなる <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_OnClick" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="312"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="312">Interactable.OnClick</code></a> イベントにアクションを追加できます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="314">public static void AddOnClick(Interactable interactable)
+{
+    interactable.OnClick.AddListener(() =&gt; Debug.Log(&quot;Interactable clicked&quot;));
+}
+</code></pre>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="321">実行時に動的にイベント レシーバーを追加するには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="321"><code sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="321">Interactable.AddReceiver&lt;T&gt;()</code></a> 関数を使用します。</p>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="323">以下のサンプル コードは、フォーカスの開始/終了をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="323">InteractableOnFocusReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="325">public static void AddFocusEvents(Interactable interactable)
+{
+    var onFocusReceiver = interactable.AddReceiver&lt;InteractableOnFocusReceiver&gt;();
+
+    onFocusReceiver.OnFocusOn.AddListener(() =&gt; Debug.Log(&quot;Focus on&quot;));
+    onFocusReceiver.OnFocusOff.AddListener(() =&gt; Debug.Log(&quot;Focus off&quot;));
+}
+</code></pre>
+<p sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="335">以下のサンプル コードは、トグル可能な <em sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="335">Interactables</em> の選択/選択解除のステート遷移をリッスンする <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="335">InteractableOnToggleReceiver</a> を追加する方法、さらにイベント インスタンスが発火したときに実行するアクション コードを定義する方法を示しています。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="337">public static void AddToggleEvents(Interactable interactable)
+{
+    var toggleReceiver = interactable.AddReceiver&lt;InteractableOnToggleReceiver&gt;();
+
+    // コードで interactable にトグル機能を持たせる
+    // GUI エディターでは、はるかに簡単
+    interactable.Dimensions = 2;
+    interactable.CanSelect = true;
+    interactable.CanDeselect  = true;
+
+    toggleReceiver.OnSelect.AddListener(() =&gt; Debug.Log(&quot;Toggle selected&quot;));
+    toggleReceiver.OnDeselect.AddListener(() =&gt; Debug.Log(&quot;Toggle un-selected&quot;));
+}
+</code></pre>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="353">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="355">
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="355"><a href="VisualThemes.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="355">Visual Themes (ビジュアル テーマ)</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="356"><a href="Input/InputActions.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="356">Input Actions (入力 アクション)</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="357"><a href="Input/Speech.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="357">Speech Commands (音声 コマンド)</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="358"><a href="README_Button.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="358">Buttons (ボタン)</a></li>
+<li sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="359"><a href="README_MRTKStandardShader.html" sourcefile="../../Documentation.ja/README_Interactable.md" sourcestartlinenumber="359">MRTK Standard Shader (MRTK スタンダード シェーダー)</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_Interactable.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

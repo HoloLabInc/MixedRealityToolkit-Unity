@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Object collection (&#12458;&#12502;&#12472;&#12455;&#12463;&#12488;&#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Object collection (&#12458;&#12502;&#12472;&#12455;&#12463;&#12488;&#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="object-collection-オブジェクトコレクション" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="1">Object collection (オブジェクトコレクション)</h1>
+
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="3"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollection_Main.jpg" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="3" alt="Object collection"></p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="5">Object collection はオブジェクトの列を事前定義された三次元形状にレイアウトすることを助けるスクリプトです。これは、平面、円柱、球、放射状を含む、さまざまな面タイプをサポートしています。Unity のすべてのオブジェクトをサポートしているため、2D オブジェクトと 3D オブジェクトの両方のレイアウトに利用可能です。</p>
+<h2 id="object-collection-のスクリプト" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="7">Object collection のスクリプト</h2>
+<ul sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="8">
+<li sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="8"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="8"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="8">GridObjectCollection</code></a> は、円柱、平面、球、放射状の面タイプをサポートしています。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="9"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.ScatterObjectCollection.html" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="9"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="9">ScatterObjectCollection</code></a> は、点在するスタイルのコレクションをサポートしています。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TileGridObjectCollection.html" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10">TileGridObjectCollection</code></a> は、GridObjectCollection にいくつかの追加オプションを提供しています。 <strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10">注意:</strong> TileGridObjectCollection は  <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10">GridObjectCollection</code></a> を拡張しておらず、いくつかのバグがあります (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6237" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10">issue 6237</a> をご覧ください)。そのため、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="10">GridObjectCollection</code></a> を使うことが推奨されます。</li>
+</ul>
+<table sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12">
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionCylinder.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12" alt="Grid Object Collection - Cylinder"> Grid Object Collection - Cylinder</th>
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionSphere.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="12" alt="Grid Object Collection - Sphere"> Grid Object Collection - Sphere</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="14">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="14"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionRadial.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="14" alt="Grid Object Collection - Radial"> Grid Object Collection - Radial</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="14"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionPlane.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="14" alt="Grid Object Collection - Plane"> Grid Object Collection - Plane</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="15">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="15"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionScattered.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="15" alt="Scattered Object Collection"> Scattered Object Collection</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="15"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionTileGrid.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="15" alt="Tile Grid Object Collection"> Tile Grid Object Collection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-collection-の使い方" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="18">Object collection の使い方</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="20">コレクションを作るためには、空のゲームオブジェクトを作り、それに Object collection スクリプトの1つをアサインします。
+いかなるオブジェクトでも、このゲームオブジェクトの子供として追加できます。子オブジェクトの追加が終わったら、[Inspector] (インスペクター) パネルで <em sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="21">Update Collection</em> ボタンをクリックし、Object collection を生成します。オブジェクトはコレクションのパラメーターにしたがって、シーンにレイアウトされます。Update Collection は、コードからもアクセスできます。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="24"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollectionScript.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="24" alt="Object collection"></p>
+<h2 id="gridobjectcollection-の中身のアラインメント" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="26"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="26">GridObjectCollection</code> の中身のアラインメント</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="27">GridObjectCollection の中身はアラインすることができ、親オブジェクトはコレクションの top/middle/bottom と left/center/right に固定されます。中身のアラインメントを指定するには <strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="27">anchor</strong> プロパティを使用してください。</p>
+<h2 id="gridobjectcollection-のレイアウト順序" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="29"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="29">GridObjectCollection</code> のレイアウト順序</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="30">子要素がレイアウトされる行、列の順序を指定するには、<strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="30">Layout</strong> フィールドを使用してください。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="32"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="32">Column Then Row</strong> - 子要素はまず横に (列に) レイアウトされ、それから縦に (行に) レイアウトされます。<strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="32">Num Columns</strong> (またはコードでは Columns プロパティ) を使って、グリッドの列の数を指定してください。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="34"><img src="../Documentation/Images/ObjectCollection/MRTK_ColumnThenRow.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="34" alt="Column then row layout"></p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="36"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="36">Row Then Column</strong> - 子要素はまず縦に (行に) レイアウトされ、それから横に (列に) レイアウトされます。<strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="36">Num Rows</strong> (またはコードでは Rows プロパティ) を使って、グリッドの行の数を指定してください。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="38"><img src="../Documentation/Images/ObjectCollection/MRTK_RowThenColumn.png" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="38" alt="Row then column layout"></p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="41"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="41">Horizontal</strong> - 子要素は列だけを使い、1つの行にレイアウトされます。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="43"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="43">Vertical</strong> - 子要素は行だけを使い、1つの列にレイアウトされます。</p>
+<h2 id="object-collection-のサンプル" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="45">Object collection のサンプル</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="47"><code sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="47">ObjectCollectionExamples</code> (Assets/MRTK/Examples/Demos/UX/Collections/Scenes/ObjectCollectionExamples.unity) のサンプル シーンには、Object collection のさまざまなタイプの例が含まれています。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="49"><a href="https://github.com/Microsoft/MRDesignLabs_Unity_PeriodicTable" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="49">Periodic table of the elements</a> は、Object collection がどのように動くかをデモンストレーションするサンプル アプリです。
+3D の原子の箱を異なる形状にレイアウトするために、Object collection を使っています。</p>
+<h2 id="object-collection-のタイプ" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="52">Object collection のタイプ</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="54"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="54">3D オブジェクト</strong>
+Object collection は、インポートされた 3D オブジェクトのレイアウトに利用可能です。以下の例は、Object collection を使った 3D の椅子モデル オブジェクトの平面レイアウトと円柱状のレイアウトを示しています。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="57"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollection_3DObjects.jpg" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="57" alt="Object collection"></p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="59"><strong sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="59">2D オブジェクト</strong></p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="61">Object collection は 2D 画像からも作ることができます。例えば、複数の画像をグリッド上に配置することができます。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="63"><img src="../Documentation/Images/ObjectCollection/MRTK_ObjectCollection_Layout_2DImages.jpg" sourcefile="../../Documentation.ja/README_ObjectCollection.md" sourcestartlinenumber="63" alt="Object collection"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_ObjectCollection.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
