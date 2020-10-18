@@ -230,7 +230,7 @@
       href: README_Button.md
     - name: Bounds Control
       href: README_BoundsControl.md
-    - name: Object Manipulator
+    - name: Object Manipulator (オブジェクト マニピュレーター)
       href: README_ObjectManipulator.md
     - name: Constraint Manager
       href: README_ConstraintManager.md
@@ -257,7 +257,7 @@
       href: README_HandMenu.md
     - name: Near Menu (ニア メニュー)
       href: README_NearMenu.md
-    - name: App Bar
+    - name: App Bar (アップ バー)
       href: README_AppBar.md
     - name: Fingertip Visualization
       href: README_FingertipVisualization.md
