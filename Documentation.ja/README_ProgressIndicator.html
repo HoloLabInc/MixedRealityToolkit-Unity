@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Progress Indicators | Mixed Reality Toolkit Documentation </title>
+    <title>Progress Indicators (&#12503;&#12525;&#12464;&#12524;&#12473; &#12452;&#12531;&#12472;&#12465;&#12540;&#12479;&#12540;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Progress Indicators | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Progress Indicators (&#12503;&#12525;&#12464;&#12524;&#12473; &#12452;&#12531;&#12472;&#12465;&#12540;&#12479;&#12540;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
@@ -89,14 +89,14 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="progress-indicators">Progress Indicators</h1>
+<h1 id="progress-indicators-プログレス-インジケーター">Progress Indicators (プログレス インジケーター)</h1>
 
 <p><img src="../Documentation/Images/ProgressIndicator/MRTK_ProgressIndicator_Main.png" alt="Progress Indicators"></p>
-<h2 id="example-scene">Example scene</h2>
-<p>Examples of how to use progress indicators can be found in the <code>ProgressIndicatorExamples</code> scene. This scene demonstrates each of the progress indicator prefabs included in the SDK.</p>
+<h2 id="サンプル-シーン">サンプル シーン</h2>
+<p>プログレス インジケーターの使い方の例は、<code>ProgressIndicatorExamples</code> シーンにあります。 このシーンでは、SDK に含まれる各プログレス インジケーターのプレハブをデモンストレーションします。</p>
 <img src="../Documentation/Images/ProgressIndicator/MRTK_ProgressIndicator_Examples.png">
-<h2 id="example-open-update--close-a-progress-indicator">Example: Open, update &amp; close a progress indicator</h2>
-<p>Progress indicators implement the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.IProgressIndicator.html"><code>IProgressIndicator</code></a> interface. This interface can be retrieved from a GameObject using <code>GetComponent</code>.</p>
+<h2 id="サンプル-プログレス-インジケーターを開く更新する閉じる">サンプル: プログレス インジケーターを開く、更新する、閉じる</h2>
+<p>プログレス インジケーターは <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.IProgressIndicator.html"><code>IProgressIndicator</code></a> インターフェイスを実装しています。このインターフェイスは <code>GetComponent</code> を使って GameObject から取得できます。</p>
 <pre><code class="lang-c#">[SerializedField]
 private GameObject indicatorObject;
 private IProgressIndicator indicator;
@@ -106,8 +106,8 @@ private void Start()
     indicator = indicatorObject.GetComponent&lt;IProgressIndicator&gt;();
 }
 </code></pre>
-<p>The <code>IProgressIndicator.OpenAsync()</code> and <code>IProgressIndicator.CloseAsync()</code> methods return <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Tasks</a>. We recommend awaiting these Tasks in an async method.</p>
-<p>Set the indicator's <code>Progress</code> property to a value from 0-1 to update its displayed progress. Set its <code>Message</code> property to update its displayed message. Different implementations may display this content in different ways.</p>
+<p><code>IProgressIndicator.OpenAsync()</code> と <code>IProgressIndicator.CloseAsync()</code> メソッドは <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> を返します。これらのタスクを async メソッド内で await することを推奨します。</p>
+<p>インジケーターの <code>Progress</code> プロパティを 0-1 の値に設定して、表示されている進捗状況を更新します。表示されたメッセージを更新するには、<code>Message</code> プロパティを設定します。それぞれの実装では、この内容は異なる方法で表示されるかもしれません。</p>
 <pre><code class="lang-c#">private async void OpenProgressIndicator()
 {
     await indicator.OpenAsync();
@@ -124,13 +124,13 @@ private void Start()
     await indicator.CloseAsync();
 }
 </code></pre>
-<h2 id="indicator-states">Indicator states</h2>
-<p>An indicator's <code>State</code> property determines which operations are valid. Calling an invalid method will typically cause the indicator to report an error and take no action.</p>
+<h2 id="インジケーターの状態">インジケーターの状態</h2>
+<p>インジケーターの <code>State</code> (状態) プロパティは、どの操作が有効かを決定します。無効なメソッドを呼び出すと、通常、インジケーターはエラーを報告して何も実行しません。</p>
 <table>
 <thead>
 <tr>
-<th>State</th>
-<th>Valid Operations</th>
+<th>State (状態)</th>
+<th>有効な操作</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ private void Start()
 </tr>
 </tbody>
 </table>
-<p><code>AwaitTransitionAsync()</code> can be used to be sure an indicator is fully opened or closed before using it.</p>
+<p><code>AwaitTransitionAsync()</code> は、インジケーターを使用する前にインジケーターが完全に開いている、もしくは閉じていることを確認するために用いることができます。</p>
 <pre><code class="lang-c#">private async void ToggleIndicator(IProgressIndicator indicator)
 {
     await indicator.AwaitTransitionAsync();

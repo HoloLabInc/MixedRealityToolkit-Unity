@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Spatial Awareness (&#31354;&#38291;&#35469;&#35672;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Spatial Awareness (&#31354;&#38291;&#35469;&#35672;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="spatial-awareness-空間認識" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="1">Spatial Awareness (空間認識)</h1>
+
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="3"><img src="../../Documentation/Images/SpatialAwareness/MRTK_SpatialAwareness_Main.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="3" alt="Spatial Awareness"></p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="5">空間認識システムは、複合現実アプリケーションで現実世界の環境認識を提供します。 Microsoft HoloLens で導入されたとき、空間認識は環境のジオメトリを表すメッシュのコレクションを提供し、ホログラムと現実世界の間の魅力的なインタラクションを可能にしました。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="7">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="8">現時点では、Mixed Reality Toolkit には、HoloToolkit に元々パッケージされていた Spatial Understanding (空間理解) アルゴリズムは付属していません。 通常、Spatial Understanding では、空間メッシュデータを変換して、平面、壁、床、天井などの単純化またはグループ化されたメッシュデータを作成します。</p>
+</div>
+<h2 id="はじめに" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="10">はじめに</h2>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="12">空間認識のサポートを追加するには、Mixed Reality Toolkit の 2 つの主要なコンポーネント (空間認識システムとサポートされているプラットフォーム プロバイダー) が必要です。</p>
+<ol sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="14">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="14">空間認識システムを<a href="#%E7%A9%BA%E9%96%93%E8%AA%8D%E8%AD%98%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="14">有効</a>にする</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="15">メッシュデータを提供するために 1 つ以上の空間オブザーバーを<a href="#%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E7%99%BB%E9%8C%B2" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="15">登録</a>して<a href="ConfiguringSpatialAwarenessMeshObserver.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="15">設定</a>する</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="16">空間認識をサポートするプラットフォームに<a href="#%E3%83%93%E3%83%AB%E3%83%89%E3%81%A8%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="16">ビルドしてデプロイ</a>する</li>
+</ol>
+<h3 id="空間認識システムを有効にする" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="18">空間認識システムを有効にする</h3>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="20">空間認識システムは、MixedRealityToolkit オブジェクト (または別の <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityServiceRegistrar.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="20">サービス レジストラ</a> コンポーネント) によって管理されます。以下の手順に従って、<em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="20">MixedRealityToolkit</em> プロファイルで <em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="20">Spatial Awareness システム</em> を有効または無効にします。</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="22">Mixed Reality Toolkit には、いくつかのデフォルトの事前設定プロファイルが付属しています。これらの一部では、空間認識システムがデフォルトで有効または無効になっています。この事前設定の目的は、特に無効になっている場合、メッシュの計算とレンダリングの視覚的なオーバーヘッドを回避することです。</p>
+<table sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="24">
+<thead>
+<tr sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="24">
+<th sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="24">プロファイル</th>
+<th sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="24">デフォルトの有効/無効設定</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="26">
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="26"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="26">DefaultHoloLens1ConfigurationProfile</code> (Assets/MRTK/SDK/Profiles/HoloLens1)</td>
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="26">False</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="27">
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="27">DefaultHoloLens2ConfigurationProfile</code> (Assets/MRTK/SDK/Profiles/HoloLens2)</td>
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="27">False</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="28">
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="28"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="28">DefaultMixedRealityToolkitConfigurationProfile</code> (Assets/MRTK/SDK/Profiles)</td>
+<td sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="28">True</td>
+</tr>
+</tbody>
+</table>
+<ol sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="30">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="30"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="30">[Inspector] (インスペクター) パネルを開くために [Hierarchy] (ヒエラルキー) から MixedRealityToolkit オブジェクトを選択する</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="32"><img src="../../Documentation/Images/MRTK_ConfiguredHierarchy.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="32" alt="MRTK Configured Scene Hierarchy"></p>
+</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="34"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="34"><em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="34">Spatial Awareness System</em> セクションに移動し、<em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="34">Enable Spatial Awareness System</em> にチェックを入れる</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="36"><img src="../../Documentation/Images/SpatialAwareness/MRTKConfig_SpatialAwareness.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="36" alt="Enable Spatial Awareness"></p>
+</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="38"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="38">目的の空間認識システムの実装タイプを選択します。 <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystem.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="38">MixedRealitySpatialAwarenessSystem</code></a> がデフォルトで提供されます。</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="40"><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessSelectSystemType.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="40" alt="Select the Spatial Awareness System Implementation"></p>
+</li>
+</ol>
+<h3 id="オブザーバーの登録" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="42">オブザーバーの登録</h3>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="44">Mixed Reality Toolkit のサービスには、プラットフォーム固有のデータと実装制御でメイン サービスを補完する<a href="../Architecture/SystemsExtensionsProviders.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="44">データ プロバイダー サービス</a>を含めることができます。 例として、さまざまなプラットフォーム固有の API からコントローラーおよびその他の関連入力情報を取得する<a href="../Input/InputProviders.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="44">複数のデータ プロバイダー</a>を持つ Mixed Reality Input System があります。</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="46">空間認識システムは、データ プロバイダーが現実世界に関するメッシュデータをシステムに提供するという点で類似しています。Spatial Awareness プロファイルには、少なくとも 1 つの Spatial Observer (空間オブザーバー) が登録されている必要があります。空間オブザーバーは通常、プラットフォーム固有のエンドポイント（つまり、HoloLens）からさまざまな種類のメッシュデータを提供するためのプロバイダーとして機能するプラットフォーム固有のコンポーネントです。</p>
+<ol sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="48">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="48"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="48"><em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="48">Spatial Awareness System</em> プロファイルを開く</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="50"><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessProfile.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="50" alt="Spatial Awareness System Profile"></p>
+</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="52"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="52"><em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="52">Add Spatial Observer</em> ボタンをクリックする</p>
+</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="53"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="53"><em sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="53">Spatial Observer の実装タイプ</em> を選択する</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="55"><img src="../../Documentation/Images/SpatialAwareness/SpatialAwarenessSelectObserver.png" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="55" alt="Select the Spatial Observer Implementation"></p>
+</li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="57"><p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="57">必要に応じて<a href="ConfiguringSpatialAwarenessMeshObserver.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="57">オブザーバーの構成プロパティを変更</a>する</p>
+</li>
+</ol>
+<div class="NOTE" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="59">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="60"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="60">DefaultMixedRealityToolkitConfigurationProfile</code> (Assets/MRTK/SDK/Profiles) のユーザーは、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="60"><code sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="60">WindowsMixedRealitySpatialMeshObserver</code></a> クラスを使用する Windows Mixed Reality プラットフォーム用に事前設定された Spatial Awareness システムを使用します</p>
+</div>
+<h3 id="ビルドとデプロイ" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="62">ビルドとデプロイ</h3>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="64">空間認識システムを目的のオブザーバーで構成すると、プロジェクトをビルドしてターゲット プラットフォームにデプロイできます。</p>
+<div class="IMPORTANT" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="66">
+<h5>Important</h5>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="67">Windows Mixed Reality プラットフォーム（例：HoloLens）を対象とする場合、デバイスで Spatial Awareness システムを使用するには、<a href="https://docs.microsoft.com/windows/mixed-reality/spatial-mapping-in-unity" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="67">Spatial Perception capability</a> が有効になっていることを確認することが重要です。</p>
+</div>
+<div class="WARNING" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="69">
+<h5>Warning</h5>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="70">Microsoft HoloLens を含む一部のプラットフォームでは、Unity 内からリモート実行をサポートしています。この機能により、ビルドとデプロイの手順を必要とせずに、迅速な開発とテストが可能になります。ターゲット ハードウェアとプラットフォームで実行される、ビルドおよびデプロイされたバージョンのアプリケーションを使用して、最終的な受け入れテストを行うようにしてください。</p>
+</div>
+<h2 id="次のステップ" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="72">次のステップ</h2>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="74">上記手順に従い Spatial Awareness システムを有効にしたら、より詳細に設定やコントロールをすることができます。</p>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="76">インスペクターでのオブザーバーの設定に関する情報:</p>
+<ul sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="78">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="78"><a href="ConfiguringSpatialAwarenessMeshObserver.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="78">Configuring Observers for on device usage</a></li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="79"><a href="SpatialObjectMeshObserver.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="79">Configuring Observers for in-editor usage</a></li>
+</ul>
+<p sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="81">コードでのオブザーバーのコントロールと拡張に関する情報:</p>
+<ul sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="83">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="83"><a href="UsageGuide.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="83">Configuring Observers via Code</a></li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="84"><a href="CreateDataProvider.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="84">Creating a custom Observer</a></li>
+</ul>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="86">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="88">
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="88"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.SpatialAwareness.html" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="88">Spatial Awareness API documentation</a></li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="89"><a href="https://docs.microsoft.com/windows/mixed-reality/spatial-mapping" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="89">Spatial Mapping Overview WMR</a></li>
+<li sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="90"><a href="https://docs.microsoft.com/windows/mixed-reality/spatial-mapping-in-unity" sourcefile="../../Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md" sourcestartlinenumber="90">Spatial Mapping in Unity WMR</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/SpatialAwareness/SpatialAwarenessGettingStarted.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Solvers | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Solvers | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="solvers" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="1">Solvers</h1>
+
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="3"><img src="Images/Solver/MRTK_Solver_Main.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="3" alt="Solver"></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="5">Solvers are components that facilitate the means of calculating an object's position &amp; orientation according to a predefine algorithm. An example may be placing an object on the surface the user's gaze raycast currently hits.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="7">Furthermore, the Solver system deterministically defines an order of operations for these transform calculations as there is no reliable way to specify to Unity the update order for components.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="9">Solvers offer a range of behaviors to attach objects to other objects or systems. One other example would be a tag-along object that hovers in front of the user (based on the camera). A solver could also be attached to a controller and an object to make the object tag-along the controller. All solvers can be safely stacked, for example a tag-along behavior + surface magnetism + momentum.</p>
+<h2 id="how-to-use-a-solver" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="11">How to use a solver</h2>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="13">The Solver system consists of three categories of scripts:</p>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="15">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="15"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="15"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="15">Solver</code></a>: The base abstract class that all solvers derive from. It provides state tracking, smoothing parameters and implementation, automatic solver system integration, and update order.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="16"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="16"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="16">SolverHandler</code></a>: Sets the reference object to track against (ex: the main camera transform, hand ray, etc.), handles gathering of solver components, and executes updating them in the proper order.</li>
+</ul>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="18">The third category is the solver itself. The following solvers provide the building blocks for basic behavior:</p>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="20">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="20"><a href="#orbital" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="20"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="20">Orbital</code></a>: Locks to a specified position and offset from the referenced object.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="21"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.ConstantViewSize.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="21"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="21">ConstantViewSize</code></a>: Scales to maintain a constant size relative to the view of the referenced object.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="22"><a href="#radialview" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="22"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="22">RadialView</code></a>: Keeps the object within a view cone cast by the referenced object.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="23"><a href="#surfacemagnetism" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="23"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="23">SurfaceMagnetism</code></a>: casts rays to surfaces in the world, and align the object to that surface.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="24"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Momentum.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="24"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="24">Momentum</code></a>: Applies acceleration/velocity/friction to simulate momentum and springiness for an object being moved by other solvers/components.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="25"><a href="#inbetween" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="25"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="25">InBetween</code></a>: Keeps an object in between two tracked objects.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="26"><a href="#hand-menu-with-handconstraint-and-handconstraintpalmup" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="26"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="26">HandConstraint</code></a>: Constrains object to follow hands in a region that doesn't intersect the GameObject with the hands. Useful for hand constrained interactive content such as menus, etc. This solver is intended to work with <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="26">IMixedRealityHand</a> but also works with <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityController.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="26">IMixedRealityController</a>.</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="27"><a href="#hand-menu-with-handconstraint-and-handconstraintpalmup" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="27">HandConstraintPalmUp</code></a>: Derives from HandConstraint but includes logic to test if the palm is facing the user before activation. This solver only works with <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityHand.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="27">IMixedRealityHand</a> controllers, with other controller types this solver will behave just like its base class.</li>
+</ul>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="29">In order to use the Solver system, simply add one of the components listed above to a GameObject. Since all Solvers require a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="29"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="29">SolverHandler</code></a>, one will be created automatically by Unity.</p>
+<div class="NOTE" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="31">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="32">Examples of how to use the Solvers system can be found in the <strong sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="32">SolverExamples.scene</strong> file.</p>
+</div>
+<h2 id="how-to-change-tracking-reference" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="34">How to change tracking reference</h2>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">Tracked Target Type</em> property of the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">SolverHandler</code></a> component defines the point of reference all solvers will use to calculate their algorithms. For example, a value type of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_Head" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">Head</code></a> with a simple <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">SurfaceMagnetism</code></a> component will result in a raycast from the head and in the direction of the user's gaze for solving what surface is hit. Potential values for the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="36">TrackedTargetType</code> property are:</p>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="38">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="38"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="38">Head</em> : Point of reference is the transform of the main camera</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="39"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="39">ControllerRay</em>: Point of reference is the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.LinePointer.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="39"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="39">LinePointer</code></a> transform on a controller (i.e pointer origin on a motion controller or hand controller) pointing in the direction of the line ray
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="40">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="40">Use the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="40">TrackedHandedness</code> property to select the handedness preference (i.e Left, Right, Both)</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="41"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="41">HandJoint</em>: Point of reference is the transform of a specific hand joint
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="42">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="42">Use the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="42">TrackedHandedness</code> property to select the handedness preference (i.e Left, Right, Both)</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="43">Use the  <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="43">TrackedHandJoint</code> property to determine the joint transform to utilize</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="44"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="44">CustomOverride</em>: Point of reference from the assigned <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="44">TransformOverride</code></li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="46">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="47">For both <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="47">ControllerRay</em> and <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="47">HandJoint</em> types, the solver handler will attempt to provide the left controller/hand transform first and then the right if the former is not available or unless the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="47">TrackedHandedness</code> property specifies otherwise.</p>
+</div>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="49"><img src="Images/Solver/TrackedObjectType-Example.gif" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="49" alt="Solver"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="50">Example of various properties associated with each TrackedTargetType</em></p>
+<div class="IMPORTANT" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="52">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="53">Most solvers use the forward vector of the tracked transform target supplied by the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="53">SolverHandler</code>. When using a <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="53">Hand Joint</em> tracked target type, the forward vector of the palm joint may point through the fingers and not through the palm. This depends on the platform supplying the hand joint data. For input simulation and Windows Mixed Reality, it is the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="53">up vector</em> that points up through the palm (i.e green vector is up, blue vector is forward).</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="55"><img src="Images/Solver/HandJoint_ForwardUpVectors.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="55" alt="Solver"></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="57">To overcome this, update the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="57">Additional Rotation</em> property on the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="57">SolverHandler</code> to <strong sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="57">&lt;90, 0, 0&gt;</strong>. This will ensure the forward vector supplied to solvers is pointing through the palm and outward away from the hand.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="59"><img src="Images/Solver/SolverHandler_AdditionalRotation.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="59" alt="Solver"></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="61">Alternatively, use the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="61">Controller Ray</em> tracked target type to get similar behavior for pointing with hands.</p>
+</div>
+<h2 id="how-to-chain-solvers" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="63">How to chain solvers</h2>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="65">It is possible to add multiple <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="65">Solver</code> components to the same GameObject thus chaining their algorithms. The <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="65">SolverHandler</code> components handles updating all solvers on the same GameObject. By default the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="65">SolverHandler</code> calls <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="65">GetComponents&lt;Solver&gt;()</code> on Start which will return the Solvers in the order that they appear in the inspector.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="67">Furthermore, setting the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="67">Updated Linked Transform</em> property to true will instruct that <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="67">Solver</code> to save its calculated position, orientation, &amp; scale to an intermediary variable accessible by all Solvers (i.e <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="67">GoalPosition</code>). When false, the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="67">Solver</code> will update the GameObject's transform directly. By saving the transform properties to an intermediary location, other Solvers are able to perform their calculations starting from the intermediary variable. This is because Unity does not allow updates to gameObject.transform to stack within the same frame.</p>
+<div class="NOTE" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="69">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="70">Developers can modify the order of execution of Solvers by setting the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="70">SolverHandler.Solvers</code> property directly.</p>
+</div>
+<h2 id="how-to-create-a-new-solver" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="72">How to create a new solver</h2>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">All solvers must inherit from the abstract base class, <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Solver.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">Solver</code></a>. The primary requirements of a Solver extension involves overriding the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">SolverUpdate</code> method. In this method, developers should update the inherited <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">GoalPosition</code>, <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">GoalRotation</code> and <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">GoalScale</code> properties to the desired values. Furthermore, it is generally valuable to leverage <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="74">SolverHandler.TransformTarget</code> as the frame of reference desired by the consumer.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">The code provided below gives an example of a new Solver component called <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">InFront</code> that places the attached object 2m in front of the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">SolverHandler.TransformTarget</code>. If the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">SolverHandler.TrackedTargetType</code> is set by the consumer as <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_Head" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">Head</code></a>, then the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="76">SolverHandler.TransformTarget</code> will be the camera transform and thus this Solver will place the attached GameObject 2m in front of the users' gaze every frame.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="78">/// &lt;summary&gt;
+/// InFront solver positions an object 2m in front of the tracked transform target
+/// &lt;/summary&gt;
+public class InFront : Solver
+{
+    ...
+
+    public override void SolverUpdate()
+    {
+        if (SolverHandler != null &amp;&amp; SolverHandler.TransformTarget != null)
+        {
+            var target = SolverHandler.TransformTarget;
+            GoalPosition = target.position + target.forward * 2.0f;
+        }
+    }
+}
+</code></pre>
+<h2 id="solver-implementation-guides" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="97">Solver implementation guides</h2>
+<h3 id="common-solver-properties" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="99">Common solver properties</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="101">Every Solver component has a core-set of identical properties that control the core Solver behavior.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="103">If <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="103">Smoothing</em> is enabled, then the Solver will gradually update the transform of the GameObject over time to the calculated values. The speed of this change is determined by every transform component's <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="103">LerpTime</em> property. For example, a higher <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="103">MoveLerpTime</em> value will result in slower increments in movement between frames.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="105">If <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="105">MaintainScale</em> is enabled, then the Solver will utilize the GameObject's default local scale.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="107"><img src="Images/Solver/GeneralSolverProperties.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="107" alt="Core Solver Properties"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="108">Common properties inherited by all Solver components</em></p>
+<h3 id="orbital" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="110">Orbital</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Orbital.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112">Orbital</code></a> class is a tag-along component that behaves like planets in a solar system. This Solver will ensure the attached GameObject orbits around the tracked transform. Thus, if the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112">Tracked Target Type</em> of the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112">SolverHandler</code></a> is set to <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_Head" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="112">Head</code></a>, then the GameObject will orbit around the user's head with a fixed offset applied.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="114">Developers can modify this fixed offset to keep menus or other scene components at eye-level or at waist level etc. around a user. This is done by modifying the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="114">Local Offset</em> and <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="114">World Offset</em> properties. The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="114">Orientation Type</em> property determines the rotation applied to the object if it should maintain its original rotation or always face the camera or face whatever transform is driving its position etc.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="116"><img src="Images/Solver/OrbitalExample.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="116" alt="Orbital Example"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="117">Orbital example</em></p>
+<h3 id="radialview" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="119">RadialView</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="121">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.RadialView.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="121"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="121">RadialView</code></a> is another tag-along component that keeps a particular portion of a GameObject within the frustum of the user's view.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="123">The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="123">Min &amp; Max View Degrees</em> properties determines how large of a portion of the GameObject must always be in view.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="125">The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="125">Min &amp; Max Distance</em> properties determines how far the GameObject should be kept from the user. For example, walking towards the GameObject with a <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="125">Min Distance</em> of 1m will push the GameObject away to ensure it is never closer than 1m to the user.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">Generally, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.RadialView.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">RadialView</code></a> is used in conjunction with <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">Tracked Target Type</em> set to <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_Head" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">Head</code></a> so that the component follows the user's gaze. However, this component can function to be kept in <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">&quot;view&quot;</em> of any <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="127">Tracked Target Type</em>.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="129"><img src="Images/Solver/RadialViewExample.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="129" alt="RadialView Example"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="130">RadialView example</em></p>
+<h3 id="inbetween" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="132">InBetween</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.InBetween.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">InBetween</code></a> class will keep the attached GameObject between two transforms. These two transform endpoints are defined by the GameObject's own <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">SolverHandler</code></a> <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">Tracked Target Type</em> and the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.InBetween.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">InBetween</code></a> component's <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">Second Tracked Target Type</em> property. Generally, both types will be set to <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_CustomOverride" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">CustomOverride</code></a> and the resulting <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">SolverHandler.TransformOverride</code> and <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="134">InBetween.SecondTransformOverride</code> values set to the two tracked endpoints.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136">At runtime, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.InBetween.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136">InBetween</code></a> component will create another <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136">SolverHandler</code></a> component based on the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136">Second Tracked Target Type</em> and <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="136">Second Transform Override</em> properties.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="138">The <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="138">PartwayOffset</code> defines where along the line between two transforms the object shall be placed with 0.5 as halfway, 1.0 at the first transform, and 0.0 at the second transform.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="140"><img src="Images/Solver/InBetweenExample.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="140" alt="InBetween Example"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="141">Example of using InBetween solver to keep object between two transforms</em></p>
+<h3 id="surfacemagnetism" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="143">SurfaceMagnetism</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="145">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="145"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="145">SurfaceMagnetism</code></a> works by performing a raycast against a set LayerMask of surfaces and placing the GameObject at that point of contact.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="147">The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="147">Surface Normal Offset</em> will place the GameObject a set distance in meters away from the surface in the direction of the normal at the hit point on the surface.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="149">Conversely, the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="149">Surface Ray Offset</em> will place the GameObject a set distance in meters away from the surface but in the opposite direction of the raycast performed. Thus, if the raycast is the user's gaze, then the GameObject will move closer along the line from the hit point on the surface to the camera.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="151">The <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="151">Orientation Mode</em> determines the type of rotation to apply in relation to the normal on the surface.</p>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="153">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="153"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="153">None</em> - No rotation applied</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="154"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="154">TrackedTarget</em> - Object will face the tracked transform driving the raycast</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="155"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="155">SurfaceNormal</em> - Object will align based on normal at hit point on surface</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="156"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="156">Blended</em> - Object will align based on normal at hit point on surface AND based on facing the tracked transform.</li>
+</ul>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="158">To force the associated GameObject to stay vertical in any mode other than <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="158">None</em>, enable <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="158">Keep Orientation Vertical</em>.</p>
+<div class="NOTE" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="160">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">Use the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">Orientation Blend</em> property to control the balance between rotation factors when <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">Orientation Mode</em> is set to <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">Blended</em>. A value of 0.0 will have orientation entirely driven by <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">TrackedTarget</em> mode and a value of 1.0 will have orientation driven entirely by <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="161">SurfaceNormal</em>.</p>
+</div>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="163"><img src="Images/Solver/SurfaceMagExample.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="163" alt="SurfaceMagnetism Example"></p>
+<h4 id="determining-what-surfaces-can-be-hit" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="165">Determining what surfaces can be hit</h4>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">When adding a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">SurfaceMagnetism</code></a> component to a GameObject, it is important to consider the layer of the GameObject and its children, if any have colliders. The component works by performing various types of raycasts to determine what surface to &quot;magnet&quot; itself against. If the solver GameObject has a collider on one of the layers listed in the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">MagneticSurfaces</code> property of <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">SurfaceMagnetism</code>, then the raycast will likely hit itself resulting in the GameObject attaching to its own collider point. This odd behavior can be avoided by setting the main GameObject and all children to the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">Ignore Raycast</em> layer or modifying the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="167">MagneticSurfaces</code> LayerMask array appropriately.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">Conversely, a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SurfaceMagnetism.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">SurfaceMagnetism</code></a> GameObject will not collide with surfaces on a layer not listed in the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">MagneticSurfaces</code> property. It is generally recommended to place all desired surfaces on a dedicated layer (i.e <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">Surfaces</em>) and setting the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">MagneticSurfaces</code> property to just this layer.  Using <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">default</em> or <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="169">everything</em> may result in UI components or cursors contributing to the solver.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="171">Finally, surfaces farther than the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="171">MaxRaycastDistance</code> property setting will be ignored by the <code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="171">SurfaceMagnetism</code> raycasts.</p>
+<h3 id="hand-menu-with-handconstraint-and-handconstraintpalmup" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="173">Hand menu with HandConstraint and HandConstraintPalmUp</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="175"><img src="Images/Solver/MRTK_UX_HandMenu.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="175" alt="Hand Menu UX Example"></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177">HandConstraint</code></a> behavior provides a solver that constrains the tracked object to a region safe for hand constrained content (such as hand UI, menus, etc). Safe regions are considered areas that don't intersect with the hand. A derived class of <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraint.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177">HandConstraint</code></a> called <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.HandConstraintPalmUp.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="177">HandConstraintPalmUp</code></a> is also included to demonstrate a common behavior of activating the solver tracked object when the palm is facing the user.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="179"><a href="README_HandMenu.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="179">Please see Hand Menu page</a> for the examples of using Hand Constraint solver to create hand menus.</p>
+<h2 id="experimental-solvers" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="181">Experimental solvers</h2>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="183">These solvers are available in MRTK but are currently experimental. Their APIs and functionality are subject to change. Furthermore, their robustness and quality may be lower than standard features.</p>
+<h3 id="directional-indicator" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="185">Directional indicator</h3>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="187">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Experimental.Utilities.DirectionalIndicator.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="187"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="187">DirectionalIndicator</code></a> class is a tag-along component that orients itself to the direction of a desired point in space.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189">Most commonly used when the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189">Tracked Target Type</em> of the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189">SolverHandler</code></a> is set to <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.TrackedObjectType.html#Microsoft_MixedReality_Toolkit_Utilities_TrackedObjectType_Head" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189">Head</code></a>. In this fashion, a UX component with the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Experimental.Utilities.DirectionalIndicator.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="189">DirectionalIndicator</code></a>  solver will direct a user to look at the desired point in space.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="191">The desired point in space is determined via the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="191">Directional Target</em> property.</p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="193">If the directional target is viewable by the user, or whatever frame of reference is set in the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.SolverHandler.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="193"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="193">SolverHandler</code></a>, then this solver will disable all <a href="https://docs.unity3d.com/ScriptReference/Renderer.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="193"><code sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="193">Renderer</code></a> components underneath it. If not viewable, then everything will be enabled on the indicator.</p>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="195">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="195"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="195">Visibility Scale Factor</em> - Multiplier to increase or decrease the FOV that determines if the <em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="195">Directional Target</em> point is viewable or not</li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="196"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="196">View Offset</em> - From the viewpoint of the frame of reference (i.e camera possibly), this property defines how far in the indicator direction should the object be from the center of the viewport.</li>
+</ul>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="198"><img src="Images/Solver/DirectionalIndicatorExample.png" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="198" alt="Directional Indicator properties"><br>
+<em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="199">Directional Indicator properties</em></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="201"><img src="Images/Solver/DirectionalIndicatorExampleScene.gif" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="201" alt="Directional Indicator example scene"></p>
+<p sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="203"><em sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="203">Directional Indicator Example Scene (Assets/MRTK/Examples/Experimental/Solvers/DirectionalIndicatorExample.unity)</em></p>
+<h2 id="see-also" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="205">See also</h2>
+<ul sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="207">
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="207"><a href="Input/HandTracking.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="207">Hand Tracking</a></li>
+<li sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="208"><a href="Input/Gaze.html" sourcefile="../../Documentation/README_Solver.md" sourcestartlinenumber="208">Gaze</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_Solver.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

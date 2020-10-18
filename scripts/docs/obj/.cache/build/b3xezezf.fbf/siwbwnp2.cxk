@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Updating the Microsoft Mixed Reality Toolkit | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Updating the Microsoft Mixed Reality Toolkit | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="updating-the-microsoft-mixed-reality-toolkit" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="1">Updating the Microsoft Mixed Reality Toolkit</h1>
+
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="3">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="3"><a href="#upgrading-to-a-new-version-of-mrtk" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="3">Upgrading to a new version of MRTK</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="4"><a href="#updating-230-to-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="4">2.3.0 to 2.4.0</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="5"><a href="#updating-220-to-230" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="5">2.2.0 to 2.3.0</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="6"><a href="#updating-210-to-220" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="6">2.1.0 to 2.2.0</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="7"><a href="#updating-200-to-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="7">2.0.0 to 2.1.0</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="8"><a href="#updating-rc2-to-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="8">RC2 to 2.0.0</a></li>
+</ul>
+<h2 id="upgrading-to-a-new-version-of-mrtk" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="10">Upgrading to a new version of MRTK</h2>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="12"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="12">It is strongly recommended to run the <a href="Tools/MigrationWindow.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="12">migration tool</a> after getting the MRTK update</em>
+to auto-fix and upgrade from deprecated components and adjust to breaking changes. The migration tool is part of
+the <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="14">Tools</strong> package.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="16">The instructions below describe the 2.4.0 to 2.5.0 upgrade path. If your project is on 2.3.0 or earlier, read on
+to the changes <a href="#updating-230-to-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="17">between versions</a> to understand the upgrade path, or read the previous
+<a href="https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.4.0/Documentation/Updating.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="18">release's instructions</a>
+to do a version-by-version upgrade.</p>
+<h3 id="unity-asset-unitypackage-files" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="21">Unity asset (.unitypackage) files</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="23">For the smoothest upgrade path, please use the following steps.</p>
+<ol sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="25">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="25">Save a copy of your current project, in case you hit any snags at any point in the upgrade steps.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="26">Close Unity</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="27">Inside the <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="27">Assets</em> folder, delete the following <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="27">MRTK</strong> folders, along with their .meta files (the project may not have all listed folders)
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="28">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="28">MRTK/Core</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="29">MRTK/Examples</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="30">MRTK/Extensions</li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="31">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="32">If additional extensions have been installed, please make a backup prior to deleting these folders.</p>
+</div>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="33">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="33">MRTK/Providers</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="34">MRTK/SDK</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="35">MRTK/Services</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="36">MRTK/Tools</li>
+</ul>
+<div class="IMPORTANT" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="37">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="38">Do NOT delete the <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="38">MixedRealityToolkit.Generated</strong> folder, or its .meta file.</p>
+</div>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="39">Delete the <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="39">Library</strong> folder
+<div class="IMPORTANT" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="40">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="41">Some Unity tools, like Unity Collab, save configuration info to the Library folder. If using a tool that does this, first copy the tool's data folder from Library before deleting, then restore it after Library is regenerated.</p>
+</div>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="42">Re-open the project in Unity</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="43">Import the new unity packages
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="44">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="44">Foundation - <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="44">Import this package first</em></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="45">Tools</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="46">(Optional) Extensions</li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="47">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="48">If additional extensions had been installed, they may need to be re-imported.</p>
+</div>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="49">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="49">(Optional) Examples</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="50">Close Unity and delete the <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="50">Library</strong> folder (read the note below first!). This step is necessary to force Unity to refresh its
+asset database and reconcile existing custom profiles.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="52">Launch Unity, and for each scene in the project
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="53">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="53">Delete <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="53">MixedRealityToolkit</strong> and <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="53">MixedRealityPlayspace</strong>, if present, from the hierarchy. This will delete the main camera, but it will be re-created in the next step. If any properties of the main camera have been manually changed, these will have to be re-applied manually once the new camera is created.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="54">Select <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="54">MixedRealityToolkit -&gt; Add to Scene and Configure</strong></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="55">Select <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="55">MixedRealityToolkit -&gt; Utilities -&gt; Update -&gt; Controller Mapping Profiles</strong> (only needs to be done once)
+- This will update any custom controller mapping profiles with updated axes and data, while leaving your custom-assigned input actions intact</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="57">Run the <a href="Tools/MigrationWindow.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="57">migration tool</a> and run the tool on the <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="57">Full Project</em> to ensure that all of your code is updated to the latest.
+The migration window contains a number of different migration handlers, which must each be run on their own. This step involves:
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="59">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="59">Select the first migration handler from the <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="59">Migration Handler Selection</strong> dropdown.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="60">Click the &quot;Full Project&quot; button.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="61">Click the &quot;Add full project for migration&quot; button (this will scan the entire project for objects to migrate).</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="62">Click the &quot;Migrate&quot; button which should be enabled if any migrateable objects were found.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="63">Repeat the previous three steps for each of the migration handlers within the dropdown.
+(See <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/8552" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="64">this issue</a> which covers work that can be done
+to simplify this migration process in a future release)</li>
+</ul>
+</li>
+</ol>
+<h2 id="updating-230-to-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="68">Updating 2.3.0 to 2.4.0</h2>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="70"><a href="#folder-renames-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="70">Folder renames</a>
+<a href="#api-changes-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="71">API changes</a></p>
+<h3 id="folder-renames-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="73">Folder renames in 2.4.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="75">The MixedRealityToolkit folders have been renamed and moved into a common hierarchy in version 2.4. If an application
+uses hard coded paths to MRTK resources, they will need to be updated per the following table.</p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="78">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="78">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="78">Previous Folder</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="78">New Folder</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="80">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="80">MixedRealityToolkit</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="80">MRTK/Core</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="81">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="81">MixedRealityToolkit.Examples</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="81">MRTK/Examples</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="82">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="82">MixedRealityToolkit.Extensions</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="82">MRTK/Extensions</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="83">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="83">MixedRealityToolkit.Providers</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="83">MRTK/Providers</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="84">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="84">MixedRealityToolkit.SDK</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="84">MRTK/SDK</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="85">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="85">MixedRealityToolkit.Services</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="85">MRTK/Services</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="86">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="86">MixedRealityToolkit.Tests</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="86">MRTK/Tests</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="87">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="87">MixedRealityToolkit.Tools</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="87">MRTK/Tools</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="89">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="90">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="90">MixedRealityToolkit.Generated</code> contains customer generated files and remains unchanged.</p>
+</div>
+<h3 id="eye-gaze-setup-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="92">Eye gaze setup in 2.4.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="94">This version of MRTK modifies the steps required for eye gaze setup. The <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="94">'IsEyeTrackingEnabled'</em> checkbox can be found in the gaze settings of the input pointer profile. Checking this box will enable eye based gaze, rather then the default head based gaze.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="96">For more information on these changes and complete instructions for eye tracking setup, please see the <a href="EyeTracking/EyeTracking_BasicSetup.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="96">eye tracking</a> article.</p>
+<h3 id="eye-gaze-pointer-behavior-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="98">Eye gaze pointer behavior in 2.4.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="100">The eye gaze default pointer behavior have been modified to match the head gaze default pointer behavior. An eye gaze pointer will automatically be suppressed once a hand is detected. The eye gaze pointer will become visible again after saying &quot;Select&quot;.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="102">Details about gaze and hand setups can be found in the <a href="EyeTracking/EyeTracking_EyesAndHands.html#how-to-keep-gaze-pointer-always-on" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="102">eyes and hands</a> article.</p>
+<h3 id="api-changes-in-240" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="104">API changes in 2.4.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="106"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="106">Custom controller classes</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="108">Custom controller classes previously had to define <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="108">SetupDefaultInteractions(Handedness)</code>. This method has been made obsolete in 2.4, as the handedness parameter was redundant with the controller class' own handedness. The new method has no parameters. Additionally, many controller classes defined this the same way (<code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="108">AssignControllerMappings(DefaultInteractions);</code>), so the full call has been refactored down into <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="108">BaseController</code> and made an optional override instead of required.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="110"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="110">Eye Gaze properties</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="112">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="112">UseEyeTracking</code> property from <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="112">GazeProvider</code> implementation of <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="112">IMixedRealityEyeGazeProvider</code> was renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="112">IsEyeTrackingEnabled</code>.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="114">If you did this previously...</p>
+<pre><code class="lang-csharp" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="116">if (CoreServices.InputSystem.GazeProvider is GazeProvider gazeProvider)
+{
+    gazeProvider.UseEyeTracking = true;
+}
+</code></pre>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="123">Do this now...</p>
+<pre><code class="lang-csharp" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="125">if (CoreServices.InputSystem.GazeProvider is GazeProvider gazeProvider)
+{
+    gazeProvider.IsEyeTrackingEnabled = true;
+}
+</code></pre>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="132"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="132">WindowsApiChecker properties</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="134">The following WindowsApiChecker properties have been marked as obsolete. Please use <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="134">IsMethodAvailable</code>, <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="134">IsPropertyAvailable</code> or <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="134">IsTypeAvailable</code>.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="136">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="136">UniversalApiContractV8_IsAvailable</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="137">UniversalApiContractV7_IsAvailable</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="138">UniversalApiContractV6_IsAvailable</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="139">UniversalApiContractV5_IsAvailable</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="140">UniversalApiContractV4_IsAvailable</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="141">UniversalApiContractV3_IsAvailable</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="143">There are no plans to add properties to WindowsApiChecker for future API contract versions.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="145"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="145">GltfMeshPrimitiveAttributes read-only</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="147">The gltf mesh primitive attributes used to be settable, they are now read-only. Their values
+will be set once when deserialized.</p>
+<h3 id="custom-button-icon-migration" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="150">Custom Button Icon Migration</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="152">Previously custom button icons required assigning a new material to the button's quad renderer. This is no longer necessary and we recommend moving custom icon textures into an IconSet. Existing custom materials and icons are preserved. However they will be less optimal until upgraded.
+To upgrade the assets on all buttons in the project to the new recommended format, use the ButtonConfigHelperMigrationHandler.
+(Mixed Reality Toolkit -&gt; Utilities -&gt; Migration Window -&gt; Migration Handler Selection -&gt; Microsoft.MixedReality.Toolkit.Utilities.ButtonConfigHelperMigrationHandler)</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="156"><img src="https://user-images.githubusercontent.com/39840334/82096923-bd28bf80-96b6-11ea-93a9-ceafcb822242.png" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="156" alt="Upgrade window dialogue"></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="158">If an icon is not found in the default icon set during migration, a custom icon set will be created in MixedRealityToolkit.Generated/CustomIconSets. A dialog will indicate that this has taken place.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="160"><img src="https://user-images.githubusercontent.com/9789716/82093856-c57dfc00-96b0-11ea-83ab-4df57446d661.PNG" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="160" alt="Custom icon notification"></p>
+<h2 id="updating-220-to-230" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="162">Updating 2.2.0 to 2.3.0</h2>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="164">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="164"><a href="#api-changes-in-230" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="164">API changes</a></li>
+</ul>
+<h3 id="api-changes-in-230" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="166">API changes in 2.3.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="168"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="168">ControllerPoseSynchronizer</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="170">The private ControllerPoseSynchronizer.handedness field has been marked as obsolete. This should have minimal impact on applications as the field is not visible outside of its class.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="172">The public ControllerPoseSynchronizer.Handedness property's setter has been removed (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/7012" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="172">#7012</a>).</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="174"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="174">MSBuild for Unity</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="176">This version of MRTK uses a newer version of MSBuild for Unity than previous releases. During project load, if the older version is listed in the Unity Package Manger
+manifest, the configuration dialog will appear, with the Enable MSBuild for Unity option checked. Applying will perform an upgrade.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="179"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="179">ScriptingUtilities</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="181">The ScriptingUtilities class has been marked as obsolete and has been replaced by ScriptUtilities, in the Microsoft.MixedReality.Toolkit.Editor.Utilities assembly. The new class refines previous behavior and adds support for removing scripting definitions.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="183">While existing code will continue to function in version 2.3.0, it is recommended to update to the new class.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="185"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="185">ShellHandRayPointer</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="187">The lineRendererSelected and lineRendererNoTarget members of the ShellHandRayPointer class have been replaced by lineMaterialSelected and lineMaterialNoTarget, respectively (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6863" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="187">#6863</a>).</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="189">Please replace lineRendererSelected with lineMaterialSelected and/or lineRendererNoTarget with lineMaterialNoTarget to resolve compile errors.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="191"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="191">Spatial observer StartupBehavior</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="193">Spatial observers built upon the <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="193">BaseSpatialObserver</code> class now honor the value of StartupBehavior when re-enabled (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6919" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="193">#6919</a>).</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="195">No changes are required to take advantage of this fix.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="197"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="197">UX control prefabs updated to use PressableButton</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="199">The following prefabs are now using the PressableButton component instead of TouchHandler for near interaction (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/7070" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="199">7070</a>)</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="201">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="201">AnimationButton</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="202">Button</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="203">ButtonHoloLens1</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="204">ButtonHoloLens1Toggle</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="205">CheckBox</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="206">RadialSet</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="207">ToggleButton</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="208">ToggleSwitch</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="209">UnityUIButton</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="210">UnityUICheckboxButton</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="211">UnityUIRadialButton</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="212">UnityUIToggleButton</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="214">Application code may require updating due to this change.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="216"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="216">WindowsMixedRealityUtilities namespace</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="218">The namespace of WindowsMixedRealityUtilities changed from Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input to Microsoft.MixedReality.Toolkit.WindowsMixedReality (<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6989" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="218">#6863</a>).</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="220">Please update #using statements to resolve compile errors.</p>
+<h2 id="updating-210-to-220" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="222">Updating 2.1.0 to 2.2.0</h2>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="224">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="224"><a href="#api-changes-in-220" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="224">API changes</a></li>
+</ul>
+<h3 id="api-changes-in-220" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="226">API changes in 2.2.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="228"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="228">IMixedRealityBoundarySystem.Contains</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="230">This method previously took in a specific, Unity-defined experimental enum. It now takes in an MRTK-defined enum that's identical to the Unity enum. This change helps prepare the MRTK for Unity's future boundary APIs.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="232"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="232">MixedRealityServiceProfileAttribute</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="234">To better describe the requirements for supporting a profile, the MixedRealityServiceProfileAttribute has been updated to add an optional collection of excluded types. As part of this change, the ServiceType property has been changed from Type to Type[] and been renamed to RequiredTypes.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="236">A second property, ExcludedTypes has also been added.</p>
+<h2 id="updating-200-to-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="238">Updating 2.0.0 to 2.1.0</h2>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="240">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="240"><a href="#api-changes-in-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="240">API changes</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="241"><a href="#profile-changes-in-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="241">Profile changes</a></li>
+</ul>
+<h3 id="api-changes-in-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="243">API changes in 2.1.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="245"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="245">BaseNearInteractionTouchable</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="247">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="247">BaseNearInteractionTouchable</code> has been modified to mark the <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="247">OnValidate</code> method as virtual. Classes that extend <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="247">BaseNearInteractionTouchable</code> (ex: <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="247">NearInteractionTouchableUnityUI</code>) have been updated to reflect this change.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="249"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="249">ColliderNearInteractionTouchable</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="251">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="251">ColliderNearInteractionTouchable</code> class has been deprecated. Please update code references to use <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="251">BaseNearInteractionTouchable</code>.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="253"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="253">IMixedRealityMouseDeviceManager</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="255"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="255"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="255">Added</em></strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="257"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="257">IMixedRealityMouseDeviceManager</code> has been added <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="257">CursorSpeed</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="257">WheelSpeed</code> properties. These properties allow applications to specify a multiplier value by which the speed of the cursor and wheel, respectively will be scaled.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="259">This is a breaking change and requires existing mouse device manager implementations to be modified .</p>
+<div class="NOTE" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="261">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="262">This change is not backwards compatible with version 2.0.0.</p>
+</div>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="264"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="264"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="264">Deprecated</em></strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="266">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="266">MouseInputProfile</code> property has been marked as obsolete and will be removed from a future version of the Microsoft Mixed Reality Toolkit. It is recommended that application code no longer use this property.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="268"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="268">Interactable</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="270">The following methods and properties have been deprecated and will be removed from a future version of the Microsoft Mixed Reality Toolkit. The recommendation is to update application code per the guidance contained in the Obsolete attribute and displayed in the console.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="272">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="272"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="272">public bool Enabled</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="273"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="273">public bool FocusEnabled</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="274"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="274">public void ForceUpdateThemes()</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="275"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="275">public bool IsDisabled</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="276"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="276">public bool IsToggleButton</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="277"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="277">public int GetDimensionIndex()</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="278"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="278">public State[] GetStates()</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="279"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="279">public bool RequiresFocus</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="280"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="280">public void ResetBaseStates()</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="281"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="281">public virtual void SetCollision(bool collision)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="282"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="282">public virtual void SetCustom(bool custom)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="283"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="283">public void SetDimensionIndex(int index)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="284"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="284">public virtual void SetDisabled(bool disabled)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="285"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="285">public virtual void SetFocus(bool focus)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="286"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="286">public virtual void SetGesture(bool gesture)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="287"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="287">public virtual void SetGestureMax(bool gesture)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="288"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="288">public virtual void SetGrab(bool grab)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="289"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="289">public virtual void SetInteractive(bool interactive)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="290"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="290">public virtual void SetObservation(bool observation)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="291"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="291">public virtual void SetObservationTargeted(bool targeted)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="292"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="292">public virtual void SetPhysicalTouch(bool touch)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="293"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="293">public virtual void SetPress(bool press)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="294"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="294">public virtual void SetTargeted(bool targeted)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="295"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="295">public virtual void SetToggled(bool toggled)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="296"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="296">public virtual void SetVisited(bool visited)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="297"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="297">public virtual void SetVoiceCommand(bool voice)</code></li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="299"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="299">NearInteractionTouchableSurface</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="301">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="301">NearInteractionTouchableSurface</code> class has been added and now serves as the base class for <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="301">NearInteractionTouchable</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="301">NearInteractionTouchableUnityUI</code>.</p>
+<h3 id="profile-changes-in-210" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="303">Profile changes in 2.1.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="305"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="305">Hand tracking profile</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="307">The hand mesh and joint visualizations now have a separate editor and player settings. The hand tracking profile has been updated to allow for setting these visualizations to; Nothing, Everything, Editor or Player.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="309"><img src="Images/ReleaseNotes/HandTrackingVisualizationModes.png" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="309" alt="Hand visualization modes"></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="311">Custom hand tracking profiles may need to be updated to work correctly with version 2.1.0.</p>
+<div class="NOTE" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="313">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="314">This change is not backwards compatible with version 2.0.0.</p>
+</div>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="316"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="316">Input simulation profile</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="318">The input simulation system has been upgraded, which changes a few settings in the input simulation profile. Some changes can not be migrated automatically and users may find that profiles are using default values.</p>
+<ol sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="320">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="320"><p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="320">All KeyCode and mouse button bindings in the profile have been replaced with a generic <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="320">KeyBinding</code> struct, which stores the type of binding (key or mouse) as well as the actual binding code (KeyCode or mouse button number respectively). The struct has its own inspector, which allows unified display and offers an &quot;auto-bind&quot; tool to quickly set key bindings by pressing the respective key instead of selecting from a huge dropdown list.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="322">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="322">FastControlKey</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="323">ToggleLeftHandKey</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="324">ToggleRightHandKey</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="325">LeftHandManipulationKey</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="326">RightHandManipulationKey</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="328"><p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="328"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="328">MouseLookToggle</code> was previously included in the <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="328">MouseLookButton</code> enum as <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="328">InputSimulationMouseButton.Focused</code>, it is now a separate option. When enabled, the camera will keep rotating with the mouse after releasing the button, until the escape key is pressed.</p>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="329"><p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="329"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="329">HandDepthMultiplier</code> default value has been lowered from 0.1 to 0.03 to accommodate some changes to the input simulation. If the camera moves too fast when scrolling, try lowering this value.</p>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="330"><p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="330">Keys for rotating hands have been removed, hand rotation is now controlled by the mouse as well. Holding <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="330">HandRotateButton</code> (Ctrl) together with the left/right hand manipulation key (LShift/Space) will enable hand rotation.</p>
+</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="331"><p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="331">A new axis &quot;UpDown&quot; has been introduced to the input axis list. This controls camera movement in the vertical and defaults to Q/E keys as well as the controller trigger buttons.</p>
+</li>
+</ol>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="333">For more information on these changes, please see the <a href="InputSimulation/InputSimulationService.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="333">input simulation service</a> article.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="335"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="335">Mouse data provider profile</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="337">The mouse data provider profile has been updated to expose the new <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="337">CursorSpeed</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="337">WheelSpeed</code> properties. Existing custom profiles will automatically have default values provided. When the profile is saved, these new values will be persisted.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="339"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="339">Controller mapping profile</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="341">Some axes and input types have been updated in 2.1.0, especially around the OpenVR platform. Please be sure to select <strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="341">MixedRealityToolkit -&gt; Utilities -&gt; Update -&gt; Controller Mapping Profiles</strong> when upgrading. This will update any custom Controller Mapping Profiles with the updated axes and data, while leaving your custom-assigned input actions intact.</p>
+<h2 id="updating-rc2-to-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="343">Updating RC2 to 2.0.0</h2>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="345">Between the RC2 and 2.0.0 releases of the Microsoft Mixed Reality Toolkit, changes were made that may impact existing projects. This document describes those changes and how to update projects to the 2.0.0 release.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="347">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="347"><a href="#api-changes-in-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="347">API changes</a></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="348"><a href="#assembly-name-changes-in-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="348">Assembly name changes</a></li>
+</ul>
+<h3 id="api-changes-in-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="350">API changes in 2.0.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="352">Since the release of RC2, there have been a number of API changes including some that may break existing projects. The following sections describe the changes that have occurred between the RC2 and 2.0.0 releases.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="354"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="354">MixedRealityToolkit</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="356">The following public properties on the MixedRealityToolkit object have been deprecated.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="358">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="358"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="358">RegisteredMixedRealityServices</code> no longer contains the collection of registered extensions services and data providers.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="360">To access extension services, use <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="360">MixedRealityServiceRegistry.TryGetService&lt;T&gt;</code>. To access data providers, cast the service instance to <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="360"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="360">IMixedRealityDataProviderAccess</code></a> and use <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="360">GetDataProvider&lt;T&gt;</code>.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="362">Use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityServiceRegistry.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="362"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="362">MixedRealityServiceRegistry</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.CoreServices.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="362"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="362">CoreServices</code></a> instead for the following deprecated properties</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="364">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="364"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="364">ActiveSystems</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="365"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="365">InputSystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="366"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="366">BoundarySystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="367"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="367">CameraSystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="368"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="368">SpatialAwarenessSystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="369"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="369">TeleportSystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="370"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="370">DiagnosticsSystem</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="371"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="371">SceneSystem</code></li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="373"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="373">CoreServices</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="375">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.CoreServices.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="375"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="375">CoreServices</code></a> class is the replacement for the static system accessors (ex: BoundarySystem) found in the <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="375">MixedRealityToolkit</code> object.</p>
+<div class="IMPORTANT" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="377">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="378">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="378">MixedRealityToolkit</code> system accessors have been deprecated in version 2.0.0 and will be removed in a future release of the MRTK.</p>
+</div>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="380">The following code example illustrates the old and the new pattern.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="382">// Old
+GameObject playAreaVisualization = MixedRealityToolkit.BoundarySystem?.GetPlayAreaVisualization();
+
+// New
+GameObject playAreaVisualization = CoreServices.BoundarySystem?.GetPlayAreaVisualization();
+</code></pre>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="390">Using the new CoreSystem class will ensure that your application code will not need updating if you change the application to use a different service registrar (ex: one of the experimental service managers).</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="392"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="392">IMixedRealityRaycastProvider</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="394">With the addition of the IMixedRealityRaycastProvider, the input system configuration profile was changed. If you have a custom profile, you may receive the errors in the following image when you run your application.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="396"><img src="Images/ReleaseNotes/UnableToRegisterRaycastProvider.png" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="396" alt="Selecting the Raycast provider"></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="398">To fix these, please add an IMixedRealityRaycastProvider instance to your input system profile.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="400"><img src="Images/ReleaseNotes/SelectRaycastProvider.png" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="400" alt="Selecting the Raycast provider"></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="402"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="402">Event System</strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="404">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="404">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="404">IMixedRealityEventSystem</code> old API methods <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="404">Register</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="404">Unregister</code> have been marked as obsolete. They are preserved for backwards compatibility.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="405"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="405">InputSystemGlobalListener</code> has been marked as obsolete. Its functionality has not changed.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="406"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="406">BaseInputHandler</code> base class has been changed from <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="406">InputSystemGlobalListener</code> to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="406">InputSystemGlobalHandlerListener</code>. This is a breaking change for any descendants of <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="406">BaseInputHandler</code>.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="408"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="408"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="408">Motivation behind the change</em></strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="410">The old event system API <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="410">Register</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="410">Unregister</code> could potentially cause multiple issues in runtime, main being:</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="412">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="412">If a component registers for global events, it would receive global input events of <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="412">all</em> types.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="413">If one of the components on an object registers for global input events, all components on this object will receive global input events of <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="413">all</em> types.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="414">If two components on the same object register to global events, and then one is disabled in runtime, the second one stops receiving global events.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="416">New API <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="416">RegisterHandler</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="416">UnregisterHandler</code>:</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="418">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="418">Provides an explicit and granular control over which input events should be listened to globally and which should be focused-based.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="419">Allows multiple components on the same object to listen to global events independently on each other.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="421"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="421"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="421">How to migrate</em></strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">If you have been calling <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">Register</code>/<code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">Unregister</code> API directly before, replace these calls with calls to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">RegisterHandler</code>/<code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">UnregisterHandler</code>. Use handler interfaces you implement as generic parameters. If you implement multiple interfaces, and several of them listen to global input events, call <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="423">RegisterHandler</code> multiple times.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">If you have been inheriting from <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">InputSystemGlobalListener</code>, change inheritance to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">InputSystemGlobalHandlerListener</code>. Implement <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">RegisterHandlers</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">UnregisterHandlers</code> abstract methods. In the implementation call <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">inputSystem.RegisterHandler</code> (<code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="424">inputSystem.UnregisterHandler</code>) to register on all handler interfaces you want to listen global events for.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="425">If you have been inheriting from <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="425">BaseInputHandler</code>, implement <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="425">RegisterHandlers</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="425">UnregisterHandlers</code> abstract methods (same as for <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="425">InputSystemGlobalListener</code>).</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="427"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="427"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="427">Examples of migration</em></strong></p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="429">// Old
+class SampleHandler : MonoBehaviour, IMixedRealitySourceStateHandler, IMixedRealityHandJointHandler
+{
+    private void OnEnable()
+    {
+        InputSystem?.Register(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        InputSystem?.Unregister(gameObject);
+    }
+}
+
+// Migrated
+class SampleHandler : MonoBehaviour, IMixedRealitySourceStateHandler, IMixedRealityHandJointHandler
+{
+    private void OnEnable()
+    {
+        InputSystem?.RegisterHandler&lt;IMixedRealitySourceStateHandler&gt;(this);
+        InputSystem?.RegisterHandler&lt;IMixedRealityHandJointHandler&gt;(this);
+    }
+
+    private void OnDisable()
+    {
+        InputSystem?.UnregisterHandler&lt;IMixedRealitySourceStateHandler&gt;(this);
+        InputSystem?.UnregisterHandler&lt;IMixedRealityHandJointHandler&gt;(this);
+    }
+}
+</code></pre>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="461">// Old
+class SampleHandler2 : InputSystemGlobalListener, IMixedRealitySpeechHandler
+{
+}
+
+// Migrated
+class SampleHandler2 : InputSystemGlobalHandlerListener, IMixedRealitySpeechHandler
+{
+    private void RegisterHandlers()
+    {
+        InputSystem?.RegisterHandler&lt;IMixedRealitySpeechHandler&gt;(this);
+    }
+
+    private void UnregisterHandlers()
+    {
+        InputSystem?.UnregisterHandler&lt;IMixedRealitySpeechHandler&gt;(this);
+    }
+}
+
+// Alternative migration
+class SampleHandler2 : MonoBehaviour, IMixedRealitySpeechHandler
+{
+    private void OnEnable()
+    {
+        IMixedRealityInputSystem inputSystem;
+        if (MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityInputSystem&gt;(out inputSystem))
+        {
+            inputSystem?.RegisterHandler&lt;IMixedRealitySpeechHandler&gt;(this);
+        }
+    }
+
+    private void OnDisable()
+    {
+        IMixedRealityInputSystem inputSystem;
+        if (MixedRealityServiceRegistry.TryGetService&lt;IMixedRealityInputSystem&gt;(out inputSystem))
+        {
+            inputSystem?.UnregisterHandler&lt;IMixedRealitySpeechHandler&gt;(this);
+        }
+    }
+}
+</code></pre>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="504"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="504">Spatial Awareness</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="506">The IMixedRealitySpatialAwarenessSystem and IMixedRealitySpatialAwarenessObserver interfaces have taken multiple breaking changes as described below.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="508"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="508"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="508">Changes</em></strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="510">The following method(s) have been renamed to better describe their usage.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="512">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="512"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="512">IMixedRealitySpatialAwarenessSystem.CreateSpatialObjectParent</code> has been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="512">IMixedRealitySpatialAwarenessSystem.CreateSpatialAwarenessObservationParent</code> to clarify its usage.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="514"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="514"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="514">Additions</em></strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="516">Based on customer feedback, support for easy removal of previously observed spatial awareness data has been added.</p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="518">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="518"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="518">IMixedRealitySpatialAwarenessSystem.ClearObservations()</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="519"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="519">IMixedRealitySpatialAwarenessSystem.ClearObservations&lt;T&gt;(string name)</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="520"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="520">IMixedRealitySpatialAwarenessObserver.ClearObservations()</code></li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="522"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="522">Solvers</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="524">Some solver components and the SolverHandler manager class has changed to fix various bugs and for more intuitive usage.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="526"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="526"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="526">SolverHandler</em></strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="528">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="528">Class no longer extends from <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="528">ControllerFinder</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="529"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="529">TrackedObjectToReference</code> public property deprecated and has been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="529">TrackedTargetType</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="530"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="530">TrackedObjectType</code> deprecates left &amp; right controller values. Instead use <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="530">MotionController</code> or <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="530">HandJoint</code> values and update new <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="530">TrackedHandedness</code> property to limit tracking to left or right controller</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="532"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="532"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="532">InBetween</em></strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="534">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="534"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="534">TrackedObjectForSecondTransform</code> public property deprecated and has been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="534">SecondTrackedObjectType</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="535"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="535">AttachSecondTransformToNewTrackedObject()</code> has been removed. To update the solver, modify the public properties (i.e <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="535">SecondTrackedObjectType</code>)</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="537"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="537"><em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="537">SurfaceMagnetism</em></strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="539">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="539"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="539">MaxDistance</code> public property deprecated and has been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="539">MaxRaycastDistance</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="540"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="540">CloseDistance</code> public property deprecated and has been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="540">ClosestDistance</code></li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="541">Default value for <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="541">RaycastDirectionMode</code> is now <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="541">TrackedTargetForward</code> which raycasts in the direction of the tracked target transform forward</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542">OrientationMode</code> enum values, <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542">Vertical</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542">Full</code>, have been renamed to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542">TrackedTarget</code> and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="542">SurfaceNormal</code> respectively</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="543"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="543">KeepOrientationVertical</code> public property has been added to control whether orientation of associated GameObject remains vertical</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="545"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="545">Buttons</strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.PressableButton.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547">PressableButton</code></a> now has <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547">DistanceSpaceMode</code> property set to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="547">Local</code> as default. This allows buttons to be scaled while still be pressable</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="549"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="549">Clipping Sphere</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="551">The ClippingSphere interface has changed to mirror the APIs found in the ClippingBox and ClippingPlane.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="553">The ClippingSphere's Radius property is now implicitly calculated based on the transform scale. Before developers would have to specify the radius of the ClippingSphere in the inspector. If you want to change the radius, just update the transform scale of the transform as you normally would.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="555"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="555">NearInteractionTouchable and PokePointer</strong></p>
+<ul sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="557">
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="557">NearInteractionTouchable does not handle Unity UI canvas touching any longer. The NearInteractionTouchableUnityUI class must be used for Unity UI touchables now.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="558">ColliderNearInteractionTouchable is the new base class for touchables based on colliders, i.e. every touchable except NearInteractionTouchableUnityUI.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="559">BaseNearInteractionTouchable.DistFront has been moved and renamed to PokePointer.TouchableDistance
+This is the distance and which the PokePointer can interact with touchables. Previously each touchable had its own maximum interaction distance, but now this is defined in the PokePointer which allows better optimization.</li>
+<li sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="561">BaseNearInteractionTouchable.DistBack has been renamed to PokeThreshold
+This makes it clear that PokeThreshold is the counterpart to DebounceThreshold. A touchable is activated when the PokeThreshold is crossed, and released when DebounceThreshold is crossed.</li>
+</ul>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="564"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="564">ReadOnlyAttribute</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="566">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="566">Microsoft.MixedReality.Toolkit</code> namespace has been added to <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="566">ReadOnlyAttribute</code>, <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="566">BeginReadOnlyGroupAttribute</code>, and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="566">EndReadOnlyGroupAttribute</code>.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="568"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="568">PointerClickHandler</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="570">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="570">PointerClickHandler</code> class has been deprecated. The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="570">PointerHandler</code> should be used instead, it provides the same functionality.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="572"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="572">HoloLens clicker support</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="574">The HoloLens clicker's controller mappings have changed from being an unhanded <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityController.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="574"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="574">WindowsMixedRealityController</code></a> to being an unhanded <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityGGVHand.html" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="574"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="574">WindowsMixedRealityGGVHand</code></a>. To account for this, an automatic updater will run the first time you open your ControllerMapping profile. Please open any custom profiles at least once after upgrading to 2.0.0 in order to trigger this one-time migration step.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="576"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="576">InteractableHighlight</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">InteractableHighlight</code> class has been deprecated. The <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">InteractableOnFocus</code> class and <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">FocusInteractableStates</code> asset should be used instead. To create a new <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">Theme</code> asset for the <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">InteractableOnFocus</code>, right click in the project window and select <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">Create</em> &gt; <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">Mixed Reality Toolkit</em> &gt; <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">Interactable</em> &gt; <em sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="578">Theme</em>.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="580"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="580">HandInteractionPanZoom</strong></p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="582"><code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="582">HandInteractionPanZoom</code> has been moved to the UI namespace as it was not an input component. <code sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="582">HandPanEventData</code> has also been moved into this namespace, and simplified to correspond with other UI event data.</p>
+<h3 id="assembly-name-changes-in-200" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="584">Assembly name changes in 2.0.0</h3>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="586">In The 2.0.0 release, all of the official Mixed Reality Toolkit assembly names and their associated assembly definition (.asmdef) files have been updated to fit the following pattern.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="588">Microsoft.MixedReality.Toolkit[.&lt;name&gt;]
+</code></pre>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="592">In some instances, multiple assemblies have been merged to create better unity of their contents. If your project uses custom .asmdef files, they may require updating.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="594">The following tables describe how the RC2 .asmdef file names map to the 2.0.0 release. All assembly names match the .asmdef file name.</p>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="596"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="596">MixedRealityToolkit</strong></p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="598">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="598">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="598">RC2</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="598">2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="600">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="600">MixedRealityToolkit.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="600">Microsoft.MixedReality.Toolkit.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="601">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="601">MixedRealityToolkit.Core.BuildAndDeploy.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="601">Microsoft.MixedReality.Toolkit.Editor.BuildAndDeploy.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="602">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="602">MixedRealityToolkit.Core.Definitions.Utilities.Editor.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="602">Removed, use Microsoft.MixedReality.Toolkit.Editor.Utilities.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="603">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="603">MixedRealityToolkit.Core.Extensions.EditorClassExtensions.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="603">Microsoft.MixedReality.Toolkit.Editor.ClassExtensions.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="604">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="604">MixedRealityToolkit.Core.Inspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="604">Microsoft.MixedReality.Toolkit.Editor.Inspectors.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="605">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="605">MixedRealityToolkit.Core.Inspectors.ServiceInspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="605">Microsoft.MixedReality.Toolkit.Editor.ServiceInspectors.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="606">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="606">MixedRealityToolkit.Core.UtilitiesAsync.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="606">Microsoft.MixedReality.Toolkit.Async.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="607">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="607">MixedRealityToolkit.Core.Utilities.Editor.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="607">Microsoft.MixedReality.Toolkit.Editor.Utilities.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="608">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="608">MixedRealityToolkit.Utilities.Gltf.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="608">Microsoft.MixedReality.Toolkit.Gltf.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="609">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="609">MixedRealityToolkit.Utilities.Gltf.Importers.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="609">Microsoft.MixedReality.Toolkit.Gltf.Importers.asmdef</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="611"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="611">MixedRealityToolkit.Providers</strong></p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="613">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="613">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="613">RC2</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="613">2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="615">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="615">MixedRealityToolkit.Providers.OpenVR.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="615">Microsoft.MixedReality.Toolkit.Providers.OpenVR.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="616">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="616">MixedRealityToolkit.Providers.WindowsMixedReality.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="616">Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="617">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="617">MixedRealityToolkit.Providers.WindowsVoiceInput.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="617">Microsoft.MixedReality.Toolkit.Providers.WindowsVoiceInput.asmdef</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="619"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="619">MixedRealityToolkit.Services</strong></p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="621">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="621">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="621">RC2</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="621">2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="623">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="623">MixedRealityToolkit.Services.BoundarySystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="623">Microsoft.MixedReality.Toolkit.Services.BoundarySystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="624">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="624">MixedRealityToolkit.Services.CameraSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="624">Microsoft.MixedReality.Toolkit.Services.CameraSystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="625">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="625">MixedRealityToolkit.Services.DiagnosticsSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="625">Microsoft.MixedReality.Toolkit.Services.DiagnosticsSystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="626">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="626">MixedRealityToolkit.Services.InputSimulation.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="626">Microsoft.MixedReality.Toolkit.Services.InputSimulation.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="627">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="627">MixedRealityToolkit.Services.InputSimulation.Editor.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="627">Microsoft.MixedReality.Toolkit.Services.InputSimulation.Editor.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="628">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="628">MixedRealityToolkit.Services.InputSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="628">Microsoft.MixedReality.Toolkit.Services.InputSystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="629">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="629">MixedRealityToolkit.Services.Inspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="629">Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="630">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="630">MixedRealityToolkit.Services.SceneSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="630">Microsoft.MixedReality.Toolkit.Services.SceneSystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="631">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="631">MixedRealityToolkit.Services.SpatialAwarenessSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="631">Microsoft.MixedReality.Toolkit.Services.SpatialAwarenessSystem.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="632">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="632">MixedRealityToolkit.Services.TeleportSystem.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="632">Microsoft.MixedReality.Toolkit.Services.TeleportSystem.asmdef</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="634"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="634">MixedRealityToolkit.SDK</strong></p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="636">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="636">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="636">RC2</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="636">2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="638">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="638">MixedRealityToolkit.SDK.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="638">Microsoft.MixedReality.Toolkit.SDK.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="639">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="639">MixedRealityToolkit.SDK.Inspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="639">Microsoft.MixedReality.Toolkit.SDK.Inspectors.asmdef</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="641"><strong sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="641">MixedRealityToolkit.Examples</strong></p>
+<table sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="643">
+<thead>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="643">
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="643">RC2</th>
+<th sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="643">2.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="645">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="645">MixedRealityToolkit.Examples.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="645">Microsoft.MixedReality.Toolkit.Examples.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="646">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="646">MixedRealityToolkit.Examples.Demos.Gltf.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="646">Microsoft.MixedReality.Toolkit.Demos.Gltf.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="647">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="647">MixedRealityToolkit.Examples.Demos.StandardShader.Inspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="647">Microsoft.MixedReality.Toolkit.Demos.StandardShader.Inspectors.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="648">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="648">MixedRealityToolkit.Examples.Demos.Utilities.InspectorFields.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="648">Microsoft.MixedReality.Toolkit.Demos.InspectorFields.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="649">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="649">MixedRealityToolkit.Examples.Demos.Utilities.InspectorFields.Inspectors.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="649">Microsoft.MixedReality.Toolkit.Demos.InspectorFields.Inspectors.asmdef</td>
+</tr>
+<tr sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="650">
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="650">MixedRealityToolkit.Examples.Demos.UX.Interactables.asmdef</td>
+<td sourcefile="../../Documentation/Updating.md" sourcestartlinenumber="650">Microsoft.MixedReality.Toolkit.Demos.UX.Interactables.asmdef</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Updating.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
