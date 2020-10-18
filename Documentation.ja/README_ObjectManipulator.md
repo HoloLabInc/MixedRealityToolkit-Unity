@@ -73,8 +73,8 @@
 この設定により、リンクされた [コンストレイント マネージャー](README_ConstraintManager.md) が有効になります。選択した [コンストレイント マネージャー](README_ConstraintManager.md) に登録された制約によって、トランスフォームの変更が処理されます。
 
 #### Constraint Manager (コンストレイント マネージャー)
-The dropdown allows to select any of the attached [constraint managers](README_ConstraintManager.md). Object manipulator ensures there's a [constraint manager](README_ConstraintManager.md) attached at all times.
-Note that multiple components of the same type will show up under the same name in unity. To make it easier to distinguish between multiple constraint managers on the same object, the available options will show a hint on the configuration of the selected constraint manager (manual or auto constraint selection).
+ドロップダウンでは、アタッチされている [コンストレイント マネージャー](README_ConstraintManager.md) のいずれかを選択することができます。オブジェクト マニピュレーターは、常に [コンストレイント マネージャー](README_ConstraintManager.md) がアタッチされていることを保証します。
+同じタイプの複数のコンポーネントは、Unity では同じ名前で表示されることに注意してください。同じオブジェクト上の複数のコンストレイント マネージャーを簡単に区別できるようにするために、利用可能なオプションには（手動または自動の制約選択によって）選択されたコンストレイント マネージャーの設定に関するヒントが表示されます。
 
 #### Go to component (コンポーネントへ移動)
 
@@ -88,14 +88,14 @@ Note that multiple components of the same type will show up under the same name 
 
 #### Release Behavior (リリースの動作)
 
-Specify which physical properties a manipulated object should keep upon release. Because this property is a flag, both options can be selected.
+操作されたオブジェクトがリリースされた時に維持すべき物理的なプロパティを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。
 
-* *Keep Velocity*: When the object is released, if this option is selected it will keep its linear velocity.
-* *Keep Angular Velocity*: When the object is released, if this option is selected it will keep its angular velocity.
+* *Keep Velocity (速度の維持)*: このオプションが選択されている場合、オブジェクトがリリースされるときに速度が維持されます。
+* *Keep Angular Velocity (各速度の維持)*: このオプションが選択されている場合、オブジェクトがリリースされるときに角速度が維持されます。
 
-#### Use forces for near manipulation
+#### Use Forces For Near Manipulation (ニア マニピュレーションに力を使う)
 
-Whether physics forces are used to move the object when performing near manipulations. Setting this to *false* will make the object feel more directly connected to the users hand. Setting this to *true* will honor the mass and inertia of the object, but may feel as though the object is connected through a spring. The default is *false*. 
+ニア マニピュレーションを行う際に、オブジェクトを動かすのに物理的な力を使うかどうかを指定します。これを *false* に設定すると、オブジェクトがユーザーの手に直接接続されているように感じられます。これを *true* に設定すると、オブジェクトの質量と慣性を尊重しますが、オブジェクトがバネを介して接続されているように感じるかもしれません。デフォルトは *false* です。
 
 ### Smoothing (スムージング)
 
@@ -107,19 +107,19 @@ Whether physics forces are used to move the object when performing near manipula
 
 フレームレートに依存しないスムージングをニア インタラクションで有効にするかどうか。ニア スムージングはデフォルトでは無効になっています。これはこの効果がハンドから「切り離されている」と認識される可能性があるためです。
 
-#### Smoothing Active
+#### Smoothing Active (スムージングの有効化)
 
-Obsolete and will be removed in a future version. Applications should use SmoothingFar, SmoothingNear or a combination of the two.
+廃止予定で、将来のバージョンでは削除されます。アプリケーションは SmoothingFar、SmoothingNear、またはそれらの組み合わせを使用する必要があります。
 
-#### Move Lerp Time
+#### Move Lerp Time (移動の線形補間時間)
 
 移動に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-#### Rotate Lerp Time
+#### Rotate Lerp Time (回転の線形補間時間)
 
 回転に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-#### Scale Lerp Time
+#### Scale Lerp Time (スケールの線形補間時間)
 
 スケール変更に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
@@ -127,16 +127,16 @@ Obsolete and will be removed in a future version. Applications should use Smooth
 
 Manipulation Handler は以下のイベントを提供しています。
 
-* *OnManipulationStarted*: Fired when manipulation starts.
-* *OnManipulationEnded*: Fires when the manipulation ends.
-* *OnHoverStarted*: Fires when a hand / controller hovers the manipulatable, near or far.
-* *OnHoverEnded*: Fires when a hand / controller un-hovers the manipulatable, near or far.
+* *OnManipulationStarted (操作開始時)*: マニピュレーション開始時に発火されます。
+* *OnManipulationEnded (操作終了時)*: マニピュレーション終了時に発火されます。
+* *OnHoverStarted (ホバー開始時)*: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトに当たったときに発火されます。
+* *OnHoverEnded (ホバー終了時)*: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトから外れたときに発火されます。
 
-The event fire order for manipulation is:
+マニピュレーションのイベントが発火される順序は以下の通りです。
 
 *OnHoverStarted* -> *OnManipulationStarted* -> *OnManipulationEnded* -> *OnHoverEnded*
 
-If there is no manipulation, you will still get hover events with the following fire order:
+マニピュレーションが行われない場合でも、以下の発火順序でホバー イベントを受け取ることができます。
 
 *OnHoverStarted* -> *OnHoverEnded*
 
@@ -160,12 +160,12 @@ Rigidbody が追加されていると、コリジョンは正しく動作しま�
 <img src="../Documentation/Images/ObjectManipulator/MRTK_PhysicsManipulation_Rigidbody.gif" width="500">
 
 
-## Elastics (Experimental)
-Elastics can be used when manipulating objects via object manipulator. Note that the [elastics system](Elastics/ElasticSystem.md) is still in experimental state. To enable elastics either link an existing elastics manager component or create and link a new elastics manager via the `Add Elastics Manager` button.
+## Elastics (エラスティックス) [Experimental]
+エラスティックスは、オブジェクト マニピュレーターを介してオブジェクトを操作する際に使用できます。[Eelastics System](Elastics/ElasticSystem.md) はまだ実験的な状態であることに注意してください。エラスティックスを有効にするには、既存のエラスティックス マネージャー コンポーネントをリンクするか、`Add Elastics Manager` ボタンを使って新しいエラスティックス マネージャーを作成してリンクしてください。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
 
-## See also
+## 関連項目
 
 - [Bounds control](README_BoundsControl.md)
 - [Constraint manager](README_ConstraintManager.md)
