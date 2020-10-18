@@ -1,16 +1,16 @@
-# Progress Indicators
+# Progress Indicators (プログレス インジケーター)
 
 ![Progress Indicators](../Documentation/Images/ProgressIndicator/MRTK_ProgressIndicator_Main.png)
 
-## Example scene
+## サンプル シーン
 
-Examples of how to use progress indicators can be found in the `ProgressIndicatorExamples` scene. This scene demonstrates each of the progress indicator prefabs included in the SDK.
+プログレス インジケーターの使い方の例は、`ProgressIndicatorExamples` シーンにあります。 このシーンでは、SDK に含まれる各プログレス インジケーターのプレハブをデモンストレーションします。
 
 <img src="../Documentation/Images/ProgressIndicator/MRTK_ProgressIndicator_Examples.png">
 
-## Example: Open, update & close a progress indicator
+## サンプル: プログレス インジケーターを開く、更新する、閉じる
 
-Progress indicators implement the [`IProgressIndicator`](xref:Microsoft.MixedReality.Toolkit.UI.IProgressIndicator) interface. This interface can be retrieved from a GameObject using `GetComponent`.
+プログレス インジケーターは [`IProgressIndicator`](xref:Microsoft.MixedReality.Toolkit.UI.IProgressIndicator) インターフェイスを実装しています。このインターフェイスは `GetComponent` を使って GameObject から取得できます。
 
 ```c#
 [SerializedField]
@@ -23,9 +23,9 @@ private void Start()
 }
 ```
 
-The `IProgressIndicator.OpenAsync()` and `IProgressIndicator.CloseAsync()` methods return [Tasks](xref:System.Threading.Tasks.Task). We recommend awaiting these Tasks in an async method.
+`IProgressIndicator.OpenAsync()` と `IProgressIndicator.CloseAsync()` メソッドは [Task](xref:System.Threading.Tasks.Task) を返します。これらのタスクを async メソッド内で await することを推奨します。
 
-Set the indicator's `Progress` property to a value from 0-1 to update its displayed progress. Set its `Message` property to update its displayed message. Different implementations may display this content in different ways.
+インジケーターの `Progress` プロパティを 0-1 の値に設定して、表示されている進捗状況を更新します。表示されたメッセージを更新するには、`Message` プロパティを設定します。それぞれの実装では、この内容は異なる方法で表示されるかもしれません。
 
 ```c#
 private async void OpenProgressIndicator()
@@ -45,18 +45,18 @@ private async void OpenProgressIndicator()
 }
 ```
 
-## Indicator states
+## インジケーターの状態
 
-An indicator's `State` property determines which operations are valid. Calling an invalid method will typically cause the indicator to report an error and take no action.
+インジケーターの `State` (状態) プロパティは、どの操作が有効かを決定します。無効なメソッドを呼び出すと、通常、インジケーターはエラーを報告して何も実行しません。
 
-State | Valid Operations
+State (状態) | 有効な操作
 --- | ---
 `ProgressIndicatorState.Opening` | `AwaitTransitionAsync()`
 `ProgressIndicatorState.Open` | `CloseAsync()`
 `ProgressIndicatorState.Closing` | `AwaitTransitionAsync()`
 `ProgressIndicatorState.Closed` | `OpenAsync()`
 
-`AwaitTransitionAsync()` can be used to be sure an indicator is fully opened or closed before using it.
+`AwaitTransitionAsync()` は、インジケーターを使用する前にインジケーターが完全に開いている、もしくは閉じていることを確認するために用いることができます。
 
 ```c#
 private async void ToggleIndicator(IProgressIndicator indicator)

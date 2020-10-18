@@ -261,7 +261,7 @@
       href: README_AppBar.md
     - name: Fingertip Visualization
       href: README_FingertipVisualization.md
-    - name: Progress Indicator
+    - name: Progress Indicator (プログレス インジケーター)
       href: README_ProgressIndicator.md
     - name: Dialog [Experimental]
       href: ../Assets/MRTK/SDK/Experimental/Dialog/README_Dialog.md
