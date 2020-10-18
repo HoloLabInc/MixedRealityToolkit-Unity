@@ -32,8 +32,8 @@
 
 オブジェクトを片手で操作するか、両手で操作するかを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。
 
-- *One Handed*: 選択した場合、片手操作が有効になります。
-- *Two Handed*: 選択した場合、両手操作が有効になります。
+- *One Handed (片手)*: 選択した場合、片手操作が有効になります。
+- *Two Handed (両手)*: 選択した場合、両手操作が有効になります。
 
 #### Allow Far Manipulation (ファー マニピュレーションの有効化)
 
@@ -45,15 +45,15 @@
 
 オブジェクトが片手のニア インタラクションで掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。
 
-* *Rotate about object center*: Object rotates using rotation of the hand, but about the object center point. The object will appear to move less as it rotates, but there may be a feeling of disconnection between the hand and the object. More useful for far interaction.
-* *Rotate about grab point*: Rotate object with the hand about the grab point between the thumb and index finger. It should feel as if the object is being held by the hand.
+* *Rotate About Object Center (オブジェクト中心まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。回転時のオブジェクトの移動は小さくなりますが、ハンドとオブジェクトの間に断絶感があるかもしれません。ファー インタラクションでより便利です。
+* *Rotate About Grab Point (把持点まわりの回転)*: 親指と人差し指の間の把持点を中心にオブジェクトが回転します。オブジェクトを手で掴んでいるように感じるはずです。
 
 #### One Hand Rotation Mode Far (ファーでの片手回転モード)
 
-Specifies how the object will behave when it is being grabbed with one hand at distance. These options only work for articulated hands.
+オブジェクトが遠くから片手で掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。
 
-* *Rotate about object center*: Rotate object using rotation of the hand, but about the object center point. Useful for inspecting at a distance without the object center moving as the object rotates.
-* *Rotate about grab point*: Rotate object using rotation of the hand, but about the pointer ray hit point. Useful for inspection.
+* *Rotate About Object Center (オブジェクト中心まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。オブジェクトの回転に伴ってオブジェクトの中心が移動することなく、離れた場所から詳しく眺める場合に便利です。
+* *Rotate About Grab Point (把持点まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、ポインター レイが当たったポイントを中心に回転します。詳しく眺める場合に便利です。
 
 ### Two Handed Manipulation (両手操作) プロパティ
 
@@ -61,24 +61,24 @@ Specifies how the object will behave when it is being grabbed with one hand at d
 
 両手操作でオブジェクトのトランスフォームがどのようにを変更されるかを指定します。このプロパティはフラグであるため、任意の数のオプションを選択することができます。
 
-* *Move*: 選択した場合、移動が許可されます。
-* *Scale*: 選択した場合、スケール変更が許可されます。
-* *Rotate*: 選択した場合、回転が許可されます。
+* *Move (移動)*: 選択した場合、移動が許可されます。
+* *Scale (スケール)*: 選択した場合、スケール変更が許可されます。
+* *Rotate (回転)*: 選択した場合、回転が許可されます。
 
 ![Manipulation Handler](../Documentation/Images/ManipulationHandler/MRTK_ManipulationHandler_TwoHanded.jpg)
 
 ### Constraints (制約)
 
 #### Enable Constraints (制約の有効化)
-This setting will enable the linked [constraint manager](README_ConstraintManager.md). Transform changes will be processed by constraints registered to the selected [constraint manager](README_ConstraintManager.md).
+この設定により、リンクされた [コンストレイント マネージャー](README_ConstraintManager.md) が有効になります。選択した [コンストレイント マネージャー](README_ConstraintManager.md) に登録された制約によって、トランスフォームの変更が処理されます。
 
 #### Constraint Manager (コンストレイント マネージャー)
 The dropdown allows to select any of the attached [constraint managers](README_ConstraintManager.md). Object manipulator ensures there's a [constraint manager](README_ConstraintManager.md) attached at all times.
 Note that multiple components of the same type will show up under the same name in unity. To make it easier to distinguish between multiple constraint managers on the same object, the available options will show a hint on the configuration of the selected constraint manager (manual or auto constraint selection).
 
-#### Go to component
+#### Go to component (コンポーネントへ移動)
 
-The constraint manager selection comes with a *Go to component* button. This button will cause the inspector to scroll to the selected component so that it can be configured.
+*Go to component* ボタンを押すとコンストレイント マネージャーが選択されます。このボタンをクリックすると、インスペクターが選択されたコンポーネントまでスクロールし、設定することができます。
 
 ### Physics (物理)
 
@@ -97,31 +97,31 @@ Specify which physical properties a manipulated object should keep upon release.
 
 Whether physics forces are used to move the object when performing near manipulations. Setting this to *false* will make the object feel more directly connected to the users hand. Setting this to *true* will honor the mass and inertia of the object, but may feel as though the object is connected through a spring. The default is *false*. 
 
-### Smoothing
+### Smoothing (スムージング)
 
-#### Smoothing far
+#### Smoothing Far (ファー スムージング)
 
-Whether frame-rate independent smoothing is enabled for far interactions. Far smoothing is enabled by default.
+フレームレートに依存しないスムージングをファー インタラクションで有効にするかどうか。デフォルトではファー スムージングは有効になっています。
 
-#### Smoothing near
+#### Smoothing Near (ニア スムージング)
 
-Whether frame-rate independent smoothing is enabled for near interactions. Near smoothing is disabled by default because the effect may be perceived as being 'disconnected' from the hand.
+フレームレートに依存しないスムージングをニア インタラクションで有効にするかどうか。ニア スムージングはデフォルトでは無効になっています。これはこの効果がハンドから「切り離されている」と認識される可能性があるためです。
 
-#### Smoothing active
+#### Smoothing Active
 
 Obsolete and will be removed in a future version. Applications should use SmoothingFar, SmoothingNear or a combination of the two.
 
-#### Move lerp time
+#### Move Lerp Time
 
-Amount of smoothing to apply to the movement. Smoothing of 0 means no smoothing. Max value means no change to value.
+移動に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-#### Rotate lerp time
+#### Rotate Lerp Time
 
-Amount of smoothing to apply to the rotation. Smoothing of 0 means no smoothing. Max value means no change to value.
+回転に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-#### Scale lerp time
+#### Scale Lerp Time
 
-Amount of smoothing to apply to the scale. Smoothing of 0 means no smoothing. Max value means no change to value.
+スケール変更に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
 ### Manipulation Events (操作イベント)
 
