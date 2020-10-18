@@ -1321,15 +1321,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "../../Documentation.ja/README_AppBar.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/README_AppBar.html",
-          "hash": "3EEOCX7PX3lZk7LDzQqlQQ=="
+          "hash": "PtxbBsTlE+BcMF5jRvFINw=="
         }
       },
       "is_incremental": false,
@@ -1636,15 +1633,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "../../Documentation.ja/README_Tooltip.md",
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/README_Tooltip.html",
-          "hash": "NkK9wOoAEyVu3Cd3raoG8Q=="
+          "hash": "O2B8+oVASrjSlUlPg1tEfQ=="
         }
       },
       "is_incremental": false,
@@ -2004,7 +1998,7 @@
       "output": {
         ".html": {
           "relative_path": "Documentation.ja/toc.html",
-          "hash": "SeU4Dnm8mJV72SInk6B8lw=="
+          "hash": "pf4cCto0MPolE7OsUSWLIw=="
         }
       },
       "is_incremental": false,

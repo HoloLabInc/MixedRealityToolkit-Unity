@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Eye-supported navigation in MRTK | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Eye-supported navigation in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="eye-supported-navigation-in-mrtk" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="1">Eye-supported navigation in MRTK</h1>
+
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="3"><img src="../Images/EyeTracking/mrtk_et_navigation.png" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="3" alt="MRTK"></p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="5">Imagine you are reading information on a slate and when you reach the end of the displayed text, the text automatically scrolls up to reveal more content. Or you can fluently zoom in where you are looking at. The map also automatically adjusts the content to keep the things of interest within your field of view. Another interesting application is the hands-free observation of 3D holograms by automatically bringing the parts of the hologram that you are looking at to the front. These are some of the examples that are described on this page in context of eye-supported navigation.</p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="7">The following descriptions assume that you are already familiar with how to <a href="EyeTracking_BasicSetup.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="7">set up eye tracking in your MRTK scene</a> and with the basics of <a href="EyeTracking_TargetSelection.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="7">accessing eye tracking data</a> in MRTK Unity.
+The examples discussed in the following are all part of the <code sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="8">EyeTrackingDemo-03-Navigation</code> (Assets/MRTK/Examples/Demos/EyeTracking/Scenes/EyeTrackingDemo-03-Navigation)
+scene.</p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="11"><strong sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="11">Summary:</strong> Auto scroll of text, eye-gaze-supported pan and zoom of a virtual map, hands-free gaze-directed 3D rotation.</p>
+<h2 id="auto-scroll" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="13">Auto scroll</h2>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="15">Auto scroll enables the user to scroll through texts without lifting a finger.
+Simply continue reading and the text will automatically scroll up or down depending on where the user is looking.
+You can start off from the example provided in <code sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="17">EyeTrackingDemo-03-Navigation</code> (Assets/MRTK/Examples/Demos/EyeTracking/Scenes).
+This example uses a <a href="https://docs.unity3d.com/ScriptReference/TextMesh.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="18">TextMesh</a> component to allow for flexibly loading and formatting new text.
+To enable auto scroll, simply add the following two scripts to your collider component of the textbox:</p>
+<h3 id="scrollrecttransf" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="21">ScrollRectTransf</h3>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="23">To scroll through a <a href="https://docs.unity3d.com/ScriptReference/TextMesh.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="23">TextMesh</a> or more generally speaking a <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="23">RectTransform</a> component you can use the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.ScrollRectTransf.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="23">ScrollRectTransf</a> script.
+If you want to scroll through a texture instead of a <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="24">RectTransform</a>, use <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.ScrollTexture.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="24">ScrollTexture</a> instead of <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.ScrollRectTransf.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="24">ScrollRectTransf</a>.
+In the following, the parameters of <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.ScrollRectTransf.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="25">ScrollRectTransf</a> that are available in the Unity Editor are explained in more detail:</p>
+<table sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="27">
+<thead>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="27">
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="27">Parameters</th>
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="27">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="29">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="29">LimitPanning</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="29">If enabled, will stop the scrollable content at its boundary.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="30">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="30">RectTransfToNavigate</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="30">Reference to the <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="30">RectTransform</a> to scroll in.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="31">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="31">RefToViewport</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="31">Reference to the parent <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="31">RectTransform</a> of the scrollable content to determine the correct offset and boundary.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="32">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="32">AutoGazeScrollIsActive</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="32">If enabled, the text will automatically scroll if the user looks at an <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="32">active region</em> (e.g., the top and bottom part of your scroll panel if the vertical scroll speed is not zero).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="33">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="33">ScrollSpeed_x</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="33">If set to a value unequal to zero, horizontal scroll will be enabled. Negative values mean a change in scroll direction: Left to right vs. right to left.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="34">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="34">ScrollSpeed_y</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="34">If set to a value unequal to zero, vertical scroll will be enabled. Negative values mean a change in scroll direction:  Up to down vs. down to up.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="35">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="35">MinDistFromCenterForAutoScroll</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="35">Normalized minimal distance in x and y from center of the target's hit box (0, 0) to scroll. Thus, values must range between 0 (always scroll) and 0.5 (no scroll).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="36">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="36">UseSkimProofing</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="36">If enabled, it prevents sudden scroll movements when quickly looking around. This may make scrolling feel less responsive though. It can be tuned with the <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="36">SkimProofUpdateSpeed</em> value.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="37">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="37">SkimProofUpdateSpeed</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="37">The lower the value, the slower the scrolling will speed up after skimming. Recommended value: 5.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="39"><img src="../Images/EyeTracking/mrtk_et_nav_scroll.jpg" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="39" alt="Eye-supported scroll setup in Unity"></p>
+<h3 id="eyetrackingtarget" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="41">EyeTrackingTarget</h3>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="43">Attaching the <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="43">EyeTrackingTarget</em> component allows for flexibly handle eye-gaze-related events.
+The scroll sample demonstrates scrolling text that starts when the user <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="44">looks</em> at the panel and stops when the user is <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="44">looking away</em> from it.
+<img src="../Images/EyeTracking/mrtk_et_nav_scroll_ettarget.jpg" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="45" alt="Eye-supported scroll setup in Unity: EyeTrackingTarget"></p>
+<h2 id="gaze-supported-pan-and-zoom" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="47">Gaze-supported pan and zoom</h2>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="49">Who hasn't used a virtual map before to search for their home or to explore entirely new places? Eye tracking allows you to directly dive into exactly the parts that you're interested in and once zoomed in, you can smoothly follow the course of a street to explore your neighborhood!
+This is not only useful for exploring geographical maps, but also to checking out details in photographs, data visualizations or even live-streamed medical imagery. To use this capability in your app is easy! For content rendered to a <a href="https://docs.unity3d.com/ScriptReference/Texture.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="50">Texture</a> (e.g., a photo, streamed data), simply add the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.PanZoomTexture.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="50">PanZoomTexture</a> script.
+For a <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="51">RectTransform</a> use <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.PanZoomRectTransf.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="51">PanZoomRectTransf</a>. Extending the <a href="#auto-scroll" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="51">Auto Scroll</a> capability, we essentially enable to scroll both vertically and horizontally at the same time and magnify content right around the user's current focus point.</p>
+<table sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="53">
+<thead>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="53">
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="53">Parameters</th>
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="53">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="55">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="55">LimitPanning</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="55">If enabled, will stop the scrollable content at its boundary.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="56">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="56">HandZoomEnabledOnStartup</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="56">Indicates whether hand gestures are automatically enabled to perform a zoom gesture. You may want to disable it at first to avoid accidentally triggering zoom actions.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="57">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="57">RendererOfTextureToBeNavigated</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="57">Referenced renderer of the texture to be navigated.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="58">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="58">Zoom_Acceleration</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="58">Zoom acceleration defining the steepness of logistic speed function mapping.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="59">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="59">Zoom_SpeedMax</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="59">Maximum zoom speed.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="60">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="60">Zoom_MinScale</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="60">Minimum scale of the texture for zoom in - e.g., 0.5f (half the original size).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="61">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="61">Zoom_MaxScale</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="61">Maximum scale of the texture for zoom out - e.g., 1f (the original size) or 2.0f (double the original size).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="62">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="62">Zoom_TimeInSecToZoom</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="62">Timed zoom: Once triggered, a zoom in/out will be performed for the given amount of time in seconds.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="63">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="63">Zoom_Gesture</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="63">Type of hand gesture to use to zoom in/out.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="64">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="64">---</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="64">---</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="65">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="65">Pan_AutoScrollIsActive</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="65">If enabled, the text will automatically scroll if the user looks at an <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="65">active region</em> (e.g., the top and bottom part of your scroll panel if the vertical scroll speed is not zero).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="66">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="66">Pan_Speed_x</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="66">If set to a value unequal to zero, horizontal scroll will be enabled. Negative values mean a change in scroll direction: Left to right vs. right to left.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="67">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="67">Pan_Speed_y</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="67">If set to a value unequal to zero, vertical scroll will be enabled. Negative values mean a change in scroll direction:  Up to down vs. down to up.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="68">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="68">Pan_MinDistFromCenter</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="68">Normalized minimal distance in x and y from center of the target's hit box (0, 0) to scroll. Thus, values must range between 0 (always scroll) and 0.5 (no scroll).</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="69">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="69">UseSkimProofing</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="69">If enabled, it prevents sudden scroll movements when quickly looking around. This may make scrolling feel less responsive though. It can be tuned with the <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="69">SkimProofUpdateSpeed</em> value.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="70">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="70">SkimProofUpdateSpeed</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="70">The lower the value, the slower the scrolling will speed up after skimming. Recommended value: 5.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="72"><img src="../Images/EyeTracking/mrtk_et_nav_panzoom.jpg" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="72" alt="Eye-supported pan and zoom setup in Unity"></p>
+<h2 id="attention-based-3d-rotation" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="74">Attention-based 3D rotation</h2>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="76">Imagine looking at a 3D object and the parts you want to see more closely magically turn toward you - as if the system would read your mind and know to turn the item toward you!
+That is the idea for attention-based 3D rotations which enable you to investigate all side of a hologram without lifting a finger.
+To enable this behavior, simply add the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.OnLookAtRotateByEyeGaze.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="78">OnLookAtRotateByEyeGaze</a> script to the part of your GameObject with a <a href="https://docs.unity3d.com/ScriptReference/Collider.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="78">Collider</a> component.
+You can tweak several parameters that are listed below to limit how fast and in which directions the hologram will turn.</p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="81">As you can imagine, having this behavior active at all times may quickly become pretty distracting in a crowded scene.
+This is why you may want to start out with this behavior disabled and then enable it quickly using voice commands.
+Alternatively, we added an example in <code sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="83">EyeTrackingDemo-03-Navigation</code> (Assets/MRTK/Examples/Demos/EyeTracking/Scenes)
+to use <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking.TargetMoveToCamera.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="84">TargetMoveToCamera</a> for which you can select a focused target and it flies in front of you - simply say <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="84">&quot;Come to me&quot;</em>.</p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="86">Once in the near mode, the auto rotation mode is automatically enabled.
+In that mode, you can observe it from all sides either simply leaning back and looking at it, walking around it or reaching out to grab and rotate it with your hand. When you dismiss the target (look &amp; pinch or say <em sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="87">&quot;Send back&quot;</em>), it will return to its original location and will stop reacting to you from afar.</p>
+<table sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="89">
+<thead>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="89">
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="89">Parameters</th>
+<th style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="89">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="91">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="91">SpeedX</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="91">Horizontal rotation speed.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="92">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="92">SpeedY</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="92">Vertical rotation speed.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="93">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="93">InverseX</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="93">To inverse the horizontal rotation direction.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="94">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="94">InverseY</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="94">To inverse the vertical rotation direction.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="95">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="95">RotationThreshInDegrees</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="95">If the angle between 'Gaze to Target' and 'Camera to Target' is less than this value, do nothing. This is to prevent small jittery rotations..</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="96">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="96">MinRotX</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="96">Minimum horizontal rotation angle. This is to limit the rotation in different directions.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="97">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="97">MaxRotX</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="97">Maximum horizontal rotation angle. This is to limit the rotation in different directions.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="98">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="98">MinRotY</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="98">Minimal vertical rotation angle to limit the rotation around the x axis.</td>
+</tr>
+<tr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="99">
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="99">MaxRotY</td>
+<td style="text-align: left;" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="99">Maximum vertical rotation angle to limit the rotation around the y axis.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="101"><img src="../Images/EyeTracking/mrtk_et_nav_rotate.jpg" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="101" alt="Eye-supported 3D rotation setup in Unity"></p>
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="103">In summary, the above scripts should enable you to  get started to use eye gaze for various input navigation tasks such as scrolling texts, zooming and panning textures as well as rotating investigating 3D holograms.</p>
+<h3 id="see-also" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="105">See also</h3>
+<ul sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="107">
+<li sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="107"><a href="EyeTracking_BasicSetup.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="107">Basic MRTK setup to use eye tracking</a></li>
+<li sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="108"><a href="EyeTracking_TargetSelection.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="108">Eye-supported target selection</a></li>
+</ul>
+<hr sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="110">
+<p sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="111"><a href="EyeTracking_Main.html" sourcefile="../../Documentation/EyeTracking/EyeTracking_Navigation.md" sourcestartlinenumber="111">Back to &quot;Eye tracking in the MixedRealityToolkit&quot;</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/EyeTracking/EyeTracking_Navigation.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
