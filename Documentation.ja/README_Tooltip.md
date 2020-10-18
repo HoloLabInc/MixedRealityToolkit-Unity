@@ -6,9 +6,9 @@ Tooltip は通常、オブジェクトを詳しく調べるときのヒントや
 
 ## Tooltip の使い方
 
-Tooltip は、[Hierarchy](ヒエラルキー) に直接追加し、オブジェクトをターゲットとすることができます。
+Tooltip は、「Hierarchy」(ヒエラルキー) に直接追加し、オブジェクトをターゲットとすることができます。
 
-この方法を使用するには、単にゲーム オブジェクトと Tooltip プレハブ (Assets/MRTK/SDK/Features/UX/Prefabs/Tooltips) をシーンの [Hierarchy](ヒエラルキー) に追加するだけです。プレハブのインスペクタ パネルで、[`ToolTip`](xref:Microsoft.MixedReality.Toolkit.UI.ToolTip) スクリプトを展開します。Tip State を選択し、Tooltip の設定を行います。Tooltip のテキスト フィールドにそれぞれのテキストを入力します。[`ToolTipConnector`](xref:Microsoft.MixedReality.Toolkit.UI.ToolTipConnector) スクリプトを展開し、Tooltip を持たせるオブジェクトを [Hierarchy](ヒエラルキー) から *Target* というフィールドにドラッグします。これにより、Tooltip がオブジェクトにアタッチされます。
+この方法を使用するには、単にゲーム オブジェクトと Tooltip プレハブ (Assets/MRTK/SDK/Features/UX/Prefabs/Tooltips) をシーンのヒエラルキーに追加するだけです。プレハブのインスペクタ パネルで、[`ToolTip`](xref:Microsoft.MixedReality.Toolkit.UI.ToolTip) スクリプトを展開します。Tip State を選択し、Tooltip の設定を行います。Tooltip のテキスト フィールドにそれぞれのテキストを入力します。[`ToolTipConnector`](xref:Microsoft.MixedReality.Toolkit.UI.ToolTipConnector) スクリプトを展開し、Tooltip を持たせるオブジェクトをヒエラルキーから *Target* というフィールドにドラッグします。これにより、Tooltip がオブジェクトにアタッチされます。
 ![Tooltip](../Documentation/Images/Tooltip/MRTK_Tooltip_Connector.png)
 
 この使用方法は、Tooltip が常に表示される場合や、Tooltip コンポーネントの Tooltip State プロパティをスクリプトで変更して表示/非表示を切り替える場合を想定しています。
