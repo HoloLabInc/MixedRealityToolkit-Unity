@@ -47,6 +47,8 @@ Add entry will open a dropdown showing all available constraint components that 
 ### Add new constraint
 This option will add a component of the selected type to the game object and add the newly created constraint component to the manual constraint list.
 
+<a name="transform-constraints"></a>
+
 ## Transform constraints
 
 Constraints can be used to limit manipulation in some way. For example, some applications may require rotation, but also require that the object remain upright. In this case, a `RotationAxisConstraint` can be added to the object and used to limit rotation to y-axis rotation. MRTK provides a number of constraints, all of which are described below.

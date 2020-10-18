@@ -1,167 +1,171 @@
-# Object manipulator
+# Object Manipulator (オブジェクト マニピュレーター)
 
 ![Object manipulator](../Documentation/Images/ManipulationHandler/MRTK_Manipulation_Main.png)
 
-The *ObjectManipulator* is the new component for manipulation behaviour, previously found in *ManipulationHandler*. The object manipulator makes a number of improvements and simplifications. This component is a replacement for the manipulation handler, which will be deprecated.
+*ObjectManipulator* は、以前は *ManipulationHandler* に含まれていたマニピュレーション動作のための新しいコンポーネントです。オブジェクト マニピュレーターでは、多くの改良と簡略化が行われています。このコンポーネントは Manipulation Handler (マニピュレーション ハンドラー) を置き換えるものであり、マニピュレーション ハンドラーは非推奨となります。
 
-The *ObjectManipulator* script makes an object movable, scalable, and rotatable using one or two hands. The object manipulator can be configured to control how the object will respond to various inputs. The script should work with most forms of interaction, such as HoloLens 2 articulated hand, HoloLens 2 hand rays, HoloLens 1 gaze and gestures and immersive headset motion controller input.
+*ObjectManipulator* スクリプトは、片手または両手を使ったオブジェクトの移動、スケール変更、回転を可能にします。オブジェクト マニピュレーターの設定を変更することで、さまざまな入力に対してオブジェクトがどのように反応するかを制御することができます。このスクリプトは、HoloLens 2 の多関節ハンド、HoloLens 2 のハンド レイ、HoloLens 1 のゲイズやジェスチャー、イマーシブ ヘッドセットのモーション コントローラ入力など、ほとんどの形式のインタラクションで動作します。
 
-## How to use the object manipulator
+## オブジェクト マニピュレーターの使い方
 
-To use the object manipulator, first add the `ObjectManipulator` script component to a GameObject. Make sure to also add a collider to the object, matching its grabbable bounds.
+オブジェクト マニピュレーターを使うには、まず `ObjectManipulator` スクリプト コンポーネントを GameObject に追加します。また、オブジェクトの把持可能範囲に合わせてコライダーを追加することも忘れないでください。
 
-To make the object respond to near articulated hand input, add the `NearInteractionGrabbable` script as well.
+オブジェクトがニア インタラクションの多関節ハンド入力に反応するようにするには、`NearInteractionGrabbable` スクリプトも追加します。
 
-Physics behaviour can be enabled for the object manipulator by adding a rigidbody component to the object. Physics behaviour enabled by adding this component is discussed in greater detail in [*Physics and collisions*](#physics-and-collisions).
+オブジェクトに Rigidbody コンポーネントを追加することで、オブジェクト マニピュレーターの物理的な動作を有効にすることができます。このコンポーネントを追加することで有効になる物理的な動作については、[*物理とコリジョン*](#physics-and-collisions) で詳しく説明しています。
 
-As well as this, manipulation can be constrained by adding [manipulation constraint components](README_ConstraintManager.md#transform-constraints) to the object. These are special components that work with manipulation and change the manipulation behaviour in some way.
+これと同様に、オブジェクトに [Manipulation Constraint コンポーネント](README_ConstraintManager.md#transform-constraints) を追加することで、マニピュレーションに制約を与えることができます。これらのコンポーネントは、マニピュレーションに作用し、マニピュレーションの動作を何らかの形で変更する特別なコンポーネントです。
 
 ![Manipulation Handler](../Documentation/Images/ObjectManipulator/MRTK_ObjectManipulator_Howto.png)
 
-## Inspector properties and fields
+## インスペクターのプロパティとフィールド
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_ObjectManipulator_Structure.png" width="450">
 
-### General properties
+### General (全般) プロパティ
 
-#### Host transform
+#### Host Transform (ホスト トランスフォーム)
 
-The object transform that will be manipulated. Defaults to the object of the component.
+操作されるオブジェクトのトランスフォーム。デフォルトはコンポーネントのオブジェクトです。
 
-#### Manipulation type
+#### Manipulation Type (マニピュレーション タイプ)
 
-Specifies whether the object can be manipulated using one hand or two hands. Because this property is a flag, both options can be selected.
+オブジェクトを片手で操作するか、両手で操作するかを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。
 
-- *One handed*: Enables one handed manipulation if selected.
-- *Two handed*: Enables two handed manipulation if selected.
+- *One Handed (片手)*: 選択した場合、片手操作が有効になります。
+- *Two Handed (両手)*: 選択した場合、両手操作が有効になります。
 
-#### Allow far manipulation
+#### Allow Far Manipulation (ファー マニピュレーションの有効化)
 
-Specifies whether manipulation can be done using far interaction with pointers.
+ポインターとのファー インタラクションを使った操作ができるかどうかを指定します。
 
-### One handed manipulation properties
+### One Handed Manipulation (片手操作) プロパティ
 
-#### One hand rotation mode near
+#### One Hand Rotation Mode Near (ニアでの片手回転モード)
 
-Specifies how the object will behave when it is being grabbed with one hand near. These options only work for articulated hands.
+オブジェクトが片手のニア インタラクションで掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。
 
-* *Rotate about object center*: Object rotates using rotation of the hand, but about the object center point. The object will appear to move less as it rotates, but there may be a feeling of disconnection between the hand and the object. More useful for far interaction.
-* *Rotate about grab point*: Rotate object with the hand about the grab point between the thumb and index finger. It should feel as if the object is being held by the hand.
+* *Rotate About Object Center (オブジェクト中心まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。回転時のオブジェクトの移動は小さくなりますが、ハンドとオブジェクトの間に断絶感があるかもしれません。ファー インタラクションでより便利です。
+* *Rotate About Grab Point (把持点まわりの回転)*: 親指と人差し指の間の把持点を中心にオブジェクトが回転します。オブジェクトを手で掴んでいるように感じるはずです。
 
-#### One hand rotation mode far
+#### One Hand Rotation Mode Far (ファーでの片手回転モード)
 
-Specifies how the object will behave when it is being grabbed with one hand at distance. These options only work for articulated hands.
+オブジェクトが遠くから片手で掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。
 
-* *Rotate about object center*: Rotate object using rotation of the hand, but about the object center point. Useful for inspecting at a distance without the object center moving as the object rotates.
-* *Rotate about grab point*: Rotate object using rotation of the hand, but about the pointer ray hit point. Useful for inspection.
+* *Rotate About Object Center (オブジェクト中心まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。オブジェクトの回転に伴ってオブジェクトの中心が移動することなく、離れた場所から詳しく眺める場合に便利です。
+* *Rotate About Grab Point (把持点まわりの回転)*: オブジェクトはハンドの回転を使って回転しますが、ポインター レイが当たったポイントを中心に回転します。詳しく眺める場合に便利です。
 
-### Two handed manipulation properties
+### Two Handed Manipulation (両手操作) プロパティ
 
-#### Two handed manipulation type
+#### Two Handed Manipulation Type (両手操作タイプ)
 
-Specifies how two hand manipulation can transform an object. Because this property is a flag, any number of options can be selected.
+両手操作でオブジェクトのトランスフォームがどのようにを変更されるかを指定します。このプロパティはフラグであるため、任意の数のオプションを選択することができます。
 
-* *Move*: Moving is allowed if selected.
-* *Scale*: Scaling is allowed if selected.
-* *Rotate*: Rotation is allowed if selected.
+* *Move (移動)*: 選択した場合、移動が許可されます。
+* *Scale (スケール)*: 選択した場合、スケール変更が許可されます。
+* *Rotate (回転)*: 選択した場合、回転が許可されます。
 
 ![Manipulation Handler](../Documentation/Images/ManipulationHandler/MRTK_ManipulationHandler_TwoHanded.jpg)
 
-### Constraints
+### Constraints (制約)
 
-#### Enable constraints
-This setting will enable the linked [constraint manager](README_ConstraintManager.md). Transform changes will be processed by constraints registered to the selected [constraint manager](README_ConstraintManager.md).
+#### Enable Constraints (制約の有効化)
+この設定により、リンクされた [コンストレイント マネージャー](README_ConstraintManager.md) が有効になります。選択した [コンストレイント マネージャー](README_ConstraintManager.md) に登録された制約によって、トランスフォームの変更が処理されます。
 
-#### Constraint manager
-The dropdown allows to select any of the attached [constraint managers](README_ConstraintManager.md). Object manipulator ensures there's a [constraint manager](README_ConstraintManager.md) attached at all times.
-Note that multiple components of the same type will show up under the same name in unity. To make it easier to distinguish between multiple constraint managers on the same object, the available options will show a hint on the configuration of the selected constraint manager (manual or auto constraint selection).
+#### Constraint Manager (コンストレイント マネージャー)
+ドロップダウンでは、アタッチされている [コンストレイント マネージャー](README_ConstraintManager.md) のいずれかを選択することができます。オブジェクト マニピュレーターは、常に [コンストレイント マネージャー](README_ConstraintManager.md) がアタッチされていることを保証します。
+同じタイプの複数のコンポーネントは、Unity では同じ名前で表示されることに注意してください。同じオブジェクト上の複数のコンストレイント マネージャーを簡単に区別できるようにするために、利用可能なオプションには（手動または自動の制約選択によって）選択されたコンストレイント マネージャーの設定に関するヒントが表示されます。
 
-#### Go to component
+#### Go to component (コンポーネントへ移動)
 
-The constraint manager selection comes with a *Go to component* button. This button will cause the inspector to scroll to the selected component so that it can be configured.
+*Go to component* ボタンを押すとコンストレイント マネージャーが選択されます。このボタンをクリックすると、インスペクターが選択されたコンポーネントまでスクロールし、設定することができます。
 
-### Physics
+### Physics (物理)
 
-Settings in this section appear only when the object has a RigidBody component.
+このセクションの設定は、オブジェクトに Rigidbody コンポーネントがある場合にのみ表示されます。
 
-#### Release behavior
+<a name="release-behavior"></a>
 
-Specify which physical properties a manipulated object should keep upon release. Because this property is a flag, both options can be selected.
+#### Release Behavior (リリースの動作)
 
-* *Keep Velocity*: When the object is released, if this option is selected it will keep its linear velocity.
-* *Keep Angular Velocity*: When the object is released, if this option is selected it will keep its angular velocity.
+操作されたオブジェクトがリリースされた時に維持すべき物理的なプロパティを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。
 
-#### Use forces for near manipulation
+* *Keep Velocity (速度の維持)*: このオプションが選択されている場合、オブジェクトがリリースされるときに速度が維持されます。
+* *Keep Angular Velocity (各速度の維持)*: このオプションが選択されている場合、オブジェクトがリリースされるときに角速度が維持されます。
 
-Whether physics forces are used to move the object when performing near manipulations. Setting this to *false* will make the object feel more directly connected to the users hand. Setting this to *true* will honor the mass and inertia of the object, but may feel as though the object is connected through a spring. The default is *false*. 
+#### Use Forces For Near Manipulation (ニア マニピュレーションに力を使う)
 
-### Smoothing
+ニア マニピュレーションを行う際に、オブジェクトを動かすのに物理的な力を使うかどうかを指定します。これを *false* に設定すると、オブジェクトがユーザーの手に直接接続されているように感じられます。これを *true* に設定すると、オブジェクトの質量と慣性を尊重しますが、オブジェクトがバネを介して接続されているように感じるかもしれません。デフォルトは *false* です。
 
-#### Smoothing far
+### Smoothing (スムージング)
 
-Whether frame-rate independent smoothing is enabled for far interactions. Far smoothing is enabled by default.
+#### Smoothing Far (ファー スムージング)
 
-#### Smoothing near
+フレームレートに依存しないスムージングをファー インタラクションで有効にするかどうか。デフォルトではファー スムージングは有効になっています。
 
-Whether frame-rate independent smoothing is enabled for near interactions. Near smoothing is disabled by default because the effect may be perceived as being 'disconnected' from the hand.
+#### Smoothing Near (ニア スムージング)
 
-#### Smoothing active
+フレームレートに依存しないスムージングをニア インタラクションで有効にするかどうか。ニア スムージングはデフォルトでは無効になっています。これはこの効果がハンドから「切り離されている」と認識される可能性があるためです。
 
-Obsolete and will be removed in a future version. Applications should use SmoothingFar, SmoothingNear or a combination of the two.
+#### Smoothing Active (スムージングの有効化)
 
-#### Move lerp time
+廃止予定で、将来のバージョンでは削除されます。アプリケーションは SmoothingFar、SmoothingNear、またはそれらの組み合わせを使用する必要があります。
 
-Amount of smoothing to apply to the movement. Smoothing of 0 means no smoothing. Max value means no change to value.
+#### Move Lerp Time (移動の線形補間時間)
 
-#### Rotate lerp time
+移動に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-Amount of smoothing to apply to the rotation. Smoothing of 0 means no smoothing. Max value means no change to value.
+#### Rotate Lerp Time (回転の線形補間時間)
 
-#### Scale lerp time
+回転に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-Amount of smoothing to apply to the scale. Smoothing of 0 means no smoothing. Max value means no change to value.
+#### Scale Lerp Time (スケールの線形補間時間)
 
-### Manipulation events
+スケール変更に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。
 
-Manipulation handler provides the following events:
+### Manipulation Events (操作イベント)
 
-* *OnManipulationStarted*: Fired when manipulation starts.
-* *OnManipulationEnded*: Fires when the manipulation ends.
-* *OnHoverStarted*: Fires when a hand / controller hovers the manipulatable, near or far.
-* *OnHoverEnded*: Fires when a hand / controller un-hovers the manipulatable, near or far.
+Manipulation Handler は以下のイベントを提供しています。
 
-The event fire order for manipulation is:
+* *OnManipulationStarted (操作開始時)*: マニピュレーション開始時に発火されます。
+* *OnManipulationEnded (操作終了時)*: マニピュレーション終了時に発火されます。
+* *OnHoverStarted (ホバー開始時)*: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトに当たったときに発火されます。
+* *OnHoverEnded (ホバー終了時)*: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトから外れたときに発火されます。
+
+マニピュレーションのイベントが発火される順序は以下の通りです。
 
 *OnHoverStarted* -> *OnManipulationStarted* -> *OnManipulationEnded* -> *OnHoverEnded*
 
-If there is no manipulation, you will still get hover events with the following fire order:
+マニピュレーションが行われない場合でも、以下の発火順序でホバー イベントを受け取ることができます。
 
 *OnHoverStarted* -> *OnHoverEnded*
 
-## Physics and collisions
+<a name="physics-and-collisions"></a>
 
-Physics behaviour can be enabled by adding a rigidbody component to the same object as an object manipulator. Not only does this enable configuration of [release behaviour](#release-behavior) above, it also enables collisions. Without a rigidbody component, collisions don't behave correctly during manipulation:
+## 物理とコリジョン
 
-* Collisions between a manipulated object and a static collider (i.e. an object with a collider but no rigidbody) do not work, the manipulated object passes straight through the static collider unaffected.
-* Collisions between a manipulated object and a rigidbody (i.e an object with both a collider and a rigidbody) cause the rigidbody to have a collision response, but the response is jumpy and unnatural. There is also no collision response on the manipulated object.
+物理的な動作は、オブジェクト マニピュレーターと同じオブジェクトに Rigidbody コンポーネントを追加することで有効にできます。これにより、上記の [Release Behaviour](#release-behavior) の設定が有効になるだけでなく、コリジョンも有効になります。Rigidbody コンポーネントがないと、以下のようにマニピュレーション中にコリジョンが正しく動作しません。
 
-When a rigidbody is added, collisions should work correctly.
+* 操作されているオブジェクトと静的なコライダー（コライダーはあるが Rigidbody はないオブジェクト）とのコリジョンは動作せず、操作されているオブジェクトは影響を受けずに静的なコライダーをまっすぐ通過します。
+* 操作されているオブジェクトと Rigidbody（コライダーと Rigidbody の両方を持つオブジェクト）が衝突した場合、Rigidbody はコリジョンの反応が起こりますが、その反応はジャンプした不自然なものになります。また、操作されているオブジェクトにはコリジョン反応がありません。
 
-### Without rigidbody
+Rigidbody が追加されていると、コリジョンは正しく動作します。
+
+### Rigidbody がない場合
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_PhysicsManipulation_NoRigidbody.gif" width="500">
 
-### With rigidbody
+### Rigidbody がある場合
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_PhysicsManipulation_Rigidbody.gif" width="500">
 
 
-## Elastics (Experimental)
-Elastics can be used when manipulating objects via object manipulator. Note that the [elastics system](Elastics/ElasticSystem.md) is still in experimental state. To enable elastics either link an existing elastics manager component or create and link a new elastics manager via the `Add Elastics Manager` button.
+## Elastics (エラスティックス) [Experimental]
+エラスティックスは、オブジェクト マニピュレーターを介してオブジェクトを操作する際に使用できます。[Eelastics System](Elastics/ElasticSystem.md) はまだ実験的な状態であることに注意してください。エラスティックスを有効にするには、既存のエラスティックス マネージャー コンポーネントをリンクするか、`Add Elastics Manager` ボタンを使って新しいエラスティックス マネージャーを作成してリンクしてください。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
 
-## See also
+## 関連項目
 
 - [Bounds control](README_BoundsControl.md)
 - [Constraint manager](README_ConstraintManager.md)
