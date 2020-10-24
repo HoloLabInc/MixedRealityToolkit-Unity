@@ -1,32 +1,32 @@
-# Bounds control
+# Bounds Control (バウンズ コントロール)
 
 ![Bounds control](../Documentation/Images/BoundsControl/MRTK_BoundsControl_Main.png)
 
-*BoundsControl* is the new component for manipulation behaviour, previously found in *BoundingBox*. Bounds control makes a number of improvements and simplifications in setup and adds new features. This component is a replacement for the bounding box, which will be deprecated.
+*BoundsControl (バウンズ コントロール)* は、以前は *BoundingBox* にあったマニピュレーション動作のための新しいコンポーネントです。バウンズ コントロールは、セットアップにおける多くの改善と簡素化が行われ、新しい機能が追加されています。このコンポーネントはバウンディング ボックスの代替品であり、バウンディング ボックスは非推奨となります。
 
-The [`BoundsControl.cs`](xref:Microsoft.MixedReality.Toolkit.UI.BoundsControl) script provides basic functionality for transforming objects in mixed reality. A bounds control will show a box around the hologram to indicate that it can be interacted with. Handles on the corners and edges of the box allow scaling, rotating or translating the object. The bounds control also reacts to user input. On HoloLens 2, for example, the bounds control responds to finger proximity, providing visual feedback to help perceive the distance from the object. All interactions and visuals can be easily customized.
+[`BoundsControl.cs`](xref:Microsoft.MixedReality.Toolkit.UI.BoundsControl) スクリプトは、Mixed Reality でオブジェクトを変化させるための基本的な機能を提供します。バウンズ コントロールは、ホログラムの周りにボックスを表示して、インタラクション可能であることを示します。ボックスの角と辺にあるハンドルを使って、オブジェクトを拡大縮小、回転、平行移動させることができます。バウンズ コントロールは、ユーザーの入力にも反応します。例えば、HoloLens 2 では、バウンズ コントロールは指の接近に反応し、オブジェクトからの距離を知覚するのに役立つ視覚的なフィードバックを提供します。すべてのインタラクションとビジュアルは簡単にカスタマイズできます。
 
-## Example scene
+## サンプル シーン
 
-You can find examples of bounds control configurations in the `BoundsControlExamples` scene.
+バウンズ コントロールの設定の例は、`BoundsControlExamples` シーンで見ることができます。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Examples.png">
 
-## Inspector properties
+## インスペクターのプロパティ
 
-### Target object
+### Target Object (対象オブジェクト)
 
-This property specifies which object will get transformed by the bounds control manipulation. If no object is setit defaults to the owner object.
+このプロパティは、バウンズ コントロールの操作によってどのオブジェクトが変化させられるかを指定します。オブジェクトが設定されていない場合、デフォルトでコンポーネントを所有するオブジェクトになります。
 
-### Activation behavior
+### Activation Behavior (活性化の動作)
 
-There are several options to activate the bounds control interface.
+バウンズ コントロール インターフェイスを活性化するには、いくつかのオプションがあります。
 
-* *Activate On Start*: Bounds control becomes visible once the scene is started.
-* *Activate By Proximity*: Bounds control becomes visible when an articulated hand is close to the object.
-* *Activate By Pointer*: Bounds control becomes visible when it is targeted by a hand-ray pointer.
-* *Activate By Proximity and Pointer*: Bounds control becomes visible when it is targeted by a hand-ray pointer or an articulated hand is close to the object.
-* *Activate Manually*: Bounds control does not become visible automatically. You can manually activate it through a script by accessing the boundsControl.Active property.
+* *Activate On Start (スタート時に活性化)*: シーンが開始されるとバウンズ コントロールが表示されます。
+* *Activate By Proximity (近接時に活性化)*: 多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。
+* *Activate By Pointer (ポインターで活性化)*: ハンドレイ ポインターでターゲットされたときにバウンズ コントロールが表示されます。
+* *Activate By Proximity and Pointer (近接時とポインターで活性化)*: ハンドレイ ポインターでターゲットされたときや多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。
+* *Activate Manually (手動で活性化)*: バウンズ コントロールは自動的には表示されません。boundsControl.Active プロパティにアクセスすることで、スクリプトを使って手動で活性化することができます。
 
 ### Bounds override
 
@@ -143,7 +143,7 @@ The property inspector will show all available constraint managers attached to t
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Constraints.png" width="450">
 
-## Events
+## Events (イベント)
 
 Bounds control provides the following events. This example uses these events to play audio feedback.
 
@@ -156,7 +156,7 @@ Bounds control provides the following events. This example uses these events to 
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Events.png" width="450">
 
-## Elastics (Experimental)
+## Elastics (エラスティックス) [Experimental]
 Elastics can be used when manipulating objects via bounds control. Note that the [elastics system](Elastics/ElasticSystem.md) is still in experimental state. To enable elastics either link an existing elastics manager component or create and link a new elastics manager via the `Add Elastics Manager` button.
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
