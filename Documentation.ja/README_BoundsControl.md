@@ -36,6 +36,8 @@
 
 バウンズ コントロールの範囲を計算するために使用されるコライダーの境界にパディングを追加します。これはインタラクションだけでなく、ビジュアルにも影響を与えます。
 
+<a name="flatten-axis"></a>
+
 ### Flatten Axis (平坦化軸)
 バウンズ コントロールが2次元になって1つの軸に沿った操作ができなくなるように、1つの軸について平坦化されるかどうかを示します。この機能は、スレートのような薄いオブジェクトに使用できます。
 Flatten Axis が *Flatten Auto* に設定されている場合、スクリプトは自動的に最小の範囲を持つ軸を Flatten Axis として選択します。
@@ -54,23 +56,27 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 
 バウンズ コントロールのインスペクターは、設定が共有されているか、現在のインスタンスの一部としてインライン化されているかを、プロパティ インスペクターにメッセージを表示することで示します。さらに、共有されたインスタンスはバウンズ コントロールのプロパティ ウィンドウで直接編集することはできず、かわりに、共有された設定を誤って変更しないようにリンク先のアセットを直接修正しなければなりません。
 
-Currently bounds control offers configuration objects options for the following features:
-- Handles
-  - [Scale handles](#scale-handles-configuration)
-  - [Rotation handles](#rotation-handles-configuration)
-  - [Translation handles](#translation-handles-configuration)
-- [Links / Wireframe](#links-configuration)
-- [Box display](#box-configuration)
-- [Proximity effect](#proximity-effect-configuration)
+現在のところ、バウンズ コントロールは以下の機能のための設定オブジェクトのオプションを提供しています。
+- ハンドル
+  - [拡大縮小ハンドル](#scale-handles-configuration)
+  - [回転ハンドル](#rotation-handles-configuration)
+  - [移動ハンドル](#translation-handles-configuration)
+- [リンク / ワイヤーフレーム](#links-configuration)
+- [ボックス表示](#box-configuration)
+- [近接効果](#proximity-effect-configuration)
 
-### Box configuration
-The box configuration is responsible for rendering a solid box with bounds defined via collider size and box padding. The following properties can be set up:
+<a name=box-configuration></a>
 
-- **Box material**: defines the material applied to the rendered box when no interaction takes place. A box will only be rendered if this material is set.
-- **Box grabbed material**: material for the box when the user interacts with the control by grabbing via near or far interaction.
-- **Flatten axis display scale**: a scale that is applied to the box display if one of the axes is [flattened](#flatten-axis).
+### Box Configuration (ボックス設定)
+ボックス設定は、コライダーのサイズとボックスのパディングで定義された境界を持つソリッド ボックスのレンダリングを担当します。以下のプロパティを設定可能です。
 
-### Scale handles configuration
+- **Box Material (ボックスのマテリアル)**: インタラクションが行われていないときにレンダリングされるボックスに適用されるマテリアルを定義します。ボックスは、このマテリアルが設定されている場合にのみレンダリングされます。
+- **Box Grabbed Material (掴まれたボックスのマテリアル)**：ユーザーがニアまたはファー インタラクションで掴んでバウンズ コントロールとインタラクションしたときのボックスのマテリアルです。
+- **Flatten Axis Display Scale (平坦化軸の表示スケール)**: 軸の1つが[平坦化](#flatten-axis)されている場合にボックスの表示に適用されるスケールです。
+
+<a name=scale-handles-configuration></a>
+
+### Scale Handles Configuration (拡大縮小ハンドル設定)
 This property drawer allows to modify behavior and visualization of scale handles of bounds control.
 
 - **Handle material**: material applied to the handles.
@@ -84,7 +90,9 @@ This property drawer allows to modify behavior and visualization of scale handle
 - **Show scale handles**: controls visibility of the handle.
 - **Scale behavior**: can be set to uniform or non-uniform scaling.
 
-### Rotation handles configuration
+<a name=rotation-handles-configuration></a>
+
+### Rotation Handles Configuration (回転ハンドル設定)
 This configuration defines the rotation handle behavior.
 
 - **Handle material**: material applied to the handles.
@@ -99,7 +107,9 @@ This configuration defines the rotation handle behavior.
 - **Show handle for Y**: controls visibility of the handle for Y axis.
 - **Show handle for Z**: controls visibility of the handle for Z axis.
 
-### Translation handles configuration
+<a name=translation-handles-configuration></a>
+
+### Translation Handles Configuration (移動ハンドル設定)
 Allows enabling and configuring translation handles for bounds control. Note that translation handles are disabled per default.
 
 - **Handle material**: material applied to the handles.
@@ -114,15 +124,19 @@ Allows enabling and configuring translation handles for bounds control. Note tha
 - **Show handle for Y**: controls visibility of the handle for Y axis.
 - **Show handle for Z**: controls visibility of the handle for Z axis.
 
-### <a name="links-configuration">Links configuration (wireframe)</a>
-The links configuration enables the wireframe feature of bounds control. The following properties can be configured:
+<a name=links-configuration></a>
+
+### Links Configuration (リンク設定) (ワイヤーフレーム)
+リンク設定はバウンズ コントロールのワイヤーフレーム機能を有効にします。以下のプロパティが設定可能です。
 
 - **Wireframe material**: the material applied to the wireframe mesh.
 - **Wireframe edge radius**: the thickness of the wireframe.
 - **Wireframe shape**: shape of the wireframe can by either cubic or cylindrical.
 - **Show wireframe**: controls visibility of the wireframe.
 
-### Proximity effect configuration
+<a name=proximity-effect-configuration></a>
+
+### Proximity Effect Configuration (近接効果設定)
 Show and hide the handles with animation based on the distance to the hands. It has two-step scaling animation. Defaults are set to Hololens 2 style behavior.
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Proximity.png">
