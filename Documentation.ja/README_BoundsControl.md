@@ -28,29 +28,31 @@
 * *Activate By Proximity and Pointer (近接時とポインターで活性化)*: ハンドレイ ポインターでターゲットされたときや多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。
 * *Activate Manually (手動で活性化)*: バウンズ コントロールは自動的には表示されません。boundsControl.Active プロパティにアクセスすることで、スクリプトを使って手動で活性化することができます。
 
-### Bounds override
+### Bounds Override (境界のオーバーライド)
 
-Sets a box collider from the object for bounds computation.
+境界の計算のためにオブジェクトからボックス コライダーを設定します。
 
-### Box padding
+### Box Padding (ボックスのパディング)
 
-Adds a padding to the collider bounds used to calculate the extents of the control. This will influence not only interaction but also impact the visuals. 
+バウンズ コントロールの範囲を計算するために使用されるコライダーの境界にパディングを追加します。これはインタラクションだけでなく、ビジュアルにも影響を与えます。
 
-### Flatten axis
-Indicates whether the control is flattened in one of the axes, making it 2 dimensional and disallowing manipulation along that axis. This feature can be used for thin objects like slates.
-If flatten axis is set to *Flatten Auto* the script will automatically pick the axis with the smallest extent as flatten axis.
+### Flatten Axis (平坦化軸)
+バウンズ コントロールが2次元になって1つの軸に沿った操作ができなくなるように、1つの軸について平坦化されるかどうかを示します。この機能は、スレートのような薄いオブジェクトに使用できます。
+Flatten Axis が *Flatten Auto* に設定されている場合、スクリプトは自動的に最小の範囲を持つ軸を Flatten Axis として選択します。
 
-### Smoothing
-The smoothing section allows to configure smoothing behavior for scale and rotate of the control.
+### Smoothing (スムージング)
+スムージングのセクションでは、バウンズ コントロールのスケールと回転に対するスムージングの動作を設定することができます。
 
-### Visuals
-The appearance of bounds control can be configured by modifying one of the corresponding visuals configurations. 
-Visual configurations are either linked or inlined scriptable objects and are described in more detail in the [configuration object section](#configuration-objects).
+### Visuals (ビジュアル)
+バウンズ コントロールの見た目は、対応するビジュアル コンフィギュレーションの1つを変更することで設定できます。
+ビジュアル コンフィギュレーションはリンクされたオブジェクトかインラインのスクリプタブル オブジェクトで、詳細は[コンフィギュレーション オブジェクトのセクション](#configuration-objects)で説明されています。
 
-## Configuration Objects
-The control comes with a set of configuration objects that can be stored as scriptable objects and shared between different instances or prefabs. Configurations can be shared and linked either as individual scriptable asset files or nested scriptable assets inside of prefabs. Further configurations can also be defined directly on the instance without linking to an external or nested scriptable asset. 
+<a name="configuration-objects"></a>
 
-The bounds control inspector will indicate whether a configuration is shared or inlined as part of the current instance by showing a message in the property inspector. In addition shared instances won't be editable directly in the bounds control property window itself, but instead the asset it's linking to has to be directly modfied to avoid any accidental changes on shared configurations.
+## Configuration Objects (設定オブジェクト)
+バウンズ コントロールには、スクリプタブル オブジェクトとして保存され、異なるインスタンスやプレハブ間で共有することができる設定オブジェクトのセットが付属しています。設定は、個々のスクリプタブル アセット ファイルとして、またはプレハブ内にネストされたスクリプタブル アセットとして、共有したりリンクしたりすることができます。また、外部のスクリプタブル アセットやネストされたスクリプタブル アセットにリンクすることなく、インスタンス上で直接設定を定義することもできます。
+
+バウンズ コントロールのインスペクターは、設定が共有されているか、現在のインスタンスの一部としてインライン化されているかを、プロパティ インスペクターにメッセージを表示することで示します。さらに、共有されたインスタンスはバウンズ コントロールのプロパティ ウィンドウで直接編集することはできず、かわりに、共有された設定を誤って変更しないようにリンク先のアセットを直接修正しなければなりません。
 
 Currently bounds control offers configuration objects options for the following features:
 - Handles
@@ -145,14 +147,14 @@ The property inspector will show all available constraint managers attached to t
 
 ## Events (イベント)
 
-Bounds control provides the following events. This example uses these events to play audio feedback.
+バウンズ コントロールは以下のイベントを提供します。この例では、これらのイベントを使用してオーディオ フィードバックを再生します。
 
-* **Rotate Started**: Fired when rotation starts.
-* **Rotate Stopped**: Fired when rotation stops.
-* **Scale Started**: Fires when scaling starts.
-* **Scale Stopped**: Fires when scaling stops.
-* **Translate Started**: Fires when translation starts.
-* **Translate Stopped**: Fires when translation stops.
+* **Rotate Started (回転開始)**: 回転が開始したときに発火されます。
+* **Rotate Stopped (回転終了)**: 回転が終了したときに発火されます。
+* **Scale Started (拡大縮小開始)**: 拡大縮小が開始したときに発火されます。
+* **Scale Stopped (拡大縮小終了)**: 拡大縮小が終了したときに発火されます。
+* **Translate Started (移動開始)**: 移動が開始したときに発火されます。
+* **Translate Stopped (移動終了)**: 移動が終了したときに発火されます。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Events.png" width="450">
 
@@ -282,14 +284,14 @@ private void PutABoundsControlAroundIt(GameObject target)
 }
 ```
 
-## Migrating from Bounding Box
-Existing prefabs and instances using [bounding box](README_BoundingBox.md) can be upgraded to the new bounds control via the [migration window](Tools/MigrationWindow.md) which is part of the MRTK tools package.
+## Bounding Box からの移行
+既存のプレハブや、[Bounding Box](README_BoundingBox.md) を使用しているインスタンスは、MRTK Tools パッケージの一部である [Migration Window](Tools/MigrationWindow.md) を使用して、新しいバウンズ コントロールにアップグレードすることができます。
 
-For upgrading individual instances of bounding box there's also an a migration option inside the property inspector of the component.
+Bounding Box の個々のインスタンスをアップグレードするために、コンポーネントのプロパティ インスペクターの中に移行オプションもあります。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Migrate.png" width="450">
 
-## See also
+## 関連項目
 
 - [Object manipulator](README_ObjectManipulator.md)
 - [Constraint manager](README_ConstraintManager.md)
