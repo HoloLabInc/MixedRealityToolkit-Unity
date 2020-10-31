@@ -228,7 +228,7 @@
       href: README_Toolbox.md
     - name: Button (ボタン)
       href: README_Button.md
-    - name: Bounds Control
+    - name: Bounds Control (バウンズ コントロール)
       href: README_BoundsControl.md
     - name: Object Manipulator (オブジェクト マニピュレーター)
       href: README_ObjectManipulator.md
