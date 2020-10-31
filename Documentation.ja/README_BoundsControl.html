@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Bounds control | Mixed Reality Toolkit Documentation </title>
+    <title>Bounds Control (&#12496;&#12454;&#12531;&#12474; &#12467;&#12531;&#12488;&#12525;&#12540;&#12523;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Bounds control | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Bounds Control (&#12496;&#12454;&#12531;&#12474; &#12467;&#12531;&#12488;&#12525;&#12540;&#12523;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
@@ -89,204 +89,214 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="bounds-control">Bounds control</h1>
+<h1 id="bounds-control-バウンズ-コントロール">Bounds Control (バウンズ コントロール)</h1>
 
 <p><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Main.png" alt="Bounds control"></p>
-<p><em>BoundsControl</em> is the new component for manipulation behaviour, previously found in <em>BoundingBox</em>. Bounds control makes a number of improvements and simplifications in setup and adds new features. This component is a replacement for the bounding box, which will be deprecated.</p>
-<p>The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html"><code>BoundsControl.cs</code></a> script provides basic functionality for transforming objects in mixed reality. A bounds control will show a box around the hologram to indicate that it can be interacted with. Handles on the corners and edges of the box allow scaling, rotating or translating the object. The bounds control also reacts to user input. On HoloLens 2, for example, the bounds control responds to finger proximity, providing visual feedback to help perceive the distance from the object. All interactions and visuals can be easily customized.</p>
-<h2 id="example-scene">Example scene</h2>
-<p>You can find examples of bounds control configurations in the <code>BoundsControlExamples</code> scene.</p>
+<p><em>BoundsControl (バウンズ コントロール)</em> は、以前は <em>BoundingBox</em> にあったマニピュレーション動作のための新しいコンポーネントです。バウンズ コントロールは、セットアップにおける多くの改善と簡素化が行われ、新しい機能が追加されています。このコンポーネントはバウンディング ボックスの代替品であり、バウンディング ボックスは非推奨となります。</p>
+<p><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html"><code>BoundsControl.cs</code></a> スクリプトは、Mixed Reality でオブジェクトを変化させるための基本的な機能を提供します。バウンズ コントロールは、ホログラムの周りにボックスを表示して、インタラクション可能であることを示します。ボックスの角と辺にあるハンドルを使って、オブジェクトを拡大縮小、回転、平行移動させることができます。バウンズ コントロールは、ユーザーの入力にも反応します。例えば、HoloLens 2 では、バウンズ コントロールは指の接近に反応し、オブジェクトからの距離を知覚するのに役立つ視覚的なフィードバックを提供します。すべてのインタラクションとビジュアルは簡単にカスタマイズできます。</p>
+<h2 id="サンプル-シーン">サンプル シーン</h2>
+<p>バウンズ コントロールの設定の例は、<code>BoundsControlExamples</code> シーンで見ることができます。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Examples.png">
-<h2 id="inspector-properties">Inspector properties</h2>
-<h3 id="target-object">Target object</h3>
-<p>This property specifies which object will get transformed by the bounds control manipulation. If no object is setit defaults to the owner object.</p>
-<h3 id="activation-behavior">Activation behavior</h3>
-<p>There are several options to activate the bounds control interface.</p>
+<p><a name="inspector-properties"></a></p>
+<h2 id="インスペクターのプロパティ">インスペクターのプロパティ</h2>
+<h3 id="target-object-対象オブジェクト">Target Object (対象オブジェクト)</h3>
+<p>このプロパティは、バウンズ コントロールの操作によってどのオブジェクトが変化させられるかを指定します。オブジェクトが設定されていない場合、デフォルトでコンポーネントを所有するオブジェクトになります。</p>
+<h3 id="activation-behavior-活性化の動作">Activation Behavior (活性化の動作)</h3>
+<p>バウンズ コントロール インターフェイスを活性化するには、いくつかのオプションがあります。</p>
 <ul>
-<li><em>Activate On Start</em>: Bounds control becomes visible once the scene is started.</li>
-<li><em>Activate By Proximity</em>: Bounds control becomes visible when an articulated hand is close to the object.</li>
-<li><em>Activate By Pointer</em>: Bounds control becomes visible when it is targeted by a hand-ray pointer.</li>
-<li><em>Activate By Proximity and Pointer</em>: Bounds control becomes visible when it is targeted by a hand-ray pointer or an articulated hand is close to the object.</li>
-<li><em>Activate Manually</em>: Bounds control does not become visible automatically. You can manually activate it through a script by accessing the boundsControl.Active property.</li>
+<li><em>Activate On Start (スタート時に活性化)</em>: シーンが開始されるとバウンズ コントロールが表示されます。</li>
+<li><em>Activate By Proximity (近接時に活性化)</em>: 多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。</li>
+<li><em>Activate By Pointer (ポインターで活性化)</em>: ハンドレイ ポインターでターゲットされたときにバウンズ コントロールが表示されます。</li>
+<li><em>Activate By Proximity and Pointer (近接時とポインターで活性化)</em>: ハンドレイ ポインターでターゲットされたときや多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。</li>
+<li><em>Activate Manually (手動で活性化)</em>: バウンズ コントロールは自動的には表示されません。boundsControl.Active プロパティにアクセスすることで、スクリプトを使って手動で活性化することができます。</li>
 </ul>
-<h3 id="bounds-override">Bounds override</h3>
-<p>Sets a box collider from the object for bounds computation.</p>
-<h3 id="box-padding">Box padding</h3>
-<p>Adds a padding to the collider bounds used to calculate the extents of the control. This will influence not only interaction but also impact the visuals.</p>
-<h3 id="flatten-axis">Flatten axis</h3>
-<p>Indicates whether the control is flattened in one of the axes, making it 2 dimensional and disallowing manipulation along that axis. This feature can be used for thin objects like slates.
-If flatten axis is set to <em>Flatten Auto</em> the script will automatically pick the axis with the smallest extent as flatten axis.</p>
-<h3 id="smoothing">Smoothing</h3>
-<p>The smoothing section allows to configure smoothing behavior for scale and rotate of the control.</p>
-<h3 id="visuals">Visuals</h3>
-<p>The appearance of bounds control can be configured by modifying one of the corresponding visuals configurations.
-Visual configurations are either linked or inlined scriptable objects and are described in more detail in the <a href="#configuration-objects">configuration object section</a>.</p>
-<h2 id="configuration-objects">Configuration Objects</h2>
-<p>The control comes with a set of configuration objects that can be stored as scriptable objects and shared between different instances or prefabs. Configurations can be shared and linked either as individual scriptable asset files or nested scriptable assets inside of prefabs. Further configurations can also be defined directly on the instance without linking to an external or nested scriptable asset.</p>
-<p>The bounds control inspector will indicate whether a configuration is shared or inlined as part of the current instance by showing a message in the property inspector. In addition shared instances won't be editable directly in the bounds control property window itself, but instead the asset it's linking to has to be directly modfied to avoid any accidental changes on shared configurations.</p>
-<p>Currently bounds control offers configuration objects options for the following features:</p>
+<h3 id="bounds-override-境界のオーバーライド">Bounds Override (境界のオーバーライド)</h3>
+<p>境界の計算のためにオブジェクトからボックス コライダーを設定します。</p>
+<h3 id="box-padding-ボックスのパディング">Box Padding (ボックスのパディング)</h3>
+<p>バウンズ コントロールの範囲を計算するために使用されるコライダーの境界にパディングを追加します。これはインタラクションだけでなく、ビジュアルにも影響を与えます。</p>
+<p><a name="flatten-axis"></a></p>
+<h3 id="flatten-axis-平坦化軸">Flatten Axis (平坦化軸)</h3>
+<p>バウンズ コントロールが2次元になって1つの軸に沿った操作ができなくなるように、1つの軸について平坦化されるかどうかを示します。この機能は、スレートのような薄いオブジェクトに使用できます。
+Flatten Axis が <em>Flatten Auto</em> に設定されている場合、スクリプトは自動的に最小の範囲を持つ軸を Flatten Axis として選択します。</p>
+<h3 id="smoothing-スムージング">Smoothing (スムージング)</h3>
+<p>スムージングのセクションでは、バウンズ コントロールのスケールと回転に対するスムージングの動作を設定することができます。</p>
+<h3 id="visuals-ビジュアル">Visuals (ビジュアル)</h3>
+<p>バウンズ コントロールの見た目は、対応するビジュアル コンフィギュレーションの1つを変更することで設定できます。
+ビジュアル コンフィギュレーションはリンクされたオブジェクトかインラインのスクリプタブル オブジェクトで、詳細は<a href="#configuration-objects">コンフィギュレーション オブジェクトのセクション</a>で説明されています。</p>
+<p><a name="configuration-objects"></a></p>
+<h2 id="configuration-objects-設定オブジェクト">Configuration Objects (設定オブジェクト)</h2>
+<p>バウンズ コントロールには、スクリプタブル オブジェクトとして保存され、異なるインスタンスやプレハブ間で共有することができる設定オブジェクトのセットが付属しています。設定は、個々のスクリプタブル アセット ファイルとして、またはプレハブ内にネストされたスクリプタブル アセットとして、共有したりリンクしたりすることができます。また、外部のスクリプタブル アセットやネストされたスクリプタブル アセットにリンクすることなく、インスタンス上で直接設定を定義することもできます。</p>
+<p>バウンズ コントロールのインスペクターは、設定が共有されているか、現在のインスタンスの一部としてインライン化されているかを、プロパティ インスペクターにメッセージを表示することで示します。さらに、共有されたインスタンスはバウンズ コントロールのプロパティ ウィンドウで直接編集することはできず、かわりに、共有された設定を誤って変更しないようにリンク先のアセットを直接修正しなければなりません。</p>
+<p>現在のところ、バウンズ コントロールは以下の機能のための設定オブジェクトのオプションを提供しています。</p>
 <ul>
-<li>Handles
+<li>ハンドル
 <ul>
-<li><a href="#scale-handles-configuration">Scale handles</a></li>
-<li><a href="#rotation-handles-configuration">Rotation handles</a></li>
-<li><a href="#translation-handles-configuration">Translation handles</a></li>
+<li><a href="#scale-handles-configuration">拡大縮小ハンドル</a></li>
+<li><a href="#rotation-handles-configuration">回転ハンドル</a></li>
+<li><a href="#translation-handles-configuration">移動ハンドル</a></li>
 </ul>
 </li>
-<li><a href="#links-configuration">Links / Wireframe</a></li>
-<li><a href="#box-configuration">Box display</a></li>
-<li><a href="#proximity-effect-configuration">Proximity effect</a></li>
+<li><a href="#links-configuration">リンク / ワイヤーフレーム</a></li>
+<li><a href="#box-configuration">ボックス表示</a></li>
+<li><a href="#proximity-effect-configuration">近接効果</a></li>
 </ul>
-<h3 id="box-configuration">Box configuration</h3>
-<p>The box configuration is responsible for rendering a solid box with bounds defined via collider size and box padding. The following properties can be set up:</p>
+<p><a name="box-configuration"></a></p>
+<h3 id="box-configuration-ボックス設定">Box Configuration (ボックス設定)</h3>
+<p>ボックス設定は、コライダーのサイズとボックスのパディングで定義された境界を持つソリッド ボックスのレンダリングを担当します。以下のプロパティを設定可能です。</p>
 <ul>
-<li><strong>Box material</strong>: defines the material applied to the rendered box when no interaction takes place. A box will only be rendered if this material is set.</li>
-<li><strong>Box grabbed material</strong>: material for the box when the user interacts with the control by grabbing via near or far interaction.</li>
-<li><strong>Flatten axis display scale</strong>: a scale that is applied to the box display if one of the axes is <a href="#flatten-axis">flattened</a>.</li>
+<li><strong>Box Material (ボックスのマテリアル)</strong>: インタラクションが行われていないときにレンダリングされるボックスに適用されるマテリアルを定義します。ボックスは、このマテリアルが設定されている場合にのみレンダリングされます。</li>
+<li><strong>Box Grabbed Material (掴まれたボックスのマテリアル)</strong>：ユーザーがニアまたはファー インタラクションで掴んでバウンズ コントロールとインタラクションしたときのボックスのマテリアルです。</li>
+<li><strong>Flatten Axis Display Scale (平坦化軸の表示スケール)</strong>: 軸の1つが<a href="#flatten-axis">平坦化</a>されている場合にボックスの表示に適用されるスケールです。</li>
 </ul>
-<h3 id="scale-handles-configuration">Scale handles configuration</h3>
-<p>This property drawer allows to modify behavior and visualization of scale handles of bounds control.</p>
+<p><a name="scale-handles-configuration"></a></p>
+<h3 id="scale-handles-configuration-拡大縮小ハンドル設定">Scale Handles Configuration (拡大縮小ハンドル設定)</h3>
+<p>このプロパティでは、バウンズ コントロールの拡大縮小ハンドルの動作や見た目を変更することができます。</p>
 <ul>
-<li><strong>Handle material</strong>: material applied to the handles.</li>
-<li><strong>Handle grabbed material</strong>: material applied to the grabbed handle.</li>
-<li><strong>Handle prefab</strong>: optional prefab for the scale handle. If non is set MRTK will use a cube as default.</li>
-<li><strong>Handle size</strong>: size of the scale handle.</li>
-<li><strong>Collider padding</strong>: padding to add to the handle collider.</li>
-<li><strong>Draw tether when manipulating</strong>: when active will draw a tether line from point of start of interaction to current hand or pointer position.</li>
-<li><strong>Handles ignore collider</strong>: if a collider gets linked here, handles will ignore any collision with this collider.</li>
-<li><strong>Handle slate prefab</strong>: prefab to use for the handle when the control is flattened.</li>
-<li><strong>Show scale handles</strong>: controls visibility of the handle.</li>
-<li><strong>Scale behavior</strong>: can be set to uniform or non-uniform scaling.</li>
+<li><strong>Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Prefab (ハンドルのプレハブ)</strong>: 拡大縮小ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとしてキューブを使います。</li>
+<li><strong>Handle Size (ハンドルのサイズ)</strong>: 拡大縮小ハンドルのサイズです。</li>
+<li><strong>Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li><strong>Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li><strong>Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li><strong>Handle Slate Prefab (ハンドル スレートのプレハブ)</strong>: バウンズ コントロールが平坦化されたときにハンドルに使われるプレハブです。</li>
+<li><strong>Show Scale Handles (拡大縮小ハンドルを表示)</strong>: ハンドルの表示をコントロールします。</li>
+<li><strong>Scale Behavior (拡大縮小動作)</strong>: 一様もしくは不一様のスケーリングに設定できます。</li>
 </ul>
-<h3 id="rotation-handles-configuration">Rotation handles configuration</h3>
-<p>This configuration defines the rotation handle behavior.</p>
+<p><a name="rotation-handles-configuration"></a></p>
+<h3 id="rotation-handles-configuration-回転ハンドル設定">Rotation Handles Configuration (回転ハンドル設定)</h3>
+<p>この設定では回転ハンドルの動作を定義します。</p>
 <ul>
-<li><strong>Handle material</strong>: material applied to the handles.</li>
-<li><strong>Handle grabbed material</strong>: material applied to the grabbed handle.</li>
-<li><strong>Handle prefab</strong>: optional prefab for the handle. If non is set MRTK will use a sphere as default.</li>
-<li><strong>Handle size</strong>: size of the handle.</li>
-<li><strong>Collider padding</strong>: padding to add to the handle collider.</li>
-<li><strong>Draw tether when manipulating</strong>: when active will draw a tether line from point of start of interaction to current hand or pointer position.</li>
-<li><strong>Handles ignore collider</strong>: if a collider gets linked here, handles will ignore any collision with this collider.</li>
-<li><strong>Handle prefab collider type</strong>: collider type to be used with the created handle.</li>
-<li><strong>Show handle for X</strong>: controls visibility of the handle for X axis.</li>
-<li><strong>Show handle for Y</strong>: controls visibility of the handle for Y axis.</li>
-<li><strong>Show handle for Z</strong>: controls visibility of the handle for Z axis.</li>
+<li><strong>Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Prefab (ハンドルのプレハブ)</strong>: ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとして球を使います。</li>
+<li><strong>Handle Size (ハンドルのサイズ)</strong>: ハンドルのサイズです。</li>
+<li><strong>Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li><strong>Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li><strong>Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li><strong>Handle Prefab Collider Type (ハンドル プレハブのコライダー タイプ)</strong>: 作成されるハンドルに使われるコライダーのタイプです。</li>
+<li><strong>Show Handle For X (X のハンドル表示)</strong>: X 軸のハンドル表示をコントロールします。</li>
+<li><strong>Show Handle For Y (Y のハンドル表示)</strong>: Y 軸のハンドル表示をコントロールします。</li>
+<li><strong>Show Handle For Z (Z のハンドル表示)</strong>: Z 軸のハンドル表示をコントロールします。</li>
 </ul>
-<h3 id="translation-handles-configuration">Translation handles configuration</h3>
-<p>Allows enabling and configuring translation handles for bounds control. Note that translation handles are disabled per default.</p>
+<p><a name="translation-handles-configuration"></a></p>
+<h3 id="translation-handles-configuration-移動ハンドル設定">Translation Handles Configuration (移動ハンドル設定)</h3>
+<p>バウンズ コントロールの移動ハンドルの有効化や設定ができます。移動ハンドルはデフォルトでは無効になっていることに注意してください。</p>
 <ul>
-<li><strong>Handle material</strong>: material applied to the handles.</li>
-<li><strong>Handle grabbed material</strong>: material applied to the grabbed handle.</li>
-<li><strong>Handle prefab</strong>: optional prefab for the handle. If non is set MRTK will use a sphere as default.</li>
-<li><strong>Handle size</strong>: size of the handle.</li>
-<li><strong>Collider padding</strong>: padding to add to the handle collider.</li>
-<li><strong>Draw tether when manipulating</strong>: when active will draw a tether line from point of start of interaction to current hand or pointer position.</li>
-<li><strong>Handles ignore collider</strong>: if a collider gets linked here, handles will ignore any collision with this collider.</li>
-<li><strong>Handle prefab collider type</strong>: collider type to be used with the created handle.</li>
-<li><strong>Show handle for X</strong>: controls visibility of the handle for X axis.</li>
-<li><strong>Show handle for Y</strong>: controls visibility of the handle for Y axis.</li>
-<li><strong>Show handle for Z</strong>: controls visibility of the handle for Z axis.</li>
+<li><strong>Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li><strong>Handle Prefab (ハンドルのプレハブ)</strong>: ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとして球を使います。</li>
+<li><strong>Handle Size (ハンドルのサイズ)</strong>: ハンドルのサイズです。</li>
+<li><strong>Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li><strong>Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li><strong>Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li><strong>Handle Prefab Collider Type (ハンドル プレハブのコライダー タイプ)</strong>: 作成されるハンドルに使われるコライダーのタイプです。</li>
+<li><strong>Show Handle For X (X のハンドル表示)</strong>: X 軸のハンドル表示をコントロールします。</li>
+<li><strong>Show Handle For Y (Y のハンドル表示)</strong>: Y 軸のハンドル表示をコントロールします。</li>
+<li><strong>Show Handle For Z (Z のハンドル表示)</strong>: Z 軸のハンドル表示をコントロールします。</li>
 </ul>
-<h3 id="links-configuration-wireframe"><a name="links-configuration">Links configuration (wireframe)</a></h3>
-<p>The links configuration enables the wireframe feature of bounds control. The following properties can be configured:</p>
+<p><a name="links-configuration"></a></p>
+<h3 id="links-configuration-リンク設定-ワイヤーフレーム">Links Configuration (リンク設定) (ワイヤーフレーム)</h3>
+<p>リンク設定はバウンズ コントロールのワイヤーフレーム機能を有効にします。以下のプロパティが設定可能です。</p>
 <ul>
-<li><strong>Wireframe material</strong>: the material applied to the wireframe mesh.</li>
-<li><strong>Wireframe edge radius</strong>: the thickness of the wireframe.</li>
-<li><strong>Wireframe shape</strong>: shape of the wireframe can by either cubic or cylindrical.</li>
-<li><strong>Show wireframe</strong>: controls visibility of the wireframe.</li>
+<li><strong>Wireframe Material (ワイヤーフレームのマテリアル)</strong>: ワイヤーフレームのメッシュに適用されるマテリアルです。</li>
+<li><strong>Wireframe Edge Radius (ワイヤーフレームの辺の半径)</strong>: ワイヤーフレームの厚みです。</li>
+<li><strong>Wireframe Shape (ワイヤーフレームの形状)</strong>: ワイヤーフレームの形状を立方体か円柱のどちらかに設定できます。</li>
+<li><strong>Show Sireframe (ワイヤーフレームの表示)</strong>: ワイヤーフレームの表示をコントロールします。</li>
 </ul>
-<h3 id="proximity-effect-configuration">Proximity effect configuration</h3>
-<p>Show and hide the handles with animation based on the distance to the hands. It has two-step scaling animation. Defaults are set to Hololens 2 style behavior.</p>
+<p><a name="proximity-effect-configuration"></a></p>
+<h3 id="proximity-effect-configuration-近接効果設定">Proximity Effect Configuration (近接効果設定)</h3>
+<p>手との距離に応じたアニメーションでハンドルを表示・非表示します。2段階のスケーリング アニメーションがあります。デフォルトは HoloLens 2 スタイルの動作に設定されています。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Proximity.png">
 <ul>
-<li><strong>Proximity Effect Active</strong>: Enable proximity-based handle activation</li>
-<li><strong>Object Medium Proximity</strong>: Distance for the 1st step scaling</li>
-<li><strong>Object Close Proximity</strong>: Distance for the 2nd step scaling</li>
-<li><strong>Far Scale</strong>: Default scale value of the handle asset when the hands are out of range of the bounds control interaction (distance defined above by 'Handle Medium Proximity'. Use 0 to hide handle by default)</li>
-<li><strong>Medium Scale</strong>: Scale value of the handle asset when the hands are within range of the bounds control interaction (distance defined above by 'Handle Close Proximity'. Use 1 to show normal size)</li>
-<li><strong>Close Scale</strong>: Scale value of the handle asset when the hands are within range of the grab interaction (distance defined above by 'Handle Close Proximity'. Use 1.x to show bigger size)</li>
-<li><strong>Far Grow Rate</strong>: Rate a proximity scaled object scales when the hand moves from medium to far proximity.</li>
-<li><strong>Medium Grow Rate</strong>: Rate a proximity scaled object scales when the hand moves from medium to close proximity.</li>
-<li><strong>Close Grow Rate</strong>: Rate a proximity scaled object scales when the hand moves from close proximity to object center.</li>
+<li><strong>Proximity Effect Active (近接効果の有効化)</strong>: 近接ベースのハンドル有効化を有効にします。</li>
+<li><strong>Object Medium Proximity (オブジェクトへの中距離近接)</strong>: 第1ステップ スケーリングが実行される距離</li>
+<li><strong>Object Close Proximity (オブジェクトへの近距離近接)</strong>: 第2ステップ スケーリングが実行される距離</li>
+<li><strong>Far Scale (遠距離スケール)</strong>: ハンドがバウンズ コントロールのインタラクション範囲（上の 'Object Medium Proximity' で定義された距離）よりも外側にある場合のハンドル アセットのデフォルト スケール値（デフォルトでハンドルを非表示にする場合は 0 を利用してください)</li>
+<li><strong>Medium Scale (中距離スケール)</strong>: ハンドがバウンズ コントロールのインタラクション範囲（上の 'Object Medium Proximity' で定義された距離）の内側にある場合のハンドル アセットのスケール値（通常サイズで表示するには 1 を利用してください)</li>
+<li><strong>Close Scale (近距離スケール)</strong>: ハンドがグラブ インタラクション範囲（上の 'Object Close Proximity' で定義された距離）の内側にある場合のハンドル アセットのスケール値（拡大したサイズで表示するには 1.x を利用してください)</li>
+<li><strong>Far Grow Rate (遠距離での成長率)</strong>: ハンドが中距離近接から遠距離近接へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
+<li><strong>Medium Grow Rate (中距離での成長率)</strong>: ハンドが中距離近接から近距離近接へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
+<li><strong>Close Grow Rate (近距離での成長率)</strong>: ハンドが近距離近接からオブジェクト中心へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
 </ul>
-<h2 id="constraint-system">Constraint System</h2>
-<p>Bounds control supports using the <a href="README_ConstraintManager.html">constraint manager</a> to limit or modify translation, rotation or scaling behavior while using bounds control handles.</p>
-<p>The property inspector will show all available constraint managers attached to the same game object in a dropwdown with an option to scroll and highlight the selected constraint manager.</p>
+<h2 id="constraint-system-コンストレイント-システム">Constraint System (コンストレイント システム)</h2>
+<p>バウンズ コントロールは <a href="README_ConstraintManager.html">コンストレイント マネージャー</a> を使用して、バウンズ コントロール ハンドルを使用している際の移動、回転、スケーリングの動作を制限または変更することをサポートしています。</p>
+<p>インスペクターのプロパティでは、同じゲーム オブジェクトにアタッチされているすべての利用可能なコンストレイント マネージャがドロップダウンで表示され、スクロールや選択されているコンストレイント マネージャーのハイライト表示ができます。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Constraints.png" width="450">
-<h2 id="events">Events</h2>
-<p>Bounds control provides the following events. This example uses these events to play audio feedback.</p>
+<h2 id="events-イベント">Events (イベント)</h2>
+<p>バウンズ コントロールは以下のイベントを提供します。この例では、これらのイベントを使用してオーディオ フィードバックを再生します。</p>
 <ul>
-<li><strong>Rotate Started</strong>: Fired when rotation starts.</li>
-<li><strong>Rotate Stopped</strong>: Fired when rotation stops.</li>
-<li><strong>Scale Started</strong>: Fires when scaling starts.</li>
-<li><strong>Scale Stopped</strong>: Fires when scaling stops.</li>
-<li><strong>Translate Started</strong>: Fires when translation starts.</li>
-<li><strong>Translate Stopped</strong>: Fires when translation stops.</li>
+<li><strong>Rotate Started (回転開始)</strong>: 回転が開始したときに発火されます。</li>
+<li><strong>Rotate Stopped (回転終了)</strong>: 回転が終了したときに発火されます。</li>
+<li><strong>Scale Started (拡大縮小開始)</strong>: 拡大縮小が開始したときに発火されます。</li>
+<li><strong>Scale Stopped (拡大縮小終了)</strong>: 拡大縮小が終了したときに発火されます。</li>
+<li><strong>Translate Started (移動開始)</strong>: 移動が開始したときに発火されます。</li>
+<li><strong>Translate Stopped (移動終了)</strong>: 移動が終了したときに発火されます。</li>
 </ul>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Events.png" width="450">
-<h2 id="elastics-experimental">Elastics (Experimental)</h2>
-<p>Elastics can be used when manipulating objects via bounds control. Note that the <a href="Elastics/ElasticSystem.html">elastics system</a> is still in experimental state. To enable elastics either link an existing elastics manager component or create and link a new elastics manager via the <code>Add Elastics Manager</code> button.</p>
+<h2 id="elastics-エラスティックス-experimental">Elastics (エラスティックス) [Experimental]</h2>
+<p>エラスティックスはバウンズ コントロールでオブジェクトを操作する際に使用することができます。<a href="Elastics/ElasticSystem.html">Elastics System (エラスティックス システム)</a> はまだ実験段階であることにご注意ください。エラスティックスを有効にするには、既存のエラスティックス マネージャー コンポーネントをリンクするか、<code>Add Elastics Manager</code> ボタンを使って新しいエラスティックス マネージャーを作成してリンクします。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
-<h2 id="handle-styles">Handle styles</h2>
-<p>By default, when you just assign the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html"><code>BoundsControl.cs</code></a> script, it will show the handle of the HoloLens 1st gen style. To use HoloLens 2 style handles, you need to assign proper handle prefabs and materials.</p>
+<p><a name="handle-styles"></a></p>
+<h2 id="ハンドルのスタイル">ハンドルのスタイル</h2>
+<p>デフォルトでは、単に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html"><code>BoundsControl.cs</code></a> スクリプトを割り当てた場合、HoloLens 第1世代 スタイルのハンドルが表示されます。HoloLens 2 スタイルのハンドルを使うには、適切なハンドルのプレハブとマテリアルを割り当てる必要があります。</p>
 <p><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles1.png" alt="Bounds Control"></p>
-<p>Below are the prefabs, materials, and the scaling values for the HoloLens 2 style bounds control handles. You can find this example in the <code>BoundsControlExamples</code> scene.</p>
+<p>以下に、HoloLens 2 スタイルのバウンズ コントロール ハンドルのためのプレハブ、マテリアル、スケーリング値を示します。このサンプルは <code>BoundsControlExamples</code> シーンにあります。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles2.png" width="450">
-<h3 id="handles-setup-for-hololens-2-style">Handles (Setup for HoloLens 2 style)</h3>
+<h3 id="ハンドル-hololens-2-スタイルのセットアップ">ハンドル (HoloLens 2 スタイルのセットアップ)</h3>
 <ul>
-<li><strong>Handle Material</strong>: BoundingBoxHandleWhite.mat</li>
-<li><strong>Handle Grabbed Material</strong>: BoundingBoxHandleBlueGrabbed.mat</li>
-<li><strong>Scale Handle Prefab</strong>: MRTK_BoundingBox_ScaleHandle.prefab</li>
-<li><strong>Scale Handle Slate Prefab</strong>: MRTK_BoundingBox_ScaleHandle_Slate.prefab</li>
-<li><strong>Scale Handle Size</strong>: 0.016 (1.6cm)</li>
-<li><strong>Scale Handle Collider Padding</strong>: 0.016 (makes the grabbable collider slightly bigger than handle visual)</li>
-<li><strong>Rotation Handle Prefab</strong>: MRTK_BoundingBox_RotateHandle.prefab</li>
-<li><strong>Rotation Handle Size</strong>: 0.016</li>
-<li><strong>Rotation Handle Collider Padding</strong>: 0.016 (makes the grabbable collider slightly bigger than handle visual)</li>
+<li><strong>Handle Material (ハンドルのマテリアル)</strong>: BoundingBoxHandleWhite.mat</li>
+<li><strong>Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: BoundingBoxHandleBlueGrabbed.mat</li>
+<li><strong>Scale Handle Prefab (拡大縮小ハンドルのプレハブ</strong>: MRTK_BoundingBox_ScaleHandle.prefab</li>
+<li><strong>Scale Handle Slate Prefab (スレートの拡大縮小ハンドルのプレハブ)</strong>: MRTK_BoundingBox_ScaleHandle_Slate.prefab</li>
+<li><strong>Scale Handle Size (拡大縮小ハンドルのサイズ)</strong>: 0.016 (1.6cm)</li>
+<li><strong>Scale Handle Collider Padding (拡大縮小ハンドルのコライダーのパディング)</strong>: 0.016 (掴めるコライダーをハンドルの見た目よりも少し大きくします)</li>
+<li><strong>Rotation Handle Prefab (回転ハンドルのプレハブ)</strong>: MRTK_BoundingBox_RotateHandle.prefab</li>
+<li><strong>Rotation Handle Size (回転ハンドルのサイズ)</strong>: 0.016</li>
+<li><strong>Rotation Handle Collider Padding (回転ハンドルのコライダーのパディング)</strong>: 0.016 (掴めるコライダーをハンドルの見た目よりも少し大きくします)</li>
 </ul>
-<h2 id="transformation-changes-with-object-manipulator">Transformation changes with object manipulator</h2>
-<p>A bounds control can be used in combination with <a href="README_ObjectManipulator.html"><code>ObjectManipulator.cs</code></a> to allow for certain types of manipulation (eg. moving the object) without using handles. The manipulation handler supports both one and two-handed interactions. <a href="Input/HandTracking.html">Hand tracking</a> can be used to interact with an object up close.</p>
+<h2 id="object-manipulator-での-transform-の変更">Object Manipulator での Transform の変更</h2>
+<p>バウンズ コントロールを <a href="README_ObjectManipulator.html"><code>ObjectManipulator.cs</code></a> と組み合わせて使用することで、ハンドルを使用せずに特定のタイプのマニピュレーション (例えばオブジェクトに移動) を行うことができます。オブジェクト マニピュレーターは片手と両手の両方のインタラクションをサポートしています。<a href="Input/HandTracking.html">ハンド トラッキング</a> を使用して、オブジェクトと近くでインタラクションすることができます。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_ObjectManipulator.png" width="450">
-<p>In order for the bounds control edges to behave the same way when moving it using <a href="README_ObjectManipulator.html"><code>ObjectManipulator</code></a>'s far interaction, it is advised to connect its events for <em>On Manipulation Started</em> / <em>On Manipulation Ended</em> to <code>BoundsControl.HighlightWires</code> / <code>BoundsControl.UnhighlightWires</code> respectively, as shown in the screenshot above.</p>
-<h2 id="how-to-add-and-configure-a-bounds-control-using-unity-inspector">How to add and configure a bounds control using Unity Inspector</h2>
+<p>バウンズ コントロールのエッジを <a href="README_ObjectManipulator.html"><code>ObjectManipulator</code></a> のファー インタラクションを使って動かしたときと同じように動作させるには、上のスクリーンショットのように <em>On Manipulation Started</em> / <em>On Manipulation Ended</em> のイベントをそれぞれ <code>BoundsControl.HighlightWires</code> / <code>BoundsControl.UnhighlightWires</code> に接続することをおすすめします。</p>
+<h2 id="unity-のインスペクターを使ったバウンズ-コントロールの追加設定方法">Unity のインスペクターを使ったバウンズ コントロールの追加設定方法</h2>
 <ol>
-<li>Add Box Collider to an object</li>
-<li>Assign <code>BoundsControl</code> script to an object</li>
-<li>Configure options, such as 'Activation' methods (see <a href="#inspector-properties">Inspector properties</a> section below)</li>
-<li>(Optional) Assign prefabs and materials for a HoloLens 2 style bounds control (see <a href="#handle-styles">Handle styles</a> section below)</li>
+<li>オブジェクトに Box Collider を追加します</li>
+<li>オブジェクトに <code>BoundsControl</code> スクリプトを割り当てます</li>
+<li>'Activation' メソッドのようなオプションを設定します (<a href="#inspector-properties">インスペクターのプロパティ</a> セクションをご覧ください)</li>
+<li>(オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます (<a href="#handle-styles">ハンドルのスタイル</a> セクションをご覧ください)</li>
 </ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Use <em>Target Object</em> and <em>Bounds Override</em> field in the inspector to assign specific object and collider in the object with multiple child components.</p>
+<p>インスペクターの <em>Target Object</em> と <em>Bounds Override</em> フィールドを使用することで、複数の子コンポーネントを持つオブジェクトに特定のオブジェクトとコライダーを割り当てることができます。</p>
 </div>
 <p><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Assign.png" alt="Bounds Control"></p>
-<h2 id="how-to-add-and-configure-a-bounds-control-in-the-code">How to add and configure a bounds control in the code</h2>
+<h2 id="コードでのバウンズ-コントロールの追加設定方法">コードでのバウンズ コントロールの追加設定方法</h2>
 <ol>
-<li><p>Instantiate cube GameObject</p>
+<li><p>キューブの GameObject を生成します</p>
 <pre><code class="lang-c#">GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 </code></pre>
 </li>
-<li><p>Assign <code>BoundsControl</code> script to an object with collider, using AddComponent&lt;&gt;()</p>
+<li><p>AddComponent&lt;&gt;() を使ってコライダーを持つオブジェクトに <code>BoundsControl</code> スクリプトを割り当てます</p>
 <pre><code class="lang-c#">private BoundsControl boundsControl;
 boundsControl = cube.AddComponent&lt;BoundsControl&gt;();
 </code></pre>
 </li>
-<li><p>Configure options either directly on the control or via one of the scriptable configurations (see <a href="#inspector-properties">Inspector properties</a> and <a href="#configuration-objects">Configurations</a> section below)</p>
-<pre><code class="lang-c#"> // Change activation method
+<li><p>バウンズ コントロール上またはスクリプタブル コンフィギュレーションのいずれかにおいてオプションを設定します (<a href="#inspector-properties">インスペクターのプロパティ</a> と <a href="#configuration-objects">設定</a> のセクションをご覧ください)</p>
+<pre><code class="lang-c#"> // 有効化方法を変更する
  boundsControl.BoundsControlActivation = BoundsControlActivationType.ActivateByProximityAndPointer;
-// Make the scale handles large
+// 拡大縮小ハンドルを大きくする
 boundsControl.ScaleHandlesConfig.HandleSize = 0.1f;
-// Hide rotation handles for x axis
+// X 軸の回転ハンドルを非表示にする
 boundsControl.RotationHandlesConfig.ShowRotationHandleForX = false;
 </code></pre>
 </li>
-<li><p>(Optional) Assign prefabs and materials for a HoloLens 2 style bounds control. This still requires assignments through the inspector since the materials and prefabs should be dynamically loaded.</p>
+<li><p>(オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます。マテリアルとプレハブは動的にロードされなければならないので、これはまだインスペクターを通した割り当てが必要となります。</p>
 </li>
 </ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Using Unity's 'Resources' folder or <a href="https://docs.unity3d.com/ScriptReference/Shader.Find.html">Shader.Find</a> for dynamically loading shaders is not recommended since shader permutations may be missing at runtime.</p>
+<p>Unity の 'Resources' フォルダーや <a href="https://docs.unity3d.com/ScriptReference/Shader.Find.html">Shader.Find</a> を使って動的にシェーダーをロードすることは、シェーダーの組み合わせが実行時に見つからない可能性があるため推奨されません。</p>
 </div>
 <pre><code class="lang-c#">BoxDisplayConfiguration boxConfiguration = boundsControl.BoxDisplayConfig;
 boxConfiguration.BoxMaterial = [Assign BoundingBox.mat]
@@ -305,29 +315,29 @@ rotationHandleConfiguration.HandlePrefab = [Assign MRTK_BoundingBox_RotateHandle
 rotationHandleConfiguration.HandleSize = 0.016f;
 rotationHandleConfiguration.ColliderPadding = 0.016f;
 </code></pre>
-<h3 id="example-set-minimum-maximum-bounds-control-scale-using-minmaxscaleconstraint">Example: Set minimum, maximum bounds control scale using MinMaxScaleConstraint</h3>
-<p>To set the minimum and maximum scale, attach a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.MinMaxScaleConstraint.html"><code>MinMaxScaleConstraint</code></a> to your constrol. As bounds control automatically attaches and activates constraint manager the MinMaxScaleConstraint will be automatically applied to the transformation changes once it's attached and configured.</p>
-<p>You can also use MinMaxScaleConstraint to set minimum and maximum scale for <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ObjectManipulator.html"><code>ObjectManipulator</code></a>.</p>
+<h3 id="例-minmaxscaleconstraint-を使ってバウンズ-コントロールの最小スケール最大スケールを設定する">例: MinMaxScaleConstraint を使ってバウンズ コントロールの最小スケール最大スケールを設定する</h3>
+<p>最小スケール最大スケールを設定するには、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.MinMaxScaleConstraint.html"><code>MinMaxScaleConstraint</code></a> をバウンズ コントロールに追加します。バウンズ コントロールはコンストレイント マネージャーを自動的にアタッチして有効にするため、MinMaxScaleConstraint がアタッチされて設定されると、MinMaxScaleConstraint は Transform の変更に自動的に適用されます。</p>
+<p>MinMaxScaleConstraint は <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ObjectManipulator.html"><code>ObjectManipulator</code></a> の最小スケール最大スケールを設定するためにも利用できます。</p>
 <pre><code class="lang-c#">GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 bcontrol = cube.AddComponent&lt;BoundsControl&gt;();
-// Important: BoundsControl creates a constraint manager on start if one does not exist.
-// There's no need to manually attach a constraint manager.
+// 重要: BoundsControl はスタート時にコンストレイント マネージャーが存在しない場合は作成します。
+// 手動でコンストレイント マネージャーをアタッチする必要はありません。
 MinMaxScaleConstraint scaleConstraint = bcontrol.gameObject.AddComponent&lt;MinMaxScaleConstraint&gt;();
 scaleConstraint.ScaleMinimum = 1f;
 scaleConstraint.ScaleMaximum = 2f;
 </code></pre>
-<h2 id="example-add-bounds-control-around-a-game-object">Example: Add bounds control around a game object</h2>
-<p>To add a bounds control around an object, simply add a <code>BoundsControl</code> component to it:</p>
+<h2 id="例-バウンズ-コントロールをゲーム-オブジェクトの周囲に追加する">例: バウンズ コントロールをゲーム オブジェクトの周囲に追加する</h2>
+<p>オブジェクトの周囲にバウンズ コントロールを追加するには、単に <code>BoundsControl</code> コンポーネントを追加します。</p>
 <pre><code class="lang-c#">private void PutABoundsControlAroundIt(GameObject target)
 {
    target.AddComponent&lt;BoundsControl&gt;();
 }
 </code></pre>
-<h2 id="migrating-from-bounding-box">Migrating from Bounding Box</h2>
-<p>Existing prefabs and instances using <a href="README_BoundingBox.html">bounding box</a> can be upgraded to the new bounds control via the <a href="Tools/MigrationWindow.html">migration window</a> which is part of the MRTK tools package.</p>
-<p>For upgrading individual instances of bounding box there's also an a migration option inside the property inspector of the component.</p>
+<h2 id="bounding-box-からの移行">Bounding Box からの移行</h2>
+<p>既存のプレハブや、<a href="README_BoundingBox.html">Bounding Box</a> を使用しているインスタンスは、MRTK Tools パッケージの一部である <a href="Tools/MigrationWindow.html">Migration Window</a> を使用して、新しいバウンズ コントロールにアップグレードすることができます。</p>
+<p>Bounding Box の個々のインスタンスをアップグレードするために、コンポーネントのプロパティ インスペクターの中に移行オプションもあります。</p>
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Migrate.png" width="450">
-<h2 id="see-also">See also</h2>
+<h2 id="関連項目">関連項目</h2>
 <ul>
 <li><a href="README_ObjectManipulator.html">Object manipulator</a></li>
 <li><a href="README_ConstraintManager.html">Constraint manager</a></li>
