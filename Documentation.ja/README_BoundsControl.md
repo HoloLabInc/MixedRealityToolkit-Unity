@@ -12,6 +12,8 @@
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Examples.png">
 
+<a name="inspector-properties"></a>
+
 ## インスペクターのプロパティ
 
 ### Target Object (対象オブジェクト)
@@ -65,7 +67,7 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - [ボックス表示](#box-configuration)
 - [近接効果](#proximity-effect-configuration)
 
-<a name=box-configuration></a>
+<a name="box-configuration"></a>
 
 ### Box Configuration (ボックス設定)
 ボックス設定は、コライダーのサイズとボックスのパディングで定義された境界を持つソリッド ボックスのレンダリングを担当します。以下のプロパティを設定可能です。
@@ -74,7 +76,7 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - **Box Grabbed Material (掴まれたボックスのマテリアル)**：ユーザーがニアまたはファー インタラクションで掴んでバウンズ コントロールとインタラクションしたときのボックスのマテリアルです。
 - **Flatten Axis Display Scale (平坦化軸の表示スケール)**: 軸の1つが[平坦化](#flatten-axis)されている場合にボックスの表示に適用されるスケールです。
 
-<a name=scale-handles-configuration></a>
+<a name="scale-handles-configuration"></a>
 
 ### Scale Handles Configuration (拡大縮小ハンドル設定)
 このプロパティでは、バウンズ コントロールの拡大縮小ハンドルの動作や見た目を変更することができます。
@@ -90,7 +92,7 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - **Show Scale Handles (拡大縮小ハンドルを表示)**: ハンドルの表示をコントロールします。
 - **Scale Behavior (拡大縮小動作)**: 一様もしくは不一様のスケーリングに設定できます。
 
-<a name=rotation-handles-configuration></a>
+<a name="rotation-handles-configuration"></a>
 
 ### Rotation Handles Configuration (回転ハンドル設定)
 この設定では回転ハンドルの動作を定義します。
@@ -107,7 +109,7 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - **Show Handle For Y (Y のハンドル表示)**: Y 軸のハンドル表示をコントロールします。
 - **Show Handle For Z (Z のハンドル表示)**: Z 軸のハンドル表示をコントロールします。
 
-<a name=translation-handles-configuration></a>
+<a name="translation-handles-configuration"></a>
 
 ### Translation Handles Configuration (移動ハンドル設定)
 バウンズ コントロールの移動ハンドルの有効化や設定ができます。移動ハンドルはデフォルトでは無効になっていることに注意してください。
@@ -124,7 +126,7 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - **Show Handle For Y (Y のハンドル表示)**: Y 軸のハンドル表示をコントロールします。
 - **Show Handle For Z (Z のハンドル表示)**: Z 軸のハンドル表示をコントロールします。
 
-<a name=links-configuration></a>
+<a name="links-configuration"></a>
 
 ### Links Configuration (リンク設定) (ワイヤーフレーム)
 リンク設定はバウンズ コントロールのワイヤーフレーム機能を有効にします。以下のプロパティが設定可能です。
@@ -134,10 +136,10 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 - **Wireframe Shape (ワイヤーフレームの形状)**: ワイヤーフレームの形状を立方体か円柱のどちらかに設定できます。
 - **Show Sireframe (ワイヤーフレームの表示)**: ワイヤーフレームの表示をコントロールします。
 
-<a name=proximity-effect-configuration></a>
+<a name="proximity-effect-configuration"></a>
 
 ### Proximity Effect Configuration (近接効果設定)
-手との距離に応じたアニメーションでハンドルを表示・非表示します。2段階のスケーリング アニメーションがあります。デフォルトは Hololens 2 スタイルの動作に設定されています。
+手との距離に応じたアニメーションでハンドルを表示・非表示します。2段階のスケーリング アニメーションがあります。デフォルトは HoloLens 2 スタイルの動作に設定されています。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Proximity.png">
 
@@ -176,13 +178,15 @@ Flatten Axis が *Flatten Auto* に設定されている場合、スクリプト
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
 
+<a name="handle-styles"></a>
+
 ## ハンドルのスタイル
 
-By default, when you just assign the [`BoundsControl.cs`](xref:Microsoft.MixedReality.Toolkit.UI.BoundsControl) script, it will show the handle of the HoloLens 1st gen style. To use HoloLens 2 style handles, you need to assign proper handle prefabs and materials.
+デフォルトでは、単に [`BoundsControl.cs`](xref:Microsoft.MixedReality.Toolkit.UI.BoundsControl) スクリプトを割り当てた場合、HoloLens 第1世代 スタイルのハンドルが表示されます。HoloLens 2 スタイルのハンドルを使うには、適切なハンドルのプレハブとマテリアルを割り当てる必要があります。
 
 ![Bounds Control](../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles1.png)
 
-Below are the prefabs, materials, and the scaling values for the HoloLens 2 style bounds control handles. You can find this example in the `BoundsControlExamples` scene.
+以下に、HoloLens 2 スタイルのバウンズ コントロール ハンドルのためのプレハブ、マテリアル、スケーリング値を示します。このサンプルは `BoundsControlExamples` シーンにあります。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles2.png" width="450">
 
@@ -198,57 +202,56 @@ Below are the prefabs, materials, and the scaling values for the HoloLens 2 styl
 * **Rotation Handle Size (回転ハンドルのサイズ)**: 0.016
 * **Rotation Handle Collider Padding (回転ハンドルのコライダーのパディング)**: 0.016 (掴めるコライダーをハンドルの見た目よりも少し大きくします)
 
-## Transformation changes with object manipulator
+## Object Manipulator での Transform の変更
 
-A bounds control can be used in combination with [`ObjectManipulator.cs`](README_ObjectManipulator.md) to allow for certain types of manipulation (eg. moving the object) without using handles. The manipulation handler supports both one and two-handed interactions. [Hand tracking](Input/HandTracking.md) can be used to interact with an object up close.
+バウンズ コントロールを [`ObjectManipulator.cs`](README_ObjectManipulator.md) と組み合わせて使用することで、ハンドルを使用せずに特定のタイプのマニピュレーション (例えばオブジェクトに移動) を行うことができます。オブジェクト マニピュレーターは片手と両手の両方のインタラクションをサポートしています。[ハンド トラッキング](Input/HandTracking.md) を使用して、オブジェクトと近くでインタラクションすることができます。
 
 <img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_ObjectManipulator.png" width="450">
 
-In order for the bounds control edges to behave the same way when moving it using [`ObjectManipulator`](README_ObjectManipulator.md)'s far interaction, it is advised to connect its events for *On Manipulation Started* / *On Manipulation Ended* to `BoundsControl.HighlightWires` / `BoundsControl.UnhighlightWires` respectively, as shown in the screenshot above.
+バウンズ コントロールのエッジを [`ObjectManipulator`](README_ObjectManipulator.md) のファー インタラクションを使って動かしたときと同じように動作させるには、上のスクリーンショットのように *On Manipulation Started* / *On Manipulation Ended* のイベントをそれぞれ `BoundsControl.HighlightWires` / `BoundsControl.UnhighlightWires` に接続することをおすすめします。
 
+## Unity のインスペクターを使ったバウンズ コントロールの追加設定方法
 
-## How to add and configure a bounds control using Unity Inspector
-
-1. Add Box Collider to an object
-2. Assign `BoundsControl` script to an object
-3. Configure options, such as 'Activation' methods (see [Inspector properties](#inspector-properties) section below)
-4. (Optional) Assign prefabs and materials for a HoloLens 2 style bounds control (see [Handle styles](#handle-styles) section below)
+1. オブジェクトに Box Collider を追加します
+2. オブジェクトに `BoundsControl` スクリプトを割り当てます
+3. 'Activation' メソッドのようなオプションを設定します ([インスペクターのプロパティ](#inspector-properties) セクションをご覧ください)
+4. (オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます ([ハンドルのスタイル](#handle-styles) セクションをご覧ください)
 
 > [!NOTE]
-> Use *Target Object* and *Bounds Override* field in the inspector to assign specific object and collider in the object with multiple child components.
+> インスペクターの *Target Object* と *Bounds Override* フィールドを使用することで、複数の子コンポーネントを持つオブジェクトに特定のオブジェクトとコライダーを割り当てることができます。
 
 ![Bounds Control](../Documentation/Images/BoundsControl/MRTK_BoundsControl_Assign.png)
 
-## How to add and configure a bounds control in the code
+## コードでのバウンズ コントロールの追加設定方法
 
-1. Instantiate cube GameObject
+1. キューブの GameObject を生成します
 
     ```c#
     GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
     ```
 
-1. Assign `BoundsControl` script to an object with collider, using AddComponent<>()
+1. AddComponent<>() を使ってコライダーを持つオブジェクトに `BoundsControl` スクリプトを割り当てます
 
     ```c#
     private BoundsControl boundsControl;
     boundsControl = cube.AddComponent<BoundsControl>();
     ```
 
-1. Configure options either directly on the control or via one of the scriptable configurations (see [Inspector properties](#inspector-properties) and [Configurations](#configuration-objects) section below)
+1. バウンズ コントロール上またはスクリプタブル コンフィギュレーションのいずれかにおいてオプションを設定します ([インスペクターのプロパティ](#inspector-properties) と [設定](#configuration-objects) のセクションをご覧ください)
 
     ```c#
-	// Change activation method
+	// 有効化方法を変更する
 	boundsControl.BoundsControlActivation = BoundsControlActivationType.ActivateByProximityAndPointer;
-    // Make the scale handles large
+    // 拡大縮小ハンドルを大きくする
     boundsControl.ScaleHandlesConfig.HandleSize = 0.1f;
-    // Hide rotation handles for x axis
+    // X 軸の回転ハンドルを非表示にする
     boundsControl.RotationHandlesConfig.ShowRotationHandleForX = false;
     ```
 
-1. (Optional) Assign prefabs and materials for a HoloLens 2 style bounds control. This still requires assignments through the inspector since the materials and prefabs should be dynamically loaded.
+1. (オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます。マテリアルとプレハブは動的にロードされなければならないので、これはまだインスペクターを通した割り当てが必要となります。
 
 > [!NOTE]
-> Using Unity's 'Resources' folder or [Shader.Find]( https://docs.unity3d.com/ScriptReference/Shader.Find.html) for dynamically loading shaders is not recommended since shader permutations may be missing at runtime.
+> Unity の 'Resources' フォルダーや [Shader.Find]( https://docs.unity3d.com/ScriptReference/Shader.Find.html) を使って動的にシェーダーをロードすることは、シェーダーの組み合わせが実行時に見つからない可能性があるため推奨されません。
 
 ```c#
 BoxDisplayConfiguration boxConfiguration = boundsControl.BoxDisplayConfig;
