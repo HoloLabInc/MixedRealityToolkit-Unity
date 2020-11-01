@@ -48,7 +48,6 @@ MRTK による Oculus Quest のサポートは 2 つの異なるソースを介�
 
 ## Oculus XRSDK Data Provider の利用
 
-1. Configure your profile to use the **Oculus XRSDK Data Provider**
 1. **Oculus XRSDK Data Provider** を使ってプロファイルを設定します
     - 設定プロファイルを変更するつもりがない場合
         - プロファイルを DefaultXRSDKInputSystemProfile に変更し、[プロジェクトのビルドと Oculus Quest へのデプロイ](OculusQuestMRTK.md#build-and-deploy-your-project-to-oculus-quest) を行います
