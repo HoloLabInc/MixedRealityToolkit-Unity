@@ -69,13 +69,13 @@
         href: CameraSystem/UnityArCameraSettings.md
       - name: Creating a camera settings provider
         href: CameraSystem/CreateSettingsProvider.md
-  - name: Cross Platform Support
+  - name: クロス プラットフォームのサポート
     items: 
     - name: Configure MRTK for iOS and Android
       href: CrossPlatform/UsingARFoundation.md
     - name: Configure MRTK for Leap Motion Hand Tracking
       href: CrossPlatform/LeapMotionMRTK.md
-    - name: Configure MRTK for Oculus Quest
+    - name: Oculus Quest 向けの MRTK の設定
       href: CrossPlatform/OculusQuestMRTK.md
   - name: プラットフォームの Capabilities (機能) を検出する
     href: DetectingPlatformCapabilities.md
