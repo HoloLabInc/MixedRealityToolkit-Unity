@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Monitoring content loading | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Monitoring content loading | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="monitoring-content-loading" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1">Monitoring content loading</h1>
+
+<h2 id="scene-operation-progress" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="3">Scene operation progress</h2>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="5">When content is being loaded or unloaded, the <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="5">SceneOperationInProgress</code> property will return true. You can monitor the progress of this operation via the <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="5">SceneOperationProgress</code> property.</p>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="7">The <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="7">SceneOperationProgress</code> value is the average of all current async scene operations. At the start of a content load, <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="7">SceneOperationProgress</code> will be zero. Once fully completed, <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="7">SceneOperationProgress</code> will be set to 1 and will remain at 1 until the next operation takes place. Note that only content scene operations affect these properties.</p>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="9">These properties reflect the state of an <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="9">entire operation</em> from start to finish, even if that operation includes multiple steps:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="11">IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+// First do an additive scene load
+// SceneOperationInProgress will be true for the duration of this operation
+// SceneOperationProgress will show 0-1 as it completes
+await sceneSystem.LoadContent(&quot;ContentScene1&quot;);
+
+// Now do a single scene load
+// This will result in two actions back-to-back
+// First &quot;ContentScene1&quot; will be unloaded
+// Then &quot;ContentScene2&quot; will be loaded
+// SceneOperationInProgress will be true for the duration of this operation
+// SceneOperationProgress will show 0-1 as it completes
+sceneSystem.LoadContent(&quot;ContentScene2&quot;, LoadSceneMode.Single)
+</code></pre>
+<h3 id="progress-examples" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="28">Progress examples</h3>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="30"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="30">SceneOperationInProgress</code> can be useful if activity should be suspended while content is being loaded:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="32">public class FooManager : MonoBehaviour
+{
+    private void Update()
+    {
+        IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+        // Don't update foos while a scene operation is in progress
+        if (sceneSystem.SceneOperationInProgress)
+        {
+            return;
+        }
+
+        // Update foos
+        ...
+    }
+    ...
+}
+</code></pre>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="52"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="52">SceneOperationProgress</code> can be used to display progress dialogs:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="54">public class ProgressDialog : MonoBehaviour
+{
+    private void Update()
+    {
+        IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+        if (sceneSystem.SceneOperationInProgress)
+        {
+            DisplayProgressIndicator(sceneSystem.SceneOperationProgress);
+        }
+        else
+        {
+            HideProgressIndicator();
+        }
+    }
+    ...
+}
+</code></pre>
+<hr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="74">
+<h2 id="monitoring-with-actions" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="76">Monitoring with actions</h2>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="78">The Scene System provides several actions to let you know when scenes are being loaded or unloaded. Each action relays the name of the affected scene.</p>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="80">If a load or unload operation involves multiple scenes, the relevant actions will be invoked once per affected scene. They are also invoked all at once when the load or unload operation is <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="80">fully completed.</em> For this reason it's recommended that you use <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="80">OnWillUnload</em> actions to detect content that <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="80">will</em> be destroyed, as opposed to using <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="80">OnUnloaded</em> actions to detect destroyed content after the fact.</p>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="82">On the flip side, because <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="82">OnLoaded</em> actions are only invoked when all scenes are activated and fully loaded, using <em sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="82">OnLoaded</em> actions to detect and use new content is guaranteed to be safe.</p>
+<table sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">
+<thead>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">
+<th sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">Action</th>
+<th sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">When it's invoked</th>
+<th sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">Content Scenes</th>
+<th sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">Lighting Scenes</th>
+<th sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="84">Manager Scenes</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86">OnWillLoadContent</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86">Just prior to a content scene load</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="86"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87">OnContentLoaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87">After all content scenes in a load operation have been fully loaded and activated</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="87"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88">OnWillUnloadContent</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88">Just prior to a content scene unload operation</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="88"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89">OnContentUnloaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89">After all content scenes in an unload operation have been fully unloaded</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="89"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90">OnWillLoadLighting</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90">Just prior to a lighting scene load</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="90">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91">OnLightingLoaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91">After a lighting scene has been fully loaded and activated</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="91">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92">OnWillUnloadLighting</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92">Just prior to a lighting scene unload</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="92">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93">OnLightingUnloaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93">After a lighting scene has been fully unloaded</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93"></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="93">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">OnWillLoadScene</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">Just prior to a scene load</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="94">•</td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">OnSceneLoaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">After all scenes in an operation are fully loaded and activated</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="95">•</td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">OnWillUnloadScene</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">Just prior to a scene unload</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="96">•</td>
+</tr>
+<tr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97"><code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">OnSceneUnloaded</code></td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">After a scene is fully unloaded</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">•</td>
+<td sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="97">•</td>
+</tr>
+</tbody>
+</table>
+<h3 id="action-examples" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="99">Action examples</h3>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="101">Another progress dialog example using actions and a coroutine instead of Update:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="103">public class ProgressDialog : MonoBehaviour
+{
+    private bool displayingProgress = false;
+
+    private void Start()
+    {
+        IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+        sceneSystem.OnWillLoadContent += HandleSceneOperation;
+        sceneSystem.OnWillUnloadContent += HandleSceneOperation;
+    }
+
+    private void HandleSceneOperation (string sceneName)
+    {
+        // This may be invoked multiple times per frame - once per scene being loaded or unloaded.
+        // So filter the events appropriately.
+        if (displayingProgress)
+        {
+            return;
+        }
+
+        displayingProgress = true;
+        StartCoroutine(DisplayProgress());
+    }
+
+    private IEnumerator DisplayProgress()
+    {
+        IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+        while (sceneSystem.SceneOperationInProgress)
+        {
+            DisplayProgressIndicator(sceneSystem.SceneOperationProgress);
+            yield return null;
+        }
+
+        HideProgressIndicator();
+        displayingProgress = false;
+    }
+
+    ...
+}
+</code></pre>
+<hr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="146">
+<h2 id="controlling-scene-activation" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="148">Controlling scene activation</h2>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="150">By default content scenes are set to activate when loaded. If you want to control scene activation manually, you can pass a <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="150">SceneActivationToken</code> to any content load method. If multiple content scenes are being loaded by a single operation, this activation token will apply to all scenes.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="152">IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+SceneActivationToken activationToken = new SceneActivationToken();
+
+// Load the content and pass the activation token
+sceneSystem.LoadContent(new string[] { &quot;ContentScene1&quot;, &quot;ContentScene2&quot;, &quot;ContentScene3&quot; }, LoadSceneMode.Additive, activationToken);
+
+// Wait until all users have joined the experience
+while (!AllUsersHaveJoinedExperience())
+{
+    await Task.Yield();
+}
+
+// Let scene system know we're ready to activate all scenes
+activationToken.AllowSceneActivation = true;
+
+// Wait for all scenes to be fully loaded and activated
+while (sceneSystem.SceneOperationInProgress)
+{
+    await Task.Yield();
+}
+
+// Proceed with experience
+</code></pre>
+<hr sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="178">
+<h2 id="checking-which-content-is-loaded" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="180">Checking which content is loaded</h2>
+<p sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="182">The <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="182">ContentSceneNames</code> property provides an array of available content scenes in order of build index. You can check whether these scenes are loaded via <code sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="182">IsContentLoaded(string contentName)</code>.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/SceneSystem/SceneSystemLoadProgress.md" sourcestartlinenumber="184">IMixedRealitySceneSystem sceneSystem = MixedRealityToolkit.Instance.GetService&lt;IMixedRealitySceneSystem&gt;();
+
+string[] contentSceneNames = sceneSystem.ContentSceneNames;
+bool[] loadStatus = new bool[contentSceneNames.Length];
+
+for (int i = 0; i &lt; contentSceneNames.Length; i++&gt;)
+{
+    loadStatus[i] = sceneSystem.IsContentLoaded(contentSceneNames[i]);
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/SceneSystem/SceneSystemLoadProgress.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

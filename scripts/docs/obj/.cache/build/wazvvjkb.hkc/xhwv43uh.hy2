@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Gaze (&#12466;&#12452;&#12474;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gaze-ゲイズ" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="1">Gaze (ゲイズ)</h1>
+
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="3"><a href="https://docs.microsoft.com/windows/mixed-reality/gaze" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="3">Gaze</a> は、ユーザーがどこを見ているかに基づいて世界とインタラクションする入力方式です。ゲイズには、異なる2つの種類があります。</p>
+<h2 id="ヘッド-ゲイズ" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="5">ヘッド ゲイズ</h2>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="7">このタイプのゲイズは、頭/カメラが向いている方向に基づきます。ヘッド ゲイズは、アイ ゲイズをサポートしていないシステムや、ハードウェアはアイ ゲイズをサポートしている可能性があるが <a href="../EyeTracking/EyeTracking_BasicSetup.html#eye-tracking-requirements-checklist" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="7">アクセス許可とセットアップ</a> が正しく実行されていない場合において、アクティブになります。</p>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="9">ヘッド ゲイズは、通常、HoloLens 1 スタイルのインタラクションに関連しています。
+それは、オブジェクトがホログラフィック フレームの中央に配置されるようにオブジェクトを見て、エア タップのジェスチャを実行するというものです。</p>
+<h2 id="アイ-ゲイズ-視線" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="12">アイ ゲイズ (視線)</h2>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="14">このタイプのゲイズは、ユーザーの目がどこを見ているかに基づいています。アイ ゲイズはアイ トラッキングをサポートするシステムにのみ存在します。アイ ゲイズの使用方法の詳細については、<a href="../EyeTracking/EyeTracking_Main.html" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="14">アイ トラッキングのドキュメント</a> を参照してください。</p>
+<h2 id="gazeprovider" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="16">GazeProvider</h2>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="18">ゲイズの機能 (ヘッドと視線の両方) は、<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="18">GazeProvider</a> によって提供されます。このプロバイダーは入力システム プロファイルの <em sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="18">Pointer</em> セクションで設定できます:</p>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="20"><img src="../../Documentation/Images/Input/GazeConfigurationEntrypoint.png" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="20" alt="Gaze Configuration Entrypoint"></p>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="22">他の入力ソースと同様に、GazeProvider はポインター <a href="../Architecture/InputSystem/ControllersPointersAndFocus.html" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="22">(ポインターに関する情報はこのドキュメントをご覧ください)</a> を使用してシーン内のオブジェクトとインタラクションします。
+GazeProvider の場合、ポインターは <code sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="23">InternalGazePointer</code> によって実装され、プロファイルによって設定されていません。</p>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="25"><em sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="25">Gaze Provider Type</em> を <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGazeProvider.html" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="25">IMixedRealityGazeProvider</a> と <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityEyeGazeProvider.html" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="25">IMixedRealityEyeGazeProvider</a> を実装する別のクラスを参照するように変更することで、標準の GazeProvider を別の実装に置き換えることができます。
+GazeProvider の再実装は簡単ではないので、通常は標準の GazeProvider を使う (バグを発見した場合は問題を報告する) ことをお勧めします。</p>
+<h3 id="プラットフォームが提供する代替のゲイズ姿勢" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="28">プラットフォームが提供する代替のゲイズ姿勢</h3>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="30">デフォルトでは、MRTK GazeProvider はカメラのフレームの中心をゲイズの原点として使います。HoloLens 2 上の Windows Mixed Reality のようないくつかのプラットフォームは、代わりとして定義されたゲイズの姿勢を提供します。これはゲイズの設定の  <code sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="30">Use Head Gaze Override</code> 設定によって管理されます。これが有効な場合、代わりのゲイズが使われます。無効な場合、デフォルトであるフレーム中心の原点が使用されます。特に、HoloLens 2 では、頭を使って狙いをつけるのに快適になるよう、ゲイズの角度は数度上を向けられています。</p>
+<h2 id="使用方法" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="32">使用方法</h2>
+<h3 id="現在の-gaze-target-ゲイズ-ターゲット-を取得する方法" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="34">現在の gaze target (ゲイズ ターゲット) を取得する方法</h3>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="36">このサンプルは、ユーザーのゲイズのターゲットとなっている現在のゲームオブジェクトを取得する方法を示します。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="38">void LogCurrentGazeTarget()
+{
+    if (CoreServices.InputSystem.GazeProvider.GazeTarget)
+    {
+        Debug.Log(&quot;User gaze is currently over game object: &quot;
+            + CoreServices.InputSystem.GazeProvider.GazeTarget)
+    }
+}
+</code></pre>
+<h3 id="現在のゲイズの方向と原点を取得する方法" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="49">現在のゲイズの方向と原点を取得する方法</h3>
+<p sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="51">このサンプルは、ユーザのゲイズの方向と原点 (ゲイズの方向がどの点から出ているか) を表す Vector3 を取得する方法を示します。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/Input/Gaze.md" sourcestartlinenumber="53">void LogGazeDirectionOrigin()
+{
+    Debug.Log(&quot;Gaze is looking in direction: &quot;
+        + CoreServices.InputSystem.GazeProvider.GazeDirection);
+
+    Debug.Log(&quot;Gaze origin is: &quot;
+        + CoreServices.InputSystem.GazeProvider.GazeOrigin);
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Input/Gaze.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

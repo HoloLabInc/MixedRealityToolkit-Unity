@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>How to configure Oculus Quest in MRTK using the XRSDK pipeline | Mixed Reality Toolkit Documentation </title>
+    <title>XRSDK &#12497;&#12452;&#12503;&#12521;&#12452;&#12531;&#12434;&#20351;&#12387;&#12383; MRTK &#12391;&#12398; Oculus Quest &#12398;&#35373;&#23450;&#26041;&#27861; | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="How to configure Oculus Quest in MRTK using the XRSDK pipeline | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="XRSDK &#12497;&#12452;&#12503;&#12521;&#12452;&#12531;&#12434;&#20351;&#12387;&#12383; MRTK &#12391;&#12398; Oculus Quest &#12398;&#35373;&#23450;&#26041;&#27861; | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
@@ -89,121 +89,122 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="how-to-configure-oculus-quest-in-mrtk-using-the-xrsdk-pipeline">How to configure Oculus Quest in MRTK using the XRSDK pipeline</h1>
+<h1 id="xrsdk-パイプラインを使った-mrtk-での-oculus-quest-の設定方法">XRSDK パイプラインを使った MRTK での Oculus Quest の設定方法</h1>
 
-<p>A <a href="https://www.oculus.com/quest/">Oculus Quest</a> is required.</p>
-<p>MRTK's support for the Oculus Quest comes via two different sources, Unity's XR pipeline and the Oculus Integration Unity package. The <strong>Oculus XRSDK Data Provider</strong> enables the use
-of both sources and must be used to use MRTK on the Oculus Quest.</p>
-<p>The <a href="https://docs.unity3d.com/Manual/XR.html">Unity's XR Pipeline</a> enables the use of Oculus Touch controllers and head tracking with the Oculus Quest.
-This pipeline is the standard for developing XR applications in Unity 2019.3 and beyond. To use this pipeline, make sure that you using <strong>Unity 2019.3 or newer</strong>.</p>
-<p>The <a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">Oculus Integration Unity package</a> allows for the use of <strong>hand tracking</strong> with the Oculus Quest.
-This data provider does <strong>NOT</strong> use Unity's <strong>XR Pipeline</strong> or <strong>Legacy XR Pipeline</strong>, but because controllers and headtracking are handeled by the Unity's XR Pipeline, the steps in
-<strong>Setting up project for the Oculus Quest</strong> must be followed to ensure that you are using the <strong>XR Pipeline</strong> and not the to-be-deprecated <strong>Legacy XR Pipeline</strong>.</p>
-<h2 id="setting-up-project-for-the-oculus-quest">Setting up project for the Oculus Quest</h2>
+<p><a href="https://www.oculus.com/quest/">Oculus Quest</a> が必要です。</p>
+<p>MRTK による Oculus Quest のサポートは 2 つの異なるソースを介して提供されています。それは Unity の XR パイプラインと Oculus Integration Unity パッケージです。
+<strong>Oculus XRSDK Data Provider</strong> を利用することで両方のソースを利用することができ、Oculus Quest で MRTK を利用するにはこれを使う必要があります。</p>
+<p><a href="https://docs.unity3d.com/Manual/XR.html">Unity の XR Pipeline</a> によって、Oculus Touch コントローラーと Oculus Quest のヘッド トラッキングが利用可能です。
+このパイプラインは Unity 2019.3 以降で XR アプリケーションを開発するための標準となっています。このパイプラインを使うには、<strong>Unity 2019.3 以降</strong> を使っていることを確認してください。</p>
+<p><a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">Oculus Integration Unity パッケージ</a> によって、Oculus Quest での <strong>ハンド トラッキング</strong> が利用できます。
+このデータ プロバイダーは Unity の <strong>XR Pipeline</strong> や <strong>Legacy XR Pipeline</strong> は利用<strong>しません</strong>が、コントローラーとヘッド トラッキングは Unity の XR Pipeline で処理されます。
+そのため、廃止予定の <strong>Legacy XR Pipeline</strong> ではなく <strong>XR Pipeline</strong> を使っていることを確認するために <strong>Oculus Quest のためのプロジェクトのセットアップ</strong> のステップを実行する必要があります。</p>
+<h2 id="oculus-quest-のためのプロジェクトのセットアップ">Oculus Quest のためのプロジェクトのセットアップ</h2>
 <ol>
-<li><p>Follow <a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/">these steps</a> to ensure that your project is ready to deploy on Oculus Quest.</p>
+<li><p><a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/">これらのステップ</a> にしたがって、プロジェクトを Oculus Quest へデプロイする準備ができていることを確認してください。</p>
 </li>
-<li><p>Ensure that <a href="https://developer.oculus.com/documentation/native/android/mobile-device-setup/">developer mode</a> is enabled on your device. Installing the Oculus ADB Drivers is optional.</p>
+<li><p>デバイスで<a href="https://developer.oculus.com/documentation/native/android/mobile-device-setup/">開発者モード</a>が有効化されていることを確認してください。Oculus ADB Drivers のインストールはオプションです。</p>
 </li>
 </ol>
-<h2 id="setting-up-the-xr-pipeline-for-oculus-quest">Setting up the XR Pipeline for Oculus Quest</h2>
+<h2 id="oculus-quest-のための-xr-pipeline-のセットアップ">Oculus Quest のための XR Pipeline のセットアップ</h2>
 <ol>
-<li><p>Ensure that the <strong>Oculus XR Plugin</strong> is installed under <strong>Window --&gt; Package Manager</strong></p>
+<li><p><strong>Window --&gt; Package Manager</strong> 内で <strong>Oculus XR Plugin</strong> がインストールされていることを確認してください。</p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusXRPluginPackage.png" alt="OculusXRPluginPackage"></p>
 </li>
-<li><p>Make sure that the Oculus Plug-in Provider is included in your project by going to <strong>Edit --&gt; Project Settings --&gt; XR Plug-in Management --&gt; Plug-in Providers</strong></p>
+<li><p><strong>Edit --&gt; Project Settings --&gt; XR Plug-in Management --&gt; Plug-in Providers</strong> を開いて、プロジェクトに Oculus Plug-in Provider が含まれていることを確認してください。</p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusPluginProvider.png" alt="OculusPluginProvider"></p>
 </li>
 </ol>
-<h2 id="setting-up-the-oculus-integration-unity-package-to-enable-handtracking">Setting up the Oculus Integration Unity package to enable handtracking</h2>
+<h2 id="ハンドトラッキングを有効化するための-oculus-integration-unity-パッケージのセットアップ">ハンドトラッキングを有効化するための Oculus Integration Unity パッケージのセットアップ</h2>
 <ol>
-<li><p>Download and import <a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">Oculus Integration</a> from the Unity Asset Store. The latest version tested to
-work is 20.0.0. Older versions can be found from this <a href="https://developer.oculus.com/downloads/package/unity-integration-archive/">archive</a></p>
+<li><p>Unity Asset Store から <a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">Oculus Integration</a> をダウンロードしインポートします。
+動作確認されている最新バージョンは 20.0.0 です。古いバージョンは<a href="https://developer.oculus.com/downloads/package/unity-integration-archive/">アーカイブ</a>にあります。</p>
 </li>
-<li><p>Navigate to Mixed Reality Toolkit &gt; Utilities &gt; Oculus &gt; Integrate Oculus Integration Unity Modules. Doing this will update the asmdefs with definitions and references needed for the
-relevant Oculus Quest code to function. It will also update the csc file to filter out the obsolete warnings produced by the Oculus Integration assets. The MRTK repo contains a csc file that converts warnings to errors, this conversion halts the MRTK-Quest configuration process.</p>
+<li><p>Mixed Reality Toolkit &gt; Utilities &gt; Oculus &gt; Integrate Oculus Integration Unity Modules を選択します。これを行うことで、関連する Oculus Quest のコードを機能させるために必要な asmdef の定義と参照を更新します。
+また、Oculus Integration アセットが出す Obsolete (廃止予定) の Warning をフィルタリングするため、csc ファイルの更新も行います。MRTK のリポジトリには Warning を Error に変換する csc ファイルが含まれており、この変換で MRTK-Quest の設定プロセスが停止します。</p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusIntegrationAsmdef.png" alt="OculusIntegrationAsmdef"></p>
 </li>
-<li><p>In the imported Oculus folder (It should be found at Assets/Oculus), there is a scriptable object called OculusProjectConfig. In that config file, you need to set HandTrackingSupport
-to &quot;Controllers and Hands&quot;.</p>
+<li><p>インポートされた Oculus フォルダ (Assets/Oculus にあるはずです) の中に、OculusProjectConfig というスクリプタブル オブジェクトがあります。
+この設定ファイルで、HandTrackingSupport を &quot;Controllers and Hands&quot; に設定する必要があります。</p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusIntegrationControllerAndHands.png" alt="OculusIntegrationControllerAndHands"></p>
 </li>
 </ol>
-<h2 id="setting-up-the-scene">Setting up the scene</h2>
+<h2 id="シーンのセットアップ">シーンのセットアップ</h2>
 <ol>
-<li>Create a new Unity scene or open a pre-existing scene like HandInteractionExamples</li>
-<li>Add MRTK to the scene by navigating to <strong>Mixed Reality Toolkit</strong> &gt; <strong>Add to Scene and Configure</strong></li>
+<li>新しい Unity シーンを作成するか、HandInteractionExamples のような既存のシーンを開きます</li>
+<li><strong>Mixed Reality Toolkit</strong> &gt; <strong>Add to Scene and Configure</strong> を選択し、シーンに MRTK を追加します</li>
 </ol>
-<h2 id="using-the-oculus-xrsdk-data-provider">Using the Oculus XRSDK Data Provider</h2>
+<h2 id="oculus-xrsdk-data-provider-の利用">Oculus XRSDK Data Provider の利用</h2>
 <ol>
-<li>Configure your profile to use the <strong>Oculus XRSDK Data Provider</strong>
+<li><strong>Oculus XRSDK Data Provider</strong> を使ってプロファイルを設定します
 <ul>
-<li><p>If not intending to modify the configuration profiles</p>
+<li><p>設定プロファイルを変更するつもりがない場合</p>
 <ul>
-<li>Change your profile to DefaultXRSDKInputSystemProfile and go to <a href="OculusQuestMRTK.html#build-and-deploy-your-project-to-oculus-quest">Build and deploy your project to Oculus Quest</a></li>
+<li>プロファイルを DefaultXRSDKInputSystemProfile に変更し、<a href="OculusQuestMRTK.html#build-and-deploy-your-project-to-oculus-quest">プロジェクトのビルドと Oculus Quest へのデプロイ</a> を行います</li>
 </ul>
 </li>
-<li><p>Otherwise follow the following:</p>
+<li><p>変更する場合は、以下を実行します</p>
 <ul>
-<li>Select the MixedRealityToolkit game object in the hierarchy and select <strong>Copy and Customize</strong> to clone the default mixed reality profile.</li>
+<li>ヒエラルキーで MixedRealityToolkit ゲーム オブジェクトを選択し、<strong>Copy and Customize</strong> を選択してデフォルトの Mixed Reality プロファイルをクローンします。</li>
 </ul>
 <p><img src="../../Documentation/Images/CrossPlatform/CloneProfile.png" alt="CloneProfile"></p>
 <ul>
-<li>Select the <strong>Input</strong> Configuration Profile</li>
+<li><strong>Input</strong> の設定プロファイルを選択します。</li>
 </ul>
 <p><img src="../../Documentation/Images/CrossPlatform/InputConfigurationProfile.png" alt="InputConfigurationProfile"></p>
 <ul>
-<li>Select <strong>Clone</strong> in the input system profile to enable modification.</li>
+<li>Input System プロファイルで <strong>Clone</strong> を選択し、変更可能にします。</li>
 </ul>
 <p><img src="../../Documentation/Images/CrossPlatform/CloneInputSystemProfile.png" alt="CloneInputSystemProfile"></p>
 <ul>
-<li>Open the <strong>Input Data Providers</strong> section, select <strong>Add Data Provider</strong> at the top, and new data provider will be added at the end of the list.  Open the new data provider and set the <strong>Type</strong> to <strong>Microsoft.MixedReality.Toolkit.XRSDK.Oculus &gt; OculusXRSDKDeviceManager</strong></li>
+<li><strong>Input Data Providers</strong> セクションを開き、一番上の <strong>Add Data Provider</strong> を選択すると、新しいデータ プロバイダーがリストの最後に追加されます。新しいデータプロバイダーを開き、<strong>Type</strong> を <strong>Microsoft.MixedReality.Toolkit.XRSDK.Oculus &gt; OculusXRSDKDeviceManager</strong> に設定します。</li>
 </ul>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusAddDataXRSDKProvider.png" alt="OculusAddXRSDKDataProvider"></p>
 </li>
-<li><p>You can verify that the Oculus Controllers are detected by</p>
+<li><p>Oculus Controller が認識されることを確認します。</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="build-and-deploy-your-project-to-oculus-quest">Build and deploy your project to Oculus Quest</h2>
+<p><a name="build-and-deploy-your-project-to-oculus-quest"></a></p>
+<h2 id="プロジェクトのビルドと-oculus-quest-へのデプロイ">プロジェクトのビルドと Oculus Quest へのデプロイ</h2>
 <ol>
-<li><p>Plug in your Oculus Quest via a USB 3.0 -&gt; USB C cable</p>
+<li><p>Oculus Quest を USB 3.0 -&gt; USB C ケーブルで接続します</p>
 </li>
-<li><p>Navigate to <strong>File &gt; Build Settings</strong></p>
+<li><p><strong>File &gt; Build Settings</strong> を開きます</p>
 </li>
-<li><p>Change the deployment to <strong>Android</strong></p>
+<li><p>デプロイメントを <strong>Android</strong> へと変更します</p>
 </li>
-<li><p>Ensure that the Oculus Quest is selected as the applicable run device</p>
+<li><p>対象の Run Device (実行デバイス) として Oculus Quest が選択されていることを確認します</p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusRunDevice.png" alt="OculusRunDevice"></p>
 </li>
-<li><p>Select Build and Run</p>
+<li><p>Build And Run を選択します</p>
 <ul>
-<li>You will likely encounter the following set of build errors when you select <em>Build and Run</em> the first time. You should be able to successfully deploy upon selecting <em>Build and Run</em> again.</li>
+<li>初めて <em>Build And Run</em> を選択した際は以下のようなビルド エラーが発生する可能性があります。再度 <em>Build And Run</em> を選択するとデプロイに成功するはずです。</li>
 </ul>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusExpectedBuildErrors.png" alt="OculusExpectedBuildErrors"></p>
 </li>
-<li><p>Accept the <em>Allow USB Debugging</em> prompt from inside the quest</p>
+<li><p>Quest 内で <em>USB デバッグの許可</em> プロンプトを承認します</p>
 </li>
-<li><p>See your scene inside the Oculus Quest</p>
+<li><p>Oculus Quest 内で作成したシーンが表示されます</p>
 </li>
 </ol>
-<h2 id="removing-oculus-integration-from-the-project">Removing Oculus Integration from the Project</h2>
+<h2 id="oculus-integration-のプロジェクトからの削除">Oculus Integration のプロジェクトからの削除</h2>
 <ol>
-<li>Navigate to the Mixed Reality Toolkit &gt; Oculus &gt; Separate Oculus Integration Unity Modules
+<li>Mixed Reality Toolkit &gt; Oculus &gt; Separate Oculus Integration Unity Modules を選択します
 <img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusSeparationAsmdef.png" alt="OculusSeparationAsmdef"></li>
-<li>Let Unity refresh as references in the Microsoft.MixedReality.Toolkit.Providers.Oculus.asmdef and other files are modified in this step</li>
-<li>Close Unity</li>
-<li>Close Visual Studio, if it's open</li>
-<li>Open File Explorer and navigate to the root of the MRTK Unity project</li>
-<li>Delete the UnityProjectName/Library directory</li>
-<li>Delete the UnityProjectName/Assets/Oculus directory</li>
-<li>Delete the UnityProjectName/Assets/Oculus.meta file</li>
-<li>Reopen Unity</li>
+<li>このステップで Microsoft.MixedReality.Toolkit.Providers.Oculus.asmdef や他のファイルの参照が変更されるので、Unity のリフレッシュを待ちます</li>
+<li>Unity を閉じます</li>
+<li>Visual Studio が開いている場合は閉じます</li>
+<li>File Explorer を開き、MRTK Unity プロジェクトのルート フォルダを開きます</li>
+<li>UnityProjectName/Library ディレクトリを削除します</li>
+<li>UnityProjectName/Assets/Oculus ディレクトリを削除します</li>
+<li>UnityProjectName/Assets/Oculus.meta ファイルを削除します</li>
+<li>再度 Unity を開きます</li>
 </ol>
-<h2 id="common-errors">Common errors</h2>
-<h3 id="quest-not-recognized-by-unity">Quest not recognized by Unity</h3>
-<p>Make sure your Android paths are properly configured. If you continue to encounter problems, follow this <a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/#install-android-tools">guide</a></p>
+<h2 id="よくあるエラー">よくあるエラー</h2>
+<h3 id="quest-が-unity-に認識されない">Quest が Unity に認識されない</h3>
+<p>Android のパスが適切に設定されていることを確認してください。引き続き問題が発生する場合は、こちらの<a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/#install-android-tools">ガイド</a>に従ってください。</p>
 <p><strong>Edit &gt; Preferences &gt; External Tools &gt; Android</strong></p>
 <p><img src="../../Documentation/Images/CrossPlatform/OculusQuest/AndroidToolsConfig.png" alt="AndroidToolsConfig"></p>
 </article>

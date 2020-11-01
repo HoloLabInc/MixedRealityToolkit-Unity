@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MRTK project configuration dialog | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MRTK project configuration dialog | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mrtk-project-configuration-dialog" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="1">MRTK project configuration dialog</h1>
+
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="3">The MRTK configuration dialog is displayed when Unity loads a project and it is determined that one or more configuration options needs the attention of the developer.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="5"><img src="Images/ConfigurationDialog/ConfigurationDialogHeader.png" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="5" alt="Apply Later Ignore"></p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="7">To apply the changes, click the <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="7">Apply</strong> button. The <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="7">Later</strong> button will defer the changes until the project is reloaded at a future time.</p>
+<div class="NOTE" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="9">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="10">The configuration dialog will reappear if one or more of the recommended settings is left unchecked. To prevent this from occurring, apply the desired options, then relaunch the dialog via  <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="10">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="10">Utilities</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="10">Configure Unity Project</strong> and click <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="10">Ignore</strong>. This will prevent the configuration dialog from reappearing automatically.</p>
+</div>
+<h2 id="common-settings" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="12">Common settings</h2>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="14">All build targets share a collection of common options.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="16"><img src="Images/ConfigurationDialog/ConfigurationDialogCommonSettings.png" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="16" alt="Common Settings"></p>
+<h3 id="force-text-asset-serialization-and-enable-visible-meta-files" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="18">Force text asset serialization and Enable visible meta files</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="20">These settings help simplify working with Unity projects and source control systems (ex: Git).</p>
+<h3 id="enable-vr-supported" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="22">Enable VR supported</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="24"><strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="24">Unity 2018</strong></p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="26">Configures the Virtual Reality Supported and Virtual Reality SDK options in <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="26">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="26">XR Settings</strong>.</p>
+<h3 id="set-single-pass-instanced-rendering-path" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="28">Set Single Pass Instanced rendering path</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="30">Configures the <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="30">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="30">XR Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="30">Stereo Rendering Mode</strong> to <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="30">Single Pass Instanced</strong>.</p>
+<h3 id="set-default-spatial-awareness-layer" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="32">Set default Spatial Awareness layer</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="34">Registers Spatial Awareness as layer 31 to enable easy and consistent configuration of raycast and physics options.</p>
+<h3 id="audio-spatializer" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="36">Audio spatializer</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="38">Audio spatializers are the components that unlock the power of Spatial Sound and positional audio to make mixed reality experiences truly immersive.</p>
+<div class="NOTE" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="40">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="41">Setting the audio spatializer to None will disable positional audio features.</p>
+</div>
+<h4 id="common-spatializers" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="43">Common spatializers</h4>
+<ul sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="45">
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="45">Microsoft Spatializer</li>
+</ul>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="47">Microsoft provided spatializer that supports utilization of hardware acceleration on HoloLens 2.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="49">This spatializer is available via <a href="https://www.nuget.org/packages/Microsoft.SpatialAudio.Spatializer.Unity/" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="49">NuGet</a> and <a href="https://github.com/microsoft/spatialaudio-unity" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="49">GitHub</a>.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="51">More details on Microsoft Spatializer can be found in the <a href="https://docs.microsoft.com/windows/mixed-reality/spatial-sound-in-unity" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="51">Spatial Sound documentation</a>.</p>
+<ul sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="53">
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="53">MS HRTF Spatializer</li>
+</ul>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="55">Microsoft Windows spatializer that is provided by Unity as part of the Windows Mixed Reality and Windows XR Platform packages.</p>
+<ul sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="57">
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="57">Resonance Audio</li>
+</ul>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="59">A cross platform spatializer from Google that is provided by Unity.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="61">More information can be found on the <a href="https://resonance-audio.github.io/resonance-audio/develop/unity/getting-started" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="61">Resonance Audio documentation</a> site.</p>
+<h2 id="universal-windows-platform-settings" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="63">Universal Windows Platform settings</h2>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="65"><img src="Images/ConfigurationDialog/ConfigurationDialogUWPSettings.png" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="65" alt="UWP Settings"></p>
+<h3 id="enable-msbuild-for-unity" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="67">Enable MSBuild for Unity</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="69"><strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="69">Unity 2019.2 and earlier</strong></p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="71">MSBuild for Unity is a component that enables automatic restoring of specific NuGet packages. In this version, the <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="71">Microsoft.Windows.MixedReality.DotNetWinRT</strong> package will be installed after enabling MSBuild for Unity.</p>
+<h3 id="uwp-capabilities" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="73">UWP Capabilities</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="75">Enables specific application capabilities for Universal Windows Platform application. These capabilities enable the platform to inform and request permission to enable specific functionality.</p>
+<ul sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="77">
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="77"><p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="77">Microphone</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="79">Enables capturing sound via the microphone.</p>
+</li>
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="81"><p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="81">Internet Client</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="83">Enables support for accessing resources on the internet.</p>
+</li>
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="85"><p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="85">Spatial Perception</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="87">Enables support for using the real-world environment.</p>
+</li>
+<li sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="89"><p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="89">Eye Gaze</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="91"><strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="91">Unity 2019.3 and newer</strong></p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="93">Enables support for tracking the user's eye gaze.</p>
+</li>
+</ul>
+<h3 id="avoid-unity-playersettingsgraphicsjob-crash" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="95">Avoid Unity 'PlayerSettings.graphicsJob' crash</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="97"><strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="97">Unity 2019.3 and newer</strong></p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="99">In the latest version of Unity 2019, when &quot;Graphics Jobs&quot; is enabled, the app will crash when deployed to a HoloLens 2.
+This setting is enabled by default in Unity - while this bug exists (see [Unity bug]
+(<a href="https://issuetracker.unity3d.com/issues/enabling-graphics-jobs-in-2019-dot-3-x-results-in-a-crash-or-nothing-rendering-on-hololens-2" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="101">https://issuetracker.unity3d.com/issues/enabling-graphics-jobs-in-2019-dot-3-x-results-in-a-crash-or-nothing-rendering-on-hololens-2</a>)),
+the configurator will default to setting Graphics Jobs to 'false' (thus allowing apps deployed to HoloLens 2 not to crash).</p>
+<h2 id="android-settings" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="104">Android settings</h2>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="106">Configuration settings to support AR applications on Android powered devices.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="108"><img src="Images/ConfigurationDialog/ConfigurationDialogAndroidSettings.png" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="108" alt="Android Settings"></p>
+<h3 id="disable-multi-threaded-rendering" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="110">Disable Multi-Threaded Rendering</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="112">Disables <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="112">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="112">Other Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="112">Multithreaded Rendering</strong> as required by Android's AR support.</p>
+<h3 id="set-minimum-api-level" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="114">Set Minimum API Level</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="116">Sets the value of <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="116">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="116">Other Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="116">Minimum API Level</strong> to enforce operating system requirements for AR applications.</p>
+<h2 id="ios-settings" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="118">iOS settings</h2>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="120">Configuration settings to support AR applications on iOS powered devices.</p>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="122"><img src="Images/ConfigurationDialog/ConfigurationDialogiOSSettings.png" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="122" alt="iOS Settings"></p>
+<h3 id="set-required-os-version" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="124">Set Required OS Version</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="126">Sets the value of <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="126">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="126">Other Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="126">Target minimum iOS Version</strong> to enforce operating system requirements for AR applications.</p>
+<h3 id="set-required-architecture" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="128">Set Required Architecture</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="130">Sets the value of <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="130">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="130">Other Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="130">Architecture</strong> to enforce platform requirements for AR applications.</p>
+<h3 id="set-camera-usage-descriptions" sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="132">Set Camera Usage Descriptions</h3>
+<p sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="134">Sets the value of <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="134">Player Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="134">Other Settings</strong> &gt; <strong sourcefile="../../Documentation/MRTK_Configuration_Dialog.md" sourcestartlinenumber="134">Camera Usage Description</strong> used to request permission to use the device's camera.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/MRTK_Configuration_Dialog.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Experimental features | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Experimental features | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="experimental-features" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="1">Experimental features</h1>
+
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="3">Some features the MRTK team works on appear to have a lot of initial value even if we haven’t fully fleshed out the details. For these types of features, we want the community to get a chance to see them early. Because they are early in the cycle, we label them as experimental to indicate that they are still evolving, and subject to change over time.</p>
+<h2 id="what-to-expect-from-an-experimental-feature" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="5">What to expect from an experimental feature</h2>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="7">If a component is marked experimental you can expect the following:</p>
+<ul sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="9">
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="9">An example scene demonstrating usage, located under <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="9">MRTK/Examples/Experimental</code> sub-folder</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="10">Experimental features may not have docs.</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="11">They probably don't have tests.</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="12">Experimental features are subject to change.</li>
+</ul>
+<h2 id="experimental-feature-guidelines" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="14">Experimental feature guidelines</h2>
+<h3 id="experimental-code-should-live-in-a-separate-folder" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="16">Experimental code should live in a separate folder</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="18">Experimental code should go into a top-level experimental folder followed by the experimental feature name. For example, if trying to contribute a new feature FooBar, put code in the following:</p>
+<ul sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="20">
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="20">Example scenes, scripts go into <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="20">MRTK/Examples/Experimental/FooBar/</code></li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="21">Component scripts, prefabs go into <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="21">MRTK/SDK/Experimental/FooBar/</code></li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="22">Component inspectors go into <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="22">MRTK/SDK/Inspectors/Experimental/FooBar</code></li>
+</ul>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="24">When using sub-folders under the experimental feature name, try to mirror the same folder structure of MRTK.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="26">For example, solvers would go under
+<code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="27">MRTK/SDK/Experimental/FooBar/Features/Utilities/Solvers/FooBarSolver.cs</code></p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="29">Keep scenes in a scene folder near the top: <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="29">MRTK/Examples/Experimental/FooBar/Scenes/FooBarExample.unity</code></p>
+<div class="NOTE" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="31">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="32">We considered not having a single Experimental root folder and instead putting Experimental under say <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="32">MRTK/Examples/HandTracking/Scenes/Experimental/HandBasedMenuExample.unity</code>. We decided to go with folders at the base to make the experimental features easier to discover.</p>
+</div>
+<h3 id="experimental-code-should-be-in-a-special-namespace" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="34">Experimental code should be in a special namespace</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="36">Ensure that the experimental code lives in an experimental namespace that matches the non-experimental location. For example,
+if your component is part of solvers at <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="37">Microsoft.MixedReality.Toolkit.Utilities.Solvers</code>, its namespace should be <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="37">Microsoft.MixedReality.Toolkit.Experimental.Utilities.Solvers</code>.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="39">See <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/4532" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="39">this PR</a> for an example.</p>
+<h3 id="experimental-features-should-have-an-experimental-attribute" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="41">Experimental features should have an [Experimental] attribute</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="43">Add an <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="43">[Experimental]</code> attribute above one of your fields to have a small dialog appear in the component editor that mentions your feature is experimental and subject to significant changes.</p>
+<h3 id="menus-for-experimental-features-should-go-under-experimental-sub-menu" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="45">Menus for experimental features should go under &quot;Experimental&quot; sub-menu</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="47">Ensure that experimental features are under &quot;experimental&quot; sub-menus when adding commands to menus in the editor. Here are a few examples:</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="49">Adding a top-level menu command:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="51">[MenuItem(&quot;Mixed Reality Toolkit/Experimental/MyCommand&quot;)]
+public static void MyCommand()
+</code></pre>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="56">Adding a component menu:</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="58">[AddComponentMenu(&quot;MRTK/Experimental/MyCommand&quot;)]
+</code></pre>
+<h2 id="documentation" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="62">Documentation</h2>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="64">Follow these steps to add documentation for your experimental feature:</p>
+<ol sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66">
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66"><p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66">Any documentation for an experimental feature should go in a <code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66">README.md</code> file in the experimental folder. For example, <a href="../../Assets/MRTK/SDK/Experimental/PulseShader/README.html" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66"><code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="66">MRTK/SDK/Experimental/PulseShader/README.md</code></a>.</p>
+</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68"><p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68">Under <em sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68">Feature Overviews</em> Add a link in the <em sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68">Experimental</em> section at <a href="../toc.html" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68"><code sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="68">Documentation/toc.yml</code></a>.</p>
+</li>
+</ol>
+<h3 id="minimize-impact-to-mrtk-code" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="70">Minimize impact to MRTK code</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="72">While your MRTK change might get your experiment to work, it could impact other people in ways you do not expect.
+Any regressions you make to the MRTK core code would result in your pull request getting reverted.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="75">Aim to have zero changes in folders other than experimental folders. Here is a list of folders that can have experimental changes:</p>
+<ul sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="77">
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="77">MRTK/SDK/Experimental</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="78">MRTK/SDK/Inspectors/Experimental</li>
+<li sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="79">MRTK/Examples/Experimental</li>
+</ul>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="81">Changes outside of these folders should be treated very carefully. If your experimental feature must include changes to MRTK core code, consider splitting out MRTK changes into a separate pull request that includes tests and documentation.</p>
+<h3 id="using-your-experimental-feature-should-not-impact-peoples-ability-to-use-core-controls" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="83">Using your experimental feature should not impact people's ability to use core controls</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="85">Most people use core UX components like the button, ManipulationHandler and Interactable very frequently. They will likely not use your experimental feature if it prevents them from using buttons.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="87">Using your component should not break buttons, ManipulationHandler, BoundingBox, or interactable.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="89">For example, in <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/pull/6001" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="89">this ScrollableObjectCollection PR</a>, adding a ScrollableObjectCollection caused people to not be able to use the HoloLens button prefabs. Even though this was not caused by a bug in the PR (but rather exposed an existing bug), it prevented the PR from getting checked in.</p>
+<h3 id="provide-an-example-scene-that-demonstrates-how-to-use-the-feature" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="91">Provide an example scene that demonstrates how to use the feature</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="93">People need to see how to use your feature, and how to test it.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="95">Provide an example under MRTK/Examples/Experimental/YOUR_FEATURE</p>
+<h3 id="minimize-user-visible-flaws-in-experimental-features" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="97">Minimize user visible flaws in experimental features</h3>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="99">Others will not use the experimental feature if it does not work, it will not graduate to a feature.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="101">Test your example scene on your target platform, make sure it works as expected. Make sure your feature also works in editor, so people can rapidly iterate and see your feature even if they don’t have the target platform.</p>
+<h2 id="graduating-experimental-code-into-mrtk-code" sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="103">Graduating experimental code into MRTK code</h2>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="105">If a feature ends up seeing quite a lot of use, then we should graduate it into core MRTK code. To do this, the feature should have tests, documentation, and an example scene.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="107">When you are ready to graduate the feature MRTK, create an issue to check in your PR against. The PR should include all the things needed to make this a core feature: tests, documentation, and an example scene showing usage.</p>
+<p sourcefile="../../Documentation.ja/Contributing/ExperimentalFeatures.md" sourcestartlinenumber="109">Also, don’t forget to update the namespaces to remove the “Experimental” subspace.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Contributing/ExperimentalFeatures.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
