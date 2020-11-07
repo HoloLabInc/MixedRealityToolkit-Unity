@@ -15,6 +15,8 @@
 - Auto Constraint Selection (自動制約選択)
 - Manual Constraint Selection (手動制約選択)
 
+<a name="auto-constraint-selection"></a>
+
 ### Auto Constraint Selection (自動制約選択)
 
 <img src="../Documentation/Images/ConstraintManager/AutoSelection.png" width="600">
@@ -43,6 +45,8 @@ When enabling manual mode for the first time, constraint manager will populate t
 
 ### Remove Entry (項目の削除)
 This removes the entry from the manually selected list. Note that this option will not remove the constraint component from the game object. Constraint components always need to be removed manually to ensure not accidentally breaking any other component referring to this component.
+
+<a name="add-entry"></a>
 
 ### Add Entry (項目の追加)
 Add entry will open a dropdown showing all available constraint components that are not in the manual list yet. By clicking on any of the entries that component will be added to the manual constraint selection.
@@ -74,17 +78,17 @@ Specifies whether the constraint is used for near, far or both kinds of manipula
 * *Near*: Constraint will be used during near manipulation if selected.
 * *Far*: Constraint will be used during far manipulation if selected.
 
-### FaceUserConstraint
+### FaceUserConstraint (ユーザーのほうを向く制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FaceUser.gif" width="400">
 
 When this constraint is attached to an object, rotation will be limited so that object will always face the user. This is useful for slates or panels. The properties for `FaceUserConstraint` are as follows:
 
-#### Face away
+#### Face Away (向こうを向く)
 
-Object faces away from the user if true.
+True の場合、オブジェクトはユーザーの反対側を向きます。
 
-### FixedDistanceConstraint
+### FixedDistanceConstraint (固定距離制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedDistance.gif" width="400">
 
@@ -94,13 +98,13 @@ This constraint fixes the distance between the manipulated object and another ob
 
 This is the other transform that the manipulated object will have a fixed distance to. Defaults to the camera transform.
 
-### FixedRotationToUserConstraint
+### FixedRotationToUserConstraint (ユーザーに対する回転固定制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToUser.gif" width="400">
 
 This constraint fixes the relative rotation between the user and the manipulated object while it is being manipulated. This is useful for slates or panels as it ensures that the manipulated object always shows the same face to the user as it did at the start of manipulation. The `FixedRotationToUserConstraint` does not have any unique properties.
 
-### FixedRotationToWorldConstraint
+### FixedRotationToWorldConstraint (ワールドに対する回転固定制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToWorld.gif" width="400">
 
@@ -112,56 +116,56 @@ This constraint fixes the global rotation of the manipulated object while it is 
 
 When this constraint is attached to an object, no matter how far the object is from the user, it will maintain the same apparent size to the user (i.e. it will take up the same proportion of the user's field of view). This can be used to ensure that a slate or text panel remains readable while manipulating. The `MaintainApparentSizeConstraint` does not have any unique properties:
 
-### MoveAxisConstraint
+### MoveAxisConstraint (移動軸制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MoveAxis.gif" width="400">
 
-This constraint can be used to fix along which axes a manipulated object can be moved. This can be useful for manipulating objects over the surface of a plane, or along a line. The properties for `MoveAxisConstraint` are as follows:
+この制約は、操作されるオブジェクトが移動できる軸を固定するために使用できます。これは、平面の表面上や線に沿ってオブジェクトを移動させるのに便利です。`MoveAxisConstraint` のプロパティは以下の通りです。
 
-#### Constraint on movement
+#### Constraint On Movement (移動の制約)
 
-Specifies which axes to prevent movement on. By default, these axes will be global rather than local, but this can be changed below. Because this property is a flag, any number of options can be selected.
+移動を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。
 
-* *X Axis*: Movement along the x-axis is constrained if selected.
-* *Y Axis*: Movement along the y-axis is constrained if selected.
-* *Z Axis*: Movement along the z-axis is constrained if selected.
+* *X Axis (X 軸)*: 選択された場合、X 軸に沿った移動が制約されます。
+* *Y Axis (Y 軸)*: 選択された場合、Y 軸に沿った移動が制約されます。
+* *Z Axis (Z 軸)*: 選択された場合、Z 軸に沿った移動が制約されます。
 
-#### Use local space for constraint
+#### Use Local Space For Constraint (制約にローカル スペースを使う)
 
-Will constrain relative the manipulated object's local transform axes if true. False by default.
+True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。
 
-### RotationAxisConstraint
+### RotationAxisConstraint (回転軸制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_RotationAxis.gif" width="400">
 
-This constraint can be used to fix about which axes a manipulated object can be rotated. This can be useful for keeping a manipulated object upright, but still allowing y-axis rotations, for example. The properties for `RotationAxisConstraint` are as follows:
+この制約は、操作されるオブジェクトが回転できる軸を固定するために使用できます。例えば、操作されるオブジェクトを直立させたまま、Y 軸まわりの回転は許可したい場合などに便利です。 `RotationAxisConstraint` のプロパティは以下の通りです。
 
-#### Constraint on rotation
+#### Constraint On Rotation (回転の制約)
 
-Specifies which axes to prevent rotation about. By default, these axes will be global rather than local, but this can be changed below. Because this property is a flag, any number of options can be selected.
+回転を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。
 
-* *Y Axis*: Rotation about the y-axis is constrained if selected.
-* *Z Axis*: Rotation about the z-axis is constrained if selected.
-* *X Axis*: Rotation about the x-axis is constrained if selected.
+* *Y Axis (Y 軸)*: 選択された場合、Y 軸まわりの回転が制約されます。
+* *Z Axis (Z 軸)*: 選択された場合、Z 軸まわりの回転が制約されます。
+* *X Axis (X 軸)*: 選択された場合、X 軸まわりの回転が制約されます。
 
-#### Use local space for constraint
+#### Use Local Space For Constraint (制約にローカル スペースを使う)
 
-Will constrain relative the manipulated object's local transform axes if true. False by default.
+True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。
 
-### MinMaxScaleConstraint
+### MinMaxScaleConstraint (最小最大スケール制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MinMaxScale.gif" width="400">
 
-This constraint allows minimum and maximum values to be set for the scale of the manipulated object. This is useful for preventing users from scaling an object too small or too large. The properties for `MinMaxScaleConstraint` are as follows:
+この制約により、操作されるオブジェクトのスケールに最小値と最大値を設定することができます。これは、ユーザーがオブジェクトを小さくしすぎたり大きくしすぎたりするのを防ぐのに便利です。`MinMaxScaleConstraint` のプロパティは以下の通りです。
 
-#### Scale minimum
+#### Scale Minimum (最小スケール)
 
-The minimum scale value during manipulation.
+操作中の最小のスケール値です。
 
-#### Scale maximum
+#### Scale Maximum (最大スケール)
 
-The maximum scale value during manipulation.
+操作中の最大のスケール値です。
 
-#### Relative to initial state
+#### Relative To Initial State (初期値相対)
 
-If true, the values above will be interpreted as relative to the objects initial scale. Otherwise they will be interpreted as absolute scale values.
+True の場合、上の値はオブジェクトの初期値相対の値として解釈されます。そうでなければ、絶対的なスケール値として解釈されます。
