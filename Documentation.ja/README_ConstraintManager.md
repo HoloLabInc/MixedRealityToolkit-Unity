@@ -1,55 +1,58 @@
-# Constraint manager
+# Constraint Manager (コンストレイント マネージャー)
 
-The constraint manager allows to apply a set of constraint components to a transform. Components of type [`TransformConstraint`](xref:Microsoft.MixedReality.Toolkit.UI.TransformConstraint) that are attached to the game object can be taken into consideration.
-Per default, constraint manager will automatically collect all [constraint components](#transform-constraints) attached to the game object and apply them to processed transforms.
-However users can opt for configuring the list of applied constraints manually and allowing only a subset of attached constraints to be applied.
+コンストレイント マネージャー (制約マネージャー) を利用すると、Transform にコンストレイント コンポーネントのセットを適用することができます。GameObject にアタッチされている [`TransformConstraint`](xref:Microsoft.MixedReality.Toolkit.UI.TransformConstraint) 型のコンポーネントが対象となります。
+デフォルトでは、コンストレイント マネージャーは GameObject にアタッチされているすべての [コンストレイント コンポーネント](#transform-constraints) を自動的に集め、処理される Transform に適用します。
+しかしながら、適用される制約のリストを手動で設定し、アタッチされている制約の一部分だけが適用されるようにすることを選択することもできます。
 
-Currently the following MRTK UX elements are supporting constraint manager:
-- [Bounds control](README_BoundsControl.md)
-- [Object manipulator](README_ObjectManipulator.md)
+現在、以下の MRTK UX エレメントがコンストレイント マネージャーをサポートしています。
+- [Bounds Control](README_BoundsControl.md)
+- [Object Manipulator](README_ObjectManipulator.md)
 
 
 ## Inspector properties and fields
 
-Constraint manager can be operated in two modes: 
-- Auto constraint selection
-- Manual constraint selection
+コンストレイント マネージャーは2つのモードで動作します。
+- Auto Constraint Selection (自動制約選択)
+- Manual Constraint Selection (手動制約選択)
 
-### Auto constraint selection
+### Auto Constraint Selection (自動制約選択)
 
 <img src="../Documentation/Images/ConstraintManager/AutoSelection.png" width="600">
 
-The default mode of constraint manager, auto constraint selection, will provide a list of all attached constraint components as well as [go to buttons](#go-to-component) and an [add constraint button](#add-constraint-to-game-object).
+コンストレイント マネージャーのデフォルトのモードである自動制約選択は、すべてのアタッチされているコンストレイント コンポーネントのリスト、[移動ボタン](#go-to-component)、[制約追加ボタン](#add-constraint-to-game-object) を提供しています。
+
+<a name="add-constraint-to-game-object"></a>
+
+#### Add Constraint to GameObject (GameObject に制約を追加)
+
+このボタンでは、コンストレイント マネージャーのインスペクターから直接コンストレイント コンポーネントを追加することができます。プロジェクト内の全ての制約のタイプがここに表示されます。詳細については  [Transform 制約](#transform-constraints) をご覧ください。
+
+<a name="go-to-component"></a>
+
+#### Go to component (コンポーネントへ移動)
+
+オブジェクト上で見つかった全ての制約は *Go to component* ボタンとともにここに表示されます。このボタンを押すと、選択されたコンストレイント コンポーネントの設定ができるよう、そのコンポーネントまでスクロールします。
 
 
-#### Add constraint to game object
-
-This button allows a constraint component to be added directly from the constraint manager inspector. All constraint types in a project should be visible here. See [transform constraints](#transform-constraints) for more info.
-
-#### Go to component
-
-All constraints found on the object wil be listed here with a *Go to component* button. This button will cause the inspector to scroll to the selected constraint component so that it can be configured.
-
-
-### Manual constraint selection
+### Manual Constraint Selection (手動制約選択)
 
 <img src="../Documentation/Images/ConstraintManager/ManualSelection.png" width="600">
 
 If constraint manager is set to manual mode, only constraints that are linked in the constraint list are processed and applied to the transform. The list displayed will only show the user selected constraints as well as [go to buttons](#go-to-component) or options to remove or add entries.
 When enabling manual mode for the first time, constraint manager will populate the list will all available components as a starting point for selecting attached constraint components.
 
-### Remove entry
+### Remove Entry (項目の削除)
 This removes the entry from the manually selected list. Note that this option will not remove the constraint component from the game object. Constraint components always need to be removed manually to ensure not accidentally breaking any other component referring to this component.
 
-### Add entry
+### Add Entry (項目の追加)
 Add entry will open a dropdown showing all available constraint components that are not in the manual list yet. By clicking on any of the entries that component will be added to the manual constraint selection.
 
-### Add new constraint
+### Add New Constraint (新しい制約の追加)
 This option will add a component of the selected type to the game object and add the newly created constraint component to the manual constraint list.
 
 <a name="transform-constraints"></a>
 
-## Transform constraints
+## Transform Constraints (Transform 制約)
 
 Constraints can be used to limit manipulation in some way. For example, some applications may require rotation, but also require that the object remain upright. In this case, a `RotationAxisConstraint` can be added to the object and used to limit rotation to y-axis rotation. MRTK provides a number of constraints, all of which are described below.
 
