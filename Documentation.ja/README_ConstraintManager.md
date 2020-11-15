@@ -40,49 +40,49 @@
 
 <img src="../Documentation/Images/ConstraintManager/ManualSelection.png" width="600">
 
-If constraint manager is set to manual mode, only constraints that are linked in the constraint list are processed and applied to the transform. The list displayed will only show the user selected constraints as well as [go to buttons](#go-to-component) or options to remove or add entries.
-When enabling manual mode for the first time, constraint manager will populate the list will all available components as a starting point for selecting attached constraint components.
+コンストレイント マネージャーが手動モードに設定されている場合、制約リストでリンクされている制約のみが Transform に適用されます。表示されるリストには、ユーザーが選択した制約と[移動ボタン](#go-to-component)、項目の削除や追加のオプションが表示されます。
+はじめて手動モードを有効にした際、コンストレイント マネージャーはアタッチされたコンストレイント コンポーネントを選択する出発点として、すべての利用可能なコンポーネントのリストを生成します。
 
 ### Remove Entry (項目の削除)
-This removes the entry from the manually selected list. Note that this option will not remove the constraint component from the game object. Constraint components always need to be removed manually to ensure not accidentally breaking any other component referring to this component.
+手動で選択されたリストから項目を削除します。このオプションは GameObject からコンストレイント コンポーネントを削除しないことに注意してください。コンストレイント コンポーネントを参照している他のコンポーネントを誤って壊してしまわないようにするため、コンストレイント コンポーネントは常に手動で削除する必要があります。
 
 <a name="add-entry"></a>
 
 ### Add Entry (項目の追加)
-Add entry will open a dropdown showing all available constraint components that are not in the manual list yet. By clicking on any of the entries that component will be added to the manual constraint selection.
+Add Entry では手動のリストには入っていないすべての利用可能なコンストレイント コンポーネントがドロップダウンで表示されます。いずれかの項目をクリックすると、そのコンポーネントが手動制約選択に追加されます。
 
 ### Add New Constraint (新しい制約の追加)
-This option will add a component of the selected type to the game object and add the newly created constraint component to the manual constraint list.
+このオプションは、選択したタイプのコンポーネントを GameObject に追加し、新しく作成したコンストレイント コンポーネントを手動制約リストに追加します。
 
 <a name="transform-constraints"></a>
 
 ## Transform Constraints (Transform 制約)
 
-Constraints can be used to limit manipulation in some way. For example, some applications may require rotation, but also require that the object remain upright. In this case, a `RotationAxisConstraint` can be added to the object and used to limit rotation to y-axis rotation. MRTK provides a number of constraints, all of which are described below.
+制約は、何らかの方法で操作を制限するために使用することができます。例えば、アプリケーションによっては回転が必要な場合もありますが、オブジェクトが直立したままであることも必要な場合があります。このような場合には、`RotationAxisConstraint` をオブジェクトに追加して、回転を Y 軸回転に制限することができます。MRTK はいくつかの制約を提供しており、その全てを以下で説明します。
 
-It is also possible to define new constraints and use them to create unique manipulation behaviour that may be needed for some applications. To do this, create a script that inherits from [`TransformConstraint`](xref:Microsoft.MixedReality.Toolkit.UI.TransformConstraint) and implement the abstract `ConstraintType` property and the abstract `ApplyConstraint` method. Upon adding a new constraint to the object, it should constrain manipulation in the way that was defined. This new constraint should also show in the constraint manager [auto selection](#auto-constraint-selection) or [add entry](#add-entry) dropdown in manual mode.
+また、新しい制約を定義して、アプリケーションによっては必要となるかもしれない独自の操作動作を作成するために使用することも可能です。これを行うには、[`TransformConstraint`](xref:Microsoft.MixedReality.Toolkit.UI.TransformConstraint) を継承するスクリプトを作成し、抽象的な `ConstraintType` プロパティと抽象的な `ApplyConstraint` メソッドを実装します。オブジェクトに新しい制約を追加すると、定義された方法で操作を制約しなければなりません。この新しい制約は、コンストレイント マネージャーの [Auto Selection](#auto-constraint-select) や、手動モードの [Add Entry](#add-entry) ドロップダウンにも表示されなければなりません。
 
-All of the constraints provided by MRTK share the following properties:
+MRTK で提供される全ての制約は、以下のプロパティを共有しています。
 
-#### Hand Type
+#### Hand Type (ハンド タイプ)
 
-Specifies whether the constraint is used for one handed, two handed or both kinds of manipulation. Because this property is a flag, both options can be selected.
+制約を片手操作に使用するか、両手操作に使用するか、両方の種類の操作に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。
 
-* *One handed*: Constraint will be used during one handed manipulation if selected.
-* *Two handed*: Constraint will be used during two handed manipulation if selected.
+* *One Handed (片手)*: 選択されていると、片手操作の際に制約が使用されます。
+* *Two Handed (両手)*: 選択されていると、両手操作の際に制約が使用されます。
 
-#### Proximity Type
+#### Proximity Type (近接タイプ)
 
-Specifies whether the constraint is used for near, far or both kinds of manipulation. Because this property is a flag, both options can be selected.
+制約をニア マニピュレーションに使用するか、ファー マニピュレーションに使用するか、両方に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。
 
-* *Near*: Constraint will be used during near manipulation if selected.
-* *Far*: Constraint will be used during far manipulation if selected.
+* *Near (ニア)*: 選択されていると、ニア マニピュレーションの際に制約が使用されます。
+* *Far (ファー)*: 選択されていると、ファー マニピュレーションの際に制約が使用されます。
 
 ### FaceUserConstraint (ユーザーのほうを向く制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FaceUser.gif" width="400">
 
-When this constraint is attached to an object, rotation will be limited so that object will always face the user. This is useful for slates or panels. The properties for `FaceUserConstraint` are as follows:
+この制約がオブジェクトにアタッチされていると、オブジェクトが常にユーザーの方を向くように回転が制限されます。これはスレートやパネルに便利です。`FaceUserConstraint` のプロパティは以下の通りです。
 
 #### Face Away (向こうを向く)
 
@@ -92,29 +92,29 @@ True の場合、オブジェクトはユーザーの反対側を向きます。
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedDistance.gif" width="400">
 
-This constraint fixes the distance between the manipulated object and another object transform on manipulation start. This is useful for behaviour such as fixing the distance from the manipulated object to the head transform. The properties for `FixedDistanceConstraint` are as follows:
+この制約は、操作するオブジェクトの Transform と別のオブジェクトの Transform との間の操作開始時の距離を固定します。これは、例えば操作するオブジェクトから頭の Transform への距離を固定するのに便利です。`FixedDistanceConstraint` のプロパティは以下の通りです。
 
-#### Constraint transform
+#### Constraint Transform (制約 Transform)
 
-This is the other transform that the manipulated object will have a fixed distance to. Defaults to the camera transform.
+これは、操作するオブジェクトが距離を固定する対象となる Transform です。デフォルトではカメラの Transform です。
 
 ### FixedRotationToUserConstraint (ユーザーに対する回転固定制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToUser.gif" width="400">
 
-This constraint fixes the relative rotation between the user and the manipulated object while it is being manipulated. This is useful for slates or panels as it ensures that the manipulated object always shows the same face to the user as it did at the start of manipulation. The `FixedRotationToUserConstraint` does not have any unique properties.
+この制約は、操作している間のユーザーと操作するオブジェクトとの相対的な回転を固定します。この制約は、操作するオブジェクトが操作開始時と常に同じ面をユーザーに向けるようにするので、スレートやパネルに便利です。`FixedRotationToUserConstraint` には固有のプロパティはありません。
 
 ### FixedRotationToWorldConstraint (ワールドに対する回転固定制約)
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToWorld.gif" width="400">
 
-This constraint fixes the global rotation of the manipulated object while it is being manipulated. This can be useful in cases where no rotation should be imparted by manipulation. The `FixedRotationToWorldConstraint` does not have any unique properties:
+この制約は、操作している間の操作しているオブジェクトのグローバルな回転を固定します。これは、操作によって回転すべきではない場合に便利です。`FixedRotationToWorldConstraint` には固有のプロパティはありません。
 
 ### MaintainApparentSizeConstraint
 
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MaintainApparentSize.gif" width="400">
 
-When this constraint is attached to an object, no matter how far the object is from the user, it will maintain the same apparent size to the user (i.e. it will take up the same proportion of the user's field of view). This can be used to ensure that a slate or text panel remains readable while manipulating. The `MaintainApparentSizeConstraint` does not have any unique properties:
+この制約がオブジェクトにアタッチされていると、オブジェクトがユーザーからどれだけ離れていても、ユーザーに対して見た目上同じサイズを保ちます (すなわち、ユーザーの視野の同じ割合を占めます)。これは、スレートやテキスト パネルを操作している間、読みやすい状態を維持するために使うことができます。`MaintainApparentSizeConstraint` には固有のプロパティはありません。
 
 ### MoveAxisConstraint (移動軸制約)
 
