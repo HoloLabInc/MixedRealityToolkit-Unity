@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Constraint manager | Mixed Reality Toolkit Documentation </title>
+    <title>Constraint Manager (&#12467;&#12531;&#12473;&#12488;&#12524;&#12452;&#12531;&#12488; &#12510;&#12493;&#12540;&#12472;&#12515;&#12540;) | Mixed Reality Toolkit Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Constraint manager | Mixed Reality Toolkit Documentation ">
+    <meta name="title" content="Constraint Manager (&#12467;&#12531;&#12473;&#12488;&#12524;&#12452;&#12531;&#12488; &#12510;&#12493;&#12540;&#12472;&#12515;&#12540;) | Mixed Reality Toolkit Documentation ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
@@ -89,108 +89,112 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="constraint-manager">Constraint manager</h1>
+<h1 id="constraint-manager-コンストレイント-マネージャー">Constraint Manager (コンストレイント マネージャー)</h1>
 
-<p>The constraint manager allows to apply a set of constraint components to a transform. Components of type <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html"><code>TransformConstraint</code></a> that are attached to the game object can be taken into consideration.
-Per default, constraint manager will automatically collect all <a href="#transform-constraints">constraint components</a> attached to the game object and apply them to processed transforms.
-However users can opt for configuring the list of applied constraints manually and allowing only a subset of attached constraints to be applied.</p>
-<p>Currently the following MRTK UX elements are supporting constraint manager:</p>
+<p>コンストレイント マネージャー (制約マネージャー) を利用すると、Transform にコンストレイント コンポーネントのセットを適用することができます。GameObject にアタッチされている <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html"><code>TransformConstraint</code></a> 型のコンポーネントが対象となります。
+デフォルトでは、コンストレイント マネージャーは GameObject にアタッチされているすべての <a href="#transform-constraints">コンストレイント コンポーネント</a> を自動的に集め、処理される Transform に適用します。
+しかしながら、適用される制約のリストを手動で設定し、アタッチされている制約の一部分だけが適用されるようにすることを選択することもできます。</p>
+<p>現在、以下の MRTK UX エレメントがコンストレイント マネージャーをサポートしています。</p>
 <ul>
-<li><a href="README_BoundsControl.html">Bounds control</a></li>
-<li><a href="README_ObjectManipulator.html">Object manipulator</a></li>
+<li><a href="README_BoundsControl.html">Bounds Control</a></li>
+<li><a href="README_ObjectManipulator.html">Object Manipulator</a></li>
 </ul>
 <h2 id="inspector-properties-and-fields">Inspector properties and fields</h2>
-<p>Constraint manager can be operated in two modes:</p>
+<p>コンストレイント マネージャーは2つのモードで動作します。</p>
 <ul>
-<li>Auto constraint selection</li>
-<li>Manual constraint selection</li>
+<li>Auto Constraint Selection (自動制約選択)</li>
+<li>Manual Constraint Selection (手動制約選択)</li>
 </ul>
-<h3 id="auto-constraint-selection">Auto constraint selection</h3>
+<p><a name="auto-constraint-selection"></a></p>
+<h3 id="auto-constraint-selection-自動制約選択">Auto Constraint Selection (自動制約選択)</h3>
 <img src="../Documentation/Images/ConstraintManager/AutoSelection.png" width="600">
-<p>The default mode of constraint manager, auto constraint selection, will provide a list of all attached constraint components as well as <a href="#go-to-component">go to buttons</a> and an <a href="#add-constraint-to-game-object">add constraint button</a>.</p>
-<h4 id="add-constraint-to-game-object">Add constraint to game object</h4>
-<p>This button allows a constraint component to be added directly from the constraint manager inspector. All constraint types in a project should be visible here. See <a href="#transform-constraints">transform constraints</a> for more info.</p>
-<h4 id="go-to-component">Go to component</h4>
-<p>All constraints found on the object wil be listed here with a <em>Go to component</em> button. This button will cause the inspector to scroll to the selected constraint component so that it can be configured.</p>
-<h3 id="manual-constraint-selection">Manual constraint selection</h3>
+<p>コンストレイント マネージャーのデフォルトのモードである自動制約選択は、すべてのアタッチされているコンストレイント コンポーネントのリスト、<a href="#go-to-component">移動ボタン</a>、<a href="#add-constraint-to-game-object">制約追加ボタン</a> を提供しています。</p>
+<p><a name="add-constraint-to-game-object"></a></p>
+<h4 id="add-constraint-to-gameobject-gameobject-に制約を追加">Add Constraint to GameObject (GameObject に制約を追加)</h4>
+<p>このボタンでは、コンストレイント マネージャーのインスペクターから直接コンストレイント コンポーネントを追加することができます。プロジェクト内の全ての制約のタイプがここに表示されます。詳細については  <a href="#transform-constraints">Transform 制約</a> をご覧ください。</p>
+<p><a name="go-to-component"></a></p>
+<h4 id="go-to-component-コンポーネントへ移動">Go to component (コンポーネントへ移動)</h4>
+<p>オブジェクト上で見つかった全ての制約は <em>Go to component</em> ボタンとともにここに表示されます。このボタンを押すと、選択されたコンストレイント コンポーネントの設定ができるよう、そのコンポーネントまでスクロールします。</p>
+<h3 id="manual-constraint-selection-手動制約選択">Manual Constraint Selection (手動制約選択)</h3>
 <img src="../Documentation/Images/ConstraintManager/ManualSelection.png" width="600">
-<p>If constraint manager is set to manual mode, only constraints that are linked in the constraint list are processed and applied to the transform. The list displayed will only show the user selected constraints as well as <a href="#go-to-component">go to buttons</a> or options to remove or add entries.
-When enabling manual mode for the first time, constraint manager will populate the list will all available components as a starting point for selecting attached constraint components.</p>
-<h3 id="remove-entry">Remove entry</h3>
-<p>This removes the entry from the manually selected list. Note that this option will not remove the constraint component from the game object. Constraint components always need to be removed manually to ensure not accidentally breaking any other component referring to this component.</p>
-<h3 id="add-entry">Add entry</h3>
-<p>Add entry will open a dropdown showing all available constraint components that are not in the manual list yet. By clicking on any of the entries that component will be added to the manual constraint selection.</p>
-<h3 id="add-new-constraint">Add new constraint</h3>
-<p>This option will add a component of the selected type to the game object and add the newly created constraint component to the manual constraint list.</p>
+<p>コンストレイント マネージャーが手動モードに設定されている場合、制約リストでリンクされている制約のみが Transform に適用されます。表示されるリストには、ユーザーが選択した制約と<a href="#go-to-component">移動ボタン</a>、項目の削除や追加のオプションが表示されます。
+はじめて手動モードを有効にした際、コンストレイント マネージャーはアタッチされたコンストレイント コンポーネントを選択する出発点として、すべての利用可能なコンポーネントのリストを生成します。</p>
+<h3 id="remove-entry-項目の削除">Remove Entry (項目の削除)</h3>
+<p>手動で選択されたリストから項目を削除します。このオプションは GameObject からコンストレイント コンポーネントを削除しないことに注意してください。コンストレイント コンポーネントを参照している他のコンポーネントを誤って壊してしまわないようにするため、コンストレイント コンポーネントは常に手動で削除する必要があります。</p>
+<p><a name="add-entry"></a></p>
+<h3 id="add-entry-項目の追加">Add Entry (項目の追加)</h3>
+<p>Add Entry では手動のリストには入っていないすべての利用可能なコンストレイント コンポーネントがドロップダウンで表示されます。いずれかの項目をクリックすると、そのコンポーネントが手動制約選択に追加されます。</p>
+<h3 id="add-new-constraint-新しい制約の追加">Add New Constraint (新しい制約の追加)</h3>
+<p>このオプションは、選択したタイプのコンポーネントを GameObject に追加し、新しく作成したコンストレイント コンポーネントを手動制約リストに追加します。</p>
 <p><a name="transform-constraints"></a></p>
-<h2 id="transform-constraints">Transform constraints</h2>
-<p>Constraints can be used to limit manipulation in some way. For example, some applications may require rotation, but also require that the object remain upright. In this case, a <code>RotationAxisConstraint</code> can be added to the object and used to limit rotation to y-axis rotation. MRTK provides a number of constraints, all of which are described below.</p>
-<p>It is also possible to define new constraints and use them to create unique manipulation behaviour that may be needed for some applications. To do this, create a script that inherits from <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html"><code>TransformConstraint</code></a> and implement the abstract <code>ConstraintType</code> property and the abstract <code>ApplyConstraint</code> method. Upon adding a new constraint to the object, it should constrain manipulation in the way that was defined. This new constraint should also show in the constraint manager <a href="#auto-constraint-selection">auto selection</a> or <a href="#add-entry">add entry</a> dropdown in manual mode.</p>
-<p>All of the constraints provided by MRTK share the following properties:</p>
-<h4 id="hand-type">Hand Type</h4>
-<p>Specifies whether the constraint is used for one handed, two handed or both kinds of manipulation. Because this property is a flag, both options can be selected.</p>
+<h2 id="transform-constraints-transform-制約">Transform Constraints (Transform 制約)</h2>
+<p>制約は、何らかの方法で操作を制限するために使用することができます。例えば、アプリケーションによっては回転が必要な場合もありますが、オブジェクトが直立したままであることも必要な場合があります。このような場合には、<code>RotationAxisConstraint</code> をオブジェクトに追加して、回転を Y 軸回転に制限することができます。MRTK はいくつかの制約を提供しており、その全てを以下で説明します。</p>
+<p>また、新しい制約を定義して、アプリケーションによっては必要となるかもしれない独自の操作動作を作成するために使用することも可能です。これを行うには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html"><code>TransformConstraint</code></a> を継承するスクリプトを作成し、抽象的な <code>ConstraintType</code> プロパティと抽象的な <code>ApplyConstraint</code> メソッドを実装します。オブジェクトに新しい制約を追加すると、定義された方法で操作を制約しなければなりません。この新しい制約は、コンストレイント マネージャーの <a href="#auto-constraint-select">Auto Selection</a> や、手動モードの <a href="#add-entry">Add Entry</a> ドロップダウンにも表示されなければなりません。</p>
+<p>MRTK で提供される全ての制約は、以下のプロパティを共有しています。</p>
+<h4 id="hand-type-ハンド-タイプ">Hand Type (ハンド タイプ)</h4>
+<p>制約を片手操作に使用するか、両手操作に使用するか、両方の種類の操作に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。</p>
 <ul>
-<li><em>One handed</em>: Constraint will be used during one handed manipulation if selected.</li>
-<li><em>Two handed</em>: Constraint will be used during two handed manipulation if selected.</li>
+<li><em>One Handed (片手)</em>: 選択されていると、片手操作の際に制約が使用されます。</li>
+<li><em>Two Handed (両手)</em>: 選択されていると、両手操作の際に制約が使用されます。</li>
 </ul>
-<h4 id="proximity-type">Proximity Type</h4>
-<p>Specifies whether the constraint is used for near, far or both kinds of manipulation. Because this property is a flag, both options can be selected.</p>
+<h4 id="proximity-type-近接タイプ">Proximity Type (近接タイプ)</h4>
+<p>制約をニア マニピュレーションに使用するか、ファー マニピュレーションに使用するか、両方に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。</p>
 <ul>
-<li><em>Near</em>: Constraint will be used during near manipulation if selected.</li>
-<li><em>Far</em>: Constraint will be used during far manipulation if selected.</li>
+<li><em>Near (ニア)</em>: 選択されていると、ニア マニピュレーションの際に制約が使用されます。</li>
+<li><em>Far (ファー)</em>: 選択されていると、ファー マニピュレーションの際に制約が使用されます。</li>
 </ul>
-<h3 id="faceuserconstraint">FaceUserConstraint</h3>
+<h3 id="faceuserconstraint-ユーザーのほうを向く制約">FaceUserConstraint (ユーザーのほうを向く制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FaceUser.gif" width="400">
-<p>When this constraint is attached to an object, rotation will be limited so that object will always face the user. This is useful for slates or panels. The properties for <code>FaceUserConstraint</code> are as follows:</p>
-<h4 id="face-away">Face away</h4>
-<p>Object faces away from the user if true.</p>
-<h3 id="fixeddistanceconstraint">FixedDistanceConstraint</h3>
+<p>この制約がオブジェクトにアタッチされていると、オブジェクトが常にユーザーの方を向くように回転が制限されます。これはスレートやパネルに便利です。<code>FaceUserConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="face-away-向こうを向く">Face Away (向こうを向く)</h4>
+<p>True の場合、オブジェクトはユーザーの反対側を向きます。</p>
+<h3 id="fixeddistanceconstraint-固定距離制約">FixedDistanceConstraint (固定距離制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedDistance.gif" width="400">
-<p>This constraint fixes the distance between the manipulated object and another object transform on manipulation start. This is useful for behaviour such as fixing the distance from the manipulated object to the head transform. The properties for <code>FixedDistanceConstraint</code> are as follows:</p>
-<h4 id="constraint-transform">Constraint transform</h4>
-<p>This is the other transform that the manipulated object will have a fixed distance to. Defaults to the camera transform.</p>
-<h3 id="fixedrotationtouserconstraint">FixedRotationToUserConstraint</h3>
+<p>この制約は、操作するオブジェクトの Transform と別のオブジェクトの Transform との間の操作開始時の距離を固定します。これは、例えば操作するオブジェクトから頭の Transform への距離を固定するのに便利です。<code>FixedDistanceConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-transform-制約-transform">Constraint Transform (制約 Transform)</h4>
+<p>これは、操作するオブジェクトが距離を固定する対象となる Transform です。デフォルトではカメラの Transform です。</p>
+<h3 id="fixedrotationtouserconstraint-ユーザーに対する回転固定制約">FixedRotationToUserConstraint (ユーザーに対する回転固定制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToUser.gif" width="400">
-<p>This constraint fixes the relative rotation between the user and the manipulated object while it is being manipulated. This is useful for slates or panels as it ensures that the manipulated object always shows the same face to the user as it did at the start of manipulation. The <code>FixedRotationToUserConstraint</code> does not have any unique properties.</p>
-<h3 id="fixedrotationtoworldconstraint">FixedRotationToWorldConstraint</h3>
+<p>この制約は、操作している間のユーザーと操作するオブジェクトとの相対的な回転を固定します。この制約は、操作するオブジェクトが操作開始時と常に同じ面をユーザーに向けるようにするので、スレートやパネルに便利です。<code>FixedRotationToUserConstraint</code> には固有のプロパティはありません。</p>
+<h3 id="fixedrotationtoworldconstraint-ワールドに対する回転固定制約">FixedRotationToWorldConstraint (ワールドに対する回転固定制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToWorld.gif" width="400">
-<p>This constraint fixes the global rotation of the manipulated object while it is being manipulated. This can be useful in cases where no rotation should be imparted by manipulation. The <code>FixedRotationToWorldConstraint</code> does not have any unique properties:</p>
+<p>この制約は、操作している間の操作しているオブジェクトのグローバルな回転を固定します。これは、操作によって回転すべきではない場合に便利です。<code>FixedRotationToWorldConstraint</code> には固有のプロパティはありません。</p>
 <h3 id="maintainapparentsizeconstraint">MaintainApparentSizeConstraint</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MaintainApparentSize.gif" width="400">
-<p>When this constraint is attached to an object, no matter how far the object is from the user, it will maintain the same apparent size to the user (i.e. it will take up the same proportion of the user's field of view). This can be used to ensure that a slate or text panel remains readable while manipulating. The <code>MaintainApparentSizeConstraint</code> does not have any unique properties:</p>
-<h3 id="moveaxisconstraint">MoveAxisConstraint</h3>
+<p>この制約がオブジェクトにアタッチされていると、オブジェクトがユーザーからどれだけ離れていても、ユーザーに対して見た目上同じサイズを保ちます (すなわち、ユーザーの視野の同じ割合を占めます)。これは、スレートやテキスト パネルを操作している間、読みやすい状態を維持するために使うことができます。<code>MaintainApparentSizeConstraint</code> には固有のプロパティはありません。</p>
+<h3 id="moveaxisconstraint-移動軸制約">MoveAxisConstraint (移動軸制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MoveAxis.gif" width="400">
-<p>This constraint can be used to fix along which axes a manipulated object can be moved. This can be useful for manipulating objects over the surface of a plane, or along a line. The properties for <code>MoveAxisConstraint</code> are as follows:</p>
-<h4 id="constraint-on-movement">Constraint on movement</h4>
-<p>Specifies which axes to prevent movement on. By default, these axes will be global rather than local, but this can be changed below. Because this property is a flag, any number of options can be selected.</p>
+<p>この制約は、操作されるオブジェクトが移動できる軸を固定するために使用できます。これは、平面の表面上や線に沿ってオブジェクトを移動させるのに便利です。<code>MoveAxisConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-on-movement-移動の制約">Constraint On Movement (移動の制約)</h4>
+<p>移動を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。</p>
 <ul>
-<li><em>X Axis</em>: Movement along the x-axis is constrained if selected.</li>
-<li><em>Y Axis</em>: Movement along the y-axis is constrained if selected.</li>
-<li><em>Z Axis</em>: Movement along the z-axis is constrained if selected.</li>
+<li><em>X Axis (X 軸)</em>: 選択された場合、X 軸に沿った移動が制約されます。</li>
+<li><em>Y Axis (Y 軸)</em>: 選択された場合、Y 軸に沿った移動が制約されます。</li>
+<li><em>Z Axis (Z 軸)</em>: 選択された場合、Z 軸に沿った移動が制約されます。</li>
 </ul>
-<h4 id="use-local-space-for-constraint">Use local space for constraint</h4>
-<p>Will constrain relative the manipulated object's local transform axes if true. False by default.</p>
-<h3 id="rotationaxisconstraint">RotationAxisConstraint</h3>
+<h4 id="use-local-space-for-constraint-制約にローカル-スペースを使う">Use Local Space For Constraint (制約にローカル スペースを使う)</h4>
+<p>True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。</p>
+<h3 id="rotationaxisconstraint-回転軸制約">RotationAxisConstraint (回転軸制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_RotationAxis.gif" width="400">
-<p>This constraint can be used to fix about which axes a manipulated object can be rotated. This can be useful for keeping a manipulated object upright, but still allowing y-axis rotations, for example. The properties for <code>RotationAxisConstraint</code> are as follows:</p>
-<h4 id="constraint-on-rotation">Constraint on rotation</h4>
-<p>Specifies which axes to prevent rotation about. By default, these axes will be global rather than local, but this can be changed below. Because this property is a flag, any number of options can be selected.</p>
+<p>この制約は、操作されるオブジェクトが回転できる軸を固定するために使用できます。例えば、操作されるオブジェクトを直立させたまま、Y 軸まわりの回転は許可したい場合などに便利です。 <code>RotationAxisConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-on-rotation-回転の制約">Constraint On Rotation (回転の制約)</h4>
+<p>回転を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。</p>
 <ul>
-<li><em>Y Axis</em>: Rotation about the y-axis is constrained if selected.</li>
-<li><em>Z Axis</em>: Rotation about the z-axis is constrained if selected.</li>
-<li><em>X Axis</em>: Rotation about the x-axis is constrained if selected.</li>
+<li><em>Y Axis (Y 軸)</em>: 選択された場合、Y 軸まわりの回転が制約されます。</li>
+<li><em>Z Axis (Z 軸)</em>: 選択された場合、Z 軸まわりの回転が制約されます。</li>
+<li><em>X Axis (X 軸)</em>: 選択された場合、X 軸まわりの回転が制約されます。</li>
 </ul>
-<h4 id="use-local-space-for-constraint-1">Use local space for constraint</h4>
-<p>Will constrain relative the manipulated object's local transform axes if true. False by default.</p>
-<h3 id="minmaxscaleconstraint">MinMaxScaleConstraint</h3>
+<h4 id="use-local-space-for-constraint-制約にローカル-スペースを使う-1">Use Local Space For Constraint (制約にローカル スペースを使う)</h4>
+<p>True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。</p>
+<h3 id="minmaxscaleconstraint-最小最大スケール制約">MinMaxScaleConstraint (最小最大スケール制約)</h3>
 <img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MinMaxScale.gif" width="400">
-<p>This constraint allows minimum and maximum values to be set for the scale of the manipulated object. This is useful for preventing users from scaling an object too small or too large. The properties for <code>MinMaxScaleConstraint</code> are as follows:</p>
-<h4 id="scale-minimum">Scale minimum</h4>
-<p>The minimum scale value during manipulation.</p>
-<h4 id="scale-maximum">Scale maximum</h4>
-<p>The maximum scale value during manipulation.</p>
-<h4 id="relative-to-initial-state">Relative to initial state</h4>
-<p>If true, the values above will be interpreted as relative to the objects initial scale. Otherwise they will be interpreted as absolute scale values.</p>
+<p>この制約により、操作されるオブジェクトのスケールに最小値と最大値を設定することができます。これは、ユーザーがオブジェクトを小さくしすぎたり大きくしすぎたりするのを防ぐのに便利です。<code>MinMaxScaleConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="scale-minimum-最小スケール">Scale Minimum (最小スケール)</h4>
+<p>操作中の最小のスケール値です。</p>
+<h4 id="scale-maximum-最大スケール">Scale Maximum (最大スケール)</h4>
+<p>操作中の最大のスケール値です。</p>
+<h4 id="relative-to-initial-state-初期値相対">Relative To Initial State (初期値相対)</h4>
+<p>True の場合、上の値はオブジェクトの初期値相対の値として解釈されます。そうでなければ、絶対的なスケール値として解釈されます。</p>
 </article>
           </div>
           
