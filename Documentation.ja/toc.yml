@@ -232,7 +232,7 @@
       href: README_BoundsControl.md
     - name: Object Manipulator (オブジェクト マニピュレーター)
       href: README_ObjectManipulator.md
-    - name: Constraint Manager
+    - name: Constraint Manager (コンストレイント マネージャー)
       href: README_ConstraintManager.md
     - name: Slate (スレート)
       href: README_Slate.md
