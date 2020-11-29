@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Constraint Manager (&#12467;&#12531;&#12473;&#12488;&#12524;&#12452;&#12531;&#12488; &#12510;&#12493;&#12540;&#12472;&#12515;&#12540;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Constraint Manager (&#12467;&#12531;&#12473;&#12488;&#12524;&#12452;&#12531;&#12488; &#12510;&#12493;&#12540;&#12472;&#12515;&#12540;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="constraint-manager-コンストレイント-マネージャー" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="1">Constraint Manager (コンストレイント マネージャー)</h1>
+
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="3">コンストレイント マネージャー (制約マネージャー) を利用すると、Transform にコンストレイント コンポーネントのセットを適用することができます。GameObject にアタッチされている <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="3"><code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="3">TransformConstraint</code></a> 型のコンポーネントが対象となります。
+デフォルトでは、コンストレイント マネージャーは GameObject にアタッチされているすべての <a href="#transform-constraints" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="4">コンストレイント コンポーネント</a> を自動的に集め、処理される Transform に適用します。
+しかしながら、適用される制約のリストを手動で設定し、アタッチされている制約の一部分だけが適用されるようにすることを選択することもできます。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="7">現在、以下の MRTK UX エレメントがコンストレイント マネージャーをサポートしています。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="8">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="8"><a href="README_BoundsControl.html" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="8">Bounds Control</a></li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="9"><a href="README_ObjectManipulator.html" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="9">Object Manipulator</a></li>
+</ul>
+<h2 id="inspector-properties-and-fields" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="12">Inspector properties and fields</h2>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="14">コンストレイント マネージャーは2つのモードで動作します。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="15">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="15">Auto Constraint Selection (自動制約選択)</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="16">Manual Constraint Selection (手動制約選択)</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="18"><a name="auto-constraint-selection"></a></p>
+<h3 id="auto-constraint-selection-自動制約選択" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="20">Auto Constraint Selection (自動制約選択)</h3>
+<img src="../Documentation/Images/ConstraintManager/AutoSelection.png" width="600">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="24">コンストレイント マネージャーのデフォルトのモードである自動制約選択は、すべてのアタッチされているコンストレイント コンポーネントのリスト、<a href="#go-to-component" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="24">移動ボタン</a>、<a href="#add-constraint-to-game-object" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="24">制約追加ボタン</a> を提供しています。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="26"><a name="add-constraint-to-game-object"></a></p>
+<h4 id="add-constraint-to-gameobject-gameobject-に制約を追加" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="28">Add Constraint to GameObject (GameObject に制約を追加)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="30">このボタンでは、コンストレイント マネージャーのインスペクターから直接コンストレイント コンポーネントを追加することができます。プロジェクト内の全ての制約のタイプがここに表示されます。詳細については  <a href="#transform-constraints" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="30">Transform 制約</a> をご覧ください。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="32"><a name="go-to-component"></a></p>
+<h4 id="go-to-component-コンポーネントへ移動" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="34">Go to component (コンポーネントへ移動)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="36">オブジェクト上で見つかった全ての制約は <em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="36">Go to component</em> ボタンとともにここに表示されます。このボタンを押すと、選択されたコンストレイント コンポーネントの設定ができるよう、そのコンポーネントまでスクロールします。</p>
+<h3 id="manual-constraint-selection-手動制約選択" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="39">Manual Constraint Selection (手動制約選択)</h3>
+<img src="../Documentation/Images/ConstraintManager/ManualSelection.png" width="600">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="43">コンストレイント マネージャーが手動モードに設定されている場合、制約リストでリンクされている制約のみが Transform に適用されます。表示されるリストには、ユーザーが選択した制約と<a href="#go-to-component" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="43">移動ボタン</a>、項目の削除や追加のオプションが表示されます。
+はじめて手動モードを有効にした際、コンストレイント マネージャーはアタッチされたコンストレイント コンポーネントを選択する出発点として、すべての利用可能なコンポーネントのリストを生成します。</p>
+<h3 id="remove-entry-項目の削除" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="46">Remove Entry (項目の削除)</h3>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="47">手動で選択されたリストから項目を削除します。このオプションは GameObject からコンストレイント コンポーネントを削除しないことに注意してください。コンストレイント コンポーネントを参照している他のコンポーネントを誤って壊してしまわないようにするため、コンストレイント コンポーネントは常に手動で削除する必要があります。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="49"><a name="add-entry"></a></p>
+<h3 id="add-entry-項目の追加" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="51">Add Entry (項目の追加)</h3>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="52">Add Entry では手動のリストには入っていないすべての利用可能なコンストレイント コンポーネントがドロップダウンで表示されます。いずれかの項目をクリックすると、そのコンポーネントが手動制約選択に追加されます。</p>
+<h3 id="add-new-constraint-新しい制約の追加" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="54">Add New Constraint (新しい制約の追加)</h3>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="55">このオプションは、選択したタイプのコンポーネントを GameObject に追加し、新しく作成したコンストレイント コンポーネントを手動制約リストに追加します。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="57"><a name="transform-constraints"></a></p>
+<h2 id="transform-constraints-transform-制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="59">Transform Constraints (Transform 制約)</h2>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="61">制約は、何らかの方法で操作を制限するために使用することができます。例えば、アプリケーションによっては回転が必要な場合もありますが、オブジェクトが直立したままであることも必要な場合があります。このような場合には、<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="61">RotationAxisConstraint</code> をオブジェクトに追加して、回転を Y 軸回転に制限することができます。MRTK はいくつかの制約を提供しており、その全てを以下で説明します。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">また、新しい制約を定義して、アプリケーションによっては必要となるかもしれない独自の操作動作を作成するために使用することも可能です。これを行うには、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.TransformConstraint.html" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63"><code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">TransformConstraint</code></a> を継承するスクリプトを作成し、抽象的な <code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">ConstraintType</code> プロパティと抽象的な <code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">ApplyConstraint</code> メソッドを実装します。オブジェクトに新しい制約を追加すると、定義された方法で操作を制約しなければなりません。この新しい制約は、コンストレイント マネージャーの <a href="#auto-constraint-select" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">Auto Selection</a> や、手動モードの <a href="#add-entry" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="63">Add Entry</a> ドロップダウンにも表示されなければなりません。</p>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="65">MRTK で提供される全ての制約は、以下のプロパティを共有しています。</p>
+<h4 id="hand-type-ハンド-タイプ" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="67">Hand Type (ハンド タイプ)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="69">制約を片手操作に使用するか、両手操作に使用するか、両方の種類の操作に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="71">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="71"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="71">One Handed (片手)</em>: 選択されていると、片手操作の際に制約が使用されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="72"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="72">Two Handed (両手)</em>: 選択されていると、両手操作の際に制約が使用されます。</li>
+</ul>
+<h4 id="proximity-type-近接タイプ" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="74">Proximity Type (近接タイプ)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="76">制約をニア マニピュレーションに使用するか、ファー マニピュレーションに使用するか、両方に使用するかを指定します。このプロパティはフラグなため、両方のオプションを選択できます。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="78">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="78"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="78">Near (ニア)</em>: 選択されていると、ニア マニピュレーションの際に制約が使用されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="79"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="79">Far (ファー)</em>: 選択されていると、ファー マニピュレーションの際に制約が使用されます。</li>
+</ul>
+<h3 id="faceuserconstraint-ユーザーのほうを向く制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="81">FaceUserConstraint (ユーザーのほうを向く制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FaceUser.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="85">この制約がオブジェクトにアタッチされていると、オブジェクトが常にユーザーの方を向くように回転が制限されます。これはスレートやパネルに便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="85">FaceUserConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="face-away-向こうを向く" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="87">Face Away (向こうを向く)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="89">True の場合、オブジェクトはユーザーの反対側を向きます。</p>
+<h3 id="fixeddistanceconstraint-固定距離制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="91">FixedDistanceConstraint (固定距離制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedDistance.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="95">この制約は、操作するオブジェクトの Transform と別のオブジェクトの Transform との間の操作開始時の距離を固定します。これは、例えば操作するオブジェクトから頭の Transform への距離を固定するのに便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="95">FixedDistanceConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-transform-制約-transform" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="97">Constraint Transform (制約 Transform)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="99">これは、操作するオブジェクトが距離を固定する対象となる Transform です。デフォルトではカメラの Transform です。</p>
+<h3 id="fixedrotationtouserconstraint-ユーザーに対する回転固定制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="101">FixedRotationToUserConstraint (ユーザーに対する回転固定制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToUser.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="105">この制約は、操作している間のユーザーと操作するオブジェクトとの相対的な回転を固定します。この制約は、操作するオブジェクトが操作開始時と常に同じ面をユーザーに向けるようにするので、スレートやパネルに便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="105">FixedRotationToUserConstraint</code> には固有のプロパティはありません。</p>
+<h3 id="fixedrotationtoworldconstraint-ワールドに対する回転固定制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="107">FixedRotationToWorldConstraint (ワールドに対する回転固定制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_FixedRotationToWorld.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="111">この制約は、操作している間の操作しているオブジェクトのグローバルな回転を固定します。これは、操作によって回転すべきではない場合に便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="111">FixedRotationToWorldConstraint</code> には固有のプロパティはありません。</p>
+<h3 id="maintainapparentsizeconstraint" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="113">MaintainApparentSizeConstraint</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MaintainApparentSize.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="117">この制約がオブジェクトにアタッチされていると、オブジェクトがユーザーからどれだけ離れていても、ユーザーに対して見た目上同じサイズを保ちます (すなわち、ユーザーの視野の同じ割合を占めます)。これは、スレートやテキスト パネルを操作している間、読みやすい状態を維持するために使うことができます。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="117">MaintainApparentSizeConstraint</code> には固有のプロパティはありません。</p>
+<h3 id="moveaxisconstraint-移動軸制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="119">MoveAxisConstraint (移動軸制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MoveAxis.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="123">この制約は、操作されるオブジェクトが移動できる軸を固定するために使用できます。これは、平面の表面上や線に沿ってオブジェクトを移動させるのに便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="123">MoveAxisConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-on-movement-移動の制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="125">Constraint On Movement (移動の制約)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="127">移動を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="129">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="129"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="129">X Axis (X 軸)</em>: 選択された場合、X 軸に沿った移動が制約されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="130"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="130">Y Axis (Y 軸)</em>: 選択された場合、Y 軸に沿った移動が制約されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="131"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="131">Z Axis (Z 軸)</em>: 選択された場合、Z 軸に沿った移動が制約されます。</li>
+</ul>
+<h4 id="use-local-space-for-constraint-制約にローカル-スペースを使う" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="133">Use Local Space For Constraint (制約にローカル スペースを使う)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="135">True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。</p>
+<h3 id="rotationaxisconstraint-回転軸制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="137">RotationAxisConstraint (回転軸制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_RotationAxis.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="141">この制約は、操作されるオブジェクトが回転できる軸を固定するために使用できます。例えば、操作されるオブジェクトを直立させたまま、Y 軸まわりの回転は許可したい場合などに便利です。 <code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="141">RotationAxisConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="constraint-on-rotation-回転の制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="143">Constraint On Rotation (回転の制約)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="145">回転を防止する軸を指定します。デフォルトでは、これらの軸はローカルではなくグローバルですが、以下で変更できます。このプロパティはフラグなので、任意の数のオプションを選択することができます。</p>
+<ul sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="147">
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="147"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="147">Y Axis (Y 軸)</em>: 選択された場合、Y 軸まわりの回転が制約されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="148"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="148">Z Axis (Z 軸)</em>: 選択された場合、Z 軸まわりの回転が制約されます。</li>
+<li sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="149"><em sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="149">X Axis (X 軸)</em>: 選択された場合、X 軸まわりの回転が制約されます。</li>
+</ul>
+<h4 id="use-local-space-for-constraint-制約にローカル-スペースを使う-1" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="151">Use Local Space For Constraint (制約にローカル スペースを使う)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="153">True の場合、操作されるオブジェクトのローカル座標系の軸相対での制約となります。デフォルトでは False です。</p>
+<h3 id="minmaxscaleconstraint-最小最大スケール制約" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="155">MinMaxScaleConstraint (最小最大スケール制約)</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_Constraint_MinMaxScale.gif" width="400">
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="159">この制約により、操作されるオブジェクトのスケールに最小値と最大値を設定することができます。これは、ユーザーがオブジェクトを小さくしすぎたり大きくしすぎたりするのを防ぐのに便利です。<code sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="159">MinMaxScaleConstraint</code> のプロパティは以下の通りです。</p>
+<h4 id="scale-minimum-最小スケール" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="161">Scale Minimum (最小スケール)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="163">操作中の最小のスケール値です。</p>
+<h4 id="scale-maximum-最大スケール" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="165">Scale Maximum (最大スケール)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="167">操作中の最大のスケール値です。</p>
+<h4 id="relative-to-initial-state-初期値相対" sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="169">Relative To Initial State (初期値相対)</h4>
+<p sourcefile="../../Documentation.ja/README_ConstraintManager.md" sourcestartlinenumber="171">True の場合、上の値はオブジェクトの初期値相対の値として解釈されます。そうでなければ、絶対的なスケール値として解釈されます。</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_ConstraintManager.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

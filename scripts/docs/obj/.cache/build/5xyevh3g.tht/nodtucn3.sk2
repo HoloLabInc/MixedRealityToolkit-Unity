@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Mixed reality controller configuration profile | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Mixed reality controller configuration profile | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../../../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mixed-reality-controller-configuration-profile" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="1">Mixed reality controller configuration profile</h1>
+
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="3">When you need to use input controllers for your Mixed Reality project, they are registered and configured centrally within the Controller configuration profile as you can see here:</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="5"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/01-MixedRealityControllerConfigurationProfileInspector.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="5" alt="Configuration profile inspector"></p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="7">This enables you to very quickly define which SDKs / controllers you want to support in your project and configure how each are intended to work.</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="9">The configuration is broken down in to several key components, as detailed below:</p>
+<h2 id="main-controller-template-definition" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="11">Main controller template definition</h2>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="13"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/02-ControllerTemplateDefinition.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="13" alt="Controller model definition"></p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="15">In the first section of the configuration, the options are detailed as follows:</p>
+<h3 id="render-motion-controllers" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="17">Render motion controllers</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="19">This defines whether or not controllers should be rendered or not.  By not adding a ControllerVisualizer in to the scene also has the same effect.</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="20">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="20">This also disabled the Global Model options below.</p>
+</blockquote>
+<h3 id="use-default-models" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="22">Use default models</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="24">This option will use the models for the controller direct from the SDK (where available), so that you don't have to configure a custom model.</p>
+<h3 id="global-left--right-hand-models" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="26">Global left / right hand models</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="28">These allow you at the top level to define the default model that will be drawn for each controlling hand.  If no hand is available, the Left most model will be used by default.</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="30">To alter the position and rotation of the displayed model in relation to the controller pose, then update the controller's ModelPrefab transform values.</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="32">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="32">See the &quot;Example Models&quot; section below for the controller models and their recommended transform settings provided in the SDK's &quot;<strong sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="32">Standard Assets</strong>&quot; folder.</p>
+</blockquote>
+<h3 id="add-a-new-controller-template" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="34">Add a new controller template</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="36">This enables you to add a new controller definition (detailed below) to the profile to add another supported SDK.</p>
+<h2 id="controller-template" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="38">Controller template</h2>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="40"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/03-ControllerTemplate.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="40" alt="Controller template"></p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="42">Each controller template allows you to configure any of the supported controllers for the various SDKs that have been enabled through the Mixed Reality Toolkit.
+Each controller is added by SDK and the prevailing hand.</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="45">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="45">Any SDK Controller types or hands NOT configured will not be detected or used in a running project.</p>
+</blockquote>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="47">The options for configuring a template are detailed as follows:</p>
+<h3 id="controller" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="49">Controller</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="51">Your custom name for the controller, just for easy reference</p>
+<h3 id="controller-type" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="53">Controller type</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="55">A drop down list of supported controllers by the Mixed Reality Toolkit, namely:</p>
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="57">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="57">Windows Mixed Reality
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="58">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="58">Motion Controllers</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="59">HoloLens 2 articulated hands</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="60">HoloLens 1 hands</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="61">HoloLens 1 clicker</li>
+</ul>
+</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="62">OpenVR
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="63">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="63">Default (fallback) controllers</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="64">Oculus Touch</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="65">Vive Wand</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="66">Vive Knuckles (experimental)</li>
+</ul>
+</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="67">Windows Gaming
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="68">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="68">Gamepad (like Xbox)</li>
+</ul>
+</li>
+</ul>
+<h3 id="handedness" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="70">Handedness</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="72">Which hand is configured for this controller definition</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="73">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="73">Both does not configure all controllers at this time.</p>
+</blockquote>
+<h3 id="use-default-model" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="75">Use default model</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="77">For this controller only, use the model for the controller direct from the SDK (where available), so that you don't have to configure a custom model. This overrides the Global Model setting.</p>
+<div class="NOTE" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="79">
+<h5>Note</h5>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="80">This is currently supported on both Windows Mixed Reality and OpenVR, loading any controller models provided by the platform API.</p>
+</div>
+<h3 id="override-model" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="82">Override model</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="84">Like the Global Model options, allows you to provide a model to be drawn for this specific controller. This overrides the Global Model setting.</p>
+<h3 id="interaction-mappings" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="86">Interaction mappings</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="88">The interaction mappings allow you to map logical input actions for use in your project to the various controller inputs available from the physical device.</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="90">These are different for each controller type, as shown below:</p>
+<table sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="92">
+<thead>
+<tr sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="92">
+<th sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="92">Motion Controller</th>
+<th sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="92">Oculus Touch</th>
+<th sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="92">Vive Wand</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94">
+<td sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/04-WMRInteractions.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94" alt="Windows Mixed Reality interactions"></td>
+<td sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/05-OculusTouchInteractions.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94" alt="Oculus Touch interactions"></td>
+<td sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94"><img src="../../../../Documentation/Images/ControllerConfigurationProfile/06-ViveWandInteractions.png" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="94" alt="Vive Wand interactions"></td>
+</tr>
+</tbody>
+</table>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="96">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="96">In the future custom mappings may become available, for now they are defined per the devices own specification according to the input definitions set out by Unity</p>
+</blockquote>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="98">The Action each input can perform, is completely up to you.</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="100">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="100">See the <a href="../../../../Documentation/Input/InputActions.html" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="100">Input Action configuration profile</a> for more information.</p>
+</blockquote>
+<h2 id="example-models" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="102">Example models</h2>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="104">The models provided in the Mixed Reality Toolkit &quot;Standard Assets&quot; folder are as follows:</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="106">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="106">These can be found in &quot;Mixed Reality Toolkit SDK / Standard Assets / Controllers&quot;</p>
+</blockquote>
+<h3 id="debug-controllers" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="108">Debug controllers</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="110">The Mixed Reality Toolkit provides a set of basic Gizmo style controllers, used to help align your models to the controller position output by the SDK, to help with offset settings.</p>
+<blockquote sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="111">
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="111">Note, the ability to display BOTH the Gizmo and the controller models isn't supported as yet. This will be included in a future release.</p>
+</blockquote>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="113">We recommend applying the following Prefab transform values to align the controller model when using to align with the users view:</p>
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="115">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="115">Position - no change</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="116">Rotation - X 90 (left) -90 (right), Y 0 , Z 0</li>
+</ul>
+<h2 id="additional-models-available-to-download" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="118">Additional models available to download</h2>
+<h3 id="oculus-hands-provided-via-the-oculus-open-source-project" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="120">Oculus hands (provided via the Oculus open source project)</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="122">Oculus provide two basic hand models, including animation (although not available through the visualizer currently).</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="124">Source -&gt; <a href="https://developer.oculus.com/downloads/package/oculus-hand-models/" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="124">Oculus Hand Package download</a></p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="126">We recommend applying the following Prefab transform values to align the controller model with the users view:</p>
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="128">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="128">Position - no change</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="129">Rotation - X 0, Y 0 , Z 90 (left) -90 (right)</li>
+</ul>
+<h3 id="oculus-rift-touch-controllers-provided-via-the-oculus-open-source-project" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="131">Oculus Rift touch controllers (provided via the Oculus open source project)</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="133">Oculus also provide animated controller models for their touch controllers.</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="135">Source -&gt; <a href="https://developer.oculus.com/downloads/package/oculus-sample-framework-for-unity-5-project/" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="135">Oculus Sample Framework for Unity Project</a></p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="137">We recommend applying the following Prefab transform values to align the controller model when using to align with the users view:</p>
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="139">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="139">Position - no change</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="140">Rotation - no change</li>
+</ul>
+<h3 id="htc-vive-wand-controllers-available-in-the-steamvr-sdk" sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="142">HTC Vive wand controllers (available in the SteamVR SDK)</h3>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="144">Steam provide basic models for the HTC Vive Wand controllers.</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="146">Source -&gt; Included as part of the Unity SteamVR SDK, or the Steam VR Client
+&quot;(Steam Install Folder)\Steam\steamapps\common\SteamVR\resources\rendermodels&quot;</p>
+<p sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="149">If you use Steams Models, we recommend applying the following Prefab transform values to align the controller model when using to align with the users view:</p>
+<ul sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="151">
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="151">Position - no change</li>
+<li sourcefile="../../Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md" sourcestartlinenumber="152">Rotation - no change</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MRTK/SDK/Profiles/MixedRealityControllerConfigurationProfile.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>
