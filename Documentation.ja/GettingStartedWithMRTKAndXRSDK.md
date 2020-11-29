@@ -1,83 +1,83 @@
-# Getting started with MRTK and XR SDK
+# MRTK と XR SDK を使い始める
 
-XR SDK is Unity's [new XR pipeline in Unity 2019.3 and beyond](https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/). In Unity 2019, it provides an alternative to the existing XR pipeline. In Unity 2020, it will become the only XR pipeline in Unity.
+XR SDK は Unity の [Unity 2019.3 以降における新しい XR パイプライン](https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/) です。Unity 2019 では、XR SDK は既存の XR パイプラインに代わるものを提供します。Unity 2020 では、XR SDK は Unity における唯一の XR パイプラインとなります。
 
-## Prerequisites
+## 前提条件
 
-To get started with the Mixed Reality Toolkit, follow [the provided steps](WelcomeToMRTK.md) to add MRTK to a project.
+Mixed Reality Toolkit を使い始めるには、[提供されている手順](WelcomeToMRTK.md) にしたがって MRTK をプロジェクトに追加してください。
 
-## Add XR SDK to a Unity project
+## XR SDK を Unity プロジェクトに追加する
 
-Windows Mixed Reality and Oculus are supported on XR SDK.
+Windows Mixed Reality と Oculus が XR SDK でサポートされています。
 
-### Required in Unity
+### Unity での必要事項
 
 #### Windows Mixed Reality
 
-1. Go into Unity's Package Manager and install the Windows XR Plugin package, which adds support for Windows Mixed Reality on XR SDK. This will pull down a few dependency packages as well. Ensure the following all successfully installed:
+1. Unity の Package Manager を開き、Windows XR Plugin パッケージをインストールします。このパッケージは XR SDK での Windows Mixed Reality のサポートを追加します。いくつかの依存パッケージも取得されます。以下のすべてが正常にインストールされていることをご確認ください。
    1. XR Plugin Management
    1. Windows XR Plugin
    1. XR Legacy Input Helpers
-1. Go to Edit > Project Settings.
-1. Click on the XR Plug-in Management tab in the Project Settings window.
-1. Go to the Universal Windows Platform settings and ensure Windows Mixed Reality is checked under Plug-in Providers.
-1. Ensure that Initialize XR on Startup is checked.
-1. (**_Required for in-editor HoloLens Remoting, otherwise optional_**) Go to the Standalone settings and ensure Windows Mixed Reality is checked under Plug-in Providers. Also ensure that Initialize XR on Startup is checked.
-1. (**_Optional_**) Click on the Windows Mixed Reality tab under XR Plug-in Management and create a custom settings profile to change the defaults. If the list of settings are already there, no profile needs to be created.
+1. Edit > Project Settings を開きます。
+1. Project Settings ウィンドウの XR Plug-in Management タブをクリックします。
+1. Universal Windows Platform の設定を開き、Plug-in Providers にて Windows Mixed Reality がチェックされていることを核にします。
+1. Initialize XR on Startup がチェックされていることを確認します。
+1. (**_Editor での HoloLens Remoting に必要、そうでなければオプション_**) Standalone 設定を開き、Plug-in Providers にて Windows Mixed Reality がチェックされていることを確認します。また、Initialize XR on Startup がチェックされていることも確認します。
+1. (**_オプション_**) XR Plug-in Management 内の Windows Mixed Reality タブをクリックし、カスタム設定プロファイルを作成してデフォルトの設定を変更します。設定のリストがすでにあれば、プロファイルを作成する必要はありません。
 
 ![Plugin management](../Documentation/Images/XRSDK/PluginManagement.png)
 
-### Required in MRTK
+### MRTK での必要事項
 
-Choose the "DefaultXRSDKConfigurationProfile" as the active profile or clone it to make customizations. This profile is set up with MRTK's XR SDK systems and providers, where needed.
+アクティブなプロファイルとして "DefaultXRSDKConfigurationProfile" を選択するか、クローンしてカスタマイズします。このプロファイルは必要に応じて MRTK の XR SDK システムとプロバイダでセットアップされます。
 
-To migrate an existing profile to XR SDK, the following services and data providers should be updated:
+既存のプロファイルを XR SDK に移行するには、以下のサービスとデータ プロバイダを更新する必要があります。
 
 #### Camera
 
-From [`WindowsMixedReality.WindowsMixedRealityCameraSettings`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.WindowsMixedRealityCameraSettings)
+[`WindowsMixedReality.WindowsMixedRealityCameraSettings`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.WindowsMixedRealityCameraSettings) から
 
 ![Legacy camera settings](../Documentation/Images/XRSDK/CameraSystemLegacy.png)
 
-to [`XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings) **and** [`GenericXRSDKCameraSettings`](xref:Microsoft.MixedReality.Toolkit.XRSDK.GenericXRSDKCameraSettings)
+[`XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings) **と** [`GenericXRSDKCameraSettings`](xref:Microsoft.MixedReality.Toolkit.XRSDK.GenericXRSDKCameraSettings) に変更
 
 ![XR SDK camera settings](../Documentation/Images/XRSDK/CameraSystemXRSDK.png)
 
 #### Input
 
-From [`WindowsMixedReality.Input.WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager)
+[`WindowsMixedReality.Input.WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager) から
 
 ![Legacy input settings](../Documentation/Images/XRSDK/InputSystemWMRLegacy.png)
 
-to [`XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager)
+[`XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager) に変更
 
 ![XR SDK input settings](../Documentation/Images/XRSDK/InputSystemWMRXRSDK.png)
 
 #### Boundary
 
-From [`MixedRealityBoundarySystem`](xref:Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem)
+[`MixedRealityBoundarySystem`](xref:Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem) から
 
 ![Legacy boundary settings](../Documentation/Images/XRSDK/BoundarySystemLegacy.png)
 
-to  [`XRSDKBoundarySystem`](xref:Microsoft.MixedReality.Toolkit.XRSDK.XRSDKBoundarySystem)
+[`XRSDKBoundarySystem`](xref:Microsoft.MixedReality.Toolkit.XRSDK.XRSDKBoundarySystem) に変更
 
 ![XR SDK boundary settings](../Documentation/Images/XRSDK/BoundarySystemXRSDK.png)
 
-#### Spatial awareness
+#### Spatial Awareness
 
-From [`WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver)
+[`WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver`](xref:Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver) から
 
 ![Legacy spatial awareness settings](../Documentation/Images/XRSDK/SpatialAwarenessLegacy.png)
 
-to [`XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver)
+[`XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver`](xref:Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver) に変更
 
 ![XR SDK spatial awareness settings](../Documentation/Images/XRSDK/SpatialAwarenessXRSDK.png)
 
-#### Controller mappings
+#### コントローラー マッピング
 
-If using custom controller mapping profiles, open one of them and run the Mixed Reality Toolkit -> Utilities -> Update -> Controller Mapping Profiles menu item to ensure the new XR SDK controller types are defined.
+カスタムのコントローラー マッピング プロファイルを使用する場合は、そのうちの1つを開き、Mixed Reality Toolkit -> Utilities -> Update -> Controller Mapping Profiles のメニュー項目を実行して、新しい XR SDK コントローラー タイプが定義されていることを確認してください。
 
-## See also
+## 関連項目
 
 * [Getting started with AR development in Unity](https://docs.unity3d.com/Manual/AROverview.html)
 * [Getting started with VR development in Unity](https://docs.unity3d.com/Manual/VROverview.html)

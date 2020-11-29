@@ -9,7 +9,7 @@
       href: usingupm.md
     - name: MRTK configuration dialog
       href: MRTK_Configuration_Dialog.md
-    - name: Getting started with MRTK and XR SDK
+    - name: MRTK と XR SDK を使い始める
       href: GettingStartedWithMRTKAndXRSDK.md
   - name: アップデートとデプロイ
     items: 
