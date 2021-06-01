@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Porting guide | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Porting guide | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="porting-guide" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="1">Porting guide</h1>
+
+<h2 id="controller-and-hand-input" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="3">Controller and hand input</h2>
+<h3 id="setup-and-configuration" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="5">Setup and configuration</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="7">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="7">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="7"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="7">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="7">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="9">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="9">Type</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="9">Specific events for buttons, with input type info when relevant.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="9">Action / Gesture based input, passed along via events.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="10">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="10">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="10">Place the InputManager in the scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="10">Enable the input system in the <a href="MixedRealityConfigurationGuide.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="10">Configuration Profile</a> and specify a concrete input system type.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="11">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="11">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="11">Configured in the Inspector, on each individual script in the scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="11">Configured via the Mixed Reality Input System Profile and its related profile, listed below.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="13">Related profiles:</p>
+<ul sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="15">
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="15">Mixed Reality Controller Mapping Profile</li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="16">Mixed Reality Controller Visualization Profile</li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="17">Mixed Reality Gestures Profile</li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="18">Mixed Reality Input Actions Profile</li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="19">Mixed Reality Input Action Rules Profile</li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="20">Mixed Reality Pointer Profile</li>
+</ul>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="22"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.GazeProvider.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="22">Gaze Provider</a> settings are modified on the Main Camera object in the scene.</p>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="24">Platform support components (e.g., Windows Mixed Reality Device Manager) must be added to their corresponding service's data providers.</p>
+<h3 id="interface-and-event-mappings" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="26">Interface and event mappings</h3>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="28">Some events no longer have unique events and now contain a <a href="Input/InputActions.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="28">MixedRealityInputAction</a>. These actions are specified in the Input Actions profile and mapped to specific controllers and platforms in the Controller Mapping profile. Events like <code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="28">OnInputDown</code> should now check the MixedRealityInputAction type.</p>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="30">Related input systems:</p>
+<ul sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="32">
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="32"><a href="Input/Overview.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="32">Input Overview</a></li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="33"><a href="Input/InputEvents.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="33">Input Events</a></li>
+<li sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="34"><a href="Input/Pointers.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="34">Input Pointers</a></li>
+</ul>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="36">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="36">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="36">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="36">MRTK v2</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="36">Action Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38">IControllerInputHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38">IMixedRealityInputHandler&lt;Vector2&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="38">Mapped to the touchpad or thumbstick</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39">IControllerTouchpadHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39">IMixedRealityInputHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="39">Mapped to the touchpad</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40">IFocusable</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityFocusHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40">IMixedRealityFocusHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="40"></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41">IGamePadHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySourceStateHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41">IMixedRealitySourceStateHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="41"></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42">IHoldHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42">IMixedRealityGestureHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="42">Mapped to hold in the Gestures Profile</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43">IInputClickHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointerHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="43">IMixedRealityPointerHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44">IInputHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44">IMixedRealityInputHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="44">Mapped to the controller’s buttons or hand tap</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45">IManipulationHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45">IMixedRealityGestureHandler&lt;Vector3&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="45">Mapped to manipulation in the Gestures Profile</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46">INavigationHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46">IMixedRealityGestureHandler&lt;Vector3&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="46">Mapped to navigation in the Gestures Profile</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47">IPointerSpecificFocusable</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityFocusChangedHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47">IMixedRealityFocusChangedHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="47"></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48">ISelectHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48">IMixedRealityInputHandler&lt;float&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="48">Mapped to trigger position</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49">ISourcePositionHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49">IMixedRealityInputHandler&lt;Vector3&gt;</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49">IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="49">Mapped to pointer position or grip position</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50">ISourceRotationHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50">IMixedRealityInputHandler&lt;Quaternion&gt;</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50">IMixedRealityInputHandler&lt;MixedRealityPose&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="50">Mapped to pointer position or grip position</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51">ISourceStateHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySourceStateHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51">IMixedRealitySourceStateHandler</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="51"></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52">IXboxControllerHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52">IMixedRealityInputHandler</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52">IMixedRealityInputHandler&lt;Vector2&gt;</code></a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="52">Mapped to the various controller buttons and thumbsticks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="camera" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="54">Camera</h2>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="56">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="56">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="56"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="56">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="56">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="58">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="58">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="58">Delete MainCamera, add MixedRealityCameraParent / MixedRealityCamera / HoloLensCamera prefab to scene <strong sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="58">or</strong> use Mixed Reality Toolkit &gt; Configure &gt; Apply Mixed Reality Scene Settings menu item.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="58">MainCamera parented under MixedRealityPlayspace via Mixed Reality Toolkit &gt; Add to Scene and Configure...</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="59">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="59">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="59">Camera settings configuration performed on prefab instance.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="59">Camera settings configured in the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.MixedRealityCameraProfile.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="59">Mixed Reality Camera Profile</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="speech" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="61">Speech</h2>
+<h3 id="keyword-recognition" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="63">Keyword recognition</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="65">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="65">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="65"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="65">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="65">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="67">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="67">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="67">Add a SpeechInputSource to your scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="67">Keyword service (e.g., Windows Speech Input Manager) must be added to the input system's data providers.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="68">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="68">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="68">Recognized keywords are configured in the SpeechInputSource’s inspector.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="68">Keywords are configured in the <a href="Input/Speech.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="68">Mixed Reality Speech Commands Profile</a>.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69">Event handlers</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69">ISpeechHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="69">IMixedRealitySpeechHandler</code></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dictation" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="71">Dictation</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="73">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="73">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="73"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="73">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="73">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="75">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="75">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="75">Add a DictationInputManager to your scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="75">Dictation support requires service (e.g., Windows Dictation Input Manager) to be added to the Input System's data providers.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76">Event handlers</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76">IDictationHandler</code></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76">IMixedRealityDictationHandler</code><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealitySpeechHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="76">IMixedRealitySpeechHandler</code></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="spatial-awareness--mapping" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="78">Spatial awareness / mapping</h2>
+<h3 id="mesh" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="80">Mesh</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="82">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="82">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="82"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="82">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="82">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="84">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="84">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="84">Add the SpatialMapping prefab to the scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="84">Enable the Spatial Awareness System in the Configuration Profile and add a spatial observer (e.g., Windows Mixed Reality Spatial Mesh Observer) to the Spatial Awareness System's data providers.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="85">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="85">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="85">Configure the scene instance in the inspector.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="85">Configure the settings on each spatial observer's profile.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planes" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="87">Planes</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="89">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="89">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="89"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="89">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="89">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="91">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="91">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="91">Use the <code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="91">SurfaceMeshesToPlanes</code> script.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="91">Not yet implemented.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spatial-understanding" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="93">Spatial understanding</h3>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="95">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="95">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="95"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="95">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="95">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="97">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="97">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="97">Add the SpatialUnderstanding prefab to the scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="97">Not yet implemented.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="98">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="98">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="98">Configure the scene instance in the inspector.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="98">Not yet implemented.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boundary" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="100">Boundary</h2>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="102">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="102">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="102"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="102">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="102">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="104">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="104">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="104">Add the <code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="104">BoundaryManager</code> script to the scene.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="104">Enable the Boundary System in the Configuration Profile.</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="105">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="105">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="105">Configure the scene instance in the inspector.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="105">Configure the settings in the Boundary Visualization profile.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sharing" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="107">Sharing</h2>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="109">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="109">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="109"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="109">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="109">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="111">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="111">Setup</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="111">Sharing service: Add Sharing prefab to the scene. UNet: Use SharingWithUNET example.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="111">In-progress</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="112">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="112">Configuration</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="112">Configure the scene instances in the inspector.</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="112">In-progress</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ux" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="114">UX</h2>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="116">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="116">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="116"></th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="116">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="116">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118">Button</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118">Interactable Objects</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118"><a href="README_Button.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="118">Button</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119">Interactable</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119">Interactable Objects</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119"><a href="README_Interactable.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="119">Interactable</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120">Bounding Box</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_BoundingBoxGizmoExample.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120">Bounding Box</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120"><a href="README_BoundingBox.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="120">Bounding Box</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121">App Bar</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_BoundingBoxGizmoExample.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121">App Bar</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121"><a href="README_AppBar.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="121">App Bar</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122">One Hand Manipulation (Grb and Move)</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/Interactions/HandDraggable.cs" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122">HandDraggable</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122"><a href="README_ManipulationHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="122">Manipulation Handler</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123">Two Hand Manipulation (Grab/Move/Rotate/Scale)</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Input/Scripts/Utilities/Interactions/TwoHandManipulatable.cs" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123">TwoHandManipulatable</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123"><a href="README_ManipulationHandler.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="123">Manipulation Handler</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124">Keyboard</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124"><a href="" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124">Keyboard prefab</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124"><a href="README_SystemKeyboard.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="124">System Keyboard</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125">Tooltip</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_TooltipExample.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125">Tooltip</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125"><a href="README_Tooltip.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="125">Tooltip</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126">Object Collection</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ObjectCollection.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126">Object Collection</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126"><a href="README_ObjectCollection.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="126">Object Collection</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127">Solver</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127"><a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/Utilities/Readme/README_SolverSystem.md" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127">Solver</a></td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127"><a href="README_Solver.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="127">Solver</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="utilities" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="129">Utilities</h2>
+<p sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="131">Some Utilities have been reconciled as duplicates with the Solver system. Please file an issue if any of the scripts you need are missing.</p>
+<table sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="133">
+<thead>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="133">
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="133">HTK 2017</th>
+<th sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="133">MRTK v2</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="135">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="135">Billboard</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="135"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Billboard.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="135"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="135">Billboard</code></a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136">Tagalong</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.RadialView.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136">RadialView</code></a> or <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.Orbital.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136">Orbital</code></a> <a href="README_Solver.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="136">Solver</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137">FixedAngularSize</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Solvers.ConstantViewSize.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137"><code sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137">ConstantViewSize</code></a> <a href="README_Solver.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="137">Solver</a></td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="138">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="138">FpsDisplay</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="138"><a href="Diagnostics/DiagnosticsSystemGettingStarted.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="138">Diagnostics System</a> (in Configuration Profile)</td>
+</tr>
+<tr sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="139">
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="139">NearFade</td>
+<td sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="139">Built-in to <a href="README_MRTKStandardShader.html" sourcefile="../../Documentation/HTKToMRTKPortingGuide.md" sourcestartlinenumber="139">Mixed Reality Toolkit Standard shader</a></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/HTKToMRTKPortingGuide.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

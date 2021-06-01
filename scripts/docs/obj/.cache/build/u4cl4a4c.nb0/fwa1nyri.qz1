@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#35386;&#26029;&#12471;&#12473;&#12486;&#12512; (Diagnostics System) &#12398;&#27083;&#25104; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="診断システム-diagnostics-system-の構成" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="1">診断システム (Diagnostics System) の構成</h1>
+
+<h2 id="general-settings-一般的な設定" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="3">General Settings （一般的な設定）</h2>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="5"><img src="../../Documentation/Images/Diagnostics/DiagnosticsGeneralSettings.png" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="5" alt="診断の一般的な設定"></p>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="7"><a name="enable-verbose-logging"></a></p>
+<h3 id="enable-verbose-logging-詳細ログの有効化" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="9">Enable verbose logging （詳細ログの有効化）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="11">MRTK の詳細ログを有効にするかどうかを示します。デフォルトでは false ですが、
+MRTK チームが問題のデバッグや調査をするための詳細なトレースをとるために有効にできます。
+例えば、issue を送るときに Unity プレイヤーのログ（エディターからでもプレイヤーからでも）を添付することで
+バグや issue の原因を絞り込む助けになります。</p>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="16">このオプションは診断システム (Diagnostics System) が有効かどうかとは独立していることにご注意ください。
+ログに関するオプションのため診断システムの下に表示されていますが、MRTK 全体のコードベースにわたるログに影響するため
+より高いレベルで動作します。</p>
+<h3 id="show-diagnostics-診断の表示" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="20">Show Diagnostics （診断の表示）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="22">診断システムが設定された診断オプションを表示するかどうかを示します。</p>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="24">無効にすると、設定されたすべての診断オプションが非表示になります。</p>
+<h2 id="profiler-settings-プロファイラーの設定" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="26">Profiler Settings （プロファイラーの設定）</h2>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="28"><img src="../../Documentation/Images/Diagnostics/DiagnosticsProfilerSettings.png" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="28" alt="診断プロファイラーの設定"></p>
+<h3 id="show-profiler-プロファイラーの表示" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="30">Show Profiler （プロファイラーの表示）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="32">ビジュアル プロファイラー (Visual Profiler) を表示するかどうかを示します。</p>
+<h3 id="frame-sample-rate-フレーム-サンプル-レート" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="34">Frame Sample Rate （フレーム サンプル レート）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="36">フレームレート計算用にフレームを収集する時間 (秒単位) 。範囲は 0 ~ 5 秒です。</p>
+<h3 id="window-anchor-ウィンドウ-アンカー" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="38">Window Anchor （ウィンドウ アンカー）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="40">プロファイラー ウィンドウをビュー ポート (view port) のどの部分に固定するかを設定します。デフォルト値は下中央です。</p>
+<h3 id="window-offset-ウィンドウ-オフセット" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="42">Window Offset （ウィンドウ オフセット）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="44">ビュー ポート (view port) の中心からビジュアル プロファイラーを配置するまでのオフセット。オフセットは <strong sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="44">Window Anchor （ウィンドウ アンカー）</strong> プロパティの方向です。</p>
+<h3 id="window-scale-ウィンドウ-スケール" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="46">Window Scale （ウィンドウ スケール）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="48">プロファイラー ウィンドウ (profiler window) に適用されるサイズ乗数。たとえば、値を 2 に設定すると、ウィンドウのサイズが 2 倍になります。</p>
+<h3 id="window-follow-speed-ウィンドウ追従スピード" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="50">Window Follow Speed （ウィンドウ追従スピード）</h3>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="52">ビュー ポート (view port) 内の可視性を維持するためにプロファイラー ウィンドウを移動する速度。</p>
+<h2 id="プログラムによる診断システムの制御" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="54">プログラムによる診断システムの制御</h2>
+<p sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="56">実行時に診断システムとプロファイラーの表示を切り替えることもできます。
+例えば、以下のコードでは、診断システムとプロファイラーを非表示にします。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="59">CoreServices.DiagnosticsSystem.ShowDiagnostics = false;
+
+CoreServices.DiagnosticsSystem.ShowProfiler = false;
+</code></pre>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="65">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="67">
+<li sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="67"><a href="DiagnosticsSystemGettingStarted.html" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="67">診断システム (Diagnostic System)</a></li>
+<li sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="68"><a href="UsingVisualProfiler.html" sourcefile="../../Documentation.ja/Diagnostics/ConfiguringDiagnostics.md" sourcestartlinenumber="68">ビジュアル プロファイラー (Visual Profiler) を使用する</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Diagnostics/ConfiguringDiagnostics.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

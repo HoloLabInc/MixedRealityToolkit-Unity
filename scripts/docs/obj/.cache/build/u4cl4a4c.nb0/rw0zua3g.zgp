@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#12472;&#12455;&#12473;&#12481;&#12515; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#12472;&#12455;&#12473;&#12481;&#12515; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ジェスチャ" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="1">ジェスチャ</h1>
+
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="3">ジェスチャは人の手に基づいた入力イベントです。MRTK にはジェスチャ入力イベントを発生させる2種類のデバイスがあります。</p>
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="5">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="5"><p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="5">HoloLens のような Windows Mixed Reality デバイス。これは、ピンチ動作 (「エア タップ」) とタップ &amp; ホールド ジェスチャを扱います。</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="7">HoloLens のジェスチャに関するより多くの情報は、<a href="https://docs.microsoft.com/windows/mixed-reality/gestures" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="7">Windows Mixed Reality Gestures ドキュメント</a> をご覧ください。</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="9"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="9"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="9">WindowsMixedRealityDeviceManager</code></a> は、HoloLens デバイスからの Unity のジェスチャ イベントを利用するために、<a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.GestureRecognizer.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="9">Unity XR.WSA.Input.GestureRecognizer</a> をラップしています。</p>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="11"><p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="11">タッチ スクリーン デバイス。</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="13"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.UnityInput.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="13"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="13">UnityTouchController</code></a> は、物理的なタッチ スクリーンをサポートする <a href="https://docs.unity3d.com/ScriptReference/Touch.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="13">Unity Touch class</a> をラップしています。</p>
+</li>
+</ul>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="15">これらの入力ソースの両方で、Unity の Touch と Gesture イベントを MRTK の <a href="InputActions.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="15">Input Actions (入力アクション)</a> にそれぞれ変換するため、 <em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="15">Gesture Settings</em> プロファイルを使用します。このプロファイルは、<em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="15">Input System Settings</em> プロファイルの下にあります。</p>
+<img src="../../Documentation/Images/Input/GestureProfile.png" style="max-width:100%;">
+<h2 id="gesture-events-ジェスチャ-イベント" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="19">Gesture Events (ジェスチャ イベント)</h2>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21">ジェスチャ イベントは、以下のジェスチャ ハンドラー インターフェイスの1つを実装したものによって、受け取られます。<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21">IMixedRealityGestureHandler</code></a> または <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityGestureHandler-1.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21">IMixedRealityGestureHandler&lt;TYPE&gt;</code></a> (<a href="InputEvents.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="21">イベント ハンドラー</a> の表をご覧ください).</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="23">ジェスチャ イベント ハンドラーの実装例については、<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB-%E3%82%B7%E3%83%BC%E3%83%B3" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="23">サンプル シーン</a> をご覧ください。</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="25">汎用のバージョンを実装する場合、<em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="25">OnGestureCompleted</em> と <em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="25">OnGestureUpdated</em> イベントは、以下の型のデータを受け取ることができます。</p>
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="27">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="27">Vector2</code> - 2D 位置のジェスチャ。タッチ スクリーンによって、<a href="https://docs.unity3d.com/ScriptReference/Touch-deltaPosition.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="27">deltaPosition</code></a> を通知するために生成される。</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="28"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="28">Vector3</code> - 3D 位置のジェスチャ。HoloLens によって、以下を通知するために生成される。
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="29">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="29">マニピュレーション イベントの <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.ManipulationUpdatedEventArgs-cumulativeDelta.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="29"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="29">cumulativeDelta</code></a></li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="30">ナビゲーション イベントの <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.NavigationUpdatedEventArgs-normalizedOffset.html" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="30"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="30">normalizedOffset</code></a></li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="31"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="31">Quaternion</code> - 3D 回転のジェスチャ。カスタムの入力ソースで利用可能だが、現在は存在するどの入力ソースからも生成されていない。</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="32"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="32">MixedRealityPose</code> - 3D 位置と回転が組み合わさったジェスチャ。カスタムの入力ソースで利用可能だが、現在は存在するどの入力ソースからも生成されていない。</li>
+</ul>
+<h2 id="イベントの順序" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="34">イベントの順序</h2>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="36">ユーザーの入力に応じて、2つの主なイベントのチェーンがあります。</p>
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="38">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="38"><p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="38">&quot;Hold (ホールド)&quot;:</p>
+<ol sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="39">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="39">タップをホールド:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="40">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="40"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="40">Manipulation</em> 開始</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="41"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.html#Microsoft_MixedReality_Toolkit_Input_MixedRealityInputSimulationProfile_HoldStartDuration" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="41">HoldStartDuration</a> を超えてタップをホールド:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="42">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="42"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="42">Hold</em> 開始</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="43">タップをリリース:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="44">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="44"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="44">Hold</em> 完了</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="45"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="45">Manipulation</em> 完了</li>
+</ul>
+</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="47"><p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="47">&quot;Move (動かす)&quot;:</p>
+<ol sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="48">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="48">タップをホールド:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="49">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="49"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="49">Manipulation</em> 開始</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="50"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.html#Microsoft_MixedReality_Toolkit_Input_MixedRealityInputSimulationProfile_HoldStartDuration" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="50">HoldStartDuration</a> を超えてタップをホールド:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="51">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="51"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="51">Hold</em> 開始</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="52"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile.html#Microsoft_MixedReality_Toolkit_Input_MixedRealityInputSimulationProfile_NavigationStartThreshold" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="52">NavigationStartThreshold</a> を超えて手を動かす:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="53">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="53"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="53">Hold</em> キャンセル</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="54"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="54">Navigation</em> 開始</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="55">タップをリリース:
+<ul sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="56">
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="56"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="56">Manipulation</em> 完了</li>
+<li sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="57"><em sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="57">Navigation</em> 完了</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="サンプル-シーン" sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="59">サンプル シーン</h2>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="61"><strong sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="61">HandInteractionGestureEventsExample</strong> (Assets/MRTK/Examples/Demos/HandTracking/Scenes) シーンでは、ポインターの結果を使って、オブジェクトをヒットした位置に生成する方法を示しています。</p>
+<p sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="63"><code sourcefile="../../Documentation.ja/Input/Gestures.md" sourcestartlinenumber="63">GestureTester</code> (Assets/MRTK/Examples/Demos/HandTracking/Script) スクリプトは、ジェスチャ イベントを GameObject を介して可視化する実装例です。このハンドラー関数はインジケーター オブジェクトの色を変え、最後に記録されたイベントをシーンのテキスト オブジェクトに表示します。</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Input/Gestures.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

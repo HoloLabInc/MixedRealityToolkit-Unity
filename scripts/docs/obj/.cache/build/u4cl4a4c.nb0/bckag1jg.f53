@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interactable | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interactable | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="interactable" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="1">Interactable</h1>
+
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="3"><img src="Images/Interactable/InteractableExamples.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="3" alt="Interactable"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5">Interactable</code></a> component is an all-in-one container to make any object easily <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5">interactable</em> and responsive to input. Interactable acts as a catch-all for all types of input including touch, hand rays, speech etc and funnel these interactions into <a href="#events" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5">events</a> and <a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="5">visual theme</a> responses. This component provides an easy way to make buttons, change color on objects with focus, and more.</p>
+<h2 id="how-to-configure-interactable" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="7">How to configure Interactable</h2>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="9">The component allows for three primary sections of configuration:</p>
+<ol sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="11">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="11"><a href="#general-input-settings" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="11">General input configuration</a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="12"><a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="12">Visual Themes</a> targeted against multiple GameObjects</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="13"><a href="#events" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="13">Event handlers</a></li>
+</ol>
+<h3 id="general-input-settings" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="15">General input settings</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="17"><img src="Images/Interactable/InputFeatures_short.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="17" alt="General Interactable Settings"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="19"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="19">States</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="21"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="21">States</em> is a <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="21">ScriptableObject</a> parameter that defines the interactions phases, like press or observed, for <a href="#interactable-profiles" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="21">Interactable Profiles</a> and <a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="21">Visual Themes</a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="23">The <strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="23">DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) ships with MRTK out-of-box and is the default parameter for <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="23">Interactable</em> components.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="25"><img src="Images/Interactable/DefaultInteractableStates.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="25" alt="States ScriptableObject example in inspector"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="27">The <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="27">DefaultInteractableStates</em> asset contains four states and utilizes the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStates.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="27">InteractableStates</code></a> state model implementation.</p>
+<ul sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="29">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="29"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="29"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="29">Default</strong>: Nothing is happening, this is the most isolated base state.</p>
+</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="31"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="31"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="31">Focus</strong>: The object is being pointed at. This is a single state, no other states are currently set, but it will out rank Default.</p>
+</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="33"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="33"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="33">Press</strong>: The object is being pointed at and a button or hand is pressing. The Press state out ranks Default and Focus. This state will also get set as a fallback to Physical Press.</p>
+</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="35"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="35"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="35">Disabled</strong>: The button should not be interactive and visual feedback will let the user know if for some reason this button is not usable at this time. In theory, the disabled state could contain all other states, but when Enabled is turned off, the Disabled state trumps all other states.</p>
+</li>
+</ul>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="37">A bit value (#) is assigned to the state depending on the order in the list.</p>
+<div class="NOTE" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="39">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="40">It is generally recommended to utilize the <strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="40">DefaultInteractableStates</strong> (Assets/MRTK/SDK/Features/UX/Interactable/States/DefaultInteractableStates.asset) when creating <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="40">Interactable</em> components.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="42">However, there are 17 Interactable states available that can be used to drive themes, though some are meant to be driven by other components. Here is a list of those with built-in functionality.</p>
+<ul sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="44">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="44">Visited: the Interactable has been clicked.</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="45">Toggled: The button is in a toggled state or Dimension index is an odd number.</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="46">Gesture: The hand or controller was pressed and has moved from the original position.</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="47">VoiceCommand: A speech command was used to trigger the Interactable.</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="48">PhysicalTouch: A touch input is currently detected, use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="48">NearInteractionTouchable</code></a> to enable.</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="49">Grab: A hand is currently grabbing in the bounds of the object, use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="49"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="49">NearInteractionGrabbable</code></a> to enable</li>
+</ul>
+</div>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="51"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="51">Enabled</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="53">Toggles whether an Interactable will start enabled or not. This corresponds to the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="53"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="53">Interactable.IsEnabled</code></a> in code.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="55">An <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="55">Interactable's</em> enabled property is different than the enabled property configured via GameObject/Component (i.e SetActive etc). Disabling the GameObject or <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="55">Interactable</em> MonoBehaviour will disable everything in the class from running including input, visual themes, events, etc. Disabling via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsEnabled" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="55"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="55">Interactable.IsEnabled</code></a> will disable most input handling, resetting related input states. However, the class will still run every frame and receive input events which will be ignored. This is useful for displaying the Interactable in a disabled state which can be done via Visual Themes. A typical example of this would be a submit button waiting for all the required input fields to be completed.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="57"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="57">Input Actions</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="59">Select the <a href="Input/InputActions.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="59">input action</a> from the input configuration or controller mapping profile that the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="59">Interactable</em> component should react to.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="61">This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_InputAction" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="61"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="61">Interactable.InputAction</code></a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="63"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="63">IsGlobal</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="65">If true, this will mark the component as a global input listener for the selected <a href="Input/InputActions.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="65">input action</a>. Default behavior is false which will restrict input to only this <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="65">Interactable</em> collider/GameObject.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="67">This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_IsGlobal" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="67"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="67">Interactable.IsGlobal</code></a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="69"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="69">Speech Command</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="71"><a href="Input/Speech.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="71">Speech command</a>, from the MRTK Speech Commands Profile, to trigger an OnClick event for voice interaction.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="73">This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceCommand" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="73"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="73">Interactable.VoiceCommand</code></a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="75"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="75">Requires Focus</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="77">If true, the voice command will only activate the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="77">Interactable</em> if and only if it already has focus from a pointer. If false, then the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="77">Interactable</em> will act as a global listener for the selected voice command. The default behavior is true, as multiple global speech listeners can be difficult to organize in a scene.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="79">This property can be configured at runtime in code via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_VoiceRequiresFocus" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="79"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="79">Interactable.VoiceRequiresFocus</code></a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="81"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="81">Selection Mode</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="83">This property defines the selection logic. When an <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="83">Interactable</em> is clicked, it iterates into a next <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="83">Dimension</em> level. <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="83">Dimensions</em> is similar to rank and defines a state outside of inputs (i.e focus, press etc). They are useful for defining Toggle states or other multi-rank states associated with a button. The current Dimension level is tracked by <code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="83">Interactable.DimensionIndex</code>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="85">The selection modes available are:</p>
+<ul sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="87">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="87"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="87">Button</strong> - <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="87">Dimensions</em> = 1, simple clickable <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="87">Interactable</em></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88">Toggle</strong> - <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88">Dimensions</em> = 2, <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88">Interactable</em> alternates between <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88">on</em>/<em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="88">off</em> state</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="89"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="89">Multi-dimension</strong> - <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="89">Dimensions</em> &gt;= 3, every click increases the current dimension level + 1. Useful for defining a button state to a list, etc.</li>
+</ul>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">Interactable</em> also allows for multiple Themes to be defined per <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">Dimension</em>. For example when <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">SelectionMode=Toggle</em>, one theme may be applied when the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">Interactable</em> is <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">deselected</em> and another theme applied when the component is <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="91">selected</em>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">The current Selection Mode can be queried at runtime via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_ButtonMode" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">Interactable.ButtonMode</code></a>. Updating the mode at runtime can be achieved by setting the  <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_Dimensions" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">Interactable.Dimensions</code></a> property to match the desired functionality. Furthermore, the current dimension, useful for <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">Toggle</em> and <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">Multi-Dimension</em> modes, can be accessed via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_CurrentDimension" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="93">Interactable.CurrentDimension</code></a>.</p>
+<h3 id="interactable-profiles" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="95">Interactable profiles</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="97"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="97">Profiles</em> are items that create a relationship between a GameObject and a <a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="97">Visual Theme</a>. The profile defines what content will be manipulated by a theme when a <a href="#general-input-settings" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="97">state change occurs</a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="99">Themes work a lot like materials. They are scriptable objects that contain a list of properties that will be assigned to an object based on the current state. Themes are also re-usable and can be assigned across multiple <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="99">Interactable</em> UX objects.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="101"><strong sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="101">Reset On Destroy</strong></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="103">Visual themes modify various properties on a targeted GameObject, dependent on the class and type of theme engine selected. If <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="103">Reset On Destroy</em> is true when the Interactable component is destroyed, the component will reset all modified properties from active themes to their original values. Otherwise, when destroyed, the Interactable component will leave any modified properties as-is. In this latter case, the last state of values will persist unless altered by another external component. The default is false.</p>
+<img src="Images/Interactable/Profiles_Themes.png" width="450">
+<h2 id="events" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="107">Events</h2>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="109">Every <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="109">Interactable</em> component has an <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="109">OnClick</em> event that fires when the component is simply selected. However, <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="109">Interactable</em> can be used to detect input events other than just <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="109">OnClick</em>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="111">Click the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="111">Add Event</em> button to add a new type of Event Receiver definition. Once added, select the type of Event desired.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="113"><img src="Images/Interactable/Events.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="113" alt="Events example">)</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="115">There are different types of event receivers to respond to different types of input. MRTK ships with the following set of receivers out-of-box.</p>
+<ul sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="117">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="117"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableAudioReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="117"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="117">InteractableAudioReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="118"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnClickReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="118"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="118">InteractableOnClickReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="119"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="119"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="119">InteractableOnFocusReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="120"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnGrabReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="120"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="120">InteractableOnGrabReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="121"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnHoldReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="121"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="121">InteractableOnHoldReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="122"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnPressReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="122"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="122">InteractableOnPressReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="123"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnToggleReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="123"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="123">InteractableOnToggleReceiver</code></a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="124"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnTouchReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="124"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="124">InteractableOnTouchReceiver</code></a></li>
+</ul>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="126">A custom receiver can be created by making a new class that extends <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="126"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="126">ReceiverBase</code></a>.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="128"><img src="Images/Interactable/Event_toggle.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="128" alt="Event Toggle Receiver Example"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="130"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="130">Example of a Toggle Event Receiver</em></p>
+<h3 id="interactable-receivers" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="132">Interactable receivers</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</code></a> component allows for events to be defined outside of the source <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">Interactable</em> component. The <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</em> will listen for a filtered event type fired by another <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">Interactable</em>. If the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">Interactable</em> property is not directly assigned, then the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">Search Scope</em> property defines the direction the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="134">InteractableReceiver</em> listens for events which is either on itself, in a parent, or in a child GameObject.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="136"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableReceiverList.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="136"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="136">InteractableReceiverList</code></a> acts in a similar fashion but for a list of matching events.</p>
+<img src="Images/Interactable/InteractableReceiver.png" width="450">
+<h3 id="create-custom-events" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="140">Create custom events</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="142">Like <a href="VisualThemes.html#custom-theme-engines" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="142">Visual Themes</a>, events can be extended to detect any state pattern or to expose functionality.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="144">Custom events can be created in two main ways:</p>
+<ol sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="146">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="146"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="146">Extend the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="146"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="146">ReceiverBase</code></a> class to create a custom event that will show up in the dropdown list of event types. A Unity event is provided by default, but additional Unity events can be added or the event can be set to hide Unity events. This functionality allows a designer to work with an engineer on a project to create a custom event that the designer can setup in the editor.</p>
+</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148"><p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148">Extend the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148">ReceiverBaseMonoBehavior</code></a> class to create a completely custom event component that can reside on the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148">Interactable</em> or another object. The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBaseMonoBehavior.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148">ReceiverBaseMonoBehavior</code></a> will reference the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="148">Interactable</em> to detect state changes.</p>
+</li>
+</ol>
+<h4 id="example-of-extending-receiverbase" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="150">Example of extending <code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="150">ReceiverBase</code></h4>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="152">The <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="152"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="152">CustomInteractablesReceiver</code></a> class displays status information about an <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="152">Interactable</em> and is an example of how to create a custom Event Receiver.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="154">public CustomInteractablesReceiver(UnityEvent ev) : base(ev, &quot;CustomEvent&quot;)
+{
+    HideUnityEvents = true; // hides Unity events in the receiver - meant to be code only
+}
+</code></pre>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161">The following methods are useful to override/implement when creating a custom Event Receiver. <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161">ReceiverBase.OnUpdate()</code></a> is an abstract method that can be used to detect state patterns/transitions. Furthermore, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161">ReceiverBase.OnVoiceCommand()</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ReceiverBase.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161">ReceiverBase.OnClick()</code></a> methods are useful for creating custom event logic when the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="161">Interactable</em> is selected.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="163">public override void OnUpdate(InteractableStates state, Interactable source)
+{
+    if (state.CurrentState() != lastState)
+    {
+        // the state has changed, do something new
+        lastState = state.CurrentState();
+        ...
+    }
+}
+
+public virtual void OnVoiceCommand(InteractableStates state, Interactable source,
+                                    string command, int index = 0, int length = 1)
+{
+    base.OnVoiceCommand(state, source, command, index, length);
+    // voice command called, perform some action
+}  
+
+public virtual void OnClick(InteractableStates state,
+                            Interactable source,
+                            IMixedRealityPointer pointer = null)
+{
+    base.OnClick(state, source);
+    // click called, perform some action
+}
+</code></pre>
+<h5 id="displaying-custom-event-receiver-fields-in-the-inspector" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="190">Displaying custom event receiver fields in the inspector</h5>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192">ReceiverBase</em> scripts use <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.Editor.InspectorField.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192">InspectorField</code></a> attributes to expose custom properties in the inspector. Here's an example of Vector3, a custom property with tooltip and label information. This property will show up as configurable in the inspector when an <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192">Interactable</em> GameObject is selected and has the associated <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="192">Event Receiver</em> type added.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="194">[InspectorField(Label = &quot;&lt;Property label&gt;&quot;,Tooltip = &quot;&lt;Insert tooltip info&gt;&quot;,Type = InspectorField.FieldTypes.Vector3)]
+public Vector3 EffectOffset = Vector3.zero;
+</code></pre>
+<h2 id="how-to-use-interactable" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="199">How to use Interactable</h2>
+<h3 id="building-a-simple-button" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="201">Building a simple button</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="203">One can create a simple button by adding the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="203">Interactable</em> component to a GameObject that is configured to receive input events. It can have a collider on it or on a child to receive input. If using <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="203">Interactable</em> with a Unity UI based GameObjects, it should be under the Canvas GameObject.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="205">Take the button one step further, by creating a new profile, assigning the GameObject itself and creating a new theme. Furthermore, use the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="205">OnClick</em> event to make something happen.</p>
+<div class="NOTE" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="207">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208">Making a <a href="README_Button.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208">button pressable</a> requires the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.PressableButton.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208">PressableButton</code></a> component. Additionally, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.PhysicalPressEventRouter.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208">PhysicalPressEventRouter</code></a> component is needed to funnel press events to the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="208">Interactable</em> component.</p>
+</div>
+<h3 id="creating-toggle-and-multi-dimension-buttons" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="210">Creating toggle and multi-dimension buttons</h3>
+<h4 id="toggle-button" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="212">Toggle button</h4>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214">To make a button Toggle-able, change the the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214">Selection Mode</code></a> field to type <code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214">Toggle</code>. In the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214">Profiles</em> section, a new toggled theme is added for each profile that is used when the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="214">Interactable</em> is toggled on.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="216">While the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.SelectionModes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="216"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="216">SelectionMode</code></a> is set to Toggle, the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="216">IsToggled</em> check box can be used to set the default value of the control at runtime initialization.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218">CanSelect</em> means the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218">Interactable</em> can go from <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218">off</em> to <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218">on</em> while the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="218">CanDeselect</em> means the inverse.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="220"><img src="Images/Interactable/Profile_toggle.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="220" alt="Profile Toggle Visual Themes Example"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222">Developers can utilize the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222">SetToggled</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222">IsToggled</code></a> interfaces to get/set the toggle state of an <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="222">Interactable</em> via code.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="224">// If using SelectionMode = Toggle (i.e Dimensions == 2)
+
+// Make the Interactable selected and toggled on
+myInteractable.IsToggled = true;
+
+// Get whether the Interactable is selected or not
+bool isSelected = myInteractable.IsToggled;
+</code></pre>
+<h5 id="toggle-button-collection" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="234">Toggle button collection</h5>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="236">It is common to have a list of toggle buttons where only one can be active at any given time, also known as a radial set or radio buttons etc.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="238">Use the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableToggleCollection.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="238"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="238">InteractableToggleCollection</code></a> component to enable this functionality. This control ensures only one <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="238">Interactable</em> is toggled on at any given time. The <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="238">RadialSet</em> (Assets/MRTK/SDK/Features/UX/Interactable/Prefabs/RadialSet.prefab) is also a great starting point out-of-box.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="240">To create a custom radial button group:</p>
+<ol sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="242">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="242">Create multiple <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="242">Interactable</em> GameObjects/buttons</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="243">Set each <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="243">Interactable</em> with <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="243">SelectionMode</em> = Toggle, <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="243">CanSelect</em> = true, and <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="243">CanDeselect</em> = false</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="244">Create an empty parent GameObject over all the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="244">Interactables</em> and add the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="244">InteractableToggleCollection</em> component</li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="245">Add all <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="245">Interactables</em> to the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="245">ToggleList</em> on the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="245">InteractableToggleCollection</em></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="246">Set the <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="246">InteractableToggleCollection.CurrentIndex</em> property to determine which button is selected by default at start</li>
+</ol>
+<img src="Images/Interactable/InteractableToggleCollection.png" width="450">
+<h4 id="multi-dimensional-button" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="250">Multi-dimensional button</h4>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="252">Multi-Dimension selection mode is used to create sequential buttons, or a button that has more than two steps, like controlling speed with three values, Fast (1x), Faster (2x) or Fastest (3x).</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="254">With dimensions being a numeric value, up to 9 themes can be added to control the text label or texture of the button for each speed setting, using a different theme for each of step.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="256">Every click event will advance the <code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="256">DimensionIndex</code> by 1 at runtime until the <code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="256">Dimensions</code> value is reached. Then the cycle will reset to 0.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="258"><img src="Images/Interactable/Profile_multiDimensions.png" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="258" alt="Multi-Dimensional profile example"></p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="260">Developers can assess the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="260"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="260">DimensionIndex</code></a> to determine which dimension is currently active.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="262">// If using SelectionMode = Multi-dimension (i.e Dimensions &gt;= 3)
+
+//Access the current DimensionIndex
+int currentDimension = myInteractable.CurrentDimension;
+
+//Set the current DimensionIndex to 2
+myInteractable.CurrentDimension = 2;
+
+// Promote Dimension to next level
+myInteractable.IncreaseDimension();
+</code></pre>
+<h3 id="create-interactable-at-runtime" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="275">Create Interactable at runtime</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="277"><em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="277">Interactable</em> can be easily added to any GameObject at runtime. The following example demonstrates how to assign a profile with a <a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="277">visual theme</a>.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="279">var interactableObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+var interactable = interactableObject.AddComponent&lt;Interactable&gt;();
+
+// Get the default configuration for the Theme engine InteractableColorTheme
+var newThemeType = ThemeDefinition.GetDefaultThemeDefinition&lt;InteractableColorTheme&gt;().Value;
+
+// Define a color for every state in our Default Interactable States
+newThemeType.StateProperties[0].Values = new List&lt;ThemePropertyValue&gt;()
+{
+    new ThemePropertyValue() { Color = Color.black},  // Default
+    new ThemePropertyValue() { Color = Color.black}, // Focus
+    new ThemePropertyValue() { Color = Random.ColorHSV()},   // Pressed
+    new ThemePropertyValue() { Color = Color.black},   // Disabled
+};
+
+interactable.Profiles = new List&lt;InteractableProfileItem&gt;()
+{
+    new InteractableProfileItem()
+    {
+        Themes = new List&lt;Theme&gt;()
+        {
+            Interactable.GetDefaultThemeAsset(new List&lt;ThemeDefinition&gt;() { newThemeType })
+        },
+        Target = interactableObject,
+    },
+};
+
+// Force the Interactable to be clicked
+interactable.TriggerOnClick()
+</code></pre>
+<h3 id="interactable-events-via-code" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="311">Interactable events via code</h3>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="313">One can add an action to the base <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html#Microsoft_MixedReality_Toolkit_UI_Interactable_OnClick" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="313"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="313">Interactable.OnClick</code></a> event via code with the following example.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="315">public static void AddOnClick(Interactable interactable)
+{
+    interactable.OnClick.AddListener(() =&gt; Debug.Log(&quot;Interactable clicked&quot;));
+}
+</code></pre>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="322">Use the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="322"><code sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="322">Interactable.AddReceiver&lt;T&gt;()</code></a> function to add event receivers dynamically at runtime.</p>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="324">The example code below demonstrates how to add an <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="324">InteractableOnFocusReceiver</a>, which listens for focus enter/exit, and furthermore define action code to perform when the event instances fire.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="326">public static void AddFocusEvents(Interactable interactable)
+{
+    var onFocusReceiver = interactable.AddReceiver&lt;InteractableOnFocusReceiver&gt;();
+
+    onFocusReceiver.OnFocusOn.AddListener(() =&gt; Debug.Log(&quot;Focus on&quot;));
+    onFocusReceiver.OnFocusOff.AddListener(() =&gt; Debug.Log(&quot;Focus off&quot;));
+}
+</code></pre>
+<p sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="336">The example code below demonstrates how to add an <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOnFocusReceiver.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="336">InteractableOnToggleReceiver</a>, which listens for selected/deselected state transitions on toggle-able <em sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="336">Interactables</em>, and furthermore defines action code to perform when the event instances fire.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="338">public static void AddToggleEvents(Interactable interactable)
+{
+    var toggleReceiver = interactable.AddReceiver&lt;InteractableOnToggleReceiver&gt;();
+
+    // Make the interactable have toggle capability, from code.
+    // In the gui editor it's much easier
+    interactable.Dimensions = 2;
+    interactable.CanSelect = true;
+    interactable.CanDeselect  = true;
+
+    toggleReceiver.OnSelect.AddListener(() =&gt; Debug.Log(&quot;Toggle selected&quot;));
+    toggleReceiver.OnDeselect.AddListener(() =&gt; Debug.Log(&quot;Toggle un-selected&quot;));
+}
+</code></pre>
+<h2 id="see-also" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="354">See also</h2>
+<ul sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="356">
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="356"><a href="VisualThemes.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="356">Visual Themes</a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="357"><a href="Input/InputActions.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="357">Input Actions</a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="358"><a href="Input/Speech.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="358">Speech Commands</a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="359"><a href="README_Button.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="359">Buttons</a></li>
+<li sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="360"><a href="README_MRTKStandardShader.html" sourcefile="../../Documentation/README_Interactable.md" sourcestartlinenumber="360">MRTK Standard Shader</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_Interactable.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

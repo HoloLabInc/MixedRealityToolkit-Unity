@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Scrolling Object Collection (&#12473;&#12463;&#12525;&#12540;&#12522;&#12531;&#12464; &#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Scrolling Object Collection (&#12473;&#12463;&#12525;&#12540;&#12522;&#12531;&#12464; &#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12467;&#12524;&#12463;&#12471;&#12519;&#12531;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="scrolling-object-collection-スクローリング-オブジェクト-コレクション" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="1">Scrolling Object Collection (スクローリング オブジェクト コレクション)</h1>
+
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="2"><img src="../Documentation/Images/ScrollingCollection/ScrollingCollection_Main.jpg" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="2" alt="Scrolling object collection"></p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="4">MRTK Scrolling Object Collection は、表示エリアを通して 3D コンテンツのスクロールを可能にする UX コンポーネントです。スクロールの動きは、ニア インプットやファー インプットの入力インタラクションや不連続のページネーションによってトリガーすることができます。インタラクティブなオブジェクトと非インタラクティブなオブジェクトの両方をサポートしています。</p>
+<h2 id="scrolling-object-collection-を始める" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="6">Scrolling Object Collection を始める</h2>
+<h3 id="シーンのセットアップ" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="8">シーンのセットアップ</h3>
+<ol sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="10">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="10">新しい Unity シーンを作成します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="11"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="11">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="11">Add to Scene and Configure</strong> からシーンに MRTK を追加します。</li>
+</ol>
+<h3 id="scrolling-object-スクローリング-オブジェクト-のセットアップ" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="13">Scrolling Object (スクローリング オブジェクト) のセットアップ</h3>
+<ol sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="15">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="15"><p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="15">シーンに空の GameObject を作成し、位置を (0, 0, 1) に変更します。</p>
+</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="16"><p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="16">GameObject に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ScrollingObjectCollection.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="16">Scrolling Object Collection</a> コンポーネントを追加します。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="18">Scrolling Object Collection が追加されると、ボックス コライダーと <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="18">Near Interaction Touchable</a> コンポーネントがルートのゲーム オブジェクトに自動的にアタッチされます。これらのコンポーネントにより、スクローリング オブジェクトはポインターのタッチやクリックのようなニア・ファー インタラクションの入力イベントをリッスンすることができます。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="20">MRTK の Scrolling Object Collection には2つの重要な要素があり、それらはルートのスクローリング オブジェクト階層の下に子ゲーム オブジェクトとして作成されます。</p>
+<ul sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="21">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="21"><code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="21">Container</code> - すべてのスクローリング コンテンツ オブジェクトは Container ゲーム オブジェクトの子オブジェクトでなければなりません。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="22"><code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="22">Clipping bounds</code> - スクローリング コンテンツのマスキングが有効になっている場合、Clipping bounds は、その境界内のスクロール可能なコンテンツのみを表示するようにします。Clipping bounds のゲーム オブジェクトは、無効化されたボックス コライダーと <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.ClippingBox.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="22">Clipping Box</a> の2つのコンポーネントを持っています。</li>
+</ul>
+</li>
+</ol>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="24"><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection.png" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="24" alt="Scrolling object collection elements"></p>
+<h3 id="scrolling-object-にコンテンツを追加する" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="26">Scrolling Object にコンテンツを追加する</h3>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="28">Scrolling Object Collection は、<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.GridObjectCollection.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="28">Grid Object Collection</a> と組み合わせて、サイズと間隔が一定の要素を並べたグリッドにコンテンツをレイアウトすることができます。</p>
+<ol sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="30">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="30">空の GameObject を Scroll Container の子要素として作成します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="31">作成した GameObject に Grid Object Collection コンポーネントを追加します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="32">縦方向の1列スクロールの場合は、インスペクター タブで以下のように Grid Object Collection を設定します。
+<ul sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="33">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="33"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="33">Num Columns</strong>: 1</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="34"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="34">Layout</strong>: column then row</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="35"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="35">Anchor</strong>: upper left</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="36"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="36">Cell Width</strong> と <strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="36">Height</strong> をコンテンツ オブジェクトに合わせて変更します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="37">Grid Object の子要素としてコンテンツ オブジェクトを追加します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="38"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="38">Update Collection</strong> を押します。</li>
+</ol>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="40"><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_GridLayout.png" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="40" alt="Grid layout"></p>
+<div class="IMPORTANT" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="42">
+<h5>Important</h5>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="43">スクローリング コンテンツ のオブジェクトのマテリアルには、表示領域のクリッピング効果を正常に動作させるために、<a href="README_MRTKStandardShader.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="43">MRTK Standard Shader</a> を使用しなければなりません。</p>
+</div>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="45">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="46">スクローリング コンテンツのマスキングが有効な場合、Scrolling Object Collection は Renderer がアタッチされている全てのコンテンツ オブジェクトに <a href="Rendering/MaterialInstance.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="46">Material Instance</a> コンポーネントを追加します。このコンポーネントはインスタンス化されたマテリアルのライフタイムを管理し、メモリ性能を向上させるために使用されます。</p>
+</div>
+<h3 id="スクローリング表示エリアの設定" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="48">スクローリング表示エリアの設定</h3>
+<ol sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="50">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="50">1列のオブジェクトを縦方向にスクロールする場合は、インスペクター タブで以下のように Scrolling Object Collection を設定します。
+<ul sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="51">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="51"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="51">Cells Per Tier</strong>: 1</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="52">表示したい行の数応じて、<strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="52">Tiers Per Page</strong> の数値を選択します。</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="53"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="53">Page Cell Width</strong>, <strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="53">Height</strong>, <strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="53">Depth</strong> をコンテンツ オブジェクトのサイズに合わせて変更します。</li>
+</ol>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="55">スクローリング表示領域の外側にあるコンテンツ オブジェクトが無効化され、スクロール ワイヤフレームと交差するオブジェクトはクリッピング プリミティブによって部分的にマスクされている可能性があることに注目してください。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="57"><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ViewableArea.png" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="57" alt="Viewable area"></p>
+<h3 id="editor-での-scrolling-object-collection-のテスト" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="59">Editor での Scrolling Object Collection のテスト</h3>
+<ol sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="61">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="61">Play を押し、スペース バーを押し続けて入力シミュレーション ハンドを表示します。</li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="62">スクローリング コライダーまたはスクロールするインタラクティブ コンテンツにフォーカスが当たるまでハンドを動かし、マウスの左クリックを押して上下にドラッグすることでスクロールの動きをトリガーします。</li>
+</ol>
+<h2 id="スクローリング-オブジェクトをコードで制御する" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="64">スクローリング オブジェクトをコードで制御する</h2>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="66">MRTK Scrolling Object Collection は、<code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="66">pagination</code> プロパティの設定にしたがってスクローリング コンテナの位置をスナップして移動させることができるいくつかのパブリック メソッドを公開しています。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="68">Scrolling Object Collection のページネーション インターフェイスへのアクセス方法の例は、<code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="68">MRTK/Examples/Demos/ScrollingObjectCollection/Scripts</code> フォルダ以下にあります。<a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Examples.Demos.ScrollablePagination.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="68">Scrollable Pagination</a> のサンプル スクリプトは、シーン内の既存の Scrolling Object Collection にリンクすることができます。このスクリプトは、Unity イベントを公開するシーンコンポーネント (例: <a href="README_Button.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="68">MRTK button</a>) から参照することができます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="70">public class ScrollablePagination : MonoBehaviour
+{
+    [SerializeField]
+    private ScrollingObjectCollection scrollView;
+
+    public void ScrollByTier(int amount)
+    {
+        scrollView.MoveByTiers(amount);
+    }       
+}
+</code></pre>
+<h2 id="scrolling-object-collection-のプロパティ" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="83">Scrolling Object Collection のプロパティ</h2>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="85">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="85">
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="85">General<br>(全般)</th>
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="85"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="87">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="87">Scroll Direction<br>(スクロールの方向)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="87">コンテンツがスクロールする方向</td>
+</tr>
+</tbody>
+</table>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="89">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="89">
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="89">Pagination<br>(ページネーション)</th>
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="89"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="91">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="91">Cells Per Tier<br>(列ごとのセル数)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="91">上下スクロール ビューでは横列のセル数、左右スクロール ビューでは縦列のセル数</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="92">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="92">Tiers Per Page<br>(ページごとの列数)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="92">スクローリング エリアに表示される列数</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="93">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="93">Page Cell<br>(ページ セル)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="93">ページネーション セルのサイズ</td>
+</tr>
+</tbody>
+</table>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="95">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="95">
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="95">Advanced settings<br>(詳細設定)</th>
+<th style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="95"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="97">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="97">Mask Edit Mode<br>(マスクの編集モード)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="97">クリッピング ボックスのマスキング境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとクリッピング ボックス オブジェクトを直接操作することができます。</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="98">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="98">Collider Edit Mode<br>(コライダーの編集モード)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="98">スクロール インタラクションのコライダー境界を定義するための編集モードです。'Auto' を選ぶと自動的にページネーションの値を使用します。'Manual' を選ぶとコライダーを直接操作することができます。</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="99">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="99">Can Scroll<br>(スクロール可否)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="99">ニア/ファー インタラクションでのスクロール可否</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="100">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="100">Use On Pre Render<br>(OnPreRender の利用)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="100">ScrollingObjectCollection が Camera の OnPreRender イベントを使用してコンテンツの可視性を管理するかどうかを切り替えます。</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="101">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="101">Pagination Curve<br>(ページネーション カーブ)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="101">ページネーションのアニメーション カーブ</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="102">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="102">Animation Length<br>(アニメーションの長さ)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="102">PaginationCurve が評価されるのにかかる時間（秒）</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="103">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="103">Hand Delta Scroll Threshold<br>(ハンドのスクロールしきい値)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="103">現在のポインターがスクロール ドラッグをトリガーする前にスクロール方向に沿って移動できる距離 (m)</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="104">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="104">Front touch distance<br>(前面のタッチ距離)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="104">スクロール ビューの前面でタッチ インタラクションが開始されたかどうかを確認するために使用されるローカルの xy 平面を配置する距離 (m)</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="105">
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="105">Release threshold<br>(リリースのしきい値)</td>
+<td style="text-align: left;" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="105">タッチしている状態から解放されるまでに必要な、スクロール境界から引っこめる移動量 (m)</td>
+</tr>
+</tbody>
+</table>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="107">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="107">
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="107">Velocity<br>(速度)</th>
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="107"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="109">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="109">Type Of Velocity<br>(速度のタイプ)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="109">スクローラーの速度減衰のタイプ</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="110">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="110">Velocity Multiplier<br>(速度倍率)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="110">スクローラーに適用される（追加の）速度量</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="111">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="111">Velocity Dampen<br>(速度減衰)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="111">速度に適用される減衰量</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="112">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="112">Bounce Multiplier<br>(はずみ倍率)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="112">Falloff Per Frame や Falloff Per Item を使用するとき、リストのオーバースクロールに対してより大きいはずみ量を追加するための倍率</td>
+</tr>
+</tbody>
+</table>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="114">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="114">
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="114">Debug options<br>(デバッグ オプション)</th>
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="114"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="116">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="116">Mask Enabled<br>(マスクの有効化)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="116">スクロール コンテンツの可視性。デフォルト値はスクロール表示エリアの外側にある全てのオブジェクトをマスクします。</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="117">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="117">Show Threshold Planes<br>(しきい値平面の表示)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="117">tru の場合、Editor でスクロール境界の周りのタッチ リリースしきい値平面が描画されます。</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="118">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="118">Debug pagination<br>(デバッグ ページネーション)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="118">このセクションを使うことで実行時にスクロールのページネーションをデバッグできます。</td>
+</tr>
+</tbody>
+</table>
+<table sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="120">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="120">
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="120">Events<br>(イベント)</th>
+<th sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="120"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="122">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="122">On Click<br>(クリック時)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="122">スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがクリックを受け取ったときにトリガーされるイベント</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="123">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="123">On Touch Started<br>(タッチ開始時)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="123">スクロール背景のコライダーやいずれかのインタラクティブ コンテンツがニア インタラクション タッチを受け取ったときにトリガーされるイベント</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="124">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="124">On Touch Ended<br>(タッチ終了時)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="124">ニア インタラクション ポインターがリリースしきい値平面の1つを超えたことでアクティブなタッチ インタラクションが終了したときにトリガーされるイベント</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="125">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="125">On Momentum Started<br>(移動開始時)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="125">インタラクション、速度減衰やページネーションによってスクロール コンテナーが動き出したときにトリガーされるイベント</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="126">
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="126">On Momentum Ended<br>(移動終了時)</td>
+<td sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="126">インタラクション、速度減衰やページネーションによってスクロール コンテナーの動きが停止したときにトリガーされるイベント</td>
+</tr>
+</tbody>
+</table>
+<h2 id="スクロールのサンプル-シーン" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="128">スクロールのサンプル シーン</h2>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="130"><strong sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="130">ScrollingObjectCollection.unity</strong> サンプル シーンは、3つのスクロール可能なサンプルで構成されています。3つのサンプルはそれぞれ異なる速度減衰が設定されています。サンプルシーンは <code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="130">MRTK/Examples/Demos/ScrollingObjectCollection/Scenes</code> フォルダ以下にあります。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="132"><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_ExampleScene.png" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="132" alt="Scrolling object collection example scene"></p>
+<h2 id="スクロールのサンプル-プレファブ" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="134">スクロールのサンプル プレファブ</h2>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="136">便利なように、2つの Scrolling Object Collection のプレハブが用意されています。サンプルのプレハブは <code sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="136">MRTK/Examples/Demos/ScrollingObjectCollection/Prefabs</code> フォルダにあります。</p>
+<p sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="138"><img src="../Documentation/Images/ScrollingCollection/ScrollingObjectCollection_Prefabs.png" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="138" alt="Scrolling object collection prefabs"></p>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="140">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="142">
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="142"><a href="Rendering/ClippingPrimitive.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="142">Clipping Primitive</a></li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="143"><a href="Rendering/MaterialInstance.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="143">Material Instance</a></li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="144"><a href="README_MRTKStandardShader.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="144">Standard Shader</a></li>
+<li sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="145"><a href="README_ObjectCollection.html" sourcefile="../../Documentation.ja/README_ScrollingObjectCollection.md" sourcestartlinenumber="145">Object collection</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_ScrollingObjectCollection.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

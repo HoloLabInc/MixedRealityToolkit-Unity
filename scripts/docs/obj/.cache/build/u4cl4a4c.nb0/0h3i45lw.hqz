@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unity AR camera settings provider | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Unity AR camera settings provider | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="unity-ar-camera-settings-provider" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="1">Unity AR camera settings provider</h1>
+
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="3">The Unity AR camera settings provider is an experimental MRTK component that enables mixed reality applications to run on Android and iOS devices.</p>
+<h2 id="unity-ar-camera-settings-provider-options" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="5">Unity AR camera settings provider options</h2>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="7"><img src="../../Documentation/Images/CameraSystem/UnityArSettingsConfiguration.png" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="7" alt="Unity AR camera settings configuration"></p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="9">For a guide on how to add the provider to your scene: <a href="../CrossPlatform/UsingARFoundation.html" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="9">How to configure MRTK for iOS and Android</a></p>
+<h3 id="tracking-settings" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="11">Tracking settings</h3>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="13">The Unity AR camera settings provider allows configuration options for how tracking is performed. These settings are specific to the Unity AR camera settings provider implementation.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="15"><strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="15">Pose Source</strong></p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="17">The pose source defines the available types of augmented reality tracking poses. In general, these values map to a component of the device on which the application is running.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="19">The available options are described in the following table.</p>
+<table sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="21">
+<thead>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="21">
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="21">Option</th>
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="21">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="23">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="23">Center</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="23">The center eye of a head mounted device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="24">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="24">Color Camera</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="24">The color camera of a mobile device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="25">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="25">Head</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="25">The head eye of a head mounted device, often slightly above the center eye.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="26">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="26">Left Eye</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="26">The left eye of a head mounted device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="27">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="27">Left Pose</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="27">The left hand controller pose.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="28">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="28">Right Eye</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="28">The right eye of a head mounted device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="29">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="29">Right Pose</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="29">The right hand controller pose.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="31">The default value for pose source is <strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="31">Color Camera</strong>, to enable a transparent display on mobile devices, such as a phone or tablet.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="33"><strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="33">Tracking Type</strong></p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="35">The tracking type defines the portion(s) of the pose that will be used for tracking.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="37">The available options are described in the following table.</p>
+<table sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="39">
+<thead>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="39">
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="39">Option</th>
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="39">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="41">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="41">Position</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="41">The position of the device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="42">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="42">Rotation</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="42">The rotation of the device.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="43">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="43">Rotation And Position</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="43">The position and rotation of the device.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="45">The default value for tracking type is <strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="45">Rotation And Position</strong>, to enable the richest tracking experience.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="47"><strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="47">Update Type</strong></p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="49">The update type defines at what points, during frame processing, the pose data will be sampled.</p>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="51">The available options are described in the following table.</p>
+<table sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="53">
+<thead>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="53">
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="53">Option</th>
+<th sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="53">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="55">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="55">Before Render</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="55">Just before rendering.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="56">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="56">Update</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="56">During the update phase of the frame.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="57">
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="57">Update And Before Render</td>
+<td sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="57">During the update phase and just before rendering.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="59">The default value for tracking type is <strong sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="59">Update And Before Render</strong>, to enable the lowest tracking latency.</p>
+<h2 id="see-also" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="61">See also</h2>
+<ul sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="63">
+<li sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="63"><a href="CameraSystemOverview.html" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="63">Camera System Overview</a></li>
+<li sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="64"><a href="CreateSettingsProvider.html" sourcefile="../../Documentation.ja/CameraSystem/UnityArCameraSettings.md" sourcestartlinenumber="64">Creating a Camera Settings Provider</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/CameraSystem/UnityArCameraSettings.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

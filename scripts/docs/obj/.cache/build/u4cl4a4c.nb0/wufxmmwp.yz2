@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MRTK &#12392; XR SDK &#12434;&#20351;&#12356;&#22987;&#12417;&#12427; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MRTK &#12392; XR SDK &#12434;&#20351;&#12356;&#22987;&#12417;&#12427; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mrtk-と-xr-sdk-を使い始める" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="1">MRTK と XR SDK を使い始める</h1>
+
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="3">XR SDK は Unity の <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="3">Unity 2019.3 以降における新しい XR パイプライン</a> です。Unity 2019 では、XR SDK は既存の XR パイプラインに代わるものを提供します。Unity 2020 では、XR SDK は Unity における唯一の XR パイプラインとなります。</p>
+<h2 id="前提条件" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="5">前提条件</h2>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="7">Mixed Reality Toolkit を使い始めるには、<a href="WelcomeToMRTK.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="7">提供されている手順</a> にしたがって MRTK をプロジェクトに追加してください。</p>
+<h2 id="xr-sdk-を-unity-プロジェクトに追加する" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="9">XR SDK を Unity プロジェクトに追加する</h2>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="11">Windows Mixed Reality と Oculus が XR SDK でサポートされています。</p>
+<h3 id="unity-での必要事項" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="13">Unity での必要事項</h3>
+<h4 id="windows-mixed-reality" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="15">Windows Mixed Reality</h4>
+<ol sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="17">
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="17">Unity の Package Manager を開き、Windows XR Plugin パッケージをインストールします。このパッケージは XR SDK での Windows Mixed Reality のサポートを追加します。いくつかの依存パッケージも取得されます。以下のすべてが正常にインストールされていることをご確認ください。
+<ol sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="18">
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="18">XR Plugin Management</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="19">Windows XR Plugin</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="20">XR Legacy Input Helpers</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="21">Edit &gt; Project Settings を開きます。</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="22">Project Settings ウィンドウの XR Plug-in Management タブをクリックします。</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="23">Universal Windows Platform の設定を開き、Plug-in Providers にて Windows Mixed Reality がチェックされていることを核にします。</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="24">Initialize XR on Startup がチェックされていることを確認します。</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="25">(<strong sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="25"><em sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="25">Editor での HoloLens Remoting に必要、そうでなければオプション</em></strong>) Standalone 設定を開き、Plug-in Providers にて Windows Mixed Reality がチェックされていることを確認します。また、Initialize XR on Startup がチェックされていることも確認します。</li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="26">(<strong sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="26"><em sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="26">オプション</em></strong>) XR Plug-in Management 内の Windows Mixed Reality タブをクリックし、カスタム設定プロファイルを作成してデフォルトの設定を変更します。設定のリストがすでにあれば、プロファイルを作成する必要はありません。</li>
+</ol>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="28"><img src="../Documentation/Images/XRSDK/PluginManagement.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="28" alt="Plugin management"></p>
+<h3 id="mrtk-での必要事項" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="30">MRTK での必要事項</h3>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="32">アクティブなプロファイルとして &quot;DefaultXRSDKConfigurationProfile&quot; を選択するか、クローンしてカスタマイズします。このプロファイルは必要に応じて MRTK の XR SDK システムとプロバイダでセットアップされます。</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="34">既存のプロファイルを XR SDK に移行するには、以下のサービスとデータ プロバイダを更新する必要があります。</p>
+<h4 id="camera" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="36">Camera</h4>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="38"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.WindowsMixedRealityCameraSettings.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="38">WindowsMixedReality.WindowsMixedRealityCameraSettings</code></a> から</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="40"><img src="../Documentation/Images/XRSDK/CameraSystemLegacy.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="40" alt="Legacy camera settings"></p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42">XRSDK.WindowsMixedReality.WindowsMixedRealityCameraSettings</code></a> <strong sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42">と</strong> <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.XRSDK.GenericXRSDKCameraSettings.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="42">GenericXRSDKCameraSettings</code></a> に変更</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="44"><img src="../Documentation/Images/XRSDK/CameraSystemXRSDK.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="44" alt="XR SDK camera settings"></p>
+<h4 id="input" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="46">Input</h4>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="48"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="48">WindowsMixedReality.Input.WindowsMixedRealityDeviceManager</code></a> から</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="50"><img src="../Documentation/Images/XRSDK/InputSystemWMRLegacy.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="50" alt="Legacy input settings"></p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="52"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="52"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="52">XRSDK.WindowsMixedReality.WindowsMixedRealityDeviceManager</code></a> に変更</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="54"><img src="../Documentation/Images/XRSDK/InputSystemWMRXRSDK.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="54" alt="XR SDK input settings"></p>
+<h4 id="boundary" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="56">Boundary</h4>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="58"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundarySystem.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="58"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="58">MixedRealityBoundarySystem</code></a> から</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="60"><img src="../Documentation/Images/XRSDK/BoundarySystemLegacy.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="60" alt="Legacy boundary settings"></p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="62"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.XRSDK.XRSDKBoundarySystem.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="62"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="62">XRSDKBoundarySystem</code></a> に変更</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="64"><img src="../Documentation/Images/XRSDK/BoundarySystemXRSDK.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="64" alt="XR SDK boundary settings"></p>
+<h4 id="spatial-awareness" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="66">Spatial Awareness</h4>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="68"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="68"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="68">WindowsMixedReality.SpatialAwareness.WindowsMixedRealitySpatialMeshObserver</code></a> から</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="70"><img src="../Documentation/Images/XRSDK/SpatialAwarenessLegacy.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="70" alt="Legacy spatial awareness settings"></p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="72"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="72"><code sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="72">XRSDK.WindowsMixedReality.WindowsMixedRealitySpatialMeshObserver</code></a> に変更</p>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="74"><img src="../Documentation/Images/XRSDK/SpatialAwarenessXRSDK.png" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="74" alt="XR SDK spatial awareness settings"></p>
+<h4 id="コントローラー-マッピング" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="76">コントローラー マッピング</h4>
+<p sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="78">カスタムのコントローラー マッピング プロファイルを使用する場合は、そのうちの1つを開き、Mixed Reality Toolkit -&gt; Utilities -&gt; Update -&gt; Controller Mapping Profiles のメニュー項目を実行して、新しい XR SDK コントローラー タイプが定義されていることを確認してください。</p>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="80">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="82">
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="82"><a href="https://docs.unity3d.com/Manual/AROverview.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="82">Getting started with AR development in Unity</a></li>
+<li sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="83"><a href="https://docs.unity3d.com/Manual/VROverview.html" sourcefile="../../Documentation.ja/GettingStartedWithMRTKAndXRSDK.md" sourcestartlinenumber="83">Getting started with VR development in Unity</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/GettingStartedWithMRTKAndXRSDK.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

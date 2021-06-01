@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Configure Leap Motion (by Ultraleap) Hand Tracking in MRTK | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Configure Leap Motion (by Ultraleap) Hand Tracking in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-configure-leap-motion-by-ultraleap-hand-tracking-in-mrtk" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="1">How to Configure Leap Motion (by Ultraleap) Hand Tracking in MRTK</h1>
+
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="3">A <a href="https://www.ultraleap.com/product/leap-motion-controller/" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="3">Leap Motion Controller</a> is required to use this data provider.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="5">The Leap Motion Data Provider enables articulated hand tracking for VR and could be useful for rapid prototyping in the editor.  The data provider can be configured to use the Leap Motion Controller mounted on a headset or placed on a desk face up.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="7"><img src="../Images/CrossPlatform/LeapMotion/LeapHandsGif3.gif" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="7" alt="LeapMotionIntroGif"></p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="9">This provider can be used in editor and on device while on the Standalone platform.  It can also be used in editor while on the UWP platform but NOT in a UWP build.</p>
+<table sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="11">
+<thead>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="11">
+<th sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="11">Leap Motion Unity Modules Versions Supported</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="13">
+<td sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="13">4.5.0</td>
+</tr>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="14">
+<td sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="14">4.5.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-leap-motion-by-ultraleap-hand-tracking-in-mrtk" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="16">Using Leap Motion (by Ultraleap) hand tracking in MRTK</h2>
+<ol sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="18">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="18"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="18">Importing MRTK and the Leap Motion Unity Modules</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="19">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="19">Install the <a href="https://developer.leapmotion.com/releases/?category=orion" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="19">Leap Motion SDK 4.0.0</a> if it is not already installed</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="20">Import the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="20">Microsoft.MixedReality.Toolkit.Foundation</strong> package into the Unity project.</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="21">Download and import the latest version of the <a href="https://developer.leapmotion.com/unity" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="21">Leap Motion Unity Modules</a> into the project
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="22">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="22">Only import the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="22">Core</strong> package within the Unity Modules</li>
+</ul>
+</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="24"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="24">Integrate the Leap Motion Unity Modules with MRTK</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="25">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="25">After the Unity Modules are in the project, navigate to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="25">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="25">Leap Motion</strong> &gt; <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="25">Integrate Leap Motion Unity Modules</strong></li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="26">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="27">Integrating the Unity Modules to MRTK adds 10 assembly definitions to the project and adds references to the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="27">Microsoft.MixedReality.Toolkit.Providers.LeapMotion</strong> assembly definition. Make sure Visual Studio is closed.</p>
+</div>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="29"><img src="../Images/CrossPlatform/LeapMotion/LeapMotionIntegrateMenu.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="29" alt="LeapMotionIntegration"></p>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="31"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="31">Adding the Leap Motion Data Provider</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="32">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="32">Create a new Unity scene</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="33">Add MRTK to the scene by navigating to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="33">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="33">Add to Scene and Configure</strong></li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="34">Select the MixedRealityToolkit game object in the hierarchy and select <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="34">Copy and Customize</strong> to clone the default mixed reality profile.</li>
+</ul>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="36"><img src="../Images/CrossPlatform/CloneProfile.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="36" alt="LeapMotionProfileClone"></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="38">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="38">Select the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="38">Input</strong> Configuration Profile</li>
+</ul>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="40"><img src="../Images/CrossPlatform/InputConfigurationProfile.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="40" alt="InputConfigurationProfile"></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="42">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="42">Select <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="42">Clone</strong> in the input system profile to enable modification.</li>
+</ul>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="44"><img src="../Images/CrossPlatform/CloneInputSystemProfile.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="44" alt="LeapMotionInputProfileClone"></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">Open the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">Input Data Providers</strong> section, select <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">Add Data Provider</strong> at the top, a new data provider will be added at the end of the list.  Open the new data provider and set the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">Type</strong> to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="46">Microsoft.MixedReality.Toolkit.LeapMotion.Input &gt; LeapMotionDeviceManager</strong></li>
+</ul>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="48"><img src="../Images/CrossPlatform/LeapMotion/LeapAddDataProvider.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="48" alt="LeapAddDataProvider"></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="50">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="50">Select <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="50">Clone</strong> to change the default Leap Motion settings.</li>
+</ul>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="52"><img src="../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerProfile.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="52" alt="LeapDataProviderPreClone"></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">The Leap Motion Data Provider contains the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">LeapControllerOrientation</code> property which is the location of the Leap Motion Controller. <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">LeapControllerOrientation.Headset</code> indicates the controller is mounted on a headset. <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">LeapControllerOrientation.Desk</code> indicates the controller is placed flat on desk. The default value is set to <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="54">LeapControllerOrientation.Headset</code>.</p>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="55"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="55">Each controller orientation contains offset properties:</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">The <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">Headset</strong> orientation offset properties mirror the offset properties in the LeapXRServiceProvider component.  The <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">LeapVRDeviceOffsetMode</code> has three options: Default, Manual Head Offset and Transform.  If the offset mode is Default, then an offset will not be applied to the Leap Motion Controller.  The Manual Head Offset mode allows for the modification of three properties: <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">LeapVRDeviceOffsetY</code>, <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">LeapVRDeviceOffsetZ</code> and <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">LeapVRDeviceTiltX</code>.  The axis offset property values are then applied to default controller placement.  The Transform offset mode contains the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="56">LeapVRDeviceOrigin</code> Transform property which specifies a new origin for the Leap Motion Controller.</p>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="57"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="57">The <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="57">Desk</strong> orientation contains the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="57">LeapControllerOffset</code> property which defines the anchor position of the desk leap hands.  The offset is calculated relative to the main camera position and the default value is (0,-0.2, 0.35) to make sure the hands appear in front and in view of the camera.</p>
+<div class="NOTE" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="59">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="60">The offset properties in the profile are applied once when the application starts.  To modify the values during runtime, get the Leap Motion Service Provider from the Leap Motion Device Manager:</p>
+<pre><code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="61">LeapMotionDeviceManager leapMotionDeviceManager = CoreServices.GetInputSystemDataProvider&lt;LeapMotionDeviceManager&gt;();
+LeapXRServiceProvider leapXRServiceProvider = leapMotionDeviceManager.LeapMotionServiceProvider as LeapXRServiceProvider; 
+</code></pre>
+</div>
+</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="66"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="66"><code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="66">EnterPinchDistance</code> and <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="66">ExitPinchDistance</code> are the distance thresholds for pinch/air tap gesture detection.  The pinch gesture is calculated by measuring the distance between the index finger tip and the thumb tip.  To raise an on input down event, the default <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="66">EnterPinchDistance</code> is set to 0.02.  To raise an on input up event (exiting the pinch), the default distance between the index finger tip and the thumb tip is 0.05.</p>
+</li>
+</ul>
+<table sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68">
+<thead>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68">
+<th style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68"><code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68">LeapControllerOrientation</code>: Headset (Default)</th>
+<th style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68"><code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="68">LeapControllerOrientation</code>: Desk</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="70">
+<td style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="70"><img src="../Images/CrossPlatform/LeapMotion/LeapHeadsetOrientationExampleMetacarpals.gif" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="70" alt="LeapHeadsetGif"></td>
+<td style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="70"><img src="../Images/CrossPlatform/LeapMotion/LeapDeskOrientationExampleMetacarpals.gif" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="70" alt="LeapDeskGif"></td>
+</tr>
+<tr sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="71">
+<td style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="71"><img src="../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerHeadset.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="71" alt="LeapHeadsetInspector"></td>
+<td style="text-align: center;" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="71"><img src="../Images/CrossPlatform/LeapMotion/LeapMotionDeviceManagerDesk.png" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="71" alt="LeapDeskInspector"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="73"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="73">Testing the Leap Motion Data Provider</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="74">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="74">After Leap Motion Data Provider has been added to the input system profile, press play, move your hand in front of the Leap Motion Controller and you should see the joint representation of the hand.</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="76"><p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="76">Building your project</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="77">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="77">Navigate to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="77">File &gt; Build Settings</strong></li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="78">Only Standalone builds are supported if using the Leap Motion Data Provider.</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="79">For instructions on how to use a Windows Mixed Reality headset for Standalone builds, see <a href="../BuildAndDeploy.html#building-and-deploying-mrtk-to-a-windows-mixed-reality-headset" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="79">Build and Deploy</a>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="getting-the-hand-joints" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="81">Getting the hand joints</h2>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="83">Getting joints using the Leap Motion Data Provider is identical to hand joint retrieval for an MRTK Articulated Hand.  For more information, see <a href="../Input/HandTracking.html#polling-joint-pose-from-handjointutils" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="83">Hand Tracking</a>.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="85">With MRTK in a unity scene and the Leap Motion Data Provider added as an Input Data Provider in the Input System profile, create an empty game object and attach the following example script.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="87">This script is a simple example of how to retrieve the pose of the palm joint in a Leap Motion Hand.  A sphere follows the left Leap hand while a cube follows the right Leap hand.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="89">using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.Input;
+using Microsoft.MixedReality.Toolkit.Utilities;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LeapHandJoints : MonoBehaviour, IMixedRealityHandJointHandler
+{
+    private GameObject leftHandSphere;
+    private GameObject rightHandCube;
+
+    private void Start()
+    {
+        // Register the HandJointHandler as a global listener
+        CoreServices.InputSystem.RegisterHandler&lt;IMixedRealityHandJointHandler&gt;(this);
+
+        // Create a sphere to follow the left hand palm position
+        leftHandSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        leftHandSphere.transform.localScale = Vector3.one * 0.03f;
+
+        // Create a cube to follow the right hand palm position
+        rightHandCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        rightHandCube.transform.localScale = Vector3.one * 0.03f;
+    }
+
+    public void OnHandJointsUpdated(InputEventData&lt;IDictionary&lt;TrackedHandJoint, MixedRealityPose&gt;&gt; eventData)
+    {
+        if (eventData.Handedness == Handedness.Left)
+        {
+            Vector3 leftHandPalmPosition = eventData.InputData[TrackedHandJoint.Palm].Position;
+            leftHandSphere.transform.position = leftHandPalmPosition;
+        }
+
+        if (eventData.Handedness == Handedness.Right)
+        {
+            Vector3 rightHandPalmPosition = eventData.InputData[TrackedHandJoint.Palm].Position;
+            rightHandCube.transform.position = rightHandPalmPosition;
+        }
+    }
+</code></pre>
+<h2 id="unity-editor-workflow-tip" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="131">Unity editor workflow tip</h2>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="133">Using the Leap Motion Data Provider does not require a VR headset.  Changes to an MRTK app can be tested in the editor with the Leap hands without a headset.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="135">The Leap Motion Hands will show up in the editor, without a VR headset plugged in.  If the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="135">LeapControllerOrientation</code> is set to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="135">Headset</strong>, then the Leap Motion controller will need to be held up by one hand with the camera facing forward.</p>
+<div class="NOTE" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="137">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">If the camera is moved using WASD keys in the editor and the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">LeapControllerOrientation</code> is <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">Headset</strong>, the hands will not follow the camera. The hands will only follow camera movement if a VR headset is plugged in while the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">LeapControllerOrientation</code> is set <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">Headset</strong>.  The Leap hands will follow the camera movement in the editor if the <code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">LeapControllerOrientation</code> is set to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="138">Desk</strong>.</p>
+</div>
+<h2 id="removing-leap-motion-from-the-project" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="140">Removing Leap Motion from the Project</h2>
+<ol sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="142">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="142">Navigate to the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="142">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="142">Leap Motion</strong> &gt; <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="142">Separate Leap Motion Unity Modules</strong>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="143">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="143">Let Unity refresh as references in the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="143">Microsoft.MixedReality.Toolkit.Providers.LeapMotion.asmdef</strong> file are modified in this step</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="144">Close Unity</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="145">Close Visual Studio, if it's open</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="146">Open File Explorer and navigate to the root of the MRTK Unity project
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="147">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="147">Delete the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="147">UnityProjectName/Library</strong> directory</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="148">Delete the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="148">UnityProjectName/Assets/Plugins/LeapMotion</strong> directory</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="149">Delete the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="149">UnityProjectName/Assets/Plugins/LeapMotion.meta</strong> file</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="150">Reopen Unity</li>
+</ol>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="152">In Unity 2018.4, you might notice that errors still remain in the console after deleting the Library and the Leap Motion Core Assets.
+If errors are logged after reopening, restart Unity again.</p>
+<h2 id="common-errors" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="155">Common Errors</h2>
+<h3 id="leap-motion-has-not-integrated-with-mrtk" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="157">Leap Motion has not integrated with MRTK</h3>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="159">To test if the Leap Motion Unity Modules have integrated with MRTK:</p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="161">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="161">Navigate to <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="161">Mixed Reality Toolkit &gt; Utilities &gt; Leap Motion &gt; Check Integration Status</strong>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="162">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="162">This will display a pop up window with a message about whether or not the Leap Motion Unity Modules have integrated with MRTK.</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="163">If the message says that the assets have not been integrated:
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="164">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="164">Make sure the Leap Motion Unity Modules are in the project</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="165">Make sure that the version added is supported, see the table at the top of the page for versions supported.</li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="166">Try <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="166">Mixed Reality Toolkit &gt; Utilities &gt; Leap Motion &gt; Integrate Leap Motion Unity Modules</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="copying-assembly-multiplayer-hlapi-failed" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="168">Copying assembly Multiplayer HLAPI failed</h3>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="170">On import of the Leap Motion Unity Core Assets this error might be logged:</p>
+<pre><code sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="172">Copying assembly from 'Temp/com.unity.multiplayer-hlapi.Runtime.dll' to 'Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll' failed
+</code></pre>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="176"><strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="176">Solution</strong></p>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="178">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="178">A short term solution is to restart Unity. See <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/7761" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="178">Issue 7761</a> for more information.</li>
+</ul>
+<h2 id="leap-motion-example-scene" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="180">Leap Motion Example Scene</h2>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="182">The example scene uses the DefaultLeapMotionConfiguration profile and determines if the Unity project has been configured correctly to use the Leap Motion Data Provider.</p>
+<p sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="184">The example scene is contained in the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="184">Microsoft.MixedReality.Toolkit.Examples</strong> package in the <strong sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="184">MRTK/Examples/Demos/HandTracking/</strong> directory.</p>
+<h2 id="see-also" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="186">See also</h2>
+<ul sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="188">
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="188"><a href="../Input/InputProviders.html" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="188">Input Providers</a></li>
+<li sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="189"><a href="../Input/HandTracking.html" sourcefile="../../Documentation/CrossPlatform/LeapMotionMRTK.md" sourcestartlinenumber="189">Hand Tracking</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/CrossPlatform/LeapMotionMRTK.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

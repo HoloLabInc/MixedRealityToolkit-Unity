@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MRTK Standard Shader | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MRTK Standard Shader | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mrtk-standard-shader" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1">MRTK Standard Shader</h1>
+
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="3"><img src="../Documentation/Images/MRTKStandardShader/MRTK_StandardShader.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="3" alt="Standard shader examples"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="5">MRTK Standard shading system utilizes a single, flexible shader that can achieve visuals similar to Unity's Standard Shader, implement <a href="https://www.microsoft.com/design/fluent/" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="5">Fluent Design System</a> principles, and remain performant on mixed reality devices.</p>
+<h2 id="example-scenes" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="7">Example scenes</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="9">You can find the shader material examples in the <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="9">MaterialGallery</strong> scene under
+<code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="10">MRTK/Examples/Demos/StandardShader/Scenes/</code>. All materials in this scene are using the MRTK/Standard shader.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="12"><img src="../Documentation/Images/MRTKStandardShader/MRTK_MaterialGallery.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="12" alt="Material Gallery"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="14">You can find a comparison scene to compare and test the MRTK/Standard shader against the Unity/Standard shader example in the <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="14">StandardMaterialComparison</strong> scene under <code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="14">MRTK/Examples/Demos/StandardShader/Scenes/</code>.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="16"><img src="../Documentation/Images/MRTKStandardShader/MRTK_StandardMaterialComparison.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="16" alt="Material Comparison"></p>
+<h2 id="architecture" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="18">Architecture</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="20">The MRTK/Standard shading system is an &quot;uber shader&quot; that uses <a href="https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="20">Unity's shader program variant feature</a> to auto-generate optimal shader code based on material properties. When a user selects material properties in the material inspector, they only incur performance cost for features they have enabled.</p>
+<h2 id="material-inspector" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="22">Material inspector</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="24">A custom material inspector exists for the MRTK/Standard shader called <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Editor.MixedRealityStandardShaderGUI.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="24"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="24">MixedRealityStandardShaderGUI.cs</code></a>. The inspector automatically enables/disables shader features, based on user selection and aides in setting up render state. For more information about each feature <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="24">please hover over each property in the Unity Editor for a tooltip.</strong></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="26"><img src="../Documentation/Images/MRTKStandardShader/MRTK_MaterialInspector.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="26" alt="Material Inspector"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="28">The first portion of the inspector controls the material's render state. <em sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="28">Rendering Mode</em> determines when and how a material will be rendered. The aim of the MRTK/Standard shader is to mirror the <a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterRenderingMode.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="28">rendering modes found in the Unity/Standard shader</a>. The MRTK/Standard shader also includes an <em sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="28">Additive</em> rendering mode and <em sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="28">Custom</em> rendering mode for complete user control.</p>
+<table sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="30">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="30">
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="30">Rendering Mode</th>
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="30"></th>
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="32">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="32">Opaque</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="32">(Default) Suitable for normal solid objects with no transparent areas.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="33">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="33">Cutout</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="33">Allows creation of transparent effects that have hard edges between the opaque and transparent areas. In this mode, there are no semi-transparent areas, the texture is either 100% opaque, or invisible. This is useful when using transparency to create the shape of materials, such as vegetation.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="34">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="34">Fade</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="34">Allows the transparency values to entirely fade an object out, including any specular highlights or reflections it may have. This mode is useful if you want to animate an object fading in or out. It is not suitable for rendering realistic transparent materials such as clear plastic or glass because the reflections and highlights will also be faded out.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="35">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="35">Transparent</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="35">Suitable for rendering realistic transparent materials such as clear plastic or glass. In this mode, the material itself will take on transparency values (based on the texture’s alpha channel and the alpha of the tint colour). However, reflections and lighting highlights will remain visible at full clarity as is the case with real transparent materials.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="36">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="36">Additive</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="36">Enables an additive blending mode, which sums the previous pixel color with the current pixel color. This is the preferred transparency mode to avoid transparency sorting issues.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="37">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="37">Custom</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="37">Allows for every aspect of the rendering mode to be controlled manually. For advanced usage only.</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="37"></td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="39"><img src="../Documentation/Images/MRTKStandardShader/MRTK_RenderingModes.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="39" alt="Rendering Modes"></p>
+<table sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="41">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="41">
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="41">Cull Mode</th>
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="41"></th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="43">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="43">Off</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="43">Disables face culling. Culling should only be set to Off when a two sided mesh is required.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="44">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="44">Front</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="44">Enables front face culling.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="45">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="45">Back</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="45">(Default) Enables <a href="https://en.wikipedia.org/wiki/Back-face_culling" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="45">back face culling</a>. Back face culling should be enabled as often as possible to improve rendering performance.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="47">Performance</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="49">One of the primary advantages to using the MRTK Standard shader over the Unity standard shader is performance. The MRTK Standard Shader is extensible to only utilize the features enabled. However, the MRTK Standard shader has also been written to deliver comparable aesthetic results as the Unity Standard shader, but at a much lower cost. One simple way to compare shader performance is via the number of operations that needs to be performed on the GPU. Of course, the magnitude of calculations may fluctuate by features enabled and other rendering configurations. But, in general, the MRTK Standard shader performs significantly less computation than the Unity Standard shader.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="51">Unity Standard shader statistics example</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="53"><img src="../Documentation/Images/Performance/UnityStandardShader-Stats.PNG" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="53" alt="Unity Standard Shader Statistics"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="55">MRTK Standard shader statistics example</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="57"><img src="../Documentation/Images/Performance/MRTKStandardShader-Stats.PNG" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="57" alt="MRTK Standard Shader Statistics"></p>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="59">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="60">These results can be generated by selecting and viewing a <a href="https://docs.unity3d.com/Manual/class-Shader.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="60">shader asset</a> in the Unity inspector, then clicking the <em sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="60">Compile and show code</em> button.</p>
+</div>
+<h2 id="lighting" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="62">Lighting</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="64">The MRTK/Standard uses a simple approximation for lighting. Because this shader does not calculate for physical correctness and energy conservation, it renders quickly and efficiently. Blinn-Phong is the primary lighting technique which is blended with Fresnel and image-based lighting to approximate physically-based lighting. The shader supports the following lighting techniques:</p>
+<h3 id="directional-light" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="66">Directional light</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="68">The shader will respect the direction, color, and intensity of the first Unity Directional Light in the scene (if enabled). Dynamic point lights, spot lights, or any other Unity light will not be considered in real time lighting.</p>
+<h3 id="spherical-harmonics" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="70">Spherical harmonics</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="72">The shader will use Light Probes to approximate lights in the scene using <a href="https://docs.unity3d.com/Manual/LightProbes-TechnicalInformation.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="72">Spherical Harmonics</a>, if enabled. Spherical harmonics calculations are performed per vertex to reduce calculation cost.</p>
+<h3 id="lightmapping" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="74">Lightmapping</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="76">For static lighting, the shader will respect lightmaps built by Unity's <a href="https://docs.unity3d.com/Manual/Lightmapping.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="76">Lightmapping system</a>. Simply mark the renderer as static (or lightmap static) to use lightmaps.</p>
+<h3 id="hover-light" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="78">Hover light</h3>
+<ul sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="80">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="80">See <a href="Rendering/HoverLight.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="80">Hover Light</a></li>
+</ul>
+<h3 id="proximity-light" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="82">Proximity light</h3>
+<ul sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="84">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="84">See <a href="Rendering/ProximityLight.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="84">Proximity Light</a></li>
+</ul>
+<h2 id="lightweight-scriptable-render-pipeline-support" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="86">Lightweight Scriptable Render Pipeline support</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="88">The MRTK contains an upgrade path to allow developers to utilize Unity's Lightweight Scriptable Render Pipeline (LWRP) with MRTK shaders. Tested in Unity 2019.1.1f1 and Lightweight RP 5.7.2 package. or instructions on getting started with the LWRP, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.lightweight@5.10/manual/getting-started-with-lwrp.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="88">this page</a>.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="90">To perform the MRTK upgrade, select: <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="90">Mixed Reality Toolkit -&gt; Utilities -&gt; Upgrade MRTK Standard Shader for Lightweight Render Pipeline</strong></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="92"><img src="../Documentation/Images/MRTKStandardShader/MRTK_LWRPUpgrade.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="92" alt="lwrp upgrade"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="94">After the upgrade occurs, the MRTK/Standard shader will be altered and any magenta (shader error) materials should be fixed. To verify the upgrade successfully occurred, check the console for: <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="94">Upgraded Assets/MixedRealityToolkit/StandardAssets/Shaders/MixedRealityStandard.shader for use with the Lightweight Render Pipeline.</strong></p>
+<h2 id="ugui-support" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="96">UGUI support</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="98">The MRTK Standard shading system works with Unity's built in <a href="https://docs.unity3d.com/Manual/UISystem.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="98">UI system</a>. On Unity UI components, the unity_ObjectToWorld matrix is not the transformation matrix of the local transform the Graphic component lives on but that of its parent Canvas. Many MRTK/Standard shader effects require object scale to be known. To solve this issue, the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.Utilities.ScaleMeshEffect.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="98"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="98">ScaleMeshEffect.cs</code></a> will store scaling information into UV channel attributes during UI mesh construction.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="100">Note, when using a Unity Image component, it is recommended to specify &quot;None (Sprite)&quot; for the Source Image to prevent Unity UI from generating extra vertices.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="102">A Canvas within the MRTK will prompt for the addition of a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Input.Utilities.ScaleMeshEffect.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="102"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="102">ScaleMeshEffect.cs</code></a> when one is required:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="104"><img src="../Documentation/Images/MRTKStandardShader/MRTK_ScaleMeshEffect.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="104" alt="scale mesh effect"></p>
+<h2 id="texture-combiner" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="106">Texture combiner</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="108">To improve parity with the Unity Standard shader per pixel metallic, smoothness, emissive, and occlusion values can all be controlled via <a href="http://wiki.polycount.com/wiki/ChannelPacking" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="108">channel packing</a>. For example:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="110"><img src="../Documentation/Images/MRTKStandardShader/MRTK_ChannelMap.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="110" alt="channel map example"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="112">When you use channel packing, you only have to sample and load one texture into memory instead of four separate ones. When you write your texture maps in a program like Substance or Photoshop, you can hand pack them like the following:</p>
+<table sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="114">
+<thead>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="114">
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="114">Channel</th>
+<th sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="114">Property</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="116">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="116">Red</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="116">Metallic</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="117">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="117">Green</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="117">Occlusion</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="118">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="118">Blue</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="118">Emission (Greyscale)</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="119">
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="119">Alpha</td>
+<td sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="119">Smoothness</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="121">Or, you can use the MRTK Texture Combiner Tool. To open the tool, select: <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="121">Mixed Reality Toolkit -&gt; Utilities -&gt; Texture Combiner</strong> which will open the below window:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="123"><img src="../Documentation/Images/MRTKStandardShader/MRTK_TextureCombiner.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="123" alt="texture combiner example"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="125">This window can be automatically filled out by selecting a Unity Standard shader and clicking &quot;Autopopulate from Standard Material.&quot; Or, you can manually specify a texture (or constant value) per red, green, blue, or alpha channel. The texture combination is GPU accelerated and does not require the input texture to be CPU accessible.</p>
+<h2 id="additional-feature-documentation" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="127">Additional feature documentation</h2>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="129">Below are extra details on a handful of feature details available with the MRTK/Standard shader.</p>
+<h3 id="primitive-clipping" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="131">Primitive clipping</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="133"><img src="../Documentation/Images/MRTKStandardShader/MRTK_PrimitiveClipping.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="133" alt="primitive clipping"></p>
+<ul sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="135">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="135">See <a href="Rendering/ClippingPrimitive.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="135">Clipping Primitive</a></li>
+</ul>
+<h3 id="mesh-outlines" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="137">Mesh outlines</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="139">Many mesh outline techniques are done using a <a href="https://docs.unity3d.com/Manual/PostProcessingOverview.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="139">post processing</a> technique. Post processing provides great quality outlines, but can be prohibitively expensive on many Mixed Reality devices. You can find a scene that demonstrates usage of mesh outlines in the  <strong sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="139">OutlineExamples</strong> scene under <code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="139">MRTK/Examples/Demos/StandardShader/Scenes/</code>.</p>
+<img src="../Documentation/Images/MRTKStandardShader/MRTK_MeshOutline.jpg" width="900">
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="143"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.MeshOutline.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="143"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="143">MeshOutline.cs</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.MeshOutlineHierarchy.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="143"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="143">MeshOutlineHierarchy.cs</code></a> can be used to render an outline around a mesh renderer. Enabling this component introduces an additional render pass of the object being outlined, but is designed to run performantly on mobile Mixed Reality devices and does not utilize any post processes. Limitations of this effect include it not working well on objects which are not watertight (or required to be two sided) and depth sorting issues can occur on overlapping objects.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="145">The outline behaviors are designed to be used in conjunction with the MRTK/Standard shader. Outline materials are usually a solid unlit color, but can be configured to achieve a wide array of effects. The default configuration of a outline material is as follows:</p>
+<img src="../Documentation/Images/MRTKStandardShader/MRTK_OutlineMaterial.jpg" width="450">
+<ol sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="149">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="149">Depth Write - should be disabled for outline materials to make sure the outline does not prevent other objects from rendering.</li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="150">Vertex Extrusion - needs to be enabled to render the outline.</li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="151">Use Smooth Normals - this setting is optional for some meshes. Extrusion occurs by moving a vertex along a vertex normal, on some meshes extruding along the default normals will cause discontinuities in the outline. To fix these discontinuities, you can check this box to use another set of smoothed normals which get generated by <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.MeshSmoother.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="151"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="151">MeshSmoother.cs</code></a></li>
+</ol>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="153"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.MeshSmoother.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="153"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="153">MeshSmoother.cs</code></a> is a component which can be used to automatically generate smoothed normals on a mesh. This method groups vertices in a mesh that share the same location in space then averages the normals of those vertices. This process creates a copy of the underlying mesh and should be used only when required.</p>
+<img src="../Documentation/Images/MRTKStandardShader/MRTK_SmoothNormals.jpg" width="450">
+<ol sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="157">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="157">Smooth normals generated via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.Utilities.MeshSmoother.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="157"><code sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="157">MeshSmoother.cs</code></a>.</li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="158">Default normals used, notice the artifacts around the cube corners.</li>
+</ol>
+<h3 id="stencil-testing" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="160">Stencil testing</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="162">Built in configurable stencil test support to achieve a wide array of effects. Such as portals:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="164"><img src="../Documentation/Images/MRTKStandardShader/MRTK_StencilTest.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="164" alt="stencil test"></p>
+<h3 id="instanced-color-support" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="166">Instanced color support</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="168">Instanced color support to give thousands of GPU instanced meshes unique material properties:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="170"><img src="../Documentation/Images/MRTKStandardShader/MRTK_InstancedProperties.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="170" alt="instanced properties"></p>
+<h3 id="triplanar-mapping" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="172">Triplanar mapping</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="174">Triplanar mapping is a technique to programmatically texture a mesh. Often used in terrain, meshes without UVs, or difficult to unwrap shapes. This implementation supports world or local space projection, the specification of blending smoothness, and normal map support. Note, each texture used requires 3 texture samples, so use sparingly in performance critical situations.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="176"><img src="../Documentation/Images/MRTKStandardShader/MRTK_TriplanarMapping.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="176" alt="triplanar"></p>
+<h3 id="vertex-extrusion" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="178">Vertex extrusion</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="180">Vertex extrusion in world space. Useful for visualizing extruded bounding volumes or transitions in/out meshes.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="182"><img src="../Documentation/Images/MRTKStandardShader/MRTK_VertexExtrusion.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="182" alt="normal map scale"></p>
+<h3 id="miscellaneous" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="184">Miscellaneous</h3>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="186">A checkbox to control albedo optimizations. As an optimization albedo operations are disabled when no albedo texture is specified. This is useful for controlling <a href="http://dotnetbyexample.blogspot.com/2018/10/workaround-remote-texture-loading-does.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="186">remote texture loading</a>.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="188">Simply check this box:</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="190"><img src="../Documentation/Images/MRTKStandardShader/MRTK_AlbedoAssignment.jpg" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="190" alt="albedo assignment"></p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="192">Per pixel clipping textures, local edge based anti aliasing, and normal map scaling are supported.</p>
+<p sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="194"><img src="../Documentation/Images/MRTKStandardShader/MRTK_NormalMapScale.gif" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="194" alt="normal map scale"></p>
+<h2 id="see-also" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="196">See also</h2>
+<ul sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="198">
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="198"><a href="README_Interactable.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="198">Interactable</a></li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="199"><a href="Rendering/HoverLight.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="199">Hover Light</a></li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="200"><a href="Rendering/ProximityLight.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="200">Proximity Light</a></li>
+<li sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="201"><a href="Rendering/ClippingPrimitive.html" sourcefile="../../Documentation.ja/README_MRTKStandardShader.md" sourcestartlinenumber="201">Clipping Primitive</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_MRTKStandardShader.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

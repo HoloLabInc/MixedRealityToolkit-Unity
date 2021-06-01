@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Mixed Reality Toolkit &#12497;&#12483;&#12465;&#12540;&#12472; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Mixed Reality Toolkit &#12497;&#12483;&#12465;&#12540;&#12472; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mixed-reality-toolkit-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1">Mixed Reality Toolkit パッケージ</h1>
+
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="3">Mixed Reality Toolkit (MRTK) は、Mixed Reality ハードウェアとプラットフォームをサポートすることにより、クロスプラットフォーム Mixed Reality アプリケーション開発を可能にするパッケージのコレクションです。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="5">MRTK は <a href="#asset-package" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="5">アセット</a> (.unitypackage) パッケージとして、そして <a href="#unity-package-manager" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="5">Unity Package Manager</a> を通して利用可能です。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="7"><a name="asset-package"></a></p>
+<h2 id="アセット-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="9">アセット パッケージ</h2>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="11">MRTK のアセット (.unitypackage) は、<a href="https://github.com/microsoft/MixedRealityToolkit-Unity/releases" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="11">GitHub</a> からダウンロードできます。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="13">アセット パッケージを使う利点としては以下があります。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="15">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="15">Unity 2018.4 以降で利用可能</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="16">MRTK への変更が簡単
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="17">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="17">MRTK は Assets フォルダ内にある</li>
+</ul>
+</li>
+</ul>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="19">課題としては以下があります。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="20">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="20">MRTK がプロジェクトのアセット フォルダの一部になるため、
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="21">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="21">プロジェクトが大きくなる</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="22">コンパイル時間が遅くなる</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="23">依存管理がない
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="24">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="24">パッケージの依存関係を手動で解決する必要がある</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="25">手動でのアップデート プロセス
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="26">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="26">複数のステップ</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="27">巨大な (3000 以上のファイルの) ソース コントロールの更新</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="28">MRTK への変更を失ってしまうリスク</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="29">Examples パッケージをインポートするということは全ての Examples を含むことを意味する</li>
+</ul>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="31">利用可能なパッケージは以下のものです。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="33">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="33"><a href="#foundation-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="33">Foundation</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="34"><a href="#extensions-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="34">Extensions</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="35"><a href="#tools-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="35">Tools</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="36"><a href="#test-utilities-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="36">Test utilities</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="37"><a href="#examples-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="37">Examples</a></li>
+</ul>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="39">これらのパッケージは、GitHub の <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/mrtk_release" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="39">mrtk_release</a> ブランチのソース コードから、Microsoft によってリリース、サポートされています。</p>
+<h3 id="foundation-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="41">Foundation パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="43">Mixed Reality Toolkit Foundation は、アプリケーションが Mixed Reality プラットフォーム間で共通の機能を活用できるようにするコードのセットです。</p>
+<img src="../../Documentation/Images/Input/MRTK_Package_Foundation.png" width="350px" style="display:block;">  
+<sup>MRTK Foundation パッケージ</sup>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="48">MRTK Foundation パッケージは以下を含んでいます。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="50">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="50">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="50">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="50">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="50">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="52">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="52">MRTK/Core</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="52"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="52">Interface and type definitions, base classes, standard shader.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="53">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="53">MRTK/Core/Providers</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="53"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="53">Platform agnostic data providers</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="54">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="54"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="54">Hands</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="54">Base class support and services for hand tracking.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="55">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="55"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="55"><a href="../InputSimulation/InputAnimationRecording.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="55">InputAnimation</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="55">Support for recording head movement and hand tracking data.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="56">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="56"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="56"><a href="../InputSimulation/InputSimulationService.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="56">InputSimulation</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="56">Support for in-editor simulation of hand and eye input.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="57">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="57"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="57"><a href="../SpatialAwareness/SpatialObjectMeshObserver.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="57">ObjectMeshObserver</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="57">Spatial awareness observer using a 3D model as the data.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="58">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="58"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="58">UnityInput</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="58">Common input devices (joystick, mouse, etc.) implemented via Unity's input API.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="59">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="59">MRTK/Providers</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="59"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="59">Platform specific data providers</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="60">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="60"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="60">LeapMotion</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="60">Support for the UltraLeap Leap Motion controller.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="61">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="61"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="61">OpenVR</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="61">Support for OpenVR devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="62">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="62"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="62">Oculus</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="62">Support for Oculus devices, such as the Quest.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="63">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="63"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="63"><a href="../CameraSystem/UnityArCameraSettings.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="63">UnityAR</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="63">(Experimental) Camera settings provider enabling MRTK use with mobile AR devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="64">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="64"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="64">WindowsMixedReality</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="64">Support for Windows Mixed Reality devices, including Microsoft HoloLens and immersive headsets.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="65">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="65"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="65">Windows</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="65">Support for Microsoft Windows specific APIs, for example speech and dictation.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="66">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="66"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="66">XR SDK</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="66">(Experimental) Support for <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="66">Unity's new XR framework</a> in Unity 2019.3 and newer.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="67">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="67">MRTK/SDK</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="67"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="67"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="68">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="68"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="68">Experimental</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="68">Experimental features, including shaders, user interface controls and individual system managers.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="69">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="69"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="69">Features</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="69">Functionality that builds upon the Foundation package.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="70">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="70"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="70">Profiles</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="70">Default profiles for the Microsoft Mixed Reality Toolkit systems and services.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="71">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="71"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="71">StandardAssets</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="71">Common assets; models, textures, materials, etc.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="72">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="72">MRTK/Services</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="72"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="72"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="73">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="73"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="73"><a href="../Boundary/BoundarySystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="73">BoundarySystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="73">System implementing VR boundary support.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="74">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="74"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="74"><a href="../CameraSystem/CameraSystemOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="74">CameraSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="74">System implementing camera configuration and management.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="75">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="75"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="75"><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="75">DiagnosticsSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="75">System implementing in application diagnostics, for example a visual profiler.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="76">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="76"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="76"><a href="../Input/Overview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="76">InputSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="76">System providing support for accessing and handling user input.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="77">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="77"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="77"><a href="../SceneSystem/SceneSystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="77">SceneSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="77">System providing multi-scene application support.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="78">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="78"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="78"><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="78">SpatialAwarenessSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="78">System providing support for awareness of the user's environment.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="79">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="79"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="79"><a href="../TeleportSystem/Overview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="79">TeleportSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="79">System providing support for teleporting (moving about the experience in jumps).</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="80">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="80">MRTK/StandardAssets</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="80"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="80">MRTK Standard shader, basic materials and other standard assets for mixed reality experiences</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extensions-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="82">Extensions パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="84">オプションの Microsoft.MixedRealityToolkit.Unity.Extensions パッケージには、MRTK の機能を拡張する追加サービスが含まれています。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="86">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="87">Extensions パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="89">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="89">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="89">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="89">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="89">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="91">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="91">MRTK/Extensions</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="91"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="92">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="92"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="92"><a href="../Extensions/HandPhysicsService/HandPhysicsServiceOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="92">HandPhysicsService</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="92">Service that adds physics support to articulated hands.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="93">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="93"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="93">LostTrackingService</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="93">Service that simplifies handling of tracking loss on Microsoft HoloLens devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="94">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="94"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="94"><a href="../Extensions/SceneTransitionService/SceneTransitionServiceOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="94">SceneTransitionService</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="94">Service that simplifies adding smooth scene transitions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="96">Tools パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="98">オプションの  Microsoft.MixedRealityToolkit.Unity.Tools パッケージには、MRTK を使った Mixed Reality 開発エクスペリエンスを強化する役に立つツールが含まれています。
+これらのツールは Unity Editor の <strong sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="99">Mixed Reality Toolkit &gt; Utilities</strong> メニューにあります。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="101">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="102">Tools パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="104">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="104">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="104">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="104">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="104">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="106">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="106">MRTK/Tools</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="106"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="107">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="107"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="107">BuildWindow</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="107">Tool that helps simplify the process of building and deploying UWP applications.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="108">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="108"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="108"><a href="../Tools/DependencyWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="108">DependencyWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="108">Tool that creates a dependency graph of assets in a project.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="109">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="109"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="109"><a href="../Tools/ExtensionServiceCreationWizard.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="109">ExtensionServiceCreator</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="109">Wizard to assist in creating extension services.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="110">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="110"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="110"><a href="../Tools/MigrationWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="110">MigrationWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="110">Tool that assists in updating code that uses deprecated MRTK components.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="111">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="111"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="111"><a href="../Tools/OptimizeWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="111">OptimizeWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="111">Utility to help automate configuring a mixed reality project for the best performance in Unity.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="112">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="112"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="112">ReserializeAssetsUtility</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="112">Provides support for reserializing specific Unity files.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="113">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="113"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="113"><a href="../Tools/ControllerMappingTool.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="113">RuntimeTools/Tools/ControllerMappingTool</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="113">Utility enabling developers to quickly determine Unity mappings for hardware controllers.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="114">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="114"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="114">ScreenshotUtility</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="114">Enables capturing application images in the Unity editor.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="115">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="115"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="115">TextureCombinerWindow</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="115">Utility to combine graphics textures.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="116">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="116"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="116"><a href="../README_Toolbox.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="116">Toolbox</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="116">UI that makes it easy to discover and use MRTK UX components.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-utilities-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="118">Test utilities パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="120">オプションの Microsoft.MixedRealityToolkit.TestUtilities パッケージは開発者が簡単に<a href="../Contributing/UnitTests.html#play-mode-tests" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="120">PlayMode テストを作る</a>ためのヘルパー スクリプトのコレクションです。これらのユーティリティは MRTK のコンポーネントを作る開発者に特に有用です。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="122">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="122">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="122">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="122">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="122">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="124">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="124">MRTK/Tests</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="124"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="125">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="125"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="125">TestUtilities</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="125">Methods to simplify creation of play mode tests, including hand simulation utilities.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="127">Examples パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="129">Examples パッケージには、Foundation パッケージの機能を使用するデモ、サンプル スクリプト、およびサンプル シーンが含まれています。このパッケージには、さまざまなタイプのハンド インプット (多関節および非多関節) に反応するサンプル オブジェクトが含まれる <a href="../README_HandInteractionExamples.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="129">HandInteractionExample シーン</a> (下図) が含まれています。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="131"><img src="../../Documentation/Images/MRTK_Examples.png" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="131" alt="HandInteractionExample scene"></p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="133">このパッケージには、アイ トラッキング デモも含まれています。詳細は<a href="../EyeTracking/EyeTracking_ExamplesOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="133">こちら</a>に記載されています。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="135">より一般的には、MRTK のすべての新機能について、同じフォルダ構造と場所にほぼ従って、対応するサンプルが Examples パッケージに含まれているべきです。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="137">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="138">Examples パッケージは Microsoft.MixedRealityToolkit.Unity.Foundation が必要です。</p>
+</div>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="140">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="140">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="140">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="140">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="140">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="142">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="142">MRTK/Examples</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="142"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="142"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="143">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="143"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="143">Demos</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="143">Simple scenes illustrating one or two related features.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="144">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="144"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="144">Experimental</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="144">Demo scenes illustrating experimental features.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="145">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="145"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="145">StandardAssets</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="145">Common assets shared by multiple demo scenes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unity-package-manager" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="147">Unity Package Manager</h2>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="149">Unity 2019.4 以降では、MRTK は <a href="https://docs.unity3d.com/Manual/Packages.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="149">Unity Package Manager</a> を通じて利用可能です。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="151">アセット パッケージを使う利点としては以下があります。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="153">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="153">プロジェクトが小さくなる
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="154">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="154">Visual Studio のソリューションがきれいになる</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="155">管理ファイルが少なくなる（MRTK は <code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="155">Packages/manifest.json</code> ファイルのシンプルな参照)</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="156">コンパイルの高速化
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="157">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="157">Unity がビルド時に MRTK を再コンパイルする必要がない</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="158">依存関係の解決
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="159">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="159">依存先としてパッケージを指定した時に必要な MRTK のパッケージが自動でインストールされる</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="160">新しい MRTK のバージョンへの簡単なアップデート
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="161">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="161"><code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="161">Packages/manifest.json</code> ファイルのバージョンを変更する</li>
+</ul>
+</li>
+</ul>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="163">課題としては以下があります。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="165">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="165">MRTK は変更不可能になる
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="166">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="166">パッケージの解決から取り除かないと変更することができない</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="167">Unity 2018.4 では MRTK は UPM パッケージをサポートしない</li>
+</ul>
+<h3 id="foundation-パッケージ-1" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="169">Foundation パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="171">Foundation パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="171">com.microsoft.mixedreality.toolkit.foundation</code>)は、Mixed Reality Toolkit の基礎を形作ります。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="173">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="173">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="173">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="173">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="173">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="175">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="175">MRTK/Core</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="175"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="175">Interface and type definitions, base classes, standard shader.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="176">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="176">MRTK/Core/Providers</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="176"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="176">Platform agnostic data providers</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="177">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="177"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="177">Hands</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="177">Base class support and services for hand tracking.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="178">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="178"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="178"><a href="../InputSimulation/InputAnimationRecording.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="178">InputAnimation</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="178">Support for recording head movement and hand tracking data.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="179">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="179"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="179"><a href="../InputSimulation/InputSimulationService.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="179">InputSimulation</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="179">Support for in-editor simulation of hand and eye input.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="180">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="180"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="180"><a href="../SpatialAwareness/SpatialObjectMeshObserver.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="180">ObjectMeshObserver</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="180">Spatial awareness observer using a 3D model as the data.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="181">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="181"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="181">UnityInput</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="181">Common input devices (joystick, mouse, etc.) implemented via Unity's input API.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="182">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="182">MRTK/Providers</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="182"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="182">Platform specific data providers</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="183">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="183"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="183">LeapMotion</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="183">Support for the UltraLeap Leap Motion controller.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="184">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="184"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="184">OpenVR</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="184">Support for OpenVR devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="185">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="185"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="185">Oculus</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="185">Support for Oculus devices, such as the Quest.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="186">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="186"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="186"><a href="../CameraSystem/UnityArCameraSettings.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="186">UnityAR</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="186">(Experimental) Camera settings provider enabling MRTK use with mobile AR devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="187">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="187"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="187">WindowsMixedReality</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="187">Support for Windows Mixed Reality devices, including Microsoft HoloLens and immersive headsets.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="188">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="188"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="188">Windows</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="188">Support for Microsoft Windows specific APIs, for example speech and dictation.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="189">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="189"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="189">XR SDK</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="189">(Experimental) Support for <a href="https://blogs.unity3d.com/2020/01/24/unity-xr-platform-updates/" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="189">Unity's new XR framework</a> in Unity 2019.3 and newer.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="190">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="190">MRTK/SDK</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="190"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="190"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="191">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="191"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="191">Experimental</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="191">Experimental features, including shaders, user interface controls and individual system managers.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="192">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="192"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="192">Features</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="192">Functionality that builds upon the Foundation package.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="193">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="193"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="193">Profiles</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="193">Default profiles for the Microsoft Mixed Reality Toolkit systems and services.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="194">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="194"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="194">StandardAssets</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="194">Common assets; models, textures, materials, etc.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="195">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="195">MRTK/Services</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="195"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="195"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="196">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="196"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="196"><a href="../Boundary/BoundarySystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="196">BoundarySystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="196">System implementing VR boundary support.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="197">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="197"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="197"><a href="../CameraSystem/CameraSystemOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="197">CameraSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="197">System implementing camera configuration and management.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="198">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="198"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="198"><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="198">DiagnosticsSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="198">System implementing in application diagnostics, for example a visual profiler.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="199">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="199"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="199"><a href="../Input/Overview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="199">InputSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="199">System providing support for accessing and handling user input.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="200">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="200"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="200"><a href="../SceneSystem/SceneSystemGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="200">SceneSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="200">System providing multi-scene application support.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="201">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="201"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="201"><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="201">SpatialAwarenessSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="201">System providing support for awareness of the user's environment.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="202">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="202"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="202"><a href="../TeleportSystem/Overview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="202">TeleportSystem</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="202">System providing support for teleporting (moving about the experience in jumps).</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="204">依存パッケージ:</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="206">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="206">Standard Assets (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="206">com.microsoft.mixedreality.toolkit.standardassets</code>)</li>
+</ul>
+<h3 id="standard-assets" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="208">Standard Assets</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="210">Standard Assets パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="210">com.microsoft.mixedreality.toolkit.standardassets)</code> は全ての Mixed Reality エクスペリエンスに推奨されるコンポーネントのコレクションで、以下が含まれています。</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="212">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="212">MRTK Standard シェーダー</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="213">MRTK Standard シェーダーを使った基本的なマテリアル</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="214">Audio ファイル</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="215">Fonts</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="216">Textures</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="217">Icons</li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="219">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="220">Assembly Definitions の破壊的変更を防ぐため、MRTK Standard シェーダーのいくつかの機能をコントロールするのに使われているスクリプトは Standard Assets パッケージに含まれていません。これらのスクリプトは Foundation パッケージの <code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="220">MRTK/Core/Utilities/StandardShader</code> フォルダにあります。</p>
+</div>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="222">依存パッケージ: なし</p>
+<h3 id="extension-パッケージ" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="224">Extension パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="226">オプションの Extensions パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="226">com.microsoft.mixedreality.toolkit.extensions)</code> には MRTK の機能を拡張する追加のコンポーネントが含まれています。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="228">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="228">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="228">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="228">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="228">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="230">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="230">MRTK/Extensions</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="230"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="231">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="231"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="231"><a href="../Extensions/HandPhysicsService/HandPhysicsServiceOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="231">HandPhysicsService</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="231">Service that adds physics support to articulated hands.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="232">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="232"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="232">LostTrackingService</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="232">Service that simplifies handing of tracking loss on Microsoft HoloLens devices.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="233">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="233"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="233"><a href="../Extensions/SceneTransitionService/SceneTransitionServiceOverview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="233">SceneTransitionService</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="233">Service that simplifies adding smooth scene transitions.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="234">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="234"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="234">Samples~</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="234">A hidden (in the Unity Editor) folder that contains the sample scenes and assets.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="236">サンプル プロジェクトを含むパッケージの利用手順の詳細は、<a href="../usingupm.html#using-mixed-reality-toolkit-examples" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="236">Mixed Reality Toolkit と Unity Package Manager</a> をご覧ください。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="238">依存パッケージ:</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="240">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="240">Foundation (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="240">com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="tools-パッケージ-1" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="242">Tools パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="244">オプションの Tools パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="244">com.microsoft.mixedreality.toolkit.tools)</code> には Mixed Reality 体験を作るのに便利なツールが含まれています。おおむねこれらのツールは Editor コンポーネントで、コードはアプリケーションの一部としてはリリースされません。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="246">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="246">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="246">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="246">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="246">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="248">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="248">MRTK/Tools</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="248"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="249">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="249"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="249">BuildWindow</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="249">Tool that helps simplify the process of building and deploying UWP applications.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="250">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="250"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="250"><a href="../Tools/DependencyWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="250">DependencyWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="250">Tool that creates a dependency graph of assets in a project.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="251">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="251"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="251"><a href="../Tools/ExtensionServiceCreationWizard.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="251">ExtensionServiceCreator</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="251">Wizard to assist in creating extension services.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="252">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="252"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="252"><a href="../Tools/MigrationWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="252">MigrationWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="252">Tool that assists in updating code that uses deprecated MRTK components.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="253">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="253"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="253"><a href="../Tools/OptimizeWindow.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="253">OptimizeWindow</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="253">Utility to help automate configuring a mixed reality project for the best performance in Unity.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="254">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="254"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="254">ReserializeAssetsUtility</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="254">Provides support for reserializing specific Unity files.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="255">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="255"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="255"><a href="../Tools/ControllerMappingTool.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="255">RuntimeTools/Tools/ControllerMappingTool</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="255">Utility enabling developers to quickly determine Unity mappings for hardware controllers.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="256">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="256"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="256">ScreenshotUtility</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="256">Enables capturing application images in the Unity editor.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="257">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="257"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="257">TextureCombinerWindow</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="257">Utility to combine graphics textures.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="258">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="258"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="258"><a href="../README_Toolbox.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="258">Toolbox</a></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="258">UI that makes it easy to discover and use MRTK UX components.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="260">依存パッケージ:</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="262">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="262">Foundation (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="262">com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="test-utilities-パッケージ-1" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="264">Test utilities パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="266">オプションの Test utilities パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="266">com.microsoft.mixedreality.toolkit.testutilities</code>) には、開発者が簡単に PlayMode テストを作れるようにするヘルパー スクリプトのコレクションが含まれています。これらのユーティリティは MRTK のコンポーネントを作る開発者に特に有用です。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="268">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="268">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="268">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="268">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="268">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="270">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="270">MRTK/Tests</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="270"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="1"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="271">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="271"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="271">TestUtilities</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="271">Methods to simplify creation of play mode tests, including hand simulation utilities.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="273">依存パッケージ:</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="275">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="275">Foundation (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="275">com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+</ul>
+<h3 id="examples-パッケージ-1" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="277">Examples パッケージ</h3>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="279">Examples パッケージ (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="279">com.microsoft.mixedreality.toolkit.examples</code>) は開発者が興味のあるサンプルのみをインポートできるように構成されています。</p>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="281">サンプルプロジェクトを含むパッケージを使う手順の詳細は、<a href="../usingupm.html#using-mixed-reality-toolkit-examples" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="281">Mixed Reality Toolkit と Unity Package Manager</a> のページをご覧ください。</p>
+<table sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="283">
+<thead>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="283">
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="283">Folder</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="283">Component</th>
+<th sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="283">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="285">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="285">MRTK/Examples</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="285"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="285"></td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="286">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="286"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="286">Samples~</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="286">A hidden (in the Unity Editor) folder that contains the sample scenes and assets.</td>
+</tr>
+<tr sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="287">
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="287"></td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="287">StandardAssets</td>
+<td sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="287">Common assets shared by multiple demo scenes.</td>
+</tr>
+</tbody>
+</table>
+<p sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="289">依存パッケージ:</p>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="291">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="291">Foundation (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="291">com.microsoft.mixedreality.toolkit.foundation</code>)</li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="292">Extensions (<code sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="292">com.microsoft.mixedreality.toolkit.extensions</code>)</li>
+</ul>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="294">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="296">
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="296"><a href="../Architecture/Overview.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="296">アーキテクチャ概要</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="297"><a href="../Architecture/SystemsExtensionsProviders.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="297">Systems, Extension Services と Data Providers</a></li>
+<li sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="298"><a href="../usingupm.html" sourcefile="../../Documentation.ja/Packaging/MRTK_Packages.md" sourcestartlinenumber="298">Mixed Reality Toolkit と Unity Package Manager</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/Packaging/MRTK_Packages.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

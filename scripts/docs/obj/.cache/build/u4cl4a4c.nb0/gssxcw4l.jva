@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bounds Control (&#12496;&#12454;&#12531;&#12474; &#12467;&#12531;&#12488;&#12525;&#12540;&#12523;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Bounds Control (&#12496;&#12454;&#12531;&#12474; &#12467;&#12531;&#12488;&#12525;&#12540;&#12523;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="bounds-control-バウンズ-コントロール" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="1">Bounds Control (バウンズ コントロール)</h1>
+
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="3"><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Main.png" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="3" alt="Bounds control"></p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="5"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="5">BoundsControl (バウンズ コントロール)</em> は、以前は <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="5">BoundingBox</em> にあったマニピュレーション動作のための新しいコンポーネントです。バウンズ コントロールは、セットアップにおける多くの改善と簡素化が行われ、新しい機能が追加されています。このコンポーネントはバウンディング ボックスの代替品であり、バウンディング ボックスは非推奨となります。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="7"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="7"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="7">BoundsControl.cs</code></a> スクリプトは、Mixed Reality でオブジェクトを変化させるための基本的な機能を提供します。バウンズ コントロールは、ホログラムの周りにボックスを表示して、インタラクション可能であることを示します。ボックスの角と辺にあるハンドルを使って、オブジェクトを拡大縮小、回転、平行移動させることができます。バウンズ コントロールは、ユーザーの入力にも反応します。例えば、HoloLens 2 では、バウンズ コントロールは指の接近に反応し、オブジェクトからの距離を知覚するのに役立つ視覚的なフィードバックを提供します。すべてのインタラクションとビジュアルは簡単にカスタマイズできます。</p>
+<h2 id="サンプル-シーン" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="9">サンプル シーン</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="11">バウンズ コントロールの設定の例は、<code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="11">BoundsControlExamples</code> シーンで見ることができます。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Examples.png">
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="15"><a name="inspector-properties"></a></p>
+<h2 id="インスペクターのプロパティ" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="17">インスペクターのプロパティ</h2>
+<h3 id="target-object-対象オブジェクト" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="19">Target Object (対象オブジェクト)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="21">このプロパティは、バウンズ コントロールの操作によってどのオブジェクトが変化させられるかを指定します。オブジェクトが設定されていない場合、デフォルトでコンポーネントを所有するオブジェクトになります。</p>
+<h3 id="activation-behavior-活性化の動作" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="23">Activation Behavior (活性化の動作)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="25">バウンズ コントロール インターフェイスを活性化するには、いくつかのオプションがあります。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="27">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="27"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="27">Activate On Start (スタート時に活性化)</em>: シーンが開始されるとバウンズ コントロールが表示されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="28"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="28">Activate By Proximity (近接時に活性化)</em>: 多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="29"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="29">Activate By Pointer (ポインターで活性化)</em>: ハンドレイ ポインターでターゲットされたときにバウンズ コントロールが表示されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="30"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="30">Activate By Proximity and Pointer (近接時とポインターで活性化)</em>: ハンドレイ ポインターでターゲットされたときや多関節ハンドがオブジェクトに近づいたときにバウンズ コントロールが表示されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="31"><em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="31">Activate Manually (手動で活性化)</em>: バウンズ コントロールは自動的には表示されません。boundsControl.Active プロパティにアクセスすることで、スクリプトを使って手動で活性化することができます。</li>
+</ul>
+<h3 id="bounds-override-境界のオーバーライド" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="33">Bounds Override (境界のオーバーライド)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="35">境界の計算のためにオブジェクトからボックス コライダーを設定します。</p>
+<h3 id="box-padding-ボックスのパディング" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="37">Box Padding (ボックスのパディング)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="39">バウンズ コントロールの範囲を計算するために使用されるコライダーの境界にパディングを追加します。これはインタラクションだけでなく、ビジュアルにも影響を与えます。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="41"><a name="flatten-axis"></a></p>
+<h3 id="flatten-axis-平坦化軸" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="43">Flatten Axis (平坦化軸)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="44">バウンズ コントロールが2次元になって1つの軸に沿った操作ができなくなるように、1つの軸について平坦化されるかどうかを示します。この機能は、スレートのような薄いオブジェクトに使用できます。
+Flatten Axis が <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="45">Flatten Auto</em> に設定されている場合、スクリプトは自動的に最小の範囲を持つ軸を Flatten Axis として選択します。</p>
+<h3 id="smoothing-スムージング" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="47">Smoothing (スムージング)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="48">スムージングのセクションでは、バウンズ コントロールのスケールと回転に対するスムージングの動作を設定することができます。</p>
+<h3 id="visuals-ビジュアル" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="50">Visuals (ビジュアル)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="51">バウンズ コントロールの見た目は、対応するビジュアル コンフィギュレーションの1つを変更することで設定できます。
+ビジュアル コンフィギュレーションはリンクされたオブジェクトかインラインのスクリプタブル オブジェクトで、詳細は<a href="#configuration-objects" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="52">コンフィギュレーション オブジェクトのセクション</a>で説明されています。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="54"><a name="configuration-objects"></a></p>
+<h2 id="configuration-objects-設定オブジェクト" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="56">Configuration Objects (設定オブジェクト)</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="57">バウンズ コントロールには、スクリプタブル オブジェクトとして保存され、異なるインスタンスやプレハブ間で共有することができる設定オブジェクトのセットが付属しています。設定は、個々のスクリプタブル アセット ファイルとして、またはプレハブ内にネストされたスクリプタブル アセットとして、共有したりリンクしたりすることができます。また、外部のスクリプタブル アセットやネストされたスクリプタブル アセットにリンクすることなく、インスタンス上で直接設定を定義することもできます。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="59">バウンズ コントロールのインスペクターは、設定が共有されているか、現在のインスタンスの一部としてインライン化されているかを、プロパティ インスペクターにメッセージを表示することで示します。さらに、共有されたインスタンスはバウンズ コントロールのプロパティ ウィンドウで直接編集することはできず、かわりに、共有された設定を誤って変更しないようにリンク先のアセットを直接修正しなければなりません。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="61">現在のところ、バウンズ コントロールは以下の機能のための設定オブジェクトのオプションを提供しています。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="62">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="62">ハンドル
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="63">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="63"><a href="#scale-handles-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="63">拡大縮小ハンドル</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="64"><a href="#rotation-handles-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="64">回転ハンドル</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="65"><a href="#translation-handles-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="65">移動ハンドル</a></li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="66"><a href="#links-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="66">リンク / ワイヤーフレーム</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="67"><a href="#box-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="67">ボックス表示</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="68"><a href="#proximity-effect-configuration" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="68">近接効果</a></li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="70"><a name="box-configuration"></a></p>
+<h3 id="box-configuration-ボックス設定" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="72">Box Configuration (ボックス設定)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="73">ボックス設定は、コライダーのサイズとボックスのパディングで定義された境界を持つソリッド ボックスのレンダリングを担当します。以下のプロパティを設定可能です。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="75">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="75"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="75">Box Material (ボックスのマテリアル)</strong>: インタラクションが行われていないときにレンダリングされるボックスに適用されるマテリアルを定義します。ボックスは、このマテリアルが設定されている場合にのみレンダリングされます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="76"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="76">Box Grabbed Material (掴まれたボックスのマテリアル)</strong>：ユーザーがニアまたはファー インタラクションで掴んでバウンズ コントロールとインタラクションしたときのボックスのマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="77"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="77">Flatten Axis Display Scale (平坦化軸の表示スケール)</strong>: 軸の1つが<a href="#flatten-axis" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="77">平坦化</a>されている場合にボックスの表示に適用されるスケールです。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="79"><a name="scale-handles-configuration"></a></p>
+<h3 id="scale-handles-configuration-拡大縮小ハンドル設定" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="81">Scale Handles Configuration (拡大縮小ハンドル設定)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="82">このプロパティでは、バウンズ コントロールの拡大縮小ハンドルの動作や見た目を変更することができます。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="84">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="84"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="84">Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="85"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="85">Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="86"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="86">Handle Prefab (ハンドルのプレハブ)</strong>: 拡大縮小ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとしてキューブを使います。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="87"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="87">Handle Size (ハンドルのサイズ)</strong>: 拡大縮小ハンドルのサイズです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="88"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="88">Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="89"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="89">Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="90"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="90">Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="91"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="91">Handle Slate Prefab (ハンドル スレートのプレハブ)</strong>: バウンズ コントロールが平坦化されたときにハンドルに使われるプレハブです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="92"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="92">Show Scale Handles (拡大縮小ハンドルを表示)</strong>: ハンドルの表示をコントロールします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="93"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="93">Scale Behavior (拡大縮小動作)</strong>: 一様もしくは不一様のスケーリングに設定できます。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="95"><a name="rotation-handles-configuration"></a></p>
+<h3 id="rotation-handles-configuration-回転ハンドル設定" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="97">Rotation Handles Configuration (回転ハンドル設定)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="98">この設定では回転ハンドルの動作を定義します。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="100">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="100"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="100">Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="101"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="101">Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="102"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="102">Handle Prefab (ハンドルのプレハブ)</strong>: ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとして球を使います。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="103"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="103">Handle Size (ハンドルのサイズ)</strong>: ハンドルのサイズです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="104"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="104">Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="105"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="105">Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="106"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="106">Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="107"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="107">Handle Prefab Collider Type (ハンドル プレハブのコライダー タイプ)</strong>: 作成されるハンドルに使われるコライダーのタイプです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="108"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="108">Show Handle For X (X のハンドル表示)</strong>: X 軸のハンドル表示をコントロールします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="109"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="109">Show Handle For Y (Y のハンドル表示)</strong>: Y 軸のハンドル表示をコントロールします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="110"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="110">Show Handle For Z (Z のハンドル表示)</strong>: Z 軸のハンドル表示をコントロールします。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="112"><a name="translation-handles-configuration"></a></p>
+<h3 id="translation-handles-configuration-移動ハンドル設定" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="114">Translation Handles Configuration (移動ハンドル設定)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="115">バウンズ コントロールの移動ハンドルの有効化や設定ができます。移動ハンドルはデフォルトでは無効になっていることに注意してください。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="117">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="117"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="117">Handle Material (ハンドルのマテリアル)</strong>: ハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="118"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="118">Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: 掴まれたハンドルに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="119"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="119">Handle Prefab (ハンドルのプレハブ)</strong>: ハンドルのオプションのプレハブです。何も設定されていない場合は MRTK はデフォルトとして球を使います。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="120"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="120">Handle Size (ハンドルのサイズ)</strong>: ハンドルのサイズです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="121"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="121">Collider Padding (コライダーのパディング)</strong>: ハンドルのコライダーに追加されるパディングです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="122"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="122">Draw Tether When Manipulating (操作時のテザー描画)</strong>: アクティブにすると、インタラクションの開始点から現在の手またはポインタの位置までテザー線を描画します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="123"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="123">Handles Ignore Collider (ハンドルが無視するコライダー)</strong>: コライダーがここにリンクされている場合、ハンドルはこのコライダーとの衝突を無視します。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="124"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="124">Handle Prefab Collider Type (ハンドル プレハブのコライダー タイプ)</strong>: 作成されるハンドルに使われるコライダーのタイプです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="125"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="125">Show Handle For X (X のハンドル表示)</strong>: X 軸のハンドル表示をコントロールします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="126"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="126">Show Handle For Y (Y のハンドル表示)</strong>: Y 軸のハンドル表示をコントロールします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="127"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="127">Show Handle For Z (Z のハンドル表示)</strong>: Z 軸のハンドル表示をコントロールします。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="129"><a name="links-configuration"></a></p>
+<h3 id="links-configuration-リンク設定-ワイヤーフレーム" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="131">Links Configuration (リンク設定) (ワイヤーフレーム)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="132">リンク設定はバウンズ コントロールのワイヤーフレーム機能を有効にします。以下のプロパティが設定可能です。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="134">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="134"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="134">Wireframe Material (ワイヤーフレームのマテリアル)</strong>: ワイヤーフレームのメッシュに適用されるマテリアルです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="135"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="135">Wireframe Edge Radius (ワイヤーフレームの辺の半径)</strong>: ワイヤーフレームの厚みです。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="136"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="136">Wireframe Shape (ワイヤーフレームの形状)</strong>: ワイヤーフレームの形状を立方体か円柱のどちらかに設定できます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="137"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="137">Show Sireframe (ワイヤーフレームの表示)</strong>: ワイヤーフレームの表示をコントロールします。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="139"><a name="proximity-effect-configuration"></a></p>
+<h3 id="proximity-effect-configuration-近接効果設定" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="141">Proximity Effect Configuration (近接効果設定)</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="142">手との距離に応じたアニメーションでハンドルを表示・非表示します。2段階のスケーリング アニメーションがあります。デフォルトは HoloLens 2 スタイルの動作に設定されています。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Proximity.png">
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="146">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="146"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="146">Proximity Effect Active (近接効果の有効化)</strong>: 近接ベースのハンドル有効化を有効にします。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="147"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="147">Object Medium Proximity (オブジェクトへの中距離近接)</strong>: 第1ステップ スケーリングが実行される距離</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="148"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="148">Object Close Proximity (オブジェクトへの近距離近接)</strong>: 第2ステップ スケーリングが実行される距離</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="149"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="149">Far Scale (遠距離スケール)</strong>: ハンドがバウンズ コントロールのインタラクション範囲（上の 'Object Medium Proximity' で定義された距離）よりも外側にある場合のハンドル アセットのデフォルト スケール値（デフォルトでハンドルを非表示にする場合は 0 を利用してください)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="150"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="150">Medium Scale (中距離スケール)</strong>: ハンドがバウンズ コントロールのインタラクション範囲（上の 'Object Medium Proximity' で定義された距離）の内側にある場合のハンドル アセットのスケール値（通常サイズで表示するには 1 を利用してください)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="151"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="151">Close Scale (近距離スケール)</strong>: ハンドがグラブ インタラクション範囲（上の 'Object Close Proximity' で定義された距離）の内側にある場合のハンドル アセットのスケール値（拡大したサイズで表示するには 1.x を利用してください)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="152"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="152">Far Grow Rate (遠距離での成長率)</strong>: ハンドが中距離近接から遠距離近接へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="153"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="153">Medium Grow Rate (中距離での成長率)</strong>: ハンドが中距離近接から近距離近接へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="154"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="154">Close Grow Rate (近距離での成長率)</strong>: ハンドが近距離近接からオブジェクト中心へと移動したときの、近接スケールされたオブジェクトをスケールさせる割合です。</li>
+</ul>
+<h2 id="constraint-system-コンストレイント-システム" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="156">Constraint System (コンストレイント システム)</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="157">バウンズ コントロールは <a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="157">コンストレイント マネージャー</a> を使用して、バウンズ コントロール ハンドルを使用している際の移動、回転、スケーリングの動作を制限または変更することをサポートしています。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="159">インスペクターのプロパティでは、同じゲーム オブジェクトにアタッチされているすべての利用可能なコンストレイント マネージャがドロップダウンで表示され、スクロールや選択されているコンストレイント マネージャーのハイライト表示ができます。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Constraints.png" width="450">
+<h2 id="events-イベント" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="163">Events (イベント)</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="165">バウンズ コントロールは以下のイベントを提供します。この例では、これらのイベントを使用してオーディオ フィードバックを再生します。</p>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="167">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="167"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="167">Rotate Started (回転開始)</strong>: 回転が開始したときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="168"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="168">Rotate Stopped (回転終了)</strong>: 回転が終了したときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="169"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="169">Scale Started (拡大縮小開始)</strong>: 拡大縮小が開始したときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="170"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="170">Scale Stopped (拡大縮小終了)</strong>: 拡大縮小が終了したときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="171"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="171">Translate Started (移動開始)</strong>: 移動が開始したときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="172"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="172">Translate Stopped (移動終了)</strong>: 移動が終了したときに発火されます。</li>
+</ul>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Events.png" width="450">
+<h2 id="elastics-エラスティックス-experimental" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="176">Elastics (エラスティックス) [Experimental]</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="177">エラスティックスはバウンズ コントロールでオブジェクトを操作する際に使用することができます。<a href="Elastics/ElasticSystem.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="177">Elastics System (エラスティックス システム)</a> はまだ実験段階であることにご注意ください。エラスティックスを有効にするには、既存のエラスティックス マネージャー コンポーネントをリンクするか、<code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="177">Add Elastics Manager</code> ボタンを使って新しいエラスティックス マネージャーを作成してリンクします。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="181"><a name="handle-styles"></a></p>
+<h2 id="ハンドルのスタイル" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="183">ハンドルのスタイル</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="185">デフォルトでは、単に <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BoundsControl.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="185"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="185">BoundsControl.cs</code></a> スクリプトを割り当てた場合、HoloLens 第1世代 スタイルのハンドルが表示されます。HoloLens 2 スタイルのハンドルを使うには、適切なハンドルのプレハブとマテリアルを割り当てる必要があります。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="187"><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles1.png" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="187" alt="Bounds Control"></p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="189">以下に、HoloLens 2 スタイルのバウンズ コントロール ハンドルのためのプレハブ、マテリアル、スケーリング値を示します。このサンプルは <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="189">BoundsControlExamples</code> シーンにあります。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_HandleStyles2.png" width="450">
+<h3 id="ハンドル-hololens-2-スタイルのセットアップ" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="193">ハンドル (HoloLens 2 スタイルのセットアップ)</h3>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="195">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="195"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="195">Handle Material (ハンドルのマテリアル)</strong>: BoundingBoxHandleWhite.mat</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="196"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="196">Handle Grabbed Material (掴まれたハンドルのマテリアル)</strong>: BoundingBoxHandleBlueGrabbed.mat</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="197"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="197">Scale Handle Prefab (拡大縮小ハンドルのプレハブ</strong>: MRTK_BoundingBox_ScaleHandle.prefab</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="198"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="198">Scale Handle Slate Prefab (スレートの拡大縮小ハンドルのプレハブ)</strong>: MRTK_BoundingBox_ScaleHandle_Slate.prefab</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="199"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="199">Scale Handle Size (拡大縮小ハンドルのサイズ)</strong>: 0.016 (1.6cm)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="200"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="200">Scale Handle Collider Padding (拡大縮小ハンドルのコライダーのパディング)</strong>: 0.016 (掴めるコライダーをハンドルの見た目よりも少し大きくします)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="201"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="201">Rotation Handle Prefab (回転ハンドルのプレハブ)</strong>: MRTK_BoundingBox_RotateHandle.prefab</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="202"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="202">Rotation Handle Size (回転ハンドルのサイズ)</strong>: 0.016</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="203"><strong sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="203">Rotation Handle Collider Padding (回転ハンドルのコライダーのパディング)</strong>: 0.016 (掴めるコライダーをハンドルの見た目よりも少し大きくします)</li>
+</ul>
+<h2 id="object-manipulator-での-transform-の変更" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="205">Object Manipulator での Transform の変更</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="207">バウンズ コントロールを <a href="README_ObjectManipulator.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="207"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="207">ObjectManipulator.cs</code></a> と組み合わせて使用することで、ハンドルを使用せずに特定のタイプのマニピュレーション (例えばオブジェクトに移動) を行うことができます。オブジェクト マニピュレーターは片手と両手の両方のインタラクションをサポートしています。<a href="Input/HandTracking.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="207">ハンド トラッキング</a> を使用して、オブジェクトと近くでインタラクションすることができます。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_ObjectManipulator.png" width="450">
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">バウンズ コントロールのエッジを <a href="README_ObjectManipulator.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">ObjectManipulator</code></a> のファー インタラクションを使って動かしたときと同じように動作させるには、上のスクリーンショットのように <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">On Manipulation Started</em> / <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">On Manipulation Ended</em> のイベントをそれぞれ <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">BoundsControl.HighlightWires</code> / <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="211">BoundsControl.UnhighlightWires</code> に接続することをおすすめします。</p>
+<h2 id="unity-のインスペクターを使ったバウンズ-コントロールの追加設定方法" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="213">Unity のインスペクターを使ったバウンズ コントロールの追加設定方法</h2>
+<ol sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="215">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="215">オブジェクトに Box Collider を追加します</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="216">オブジェクトに <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="216">BoundsControl</code> スクリプトを割り当てます</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="217">'Activation' メソッドのようなオプションを設定します (<a href="#inspector-properties" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="217">インスペクターのプロパティ</a> セクションをご覧ください)</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="218">(オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます (<a href="#handle-styles" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="218">ハンドルのスタイル</a> セクションをご覧ください)</li>
+</ol>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="220">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="221">インスペクターの <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="221">Target Object</em> と <em sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="221">Bounds Override</em> フィールドを使用することで、複数の子コンポーネントを持つオブジェクトに特定のオブジェクトとコライダーを割り当てることができます。</p>
+</div>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="223"><img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Assign.png" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="223" alt="Bounds Control"></p>
+<h2 id="コードでのバウンズ-コントロールの追加設定方法" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="225">コードでのバウンズ コントロールの追加設定方法</h2>
+<ol sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="227">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="227"><p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="227">キューブの GameObject を生成します</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="229">GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+</code></pre>
+</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="233"><p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="233">AddComponent&lt;&gt;() を使ってコライダーを持つオブジェクトに <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="233">BoundsControl</code> スクリプトを割り当てます</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="235">private BoundsControl boundsControl;
+boundsControl = cube.AddComponent&lt;BoundsControl&gt;();
+</code></pre>
+</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="240"><p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="240">バウンズ コントロール上またはスクリプタブル コンフィギュレーションのいずれかにおいてオプションを設定します (<a href="#inspector-properties" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="240">インスペクターのプロパティ</a> と <a href="#configuration-objects" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="240">設定</a> のセクションをご覧ください)</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="242"> // 有効化方法を変更する
+ boundsControl.BoundsControlActivation = BoundsControlActivationType.ActivateByProximityAndPointer;
+// 拡大縮小ハンドルを大きくする
+boundsControl.ScaleHandlesConfig.HandleSize = 0.1f;
+// X 軸の回転ハンドルを非表示にする
+boundsControl.RotationHandlesConfig.ShowRotationHandleForX = false;
+</code></pre>
+</li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="251"><p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="251">(オプション) HoloLens 2 スタイルのバウンズ コントロールのためにプレハブとマテリアルを割り当てます。マテリアルとプレハブは動的にロードされなければならないので、これはまだインスペクターを通した割り当てが必要となります。</p>
+</li>
+</ol>
+<div class="NOTE" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="253">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="254">Unity の 'Resources' フォルダーや <a href="https://docs.unity3d.com/ScriptReference/Shader.Find.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="254">Shader.Find</a> を使って動的にシェーダーをロードすることは、シェーダーの組み合わせが実行時に見つからない可能性があるため推奨されません。</p>
+</div>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="256">BoxDisplayConfiguration boxConfiguration = boundsControl.BoxDisplayConfig;
+boxConfiguration.BoxMaterial = [Assign BoundingBox.mat]
+boxConfiguration.BoxGrabbedMaterial = [Assign BoundingBoxGrabbed.mat]
+ScaleHandlesConfiguration scaleHandleConfiguration = boundsControl.ScaleHandlesConfig;
+scaleHandleConfiguration.HandleMaterial = [Assign BoundingBoxHandleWhite.mat]
+scaleHandleConfiguration.HandleGrabbedMaterial = [Assign BoundingBoxHandleBlueGrabbed.mat]
+scaleHandleConfiguration.HandlePrefab = [Assign MRTK_BoundingBox_ScaleHandle.prefab]
+scaleHandleConfiguration.HandleSlatePrefab = [Assign MRTK_BoundingBox_ScaleHandle_Slate.prefab]
+scaleHandleConfiguration.HandleSize = 0.016f;
+scaleHandleConfiguration.ColliderPadding = 0.016f;
+RotationHandlesConfiguration rotationHandleConfiguration = boundsControl.RotationHandlesConfig;
+rotationHandleConfiguration.HandleMaterial = [Assign BoundingBoxHandleWhite.mat]
+rotationHandleConfiguration.HandleGrabbedMaterial = [Assign BoundingBoxHandleBlueGrabbed.mat]
+rotationHandleConfiguration.HandlePrefab = [Assign MRTK_BoundingBox_RotateHandle.prefab]
+rotationHandleConfiguration.HandleSize = 0.016f;
+rotationHandleConfiguration.ColliderPadding = 0.016f;
+</code></pre>
+<h3 id="例-minmaxscaleconstraint-を使ってバウンズ-コントロールの最小スケール最大スケールを設定する" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="275">例: MinMaxScaleConstraint を使ってバウンズ コントロールの最小スケール最大スケールを設定する</h3>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="277">最小スケール最大スケールを設定するには、 <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.MinMaxScaleConstraint.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="277"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="277">MinMaxScaleConstraint</code></a> をバウンズ コントロールに追加します。バウンズ コントロールはコンストレイント マネージャーを自動的にアタッチして有効にするため、MinMaxScaleConstraint がアタッチされて設定されると、MinMaxScaleConstraint は Transform の変更に自動的に適用されます。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="279">MinMaxScaleConstraint は <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ObjectManipulator.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="279"><code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="279">ObjectManipulator</code></a> の最小スケール最大スケールを設定するためにも利用できます。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="281">GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+bcontrol = cube.AddComponent&lt;BoundsControl&gt;();
+// 重要: BoundsControl はスタート時にコンストレイント マネージャーが存在しない場合は作成します。
+// 手動でコンストレイント マネージャーをアタッチする必要はありません。
+MinMaxScaleConstraint scaleConstraint = bcontrol.gameObject.AddComponent&lt;MinMaxScaleConstraint&gt;();
+scaleConstraint.ScaleMinimum = 1f;
+scaleConstraint.ScaleMaximum = 2f;
+</code></pre>
+<h2 id="例-バウンズ-コントロールをゲーム-オブジェクトの周囲に追加する" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="291">例: バウンズ コントロールをゲーム オブジェクトの周囲に追加する</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="293">オブジェクトの周囲にバウンズ コントロールを追加するには、単に <code sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="293">BoundsControl</code> コンポーネントを追加します。</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="295">private void PutABoundsControlAroundIt(GameObject target)
+{
+   target.AddComponent&lt;BoundsControl&gt;();
+}
+</code></pre>
+<h2 id="bounding-box-からの移行" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="302">Bounding Box からの移行</h2>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="303">既存のプレハブや、<a href="README_BoundingBox.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="303">Bounding Box</a> を使用しているインスタンスは、MRTK Tools パッケージの一部である <a href="Tools/MigrationWindow.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="303">Migration Window</a> を使用して、新しいバウンズ コントロールにアップグレードすることができます。</p>
+<p sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="305">Bounding Box の個々のインスタンスをアップグレードするために、コンポーネントのプロパティ インスペクターの中に移行オプションもあります。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Migrate.png" width="450">
+<h2 id="関連項目" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="309">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="311">
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="311"><a href="README_ObjectManipulator.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="311">Object manipulator</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="312"><a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="312">Constraint manager</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="313"><a href="Tools/MigrationWindow.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="313">Migration window</a></li>
+<li sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="314"><a href="Elastics/ElasticSystem.html" sourcefile="../../Documentation.ja/README_BoundsControl.md" sourcestartlinenumber="314">Elastics system (Experimental)</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_BoundsControl.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

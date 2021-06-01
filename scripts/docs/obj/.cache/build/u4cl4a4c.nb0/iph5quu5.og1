@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Authors | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Authors | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="authors" sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="1">Authors</h1>
+
+<p sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="3">The Microsoft Mixed Reality Toolkit is a collaborative project containing contributions from individuals around the world. Our sincere thanks to all who have, and continue to contribute.</p>
+<ul sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="5">
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="5">a-iafrate</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="6">achaperon</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="7">AdamMitchell-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="8">againstlightning</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="9">alandergrouse</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="10">Alex Cooper</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="11">Alexees</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="12">andreiborodin</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="13">artsouflMS</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="14">Austin Ha</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="15">Bertrand Oustrière</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="16">Bertrand75014</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="17">Cameron-Micka</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="18">CDiaz-MS</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="19">chbecker-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="20">chrisfromwork</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="21">CoPrez</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="22">cre8ivepark</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="23">danielhofmann-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="24">davidkline-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="25">deibu</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="26">derekfreed</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="27">dfields-msft</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="28">Ecnassianer</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="29">elbuhofantasma</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="30">ericob</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="31">fast-slow-still</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="32">ForrestTrepte</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="33">FreakTheMighty</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="34">gejohnst</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="35">gilbdev</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="36">googlan</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="37">graycelee</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="38">Jarodshow</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="39">jbienzms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="40">Jerome Humbert</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="41">jganser</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="42">johnppella</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="43">JonathanPalmerGD</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="44">JoeyBytes</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="45">julenka</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="46">julesra
+-julianloehr-kg</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="48">jwittner</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="49">Kent1LG</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="50">keveleigh</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="51">killerantz</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="52">Kjakubzak</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="53">LaneMax</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="54">LocalJoost</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="55">luis-valverde-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="56">lukastonneMS</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="57">macborow</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="58">marek-stoj</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="59">matthejo</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="60">MaxWang-MS</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="61">MenelvagorMilsom</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="62">michael-house</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="63">mpkoz</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="64">MRW-Eric</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="65">ms738</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="66">mvaloriani</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="67">myrandaGoesToSpace</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="68">Nakda</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="69">Nick K.</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="70">Norbert Nemec</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="71">paco-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="72">phosphoer</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="73">pinkwerks</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="74">polar-kev</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="75">provencher</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="76">Quentin LG</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="77">radicalad</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="78">Railboy</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="79">ritijain</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="80">RogPodge</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="81">Rosthouse</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="82">ryzngard</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="83">safacero</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="84">sgwin</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="85">SimonDarksideJ</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="86">sloh-ms</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="87">sostel</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="88">srinjoym</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="89">stefan.wasserbauer</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="90">StephenHodgson</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="91">TakahiroMiyaura</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="92">tarukosu</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="93">thalbern</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="94">tonyambrus</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="95">Troy-Ferrell</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="96">vaoliva</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="97">wassx</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="98">Weasy666</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="99">witian</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="100">wiwei</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="101">xwipeoutx</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="102">Yoyozilla</li>
+<li sourcefile="../../Documentation/Authors.md" sourcestartlinenumber="103">Zee2</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Authors.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

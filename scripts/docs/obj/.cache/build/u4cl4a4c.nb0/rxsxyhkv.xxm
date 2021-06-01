@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting started with eye tracking in MRTK | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting started with eye tracking in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started-with-eye-tracking-in-mrtk" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="1">Getting started with eye tracking in MRTK</h1>
+
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="3">This page covers how to set up your Unity MRTK scene to use eye tracking in your app.
+The following assumes you are starting out with a fresh new scene.
+Alternatively, you can check out our already configured <a href="EyeTracking_ExamplesOverview.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="5">MRTK eye tracking examples</a> with tons of great examples that you can directly build on.</p>
+<h2 id="eye-tracking-requirements-checklist" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="7">Eye tracking requirements checklist</h2>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="9">For eye tracking to work correctly, the following requirements must be met.
+If you are new to eye tracking on HoloLens 2 and to how eye tracking is set up in MRTK, don't worry!
+We will go into detail on how to address each of them further below.</p>
+<ol sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="13">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="13">An <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="13">'Eye Gaze Data Provider'</em> must be added to the input system. This provides eye tracking data from the platform.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="14">The <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="14">'GazeInput'</em> capability must be enabled in the application manifest.
+<strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="15">This capability can be set in Unity 2019, but in Unity 2018 and earlier this capability is only available in Visual Studio and through the MRTK build tool</strong></li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="16">The HoloLens <strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="16">must</strong> be eye calibrated for the current user. Check out our <a href="EyeTracking_IsUserCalibrated.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="16">sample for detecting whether a user is eye calibrated or not</a>.</li>
+</ol>
+<h3 id="a-note-on-the-gazeinput-capability" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="18">A note on the GazeInput capability</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="20">The MRTK-provided build tooling (i.e. Mixed Reality Toolkit -&gt; Utilities -&gt; Build Window)
+can automatically enable the GazeInput capability for you. In order to do this,
+you need to make sure that the 'Gaze Input Capability' is checked on the 'Appx Build Options' tab:</p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="24"><img src="../../Documentation/Images/EyeTracking/mrtk_et_buildsetup.png" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="24" alt="MRTK Build Tools"></p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="26">This tooling will find the AppX manifest after the Unity build is completed and manually add the GazeInput capability.
+<strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="27">Prior to Unity 2019, this tooling is NOT active when using Unity's built-in Build Window</strong> (i.e. File -&gt; Build Settings).</p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="29">Prior to Unity 2019, when using Unity's build window, the capability will need to be manually added after the Unity build, as follows:</p>
+<ol sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="30">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="30">Open your compiled Visual Studio project and then open the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="30">'Package.appxmanifest'</em> in your solution.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="31">Make sure to tick the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="31">'GazeInput'</em> checkbox under <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="31">Capabilities</em>. If you don't see a <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="31">'GazeInput'</em> capability, check that your system meets the <a href="../Installation.html#prerequisites" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="31">prerequisites for using MRTK</a> (in particular the Windows SDK version).</li>
+</ol>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="33"><em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="33">Please note:</em>
+You only have to do this if you build into a new build folder.
+This means that if you had already built your Unity project and set up the appxmanifest before and now target the same folder again, you will not need to reapply your changes.</p>
+<h2 id="setting-up-eye-tracking-step-by-step" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="37">Setting up eye tracking step-by-step</h2>
+<h3 id="setting-up-the-scene" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="39">Setting up the scene</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="41">Set up the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="41">MixedRealityToolkit</em> by simply clicking <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="41">'Mixed Reality Toolkit -&gt; Configure…'</em> in the menu bar.</p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="43"><img src="../../Documentation/Images/EyeTracking/mrtk_setup_configure.jpg" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="43" alt="MRTK"></p>
+<h3 id="setting-up-the-mrtk-profiles-required-for-eye-tracking" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="45">Setting up the MRTK profiles required for eye tracking</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="47">After setting up your MRTK scene, you will be asked to choose a profile for MRTK.
+You can simply select <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="48">DefaultMixedRealityToolkitConfigurationProfile</em> and then select the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="48">'Copy &amp; Customize'</em> option.</p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="50"><img src="../../Documentation/Images/EyeTracking/mrtk_setup_configprofile.jpg" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="50" alt="MRTK"></p>
+<h3 id="create-an-eye-gaze-data-provider" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="52">Create an &quot;eye gaze data provider&quot;</h3>
+<ul sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="54">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="54">Click on the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="54">'Input'</em> tab in your MRTK profile.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="55">To edit the default one ( <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="55">'DefaultMixedRealityInputSystemProfile'</em> ), click the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="55">'Clone'</em> button next to it. A <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="55">'Clone Profile'</em> menu appears. Simply click on <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="55">'Clone'</em> at the bottom of that menu.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="56">Double click on your new input profile, expand <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="56">'Input Data Providers'</em>, and select <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="56">'+ Add Data Provider'</em>.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="57">Create a new data provider:
+<ul sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="58">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="58">Under <strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="58">Type</strong> select <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="58">'Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input'</em> -&gt; <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="58">'WindowsMixedRealityEyeGazeDataProvider'</em></li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="59">For <strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="59">Platform(s)</strong> select <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="59">'Windows Universal'</em>.</li>
+</ul>
+</li>
+</ul>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="61"><img src="../../Documentation/Images/EyeTracking/mrtk_setup_eyes_dataprovider.jpg" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="61" alt="MRTK"></p>
+<h3 id="simulating-eye-tracking-in-the-unity-editor" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="63">Simulating eye tracking in the Unity Editor</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="65">You can simulate eye tracking input in the Unity Editor to ensure that events are correctly triggered before deploying the app to your HoloLens 2.
+The eye gaze signal is simulated by simply using the camera's location as eye gaze origin and the camera's forward vector as eye gaze direction.
+While this is great for initial testing, please note that it is not a good imitation for rapid eye movements.
+For this, it is better to ensure frequent tests of your eye-based interactions on the HoloLens 2.</p>
+<ol sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="70">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="70"><p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="70"><strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="70">Enable simulated eye tracking</strong>:</p>
+<ul sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="71">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="71">Click on the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="71">'Input'</em> tab in your MRTK configuration profile.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="72">From there, navigate to <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="72">'Input Data Providers'</em> -&gt; <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="72">'Input Simulation Service'</em>.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="73">Clone the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="73">'DefaultMixedRealityInputSimpulationProfile'</em> to make changes to it.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="74">Check the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="74">'Simulate Eye Position'</em> checkbox.</li>
+</ul>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="76"><img src="../../Documentation/Images/EyeTracking/mrtk_setup_eyes_simulate.jpg" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="76" alt="MRTK"></p>
+</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="78"><p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="78"><strong sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="78">Disable default head gaze cursor</strong>:
+In general, it is recommended to avoid showing an eye gaze cursor or if absolutely required to make it <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="79">very</em> subtle.
+We do recommend to hide the default head gaze cursor that is attached to the MRTK gaze pointer profile by default.</p>
+<ul sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="81">
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="81">Navigate to your MRTK configuration profile -&gt; <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="81">'Input'</em> -&gt; <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="81">'Pointers'</em></li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="82">Clone the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="82">'DefaultMixedRealityInputPointerProfile'</em> to make changes to it.</li>
+<li sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="83">At the top of the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="83">'Pointer Settings'</em>, you should assign an invisible cursor prefab to the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="83">'GazeCursor'</em>. You can do this by selecting the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="83">'EyeGazeCursor'</em> prefab from the MRTK Foundation.</li>
+</ul>
+</li>
+</ol>
+<h3 id="enabling-eye-based-gaze-in-the-gaze-provider" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="85">Enabling eye-based gaze in the gaze provider</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="87">In HoloLens v1, head gaze was used as primary pointing technique.
+While head gaze is still available via the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="88">GazeProvider</em> in MRTK which is attached to your <a href="https://docs.unity3d.com/ScriptReference/Camera.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="88">Camera</a>, you can check to use eye gaze instead by ticking the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="88">'IsEyeTrackingEnabled'</em> checkbox in the gaze settings of the input pointer profile.</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="90">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="91">Developers can toggle between eye-based gaze and head-based gaze in code by changing the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="91">'IsEyeTrackingEnabled'</em> property of <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="91">'GazeProvider'</em>.</p>
+</div>
+<div class="IMPORTANT" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="93">
+<h5>Important</h5>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="94">If any of the eye tracking requirements are not met, the application will automatically fall back to head-based gaze.</p>
+</div>
+<h3 id="accessing-eye-gaze-data" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="96">Accessing eye gaze data</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="98">Now that your scene is set up to use eye tracking, let's take a look at how to access it in your scripts:
+<a href="EyeTracking_EyeGazeProvider.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="99">Accessing eye tracking data via EyeGazeProvider</a> and <a href="EyeTracking_TargetSelection.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="99">eye-supported target selections</a>.</p>
+<h3 id="testing-your-unity-app-on-a-hololens-2" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="101">Testing your Unity app on a HoloLens 2</h3>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="103">Building your app with eye tracking should be similar to how you would compile other HoloLens 2 MRTK apps. Be sure that you have enabled the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="103">'Gaze Input'</em> capability as described above in the section <a href="#a-note-on-the-gazeinput-capability" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="103"><em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="103">A note on the GazeInput capability</em></a>.</p>
+<h4 id="eye-calibration" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="105">Eye calibration</h4>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="107">Finally, please don't forget to run through the eye calibration on your HoloLens 2.
+The eye tracking system will not return any input if the user is not calibrated.
+Easiest way to get to the calibration is by flipping up the visor and back down.
+A system notification should appear welcoming you as a new user and asking you to go through the eye calibration.
+Alternatively you can find the eye calibration in the system settings: Settings &gt; System &gt; Calibration &gt; Run eye calibration.</p>
+<h4 id="eye-tracking-permission" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="113">Eye tracking permission</h4>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="115">When starting the app on your HoloLens 2 for the first time, a prompt should pop up asking the user for permission to use eye tracking.
+If it is not showing up, then that is usually an indication that the <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="116">'GazeInput'</em> capability was not set.</p>
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="118">After the permission prompt showed up once, it will not show up automatically again.
+If you <em sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="119">&quot;denied eye tracking permission&quot;</em>, you can reset this in Settings -&gt; Privacy -&gt; Apps.</p>
+<hr sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="121">
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="123">This should get you started with using eye tracking in your MRTK Unity app.
+Don't forget to check out <a href="EyeTracking_ExamplesOverview.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="124">our MRTK eye tracking tutorials and samples</a> demonstrating how to use eye tracking input and conveniently providing scripts that you can reuse in your projects.</p>
+<hr sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="126">
+<p sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="127"><a href="EyeTracking_Main.html" sourcefile="../../Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md" sourcestartlinenumber="127">Back to &quot;Eye tracking in the MixedRealityToolkit&quot;</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/EyeTracking/EyeTracking_BasicSetup.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

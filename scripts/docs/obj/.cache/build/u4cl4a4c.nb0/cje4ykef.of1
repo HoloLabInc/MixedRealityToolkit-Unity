@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>XRSDK &#12497;&#12452;&#12503;&#12521;&#12452;&#12531;&#12434;&#20351;&#12387;&#12383; MRTK &#12391;&#12398; Oculus Quest &#12398;&#35373;&#23450;&#26041;&#27861; | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="XRSDK &#12497;&#12452;&#12503;&#12521;&#12452;&#12531;&#12434;&#20351;&#12387;&#12383; MRTK &#12391;&#12398; Oculus Quest &#12398;&#35373;&#23450;&#26041;&#27861; | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="xrsdk-パイプラインを使った-mrtk-での-oculus-quest-の設定方法" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="1">XRSDK パイプラインを使った MRTK での Oculus Quest の設定方法</h1>
+
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="3"><a href="https://www.oculus.com/quest/" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="3">Oculus Quest</a> が必要です。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="5">MRTK による Oculus Quest のサポートは 2 つの異なるソースを介して提供されています。それは Unity の XR パイプラインと Oculus Integration Unity パッケージです。
+<strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="6">Oculus XRSDK Data Provider</strong> を利用することで両方のソースを利用することができ、Oculus Quest で MRTK を利用するにはこれを使う必要があります。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="8"><a href="https://docs.unity3d.com/Manual/XR.html" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="8">Unity の XR Pipeline</a> によって、Oculus Touch コントローラーと Oculus Quest のヘッド トラッキングが利用可能です。
+このパイプラインは Unity 2019.3 以降で XR アプリケーションを開発するための標準となっています。このパイプラインを使うには、<strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="9">Unity 2019.3 以降</strong> を使っていることを確認してください。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="11"><a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="11">Oculus Integration Unity パッケージ</a> によって、Oculus Quest での <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="11">ハンド トラッキング</strong> が利用できます。
+このデータ プロバイダーは Unity の <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="12">XR Pipeline</strong> や <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="12">Legacy XR Pipeline</strong> は利用<strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="12">しません</strong>が、コントローラーとヘッド トラッキングは Unity の XR Pipeline で処理されます。
+そのため、廃止予定の <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="13">Legacy XR Pipeline</strong> ではなく <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="13">XR Pipeline</strong> を使っていることを確認するために <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="13">Oculus Quest のためのプロジェクトのセットアップ</strong> のステップを実行する必要があります。</p>
+<h2 id="oculus-quest-のためのプロジェクトのセットアップ" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="16">Oculus Quest のためのプロジェクトのセットアップ</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="18">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="18"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="18"><a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="18">これらのステップ</a> にしたがって、プロジェクトを Oculus Quest へデプロイする準備ができていることを確認してください。</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="20"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="20">デバイスで<a href="https://developer.oculus.com/documentation/native/android/mobile-device-setup/" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="20">開発者モード</a>が有効化されていることを確認してください。Oculus ADB Drivers のインストールはオプションです。</p>
+</li>
+</ol>
+<h2 id="oculus-quest-のための-xr-pipeline-のセットアップ" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="22">Oculus Quest のための XR Pipeline のセットアップ</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="23">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="23"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="23"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="23">Window --&gt; Package Manager</strong> 内で <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="23">Oculus XR Plugin</strong> がインストールされていることを確認してください。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="25"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusXRPluginPackage.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="25" alt="OculusXRPluginPackage"></p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="27"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="27"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="27">Edit --&gt; Project Settings --&gt; XR Plug-in Management --&gt; Plug-in Providers</strong> を開いて、プロジェクトに Oculus Plug-in Provider が含まれていることを確認してください。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="29"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusPluginProvider.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="29" alt="OculusPluginProvider"></p>
+</li>
+</ol>
+<h2 id="ハンドトラッキングを有効化するための-oculus-integration-unity-パッケージのセットアップ" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="31">ハンドトラッキングを有効化するための Oculus Integration Unity パッケージのセットアップ</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="32">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="32"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="32">Unity Asset Store から <a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="32">Oculus Integration</a> をダウンロードしインポートします。
+動作確認されている最新バージョンは 20.0.0 です。古いバージョンは<a href="https://developer.oculus.com/downloads/package/unity-integration-archive/" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="33">アーカイブ</a>にあります。</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="35"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="35">Mixed Reality Toolkit &gt; Utilities &gt; Oculus &gt; Integrate Oculus Integration Unity Modules を選択します。これを行うことで、関連する Oculus Quest のコードを機能させるために必要な asmdef の定義と参照を更新します。
+また、Oculus Integration アセットが出す Obsolete (廃止予定) の Warning をフィルタリングするため、csc ファイルの更新も行います。MRTK のリポジトリには Warning を Error に変換する csc ファイルが含まれており、この変換で MRTK-Quest の設定プロセスが停止します。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="38"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusIntegrationAsmdef.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="38" alt="OculusIntegrationAsmdef"></p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="40"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="40">インポートされた Oculus フォルダ (Assets/Oculus にあるはずです) の中に、OculusProjectConfig というスクリプタブル オブジェクトがあります。
+この設定ファイルで、HandTrackingSupport を &quot;Controllers and Hands&quot; に設定する必要があります。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="43"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusIntegrationControllerAndHands.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="43" alt="OculusIntegrationControllerAndHands"></p>
+</li>
+</ol>
+<h2 id="シーンのセットアップ" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="45">シーンのセットアップ</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="46">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="46">新しい Unity シーンを作成するか、HandInteractionExamples のような既存のシーンを開きます</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="47"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="47">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="47">Add to Scene and Configure</strong> を選択し、シーンに MRTK を追加します</li>
+</ol>
+<h2 id="oculus-xrsdk-data-provider-の利用" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="49">Oculus XRSDK Data Provider の利用</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="51">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="51"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="51">Oculus XRSDK Data Provider</strong> を使ってプロファイルを設定します
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="52">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="52"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="52">設定プロファイルを変更するつもりがない場合</p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="53">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="53">プロファイルを DefaultXRSDKInputSystemProfile に変更し、<a href="OculusQuestMRTK.html#build-and-deploy-your-project-to-oculus-quest" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="53">プロジェクトのビルドと Oculus Quest へのデプロイ</a> を行います</li>
+</ul>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="55"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="55">変更する場合は、以下を実行します</p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="56">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="56">ヒエラルキーで MixedRealityToolkit ゲーム オブジェクトを選択し、<strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="56">Copy and Customize</strong> を選択してデフォルトの Mixed Reality プロファイルをクローンします。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="58"><img src="../../Documentation/Images/CrossPlatform/CloneProfile.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="58" alt="CloneProfile"></p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="60">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="60"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="60">Input</strong> の設定プロファイルを選択します。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="62"><img src="../../Documentation/Images/CrossPlatform/InputConfigurationProfile.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="62" alt="InputConfigurationProfile"></p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="64">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="64">Input System プロファイルで <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="64">Clone</strong> を選択し、変更可能にします。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="66"><img src="../../Documentation/Images/CrossPlatform/CloneInputSystemProfile.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="66" alt="CloneInputSystemProfile"></p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68">Input Data Providers</strong> セクションを開き、一番上の <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68">Add Data Provider</strong> を選択すると、新しいデータ プロバイダーがリストの最後に追加されます。新しいデータプロバイダーを開き、<strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68">Type</strong> を <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="68">Microsoft.MixedReality.Toolkit.XRSDK.Oculus &gt; OculusXRSDKDeviceManager</strong> に設定します。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="70"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusAddDataXRSDKProvider.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="70" alt="OculusAddXRSDKDataProvider"></p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="72"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="72">Oculus Controller が認識されることを確認します。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="74"><a name="build-and-deploy-your-project-to-oculus-quest"></a></p>
+<h2 id="プロジェクトのビルドと-oculus-quest-へのデプロイ" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="76">プロジェクトのビルドと Oculus Quest へのデプロイ</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="77">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="77"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="77">Oculus Quest を USB 3.0 -&gt; USB C ケーブルで接続します</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="78"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="78"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="78">File &gt; Build Settings</strong> を開きます</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="79"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="79">デプロイメントを <strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="79">Android</strong> へと変更します</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="80"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="80">対象の Run Device (実行デバイス) として Oculus Quest が選択されていることを確認します</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="82"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusRunDevice.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="82" alt="OculusRunDevice"></p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="84"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="84">Build And Run を選択します</p>
+<ul sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="85">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="85">初めて <em sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="85">Build And Run</em> を選択した際は以下のようなビルド エラーが発生する可能性があります。再度 <em sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="85">Build And Run</em> を選択するとデプロイに成功するはずです。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="87"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusExpectedBuildErrors.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="87" alt="OculusExpectedBuildErrors"></p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="89"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="89">Quest 内で <em sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="89">USB デバッグの許可</em> プロンプトを承認します</p>
+</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="90"><p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="90">Oculus Quest 内で作成したシーンが表示されます</p>
+</li>
+</ol>
+<h2 id="oculus-integration-のプロジェクトからの削除" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="92">Oculus Integration のプロジェクトからの削除</h2>
+<ol sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="94">
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="94">Mixed Reality Toolkit &gt; Oculus &gt; Separate Oculus Integration Unity Modules を選択します
+<img src="../../Documentation/Images/CrossPlatform/OculusQuest/OculusSeparationAsmdef.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="95" alt="OculusSeparationAsmdef"></li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="96">このステップで Microsoft.MixedReality.Toolkit.Providers.Oculus.asmdef や他のファイルの参照が変更されるので、Unity のリフレッシュを待ちます</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="97">Unity を閉じます</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="98">Visual Studio が開いている場合は閉じます</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="99">File Explorer を開き、MRTK Unity プロジェクトのルート フォルダを開きます</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="100">UnityProjectName/Library ディレクトリを削除します</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="101">UnityProjectName/Assets/Oculus ディレクトリを削除します</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="102">UnityProjectName/Assets/Oculus.meta ファイルを削除します</li>
+<li sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="103">再度 Unity を開きます</li>
+</ol>
+<h2 id="よくあるエラー" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="105">よくあるエラー</h2>
+<h3 id="quest-が-unity-に認識されない" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="107">Quest が Unity に認識されない</h3>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="109">Android のパスが適切に設定されていることを確認してください。引き続き問題が発生する場合は、こちらの<a href="https://developer.oculus.com/documentation/unity/book-unity-gsg/#install-android-tools" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="109">ガイド</a>に従ってください。</p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="111"><strong sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="111">Edit &gt; Preferences &gt; External Tools &gt; Android</strong></p>
+<p sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="113"><img src="../../Documentation/Images/CrossPlatform/OculusQuest/AndroidToolsConfig.png" sourcefile="../../Documentation.ja/CrossPlatform/OculusQuestMRTK.md" sourcestartlinenumber="113" alt="AndroidToolsConfig"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/CrossPlatform/OculusQuestMRTK.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

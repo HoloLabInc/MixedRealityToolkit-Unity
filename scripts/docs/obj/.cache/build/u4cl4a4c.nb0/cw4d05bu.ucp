@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Creating an input system data provider | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Creating an input system data provider | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="creating-an-input-system-data-provider" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="1">Creating an input system data provider</h1>
+
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="3">The Mixed Reality Toolkit input system is an extensible system for enabling input device support. To add support for a new hardware platform,
+a custom input data provider may be required.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="6">This article describes how to create custom data providers, also called device managers, for the input system. The example code shown here is
+from the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.WindowsMixedReality.Input.WindowsMixedRealityDeviceManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="7"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="7">WindowsMixedRealityDeviceManager</code></a>.</p>
+<blockquote sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="9">
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="9">The complete code used in this example can be found in the MRTK/Providers/WindowsMixedReality folder.</p>
+</blockquote>
+<h2 id="namespace-and-folder-structure" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="11">Namespace and folder structure</h2>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="13">Data providers can be distributed as a third party add-on or as a part of the Microsoft Mixed Reality Toolkit. The approval process for submissions of
+new data providers to the MRTK will vary on a case-by-case basis and will be communicated at the time of the initial proposal.</p>
+<div class="IMPORTANT" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="16">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="17">If an input system data provider is being submitted to the <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="17">Mixed Reality Toolkit repository</a>, the
+namespace <strong sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="18">must</strong> begin with Microsoft.MixedReality.Toolkit (ex: Microsoft.MixedReality.Toolkit.WindowsMixedReality) and the code should be
+located in a folder beneath MRTK/Providers (ex: MRTK/Providers/WindowsMixedReality).</p>
+</div>
+<h3 id="namespace" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="21">Namespace</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="23">Data providers are required to have a namespace to mitigate potential name collisions. It is recommended that the namespace includes the following components.</p>
+<ul sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="25">
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="25">Company name</li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="26">Feature area</li>
+</ul>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="28">For example, an input data provider created by the Contoso company may be &quot;Contoso.MixedReality.Toolkit.Input&quot;.</p>
+<h3 id="recommended-folder-structure" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="30">Recommended folder structure</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="32">It is recommended that the source code for data providers be layed out in a folder hierarchy as shown in the following image.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="34"><img src="../Images/Input/ExampleProviderFolderStructure.png" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="34" alt="Example folder structure"></p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="36">Where ContosoInput contains the implementation of the data provider, the Editor folder contains the inspector (and any other Unity editor specific code), the Textures folder
+contains images of the supported controllers, and Profiles contains one or more pre-made profiles.</p>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="39">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="40">Some common controller images can be found in the MixedRealityToolkit\StandardAssets\Textures folder.</p>
+</div>
+<h2 id="implement-the-data-provider" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="42">Implement the data provider</h2>
+<h3 id="specify-interface-andor-base-class-inheritance" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="44">Specify interface and/or base class inheritance</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="46">All input system data providers must implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputDeviceManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="46"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="46">IMixedRealityInputDeviceManager</code></a>
+interface, which specifies the minimum functionality required by the input system. The MRTK foundation includes the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="47"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="47">BaseInputDeviceManager</code></a>
+class which provides a default implementation of this required functionality. For devices that build upon Unity's UInput class, the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.UnityInput.UnityJoystickManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="48"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="48">UnityJoystickManager</code></a>
+class can be used as a base class.</p>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="51">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="52">The <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="52">BaseInputDeviceManager</code> and <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="52">UnityJoystickManager</code> classes provide the required <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="52">IMixedRealityInputDeviceManager</code> implementation.</p>
+</div>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="54">public class WindowsMixedRealityDeviceManager :
+    BaseInputDeviceManager,
+    IMixedRealityCapabilityCheck
+{ }
+</code></pre>
+<blockquote sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="61">
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="61"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="61">IMixedRealityCapabilityCheck</code> is used by the <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="61">WindowsMixedRealityDeviceManager</code> to indicate that it provides support for a set of input capabilities, specifically; articulated hands,
+gaze-gesture-voice hands and motion controllers.</p>
+</blockquote>
+<h4 id="apply-the-mixedrealitydataprovider-attribute" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="64">Apply the MixedRealityDataProvider attribute</h4>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="66">A key step of creating an input system data provider is to apply the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.MixedRealityDataProviderAttribute.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="66"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="66">MixedRealityDataProvider</code></a>
+attribute to the class. This step enables setting the default profile and platform(s) for the provider, when selected in the input system profile.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="69">[MixedRealityDataProvider(
+    typeof(IMixedRealityInputSystem),
+    SupportedPlatforms.WindowsUniversal,
+    &quot;Windows Mixed Reality Device Manager&quot;)]
+public class WindowsMixedRealityDeviceManager :
+    BaseInputDeviceManager,
+    IMixedRealityCapabilityCheck
+{ }
+</code></pre>
+<h3 id="implement-the-imixedrealitydataprovider-methods" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="80">Implement the IMixedRealityDataProvider methods</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="82">Once the class has been defined, the next step is to provide the implementation of the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="82"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="82">IMixedRealityDataProvider</code></a>
+interface.</p>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="85">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="86">The <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="86">BaseInputDeviceManager</code> class, via the <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="86">BaseService</code> class, provides only empty implementations for <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="86">IMixedRealityDataProvider</code> methods. The details of these methods are generally data provider specific.</p>
+</div>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="88">The methods that should be implemented by the data provider are:</p>
+<ul sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="90">
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="90"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="90">Destroy()</code></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="91"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="91">Disable()</code></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="92"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="92">Enable()</code></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="93"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="93">Initialize()</code></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="94"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="94">Reset()</code></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="95"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="95">Update()</code></li>
+</ul>
+<h3 id="implement-the-data-provider-logic" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="97">Implement the data provider logic</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="99">The next step is to add the logic for managing the input devices, including any controllers to be supported.</p>
+<h3 id="implement-the-controller-classes" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="101">Implement the controller classes</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="103">The example of the <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="103">WindowsMixedRealityDeviceManager</code> defines and implements the following controller classes.</p>
+<blockquote sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="105">
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="105">The source code for each of these classes can be found in the MRTK/Providers/WindowsMixedReality folder.</p>
+</blockquote>
+<ul sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="107">
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="107">WindowsMixedRealityArticulatedHand.cs</li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="108">WindowsMixedRealityController.cs</li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="109">WindowsMixedRealityGGVHand.cs</li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="111">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="112">Not all device managers will support multiple controller types.</p>
+</div>
+<h4 id="apply-the-mixedrealitycontroller-attribute" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="114">Apply the MixedRealityController attribute</h4>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="116">Next, apply the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerAttribute.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="116"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="116">MixedRealityController</code></a> attribute to the class. This attribute specifies the type of controller
+(ex: articulated hand), the handedness (ex: left or right) and an optional controller image.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="119">[MixedRealityController(
+    SupportedControllerType.WindowsMixedReality,
+    new[] { Handedness.Left, Handedness.Right },
+    &quot;StandardAssets/Textures/MotionController&quot;)]
+{ }
+</code></pre>
+<h4 id="configure-the-interaction-mappings" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="127">Configure the interaction mappings</h4>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="129">The next step is to define the set of interaction mappings supported by the controller. For devices that receive their data via Unity's Input class, the <a href="../Tools/ControllerMappingTool.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="129">controller mapping tool</a> is a helpful resource to confirm the correct axis and button mappings to assign to interactions.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="131">The following example is abbreviated from the <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="131">GenericOpenVRController</code> class, located in the MRTK/Providers/OpenVR folder.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="133">public override MixedRealityInteractionMapping[] DefaultLeftHandedInteractions =&gt; new[]
+{
+    // Controller Pose
+    new MixedRealityInteractionMapping(0, &quot;Spatial Pointer&quot;, AxisType.SixDof, DeviceInputType.SpatialPointer, MixedRealityInputAction.None),
+    // Left Trigger Squeeze
+    new MixedRealityInteractionMapping(1, &quot;Trigger Position&quot;, AxisType.SingleAxis, DeviceInputType.Trigger, ControllerMappingLibrary.AXIS_9),
+    // Left Trigger Press (Select)
+    new MixedRealityInteractionMapping(2, &quot;Trigger Press (Select)&quot;, AxisType.Digital, DeviceInputType.TriggerPress, KeyCode.JoystickButton14),
+};
+</code></pre>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="145">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="146">The <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.ControllerMappingLibrary.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="146"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="146">ControllerMappingLibrary</code></a> class provides symbolic constants for the Unity input axis and button definitions.</p>
+</div>
+<h3 id="raise-notification-events" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="148">Raise notification events</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="150">To enable applications to respond to input from the user, the data provider raises notification events corresponding to controller state changes as defined in
+the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="151"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="151">IMixedRealityInputHandler</code></a> and <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="151"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="151">IMixedRealityInputHandler&lt;T&gt;</code></a> interfaces.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="153">For digital (button) type controls, raise the OnInputDown and OnInputUp events.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="155">// inputAction is the input event that is to be raised.
+if (interactionSourceState.touchpadPressed)
+{
+    InputSystem?.RaiseOnInputDown(InputSource, ControllerHandedness, inputAction);
+}
+else
+{
+    InputSystem?.RaiseOnInputUp(InputSource, ControllerHandedness, inputAction);
+}
+</code></pre>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="167">For analog controls (ex: touchpad position) the InputChanged event should be raised.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="169">InputSystem?.RaisePositionInputChanged(InputSource, ControllerHandedness, interactionMapping.MixedRealityInputAction, interactionSourceState.touchpadPosition);
+</code></pre>
+<h3 id="add-unity-profiler-instrumentation" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="173">Add Unity Profiler instrumentation</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="175">Performance is critical in mixed reality applications. Every component adds some amount of overhead for which applications must account. To this end, it is important that all input data providers contain Unity Profiler instrumentation in inner loop and frequently utilized code paths.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="177">It is recommended to implement the pattern utilized by the MRTK when instrumenting custom providers.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="179">        private static readonly ProfilerMarker GetOrAddControllerPerfMarker = new ProfilerMarker(&quot;[MRTK] WindowsMixedRealityDeviceManager.GetOrAddController&quot;);
+
+        private async void GetOrAddController(InteractionSourceState interactionSourceState)
+        {
+            using (GetOrAddControllerPerfMarker.Auto())
+            {
+                // Code to be measured.
+            }
+        }
+</code></pre>
+<div class="NOTE" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="191">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="192">The name used to identify the profiler marker is arbitrary. The MRTK uses the following pattern.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="194">&quot;[product] className.methodName - optional note&quot;</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="196">It is recommended that custom data providers follow a similar pattern to help simplify identification of specific components and methods when analyzing traces.</p>
+</div>
+<h2 id="create-the-profile-and-inspector" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="198">Create the profile and inspector</h2>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="200">In the Mixed Reality Toolkit, data providers are configured using <a href="../Profiles/Profiles.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="200">profiles</a>.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="202">Data providers with additional configuration options (ex: <a href="../InputSimulation/InputSimulationService.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="202">InputSimulationService</a>) should create a profile and inspector to allow
+customers to modify the behavior to best suit the needs of the application.</p>
+<blockquote sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="205">
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="205">The complete code for the example in this section can be found in the MRTK.Services/InputSimulation folder.</p>
+</blockquote>
+<h3 id="define-the-profile" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="207">Define the profile</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="209">Profile contents should mirror the accessible properties of the observer (ex: update interval). All of the user configurable properties defined in each
+interface should be contained with the profile.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="212">[CreateAssetMenu(
+    menuName = &quot;Mixed Reality Toolkit/Profiles/Mixed Reality Simulated Input Profile&quot;,
+    fileName = &quot;MixedRealityInputSimulationProfile&quot;,
+    order = (int)CreateProfileMenuItemIndices.InputSimulation)]
+public class MixedRealityInputSimulationProfile : BaseMixedRealityProfile
+{ }
+</code></pre>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="221">The <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="221">CreateAssetMenu</code> attribute can be applied to the profile class to enable customers to create a profile instance using the
+<strong sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="222">Create &gt; Assets &gt; Mixed Reality Toolkit &gt; Profiles</strong> menu.</p>
+<h3 id="implement-the-inspector" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="224">Implement the inspector</h3>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="226">Profile inspectors are the user interface for configuring and viewing profile contents. Each profile inspector should extend the
+<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Editor.BaseMixedRealityToolkitConfigurationProfileInspector.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="227">`BaseMixedRealityToolkitConfigurationProfileInspector</a> class.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="229">[CustomEditor(typeof(MixedRealityInputSimulationProfile))]
+public class MixedRealityInputSimulationProfileInspector : BaseMixedRealityToolkitConfigurationProfileInspector
+{ }
+</code></pre>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="235">The <code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="235">CustomEditor</code> attribute informs Unity the type of asset to which the inspector applies.</p>
+<h2 id="create-assembly-definitions" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="237">Create assembly definition(s)</h2>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="239">The Mixed Reality Toolkit uses assembly definition (<a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="239">.asmdef</a>) files to specify dependencies
+between components as well as to assist Unity in reducing compilation time.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="242">It is recommended that assembly definition files are created for all data providers and their editor components.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="244">Using the <a href="#recommended-folder-structure" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="244">folder structure</a> in the earlier example, there would be two .asmdef files for the ContosoInput data provider.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="246">The first assembly definition is for the data provider. For this example, it will be called ContosoInput and will be located in the example's ContosoInput folder.
+This assembly definition must specify a dependency on Microsoft.MixedReality.Toolkit and any other assemblies upon which it depends.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="249">The ContosoInputEditor assembly definition will specify the profile inspector and any editor specific code. This file must be located in the root folder of the editor code. In this example,
+the file will be located in the ContosoInput\Editor folder. This assembly definition will contain a reference to the ContosoInput assembly as well as:</p>
+<ul sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="252">
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="252">Microsoft.MixedReality.Toolkit</li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="253">Microsoft.MixedReality.Toolkit.Editor.Inspectors</li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="254">Microsoft.MixedReality.Toolkit.Editor.Utilities</li>
+</ul>
+<h2 id="register-the-data-provider" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="256">Register the data provider</h2>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="258">Once created, the data provider can be registered with the input system and be used in the application.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="260"><img src="../Images/Input/RegisteredServiceProviders.PNG" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="260" alt="Registered input system data providers"></p>
+<h2 id="packaging-and-distribution" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="262">Packaging and distribution</h2>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="264">Data providers that are distributed as third party components have the specific details of packaging and distribution left to the preference of the developer. Likely, the most
+common solution will be to generate a .unitypackage and distribute via the Unity Asset Store.</p>
+<p sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="267">If a data provider is submitted and accepted as a part of the Microsoft Mixed Reality Toolkit package, the Microsoft MRTK team will package and distribute it as part of the MRTK offerings.</p>
+<h2 id="see-also" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="269">See also</h2>
+<ul sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="271">
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="271"><a href="Overview.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="271">Input system</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="272"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.BaseInputDeviceManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="272"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="272">BaseInputDeviceManager</code> class</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="273"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputDeviceManager.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="273"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="273">IMixedRealityInputDeviceManager</code> interface</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="274"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="274"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="274">IMixedRealityInputHandler</code> interface</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="275"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputHandler-1.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="275"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="275">IMixedRealityInputHandler&lt;T&gt;</code> interface</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="276"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="276"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="276">IMixedRealityDataProvider</code> interface</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="277"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityCapabilityCheck.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="277"><code sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="277">IMixedRealityCapabilityCheck</code> interface</a></li>
+<li sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="278"><a href="../Tools/ControllerMappingTool.html" sourcefile="../../Documentation/Input/CreateDataProvider.md" sourcestartlinenumber="278">Controller Mapping Tool</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Input/CreateDataProvider.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

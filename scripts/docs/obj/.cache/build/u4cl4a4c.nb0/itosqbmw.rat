@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Visual themes | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Visual themes | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="visual-themes" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="2">Visual themes</h1>
+
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="4">Themes allow for flexible control of UX assets in response to various states transitions. This may involve changing a button's color, resizing an element in response to focus, etc. The Visual Themes framework is made up of two key pieces: 1) configuration and 2) runtime engines.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="6"><a href="#theme-configuration" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="6">Theme configurations</a> are definitions of properties and types while <a href="#theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="6">Theme Engines</a> are classes that consume the configurations and implement the logic to update transforms, materials, and more at runtime.</p>
+<h2 id="theme-configuration" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="8">Theme configuration</h2>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="10">Theme configurations are <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="10">ScriptableObjects</a> that define how Theme Engines will be initialized at runtime. They define what properties and values to utilize in response to input or other state changes when the app is running. As <a href="https://docs.unity3d.com/Manual/class-ScriptableObject.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="10">ScriptableObjects</a> assets, theme configurations can be defined once and then re-used across different UX components.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="12">To create a new <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Theme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="12"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="12">Theme</code></a> asset:</p>
+<ol sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="14">
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="14">Right click in the <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="14">Project Window</em></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="15">Select <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="15">Create</strong> &gt; <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="15">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="15">Theme</strong></li>
+</ol>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="17">Example Theme configuration assets can be found under <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="17">MRTK/SDK/Features/UX/Interactable/Themes</code>.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="19"><img src="../Documentation/Images/VisualThemes/ThemeInspectorExample.png" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="19" alt="Theme ScriptableObject example in inspector"></p>
+<h3 id="states" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="21">States</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">When creating a new <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Theme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">Theme</code></a>, the first thing to set is what states are available. The <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">States</em> property indicates how many values a Theme configuration needs to define as there will be one value per state. In the example image above, the <a href="README_Interactable.html#general-input-settings" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">default states defined for the Interactable</a> component are <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">Default</em>, <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">Focus</em>, <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">Pressed</em>, and <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">Disabled</em>. These are defined in the <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="23">DefaultInteractableStates</code> (Assets/MRTK/SDK/Features/UX/Interactable/States) asset file.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="25">To create a new <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.States.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="25"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="25">State</code></a> asset:</p>
+<ol sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="27">
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="27">Right click in the <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="27">Project Window</em></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="28">Select <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="28">Create</strong> &gt; <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="28">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="28">State</strong></li>
+</ol>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="30"><img src="../Documentation/Images/Interactable/DefaultInteractableStates.png" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="30" alt="States ScriptableObject example in inspector"></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32">A <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.States.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32">State</code></a> ScriptableObject defines both the list of states as well as the type of <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32">StateModel</em> to create for these states. A <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32">StateModel</em> is a class that extends <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.BaseStateModel.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="32">BaseStateModel</code></a> and implements the state machine logic to generate the current state at runtime. The current state from this class is generally used by Theme Engines at runtime to dictate what values to set against material properties, GameObject transforms, and more.</p>
+<h3 id="theme-engine-properties" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="34">Theme engine properties</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="36">Outside of <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="36">States</em>, a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Theme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="36"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="36">Theme</code></a> asset also defines a list of Theme Engines and the associated properties for these engines. A <a href="#theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="36">Theme engine</a> again defines the logic to set the correct values against a GameObject at runtime.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="38">A <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Theme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="38"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="38">Theme</code></a> asset can define multiple Theme Engines to achieve sophisticated visual states transitions targeting multiple GameObject properties.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="40"><strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="40">Theme Runtime</strong></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="42">Defines the class type of the Theme engine that will be created</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="44"><strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="44">Easing</strong></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="46">Some <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="46">Theme Engines</em>, if they define their property <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html#Microsoft_MixedReality_Toolkit_UI_InteractableThemeBase_IsEasingSupported" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="46">IsEasingSupported</a> as true, support easing between states. For example, lerping between two colors when a state change occurs. The <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="46">Duration</em> defines in seconds how long to ease from start value to end value and the <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="46">Animation Curve</em> defines the rate of change during that time period.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="48"><strong sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="48">Shader properties</strong></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="50">Some <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="50">Theme Engines</em>, if they define their property <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html#Microsoft_MixedReality_Toolkit_UI_InteractableThemeBase_AreShadersSupported" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="50">AreShadersSupported</a> as true, will modify particular shader properties at runtime. The <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="50">Shader</em> and <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="50">Property</em> fields define the shader property to target.</p>
+<h3 id="create-a-theme-configuration-via-code" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="52">Create a theme configuration via code</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="54">In general, it is easier to design Theme configurations via the Unity inspector but there are cases where Themes must be dynamically generated at runtime via code. The code snippet below gives an example of how to accomplish this task.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="56">To help expedite development, the following helper methods are useful for simplifying setup.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="58"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.Interactable.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="58"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="58">Interactable.GetDefaultInteractableStates()</code></a> - creates a new States ScriptableObject with the four default state values used in the <a href="README_Interactable.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="58">Interactable</a> component.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="60"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeDefinition.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="60"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="60">ThemeDefinition.GetDefaultThemeDefinition&lt;T&gt;()</code></a> - Every Theme Engine defines a default configuration with the correct properties needed for that Theme runtime type. This helper creates a definition for the given Theme Engine type.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="62">// This code example builds a Theme ScriptableObject that can be used with an Interactable component.
+// A random color is selected for the on pressed state every time this code is executed.
+
+// Use the default states utilized in the Interactable component
+var defaultStates = Interactable.GetDefaultInteractableStates();
+
+// Get the default configuration for the Theme engine InteractableColorTheme
+var newThemeType = ThemeDefinition.GetDefaultThemeDefinition&lt;InteractableColorTheme&gt;().Value;
+
+// Define a color for every state in our Default Interactable States
+newThemeType.StateProperties[0].Values = new List&lt;ThemePropertyValue&gt;()
+{
+    new ThemePropertyValue() { Color = Color.black},  // Default
+    new ThemePropertyValue() { Color = Color.black}, // Focus
+    new ThemePropertyValue() { Color = Random.ColorHSV()},   // Pressed
+    new ThemePropertyValue() { Color = Color.black},   // Disabled
+};
+
+// Create the Theme configuration asset
+Theme testTheme = ScriptableObject.CreateInstance&lt;Theme&gt;();
+testTheme.States = defaultStates;
+testTheme.Definitions = new List&lt;ThemeDefinition&gt;() { newThemeType };
+</code></pre>
+<h2 id="theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="87">Theme engines</h2>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89">A <a href="#theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89">Theme Engine</a> is a class that extends from the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89">InteractableThemeBase</code></a> class. These classes are instantiated at runtime and configured with a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeDefinition.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="89">ThemeDefinition</code></a> object as outlined earlier.</p>
+<h3 id="default-theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="91">Default theme engines</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="93">MRTK ships with a default set of Theme Engines listed below:</p>
+<ul sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="95">
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="95"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableActivateTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="95"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="95">InteractableActivateTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="96"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableAnimatorTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="96"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="96">InteractableAnimatorTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="97"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableAudioTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="97"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="97">InteractableAudioTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="98"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableColorChildrenTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="98"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="98">InteractableColorChildrenTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="99"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableColorTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="99"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="99">InteractableColorTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="100"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableGrabScaleTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="100"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="100">InteractableGrabScaleTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="101"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableMaterialTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="101"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="101">InteractableMaterialTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="102"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableOffsetTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="102"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="102">InteractableOffsetTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="103"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableRotationTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="103"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="103">InteractableRotationTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="104"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableScaleTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="104"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="104">InteractableScaleTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="105"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableShaderTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="105"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="105">InteractableShaderTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="106"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableStringTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="106"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="106">InteractableStringTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="107"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableTextureTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="107"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="107">InteractableTextureTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="108"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ScaleOffsetColorTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="108"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="108">ScaleOffsetColorTheme</code></a></li>
+</ul>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="110">The default Theme Engines can be found under <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="110">MRTK/SDK/Features/UX/Scripts/VisualThemes/ThemeEngines</code>.</p>
+<h3 id="custom-theme-engines" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="112">Custom theme engines</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="114">As stated, a Theme Engine is defined as a class that extends from the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="114"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="114">InteractableThemeBase</code></a> class. Thus, new Theme Engine need only extend this class and implement the following:</p>
+<h4 id="mandatory-implementations" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="116">Mandatory implementations</h4>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="118"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="118">public abstract void SetValue(ThemeStateProperty property, int index, float percentage)</code>
+(xref:Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.SetValue)</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="121">For the given property, which can be identified by <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="121">ThemeStateProperty.Name</code>, set its current state value on the targeted GameObject host (i.e set the material color, etc). The <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="121">index</em> indicates the current state value to access and the <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="121">percentage</em>, a float between 0 and 1, is used for easing/lerping between values.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="123"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="123">public abstract ThemePropertyValue GetProperty(ThemeStateProperty property)</code>(xref:Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.GetProperty)</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="125">For the given property, which can be identified by <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="125">ThemeStateProperty.Name</code>, return the current value set on the targeted Host  GameObject (i.e the current material color, the current local position offset, etc). This is primarily used for caching the start value when easing between states.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="127"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="127">public abstract ThemeDefinition GetDefaultThemeDefinition()</code>(xref:Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.GetDefaultThemeDefinition)</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="129">Returns a <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeDefinition.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="129"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="129">ThemeDefinition</code></a> object that defines the default properties and configuration needed for the custom theme</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="131"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="131">protected abstract void SetValue(ThemeStateProperty property, ThemePropertyValue value)</code></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="133">Protected variant of the public <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="133">SetValue()</code> definition, except provided ThemePropertyValue to set instead of directing to use index and/or percentage configuration.</p>
+<h4 id="recommended-overrides" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="135">Recommended overrides</h4>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="137"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="137"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="137">InteractableThemeBase.Init(GameObject host, ThemeDefinition settings)</code></a></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="139">Perform any initialization steps here targeting the provided <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="139">GameObject</em> parameter and using the properties and configurations defined in the <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="139">ThemeDefinition</em> parameter. It is recommended to call <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="139">base.Init(host, settings)</code> at the beginning of an override.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="141"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html#Microsoft_MixedReality_Toolkit_UI_InteractableThemeBase_IsEasingSupported" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="141"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="141">InteractableThemeBase.IsEasingSupported</code></a></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="143">If the custom Theme Engine can support easing between values which is configured via the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeDefinition.html#Microsoft_MixedReality_Toolkit_UI_ThemeDefinition_Easing" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="143"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="143">ThemeDefinition.Easing</code></a> property.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="145"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html#Microsoft_MixedReality_Toolkit_UI_InteractableThemeBase_AreShadersSupported" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="145"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="145">InteractableThemeBase.AreShadersSupported</code></a></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">If the custom Theme Engine can support targeting shader properties. It is recommended to extend from <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableShaderTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">InteractableShaderTheme</code></a> to benefit from the existing infrastructure to efficiently set/get shader properties via <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">MaterialPropertyBlocks</a>. The shader property information is stored in each <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeStateProperty.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">ThemeStateProperty</code></a> via <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeStateProperty.html#Microsoft_MixedReality_Toolkit_UI_ThemeStateProperty_TargetShader" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">ThemeStateProperty.TargetShader</code></a> and <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ThemeStateProperty.html#Microsoft_MixedReality_Toolkit_UI_ThemeStateProperty_ShaderPropertyName" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="147">ThemeStateProperty.ShaderPropertyName</code></a>.</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="149">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="150">If extending <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableShaderTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="150"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="150">InteractableShaderTheme</code></a>, it can also be useful to override the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableShaderTheme.html#Microsoft_MixedReality_Toolkit_UI_InteractableShaderTheme_DefaultShaderProperty" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="150">InteractableShaderTheme.DefaultShaderProperty</a> via <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="150">new</em>.</p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="152">Example code: <code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="152">protected new const string DefaultShaderProperty = &quot;_Color&quot;;</code></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">Furthermore, the following classes below extend the <a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableShaderTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">InteractableShaderTheme</code></a> class which again uses <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">MaterialPropertyBlocks</a> to modify shader property values. This approach <a href="https://docs.unity3d.com/Manual/DrawCallBatching.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">helps performance</a> because <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">MaterialPropertyBlocks</em> do not create new instanced materials when values change. However, accessing the typical <a href="https://docs.unity3d.com/ScriptReference/Material.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">Material</a> class properties will not return expected values. Use <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">MaterialPropertyBlocks</em> to get and validate current material property values (i.e <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">_Color</em> or <em sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="154">_MainTex</em>).</p>
+<ul sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="156">
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="156"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableColorChildrenTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="156"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="156">InteractableColorChildrenTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="157"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableColorTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="157"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="157">InteractableColorTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="158"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableTextureTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="158"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="158">InteractableTextureTheme</code></a></li>
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="159"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.ScaleOffsetColorTheme.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="159"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="159">ScaleOffsetColorTheme</code></a></li>
+</ul>
+</div>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="161"><a class="xref" href="../api/Microsoft.MixedReality.Toolkit.UI.InteractableThemeBase.html#Microsoft_MixedReality_Toolkit_UI_InteractableThemeBase_Reset" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="161"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="161">InteractableThemeBase.Reset</code></a></p>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="163">Directs the theme to reset any modified properties back to their original values that were set on the host GameObject when this theme engine was initialized.</p>
+<h3 id="custom-theme-engine-example" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="165">Custom theme engine example</h3>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="167">The class below is an example of a custom new Theme Engine. This implementation will find a <a href="https://docs.unity3d.com/ScriptReference/MeshRenderer.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="167">MeshRenderer</a> component on the initialized host object and control its visibility based on the current state.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="169">using Microsoft.MixedReality.Toolkit.UI;
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+// This class demonstrates a custom theme to control a Host's MeshRenderer visibility
+public class MeshVisibilityTheme : InteractableThemeBase
+{
+    // Bool visibility does not make sense for lerping
+    public override bool IsEasingSupported =&gt; false;
+
+    // No material or shaders are being modified
+    public override bool AreShadersSupported =&gt; false;
+
+    // Cache reference to the MeshRenderer component on our Host
+    private MeshRenderer meshRenderer;
+
+    public MeshVisibilityTheme()
+    {
+        Types = new Type[] { typeof(MeshRenderer) };
+        Name = &quot;Mesh Visibility Theme&quot;;
+    }
+
+    // Define a default configuration to simplify initialization of this theme engine
+    // There is only one state property with a value per available state
+    // This state property is a boolean that defines whether the renderer is enabled
+    public override ThemeDefinition GetDefaultThemeDefinition()
+    {
+        return new ThemeDefinition()
+        {
+            ThemeType = GetType(),
+            StateProperties = new List&lt;ThemeStateProperty&gt;()
+            {
+                new ThemeStateProperty()
+                {
+                    Name = &quot;Mesh Visible&quot;,
+                    Type = ThemePropertyTypes.Bool,
+                    Values = new List&lt;ThemePropertyValue&gt;(),
+                    Default = new ThemePropertyValue() { Bool = true }
+                },
+            },
+            CustomProperties = new List&lt;ThemeProperty&gt;()
+        };
+    }
+
+    // When initializing, cache a reference to the MeshRenderer component
+    public override void Init(GameObject host, ThemeDefinition definition)
+    {
+        base.Init(host, definition);
+
+        meshRenderer = host.GetComponent&lt;MeshRenderer&gt;();
+    }
+
+    // Get the current state of the MeshRenderer visibility
+    public override ThemePropertyValue GetProperty(ThemeStateProperty property)
+    {
+        return new ThemePropertyValue()
+        {
+            Bool = meshRenderer.enabled
+        };
+    }
+
+    // Update the MeshRenderer visibility based on the property state value data
+    public override void SetValue(ThemeStateProperty property, int index, float percentage)
+    {
+        meshRenderer.enabled = property.Values[index].Bool;
+    }
+}
+</code></pre>
+<h2 id="end-to-end-example" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="240">End-to-end example</h2>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="242">Extending off of the custom Theme Engine defined in the earlier section, the code example below demonstrates how to control this theme at runtime. In particular, how to set the current state on the theme so the MeshRenderer visibility is updated appropriately.</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="244">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="245"><code sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="245">theme.OnUpdate(state,force)</code> should generally be called in the Update() method to support Theme Engines that utilize easing/lerping between values.</p>
+</div>
+<pre><code class="lang-c#" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="247">using Microsoft.MixedReality.Toolkit.UI;
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MeshVisibilityController : MonoBehaviour
+{
+    private MeshVisibilityTheme themeEngine;
+    private bool hideMesh = false;
+
+    private void Start()
+    {
+        // Define the default configuration. State 0 will be on while State 1 will be off
+        var themeDefinition = ThemeDefinition.GetDefaultThemeDefinition&lt;MeshVisibilityTheme&gt;().Value;
+        themeDefinition.StateProperties[0].Values = new List&lt;ThemePropertyValue&gt;()
+        {
+            new ThemePropertyValue() { Bool = true }, // show state
+            new ThemePropertyValue() { Bool = false }, // hide state
+        };
+
+        // Create the actual Theme engine and initialize it with the GameObject we are attached to
+        themeEngine = (MeshVisibilityTheme)InteractableThemeBase.CreateAndInitTheme(themeDefinition, this.gameObject);
+    }
+
+    private void Update()
+    {
+        // Update the theme engine to set our MeshRenderer visibility
+        // based on our current state (i.e the hideMesh variable)
+        themeEngine.OnUpdate(Convert.ToInt32(hideMesh));
+    }
+
+    public void ToggleVisibility()
+    {
+        // Alternate state of visibility
+        hideMesh = !hideMesh;
+    }
+}
+</code></pre>
+<h2 id="see-also" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="287">See also</h2>
+<ul sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="289">
+<li sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="289"><a href="README_Interactable.html" sourcefile="../../Documentation.ja/VisualThemes.md" sourcestartlinenumber="289">Interactable</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/VisualThemes.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

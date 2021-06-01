@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Mixed Reality Toolkit &#12392; Unity Package Manager | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Mixed Reality Toolkit &#12392; Unity Package Manager | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mixed-reality-toolkit-と-unity-package-manager" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="1">Mixed Reality Toolkit と Unity Package Manager</h1>
+
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="3">バージョン 2.5.0 から、Unity 2019.4 以降において Microsoft Mixed Reality Toolkit は Unity Package Manager (UPM) を使って利用可能です。</p>
+<h2 id="unity-package-manager-を使った-mixed-reality-機能のインストール" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="5">Unity Package Manager を使った Mixed Reality 機能のインストール</h2>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="7">Unity Package Manager は <a href="https://docs.unity3d.com/Manual/upm-manifestPkg.html" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="7">マニフェスト ファイル</a> (manifest.json) を利用して、どのパッケージをインストールしてどのレジストリ（サーバー）からインストールされうるかを決定します。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="9">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="10">MRTK バージョン 2.5.0 現在、サーバーとパッケージの初期登録はプロジェクトごとの手動手順です。詳細な手順は以下のセクションをご覧ください。</p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="12">UPM が Azure DevOps でサポートされていないレガシーの npm 検索機能 (/-/all) を使用しているため、このプロセスが必要です。</p>
+</div>
+<h3 id="mixed-reality-コンポーネント-サーバーの登録" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="14">Mixed Reality コンポーネント サーバーの登録</h3>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="16">Microsoft Mixed Reality Toolkit を使用する各プロジェクトでは、(Packages フォルダ内の) <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="16">manifest.json</code> ファイルに Mixed Reality の Scoped Registry を追加する必要があります。以下は、Mixed Reality をサポートするために <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="16">manifest.json</code> を適切に変更する方法を説明しています。</p>
+<ol sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="18">
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="18"><code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="18">&lt;projectRoot&gt;/Packages/manifest.json</code> を <a href="https://code.visualstudio.com/" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="18">Visual Studio Code</a> のようなテキスト エディターで開きます。</li>
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="19">マニフェスト ファイルの先頭で Scoped Registry のセクションに Mixed Reality サーバーを追加し、ファイルを保存します。</li>
+</ol>
+<pre><code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="21">{
+  &quot;scopedRegistries&quot;: [
+    {
+      &quot;name&quot;: &quot;Microsoft Mixed Reality&quot;,
+      &quot;url&quot;: &quot;https://pkgs.dev.azure.com/aipmr/MixedReality-Unity-Packages/_packaging/Unity-packages/npm/registry/&quot;,
+      &quot;scopes&quot;: [
+        &quot;com.microsoft.mixedreality&quot;,
+        &quot;com.microsoft.spatialaudio&quot;
+      ]
+    }
+  ],
+</code></pre>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="35"><a name="adding-mrtk-packages"></a></p>
+<h3 id="mrtk-パッケージの追加" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="37">MRTK パッケージの追加</h3>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="39">Microsoft Mixed Reality の scoped registry がマニフェストに追加されると、MRTK のパッケージを指定できるようになります。</p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="41"><a href="Packaging/MRTK_Packages.html" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="41">Mixed Reality Toolkit package</a> ページの <a href="Packaging/MRTK_Packages.html#unity-package-manager" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="41">Unity Package Manager</a> セクションには、利用可能な MRTK パッケージ、内容、利用シナリオが書かれています。</p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="43">MRTK パッケージを追加するには、<code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="43">Packages/manifest.json</code> ファイルの dependencies セクションを変更します。以下の例は Foundation, Tools, Examples パッケージの追加方法を示しています。Standard Assets パッケージは Foundation の依存先として自動的に追加されます。</p>
+<pre><code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="45">  &quot;dependencies&quot;: {
+    &quot;com.microsoft.mixedreality.toolkit.foundation&quot;: &quot;2.5.0&quot;,
+    &quot;com.microsoft.mixedreality.toolkit.tools&quot;: &quot;2.5.0&quot;,
+    &quot;com.microsoft.mixedreality.toolkit.examples&quot;: &quot;2.5.0&quot;,
+</code></pre>
+<h2 id="mixed-reality-機能を-unity-package-manager-で管理する" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="52">Mixed Reality 機能を Unity Package Manager で管理する</h2>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="54">Mixed Reality Toolkit パッケージがパッケージ マニフェストに追加されると、Unity Package Manager のユーザー インターフェイスを使って管理することができます。</p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="56"><img src="../Documentation/Images/Packaging/MRTK_FoundationUPM.png" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="56" alt="MRTK Foundation UPM Package"></p>
+<div class="NOTE" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="58">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="59">もし Unity Package Manager を使用して Mixed Reality Toolkit パッケージを削除した場合、<a href="#adding-mrtk-packages" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="59">前述の手順</a> を使用して再度追加する必要があります。</p>
+</div>
+<h3 id="mixed-reality-toolkit-のサンプルを使う" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="61">Mixed Reality Toolkit のサンプルを使う</h3>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="63">アセット パッケージ (.unitypackage) ファイルを使用する場合とは異なり、<code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="63">com.microsoft.mixedreality.toolkit.examples</code> や <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="63">com.microsoft.mixedreality.toolkit.handphysicsservice</code> はサンプル シーンやアセットを自動的にインポートしません。</p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="65">1つ以上のサンプルを利用するには、以下の手順を行ってください。</p>
+<ol sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="67">
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="67">Unity Editor で <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="67">Window</code> &gt; <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="67">Package Manager</code> を開く</li>
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="68">パッケージのリストで <code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="68">Mixed Reality Toolkit Examples</code> を選択する</li>
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="69"><code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="69">Samples</code> リストから目的のサンプルを探す</li>
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="70"><code sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="70">Import into Project</code> をクリックする</li>
+</ol>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="72"><img src="../Documentation/Images/Packaging/MRTK_ExamplesUpm.png" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="72" alt="Importing samples"></p>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="74">サンプル パッケージが更新されると、Unity はインポートされたサンプルを更新するオプションを提供します。</p>
+<div class="NOTE" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="76">
+<h5>Note</h5>
+<p sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="77">インポートしたサンプルを更新すると、そのサンプルと関連するアセットに加えられた変更はすべて上書きされます。</p>
+</div>
+<h2 id="関連項目" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="79">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="81">
+<li sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="81"><a href="Packaging/MRTK_Packages.html" sourcefile="../../Documentation.ja/usingupm.md" sourcestartlinenumber="81">Mixed Reality Toolkit パッケージ</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/usingupm.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

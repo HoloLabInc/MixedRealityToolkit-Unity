@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to add near interaction in MRTK | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to add near interaction in MRTK | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-add-near-interaction-in-mrtk" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="1">How to add near interaction in MRTK</h1>
+
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="3">Near interactions come in the form of touches and grabs. Touch and grab events are raised as pointer events by the <a href="Pointers.html#pokepointer" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="3">PokePointer</a> and <a href="Pointers.html#spherepointer" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="3">SpherePointer</a>, respectively.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="5">Three key steps are required to listen for touch and/or grab input events on a particular GameObject.</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="7">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="7">Ensure the relevant pointer is registered in the main <a href="../MixedRealityConfigurationGuide.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="7">MRTK Configuration Profile</a>.</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="8">Ensure the desired GameObject has the appropriate <a href="#add-grab-interactions" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="8">grab</a> or <a href="#add-touch-interactions" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="8">touch</a> script component and <a href="https://docs.unity3d.com/ScriptReference/Collider.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="8"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="8">Unity Collider</code></a>.</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="9">Implement an input handler interface on an attached script to the desired GameObject to listen for the <a href="#grab-code-example" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="9">grab</a> or <a href="#touch-code-example" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="9">touch</a> events.</li>
+</ol>
+<h2 id="add-grab-interactions" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="11">Add grab interactions</h2>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="13">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="13"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="13">Ensure a <a href="Pointers.html#spherepointer" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="13">SpherePointer</a> is registered in the <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="13">MRTK Pointer profile</em>.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">The default MRTK profile and the default HoloLens 2 profile already contain a <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">SpherePointer</em>. One can confirm a SpherePointer will be created by selecting the MRTK Configuration Profile and navigating to <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">Input</strong> &gt; <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">Pointers</strong> &gt; <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">Pointer Options</strong>. The default <code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">GrabPointer</code> prefab (Assets/MRTK/SDK/Features/UX/Prefabs/Pointers) should be listed with a <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">Controller Type</em> of <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">Articulated Hand</em>. A custom prefab can be utilized as long as it implements the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.SpherePointer.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="15">SpherePointer</code></a> class.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="17"><img src="../Images/Input/Pointers/GrabPointer_MRTKProfile.png" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="17" alt="Grab Pointer Profile Example"></p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="19">The default grab pointer queries for nearby objects in a cone around the grab point to match the default Hololens 2 interface.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="21"><img src="https://user-images.githubusercontent.com/39840334/82500569-72d58300-9aa8-11ea-8102-ec9a62832d4e.png" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="21" alt="Conical Grab Pointer"></p>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="23"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="23">On the GameObject that should be grabbable, add a <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="23"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="23">NearInteractionGrabbable</code></a>, as well as a collider.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="25">Make sure the layer of the GameObject is on a grabbable layer. By default, all layers except <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="25">Spatial Awareness</em> and <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="25">Ignore Raycasts</em> are grabbable. See which layers are grabbable by inspecting the <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="25">Grab Layer Masks</em> in your <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="25">GrabPointer</em> prefab.</p>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27">On the GameObject or one of its ancestors, add a script component that implements the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointerHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27">IMixedRealityPointerHandler</code></a> interface. Any ancestor of the object with the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="27">NearInteractionGrabbable</code></a> will be able to receive pointer events, as well.</p>
+</li>
+</ol>
+<h3 id="grab-code-example" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="29">Grab code example</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="31">Below is a script that will print if an event is a touch or grab. In the relevant <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="31">IMixedRealityPointerHandler</em> interface function, one can look at the type of pointer that triggers that event via the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.MixedRealityPointerEventData.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="31"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="31">MixedRealityPointerEventData</code></a>. If the pointer is a <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="31">SpherePointer</em>, the interaction is a grab.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="33">public class PrintPointerEvents : MonoBehaviour, IMixedRealityPointerHandler
+{
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
+    {
+        if (eventData.Pointer is SpherePointer)
+        {
+            Debug.Log($&quot;Grab start from {eventData.Pointer.PointerName}&quot;);
+        }
+        if (eventData.Pointer is PokePointer)
+        {
+            Debug.Log($&quot;Touch start from {eventData.Pointer.PointerName}&quot;);
+        }
+    }
+
+    public void OnPointerClicked(MixedRealityPointerEventData eventData) {}
+    public void OnPointerDragged(MixedRealityPointerEventData eventData) {}
+    public void OnPointerUp(MixedRealityPointerEventData eventData) {}
+}
+</code></pre>
+<h2 id="add-touch-interactions" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="54">Add touch interactions</h2>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="56">The process for adding touch interactions on UnityUI elements is different than for vanilla 3D GameObjects. You can skip to the following section, <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="56">Unity UI</em>, for enabling Unity UI components.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="58">For <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="58">both</strong> types of UX elements though, ensure a <a href="Pointers.html#pokepointer" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="58">PokePointer</a> is registered in the <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="58">MRTK Pointer profile</em>.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">The default MRTK profile and the default HoloLens 2 profile already contain a <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">PokePointer</em>. One can confirm a PokePointer will be created by selecting the MRTK Configuration Profile and navigate to <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">Input</strong> &gt; <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">Pointers</strong> &gt; <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">Pointer Options</strong>. The default <code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">PokePointer</code> (Assets/MRTK/SDK/Features/UX/Prefabs/Pointers) prefab should be listed with a <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">Controller Type</em> of <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">Articulated Hand</em>. A custom prefab can be utilized as long as it implements the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.PokePointer.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="60">PokePointer</code></a> class.</p>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="62"><img src="../Images/Input/Pointers/PokePointer_MRTKProfile.png" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="62" alt="Poke Pointer Profile Example"></p>
+<h3 id="3d-gameobjects" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="64">3D GameObjects</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="66">There are two different ways of adding touch interactions to 3D GameObjects, depending on if your 3d object
+should only have a single touchable plane, or of if it should be touchable based on its entire collider.
+The first way is typically on objects with BoxColliders, where it is desired to only have a single face
+of the collider react to touch events. The other is for objects that need to be touchable from any direction
+based on their collider.</p>
+<h3 id="single-face-touch" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="72">Single face touch</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="74">This is useful to enable situations where only a single face needs to be touchable. This option assumes
+that the game object has a BoxCollider. it's possible to use this with non-BoxCollider objects, in which
+case the 'Bounds' and 'Local Center' properties much be manually set to configure the touchable plane (i.e.
+Bounds should be set to a non-zero-zero value).</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="79">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="79"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="79">On the GameObject that should be touchable, add a BoxCollider and a [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="79">NearInteractionTouchable</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) component.</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82">Set <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82">Events to Receive</strong> to <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82">Touch</em> if using the [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="82">IMixedRealityTouchHandler</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler) interface in your
+component script below.</p>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="86"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="86">Click <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="86">Fix bounds</strong> and <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="86">Fix center</strong></p>
+</li>
+</ol>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="88"><img src="../Images/Input/Pointers/NearInteractionTouchableSetup.gif" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="88" alt="NearInteractionTouchable Gizmos Example"></p>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="90"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="90">On that object or one of its ancestors, add a script component that implements the
+<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="91"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="91">IMixedRealityTouchHandler</code></a>
+interface. Any ancestor of the object with the [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="92">NearInteractionTouchable</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) will be able to receive
+pointer events, as well.</p>
+</li>
+</ol>
+<div class="NOTE" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="96">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="97">In the editor scene view with the <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="97">NearInteractionTouchable</em> GameObject selected, notice a white outline square and arrow. The arrow points to the &quot;front&quot; of the touchable. The collidable will only be touchable from that direction. To make a collider touchable from all directions, see the section on <a href="#arbitrary-collider-touch" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="97">arbitrary collider touch</a>.
+<img src="../Images/Input/Pointers/NearInteractionTouchableGizmos.png" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="98" alt="NearInteractionTouchable Gizmos Example"></p>
+</div>
+<h3 id="arbitrary-collider-touch" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="100">Arbitrary collider touch</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="102">This is useful to enable situations where the game object needs to be touchable along its entire collider
+face. For example, this can be used to enable touch interactions for an object with a SphereCollider, where
+the entire collider needs to be touchable.</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="106">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="106"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="106">On the GameObject that should be touchable, add a collider and a [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="106">NearInteractionTouchableVolume</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchableVolume) component.</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="109">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="109">Set <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="109">Events to Receive</strong> to <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="109">Touch</em> if using the [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="109">IMixedRealityTouchHandler</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler) interface in your component
+script below.</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="113"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="113">On that object or one of its ancestors, add a script component that implements the
+<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="114"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="114">IMixedRealityTouchHandler</code></a>
+interface. Any ancestor of the object with the [<code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="115">NearInteractionTouchable</code>]
+(xref:Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable) will be able to receive
+pointer events, as well.</p>
+</li>
+</ol>
+<h3 id="unity-ui" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="119">Unity UI</h3>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="121">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="121"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="121">Add/ensure there is a <a href="https://docs.unity3d.com/Manual/UICanvas.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="121">UnityUI canvas</a> in the scene.</p>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="123"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="123">On the GameObject that should be touchable, add a <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchableUnityUI.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="123"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="123">NearInteractionTouchableUnityUI</code></a> component.</p>
+<ol sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125">Set <strong sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125">Events to Receive</strong> to <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125">Touch</em> if using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="125">IMixedRealityTouchHandler</code></a> interface in your component script below.</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127"><p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127">On that object or one of its ancestors, add a script component that implements the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127">IMixedRealityTouchHandler</code></a> interface. Any ancestor of the object with the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchableUnityUI.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="127">NearInteractionTouchableUnityUI</code></a> will be able to receive pointer events as well.</p>
+</li>
+</ol>
+<div class="IMPORTANT" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="129">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">On the <code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">NearInteractionTouchable</code> script component, for the property <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Events to Receive</em> there are two options: <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Pointer</em> and <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Touch</em>. Set <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Events to Receive</em> to <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Pointer</em> if using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointerHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">IMixedRealityPointerHandler</code></a> interface and set to <em sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">Touch</em> if using the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="130">IMixedRealityTouchHandler</code></a> interface in your component script that responds/handles the input events.</p>
+</div>
+<h4 id="touch-code-example" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="132">Touch code example</h4>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="134">The code below demonstrates a MonoBehaviour that can be attached to a GameObject with a <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="134"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="134">NearInteractionTouchable</code></a> variant component and respond to touch input events.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="136">public class TouchEventsExample : MonoBehaviour, IMixedRealityTouchHandler
+{
+    public void OnTouchStarted(HandTrackingInputEventData eventData)
+    {
+        string ptrName = eventData.Pointer.PointerName;
+        Debug.Log($&quot;Touch started from {ptrName}&quot;);
+    }
+    public void OnTouchCompleted(HandTrackingInputEventData eventData) {}
+    public void OnTouchUpdated(HandTrackingInputEventData eventData) { }
+}
+</code></pre>
+<h2 id="near-interaction-script-examples" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="149">Near interaction script examples</h2>
+<h3 id="touch-events" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="151">Touch events</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="153">This example creates a cube, makes it touchable, and changes color on touch.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="155">public static void MakeChangeColorOnTouch(GameObject target)
+{
+    // Add and configure the touchable
+    var touchable = target.AddComponent&lt;NearInteractionTouchableVolume&gt;();
+    touchable.EventsToReceive = TouchableEventType.Pointer;
+
+    var material = target.GetComponent&lt;Renderer&gt;().material;
+    // Change color on pointer down and up
+    var pointerHandler = target.AddComponent&lt;PointerHandler&gt;();
+    pointerHandler.OnPointerDown.AddListener((e) =&gt; material.color = Color.green);
+    pointerHandler.OnPointerUp.AddListener((e) =&gt; material.color = Color.magenta);
+}
+</code></pre>
+<h3 id="grab-events" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="170">Grab events</h3>
+<p sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="172">The below example shows how to make a GameObject draggable. Assumes that the game object has a collider on it.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="174">public static void MakeNearDraggable(GameObject target)
+{
+    // Instantiate and add grabbable
+    target.AddComponent&lt;NearInteractionGrabbable&gt;();
+
+    // Add ability to drag by re-parenting to pointer object on pointer down
+    var pointerHandler = target.AddComponent&lt;PointerHandler&gt;();
+    pointerHandler.OnPointerDown.AddListener((e) =&gt;
+    {
+        if (e.Pointer is SpherePointer)
+        {
+            target.transform.parent = ((SpherePointer)(e.Pointer)).transform;
+        }
+    });
+    pointerHandler.OnPointerUp.AddListener((e) =&gt;
+    {
+        if (e.Pointer is SpherePointer)
+        {
+            target.transform.parent = null;
+        }
+    });
+}
+</code></pre>
+<h2 id="useful-apis" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="199">Useful APIs</h2>
+<ul sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="201">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="201"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionGrabbable.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="201"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="201">NearInteractionGrabbable</code></a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="202"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchable.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="202"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="202">NearInteractionTouchable</code></a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="203"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchableUnityUI.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="203"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="203">NearInteractionTouchableUnityUI</code></a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="204"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.NearInteractionTouchableVolume.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="204"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="204">NearInteractionTouchableVolume</code></a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="205"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityTouchHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="205"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="205">IMixedRealityTouchHandler</code></a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="206"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityPointerHandler.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="206"><code sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="206">IMixedRealityPointerHandler</code></a></li>
+</ul>
+<h2 id="see-also" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="208">See also</h2>
+<ul sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="210">
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="210"><a href="Overview.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="210">Input Overview</a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="211"><a href="Pointers.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="211">Pointers</a></li>
+<li sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="212"><a href="InputEvents.html" sourcefile="../../Documentation/Input/HowToAddNearInteractivity.md" sourcestartlinenumber="212">Input Events</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Input/HowToAddNearInteractivity.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

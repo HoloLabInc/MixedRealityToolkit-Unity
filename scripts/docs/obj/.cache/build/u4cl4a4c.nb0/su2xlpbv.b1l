@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Systems, extension services and data providers | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Systems, extension services and data providers | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="systems-extension-services-and-data-providers" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="1">Systems, extension services and data providers</h1>
+
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="3">In the Mixed Reality Toolkit, many of the features are delivered in the form of services. Services are grouped into three
+primary categories: systems, extension services and data providers.</p>
+<h2 id="systems" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="6">Systems</h2>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="8">Systems are services that provide the core functionality of the Mixed Reality Toolkit. All systems are implementations of the
+<a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityService.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="9"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="9">IMixedRealityService</code></a> interface.</p>
+<ul sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="11">
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="11"><a href="../Boundary/BoundarySystemGettingStarted.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="11">BoundarySystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="12"><a href="../CameraSystem/CameraSystemOverview.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="12">CameraSystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="13"><a href="../Diagnostics/DiagnosticsSystemGettingStarted.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="13">DiagnosticsSystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="14"><a href="../Input/Overview.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="14">InputSystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="15"><a href="../SceneSystem/SceneSystemGettingStarted.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="15">SceneSystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="16"><a href="../SpatialAwareness/SpatialAwarenessGettingStarted.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="16">SpatialAwarenessSystem</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="17"><a href="../TeleportSystem/Overview.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="17">TeleportSystem</a></li>
+</ul>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="19">Each of the listed systems are surfaced in the MixedRealityToolkit component's configuration <a href="../Profiles/Profiles.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="19">profile</a>.</p>
+<h2 id="extensions" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="21">Extensions</h2>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="23">Extension services are components that extend the functionality of the Mixed Reality Toolkit. All extension services must specify
+that they implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="24"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="24">IMixedRealityExtensionService</code></a> interface.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="26">For information on creating extension services, please reference the <a href="../Extensions/ExtensionServices.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="26">Extension services</a> article.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="28">To be accessible to the MRTK, extension services are registered and configured using the Extensions section of the MixedRealityToolkit
+component's configuration profile.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="31"><img src="../Images/Profiles/ConfiguredExtensionService.png" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="31" alt="Configuring an extension service"></p>
+<h2 id="data-providers" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="33">Data providers</h2>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="35">Data providers are components that, per their name, provide data to a Mixed Reality Toolkit service. All data providers must specify that
+they implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="36"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="36">IMixedRealityDataProvider</code></a> interface.</p>
+<div class="NOTE" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="38">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="39">Not all services will require data providers. Of the Mixed Reality Toolkit's systems, the Input and Spatial Awareness systems are the
+only services to utilize data providers.</p>
+</div>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="42">To be accessible to the specific MRTK service, data providers are registered in the service's configuration profile.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="44">Application code accesses data providers via the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProviderAccess.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="44"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="44">IMixedRealityDataProviderAccess</code></a> interface. To simplify access, data providers can also be retrieved via the <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="44">CoreServices</code> helper class.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="46">var inputSimulationService = CoreServices.GetDataProvider&lt;IInputSimulationService&gt;(CoreServices.InputSystem);
+</code></pre>
+<div class="IMPORTANT" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="50">
+<h5>Important</h5>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="51">Although <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="51">IMixedRealityDataProvider</code> inherits from <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="51">IMixedRealityService</code>, data providers are not
+registered with the <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="52">MixedRealityServiceRegistry</code>. To access data providers, application code must
+query the service instance for which they were registered (ex: input system).</p>
+</div>
+<h3 id="input" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="55">Input</h3>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="57">The MRTK input system utilizes only data providers that implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.Input.IMixedRealityInputDeviceManager.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="57"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="57">IMixedRealityInputDeviceManager</code></a>.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="59"><img src="../Images/Input/RegisteredServiceProviders.PNG" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="59" alt="Input system data providers"></p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="61">The following example demonstrates accessing the input simulation provider and toggle the SmoothEyeTracking property.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="63">IMixedRealityDataProviderAccess dataProviderAccess = CoreServices.InputSystem as IMixedRealityDataProviderAccess;
+
+if (dataProviderAccess != null)
+{
+    IInputSimulationService inputSimulation =
+        dataProviderAccess.GetDataProvider&lt;IInputSimulationService&gt;();
+
+    if (inputSimulation != null)
+    {
+        inputSimulation.SmoothEyeTracking = !inputSimulation.SmoothEyeTracking;
+    }
+}
+</code></pre>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="78">Accessing a data provider for the core input system can also be simplified via use of the <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="78">CoreServices</code> helper class.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="80">var inputSimulationService = CoreServices.GetInputSystemDataProvider&lt;IInputSimulationService&gt;();
+if (inputSimulationService != null)
+{
+    // do something here
+}
+</code></pre>
+<div class="NOTE" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="88">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="89">The input system returns only data providers that are supported for the platform on which the
+application is running.</p>
+</div>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="92">For information on writing a data provider for the MRTK input system, please see <a href="../Input/CreateDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="92">creating an input system data provider</a>.</p>
+<h3 id="spatial-awareness" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="94">Spatial awareness</h3>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="96">The MRTK spatial awareness system utilizes only data providers that implement the <a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.SpatialAwareness.IMixedRealitySpatialAwarenessObserver.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="96"><code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="96">IMixedRealitySpatialAwarenessObserver</code></a> interface.</p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="98"><img src="../Images/SpatialAwareness/SpatialAwarenessProfile.png" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="98" alt="Spatial awareness system data providers"></p>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="100">The following example demonstrates accessing the registered spatial mesh data providers and changing the visibility of the meshes.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="102">IMixedRealityDataProviderAccess dataProviderAccess =
+    CoreServices.SpatialAwarenessSystem as IMixedRealityDataProviderAccess;
+
+if (dataProviderAccess != null)
+{
+    IReadOnlyList&lt;IMixedRealitySpatialAwarenessMeshObserver&gt; observers =
+        dataProviderAccess.GetDataProviders&lt;IMixedRealitySpatialAwarenessMeshObserver&gt;();
+
+    foreach (IMixedRealitySpatialAwarenessMeshObserver observer in observers)
+    {
+        // Set the mesh to use the occlusion material
+        observer.DisplayOption = SpatialMeshDisplayOptions.Occlusion;
+    }
+}
+</code></pre>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="119">Accessing a data provider for the core spatial awareness system can also be simplified via use of the <code sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="119">CoreServices</code> helper class.</p>
+<pre><code class="lang-c#" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="121">var dataProvider = CoreServices.GetSpatialAwarenessSystemDataProvider&lt;IMixedRealitySpatialAwarenessMeshObserver&gt;();
+if (dataProvider != null)
+{
+    // do something here
+}
+</code></pre>
+<div class="NOTE" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="129">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="130">The spatial awareness system returns only data providers that are supported for the platform on which the application is running.</p>
+</div>
+<p sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="132">For information on writing a data provider for the MRTK spatial awareness system, please see <a href="../SpatialAwareness/CreateDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="132">creating a spatial awareness system data provider</a>.</p>
+<h2 id="see-also" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="134">See also</h2>
+<ul sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="136">
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="136"><a href="../MixedRealityServices.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="136">What makes a mixed reality feature</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="137"><a href="../Extensions/ExtensionServices.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="137">Extension services</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="138"><a href="../Input/CreateDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="138">Creating an input system data provider</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="139"><a href="../SpatialAwareness/CreateDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="139">Creating a spatial awareness system system data provider</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="140"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityService.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="140">IMixedRealityService interface</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="141"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityDataProvider.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="141">IMixedRealityDataProvider interface</a></li>
+<li sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="142"><a class="xref" href="../../api/Microsoft.MixedReality.Toolkit.IMixedRealityExtensionService.html" sourcefile="../../Documentation/Architecture/SystemsExtensionsProviders.md" sourcestartlinenumber="142">IMixedRealityExtensionService interface</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/Architecture/SystemsExtensionsProviders.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

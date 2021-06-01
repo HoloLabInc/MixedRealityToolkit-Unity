@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Input simulation service | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Input simulation service | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href="../.././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../.././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="input-simulation-service" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="1">Input simulation service</h1>
+
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="3">The Input Simulation Service emulates the behavior of devices and platforms that may not be available in the Unity editor. Examples include:</p>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="5">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="5">HoloLens or VR device head tracking</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="6">HoloLens hand gestures</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="7">HoloLens 2 articulated hand tracking</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="8">HoloLens 2 eye tracking</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="9">VR device controllers</li>
+</ul>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="11">Users can use a conventional keyboard and mouse combination to control simulated devices at runtime. This approach allows testing of interactions in the Unity editor without first deploying to a device.</p>
+<div class="WARNING" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="13">
+<h5>Warning</h5>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="14">This does not work when using Unity's XR Holographic Emulation &gt; Emulation Mode = &quot;Simulate in Editor&quot;. Unity's in-editor simulation will take control away from MRTK's input simulation. In order to use the MRTK input simulation service, you will need to set XR Holographic Emulation to Emulation Mode = <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="14">&quot;None&quot;</em></p>
+</div>
+<h2 id="enabling-the-input-simulation-service" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="16">Enabling the input simulation service</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="18">Input simulation is enabled by default in the profiles that ship with MRTK.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="20">Input simulation is an optional <a href="../MixedRealityServices.html" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="20">Mixed Reality service</a> though and can be removed as a data provider in the <a href="../Input/InputProviders.html" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="20">Input System profile</a>.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="22">Under the Input System Data provider configuration, the Input Simulation service can be configured with the following.</p>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="24">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="24"><strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="24">Type</strong> must be <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="24">Microsoft.MixedReality.Toolkit.Input &gt; InputSimulationService</em>.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="25"><strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="25">Supported Platform(s)</strong> by default includes all <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="25">Editor</em> platforms, since the service uses keyboard and mouse input.</li>
+</ul>
+<div class="NOTE" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="27">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="28">The Input Simulation service can be used on other platform endpoints such as standalone by changing the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="28">Supported Platform(s)</strong> property to include the desired targets.
+<img src="../Images/InputSimulation/InputSimulationSupportedPlatforms.gif" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="29" alt="Input Simulation Supported Platforms"></p>
+</div>
+<h2 id="input-simulation-tools-window" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="32">Input simulation tools window</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="34">Enable the input simulation tools window from the  <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="34">Mixed Reality Toolkit</strong> &gt; <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="34">Utilities</strong> &gt; <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="34">Input Simulation</strong> menu. This window provides access to the state of input simulation during play mode.</p>
+<h2 id="viewport-buttons" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="36">Viewport buttons</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="38">A prefab for in-editor buttons to control basic hand placement can be specified in the input simulation profile under <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="38">Indicators Prefab</strong>. This is an optional utility, the same features can be accessed in the <a href="#input-simulation-tools-window" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="38">input simulation tools window</a>.</p>
+<div class="NOTE" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="40">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="41">The viewport indicators are disabled by default, as they currently can sometimes interfere with Unity UI interactions. See issue <a href="https://github.com/microsoft/MixedRealityToolkit-Unity/issues/6106" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="41">#6106</a>. To enable, add the InputSimulationIndicators prefab to <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="41">Indicators Prefab</strong>.</p>
+</div>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="43">Hand icons show the state of the simulated hands:</p>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="45">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="45"><img src="../Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Untracked.png" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="45" alt="Untracked hand icon"> The hand is not tracking. Click to enable the hand.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="46"><img src="../Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Tracked.png" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="46" alt="Tracked hand icon" title="Tracked hand icon"> The hand is tracked, but not controlled by the user. Click to hide the hand.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="47"><img src="../Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Controlled.png" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="47" alt="Controlled hand icon" title="Controlled hand icon"> The hand is tracked and controlled by the user. Click to hide the hand.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="48"><img src="../Images/InputSimulation/MRTK_InputSimulation_HandIndicator_Reset.png" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="48" alt="Reset hand icon" title="Reset hand icon"> Click to reset the hand to default position.</li>
+</ul>
+<h2 id="in-editor-input-simulation-cheat-sheet" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="50">In editor input simulation cheat sheet</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="52">Press Left Ctrl + H in the HandInteractionExamples scene to bring up a cheat sheet with Input simulation controls.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="54"><img src="https://user-images.githubusercontent.com/39840334/86066480-13637f00-ba27-11ea-8814-d222d548f684.gif" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="54" alt="Input Simulation Cheat Sheet"></p>
+<h2 id="camera-control" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="56">Camera control</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="58">Head movement can be emulated by the Input Simulation Service.</p>
+<h3 id="rotating-the-camera" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="60">Rotating the camera</h3>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="62">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="62">Hover over the viewport editor window.
+<em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="63">You may need to click the window to give it input focus if button presses don't work.</em></li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="64">Press and hold the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="64">Mouse Look Button</strong> (default: Right mouse button).</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="65">Move the mouse in the viewport window to rotate the camera.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="66">Use the scroll wheel to roll the camera around the view direction.</li>
+</ol>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="68">Camera rotation speed can be configured by changing the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="68">Mouse Look Speed</strong> setting in the input simulation profile.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="70">Alternatively, use the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="70">Look Horizontal</strong>/<strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="70">Look Vertical</strong> axes to rotate the camera (default: game controller right thumbstick).</p>
+<h3 id="moving-the-camera" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="72">Moving the camera</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="74">Use the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="74">Move Horizontal</strong>/<strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="74">Move Vertical</strong> axes to move the camera (default: WASD keys or game controller left thumbstick).</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="76">Camera position and rotation angles can be set explicitly in the tools window, as well. The camera can be reset to its default using the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="76">Reset</strong> button.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z7L4I1ET7GU" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="controller-simulation" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="80">Controller simulation</h2>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="82">The input simulation supports emulated controller devices (i.e. motion controllers and hands). These virtual controllers can interact with any object that supports regular controllers, such as buttons or grabbable objects.</p>
+<h3 id="controller-simulation-mode" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="84">Controller simulation mode</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="86">In the <a href="#input-simulation-tools-window" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="86">input simulation tools window</a> the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="86">Default Controller Simulation Mode</strong> setting switches between three distinct input models. This default mode can also be set in the input simulation profile.</p>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="88">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="88"><p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="88"><em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="88">Articulated Hands</em>: Simulates a fully articulated hand device with joint position data.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="90">Emulates HoloLens 2 interaction model.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="92">Interactions that are based on the precise positioning of the hand or use touching can be simulated in this mode.</p>
+</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="94"><p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="94"><em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="94">Hand Gestures</em>: Simulates a simplified hand model with air tap and basic gestures.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="96">Emulates <a href="https://docs.microsoft.com/windows/mixed-reality/gestures" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="96">HoloLens interaction model</a>.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="98">Focus is controlled using the Gaze pointer. The <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="98">Air Tap</em> gesture is used to interact with buttons.</p>
+</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="100"><p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="100"><em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="100">Motion Controller</em>: Simulates a motion controller used with VR headsets that works similarly to far interactions with Articulated Hands.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="102">Emulates VR headset with controllers interaction model.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="104">The trigger, grab and menu keys are simulated via keyboard and mouse input.</p>
+</li>
+</ul>
+<h3 id="simulating-controller-movement" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="106">Simulating controller movement</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="108">Press and hold the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="108">Left/Right Controller Manipulation Key</strong> (default: <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="108">Left Shift</em> for left controller and <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="108">Space</em> for right controller) to gain control of either controller. While the manipulation key is pressed, the controller will appear in the viewport. Once the manipulation key is released, the controllers will disappear after a short <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="108">Controller Hide Timeout</strong>.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">Controllers can be toggled on and frozen relative to the camera in the <a href="#input-simulation-tools-window" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">input simulation tools window</a> or by pressing the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">Toggle Left/Right Controller Key</strong> (default: <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">T</em> for left and <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">Y</em> for right). Press the toggle key again to hide the controllers again. To manipulate the controllers, the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">Left/Right Controller Manipulation Key</strong> needs to be held. Double tapping the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="110">Left/Right Controller Manipulation Key</strong> can also toggle the controllers on/off.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="112">Mouse movement will move the controller in the view plane. Controllers can be moved further or closer to the camera using the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="112">mouse wheel</strong>.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">To rotate controllers using the mouse, hold both the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Left/Right Controller Manipulation Key</strong> (<em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Left Shift</em> or <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Space</em>) <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">and</em> the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Controller Rotate Button</strong> (default: <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Left Ctrl</em> button) and then move the mouse to rotate the controller. Controller rotation speed can be configured by changing the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="114">Mouse Controller Rotation Speed</strong> setting in the input simulation profile.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="116">All hand placement can also changed in the <a href="#input-simulation-tools-window" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="116">input simulation tools window</a>, including resetting hands to default.</p>
+<h3 id="additional-profile-settings" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="118">Additional profile settings</h3>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="120">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="120"><strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="120">Controller Depth Multiplier</strong> controls the sensitivity of the mouse scroll wheel depth movement. A larger number will speed up controller zoom.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="121"><strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="121">Default Controller Distance</strong> is the initial distance of controllers from the camera. Clicking the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="121">Reset</strong> button controllers will also place controllers at this distance.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="122"><strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="122">Controller Jitter Amount</strong> adds random motion to controllers. This feature can be used to simulate inaccurate controller tracking on the device, and ensure that interactions work well with noisy input.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uRYfwuqsjBQ" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h3 id="hand-gestures" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="126">Hand gestures</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="128">Hand gestures such as pinching, grabbing, poking, etc. can also be simulated.</p>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130"><p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130">Enable hand control using the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130">Left/Right Controller Manipulation Key</strong> (<em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130">Left Shift</em> or <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="130">Space</em>)</p>
+</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="132"><p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="132">While manipulating, press and hold a mouse button to perform a hand gesture.</p>
+</li>
+</ol>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="134">Each of the mouse buttons can be mapped to transform the hand shape into a different gesture using the <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="134">Left/Middle/Right Mouse Hand Gesture</em> settings. The <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="134">Default Hand Gesture</em> is the shape of the hand when no button is pressed.</p>
+<div class="NOTE" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="136">
+<h5>Note</h5>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="137">The <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="137">Pinch</em> gesture is the only gesture that performs the &quot;Select&quot; action at this point.</p>
+</div>
+<h3 id="one-hand-manipulation" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="139">One-hand manipulation</h3>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="141">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="141">Press and hold <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="141">Left/Right Controller Manipulation Key</strong> (<em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="141">Left Shift</em> or <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="141">Space</em>)</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="142">Point at object</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="143">Hold mouse button to pinch</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="144">Use your mouse to move the object</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="145">Release the mouse button to stop interaction</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rM0xaHam6wM" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h3 id="two-hand-manipulation" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="149">Two-hand manipulation</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="151">For manipulating objects with two hands at the same time, the persistent hand mode is recommended.</p>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="153">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="153">Toggle on both hands by pressing the toggle keys (<em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="153">T/Y</em>).</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="154">Manipulate one hand at a time:
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="155">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="155">Hold <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="155">Space</strong> to control the right hand</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="156">Move the hand to where you want to grab the object</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="157">Press the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="157">left mouse button</strong> to activate the <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="157">Pinch</em> gesture.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="158">Release <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="158">Space</strong> to stop controlling the right hand. The hand will be frozen in place and be locked into the <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="158">Pinch</em> gesture since it is no longer being manipulated.</li>
+</ol>
+</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="159">Repeat the process with the other hand, grabbing the same object in a second spot.</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="160">Now that both hands are grabbing the same object, you can move either of them to perform two-handed manipulation.</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qol5OFNfN14" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h3 id="ggv-gaze-gesture-and-voice-interaction" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="164">GGV (Gaze, Gesture, and Voice) interaction</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="166">By default, GGV interaction is enabled in-editor while there are no articulated hands present in the scene.</p>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="168">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="168">Rotate the camera to point the gaze cursor at the interactable object (right mouse button)</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="169">Click and hold <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="169">left mouse button</strong> to interact</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="170">Rotate the camera again to manipulate the object</li>
+</ol>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="172">You can turn this off by toggling the <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="172">Is Hand Free Input Enabled</em> option inside the Input Simulation Profile.</p>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="174">In addition, you can use simulated hands for GGV interaction</p>
+<ol sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="176">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="176">Enable GGV simulation by switching <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="176">Hand Simulation Mode</strong> to <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="176">Gestures</em> in the <a href="#enabling-the-input-simulation-service" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="176">Input Simulation Profile</a></li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="177">Rotate the camera to point the gaze cursor at the interactable object (right mouse button)</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="178">Hold <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="178">Space</strong> to control the right hand</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="179">Click and hold <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="179">left mouse button</strong> to interact</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="180">Use your mouse to move the object</li>
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="181">Release the mouse button to stop interaction</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6841rRMdqWw" class="center" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h3 id="motion-controller-interaction" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="185">Motion controller interaction</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="187">The simulated motion controllers can be manipulated the same way articulated hands are. The interaction model is similar to far interaction of articulated hand while the trigger, grab and menu keys are mapped to <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="187">left mouse button</em>, <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="187">G</em> and <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="187">M</em> key respectively.</p>
+<h3 id="eye-tracking" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="189">Eye tracking</h3>
+<p sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="191"><a href="../EyeTracking/EyeTracking_BasicSetup.html#simulating-eye-tracking-in-the-unity-editor" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="191">Eye tracking simulation</a> can be enabled by checking the <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="191">Simulate Eye Position</strong> option in the
+<a href="#enabling-the-input-simulation-service" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="192">Input Simulation Profile</a>. This should not be used with GGV or motion controller
+style interactions (so ensure that <strong sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="193">Default Controller Simulation Mode</strong> is set to <em sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="193">Articulated Hand</em>).</p>
+<h2 id="see-also" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="195">See also</h2>
+<ul sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="197">
+<li sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="197"><a href="../Input/InputProviders.html" sourcefile="../../Documentation/InputSimulation/InputSimulationService.md" sourcestartlinenumber="197">Input System profile</a>.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/InputSimulation/InputSimulationService.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

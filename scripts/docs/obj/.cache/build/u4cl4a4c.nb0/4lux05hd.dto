@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Object Manipulator (&#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12510;&#12491;&#12500;&#12517;&#12524;&#12540;&#12479;&#12540;) | Mixed Reality Toolkit Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Object Manipulator (&#12458;&#12502;&#12472;&#12455;&#12463;&#12488; &#12510;&#12491;&#12500;&#12517;&#12524;&#12540;&#12479;&#12540;) | Mixed Reality Toolkit Documentation ">
+    <meta name="generator" content="docfx 2.48.0.0">
+    
+    <link rel="shortcut icon" href=".././Documentation/Images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-177859076-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-177859076-1');
+    </script>
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src=".././Documentation/Images/mrt_logo_icon.png" alt="">
+              </a>
+            </div>
+          
+          <div class="version-dropdown" id="versionDropdown">
+           </div>
+         
+          <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="navbar alert-navbar">
+          <div class="container">
+              <div class="alert-navbar-message">
+                <h5>日本語翻訳ドキュメントはサポートを終了しました</h5>
+                <p>MRTK 2.6 以降のドキュメントについては、公式の <a href="https://docs.microsoft.com/windows/mixed-reality/mrtk-unity/">Microsoft ドキュメント</a> を参照してください。</p>
+            </div>
+          </div>
+        </div>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="object-manipulator-オブジェクト-マニピュレーター" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="1">Object Manipulator (オブジェクト マニピュレーター)</h1>
+
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="3"><img src="../Documentation/Images/ManipulationHandler/MRTK_Manipulation_Main.png" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="3" alt="Object manipulator"></p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="5"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="5">ObjectManipulator</em> は、以前は <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="5">ManipulationHandler</em> に含まれていたマニピュレーション動作のための新しいコンポーネントです。オブジェクト マニピュレーターでは、多くの改良と簡略化が行われています。このコンポーネントは Manipulation Handler (マニピュレーション ハンドラー) を置き換えるものであり、マニピュレーション ハンドラーは非推奨となります。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="7"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="7">ObjectManipulator</em> スクリプトは、片手または両手を使ったオブジェクトの移動、スケール変更、回転を可能にします。オブジェクト マニピュレーターの設定を変更することで、さまざまな入力に対してオブジェクトがどのように反応するかを制御することができます。このスクリプトは、HoloLens 2 の多関節ハンド、HoloLens 2 のハンド レイ、HoloLens 1 のゲイズやジェスチャー、イマーシブ ヘッドセットのモーション コントローラ入力など、ほとんどの形式のインタラクションで動作します。</p>
+<h2 id="オブジェクト-マニピュレーターの使い方" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="9">オブジェクト マニピュレーターの使い方</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="11">オブジェクト マニピュレーターを使うには、まず <code sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="11">ObjectManipulator</code> スクリプト コンポーネントを GameObject に追加します。また、オブジェクトの把持可能範囲に合わせてコライダーを追加することも忘れないでください。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="13">オブジェクトがニア インタラクションの多関節ハンド入力に反応するようにするには、<code sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="13">NearInteractionGrabbable</code> スクリプトも追加します。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="15">オブジェクトに Rigidbody コンポーネントを追加することで、オブジェクト マニピュレーターの物理的な動作を有効にすることができます。このコンポーネントを追加することで有効になる物理的な動作については、<a href="#physics-and-collisions" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="15"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="15">物理とコリジョン</em></a> で詳しく説明しています。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="17">これと同様に、オブジェクトに <a href="README_ConstraintManager.html#transform-constraints" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="17">Manipulation Constraint コンポーネント</a> を追加することで、マニピュレーションに制約を与えることができます。これらのコンポーネントは、マニピュレーションに作用し、マニピュレーションの動作を何らかの形で変更する特別なコンポーネントです。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="19"><img src="../Documentation/Images/ObjectManipulator/MRTK_ObjectManipulator_Howto.png" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="19" alt="Manipulation Handler"></p>
+<h2 id="インスペクターのプロパティとフィールド" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="21">インスペクターのプロパティとフィールド</h2>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_ObjectManipulator_Structure.png" width="450">
+<h3 id="general-全般-プロパティ" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="25">General (全般) プロパティ</h3>
+<h4 id="host-transform-ホスト-トランスフォーム" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="27">Host Transform (ホスト トランスフォーム)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="29">操作されるオブジェクトのトランスフォーム。デフォルトはコンポーネントのオブジェクトです。</p>
+<h4 id="manipulation-type-マニピュレーション-タイプ" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="31">Manipulation Type (マニピュレーション タイプ)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="33">オブジェクトを片手で操作するか、両手で操作するかを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="35">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="35"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="35">One Handed (片手)</em>: 選択した場合、片手操作が有効になります。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="36"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="36">Two Handed (両手)</em>: 選択した場合、両手操作が有効になります。</li>
+</ul>
+<h4 id="allow-far-manipulation-ファー-マニピュレーションの有効化" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="38">Allow Far Manipulation (ファー マニピュレーションの有効化)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="40">ポインターとのファー インタラクションを使った操作ができるかどうかを指定します。</p>
+<h3 id="one-handed-manipulation-片手操作-プロパティ" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="42">One Handed Manipulation (片手操作) プロパティ</h3>
+<h4 id="one-hand-rotation-mode-near-ニアでの片手回転モード" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="44">One Hand Rotation Mode Near (ニアでの片手回転モード)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="46">オブジェクトが片手のニア インタラクションで掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="48">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="48"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="48">Rotate About Object Center (オブジェクト中心まわりの回転)</em>: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。回転時のオブジェクトの移動は小さくなりますが、ハンドとオブジェクトの間に断絶感があるかもしれません。ファー インタラクションでより便利です。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="49"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="49">Rotate About Grab Point (把持点まわりの回転)</em>: 親指と人差し指の間の把持点を中心にオブジェクトが回転します。オブジェクトを手で掴んでいるように感じるはずです。</li>
+</ul>
+<h4 id="one-hand-rotation-mode-far-ファーでの片手回転モード" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="51">One Hand Rotation Mode Far (ファーでの片手回転モード)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="53">オブジェクトが遠くから片手で掴まれているときの動作を指定します。これらのオプションは、多関節ハンドに対してのみ機能します。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="55">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="55"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="55">Rotate About Object Center (オブジェクト中心まわりの回転)</em>: オブジェクトはハンドの回転を使って回転しますが、オブジェクトの中心点を中心に回転します。オブジェクトの回転に伴ってオブジェクトの中心が移動することなく、離れた場所から詳しく眺める場合に便利です。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="56"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="56">Rotate About Grab Point (把持点まわりの回転)</em>: オブジェクトはハンドの回転を使って回転しますが、ポインター レイが当たったポイントを中心に回転します。詳しく眺める場合に便利です。</li>
+</ul>
+<h3 id="two-handed-manipulation-両手操作-プロパティ" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="58">Two Handed Manipulation (両手操作) プロパティ</h3>
+<h4 id="two-handed-manipulation-type-両手操作タイプ" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="60">Two Handed Manipulation Type (両手操作タイプ)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="62">両手操作でオブジェクトのトランスフォームがどのようにを変更されるかを指定します。このプロパティはフラグであるため、任意の数のオプションを選択することができます。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="64">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="64"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="64">Move (移動)</em>: 選択した場合、移動が許可されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="65"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="65">Scale (スケール)</em>: 選択した場合、スケール変更が許可されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="66"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="66">Rotate (回転)</em>: 選択した場合、回転が許可されます。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="68"><img src="../Documentation/Images/ManipulationHandler/MRTK_ManipulationHandler_TwoHanded.jpg" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="68" alt="Manipulation Handler"></p>
+<h3 id="constraints-制約" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="70">Constraints (制約)</h3>
+<h4 id="enable-constraints-制約の有効化" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="72">Enable Constraints (制約の有効化)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="73">この設定により、リンクされた <a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="73">コンストレイント マネージャー</a> が有効になります。選択した <a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="73">コンストレイント マネージャー</a> に登録された制約によって、トランスフォームの変更が処理されます。</p>
+<h4 id="constraint-manager-コンストレイント-マネージャー" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="75">Constraint Manager (コンストレイント マネージャー)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="76">ドロップダウンでは、アタッチされている <a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="76">コンストレイント マネージャー</a> のいずれかを選択することができます。オブジェクト マニピュレーターは、常に <a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="76">コンストレイント マネージャー</a> がアタッチされていることを保証します。
+同じタイプの複数のコンポーネントは、Unity では同じ名前で表示されることに注意してください。同じオブジェクト上の複数のコンストレイント マネージャーを簡単に区別できるようにするために、利用可能なオプションには（手動または自動の制約選択によって）選択されたコンストレイント マネージャーの設定に関するヒントが表示されます。</p>
+<h4 id="go-to-component-コンポーネントへ移動" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="79">Go to component (コンポーネントへ移動)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="81"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="81">Go to component</em> ボタンを押すとコンストレイント マネージャーが選択されます。このボタンをクリックすると、インスペクターが選択されたコンポーネントまでスクロールし、設定することができます。</p>
+<h3 id="physics-物理" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="83">Physics (物理)</h3>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="85">このセクションの設定は、オブジェクトに Rigidbody コンポーネントがある場合にのみ表示されます。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="87"><a name="release-behavior"></a></p>
+<h4 id="release-behavior-リリースの動作" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="89">Release Behavior (リリースの動作)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="91">操作されたオブジェクトがリリースされた時に維持すべき物理的なプロパティを指定します。このプロパティはフラグであるため、両方のオプションを選択することもできます。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="93">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="93"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="93">Keep Velocity (速度の維持)</em>: このオプションが選択されている場合、オブジェクトがリリースされるときに速度が維持されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="94"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="94">Keep Angular Velocity (各速度の維持)</em>: このオプションが選択されている場合、オブジェクトがリリースされるときに角速度が維持されます。</li>
+</ul>
+<h4 id="use-forces-for-near-manipulation-ニア-マニピュレーションに力を使う" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="96">Use Forces For Near Manipulation (ニア マニピュレーションに力を使う)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="98">ニア マニピュレーションを行う際に、オブジェクトを動かすのに物理的な力を使うかどうかを指定します。これを <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="98">false</em> に設定すると、オブジェクトがユーザーの手に直接接続されているように感じられます。これを <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="98">true</em> に設定すると、オブジェクトの質量と慣性を尊重しますが、オブジェクトがバネを介して接続されているように感じるかもしれません。デフォルトは <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="98">false</em> です。</p>
+<h3 id="smoothing-スムージング" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="100">Smoothing (スムージング)</h3>
+<h4 id="smoothing-far-ファー-スムージング" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="102">Smoothing Far (ファー スムージング)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="104">フレームレートに依存しないスムージングをファー インタラクションで有効にするかどうか。デフォルトではファー スムージングは有効になっています。</p>
+<h4 id="smoothing-near-ニア-スムージング" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="106">Smoothing Near (ニア スムージング)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="108">フレームレートに依存しないスムージングをニア インタラクションで有効にするかどうか。ニア スムージングはデフォルトでは無効になっています。これはこの効果がハンドから「切り離されている」と認識される可能性があるためです。</p>
+<h4 id="smoothing-active-スムージングの有効化" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="110">Smoothing Active (スムージングの有効化)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="112">廃止予定で、将来のバージョンでは削除されます。アプリケーションは SmoothingFar、SmoothingNear、またはそれらの組み合わせを使用する必要があります。</p>
+<h4 id="move-lerp-time-移動の線形補間時間" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="114">Move Lerp Time (移動の線形補間時間)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="116">移動に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。</p>
+<h4 id="rotate-lerp-time-回転の線形補間時間" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="118">Rotate Lerp Time (回転の線形補間時間)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="120">回転に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。</p>
+<h4 id="scale-lerp-time-スケールの線形補間時間" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="122">Scale Lerp Time (スケールの線形補間時間)</h4>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="124">スケール変更に適用されるスムージングの量。 0 のスムージングはスムージングなしを意味します。最大値は値を変更しないことを意味します。</p>
+<h3 id="manipulation-events-操作イベント" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="126">Manipulation Events (操作イベント)</h3>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="128">Manipulation Handler は以下のイベントを提供しています。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="130">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="130"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="130">OnManipulationStarted (操作開始時)</em>: マニピュレーション開始時に発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="131"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="131">OnManipulationEnded (操作終了時)</em>: マニピュレーション終了時に発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="132"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="132">OnHoverStarted (ホバー開始時)</em>: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトに当たったときに発火されます。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="133"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="133">OnHoverEnded (ホバー終了時)</em>: ハンドやコントローラーのカーソルが、ニアまたはファーでマニピュレーション可能なオブジェクトから外れたときに発火されます。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="135">マニピュレーションのイベントが発火される順序は以下の通りです。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="137"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="137">OnHoverStarted</em> -&gt; <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="137">OnManipulationStarted</em> -&gt; <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="137">OnManipulationEnded</em> -&gt; <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="137">OnHoverEnded</em></p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="139">マニピュレーションが行われない場合でも、以下の発火順序でホバー イベントを受け取ることができます。</p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="141"><em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="141">OnHoverStarted</em> -&gt; <em sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="141">OnHoverEnded</em></p>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="143"><a name="physics-and-collisions"></a></p>
+<h2 id="物理とコリジョン" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="145">物理とコリジョン</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="147">物理的な動作は、オブジェクト マニピュレーターと同じオブジェクトに Rigidbody コンポーネントを追加することで有効にできます。これにより、上記の <a href="#release-behavior" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="147">Release Behaviour</a> の設定が有効になるだけでなく、コリジョンも有効になります。Rigidbody コンポーネントがないと、以下のようにマニピュレーション中にコリジョンが正しく動作しません。</p>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="149">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="149">操作されているオブジェクトと静的なコライダー（コライダーはあるが Rigidbody はないオブジェクト）とのコリジョンは動作せず、操作されているオブジェクトは影響を受けずに静的なコライダーをまっすぐ通過します。</li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="150">操作されているオブジェクトと Rigidbody（コライダーと Rigidbody の両方を持つオブジェクト）が衝突した場合、Rigidbody はコリジョンの反応が起こりますが、その反応はジャンプした不自然なものになります。また、操作されているオブジェクトにはコリジョン反応がありません。</li>
+</ul>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="152">Rigidbody が追加されていると、コリジョンは正しく動作します。</p>
+<h3 id="rigidbody-がない場合" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="154">Rigidbody がない場合</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_PhysicsManipulation_NoRigidbody.gif" width="500">
+<h3 id="rigidbody-がある場合" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="158">Rigidbody がある場合</h3>
+<img src="../Documentation/Images/ObjectManipulator/MRTK_PhysicsManipulation_Rigidbody.gif" width="500">
+<h2 id="elastics-エラスティックス-experimental" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="163">Elastics (エラスティックス) [Experimental]</h2>
+<p sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="164">エラスティックスは、オブジェクト マニピュレーターを介してオブジェクトを操作する際に使用できます。<a href="Elastics/ElasticSystem.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="164">Eelastics System</a> はまだ実験的な状態であることに注意してください。エラスティックスを有効にするには、既存のエラスティックス マネージャー コンポーネントをリンクするか、<code sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="164">Add Elastics Manager</code> ボタンを使って新しいエラスティックス マネージャーを作成してリンクしてください。</p>
+<img src="../Documentation/Images/BoundsControl/MRTK_BoundsControl_Elastics.png" width="450">
+<h2 id="関連項目" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="168">関連項目</h2>
+<ul sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="170">
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="170"><a href="README_BoundsControl.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="170">Bounds control</a></li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="171"><a href="README_ConstraintManager.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="171">Constraint manager</a></li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="172"><a href="Tools/MigrationWindow.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="172">Migration window</a></li>
+<li sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="173"><a href="Elastics/ElasticSystem.html" sourcefile="../../Documentation.ja/README_ObjectManipulator.md" sourcestartlinenumber="173">Elastics system (Experimental)</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation.ja/README_ObjectManipulator.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
